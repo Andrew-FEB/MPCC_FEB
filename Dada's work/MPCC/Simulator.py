@@ -19,7 +19,7 @@ mng = og.tcp.OptimizerTcpManager("mpcc_python_build/mpcc_optimizer")
 mng.start()
 
 # Run simulations
-x_state_0 = [0.0, 0.0, 0.0, 0.0]
+x_state_0 = [7.0, 7.0, 0.0, 0.0]
 simulation_steps = 1500
 
 state_sequence = x_state_0

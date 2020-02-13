@@ -100,9 +100,9 @@ Ts = 0.05  # Sampling time (length of one time step)
 u_seq = cs.MX.sym("u", nx * N)  # Sequence of all inputs
 x0 = cs.MX.sym("x0", nx)  # Initial state
 
-x_ref = [1.0, 1.0, 0.0, 0.0]
+x_ref = [0.0, 0.0, 0.0, 0.0]
 state_error_weight = 50
-input_change_weight = 30
+input_change_weight = 3
 
 
 # Cost function:

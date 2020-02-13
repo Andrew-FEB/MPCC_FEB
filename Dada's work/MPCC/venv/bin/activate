@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/dada/PycharmProjects/MPCC/venv"
+VIRTUAL_ENV="/home/dada/MPCC_FEB/Dada's work/MPCC/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
