@@ -1,0 +1,1 @@
+{"rustc":14391035150081286987,"features":"","target":0,"profile":0,"path":0,"deps":[[15341030366318058636,"build_script_build",false,4176342239882607196]],"local":[{"RerunIfChanged":{"output":"release/build/mpcc_optimizer-74d46fc35090866f/output","paths":["src/lib.rs","mpcc_optimizer_bindings.h","mpcc_optimizer_bindings.hpp"]}}],"rustflags":[],"metadata":0}

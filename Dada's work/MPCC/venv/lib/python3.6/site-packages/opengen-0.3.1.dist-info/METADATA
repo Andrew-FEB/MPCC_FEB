@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: opengen
+Version: 0.3.1
+Summary: Optimization Engine Code Generator
+Home-page: https://github.com/alphaville/optimization-engine
+Author: ['Pantelis Sopasakis', 'Emil Fresk']
+Author-email: p.sopasakis@gmail.com
+License: MIT License
+Keywords: optimization,nonconvex,embedded
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Rust
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Embedded Systems
+Description-Content-Type: text/markdown
+Requires-Dist: jinja2
+Requires-Dist: casadi
+Requires-Dist: numpy
+Requires-Dist: pyyaml
+Requires-Dist: retry
+
+
+## OpenGen
+
+Code generation tool for OpEn
+
+### Installation 
+To use this Python package, run:
+
+```
+pip install opengen
+```
+
+You will then be able to use it in your project with
+
+```python
+from opengen import *
+```
+
+or 
+
+```python
+import opengen as og
+```
+
+In order to build the auto-generated code, you need the 
+Rust compiler.
+
+For detailed documentation, please refer to 
+[OpEn's website](https://alphaville.github.io/optimization-engine/).
+
+
