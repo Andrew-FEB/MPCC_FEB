@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import opengen as og
 import time
 
-st = time.time()
-
 # Author: Darina Abaffyová
 # Created: 13/02/2020
 # Last updated: 13/02/2020
@@ -19,13 +17,13 @@ mng = og.tcp.OptimizerTcpManager("mpcc_python_build/mpcc_optimizer")
 mng.start()
 
 # Run simulations
-x_state_0 = [7.0, 7.0, 0.0, 0.0]
-simulation_steps = 1500
+x_state_0 = [0.0, 0.0, 0.0, 0.0]
+simulation_steps = 1000
 
 state_sequence = x_state_0
 input_sequence = []
 
-print('Before looping: ' + str(time.time() - st))
+st = time.time()
 
 x = x_state_0
 for k in range(simulation_steps):
@@ -41,16 +39,27 @@ for k in range(simulation_steps):
         x = x_next
     except AttributeError:
         print('Failed after ' + str(state_sequence.__len__() / 4) + 'simulation steps')
-        exit(1)
+        # exit(1)
+        break
     # print('Loop time = ' + str(time.time() - start_time) + 's')
+
+# solver_status = mng.call(x_state_0)
+# us = solver_status['solution']
+# x = x_state_0
+# for i in range(0, 80, 2):
+#     x = cg.vehicle_dynamics_dt(x, [us[i], us[i+1]], cg.Ts)
+#     state_sequence = np.concatenate((state_sequence, x))
+#     input_sequence += [us[i], us[i+1]]
+
+print('Looping: ' + str(time.time() - st))
 
 # Thanks TCP server; we won't be needing you any more
 mng.kill()
 
 time = np.arange(0, cg.Ts * simulation_steps, cg.Ts)
 
-plt.plot(time, input_sequence[0:4 * simulation_steps:2], '-', label="Front Steering Angle")
-plt.plot(time, input_sequence[1:4 * simulation_steps:2], '-', label="Acceleration")
+plt.plot(time, input_sequence[0:2 * simulation_steps:2], '-', label="Front Steering Angle")
+plt.plot(time, input_sequence[1:2 * simulation_steps:2], '-', label="Acceleration")
 plt.grid()
 plt.ylabel('Input')
 plt.xlabel('Time')

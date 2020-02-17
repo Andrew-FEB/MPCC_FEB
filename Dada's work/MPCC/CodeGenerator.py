@@ -94,15 +94,15 @@ def tire_dt():
 N = 40  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
 nx = 4  # Number of Parameters (state)
-Ts = 0.05  # Sampling time (length of one time step)
+Ts = 0.05  # 0.05  # Sampling time (length of one time step)
 
 # Not sure about the u_seq - should it be nu*N large ???
-u_seq = cs.MX.sym("u", nx * N)  # Sequence of all inputs
+u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
 x0 = cs.MX.sym("x0", nx)  # Initial state
 
-x_ref = [0.0, 0.0, 0.0, 0.0]
-state_error_weight = 50
-input_change_weight = 3
+x_ref = [1.0, 1.0, 0.785, 0.1]
+state_error_weight = 70
+input_change_weight = 15
 
 
 # Cost function:
@@ -127,9 +127,6 @@ def vehicle_dynamics_casadi(z, u):
     d_f = u[0]
     a = u[1]
 
-    # extract parameters
-    # (L_a, L_b) = vh_mdl
-
     # compute slip angle
     beta = cs.atan(l_r / (l_f + l_r) * cs.tan(d_f))
 
@@ -146,29 +143,31 @@ def vehicle_dynamics_casadi(z, u):
 
 cost = 0
 x_t = x0
-# F1 = []
-for t in range(0, N):
+F1 = []
+F2 = []
+for t in range(0, nu * N, nu):
     # Not sure about the u_seq - should it be t and t+1 ???
     if t > 2:
         cost += cost_function(x_t, [u_seq[t], u_seq[t + 1]], [u_seq[t - 2], u_seq[t - 1]])  # Update cost
     else:
         cost += cost_function(x_t, [u_seq[t], u_seq[t + 1]], [0, 0])  # Update cost
     x_t = vehicle_dynamics_casadi(x_t, [u_seq[t], u_seq[t + 1]])  # Update state
-    # F1 = cs.vertcat(F1, x_t[1])  # state constraint NOT SURE HOW THIS WORKS (should restrict y to be between -1 and 1)
-    t += t
+    # F1 = cs.vertcat(F1, u_seq[t] - 0.79, u_seq[t + 1] - 9.8)
+    # F2 = cs.vertcat(F2, cs.fmax(cs.fabs(u_seq[t]), 0.79), cs.fmax(cs.fabs(u_seq[t + 1]), 9.8))
 
 # Constraints
 # -------------------------------------
 U = og.constraints.BallInf(None, 0.95)
-
-# NOT SURE HOW THIS WORKS
-# C = og.constraints.BallInf(None, 1)
+# U = og.constraints.Rectangle([-0.79, -9.8], [0.79, 9.8])
+# C = og.constraints.Zero()
+# Y = og.constraints.BallInf(None, 1e12)
+# U1 = og.constraints.BallInf(None, 0.79)
+# U2 = og.constraints.BallInf(None, 9.8)
 
 # Code Generation
 # -------------------------------------
 problem = og.builder.Problem(u_seq, x0, cost) \
     .with_constraints(U)
-# .with_aug_lagrangian_constraints(F1, C)  # NOT SURE HOW THIS WORKS
 
 build_config = og.config.BuildConfiguration() \
     .with_build_directory("mpcc_python_build") \

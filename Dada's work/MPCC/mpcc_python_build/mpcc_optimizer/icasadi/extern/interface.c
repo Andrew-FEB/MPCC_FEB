@@ -17,19 +17,19 @@
  *   + version: 0.0.0
  *   + licence: MIT
  * + Problem
- *   + vars: 160
+ *   + vars: 80
  *   + parameters: 4
  *   + n1: 0
  *   + n2: 0
  *
- * Generated at: 2020-02-13 17:43:50.417021
+ * Generated at: 2020-02-17 08:59:30.056748
  *
  */
 #include <stdlib.h>
 #include "casadi_memory.h"
 
 /* Number of input variables */
-#define NU_MPCC_OPTIMIZER 160
+#define NU_MPCC_OPTIMIZER 80
 
 /* Number of static parameters */
 #define NP_MPCC_OPTIMIZER 4
@@ -57,7 +57,7 @@
 /*
  * CasADi interface for the cost function
  */
-extern int phi_YKvtXMohHsJcmfkCGiSV(
+extern int phi_NzgXXXcedyrkUbewXsBM(
     const casadi_real** arg, 
     casadi_real** res, 
     casadi_int* iw, 
@@ -67,7 +67,7 @@ extern int phi_YKvtXMohHsJcmfkCGiSV(
 /*
  * CasADi interface for the gradient of the cost
  */
-extern int grad_phi_YKvtXMohHsJcmfkCGiSV(
+extern int grad_phi_NzgXXXcedyrkUbewXsBM(
     const casadi_real** arg, 
     casadi_real** res, 
     casadi_int* iw, 
@@ -77,7 +77,7 @@ extern int grad_phi_YKvtXMohHsJcmfkCGiSV(
 /*
  * CasADi interface for the gradient of mapping F1
  */
-extern int mapping_f1_YKvtXMohHsJcmfkCGiSV(
+extern int mapping_f1_NzgXXXcedyrkUbewXsBM(
     const casadi_real** arg, 
     casadi_real** res, 
     casadi_int* iw, 
@@ -87,7 +87,7 @@ extern int mapping_f1_YKvtXMohHsJcmfkCGiSV(
 /*
  * CasADi interface for the gradient of mapping F2
  */
-extern int mapping_f2_YKvtXMohHsJcmfkCGiSV(
+extern int mapping_f2_NzgXXXcedyrkUbewXsBM(
     const casadi_real** arg, 
     casadi_real** res, 
     casadi_int* iw, 
@@ -231,7 +231,7 @@ int cost_function_mpcc_optimizer(const casadi_real** arg, casadi_real** res) {
     copy_args_into_uxip_space(arg);
 
     result_space_cost[0] = res[0];
-    return phi_YKvtXMohHsJcmfkCGiSV(
+    return phi_NzgXXXcedyrkUbewXsBM(
         args__,
         result_space_cost,
         allocated_i_workspace_cost,
@@ -249,7 +249,7 @@ int grad_cost_function_mpcc_optimizer(const casadi_real** arg, casadi_real** res
               uxip_space + NU_MPCC_OPTIMIZER + NXI_MPCC_OPTIMIZER};  /* :p   */
     copy_args_into_uxip_space(arg);
     result_space_grad[0] = res[0];
-    return grad_phi_YKvtXMohHsJcmfkCGiSV(
+    return grad_phi_NzgXXXcedyrkUbewXsBM(
         args__,
         result_space_grad,
         allocated_i_workspace_grad,
@@ -273,10 +273,10 @@ int mapping_f1_function_mpcc_optimizer(const casadi_real** arg, casadi_real** re
      */
     result_space_f1[0] = res[0];
     /*
-     * Call auto-generated function mapping_f1_YKvtXMohHsJcmfkCGiSV
+     * Call auto-generated function mapping_f1_NzgXXXcedyrkUbewXsBM
      * Implemented in: icasadi/extern/auto_casadi_mapping_f1.c
      */
-    return mapping_f1_YKvtXMohHsJcmfkCGiSV(
+    return mapping_f1_NzgXXXcedyrkUbewXsBM(
         args__,
         result_space_f1,
         allocated_i_workspace_f1,
@@ -300,10 +300,10 @@ int mapping_f2_function_mpcc_optimizer(const casadi_real** arg, casadi_real** re
      */
     result_space_f2[0] = res[0];
     /*
-     * Call auto-generated function mapping_f2_YKvtXMohHsJcmfkCGiSV
+     * Call auto-generated function mapping_f2_NzgXXXcedyrkUbewXsBM
      * Implemented in: icasadi/extern/auto_casadi_mapping_f2.c
      */
-    return mapping_f2_YKvtXMohHsJcmfkCGiSV(
+    return mapping_f2_NzgXXXcedyrkUbewXsBM(
         args__,
         result_space_f2,
         allocated_i_workspace_f2,

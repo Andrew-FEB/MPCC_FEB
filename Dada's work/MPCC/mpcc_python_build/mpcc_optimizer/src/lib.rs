@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-02-13 17:43:50.486205
+// Generated at: 2020-02-17 08:59:30.192537
 //
 
 use icasadi;
@@ -48,7 +48,7 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 // ---Public Constants-----------------------------------------------------------------------------------
 
 /// Number of decision variables
-pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 160;
+pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
 pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 4;
