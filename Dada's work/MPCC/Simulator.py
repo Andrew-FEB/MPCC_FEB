@@ -6,7 +6,7 @@ import time
 
 # Author: Darina Abaffyová
 # Created: 13/02/2020
-# Last updated: 13/02/2020
+# Last updated: 17/02/2020
 
 # Simulation
 # -------------------------------------
@@ -17,8 +17,8 @@ mng = og.tcp.OptimizerTcpManager("mpcc_python_build/mpcc_optimizer")
 mng.start()
 
 # Run simulations
-x_state_0 = [0.0, 0.0, 0.0, 0.0]
-simulation_steps = 1000
+x_state_0 = [0, 0, 0, 0]  # [1.0, 1.0, 0.785, 0.1]
+simulation_steps = 500
 
 state_sequence = x_state_0
 input_sequence = []
@@ -39,6 +39,7 @@ for k in range(simulation_steps):
         x = x_next
     except AttributeError:
         print('Failed after ' + str(state_sequence.__len__() / 4) + 'simulation steps')
+        simulation_steps = int(state_sequence.__len__() / 4) -1
         # exit(1)
         break
     # print('Loop time = ' + str(time.time() - start_time) + 's')

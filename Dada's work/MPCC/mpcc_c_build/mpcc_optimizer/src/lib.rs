@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-02-15 19:26:19.531328
+// Generated at: 2020-02-17 22:32:49.355475
 //
 
 use icasadi;
@@ -13,10 +13,10 @@ use optimization_engine::{constraints::*, panoc::*, alm::*, *};
 // ---Private Constants----------------------------------------------------------------------------------
 
 /// Tolerance of inner solver
-const EPSILON_TOLERANCE: f64 = 0.0001;
+const EPSILON_TOLERANCE: f64 = 1e-07;
 
 /// Initial tolerance
-const INITIAL_EPSILON_TOLERANCE: f64 = 0.0001;
+const INITIAL_EPSILON_TOLERANCE: f64 = 1e-07;
 
 /// Update factor for inner tolerance
 const EPSILON_TOLERANCE_UPDATE_FACTOR: f64 = 0.1;
@@ -31,7 +31,7 @@ const LBFGS_MEMORY: usize = 10;
 const MAX_INNER_ITERATIONS: usize = 500;
 
 /// Maximum number of outer iterations
-const MAX_OUTER_ITERATIONS: usize = 50;
+const MAX_OUTER_ITERATIONS: usize = 500;
 
 /// Maximum execution duration in microseconds
 const MAX_DURATION_MICROS: u64 = 5000000;
@@ -252,11 +252,8 @@ pub extern "C" fn mpcc_optimizer_free(instance: *mut mpcc_optimizerCache) {
 
 // ---Parameters of the constraints----------------------------------------------------------------------
 
-/// Constraints: Centre of Ball
-const CONSTRAINTS_BALL_XC: Option<&[f64]> = None;
-
-/// Constraints: Radius of Ball
-const CONSTRAINTS_BALL_RADIUS : f64 = 0.95;
+const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[-0.95,-3.0,]);
+const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[0.95,3.0,]);
 
 
 
@@ -272,7 +269,7 @@ const CONSTRAINTS_BALL_RADIUS : f64 = 0.95;
 /// Make constraints U
 fn make_constraints() -> impl Constraint {
 
-    let bounds = BallInf::new(CONSTRAINTS_BALL_XC, CONSTRAINTS_BALL_RADIUS);
+    let bounds = Rectangle::new(CONSTRAINTS_XMIN, CONSTRAINTS_XMAX);
     bounds
 }
 

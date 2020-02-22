@@ -5,7 +5,7 @@ import math
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 13/02/2020
+# Last updated: 17/02/2020
 
 # Parameters
 # -------------------------------------
@@ -100,20 +100,21 @@ Ts = 0.05  # 0.05  # Sampling time (length of one time step)
 u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
 x0 = cs.MX.sym("x0", nx)  # Initial state
 
-x_ref = [1.0, 1.0, 0.785, 0.1]
+x_ref = [1.0, 1.0, 0, 0]
 state_error_weight = 70
-input_change_weight = 15
+input_change_weight = 5
 
 
 # Cost function:
 def cost_function(x, u, u_prev):
-    cf = 0
     # Cost on state error
-    for i in range(0, nx):
-        cf += state_error_weight * (x[i] - x_ref[i]) ** 2
+    cf = 70 * (x[0] - x_ref[0]) ** 2
+    cf += 70 * (x[1] - x_ref[1]) ** 2
+    cf += 0 * (x[2] - x_ref[2]) ** 2
+    cf += 0 * (x[3] - x_ref[3]) ** 2
     # Cost on input change
-    for i in range(0, nu):
-        cf += input_change_weight * (u_prev[i] - u[i]) ** 2
+    # for i in range(0, nu):
+    #     cf += input_change_weight * (u_prev[i] - u[i]) ** 2
     return cf
 
 
@@ -143,8 +144,6 @@ def vehicle_dynamics_casadi(z, u):
 
 cost = 0
 x_t = x0
-F1 = []
-F2 = []
 for t in range(0, nu * N, nu):
     # Not sure about the u_seq - should it be t and t+1 ???
     if t > 2:
@@ -152,17 +151,10 @@ for t in range(0, nu * N, nu):
     else:
         cost += cost_function(x_t, [u_seq[t], u_seq[t + 1]], [0, 0])  # Update cost
     x_t = vehicle_dynamics_casadi(x_t, [u_seq[t], u_seq[t + 1]])  # Update state
-    # F1 = cs.vertcat(F1, u_seq[t] - 0.79, u_seq[t + 1] - 9.8)
-    # F2 = cs.vertcat(F2, cs.fmax(cs.fabs(u_seq[t]), 0.79), cs.fmax(cs.fabs(u_seq[t + 1]), 9.8))
 
 # Constraints
 # -------------------------------------
-U = og.constraints.BallInf(None, 0.95)
-# U = og.constraints.Rectangle([-0.79, -9.8], [0.79, 9.8])
-# C = og.constraints.Zero()
-# Y = og.constraints.BallInf(None, 1e12)
-# U1 = og.constraints.BallInf(None, 0.79)
-# U2 = og.constraints.BallInf(None, 9.8)
+U = og.constraints.Rectangle([-0.75, -3], [0.75, 3])
 
 # Code Generation
 # -------------------------------------
@@ -177,14 +169,10 @@ meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \
     .with_authors("Darina Abaffyova") \
     .with_version("0.0.0")
 
-# solver_config = og.config.SolverConfiguration() \
-#     .with_tolerance(1e-6) \
-#     .with_initial_tolerance(1e-6)
-
 solver_config = og.config.SolverConfiguration() \
-    .with_tolerance(1e-4) \
-    .with_initial_tolerance(1e-4) \
-    .with_max_outer_iterations(50) \
+    .with_tolerance(1e-7) \
+    .with_initial_tolerance(1e-7) \
+    .with_max_outer_iterations(50000) \
     .with_delta_tolerance(1e-2) \
     .with_penalty_weight_update_factor(10.0)
 
