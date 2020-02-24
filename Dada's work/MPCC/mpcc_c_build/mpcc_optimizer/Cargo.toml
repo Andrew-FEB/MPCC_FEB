@@ -10,7 +10,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [package]
 name = "mpcc_optimizer"
-version = "0.0.0"
+version = "1.0.0"
 license = "MIT"
 authors = ["D", "a", "r", "i", "n", "a", " ", "A", "b", "a", "f", "f", "y", "o", "v", "a"]
 edition = "2018"

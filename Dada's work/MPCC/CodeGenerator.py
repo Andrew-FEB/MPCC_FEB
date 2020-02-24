@@ -102,19 +102,22 @@ x0 = cs.MX.sym("x0", nx)  # Initial state
 
 x_ref = [1.0, 1.0, 0, 0]
 state_error_weight = 70
-input_change_weight = 5
+input_change_weight = 30
 
 
 # Cost function:
 def cost_function(x, u, u_prev):
+    cf = 0
     # Cost on state error
-    cf = 70 * (x[0] - x_ref[0]) ** 2
-    cf += 70 * (x[1] - x_ref[1]) ** 2
-    cf += 0 * (x[2] - x_ref[2]) ** 2
-    cf += 0 * (x[3] - x_ref[3]) ** 2
+    for i in range(0, nx):
+        cf += state_error_weight * (x[i] - x_ref[i]) ** 2
+    # cf = 70 * (x[0] - x_ref[0]) ** 2
+    # cf += 70 * (x[1] - x_ref[1]) ** 2
+    # cf += 70 * (x[2] - x_ref[2]) ** 2
+    # cf += 70 * (x[3] - x_ref[3]) ** 2
     # Cost on input change
-    # for i in range(0, nu):
-    #     cf += input_change_weight * (u_prev[i] - u[i]) ** 2
+    for i in range(0, nu):
+        cf += input_change_weight * (u_prev[i] - u[i]) ** 2
     return cf
 
 
@@ -154,7 +157,8 @@ for t in range(0, nu * N, nu):
 
 # Constraints
 # -------------------------------------
-U = og.constraints.Rectangle([-0.75, -3], [0.75, 3])
+# U = og.constraints.Rectangle([-0.75, -3], [0.75, 3])
+U = og.constraints.BallInf(None, 0.95)
 
 # Code Generation
 # -------------------------------------
@@ -162,7 +166,7 @@ problem = og.builder.Problem(u_seq, x0, cost) \
     .with_constraints(U)
 
 build_config = og.config.BuildConfiguration() \
-    .with_build_directory("mpcc_python_build") \
+    .with_build_directory("mpcc_python_build_0") \
     .with_tcp_interface_config()
 
 meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \

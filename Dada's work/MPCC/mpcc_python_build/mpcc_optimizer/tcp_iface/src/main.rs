@@ -1,6 +1,6 @@
 ///
 /// Auto-generated TCP server for optimizer: mpcc_optimizer
-/// Generated at: 2020-02-17 23:09:01.796748
+/// Generated at: 2020-02-24 14:24:54.105313
 ///
 use optimization_engine::alm::*;
 use serde::{Deserialize, Serialize};

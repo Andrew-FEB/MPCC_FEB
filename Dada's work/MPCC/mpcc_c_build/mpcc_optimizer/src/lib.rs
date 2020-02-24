@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-02-17 22:32:49.355475
+// Generated at: 2020-02-23 13:19:37.286331
 //
 
 use icasadi;
@@ -22,7 +22,7 @@ const INITIAL_EPSILON_TOLERANCE: f64 = 1e-07;
 const EPSILON_TOLERANCE_UPDATE_FACTOR: f64 = 0.1;
 
 /// Delta tolerance
-const DELTA_TOLERANCE: f64 = 0.01;
+const DELTA_TOLERANCE: f64 = 1e-05;
 
 /// LBFGS memory
 const LBFGS_MEMORY: usize = 10;
@@ -31,7 +31,7 @@ const LBFGS_MEMORY: usize = 10;
 const MAX_INNER_ITERATIONS: usize = 500;
 
 /// Maximum number of outer iterations
-const MAX_OUTER_ITERATIONS: usize = 500;
+const MAX_OUTER_ITERATIONS: usize = 50000;
 
 /// Maximum execution duration in microseconds
 const MAX_DURATION_MICROS: u64 = 5000000;
@@ -52,13 +52,13 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
-pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 4;
+pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 6;
 
 /// Number of parameters associated with augmented Lagrangian
 pub const MPCC_OPTIMIZER_N1: usize = 0;
 
 /// Number of penalty constraints
-pub const MPCC_OPTIMIZER_N2: usize = 0;
+pub const MPCC_OPTIMIZER_N2: usize = 160;
 
 // ---Export functionality from Rust to C/C++------------------------------------------------------------
 
@@ -252,8 +252,8 @@ pub extern "C" fn mpcc_optimizer_free(instance: *mut mpcc_optimizerCache) {
 
 // ---Parameters of the constraints----------------------------------------------------------------------
 
-const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[-0.95,-3.0,]);
-const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[0.95,3.0,]);
+const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[-0.95,-0.5,]);
+const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[0.95,0.5,]);
 
 
 
@@ -310,7 +310,10 @@ pub fn solve(
         Ok(())
     };
     
-    let bounds = make_constraints();
+    let f2 = |u: &[f64], res: &mut [f64]| -> Result<(), SolverError> {
+        icasadi::mapping_f2(&u, &p, res);
+        Ok(())
+    };let bounds = make_constraints();
 
     let alm_problem = AlmProblem::new(
         bounds,
@@ -319,7 +322,7 @@ pub fn solve(
         psi,
         grad_psi,
         NO_MAPPING,
-        NO_MAPPING,
+        Some(f2),
         MPCC_OPTIMIZER_N1,
         MPCC_OPTIMIZER_N2,
     );

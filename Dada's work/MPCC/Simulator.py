@@ -11,14 +11,14 @@ import time
 # Simulation
 # -------------------------------------
 # Create a TCP connection manager
-mng = og.tcp.OptimizerTcpManager("mpcc_python_build/mpcc_optimizer")
+mng = og.tcp.OptimizerTcpManager("mpcc_python_build_0/mpcc_optimizer")
 
 # Start the TCP server
 mng.start()
 
 # Run simulations
-x_state_0 = [0, 0, 0, 0]  # [1.0, 1.0, 0.785, 0.1]
-simulation_steps = 500
+x_state_0 = [0, 0, 0, 0]
+simulation_steps = 5000
 
 state_sequence = x_state_0
 input_sequence = []
@@ -68,7 +68,8 @@ plt.title('[X, Y, PSI, V]: state_0 = ' + str(x_state_0) + ', state_ref = ' + str
           + '\nstate error weight = ' + str(cg.state_error_weight)
           + ', input change weight = ' + str(cg.input_change_weight))
 plt.legend(bbox_to_anchor=(0.7, 0.85), loc='best', borderaxespad=0.)
-plt.show()
+plt.show(
+)
 
 plt.plot(time, state_sequence[0:4 * simulation_steps:4], '-', label="x")
 plt.plot(time, state_sequence[1:4 * simulation_steps:4], '-', label="y")

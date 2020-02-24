@@ -10,10 +10,10 @@
  * Metadata:
  * + Optimizer
  *   + name: mpcc_optimizer
- *   + version: 0.0.0
+ *   + version: 1.0.0
  *   + licence: MIT
  *
- * Generated at: 2020-02-17 22:32:49.272422
+ * Generated at: 2020-02-23 13:19:37.116166
  *
  */
 
@@ -22,18 +22,18 @@
 /*
  * Cost sizes
  */
-#define COST_SZ_ARG_MPCC_OPTIMIZER 7
+#define COST_SZ_ARG_MPCC_OPTIMIZER 163
 #define COST_SZ_IW_MPCC_OPTIMIZER 0
-#define COST_SZ_W_MPCC_OPTIMIZER 96
+#define COST_SZ_W_MPCC_OPTIMIZER 422
 #define COST_SZ_RES_MPCC_OPTIMIZER 2
 
 /*
  * Gradient sizes
  */
-#define GRAD_SZ_ARG_MPCC_OPTIMIZER 7
+#define GRAD_SZ_ARG_MPCC_OPTIMIZER 163
 #define GRAD_SZ_IW_MPCC_OPTIMIZER 0
-#define GRAD_SZ_W_MPCC_OPTIMIZER 790
-#define GRAD_SZ_RES_MPCC_OPTIMIZER 5
+#define GRAD_SZ_W_MPCC_OPTIMIZER 2759
+#define GRAD_SZ_RES_MPCC_OPTIMIZER 161
 
 /*
  * F1 sizes
@@ -46,7 +46,7 @@
 /*
  * F2 sizes
  */
-#define F2_SZ_ARG_MPCC_OPTIMIZER 2
+#define F2_SZ_ARG_MPCC_OPTIMIZER 4
 #define F2_SZ_IW_MPCC_OPTIMIZER 0
-#define F2_SZ_W_MPCC_OPTIMIZER 1
+#define F2_SZ_W_MPCC_OPTIMIZER 84
 #define F2_SZ_RES_MPCC_OPTIMIZER 2
