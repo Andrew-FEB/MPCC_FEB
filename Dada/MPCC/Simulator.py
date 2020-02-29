@@ -1,8 +1,8 @@
+import sys
+
 import matplotlib.pyplot as plt
 import numpy as np
 import opengen as og
-import sys
-import time
 
 import CodeGenerator as cg
 
@@ -12,7 +12,7 @@ import CodeGenerator as cg
 # Last updated: 29/02/2020
 
 
-def simulate(x_state_0, simulation_steps):
+def simulate(x_state_0, ref, simulation_steps):
     # Simulation
     # -------------------------------------
     # Create a TCP connection manager
@@ -25,7 +25,7 @@ def simulate(x_state_0, simulation_steps):
     x = x_state_0
     f = cg.tire_forces(x_state_0, [0, 0])
     for k in range(simulation_steps):
-        solver_status = mng.call(x)
+        solver_status = mng.call(np.concatenate((x, ref)))
         try:
             us = solver_status['solution']
             u1 = us[0]

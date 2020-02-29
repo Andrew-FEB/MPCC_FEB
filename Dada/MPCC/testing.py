@@ -13,9 +13,9 @@ state_error_weight = 150
 d_change_weight = 9
 delta_change_weight = 13
 
-print("Generating code")
-cg.generate_code(ref, state_error_weight, d_change_weight, delta_change_weight)
+# print("Generating code")
+# cg.generate_code(state_error_weight, d_change_weight, delta_change_weight)
 print("Running simulation")
-[in_seq, state_seq] = sim.simulate(state_0, simulation_steps)
+[in_seq, state_seq] = sim.simulate(state_0, ref, simulation_steps)
 print("Plotting")
 sim.plot_simulation(simulation_steps, in_seq, state_seq)

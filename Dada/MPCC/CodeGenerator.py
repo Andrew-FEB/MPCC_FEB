@@ -114,7 +114,7 @@ def dynamic_model(state, control, forces, dt):
 
 def dynamic_model_dt(state, control, forces, dt):
     [x, y, phi, v_x, v_y, omega] = dynamic_model_ct(state, control, forces)
-    return state + dt * cs.vertcat(x, y, phi, v_x, v_y, omega)
+    return state + cs.vertcat(dt * x, dt * y, dt * phi, dt * v_x, dt * v_y, dt * omega, state[6], state[7], state[8], state[9], state[10], state[11])
 
 
 # def runge_kutta(state, control, forces, dt):
@@ -122,11 +122,11 @@ def dynamic_model_dt(state, control, forces, dt):
 #
 #
 #   # Update next state
-    # next_state = [0] * nx
-    # for i in range(0, nx):
-    # next_state[i] += state[i] + (1.0 / 6.0) * (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i])
-    #
-    # return next_state
+# next_state = [0] * nx
+# for i in range(0, nx):
+# next_state[i] += state[i] + (1.0 / 6.0) * (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i])
+#
+# return next_state
 
 
 def tire_forces(state, control):
@@ -155,15 +155,15 @@ def tire_forces(state, control):
 
 def tire_forces_dt(forces, state, control, dt):
     [F_fy, F_rx, F_ry] = tire_forces(state, control)
-    return forces + [F_fy*dt, F_rx*dt, F_ry*dt]  # forces + dt * cs.vertcat(F_fy, F_rx, F_ry)
+    return forces + [F_fy * dt, F_rx * dt, F_ry * dt]  # forces + dt * cs.vertcat(F_fy, F_rx, F_ry)
 
 
 # Cost function:
-def cost_function(x, x_ref, u, u_prev, state_error_weight, d_change_weight, delta_change_weight):
+def cost_function(x, u, u_prev, state_error_weight, d_change_weight, delta_change_weight):
     # Cost on state error
     cf = 0
     for i in range(0, nx):
-        cf += state_error_weight * (x[i] - x_ref[i]) ** 2
+        cf += state_error_weight * (x[i] - x[nx + i]) ** 2
     # Cost on input change
     cf += d_change_weight * (u_prev[0] - u[0]) ** 2
     cf += delta_change_weight * (u_prev[1] - u[1]) ** 2
@@ -172,10 +172,10 @@ def cost_function(x, x_ref, u, u_prev, state_error_weight, d_change_weight, delt
 
 # Problem
 # -------------------------------------
-def generate_code(ref, state_error_weight, d_change_weight, delta_change_weight):
+def generate_code(state_error_weight, d_change_weight, delta_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0", nx)  # Initial state
+    x0 = cs.MX.sym("x0_xref", nx * 2)  # Initial state + Reference state
 
     cost = 0
     x_t = x0
@@ -189,16 +189,13 @@ def generate_code(ref, state_error_weight, d_change_weight, delta_change_weight)
             u_prev = [0, 0]
 
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function(x_t, ref, u, u_prev, state_error_weight, d_change_weight, delta_change_weight)  # Update cost
+        cost += cost_function(x_t, u, u_prev, state_error_weight, d_change_weight, delta_change_weight)  # Update cost
         f = tire_forces_dt(f, x_t, u, Ts)
         x_t = dynamic_model_dt(x_t, u, f, Ts)  # Update state
 
         F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5])
         F2 = cs.vertcat(F2, cs.fmax(cs.fabs(u[0] - u_prev[0]), 0.001),
                         cs.fmax(cs.fabs(u[1] - u_prev[1]), 0.001))
-        # F2 = cs.vertcat(F2, cs.fmax(u[0] - u_prev[0], 0.05), cs.fmin(u[0] - u_prev[0], -0.05),
-        #                 cs.fmax(u[1] - u_prev[1], 0.05),
-        #                 cs.fmin(u[1] - u_prev[1], -0.05))
 
     # Constraints
     # -------------------------------------
