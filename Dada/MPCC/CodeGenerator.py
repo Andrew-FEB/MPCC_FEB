@@ -1,9 +1,10 @@
 import casadi.casadi as cs
 import opengen as og
+import numpy as np
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 23/02/2020
+# Last updated: 25/02/2020
 
 # Parameters
 # -------------------------------------
@@ -86,10 +87,47 @@ def dynamic_model_ct(state, control, tire_f):
     return [x, y, phi, v_x, v_y, omega]
 
 
-def dynamic_model_dt(state, control, dt):
-    forces = tire_forces(state, control)
-    [x_next, y_next, phi_next, v_x_next, v_y_next, omega_next] = dynamic_model_ct(state, control, forces)
-    return state + dt * cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next)
+def dynamic_model(state, control, forces, dt):
+    # State variables
+    x = state[0]
+    y = state[1]
+    phi = state[2]
+    v_x = state[3]
+    v_y = state[4]
+    omega = state[5]
+    # Control variables
+    delta = control[1]
+    # Tire forces
+    f_fy = forces[0]
+    f_rx = forces[1]
+    f_ry = forces[2]
+
+    x_next = x + dt * (v_x * cs.cos(phi) - v_y * cs.sin(phi))
+    y_next = y + dt * (v_x * cs.sin(phi) + v_y * cs.cos(phi))
+    phi_next = phi + dt * omega
+    v_x_next = v_x + dt * (1 / m * (f_rx - f_fy * cs.sin(delta) + m * v_y * omega))
+    v_y_next = v_y + dt * (1 / m * (f_ry - f_fy * cs.cos(delta) - m * v_x * omega))
+    omega_next = omega + dt * (1 / I_z * (f_fy * l_f * cs.cos(delta) - f_ry * l_r))
+
+    return [x_next, y_next, phi_next, v_x_next, v_y_next, omega_next]
+
+
+def dynamic_model_dt(state, control, forces, dt):
+    [x, y, phi, v_x, v_y, omega] = dynamic_model_ct(state, control, forces)
+    return state + dt * cs.vertcat(x, y, phi, v_x, v_y, omega)
+
+
+# Python program to implement Runge Kutta method
+# https://www.geeksforgeeks.org/runge-kutta-4th-order-method-solve-differential-equation/
+# Finds value of y for a given x using step size h
+# and initial value y0 at x0.
+# def runge_kutta(state, control, dt):
+# Update next state
+# next_state = [0] * nx
+# for i in range(0, nx):
+#     next_state[i] += state[i] + (1.0 / 6.0) * (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i])
+#
+# return next_state
 
 
 def tire_forces(state, control):
@@ -98,20 +136,27 @@ def tire_forces(state, control):
     v_y = state[4]
     omega = state[5]
     # Control variables
-    d = control[0]
+    D = control[0]
     delta = control[1]
 
     # Force calculations
-    alpha_r = cs.atan((omega * l_r - v_y) / v_x)
-    alpha_f = - cs.atan((omega * l_f + v_y) / v_x) + delta
 
-    f_fy = D_f * cs.sin(C_f * cs.atan(B_f * alpha_f))
-    f_rx = 0.5 * (C_m1 - C_m2 * v_x) * d  # - C_rr - C_d * v_x ** 2
-    f_ry = D_r * cs.sin(C_r * cs.atan(B_r * alpha_r))
+    alpha_f = -cs.atan2((l_f * omega + v_y), v_x) + delta
+    alpha_r = cs.atan2((l_r * omega - v_y), v_x)
+
+    F_fy = D_f * cs.sin(C_f * cs.atan(B_f * alpha_f))
+    F_ry = D_r * cs.sin(C_r * cs.atan(B_r * alpha_r))
+
+    F_rx = (C_m1 * D - C_m2 * D * v_x - C_rr - C_d * v_x ** 2)
 
     # ADD THE TIRE CONSTRAINT (friction ellipse)
 
-    return [f_fy, f_rx, f_ry]
+    return [F_fy, F_rx, F_ry]
+
+
+def tire_forces_dt(forces, state, control, dt):
+    [F_fy, F_rx, F_ry] = tire_forces(state, control)
+    return forces + dt * cs.vertcat(F_fy, F_rx, F_ry)
 
 
 # Cost function:
@@ -135,6 +180,7 @@ def generate_code(ref, state_error_weight, input_change_weight):
 
     cost = 0
     x_t = x0
+    f = [0] * 3
     F1 = []
     F2 = []
     for t in range(0, nu * N, nu):
@@ -145,12 +191,13 @@ def generate_code(ref, state_error_weight, input_change_weight):
 
         u = [u_seq[t], u_seq[t + 1]]
         cost += cost_function(x_t, ref, u, u_prev, state_error_weight, input_change_weight)  # Update cost
-        x_t = dynamic_model_dt(x_t, [u_seq[t], u_seq[t + 1]], Ts)  # Update state
+        f = tire_forces_dt(f, x_t, u, Ts)
+        x_t = dynamic_model_dt(x_t, u, f, Ts)  # Update state
 
         F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5])
-        F2 = cs.vertcat(F2, cs.fmax(u[0] - u_prev[0], 0.1), cs.fmin(u[0] - u_prev[0], -0.1),
-                        cs.fmax(u[1] - u_prev[1], 0.1),
-                        cs.fmin(u[1] - u_prev[1], -0.1))
+        F2 = cs.vertcat(F2, cs.fmax(u[0] - u_prev[0], 0.01), cs.fmin(u[0] - u_prev[0], -0.01),
+                        cs.fmax(u[1] - u_prev[1], 0.01),
+                        cs.fmin(u[1] - u_prev[1], -0.01))
 
     # Terminal cost
     for i in range(0, nx):
@@ -158,23 +205,25 @@ def generate_code(ref, state_error_weight, input_change_weight):
 
     # Constraints
     # -------------------------------------
-    U = og.constraints.BallInf(None, 0.3)
+    # U = og.constraints.BallInf(None, 0.95)
     # U = og.constraints.Rectangle([-0.75, -3.5], [0.75, 3.5])
     # C = og.constraints.Rectangle([-7, -7, -0.75, -0.5], [7, 7, 0.75, 0.5])
-    # U = og.constraints.Rectangle([-0.95, -0.5], [0.95, 0.5])
-    # C = og.constraints.Rectangle([-7, -7, -0.75, -0.5, -0.5, -0.3], [7, 7, 0.75, 0.5, 0.5, 0.3])
-    C = og.constraints.BallInf(None, 1)
+    U = og.constraints.Rectangle([-0.95, -0.5], [0.95, 0.5])
+    # C = og.constraints.Rectangle([-7, -7, -0.75, -0.1, -0.5, -0.3], [7, 7, 0.75, 0.1, 0.5, 0.3])
+    C = og.constraints.BallInf(None, 0.5)
 
     # Code Generation
     # -------------------------------------
+    derivative = (cs.jacobian(cost, u_seq))
+
     problem = og.builder.Problem(u_seq, x0, cost) \
         .with_constraints(U) \
-        .with_penalty_constraints(F2) \
-        .with_aug_lagrangian_constraints(F1, C)
+        .with_penalty_constraints(F2)
+    # .with_aug_lagrangian_constraints(F1, C) \
 
     build_config = og.config.BuildConfiguration() \
-        .with_build_directory("mpcc_c_build_1") \
-        .with_build_c_bindings()
+        .with_build_directory("mpcc_python_build_1") \
+        .with_tcp_interface_config()
 
     meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \
         .with_authors("Darina Abaffyova") \
@@ -183,7 +232,8 @@ def generate_code(ref, state_error_weight, input_change_weight):
     solver_config = og.config.SolverConfiguration() \
         .with_tolerance(1e-7) \
         .with_initial_tolerance(1e-7) \
-        .with_max_outer_iterations(100) \
+        .with_max_outer_iterations(10) \
+        .with_max_inner_iterations(20) \
         .with_delta_tolerance(1e-5) \
         .with_initial_penalty(15) \
         .with_penalty_weight_update_factor(10.0)

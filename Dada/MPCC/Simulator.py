@@ -8,7 +8,7 @@ import CodeGenerator as cg
 
 # Author: Darina Abaffyová
 # Created: 13/02/2020
-# Last updated: 24/02/2020
+# Last updated: 25/02/2020
 
 
 def simulate(x_state_0, simulation_steps):
@@ -29,16 +29,17 @@ def simulate(x_state_0, simulation_steps):
             u1 = us[0]
             u2 = us[1]
             forces = cg.tire_forces(x, [u1, u2])
-            x_next = cg.dynamic_model_dt(x, [u1, u2], forces, cg.Ts)
+            x_next = cg.dynamic_model(x, [u1, u2], forces, cg.Ts)
             state_sequence = np.concatenate((state_sequence, x_next))
             input_sequence += [u1, u2]
             x = x_next
         except AttributeError:
             print('Failed after ' + str(state_sequence.__len__() / cg.nx) + 'simulation steps\n'
                   + 'Error[' + str(solver_status['code']) + ']: ' + solver_status['message'])
-            sys.exit(0)
-        finally:
             mng.kill()
+            sys.exit(0)
+
+    mng.kill()
 
     return [input_sequence, state_sequence]
 

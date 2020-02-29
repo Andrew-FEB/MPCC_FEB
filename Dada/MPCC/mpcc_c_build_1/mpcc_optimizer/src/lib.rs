@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-02-25 22:08:12.888583
+// Generated at: 2020-02-27 16:40:50.094332
 //
 
 use icasadi;
@@ -28,10 +28,10 @@ const DELTA_TOLERANCE: f64 = 1e-05;
 const LBFGS_MEMORY: usize = 10;
 
 /// Maximum number of iterations of the inner solver
-const MAX_INNER_ITERATIONS: usize = 500;
+const MAX_INNER_ITERATIONS: usize = 20;
 
 /// Maximum number of outer iterations
-const MAX_OUTER_ITERATIONS: usize = 100;
+const MAX_OUTER_ITERATIONS: usize = 10;
 
 /// Maximum execution duration in microseconds
 const MAX_DURATION_MICROS: u64 = 5000000;
@@ -49,16 +49,16 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 // ---Public Constants-----------------------------------------------------------------------------------
 
 /// Number of decision variables
-pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
+pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 20;
 
 /// Number of parameters
 pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 6;
 
 /// Number of parameters associated with augmented Lagrangian
-pub const MPCC_OPTIMIZER_N1: usize = 240;
+pub const MPCC_OPTIMIZER_N1: usize = 60;
 
 /// Number of penalty constraints
-pub const MPCC_OPTIMIZER_N2: usize = 160;
+pub const MPCC_OPTIMIZER_N2: usize = 0;
 
 // ---Export functionality from Rust to C/C++------------------------------------------------------------
 
@@ -344,10 +344,7 @@ pub fn solve(
         icasadi::mapping_f1(&u, &p, res);
         Ok(())
     };
-    let f2 = |u: &[f64], res: &mut [f64]| -> Result<(), SolverError> {
-        icasadi::mapping_f2(&u, &p, res);
-        Ok(())
-    };let bounds = make_constraints();
+    let bounds = make_constraints();
 
     let set_y = make_set_y();
     let set_c = make_set_c();
@@ -358,7 +355,7 @@ pub fn solve(
         psi,
         grad_psi,
         Some(f1),
-        Some(f2),
+        NO_MAPPING,
         MPCC_OPTIMIZER_N1,
         MPCC_OPTIMIZER_N2,
     );

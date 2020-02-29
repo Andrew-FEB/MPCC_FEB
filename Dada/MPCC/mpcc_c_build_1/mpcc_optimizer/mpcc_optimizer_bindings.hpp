@@ -9,11 +9,11 @@
 #include <cstdlib>
 #include <new>
 
-static const uintptr_t MPCC_OPTIMIZER_N1 = 240;
+static const uintptr_t MPCC_OPTIMIZER_N1 = 60;
 
-static const uintptr_t MPCC_OPTIMIZER_N2 = 160;
+static const uintptr_t MPCC_OPTIMIZER_N2 = 0;
 
-static const uintptr_t MPCC_OPTIMIZER_NUM_DECISION_VARIABLES = 80;
+static const uintptr_t MPCC_OPTIMIZER_NUM_DECISION_VARIABLES = 20;
 
 static const uintptr_t MPCC_OPTIMIZER_NUM_PARAMETERS = 6;
 
