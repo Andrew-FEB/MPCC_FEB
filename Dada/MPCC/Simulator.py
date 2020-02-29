@@ -2,13 +2,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import opengen as og
 import sys
+import time
 
 import CodeGenerator as cg
 
 
 # Author: Darina Abaffyová
 # Created: 13/02/2020
-# Last updated: 25/02/2020
+# Last updated: 29/02/2020
 
 
 def simulate(x_state_0, simulation_steps):
@@ -22,13 +23,14 @@ def simulate(x_state_0, simulation_steps):
     state_sequence = x_state_0
     input_sequence = []
     x = x_state_0
+    f = cg.tire_forces(x_state_0, [0, 0])
     for k in range(simulation_steps):
         solver_status = mng.call(x)
         try:
             us = solver_status['solution']
             u1 = us[0]
             u2 = us[1]
-            forces = cg.tire_forces(x, [u1, u2])
+            forces = cg.tire_forces_dt(f, x, [u1, u2], cg.Ts)
             x_next = cg.dynamic_model(x, [u1, u2], forces, cg.Ts)
             state_sequence = np.concatenate((state_sequence, x_next))
             input_sequence += [u1, u2]
@@ -38,6 +40,8 @@ def simulate(x_state_0, simulation_steps):
                   + 'Error[' + str(solver_status['code']) + ']: ' + solver_status['message'])
             mng.kill()
             sys.exit(0)
+
+        print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']))
 
     mng.kill()
 

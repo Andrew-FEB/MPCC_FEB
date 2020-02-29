@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-02-27 16:40:50.094332
+// Generated at: 2020-02-29 16:48:36.010100
 //
 
 use icasadi;
@@ -28,19 +28,19 @@ const DELTA_TOLERANCE: f64 = 1e-05;
 const LBFGS_MEMORY: usize = 10;
 
 /// Maximum number of iterations of the inner solver
-const MAX_INNER_ITERATIONS: usize = 20;
+const MAX_INNER_ITERATIONS: usize = 200;
 
 /// Maximum number of outer iterations
-const MAX_OUTER_ITERATIONS: usize = 10;
+const MAX_OUTER_ITERATIONS: usize = 100;
 
 /// Maximum execution duration in microseconds
 const MAX_DURATION_MICROS: u64 = 5000000;
 
 /// Penalty update factor
-const PENALTY_UPDATE_FACTOR: f64 = 10.0;
+const PENALTY_UPDATE_FACTOR: f64 = 15.0;
 
 /// Initial penalty
-const INITIAL_PENALTY_PARAMETER: f64 = 15.0;
+const INITIAL_PENALTY_PARAMETER: f64 = 30.0;
 
 /// Sufficient decrease coefficient
 const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
@@ -49,16 +49,16 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 // ---Public Constants-----------------------------------------------------------------------------------
 
 /// Number of decision variables
-pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 20;
+pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
 pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 6;
 
 /// Number of parameters associated with augmented Lagrangian
-pub const MPCC_OPTIMIZER_N1: usize = 60;
+pub const MPCC_OPTIMIZER_N1: usize = 240;
 
 /// Number of penalty constraints
-pub const MPCC_OPTIMIZER_N2: usize = 0;
+pub const MPCC_OPTIMIZER_N2: usize = 80;
 
 // ---Export functionality from Rust to C/C++------------------------------------------------------------
 
@@ -258,28 +258,25 @@ pub extern "C" fn mpcc_optimizer_free(instance: *mut mpcc_optimizerCache) {
 const CONSTRAINTS_BALL_XC: Option<&[f64]> = None;
 
 /// Constraints: Radius of Ball
-const CONSTRAINTS_BALL_RADIUS : f64 = 0.3;
+const CONSTRAINTS_BALL_RADIUS : f64 = 0.75;
 
 
 
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-/// Constraints: Centre of Euclidean Ball
-const SET_C_BALL_XC: Option<&[f64]> = None;
-
-/// Constraints: Radius of Euclidean Ball
-const SET_C_BALL_RADIUS : f64 = 1.0;
+const SET_C_XMIN :Option<&[f64]> = Some(&[-7.0,-7.0,-0.95,-150.0,-150.0,-100.0,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[7.0,7.0,0.75,150.0,150.0,100.0,]);
 
 
 
 
 // ---Parameters of ALM-type constraints (Set Y)---------------------------------------------------------
-/// Constraints: Centre of Euclidean Ball
-const SET_Y_BALL_XC: Option<&[f64]> = None;
+/// Y_min
+const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
 
-/// Constraints: Radius of Euclidean Ball
-const SET_Y_BALL_RADIUS : f64 = 1000000000000.0;
+/// Y_max
+const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
 
 
 
@@ -295,14 +292,14 @@ fn make_constraints() -> impl Constraint {
 
 /// Make set C
 fn make_set_c() -> impl Constraint {
-    let set_c = BallInf::new(SET_C_BALL_XC, SET_C_BALL_RADIUS);
+    let set_c = Rectangle::new(SET_C_XMIN, SET_C_XMAX);
     set_c
 }
 
 
 /// Make set Y
 fn make_set_y() -> impl Constraint {
-    let set_y = BallInf::new(SET_Y_BALL_XC, SET_Y_BALL_RADIUS);
+    let set_y = Rectangle::new(SET_Y_XMIN, SET_Y_XMAX);
     set_y
 }
 
@@ -344,7 +341,10 @@ pub fn solve(
         icasadi::mapping_f1(&u, &p, res);
         Ok(())
     };
-    let bounds = make_constraints();
+    let f2 = |u: &[f64], res: &mut [f64]| -> Result<(), SolverError> {
+        icasadi::mapping_f2(&u, &p, res);
+        Ok(())
+    };let bounds = make_constraints();
 
     let set_y = make_set_y();
     let set_c = make_set_c();
@@ -355,7 +355,7 @@ pub fn solve(
         psi,
         grad_psi,
         Some(f1),
-        NO_MAPPING,
+        Some(f2),
         MPCC_OPTIMIZER_N1,
         MPCC_OPTIMIZER_N2,
     );

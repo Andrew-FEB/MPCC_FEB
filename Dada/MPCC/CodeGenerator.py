@@ -4,7 +4,7 @@ import numpy as np
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 25/02/2020
+# Last updated: 29/02/2020
 
 # Parameters
 # -------------------------------------
@@ -117,17 +117,16 @@ def dynamic_model_dt(state, control, forces, dt):
     return state + dt * cs.vertcat(x, y, phi, v_x, v_y, omega)
 
 
-# Python program to implement Runge Kutta method
-# https://www.geeksforgeeks.org/runge-kutta-4th-order-method-solve-differential-equation/
-# Finds value of y for a given x using step size h
-# and initial value y0 at x0.
-# def runge_kutta(state, control, dt):
-# Update next state
-# next_state = [0] * nx
-# for i in range(0, nx):
-#     next_state[i] += state[i] + (1.0 / 6.0) * (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i])
+# def runge_kutta(state, control, forces, dt):
 #
-# return next_state
+#
+#
+#   # Update next state
+    # next_state = [0] * nx
+    # for i in range(0, nx):
+    # next_state[i] += state[i] + (1.0 / 6.0) * (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i])
+    #
+    # return next_state
 
 
 def tire_forces(state, control):
@@ -156,31 +155,31 @@ def tire_forces(state, control):
 
 def tire_forces_dt(forces, state, control, dt):
     [F_fy, F_rx, F_ry] = tire_forces(state, control)
-    return forces + dt * cs.vertcat(F_fy, F_rx, F_ry)
+    return forces + [F_fy*dt, F_rx*dt, F_ry*dt]  # forces + dt * cs.vertcat(F_fy, F_rx, F_ry)
 
 
 # Cost function:
-def cost_function(x, x_ref, u, u_prev, state_error_weight, input_change_weight):
+def cost_function(x, x_ref, u, u_prev, state_error_weight, d_change_weight, delta_change_weight):
     # Cost on state error
     cf = 0
     for i in range(0, nx):
         cf += state_error_weight * (x[i] - x_ref[i]) ** 2
     # Cost on input change
-    for i in range(0, nu):
-        cf += input_change_weight * (u_prev[i] - u[i]) ** 2
+    cf += d_change_weight * (u_prev[0] - u[0]) ** 2
+    cf += delta_change_weight * (u_prev[1] - u[1]) ** 2
     return cf
 
 
 # Problem
 # -------------------------------------
-def generate_code(ref, state_error_weight, input_change_weight):
+def generate_code(ref, state_error_weight, d_change_weight, delta_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
     x0 = cs.MX.sym("x0", nx)  # Initial state
 
     cost = 0
     x_t = x0
-    f = [0] * 3
+    f = tire_forces(x0, [u_seq[0], u_seq[1]])
     F1 = []
     F2 = []
     for t in range(0, nu * N, nu):
@@ -190,36 +189,31 @@ def generate_code(ref, state_error_weight, input_change_weight):
             u_prev = [0, 0]
 
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function(x_t, ref, u, u_prev, state_error_weight, input_change_weight)  # Update cost
+        cost += cost_function(x_t, ref, u, u_prev, state_error_weight, d_change_weight, delta_change_weight)  # Update cost
         f = tire_forces_dt(f, x_t, u, Ts)
         x_t = dynamic_model_dt(x_t, u, f, Ts)  # Update state
 
         F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5])
-        F2 = cs.vertcat(F2, cs.fmax(u[0] - u_prev[0], 0.01), cs.fmin(u[0] - u_prev[0], -0.01),
-                        cs.fmax(u[1] - u_prev[1], 0.01),
-                        cs.fmin(u[1] - u_prev[1], -0.01))
-
-    # Terminal cost
-    for i in range(0, nx):
-        cost += 5 * state_error_weight * (x_t[i] - ref[i]) ** 2
+        F2 = cs.vertcat(F2, cs.fmax(cs.fabs(u[0] - u_prev[0]), 0.001),
+                        cs.fmax(cs.fabs(u[1] - u_prev[1]), 0.001))
+        # F2 = cs.vertcat(F2, cs.fmax(u[0] - u_prev[0], 0.05), cs.fmin(u[0] - u_prev[0], -0.05),
+        #                 cs.fmax(u[1] - u_prev[1], 0.05),
+        #                 cs.fmin(u[1] - u_prev[1], -0.05))
 
     # Constraints
     # -------------------------------------
-    # U = og.constraints.BallInf(None, 0.95)
-    # U = og.constraints.Rectangle([-0.75, -3.5], [0.75, 3.5])
+    U = og.constraints.BallInf(None, 0.75)
     # C = og.constraints.Rectangle([-7, -7, -0.75, -0.5], [7, 7, 0.75, 0.5])
-    U = og.constraints.Rectangle([-0.95, -0.5], [0.95, 0.5])
-    # C = og.constraints.Rectangle([-7, -7, -0.75, -0.1, -0.5, -0.3], [7, 7, 0.75, 0.1, 0.5, 0.3])
-    C = og.constraints.BallInf(None, 0.5)
+    # U = og.constraints.Rectangle([-0.95, -0.5], [0.95, 0.5])
+    C = og.constraints.Rectangle([-7, -7, -0.95, -150, -150, -100], [7, 7, 0.75, 150, 150, 100])
+    # C = og.constraints.BallInf(None, 0.95)
 
     # Code Generation
     # -------------------------------------
-    derivative = (cs.jacobian(cost, u_seq))
-
     problem = og.builder.Problem(u_seq, x0, cost) \
         .with_constraints(U) \
+        .with_aug_lagrangian_constraints(F1, C) \
         .with_penalty_constraints(F2)
-    # .with_aug_lagrangian_constraints(F1, C) \
 
     build_config = og.config.BuildConfiguration() \
         .with_build_directory("mpcc_python_build_1") \
@@ -232,11 +226,11 @@ def generate_code(ref, state_error_weight, input_change_weight):
     solver_config = og.config.SolverConfiguration() \
         .with_tolerance(1e-7) \
         .with_initial_tolerance(1e-7) \
-        .with_max_outer_iterations(10) \
-        .with_max_inner_iterations(20) \
+        .with_max_outer_iterations(100) \
+        .with_max_inner_iterations(200) \
         .with_delta_tolerance(1e-5) \
-        .with_initial_penalty(15) \
-        .with_penalty_weight_update_factor(10.0)
+        .with_initial_penalty(30) \
+        .with_penalty_weight_update_factor(15.0)
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,
                                               build_config, solver_config)
