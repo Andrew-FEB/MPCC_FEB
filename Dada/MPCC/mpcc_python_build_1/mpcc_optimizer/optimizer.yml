@@ -2,11 +2,11 @@ _comment: auto-generated file; do not modify
 build:
   build_dir: mpcc_python_build_1
   build_mode: release
-  cost_function_name: phi_eEupZsKHcLkgsdNoNxUb
-  grad_function_name: grad_phi_eEupZsKHcLkgsdNoNxUb
-  id: eEupZsKHcLkgsdNoNxUb
-  mapping_f1: mapping_f1_eEupZsKHcLkgsdNoNxUb
-  mapping_f2: mapping_f2_eEupZsKHcLkgsdNoNxUb
+  cost_function_name: phi_UQGSudAnVwhAvXLbUYVP
+  grad_function_name: grad_phi_UQGSudAnVwhAvXLbUYVP
+  id: UQGSudAnVwhAvXLbUYVP
+  mapping_f1: mapping_f1_UQGSudAnVwhAvXLbUYVP
+  mapping_f2: mapping_f2_UQGSudAnVwhAvXLbUYVP
   open_version: null
   target_system: null
 meta:
@@ -15,13 +15,13 @@ meta:
   optimizer_name: mpcc_optimizer
   version: 1.0.0
 solver:
-  constraints_tolerance: 1.0e-05
+  constraints_tolerance: 0.0001
   lbfgs_memory: 10
   max_duration_micros: 5000000
-  max_inner_iterations: 200
-  max_outer_iterations: 100
-  penalty_weight_update_factor: 15.0
-  tolerance: 1.0e-07
+  max_inner_iterations: 500
+  max_outer_iterations: 10
+  penalty_weight_update_factor: 5.0
+  tolerance: 0.0001
 tcp:
   ip: 127.0.0.1
   port: 8333

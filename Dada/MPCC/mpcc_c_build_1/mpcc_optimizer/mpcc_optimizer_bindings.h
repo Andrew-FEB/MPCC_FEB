@@ -15,7 +15,7 @@
 
 #define MPCC_OPTIMIZER_NUM_DECISION_VARIABLES 80
 
-#define MPCC_OPTIMIZER_NUM_PARAMETERS 6
+#define MPCC_OPTIMIZER_NUM_PARAMETERS 12
 
 /**
  * mpcc_optimizer version of ExitStatus

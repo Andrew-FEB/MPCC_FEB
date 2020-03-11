@@ -2,11 +2,11 @@ _comment: auto-generated file; do not modify
 build:
   build_dir: mpcc_c_build_1
   build_mode: release
-  cost_function_name: phi_lNIYssdHTbcgXVwZirxq
-  grad_function_name: grad_phi_lNIYssdHTbcgXVwZirxq
-  id: lNIYssdHTbcgXVwZirxq
-  mapping_f1: mapping_f1_lNIYssdHTbcgXVwZirxq
-  mapping_f2: mapping_f2_lNIYssdHTbcgXVwZirxq
+  cost_function_name: phi_EHebNCnrHpUXJmDfnaDu
+  grad_function_name: grad_phi_EHebNCnrHpUXJmDfnaDu
+  id: EHebNCnrHpUXJmDfnaDu
+  mapping_f1: mapping_f1_EHebNCnrHpUXJmDfnaDu
+  mapping_f2: mapping_f2_EHebNCnrHpUXJmDfnaDu
   open_version: null
   target_system: null
 meta:
@@ -15,11 +15,11 @@ meta:
   optimizer_name: mpcc_optimizer
   version: 1.0.0
 solver:
-  constraints_tolerance: 1.0e-05
+  constraints_tolerance: 1.0e-07
   lbfgs_memory: 10
-  max_duration_micros: 5000000
-  max_inner_iterations: 200
-  max_outer_iterations: 100
-  penalty_weight_update_factor: 15.0
+  max_duration_micros: 10000000
+  max_inner_iterations: 100000
+  max_outer_iterations: 100000
+  penalty_weight_update_factor: 1.5
   tolerance: 1.0e-07
 tcp: null

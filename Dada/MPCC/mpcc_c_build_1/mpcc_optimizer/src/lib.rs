@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-02-29 16:48:36.010100
+// Generated at: 2020-03-02 11:23:23.636994
 //
 
 use icasadi;
@@ -22,25 +22,25 @@ const INITIAL_EPSILON_TOLERANCE: f64 = 1e-07;
 const EPSILON_TOLERANCE_UPDATE_FACTOR: f64 = 0.1;
 
 /// Delta tolerance
-const DELTA_TOLERANCE: f64 = 1e-05;
+const DELTA_TOLERANCE: f64 = 1e-07;
 
 /// LBFGS memory
 const LBFGS_MEMORY: usize = 10;
 
 /// Maximum number of iterations of the inner solver
-const MAX_INNER_ITERATIONS: usize = 200;
+const MAX_INNER_ITERATIONS: usize = 100000;
 
 /// Maximum number of outer iterations
-const MAX_OUTER_ITERATIONS: usize = 100;
+const MAX_OUTER_ITERATIONS: usize = 100000;
 
 /// Maximum execution duration in microseconds
-const MAX_DURATION_MICROS: u64 = 5000000;
+const MAX_DURATION_MICROS: u64 = 10000000;
 
 /// Penalty update factor
-const PENALTY_UPDATE_FACTOR: f64 = 15.0;
+const PENALTY_UPDATE_FACTOR: f64 = 1.5;
 
 /// Initial penalty
-const INITIAL_PENALTY_PARAMETER: f64 = 30.0;
+const INITIAL_PENALTY_PARAMETER: f64 = 3.0;
 
 /// Sufficient decrease coefficient
 const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
@@ -52,7 +52,7 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
-pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 6;
+pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 12;
 
 /// Number of parameters associated with augmented Lagrangian
 pub const MPCC_OPTIMIZER_N1: usize = 240;
@@ -254,19 +254,16 @@ pub extern "C" fn mpcc_optimizer_free(instance: *mut mpcc_optimizerCache) {
 
 // ---Parameters of the constraints----------------------------------------------------------------------
 
-/// Constraints: Centre of Ball
-const CONSTRAINTS_BALL_XC: Option<&[f64]> = None;
-
-/// Constraints: Radius of Ball
-const CONSTRAINTS_BALL_RADIUS : f64 = 0.75;
+const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[-0.75,-0.95,]);
+const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[0.75,0.95,]);
 
 
 
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-7.0,-7.0,-0.95,-150.0,-150.0,-100.0,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[7.0,7.0,0.75,150.0,150.0,100.0,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,-3.141592653589793,-30.0,-30.0,-6.283185307179586,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,3.141592653589793,30.0,30.0,6.283185307179586,]);
 
 
 
@@ -286,7 +283,7 @@ const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000
 /// Make constraints U
 fn make_constraints() -> impl Constraint {
 
-    let bounds = BallInf::new(CONSTRAINTS_BALL_XC, CONSTRAINTS_BALL_RADIUS);
+    let bounds = Rectangle::new(CONSTRAINTS_XMIN, CONSTRAINTS_XMAX);
     bounds
 }
 

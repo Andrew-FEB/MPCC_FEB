@@ -15,7 +15,7 @@ static const uintptr_t MPCC_OPTIMIZER_N2 = 80;
 
 static const uintptr_t MPCC_OPTIMIZER_NUM_DECISION_VARIABLES = 80;
 
-static const uintptr_t MPCC_OPTIMIZER_NUM_PARAMETERS = 6;
+static const uintptr_t MPCC_OPTIMIZER_NUM_PARAMETERS = 12;
 
 /// mpcc_optimizer version of ExitStatus
 /// Structure: `mpcc_optimizerExitStatus`
