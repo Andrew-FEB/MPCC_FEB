@@ -45,9 +45,9 @@ y_min = -3
 phi_max = np.pi
 phi_min = -phi_max
 v_x_max = 50
-v_x_min = -v_x_max
+v_x_min = 0.5
 v_y_max = 50
-v_y_min = -v_y_max
+v_y_min = 0.5
 omega_max = 2 * np.pi
 omega_min = -omega_max
 # Control limits
@@ -87,7 +87,7 @@ def kinetic_model(z, u, dt):
     return cs.vertcat(x_next, y_next, psi_next, v_next)
 
 
-def dynamic_model(state, control, forces, dt, calc_casadi):
+def dynamic_model(state, control, forces, calc_casadi):
     # State variables
     x = state[0]
     y = state[1]
@@ -101,13 +101,13 @@ def dynamic_model(state, control, forces, dt, calc_casadi):
     f_fy = forces[0]
     f_rx = forces[1]
     f_ry = forces[2]
-    
-    x_next = x + dt * (v_x * cs.cos(phi) - v_y * cs.sin(phi))
-    y_next = y + dt * (v_x * cs.sin(phi) + v_y * cs.cos(phi))
-    phi_next = phi + dt * omega
-    v_x_next = v_x + dt * (1 / m * (f_rx - f_fy * cs.sin(delta) + m * v_y * omega))
-    v_y_next = v_y + dt * (1 / m * (f_ry - f_fy * cs.cos(delta) - m * v_x * omega))
-    omega_next = omega + dt * (1 / I_z * (f_fy * l_f * cs.cos(delta) - f_ry * l_r))
+
+    x_next = v_x * cs.cos(phi) - v_y * cs.sin(phi)
+    y_next = v_x * cs.sin(phi) + v_y * cs.cos(phi)
+    phi_next = omega
+    v_x_next = 1 / m * (f_rx - f_fy * cs.sin(delta) + m * v_y * omega)
+    v_y_next = 1 / m * (f_ry - f_fy * cs.cos(delta) - m * v_x * omega)
+    omega_next = 1 / I_z * (f_fy * l_f * cs.cos(delta) - f_ry * l_r)
 
     if calc_casadi:
         return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
@@ -117,21 +117,21 @@ def dynamic_model(state, control, forces, dt, calc_casadi):
                 state[6], state[7], state[8], state[9], state[10], state[11]]
 
 
-# Runge-Kutta method
+# Runge-Kutta 4th order method
 def dynamic_model_rk(state, control, forces, dt, calc_casadi):
     if calc_casadi:
-        k1 = dt * dynamic_model(state, control, forces, dt + dt, calc_casadi)
-        k2 = dt * dynamic_model(state + 0.5 * k1, control, forces, dt + 0.5 * dt, calc_casadi)
-        k3 = dt * dynamic_model(state + 0.5 * k2, control, forces, dt + 0.5 * dt, calc_casadi)
-        k4 = dt * dynamic_model(state + k3, control, forces, dt + dt, calc_casadi)
+        k1 = dt * dynamic_model(state, control, forces, calc_casadi)
+        k2 = dt * dynamic_model(state + dt * 0.5 * k1, control, forces, calc_casadi)
+        k3 = dt * dynamic_model(state + dt * 0.5 * k2, control, forces, calc_casadi)
+        k4 = dt * dynamic_model(state + dt * k3, control, forces, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
                           state[6], state[7], state[8], state[9], state[10], state[11])
     else:
-        k1 = dt * np.array(dynamic_model(state, control, forces, dt + dt, calc_casadi))
-        k2 = dt * np.array(dynamic_model(state + 0.5 * k1, control, forces, dt + 0.5 * dt, calc_casadi))
-        k3 = dt * np.array(dynamic_model(state + 0.5 * k2, control, forces, dt + 0.5 * dt, calc_casadi))
-        k4 = dt * np.array(dynamic_model(state + k3, control, forces, dt + dt, calc_casadi))
+        k1 = dt * np.array(dynamic_model(state, control, forces, calc_casadi))
+        k2 = dt * np.array(dynamic_model(state + dt * 0.5 * k1, control, forces, calc_casadi))
+        k3 = dt * np.array(dynamic_model(state + dt * 0.5 * k2, control, forces, calc_casadi))
+        k4 = dt * np.array(dynamic_model(state + dt * k3, control, forces, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return [next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
                 state[6], state[7], state[8], state[9], state[10], state[11]]
@@ -199,13 +199,13 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         cost += cost_function(x_t, u, u_prev, state_error_weight, in_weight, in_change_weight)  # Update cost
         f = tire_forces(x_t, u)
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
-
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], u[0], u[1])
+        # TODO - add the missing constraints
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[3], x_t[4])
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([x_min, y_min],
-                                 [x_max, y_max])
+    C = og.constraints.Rectangle([x_min, y_min, v_x_min, v_y_min],
+                                 [x_max, y_max, v_x_max, v_y_max])
     # TODO Track constraints
 
     # Code Generation
@@ -222,7 +222,7 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         .with_version("1.0.0")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_max_duration_micros(5000000)  # 5s
+        .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,
                                               build_config, solver_config)

@@ -19,7 +19,7 @@ def simulate(track_x, track_y, simulation_steps):
     mng.start()
     # Run simulations
     phi = np.arctan2(track_x[0], track_y[0])
-    x_state_0 = np.concatenate(([track_x[0], track_y[0]], [0] * 4))
+    x_state_0 = [track_x[0], track_y[0], phi, 1, 1, 0]
     state_sequence = x_state_0
     input_sequence = []
     state = x_state_0
