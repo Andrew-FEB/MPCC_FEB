@@ -105,16 +105,16 @@ def plot_simulation(simulation_steps, input_sequence, state_sequence, ref):
     t = np.arange(0, cg.Ts * simulation_steps, cg.Ts)
     ref_seq = np.concatenate([ref] * t.size)
 
-    plt.plot(t, input_sequence[0:cg.nu * simulation_steps:cg.nu], '-', label="Duty cycle")
+    fig1 = plt.plot(t, input_sequence[0:cg.nu * simulation_steps:cg.nu], '-', label="Duty cycle")
     plt.plot(t, input_sequence[1:cg.nu * simulation_steps:cg.nu], '-', label="Front steering angle")
     plt.grid()
     plt.ylabel('Input')
     plt.xlabel('Time')
     plt.title('INPUT SEQUENCE')
     plt.legend(bbox_to_anchor=(0.7, 0.85), loc='best', borderaxespad=0.)
-    plt.show()
+    plt.show(fig1)
 
-    plt.plot(t, state_sequence[0:cg.nx * simulation_steps:cg.nx], '-', label="x")
+    fig2 = plt.plot(t, state_sequence[0:cg.nx * simulation_steps:cg.nx], '-', label="x")
     plt.plot(t, state_sequence[1:cg.nx * simulation_steps:cg.nx], '-', label="y")
     plt.plot(t, state_sequence[2:cg.nx * simulation_steps:cg.nx], '-', label="phi")
     plt.plot(t, ref_seq[0:cg.nx * simulation_steps:cg.nx], '--', label="x")
@@ -125,9 +125,9 @@ def plot_simulation(simulation_steps, input_sequence, state_sequence, ref):
     plt.xlabel('Time')
     plt.title('STATE SEQUENCE 1')
     plt.legend(loc='best', borderaxespad=0.)
-    plt.show()
+    plt.show(fig2)
 
-    plt.plot(t, state_sequence[3:cg.nx * simulation_steps:cg.nx], '-', label="v_x")
+    fig3 = plt.plot(t, state_sequence[3:cg.nx * simulation_steps:cg.nx], '-', label="v_x")
     plt.plot(t, state_sequence[4:cg.nx * simulation_steps:cg.nx], '-', label="v_y")
     plt.plot(t, state_sequence[5:cg.nx * simulation_steps:cg.nx], '-', label="omega")
     plt.plot(t, ref_seq[3:cg.nx * simulation_steps:cg.nx], '--', label="v_x")
@@ -138,7 +138,7 @@ def plot_simulation(simulation_steps, input_sequence, state_sequence, ref):
     plt.xlabel('Time')
     plt.title('STATE SEQUENCE 2')
     plt.legend(loc='best', borderaxespad=0.)
-    plt.show()
+    plt.show(fig3)
 
 
 def plot_track(state_ref, state_seq):

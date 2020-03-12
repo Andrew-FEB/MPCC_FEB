@@ -200,12 +200,12 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         f = tire_forces(x_t, u)
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], u[0], u[1])
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1])
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([x_min, d_min, delta_min],
-                                 [x_max, d_max, delta_max])
+    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min],
+                                 [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max])
     # TODO Track constraints
 
     # Code Generation
@@ -223,7 +223,7 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
 
     solver_config = og.config.SolverConfiguration() \
         .with_initial_tolerance(0.01) \
-        .with_penalty_weight_update_factor(10) \
+        .with_penalty_weight_update_factor(8) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,

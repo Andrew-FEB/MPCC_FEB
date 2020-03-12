@@ -13,7 +13,7 @@
  *   + version: 1.0.0
  *   + licence: MIT
  *
- * Generated at: 2020-03-12 12:23:53.369199
+ * Generated at: 2020-03-12 15:42:10.459171
  *
  */
 
@@ -22,18 +22,18 @@
 /*
  * Cost sizes
  */
-#define COST_SZ_ARG_MPCC_OPTIMIZER 163
+#define COST_SZ_ARG_MPCC_OPTIMIZER 323
 #define COST_SZ_IW_MPCC_OPTIMIZER 0
-#define COST_SZ_W_MPCC_OPTIMIZER 1255
+#define COST_SZ_W_MPCC_OPTIMIZER 1891
 #define COST_SZ_RES_MPCC_OPTIMIZER 2
 
 /*
  * Gradient sizes
  */
-#define GRAD_SZ_ARG_MPCC_OPTIMIZER 163
+#define GRAD_SZ_ARG_MPCC_OPTIMIZER 323
 #define GRAD_SZ_IW_MPCC_OPTIMIZER 0
-#define GRAD_SZ_W_MPCC_OPTIMIZER 5937
-#define GRAD_SZ_RES_MPCC_OPTIMIZER 161
+#define GRAD_SZ_W_MPCC_OPTIMIZER 6733
+#define GRAD_SZ_RES_MPCC_OPTIMIZER 321
 
 /*
  * F1 sizes
