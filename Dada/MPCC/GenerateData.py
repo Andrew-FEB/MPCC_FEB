@@ -1,7 +1,7 @@
 import CodeGenerator as cg
 import numpy as np
 from scipy import interpolate
-from matplotlib import pyplot as plt
+# import rosbag
 
 # Author: Darina Abaffyová
 # Created: 04/03/2020
@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 
 
 def generate_reference_state(start_state, control, num_steps):
-    s = np.concatenate((start_state, [0]*cg.nx))
+    s = np.concatenate((start_state, [0] * cg.nx))
     for i in range(0, num_steps):
         tf = cg.tire_forces(s, control)
         s = cg.dynamic_model_rk(s, control, tf, cg.Ts, False)
@@ -21,6 +21,8 @@ def generate_track(num_steps):
     # https://stackoverflow.com/questions/33962717/interpolating-a-closed-curve-using-scipy
     x = np.array([-3, 24, 25, 25])
     y = np.array([0, 4, 12, 13])
+    # x = np.array([-0.3, 2.4, 2.5, 2.5])
+    # y = np.array([0, 0.4, 1.2, 1.3])
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]
@@ -39,3 +41,12 @@ def generate_track(num_steps):
     # plt.show()
 
     return [xi, yi]
+
+
+# def read_data():
+#     data = []
+#     bag = rosbag.Bag('test.bag')
+#     for topic, msg, t in bag.read_messages(topics=['chatter', 'numbers']):
+#         print(msg)
+#     bag.close()
+#     return data

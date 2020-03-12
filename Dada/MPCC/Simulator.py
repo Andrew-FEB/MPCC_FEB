@@ -19,14 +19,14 @@ def simulate(track_x, track_y, simulation_steps):
     mng.start()
     # Run simulations
     phi = np.arctan2(track_x[0], track_y[0])
-    x_state_0 = [track_x[0], track_y[0], phi, 1, 1, 0]
+    x_state_0 = [track_x[0], track_y[0], phi, 0.5, 0.5, 0]
     state_sequence = x_state_0
     input_sequence = []
     state = x_state_0
     steps_ahead = 5
-    ref_rest = [5, 1, 0.07]
+    ref_rest = [2, 1, 0.07]
     [x, y] = [track_x[steps_ahead], track_y[steps_ahead]]
-    [x_prev, y_prev] = [track_x[steps_ahead - 1], track_y[steps_ahead - 1]]
+    [x_prev, y_prev] = [x_state_0[0], x_state_0[1]]  # [track_x[steps_ahead - 1], track_y[steps_ahead - 1]]
     phi = np.arctan2(y - y_prev, x - x_prev)
     state_ref = np.concatenate(([x, y, phi], ref_rest))
     reference_sequence = state_ref
@@ -42,10 +42,12 @@ def simulate(track_x, track_y, simulation_steps):
             forces = cg.tire_forces(state, [u1, u2])
             state_next = cg.dynamic_model_rk(np.concatenate((state, state_ref)), [u1, u2], forces, cg.Ts, False)
 
-            [x, y] = [track_x[(steps_ahead + k) % simulation_steps], track_y[(steps_ahead + k) % simulation_steps]]
-            [x_prev, y_prev] = [track_x[(steps_ahead - 1 + k) % simulation_steps], track_y[(steps_ahead - 1 + k) % simulation_steps]]
+            [x, y] = [track_x[(steps_ahead + 1 + k) % simulation_steps], track_y[(steps_ahead + 1 + k) % simulation_steps]]
+            [x_prev, y_prev] = [state_next[0], state_next[1]]  # [track_x[(steps_ahead - 1 + k) % simulation_steps],
+            # track_y[(steps_ahead - 1 + k) % simulation_steps]]
             phi = np.arctan2(y - y_prev, x - x_prev)
             state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref)), [u1, u2], forces, cg.Ts, False)
+            # state_ref = state_ref[0:6]
             state_ref = np.concatenate(([x, y, phi], state_ref[3:6]))
 
             state_sequence = np.concatenate((state_sequence, state_next[:6]))
@@ -55,13 +57,13 @@ def simulate(track_x, track_y, simulation_steps):
         except AttributeError:
             print('Failed after ' + str(state_sequence.__len__() / cg.nx) + 'simulation steps\n'
                   + 'Error[' + str(solver_status['code']) + ']: ' + solver_status['message'])
-            # break
-            mng.kill()
-            sys.exit(0)
+            break
+            # mng.kill()
+            # sys.exit(0)
 
     mng.kill()
 
-    return [input_sequence, state_sequence, reference_sequence]  # , (state_sequence.__len__()/cg.nx - 1)]
+    return [input_sequence, state_sequence, reference_sequence, int((state_sequence.__len__()/cg.nx - 1))]
 
 
 def simulate_one_step(x_state_0, ref):
@@ -71,7 +73,6 @@ def simulate_one_step(x_state_0, ref):
     mng.start()
     # Run simulations
     state_sequence = x_state_0
-    input_sequence = []
     x = x_state_0
 
     state = np.concatenate((x, ref))
@@ -146,6 +147,11 @@ def plot_track(state_ref, state_seq):
     state_x = state_seq[0:cg.nx * state_seq.size:cg.nx]
     state_y = state_seq[1:cg.nx * state_seq.size:cg.nx]
     fig, ax = plt.subplots(1, 1)
-    ax.plot(ref_x, ref_y, '-b')
-    ax.plot(state_x, state_y, 'or')
+    ax.plot(ref_x, ref_y, '-b', label="Reference track")
+    ax.plot(state_x, state_y, 'or', label="Achieved track")
+    plt.grid()
+    plt.ylabel('Y position')
+    plt.xlabel('X position')
+    plt.title('Track')
+    plt.legend(loc='best', borderaxespad=0.)
     plt.show()
