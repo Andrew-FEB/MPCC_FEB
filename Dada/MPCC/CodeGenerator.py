@@ -4,7 +4,7 @@ import numpy as np
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 09/03/2020
+# Last updated: 15/03/2020
 
 # Parameters
 # -------------------------------------
@@ -65,26 +65,29 @@ Ts = 0.05  # Sampling time (length of one time step in seconds)
 
 # Model
 # -------------------------------------
-def kinetic_model(z, u, dt):
-    # State parameters
-    x = z[0]
-    y = z[1]
-    psi = z[2]
-    v = z[3]
-    # Control inputs
-    d_f = u[0]
-    a = u[1]
+def kinetic_model(state, v_x_prev, delta, delta_prev, F_x, calc_casadi, dt):
+    # State variables
+    phi = state[2]
+    v_x = state[3]
+    v_y = state[4]
+    omega = state[5]
 
-    # compute slip angle
-    bta = cs.atan2(l_r / (l_f + l_r) * cs.tan(d_f))
+    d_delta = (delta - delta_prev) / dt
+    d_v_x = (v_x - v_x_prev) / dt
 
-    # compute next state
-    x_next = x + dt * (v * cs.cos(psi + bta))
-    y_next = y + dt * (v * cs.sin(psi + bta))
-    psi_next = psi + dt * v / l_r * cs.sin(bta)
-    v_next = v + dt * a
+    x_next = v_x * cs.cos(phi) - v_y * cs.sin(phi)
+    y_next = v_x * cs.sin(phi) + v_y * cs.cos(phi)
+    phi_next = omega
+    v_x_next = F_x / m
+    v_y_next = (d_delta * v_x + delta * d_v_x) * l_r / (l_r + l_f)
+    omega_next = (d_delta * v_x + delta * d_v_x) / (l_r + l_f)
 
-    return cs.vertcat(x_next, y_next, psi_next, v_next)
+    if calc_casadi:
+        return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
+                          state[6], state[7], state[8], state[9], state[10], state[11])
+    else:
+        return [x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
+                state[6], state[7], state[8], state[9], state[10], state[11]]
 
 
 def dynamic_model(state, control, forces, calc_casadi):
@@ -200,12 +203,18 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         f = tire_forces(x_t, u)
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1])
+        F1 = cs.vertcat(F1, x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1],
+                        (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)  # Track Constraints
+
+    # Terminal Cost
+    # for i in range(0, nx):
+    #     cost += 5 * (i + 1) * state_error_weight[i] * pow((x_t[i] - x_t[nx + i]), 2)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min],
-                                 [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max])
+    C = og.constraints.Rectangle([phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -9],
+                                 [phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, 9])
+    # Radius of the track is 3; 3^2 = 9
     # TODO Track constraints
 
     # Code Generation
@@ -222,8 +231,8 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         .with_version("1.0.0")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_initial_tolerance(0.01) \
-        .with_penalty_weight_update_factor(8) \
+        .with_delta_tolerance(0.001) \
+        .with_penalty_weight_update_factor(16) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,

@@ -9,7 +9,7 @@ import CodeGenerator as cg
 
 # Author: Darina Abaffyová
 # Created: 13/02/2020
-# Last updated: 09/03/2020
+# Last updated: 15/03/2020
 
 
 def simulate(track_x, track_y, simulation_steps):
@@ -23,8 +23,8 @@ def simulate(track_x, track_y, simulation_steps):
     state_sequence = x_state_0
     input_sequence = []
     state = x_state_0
-    steps_ahead = 5
-    ref_rest = [2, 1, 0.07]
+    steps_ahead = 1
+    ref_rest = [1, 1, 0.7]
     [x, y] = [track_x[steps_ahead], track_y[steps_ahead]]
     [x_prev, y_prev] = [x_state_0[0], x_state_0[1]]  # [track_x[steps_ahead - 1], track_y[steps_ahead - 1]]
     phi = np.arctan2(y - y_prev, x - x_prev)
@@ -47,7 +47,6 @@ def simulate(track_x, track_y, simulation_steps):
             # track_y[(steps_ahead - 1 + k) % simulation_steps]]
             phi = np.arctan2(y - y_prev, x - x_prev)
             state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref)), [u1, u2], forces, cg.Ts, False)
-            # state_ref = state_ref[0:6]
             state_ref = np.concatenate(([x, y, phi], state_ref[3:6]))
 
             state_sequence = np.concatenate((state_sequence, state_next[:6]))
@@ -102,19 +101,19 @@ def simulate_one_step(x_state_0, ref):
 
 
 def plot_simulation(simulation_steps, input_sequence, state_sequence, ref):
-    t = np.arange(0, cg.Ts * simulation_steps, cg.Ts)
+    t = np.arange(0, cg.Ts * (simulation_steps - cg.Ts), cg.Ts)
     ref_seq = np.concatenate([ref] * t.size)
 
-    fig1 = plt.plot(t, input_sequence[0:cg.nu * simulation_steps:cg.nu], '-', label="Duty cycle")
+    plt.plot(t, input_sequence[0:cg.nu * simulation_steps:cg.nu], '-', label="Duty cycle")
     plt.plot(t, input_sequence[1:cg.nu * simulation_steps:cg.nu], '-', label="Front steering angle")
     plt.grid()
     plt.ylabel('Input')
     plt.xlabel('Time')
     plt.title('INPUT SEQUENCE')
     plt.legend(bbox_to_anchor=(0.7, 0.85), loc='best', borderaxespad=0.)
-    plt.show(fig1)
+    plt.show()
 
-    fig2 = plt.plot(t, state_sequence[0:cg.nx * simulation_steps:cg.nx], '-', label="x")
+    plt.plot(t, state_sequence[0:cg.nx * simulation_steps:cg.nx], '-', label="x")
     plt.plot(t, state_sequence[1:cg.nx * simulation_steps:cg.nx], '-', label="y")
     plt.plot(t, state_sequence[2:cg.nx * simulation_steps:cg.nx], '-', label="phi")
     plt.plot(t, ref_seq[0:cg.nx * simulation_steps:cg.nx], '--', label="x")
@@ -125,9 +124,9 @@ def plot_simulation(simulation_steps, input_sequence, state_sequence, ref):
     plt.xlabel('Time')
     plt.title('STATE SEQUENCE 1')
     plt.legend(loc='best', borderaxespad=0.)
-    plt.show(fig2)
+    plt.show()
 
-    fig3 = plt.plot(t, state_sequence[3:cg.nx * simulation_steps:cg.nx], '-', label="v_x")
+    plt.plot(t, state_sequence[3:cg.nx * simulation_steps:cg.nx], '-', label="v_x")
     plt.plot(t, state_sequence[4:cg.nx * simulation_steps:cg.nx], '-', label="v_y")
     plt.plot(t, state_sequence[5:cg.nx * simulation_steps:cg.nx], '-', label="omega")
     plt.plot(t, ref_seq[3:cg.nx * simulation_steps:cg.nx], '--', label="v_x")
@@ -138,7 +137,7 @@ def plot_simulation(simulation_steps, input_sequence, state_sequence, ref):
     plt.xlabel('Time')
     plt.title('STATE SEQUENCE 2')
     plt.legend(loc='best', borderaxespad=0.)
-    plt.show(fig3)
+    plt.show()
 
 
 def plot_track(state_ref, state_seq):
@@ -147,7 +146,7 @@ def plot_track(state_ref, state_seq):
     state_x = state_seq[0:cg.nx * state_seq.size:cg.nx]
     state_y = state_seq[1:cg.nx * state_seq.size:cg.nx]
     fig, ax = plt.subplots(1, 1)
-    ax.plot(ref_x, ref_y, '-b', label="Reference track")
+    ax.plot(ref_x, ref_y, 'xb', label="Reference track")
     ax.plot(state_x, state_y, 'or', label="Achieved track")
     plt.grid()
     plt.ylabel('Y position')
