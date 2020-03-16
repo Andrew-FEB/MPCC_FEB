@@ -11,7 +11,7 @@ import Simulator as sim
 
 simulation_steps = 1000
 
-state_error_weight = [370, 370, 27, 5, 4, 2]
+state_error_weight = [900, 900, 27, 5, 4, 2]
 in_weight = [1, 1]
 in_change_weight = [1, 1]
 
@@ -19,7 +19,7 @@ print("Generating code")
 st = time.time()
 # cg.generate_code(state_error_weight, in_weight, in_change_weight)
 print('Code generated in ' + str(time.time() - st) + ' s')
-
+# Dada je prasa
 print("Running simulation")
 if simulation_steps > 1:
     [track_x, track_y] = gd.generate_track(simulation_steps)
@@ -27,10 +27,10 @@ if simulation_steps > 1:
     sim.plot_simulation(simulation_steps, in_seq, state_seq, state_ref)
     sim.plot_track(state_ref, state_seq)
 else:
-    # state_0 = [-2.999999999999999, -3.3306690738754696e-16, -1.5707963267948968, 0.5, 0.5, 0] state_ref = [
-    # 1.40300355, -3.05668885, -0.6068417, 1, 1, 0.7]  # [0.72304031, -2.91475585, -0.66422473, 1.3, 1, 0.7]
-    state_0 = [23, -2, 0, 1, 1, 0]
-    state_ref = [23.723, -2.915, -1.259, 15.774, 3.103, 0.736]
+    state_0 = [24.999999999999993, 11.999999999999996, 1.1232763516377267, 0.5, 0.5, 0]
+    state_ref = [24.88685793, 13.56233387, 1.64308875, 1, 1, 0.7]
+    # state_0 = [23, -2, 0, 1, 1, 0]
+    # state_ref = [23.723, -2.915, -1.259, 15.774, 3.103, 0.736]
 
     [in_seq, state_seq] = sim.simulate_one_step(state_0, state_ref)
     sim.plot_simulation(cg.N, in_seq, state_seq, state_ref)

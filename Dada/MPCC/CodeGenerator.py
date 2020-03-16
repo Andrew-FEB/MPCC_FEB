@@ -56,6 +56,9 @@ d_min = -d_max
 delta_max = 0.506  # [rad] =  29 degrees
 delta_min = -delta_max
 
+# Track parameters
+track_width = 1.5
+
 # Optimizer parameters
 N = 40  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
@@ -203,7 +206,7 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         f = tire_forces(x_t, u)
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        F1 = cs.vertcat(F1, x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1],
+        F1 = cs.vertcat(F1, x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1]
                         (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)  # Track Constraints
 
     # Terminal Cost
@@ -212,10 +215,8 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -9],
-                                 [phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, 9])
-    # Radius of the track is 3; 3^2 = 9
-    # TODO Track constraints
+    C = og.constraints.Rectangle([phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width ** 2],
+                                 [phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width ** 2])
 
     # Code Generation
     # -------------------------------------
@@ -231,8 +232,7 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         .with_version("1.0.0")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_delta_tolerance(0.001) \
-        .with_penalty_weight_update_factor(16) \
+        .with_initial_penalty(15) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,

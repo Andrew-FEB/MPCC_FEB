@@ -17,20 +17,25 @@ def simulate(track_x, track_y, simulation_steps):
     mng = og.tcp.OptimizerTcpManager("mpcc_python_build_1/mpcc_optimizer")
     # Start the TCP server
     mng.start()
+
     # Run simulations
     phi = np.arctan2(track_x[0], track_y[0])
     x_state_0 = [track_x[0], track_y[0], phi, 0.5, 0.5, 0]
     state_sequence = x_state_0
     input_sequence = []
     state = x_state_0
-    steps_ahead = 1
+
+    dist_ahead = (np.arctan2(x_state_0[4], x_state_0[3])) * cg.N * cg.Ts  # Using tangential velocity
     ref_rest = [1, 1, 0.7]
-    [x, y] = [track_x[steps_ahead], track_y[steps_ahead]]
-    [x_prev, y_prev] = [x_state_0[0], x_state_0[1]]  # [track_x[steps_ahead - 1], track_y[steps_ahead - 1]]
+    i_nearest = 0
+    i_ahead = move_along_track(track_x, track_y, dist_ahead, i_nearest)
+    [x, y] = [track_x[i_ahead], track_y[i_ahead]]
+    [x_prev, y_prev] = [track_x[i_ahead - 1], track_y[i_ahead - 1]]
     phi = np.arctan2(y - y_prev, x - x_prev)
     state_ref = np.concatenate(([x, y, phi], ref_rest))
     reference_sequence = state_ref
-    for k in range(0, simulation_steps):
+
+    for k in range(simulation_steps):
         solver_status = mng.call(np.concatenate((state, state_ref)))
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
@@ -42,9 +47,11 @@ def simulate(track_x, track_y, simulation_steps):
             forces = cg.tire_forces(state, [u1, u2])
             state_next = cg.dynamic_model_rk(np.concatenate((state, state_ref)), [u1, u2], forces, cg.Ts, False)
 
-            [x, y] = [track_x[(steps_ahead + 1 + k) % simulation_steps], track_y[(steps_ahead + 1 + k) % simulation_steps]]
-            [x_prev, y_prev] = [state_next[0], state_next[1]]  # [track_x[(steps_ahead - 1 + k) % simulation_steps],
-            # track_y[(steps_ahead - 1 + k) % simulation_steps]]
+            dist_ahead = (np.arctan2(state_next[4], state_next[3])) * cg.N * cg.Ts  # Using tangential velocity
+            i_nearest = find_closest_point_centreline([state_next[0], state_next[1]], track_x, track_y, cg.track_width, 30, i_nearest)
+            i_ahead = move_along_track(track_x, track_y, dist_ahead, i_nearest)
+            [x, y] = [track_x[(i_ahead + 1 + k) % simulation_steps], track_y[(i_ahead + 1 + k) % simulation_steps]]
+            [x_prev, y_prev] = [track_x[(i_ahead + k) % simulation_steps], track_y[(i_ahead + k) % simulation_steps]]
             phi = np.arctan2(y - y_prev, x - x_prev)
             state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref)), [u1, u2], forces, cg.Ts, False)
             state_ref = np.concatenate(([x, y, phi], state_ref[3:6]))
@@ -63,6 +70,57 @@ def simulate(track_x, track_y, simulation_steps):
     mng.kill()
 
     return [input_sequence, state_sequence, reference_sequence, int((state_sequence.__len__()/cg.nx - 1))]
+
+
+def find_closest_point_centreline(current_pos, track_x, track_y, track_width, search_region, prev_closest):
+    # Inspired here: https://github.com/alexliniger/MPCC/blob/master/Matlab/findTheta.m
+    # Find the index of the point on the centreline which is the closest to the current position
+
+    # Investigate at search region
+    back = int(search_region * 0.05)  # 5%
+    front = search_region - back
+    smallest_dist_i = prev_closest - (back - 1)
+    smallest_dist = np.sqrt((current_pos[0] - track_x[smallest_dist_i]) ** 2 + (current_pos[1] - track_y[smallest_dist_i]) ** 2)
+    for i in range(smallest_dist_i + 1, prev_closest + front):
+        dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
+        if dist < smallest_dist:
+            smallest_dist = dist
+            smallest_dist_i = i
+
+    # Search through the whole track if the distance is too long
+    if smallest_dist > track_width:
+        for i in range(len(track_x)):
+            dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
+            if dist < smallest_dist:
+                smallest_dist = dist
+                smallest_dist_i = i
+
+    # Crash if still too small (for now - TODO ?)
+    if smallest_dist > track_width:
+        sys.exit("OUT OF TRACK BOUNDARIES!")
+
+    # TODO - wrapping around; out of boundaries error
+
+    return smallest_dist_i
+
+
+def move_along_track(track_x, track_y, distance, start_i):
+    dist = distance
+    i = start_i
+    x = track_x[i]
+    y = track_y[i]
+
+    while dist > 0:
+        i += 1
+        if i >= len(track_x):
+            i = 0
+        x_next = track_x[i]
+        y_next = track_y[i]
+        dist -= np.sqrt((x_next - x) ** 2 + (y_next - y) ** 2)
+        x = x_next
+        y = y_next
+
+    return i
 
 
 def simulate_one_step(x_state_0, ref):
