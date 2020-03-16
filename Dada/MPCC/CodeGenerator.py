@@ -206,7 +206,7 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         f = tire_forces(x_t, u)
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        F1 = cs.vertcat(F1, x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1]
+        F1 = cs.vertcat(F1, x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1],
                         (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)  # Track Constraints
 
     # Terminal Cost
