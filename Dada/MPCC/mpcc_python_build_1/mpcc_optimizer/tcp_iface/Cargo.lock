@@ -132,7 +132,7 @@ checksum = "3728d817d99e5ac407411fa471ff9800a778d88a24685968b36824eaf4bee400"
 
 [[package]]
 name = "mpcc_optimizer"
-version = "1.0.0"
+version = "0.0.0"
 dependencies = [
  "icasadi",
  "optimization_engine",

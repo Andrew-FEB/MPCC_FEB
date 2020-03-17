@@ -12,7 +12,7 @@ import CodeGenerator as cg
 # Last updated: 15/03/2020
 
 
-def simulate(track_x, track_y, simulation_steps):
+def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, simulation_steps):
     # Create a TCP connection manager
     mng = og.tcp.OptimizerTcpManager("mpcc_python_build_1/mpcc_optimizer")
     # Start the TCP server
@@ -34,9 +34,10 @@ def simulate(track_x, track_y, simulation_steps):
     phi = np.arctan2(y - y_prev, x - x_prev)
     state_ref = np.concatenate(([x, y, phi], ref_rest))
     reference_sequence = state_ref
+    bounds = [bound_xout[i_ahead], bound_yout[i_ahead], bound_xin[i_ahead], bound_yin[i_ahead]]
 
     for k in range(simulation_steps):
-        solver_status = mng.call(np.concatenate((state, state_ref)))
+        solver_status = mng.call(np.concatenate((state, state_ref, bounds)))
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
                   + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
@@ -45,21 +46,30 @@ def simulate(track_x, track_y, simulation_steps):
             u1 = us[0]
             u2 = us[1]
             forces = cg.tire_forces(state, [u1, u2])
-            state_next = cg.dynamic_model_rk(np.concatenate((state, state_ref)), [u1, u2], forces, cg.Ts, False)
+            state_next = cg.dynamic_model_rk(np.concatenate((state, state_ref, bounds)), [u1, u2], forces, cg.Ts, False)
 
+            # Find the index of the reference point (depending on the current velocity)
             dist_ahead = (np.arctan2(state_next[4], state_next[3])) * cg.N * cg.Ts  # Using tangential velocity
             i_nearest = find_closest_point_centreline([state_next[0], state_next[1]], track_x, track_y, cg.track_width, 30, i_nearest)
             i_ahead = move_along_track(track_x, track_y, dist_ahead, i_nearest)
+
+            # Find the angle in the direction of the previous step - should this be from current position instead?
             [x, y] = [track_x[(i_ahead + 1 + k) % simulation_steps], track_y[(i_ahead + 1 + k) % simulation_steps]]
             [x_prev, y_prev] = [track_x[(i_ahead + k) % simulation_steps], track_y[(i_ahead + k) % simulation_steps]]
             phi = np.arctan2(y - y_prev, x - x_prev)
-            state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref)), [u1, u2], forces, cg.Ts, False)
+
+            # The next reference state, taking into account all the previous calculations, and using the vehicle
+            # model with regard to the obtained control inputs
+            state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref, bounds)), [u1, u2], forces, cg.Ts, False)
             state_ref = np.concatenate(([x, y, phi], state_ref[3:6]))
 
+            # Update all variables needed for the next iteration
             state_sequence = np.concatenate((state_sequence, state_next[:6]))
             input_sequence += [u1, u2]
             reference_sequence = np.concatenate((reference_sequence, state_ref))
             state = state_next[0:6]
+            bounds = [bound_xout[i_ahead], bound_yout[i_ahead], bound_xin[i_ahead], bound_yin[i_ahead]]
+
         except AttributeError:
             print('Failed after ' + str(state_sequence.__len__() / cg.nx) + 'simulation steps\n'
                   + 'Error[' + str(solver_status['code']) + ']: ' + solver_status['message'])
@@ -88,16 +98,16 @@ def find_closest_point_centreline(current_pos, track_x, track_y, track_width, se
             smallest_dist_i = i
 
     # Search through the whole track if the distance is too long
-    if smallest_dist > track_width:
-        for i in range(len(track_x)):
-            dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
-            if dist < smallest_dist:
-                smallest_dist = dist
-                smallest_dist_i = i
+    # if smallest_dist > track_width:
+    #     for i in range(len(track_x)):
+    #         dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
+    #         if dist < smallest_dist:
+    #             smallest_dist = dist
+    #             smallest_dist_i = i
 
     # Crash if still too small (for now - TODO ?)
-    if smallest_dist > track_width:
-        sys.exit("OUT OF TRACK BOUNDARIES!")
+    # if smallest_dist > track_width:
+    #     sys.exit("OUT OF TRACK BOUNDARIES!")
 
     # TODO - wrapping around; out of boundaries error
 
@@ -132,7 +142,7 @@ def simulate_one_step(x_state_0, ref):
     state_sequence = x_state_0
     x = x_state_0
 
-    state = np.concatenate((x, ref))
+    state = np.concatenate((x, ref, [0, 0, 0, 0]))
     solver_status = mng.call(state)
     try:
         print('Result in: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
@@ -144,7 +154,7 @@ def simulate_one_step(x_state_0, ref):
             u1 = input_sequence[i]
             u2 = input_sequence[i + 1]
             forces = cg.tire_forces(x, [u1, u2])
-            x_next = cg.dynamic_model_rk(np.concatenate((x, ref)), [u1, u2], forces, cg.Ts, False)
+            x_next = cg.dynamic_model_rk(np.concatenate((x, ref, [0, 0, 0, 0])), [u1, u2], forces, cg.Ts, False)
             state_sequence = np.concatenate((state_sequence, x_next[:6]))
             x = x_next[0:6]
     except AttributeError:

@@ -33,11 +33,11 @@ def generate_track(num_steps):
     # x_minus = np.array([7, -1.5, 11, 21, 13.5, 18.5])
     # y_minus = np.array([7.5, 1, 1, 4.5, 4, 11.5])
 
-    x_plus = np.array([0.7, -0.45, 1.1, 2.55, 1.65, 2.15])
-    y_plus = np.array([1.05, -0.15, -0.15, 0.65, 0.6, 1.3])
+    x_plus = np.array([-4.5, 11, 25.5, 16.5, 21.5, 7])
+    y_plus = np.array([-1.5, -1.5, 6.5, 6, 13, 10.5])
 
-    x_minus = np.array([0.7, -0.15, 1.1, 2.1, 1.35, 1.85])
-    y_minus = np.array([0.75, 0.1, 0.1, 0.45, 0.4, 1.15])
+    x_minus = np.array([-1.5, 11, 21, 13.5, 18.5, 7])
+    y_minus = np.array([1, 1, 4.5, 4, 11.5, 75])
 
     x = [0] * 6
     y = [0] * 6
@@ -73,7 +73,7 @@ def generate_track(num_steps):
     # ax.plot(xi_minus, yi_minus, '--g')
     # plt.show()
 
-    return [xi, yi]
+    return [xi, yi, xi_plus, yi_plus, xi_minus, yi_minus]
 
 
 # def read_data():

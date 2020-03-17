@@ -117,10 +117,12 @@ def dynamic_model(state, control, forces, calc_casadi):
 
     if calc_casadi:
         return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                          state[6], state[7], state[8], state[9], state[10], state[11])
+                          state[6], state[7], state[8], state[9], state[10], state[11],
+                          state[12], state[13], state[14], state[15])
     else:
         return [x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                state[6], state[7], state[8], state[9], state[10], state[11]]
+                state[6], state[7], state[8], state[9], state[10], state[11],
+                state[12], state[13], state[14], state[15]]
 
 
 # Runge-Kutta 4th order method
@@ -132,7 +134,8 @@ def dynamic_model_rk(state, control, forces, dt, calc_casadi):
         k4 = dt * dynamic_model(state + dt * k3, control, forces, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                          state[6], state[7], state[8], state[9], state[10], state[11])
+                          state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13],
+                          state[14], state[15])
     else:
         k1 = dt * np.array(dynamic_model(state, control, forces, calc_casadi))
         k2 = dt * np.array(dynamic_model(state + dt * 0.5 * k1, control, forces, calc_casadi))
@@ -140,7 +143,7 @@ def dynamic_model_rk(state, control, forces, dt, calc_casadi):
         k4 = dt * np.array(dynamic_model(state + dt * k3, control, forces, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return [next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                state[6], state[7], state[8], state[9], state[10], state[11]]
+                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14], state[15]]
 
 
 def tire_forces(state, control):
@@ -189,7 +192,7 @@ def cost_function(x, u, u_prev, state_error_weight, in_weight, in_change_weight)
 def generate_code(state_error_weight, in_weight, in_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", nx * 2)  # Initial state + Reference state
+    x0 = cs.MX.sym("x0_xref", nx * 2 + 4)  # Initial state (=6) + Reference state (=6) + boundaries (=4)
 
     cost = 0
     x_t = x0
@@ -206,17 +209,18 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         f = tire_forces(x_t, u)
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        F1 = cs.vertcat(F1, x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1],
-                        (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)  # Track Constraints
+        F1 = cs.vertcat(F1, x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1])
+        # (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)  # Track Constraints
+        # cs.fabs(x_t[0] - x_t[12]) - cs.fabs(x_t[12] - x_t[14]),
+        # cs.fabs(x_t[1] - x_t[13]) - cs.fabs(x_t[13] - x_t[15]),
 
     # Terminal Cost
-    # for i in range(0, nx):
-    #     cost += 5 * (i + 1) * state_error_weight[i] * pow((x_t[i] - x_t[nx + i]), 2)
+    cost += 500 * ((x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2 - track_width ** 2)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width ** 2],
-                                 [phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width ** 2])
+    C = og.constraints.Rectangle([phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min],  # , -track_width ** 2],
+                                 [phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max])  # , track_width ** 2])
 
     # Code Generation
     # -------------------------------------
@@ -228,11 +232,10 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         .with_tcp_interface_config()
 
     meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \
-        .with_authors("Darina Abaffyova") \
-        .with_version("1.0.0")
+        .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_initial_penalty(15) \
+        .with_max_outer_iterations(25) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,
