@@ -18,16 +18,18 @@ def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, sim
     # Start the TCP server
     mng.start()
 
-    # Run simulations
-    phi = np.arctan2(track_x[0], track_y[0])
-    x_state_0 = [track_x[0], track_y[0], phi, 0.5, 0.5, 0]
+    # Set all values needed for simulation
+    # TODO - organize these!!!
+    i_start = 1000
+    phi = np.arctan2(track_y[i_start], track_x[i_start])
+    x_state_0 = [track_x[i_start], track_y[i_start], phi, 10, 3, 0.1]
     state_sequence = x_state_0
     input_sequence = []
     state = x_state_0
 
     dist_ahead = (np.arctan2(x_state_0[4], x_state_0[3])) * cg.N * cg.Ts  # Using tangential velocity
-    ref_rest = [1, 1, 0.7]
-    i_nearest = 0
+    ref_rest = [15, 5, 0.7]
+    i_nearest = i_start
     i_ahead = move_along_track(track_x, track_y, dist_ahead, i_nearest)
     [x, y] = [track_x[i_ahead], track_y[i_ahead]]
     [x_prev, y_prev] = [track_x[i_ahead - 1], track_y[i_ahead - 1]]
@@ -36,6 +38,7 @@ def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, sim
     reference_sequence = state_ref
     bounds = [bound_xout[i_ahead], bound_yout[i_ahead], bound_xin[i_ahead], bound_yin[i_ahead]]
 
+    # Run simulations
     for k in range(simulation_steps):
         solver_status = mng.call(np.concatenate((state, state_ref, bounds)))
         try:
@@ -61,14 +64,15 @@ def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, sim
             # The next reference state, taking into account all the previous calculations, and using the vehicle
             # model with regard to the obtained control inputs
             state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref, bounds)), [u1, u2], forces, cg.Ts, False)
-            state_ref = np.concatenate(([x, y, phi], state_ref[3:6]))
 
-            # Update all variables needed for the next iteration
-            state_sequence = np.concatenate((state_sequence, state_next[:6]))
-            input_sequence += [u1, u2]
-            reference_sequence = np.concatenate((reference_sequence, state_ref))
-            state = state_next[0:6]
+            # Update all variables needed for the next iteration and save values in the sequences to be plotted
+            state_ref = np.concatenate(([x, y], state_ref[2:6]))
+            # state_ref = np.concatenate(([x, y, phi], state_ref[3:6]))
+            state = state_next[:6]
             bounds = [bound_xout[i_ahead], bound_yout[i_ahead], bound_xin[i_ahead], bound_yin[i_ahead]]
+            input_sequence += [u1, u2]
+            state_sequence = np.concatenate((state_sequence, state_next[:6]))
+            reference_sequence = np.concatenate((reference_sequence, state_ref))
 
         except AttributeError:
             print('Failed after ' + str(state_sequence.__len__() / cg.nx) + 'simulation steps\n'
@@ -79,7 +83,7 @@ def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, sim
 
     mng.kill()
 
-    return [input_sequence, state_sequence, reference_sequence, int((state_sequence.__len__()/cg.nx - 1))]
+    return [input_sequence, state_sequence, reference_sequence, int((len(state_sequence)/cg.nx - 1))]
 
 
 def find_closest_point_centreline(current_pos, track_x, track_y, track_width, search_region, prev_closest):
@@ -88,14 +92,17 @@ def find_closest_point_centreline(current_pos, track_x, track_y, track_width, se
 
     # Investigate at search region
     back = int(search_region * 0.05)  # 5%
-    front = search_region - back
+    # front = search_region - back
     smallest_dist_i = prev_closest - (back - 1)
+    if smallest_dist_i < 0:
+        smallest_dist_i = len(track_x) + smallest_dist_i
     smallest_dist = np.sqrt((current_pos[0] - track_x[smallest_dist_i]) ** 2 + (current_pos[1] - track_y[smallest_dist_i]) ** 2)
-    for i in range(smallest_dist_i + 1, prev_closest + front):
-        dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
+    for i in range(smallest_dist_i + 1, smallest_dist_i + search_region):
+        ii = i % len(track_x)
+        dist = np.sqrt((current_pos[0] - track_x[ii]) ** 2 + (current_pos[1] - track_y[ii]) ** 2)
         if dist < smallest_dist:
             smallest_dist = dist
-            smallest_dist_i = i
+            smallest_dist_i = ii
 
     # Search through the whole track if the distance is too long
     # if smallest_dist > track_width:
@@ -106,8 +113,9 @@ def find_closest_point_centreline(current_pos, track_x, track_y, track_width, se
     #             smallest_dist_i = i
 
     # Crash if still too small (for now - TODO ?)
-    # if smallest_dist > track_width:
-    #     sys.exit("OUT OF TRACK BOUNDARIES!")
+    if smallest_dist > track_width:
+        print("OUT OF TRACK BOUNDARIES!")
+        # sys.exit("OUT OF TRACK BOUNDARIES!")
 
     # TODO - wrapping around; out of boundaries error
 
@@ -208,9 +216,10 @@ def plot_simulation(simulation_steps, input_sequence, state_sequence, ref):
     plt.show()
 
 
-def plot_track(state_ref, state_seq):
-    ref_x = state_ref[0:cg.nx * state_ref.size:cg.nx]
-    ref_y = state_ref[1:cg.nx * state_ref.size:cg.nx]
+# def plot_track(state_ref, state_seq):
+def plot_track(track_x, track_y, state_seq):
+    ref_x = track_x  # state_ref[0:cg.nx * state_ref.size:cg.nx]
+    ref_y = track_y  # state_ref[1:cg.nx * state_ref.size:cg.nx]
     state_x = state_seq[0:cg.nx * state_seq.size:cg.nx]
     state_y = state_seq[1:cg.nx * state_seq.size:cg.nx]
     fig, ax = plt.subplots(1, 1)

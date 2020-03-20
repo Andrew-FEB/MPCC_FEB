@@ -19,25 +19,11 @@ def generate_reference_state(start_state, control, num_steps):
 
 
 def generate_track(num_steps):
-    # https://stackoverflow.com/questions/33962717/interpolating-a-closed-curve-using-scipy
-    # x = np.array([24, 25, 25, -3])
-    # y = np.array([4, 12, 13, 0])
-    # x = np.array([20, 7, -3, 11, 23, 15])
-    # y = np.array([12, 9, 0, 0, 5.5, 5])
-    # x = np.array([2.4, 2.5, 2.5, -0.3])
-    # y = np.array([0.4, 1.2, 1.3, 0])
+    x_plus = np.array([7, -4.5, 11, 25.5, 16.5, 21.5])
+    y_plus = np.array([10.5, -1.5, -1.5, 6.5, 6, 13])
 
-    # x_plus = np.array([7, -4.5, 11, 25.5, 16.5, 21.5])
-    # y_plus = np.array([10.5, -1.5, -1.5, 6.5, 6, 13])
-    #
-    # x_minus = np.array([7, -1.5, 11, 21, 13.5, 18.5])
-    # y_minus = np.array([7.5, 1, 1, 4.5, 4, 11.5])
-
-    x_plus = np.array([-4.5, 11, 25.5, 16.5, 21.5, 7])
-    y_plus = np.array([-1.5, -1.5, 6.5, 6, 13, 10.5])
-
-    x_minus = np.array([-1.5, 11, 21, 13.5, 18.5, 7])
-    y_minus = np.array([1, 1, 4.5, 4, 11.5, 75])
+    x_minus = np.array([7, -1.5, 11, 21, 13.5, 18.5])
+    y_minus = np.array([7.5, 1, 1, 4.5, 4, 11.5])
 
     x = [0] * 6
     y = [0] * 6

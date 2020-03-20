@@ -112,7 +112,7 @@ def dynamic_model(state, control, forces, calc_casadi):
     y_next = v_x * cs.sin(phi) + v_y * cs.cos(phi)
     phi_next = omega
     v_x_next = 1 / m * (f_rx - f_fy * cs.sin(delta) + m * v_y * omega)
-    v_y_next = 1 / m * (f_ry - f_fy * cs.cos(delta) - m * v_x * omega)
+    v_y_next = 1 / m * (f_ry + f_fy * cs.cos(delta) - m * v_x * omega)
     omega_next = 1 / I_z * (f_fy * l_f * cs.cos(delta) - f_ry * l_r)
 
     if calc_casadi:
@@ -157,11 +157,11 @@ def tire_forces(state, control):
 
     # Force calculations
 
-    alpha_f = cs.atan2((v_y + l_f * omega), v_x) - delta
-    alpha_r = cs.atan2((v_y - l_r * omega), v_x)
+    alpha_f = cs.arctan2((v_y + l_f * omega), v_x) - delta
+    alpha_r = cs.arctan2((v_y - l_r * omega), v_x)
 
-    F_fy = D_f * cs.sin(C_f * cs.atan(B_f * alpha_f))
-    F_ry = D_r * cs.sin(C_r * cs.atan(B_r * alpha_r))
+    F_fy = D_f * cs.sin(C_f * cs.arctan(B_f * alpha_f))
+    F_ry = D_r * cs.sin(C_r * cs.arctan(B_r * alpha_r))
 
     F_rx = (C_m1 - C_m2 * v_x) * D - C_rr - C_d * v_x ** 2
 
@@ -170,13 +170,38 @@ def tire_forces(state, control):
     return [F_fy, F_rx, F_ry]
 
 
-def cost_function(x, u, u_prev, state_error_weight, in_weight, in_change_weight):
+def cost_function(state, state_prev, u, u_prev, contouring_error_weight, in_weight, in_change_weight):
     # TODO - add remaining costs
-
-    # Cost on state error
     cf = 0
-    for i in range(0, nx):
-        cf += state_error_weight[i] * pow((x[i] - x[nx + i]), 2)
+
+    x = state[0]
+    y = state[1]
+    x_ref = state[6]
+    y_ref = state[7]
+    x_prev = state_prev[0]
+    y_prev = state_prev[1]
+
+    # y = slope * x + y_intercept
+    slope = cs.arctan2(y_prev, x_prev)
+    y_inter = y - slope * x
+
+    # Line: ax + by + c = 0 -> slope * x - y + y_inter
+    # Point: (x1, y1)
+    # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
+
+    # Contouring Error
+    cf += contouring_error_weight[0] * ((cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1))) - track_width)
+
+    # Tracking Error
+    cf += contouring_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
+
+    # Contouring Formulation
+    # e_c = cs.sin(phi) * (x - x_ref) - cs.cos(phi) * (y - y_ref)
+    # e_l = - cs.cos(phi) * (x - x_ref) - cs.sin(phi) * (y - y_ref)
+
+    # cf += contouring_error_weight[0] * e_c ** 2
+    # cf += contouring_error_weight[1] * e_l ** 2
+    # cf -= contouring_error_weight[2] * v ** 2
 
     # Cost on input
     cf += in_weight[0] * u[0] ** 2
@@ -189,14 +214,14 @@ def cost_function(x, u, u_prev, state_error_weight, in_weight, in_change_weight)
     return cf
 
 
-def generate_code(state_error_weight, in_weight, in_change_weight):
+def generate_code(contouring_error_weight, in_weight, in_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
     x0 = cs.MX.sym("x0_xref", nx * 2 + 4)  # Initial state (=6) + Reference state (=6) + boundaries (=4)
 
     cost = 0
     x_t = x0
-    f = tire_forces(x0, [u_seq[0], u_seq[1]])
+    x_t_prev = [0] * nx
     F1 = []
     for t in range(0, nu * N, nu):
         if t >= 2:
@@ -205,22 +230,23 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
             u_prev = [0, 0]
 
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function(x_t, u, u_prev, state_error_weight, in_weight, in_change_weight)  # Update cost
+        cost += cost_function(x_t, x_t_prev, u, u_prev, contouring_error_weight, in_weight, in_change_weight)  # Update cost
         f = tire_forces(x_t, u)
+        x_t_prev = x_t
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        F1 = cs.vertcat(F1, x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1])
+        F1 = cs.vertcat(F1, x_t[3], x_t[4], u[0], u[1])
         # (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)  # Track Constraints
         # cs.fabs(x_t[0] - x_t[12]) - cs.fabs(x_t[12] - x_t[14]),
         # cs.fabs(x_t[1] - x_t[13]) - cs.fabs(x_t[13] - x_t[15]),
 
     # Terminal Cost
-    cost += 500 * ((x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2 - track_width ** 2)
+    cost += 300 * ((x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2 - track_width ** 2)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min],  # , -track_width ** 2],
-                                 [phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max])  # , track_width ** 2])
+    C = og.constraints.Rectangle([v_x_min, v_y_min, d_min, delta_min],  # , -track_width ** 2],
+                                 [v_x_max, v_y_max, d_max, delta_max])  # , track_width ** 2])
 
     # Code Generation
     # -------------------------------------
@@ -235,7 +261,9 @@ def generate_code(state_error_weight, in_weight, in_change_weight):
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_max_outer_iterations(25) \
+        .with_initial_penalty(3) \
+        .with_max_outer_iterations(20) \
+        .with_max_outer_iterations(100) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,
