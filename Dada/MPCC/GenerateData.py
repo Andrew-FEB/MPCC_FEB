@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Author: Darina Abaffyová
 # Created: 04/03/2020
-# Last updated: 15/03/2020
+# Last updated: 19/03/2020
 
 
 def generate_reference_state(start_state, control, num_steps):

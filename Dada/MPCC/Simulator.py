@@ -9,7 +9,7 @@ import CodeGenerator as cg
 
 # Author: Darina Abaffyová
 # Created: 13/02/2020
-# Last updated: 15/03/2020
+# Last updated: 19/03/2020
 
 
 def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, simulation_steps):
@@ -20,7 +20,7 @@ def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, sim
 
     # Set all values needed for simulation
     # TODO - organize these!!!
-    i_start = 1000
+    i_start = 0
     phi = np.arctan2(track_y[i_start], track_x[i_start])
     x_state_0 = [track_x[i_start], track_y[i_start], phi, 10, 3, 0.1]
     state_sequence = x_state_0
@@ -217,14 +217,15 @@ def plot_simulation(simulation_steps, input_sequence, state_sequence, ref):
 
 
 # def plot_track(state_ref, state_seq):
-def plot_track(track_x, track_y, state_seq):
-    ref_x = track_x  # state_ref[0:cg.nx * state_ref.size:cg.nx]
-    ref_y = track_y  # state_ref[1:cg.nx * state_ref.size:cg.nx]
+def plot_track(track_x, track_y, state_ref, state_seq):
+    ref_x = state_ref[0:cg.nx * state_ref.size:cg.nx]
+    ref_y = state_ref[1:cg.nx * state_ref.size:cg.nx]
     state_x = state_seq[0:cg.nx * state_seq.size:cg.nx]
     state_y = state_seq[1:cg.nx * state_seq.size:cg.nx]
     fig, ax = plt.subplots(1, 1)
-    ax.plot(ref_x, ref_y, 'xb', label="Reference track")
+    ax.plot(track_x, track_y, '.y', label="Complete track")
     ax.plot(state_x, state_y, 'or', label="Achieved track")
+    ax.plot(ref_x, ref_y, 'xb', label="Reference track")
     plt.grid()
     plt.ylabel('Y position')
     plt.xlabel('X position')

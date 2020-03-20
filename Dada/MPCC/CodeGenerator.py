@@ -4,7 +4,7 @@ import numpy as np
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 15/03/2020
+# Last updated: 20/03/2020
 
 # Parameters
 # -------------------------------------
@@ -36,6 +36,10 @@ D_r = wight_f * m * 9.81 * 1.2
 B_f = 13
 C_f = 2
 D_f = wight_r * m * 9.81 * 1.2
+
+# Friction ellipse
+p_long = 700
+p_ellipse = 500
 
 # TODO Model limits (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
 x_max = 26
@@ -185,12 +189,12 @@ def cost_function(state, state_prev, u, u_prev, contouring_error_weight, in_weig
     slope = cs.arctan2(y_prev, x_prev)
     y_inter = y - slope * x
 
-    # Line: ax + by + c = 0 -> slope * x - y + y_inter
-    # Point: (x1, y1)
+    # Line: ax + by + c = 0 -> slope * x - y + y_inter = 0
+    # Point: (x1, y1) -> (x, y)
     # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
 
     # Contouring Error
-    cf += contouring_error_weight[0] * ((cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1))) - track_width)
+    cf += contouring_error_weight[0] * ((cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1))) - track_width) ** 2
 
     # Tracking Error
     cf += contouring_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
@@ -235,18 +239,19 @@ def generate_code(contouring_error_weight, in_weight, in_change_weight):
         x_t_prev = x_t
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        F1 = cs.vertcat(F1, x_t[3], x_t[4], u[0], u[1])
-        # (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)  # Track Constraints
-        # cs.fabs(x_t[0] - x_t[12]) - cs.fabs(x_t[12] - x_t[14]),
-        # cs.fabs(x_t[1] - x_t[13]) - cs.fabs(x_t[13] - x_t[15]),
+        # f_fy = forces[0]
+        # f_rx = forces[1]
+        # f_ry = forces[2]
+        F1 = cs.vertcat(F1, x_t[3], x_t[4], u[0], u[1],
+                        f[2] ** 2 + (p_long * 0.5 * f[1])**2, f[0] ** 2 + (p_long * 0.5 * f[1]) ** 2) # Friction ellipse
 
     # Terminal Cost
-    cost += 300 * ((x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2 - track_width ** 2)
+    # cost += 300 * ((x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2 - track_width ** 2)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([v_x_min, v_y_min, d_min, delta_min],  # , -track_width ** 2],
-                                 [v_x_max, v_y_max, d_max, delta_max])  # , track_width ** 2])
+    C = og.constraints.Rectangle([v_x_min, v_y_min, d_min, delta_min, 0, 0],
+                                 [v_x_max, v_y_max, d_max, delta_max, (p_ellipse * D_r) ** 2, (p_ellipse * D_f) ** 2])
 
     # Code Generation
     # -------------------------------------
@@ -261,7 +266,7 @@ def generate_code(contouring_error_weight, in_weight, in_change_weight):
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_initial_penalty(3) \
+        .with_initial_penalty(4) \
         .with_max_outer_iterations(20) \
         .with_max_outer_iterations(100) \
         .with_max_duration_micros(500000)  # 0.5s
