@@ -191,7 +191,8 @@ def cost_function(state, state_prev, u, u_prev, contouring_error_weight, in_weig
     # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
 
     # Contouring Error
-    cf += contouring_error_weight[0] * ((cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1))) - track_width) ** 2
+    cf += contouring_error_weight[0] * (
+                (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1))) - track_width) ** 2
 
     # Tracking Error
     cf += contouring_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
@@ -240,16 +241,16 @@ def generate_code(contouring_error_weight, in_weight, in_change_weight):
         # f_fy = forces[0]
         # f_rx = forces[1]
         # f_ry = forces[2]
-        F1 = cs.vertcat(F1, x_t[3], x_t[4], u[0], u[1],
-                        f[2] ** 2 + (p_long * 0.5 * f[1])**2, f[0] ** 2 + (p_long * 0.5 * f[1]) ** 2) # Friction ellipse
+        F1 = cs.vertcat(F1, x_t[3], x_t[4], u[0], u[1])
+        # f[2] ** 2 + (p_long * 0.5 * f[1])**2, f[0] ** 2 + (p_long * 0.5 * f[1]) ** 2) # Friction ellipse
 
     # Terminal Cost
     # cost += 300 * ((x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2 - track_width ** 2)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([v_x_min, v_y_min, d_min, delta_min, 0, 0],
-                                 [v_x_max, v_y_max, d_max, delta_max, (p_ellipse * D_r) ** 2, (p_ellipse * D_f) ** 2])
+    C = og.constraints.Rectangle([v_x_min, v_y_min, d_min, delta_min],  # , 0, 0],
+                                 [v_x_max, v_y_max, d_max, delta_max])  # , (p_ellipse * D_r) ** 2, (p_ellipse * D_f) ** 2])
 
     # Code Generation
     # -------------------------------------
