@@ -12,7 +12,7 @@ import CodeGenerator as cg
 # Last updated: 19/03/2020
 
 
-def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, simulation_steps):
+def simulate(track_x, track_y, simulation_steps):
     # Create a TCP connection manager
     mng = og.tcp.OptimizerTcpManager("mpcc_python_build_1/mpcc_optimizer")
     # Start the TCP server
@@ -36,11 +36,10 @@ def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, sim
     phi = np.arctan2(y - y_prev, x - x_prev)
     state_ref = np.concatenate(([x, y, phi], ref_rest))
     reference_sequence = state_ref
-    bounds = [bound_xout[i_ahead], bound_yout[i_ahead], bound_xin[i_ahead], bound_yin[i_ahead]]
 
     # Run simulations
     for k in range(simulation_steps):
-        solver_status = mng.call(np.concatenate((state, state_ref, bounds)))
+        solver_status = mng.call(np.concatenate((state, state_ref)))
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
                   + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
@@ -49,7 +48,7 @@ def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, sim
             u1 = us[0]
             u2 = us[1]
             forces = cg.tire_forces(state, [u1, u2])
-            state_next = cg.dynamic_model_rk(np.concatenate((state, state_ref, bounds)), [u1, u2], forces, cg.Ts, False)
+            state_next = cg.dynamic_model_rk(np.concatenate((state, state_ref)), [u1, u2], forces, cg.Ts, False)
 
             # Find the index of the reference point (depending on the current velocity)
             dist_ahead = (np.arctan2(state_next[4], state_next[3])) * cg.N * cg.Ts  # Using tangential velocity
@@ -63,13 +62,12 @@ def simulate(track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin, sim
 
             # The next reference state, taking into account all the previous calculations, and using the vehicle
             # model with regard to the obtained control inputs
-            state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref, bounds)), [u1, u2], forces, cg.Ts, False)
+            state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref)), [u1, u2], forces, cg.Ts, False)
 
             # Update all variables needed for the next iteration and save values in the sequences to be plotted
             state_ref = np.concatenate(([x, y], state_ref[2:6]))
             # state_ref = np.concatenate(([x, y, phi], state_ref[3:6]))
             state = state_next[:6]
-            bounds = [bound_xout[i_ahead], bound_yout[i_ahead], bound_xin[i_ahead], bound_yin[i_ahead]]
             input_sequence += [u1, u2]
             state_sequence = np.concatenate((state_sequence, state_next[:6]))
             reference_sequence = np.concatenate((reference_sequence, state_ref))

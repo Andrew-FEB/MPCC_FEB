@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-03-20 21:21:06.365486
+// Generated at: 2020-03-21 09:37:19.224665
 //
 
 use icasadi;
@@ -51,7 +51,7 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
-pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 16;
+pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 12;
 
 /// Number of parameters associated with augmented Lagrangian
 pub const MPCC_OPTIMIZER_N1: usize = 240;

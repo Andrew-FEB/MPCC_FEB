@@ -121,12 +121,10 @@ def dynamic_model(state, control, forces, calc_casadi):
 
     if calc_casadi:
         return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                          state[6], state[7], state[8], state[9], state[10], state[11],
-                          state[12], state[13], state[14], state[15])
+                          state[6], state[7], state[8], state[9], state[10], state[11])
     else:
         return [x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                state[6], state[7], state[8], state[9], state[10], state[11],
-                state[12], state[13], state[14], state[15]]
+                state[6], state[7], state[8], state[9], state[10], state[11]]
 
 
 # Runge-Kutta 4th order method
@@ -138,8 +136,7 @@ def dynamic_model_rk(state, control, forces, dt, calc_casadi):
         k4 = dt * dynamic_model(state + dt * k3, control, forces, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                          state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13],
-                          state[14], state[15])
+                          state[6], state[7], state[8], state[9], state[10], state[11])
     else:
         k1 = dt * np.array(dynamic_model(state, control, forces, calc_casadi))
         k2 = dt * np.array(dynamic_model(state + dt * 0.5 * k1, control, forces, calc_casadi))
@@ -147,7 +144,7 @@ def dynamic_model_rk(state, control, forces, dt, calc_casadi):
         k4 = dt * np.array(dynamic_model(state + dt * k3, control, forces, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return [next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14], state[15]]
+                state[6], state[7], state[8], state[9], state[10], state[11]]
 
 
 def tire_forces(state, control):
@@ -221,7 +218,7 @@ def cost_function(state, state_prev, u, u_prev, contouring_error_weight, in_weig
 def generate_code(contouring_error_weight, in_weight, in_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", nx * 2 + 4)  # Initial state (=6) + Reference state (=6) + boundaries (=4)
+    x0 = cs.MX.sym("x0_xref", nx * 2)  # Initial state (=6) + Reference state (=6)
 
     cost = 0
     x_t = x0
@@ -234,7 +231,8 @@ def generate_code(contouring_error_weight, in_weight, in_change_weight):
             u_prev = [0, 0]
 
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function(x_t, x_t_prev, u, u_prev, contouring_error_weight, in_weight, in_change_weight)  # Update cost
+        # Update cost
+        cost += cost_function(x_t, x_t_prev, u, u_prev, contouring_error_weight, in_weight, in_change_weight)
         f = tire_forces(x_t, u)
         x_t_prev = x_t
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state

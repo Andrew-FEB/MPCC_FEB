@@ -59,7 +59,7 @@ def generate_track(num_steps):
     # ax.plot(xi_minus, yi_minus, '--g')
     # plt.show()
 
-    return [xi, yi, xi_plus, yi_plus, xi_minus, yi_minus]
+    return [xi, yi]
 
 
 # def read_data():

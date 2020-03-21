@@ -17,14 +17,13 @@ in_change_weight = [9, 9]
 
 print("Generating code")
 st = time.time()
-# cg.generate_code(contouring_error_weight, in_weight, in_change_weight)
+cg.generate_code(contouring_error_weight, in_weight, in_change_weight)
 print('Code generated in ' + str(time.time() - st) + ' s')
 
 print("Running simulation")
 if simulation_steps > 1:
-    [track_x, track_y, bound_xout, bound_yout, bound_xin, bound_yin] = gd.generate_track(simulation_steps)
-    [in_seq, state_seq, state_ref, simulation_steps] = sim.simulate(track_x, track_y, bound_xout, bound_yout,
-                                                                    bound_xin, bound_yin, simulation_steps)
+    [track_x, track_y] = gd.generate_track(simulation_steps)
+    [in_seq, state_seq, state_ref, simulation_steps] = sim.simulate(track_x, track_y, simulation_steps)
     sim.plot_simulation(simulation_steps, in_seq, state_seq, state_ref)
     sim.plot_track(track_x, track_y, state_ref, state_seq)
 else:
