@@ -38,8 +38,8 @@ C_f = 2
 D_f = wight_r * m * 9.81 * 1.2
 
 # Friction ellipse
-p_long = 700
-p_ellipse = 500
+p_long = 95
+p_ellipse = 90
 
 # TODO Model limits (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
 x_max = 26
@@ -121,10 +121,10 @@ def dynamic_model(state, control, forces, calc_casadi):
 
     if calc_casadi:
         return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                          state[6], state[7], state[8], state[9], state[10], state[11])
+                          state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
     else:
         return [x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                state[6], state[7], state[8], state[9], state[10], state[11]]
+                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14]]
 
 
 # Runge-Kutta 4th order method
@@ -136,7 +136,7 @@ def dynamic_model_rk(state, control, forces, dt, calc_casadi):
         k4 = dt * dynamic_model(state + dt * k3, control, forces, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                          state[6], state[7], state[8], state[9], state[10], state[11])
+                          state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
     else:
         k1 = dt * np.array(dynamic_model(state, control, forces, calc_casadi))
         k2 = dt * np.array(dynamic_model(state + dt * 0.5 * k1, control, forces, calc_casadi))
@@ -144,7 +144,7 @@ def dynamic_model_rk(state, control, forces, dt, calc_casadi):
         k4 = dt * np.array(dynamic_model(state + dt * k3, control, forces, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return [next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                state[6], state[7], state[8], state[9], state[10], state[11]]
+                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14]]
 
 
 def tire_forces(state, control):
@@ -171,7 +171,7 @@ def tire_forces(state, control):
     return [F_fy, F_rx, F_ry]
 
 
-def cost_function(state, state_prev, u, u_prev, contouring_error_weight, in_weight, in_change_weight):
+def cost_function(state, u, u_prev, contouring_error_weight, in_weight, in_change_weight):
     # TODO - add remaining costs
     cf = 0
 
@@ -179,20 +179,19 @@ def cost_function(state, state_prev, u, u_prev, contouring_error_weight, in_weig
     y = state[1]
     x_ref = state[6]
     y_ref = state[7]
-    x_prev = state_prev[0]
-    y_prev = state_prev[1]
+    slope = state[12]
+    x_nearest = state[13]
+    y_nearest = state[14]
 
     # y = slope * x + y_intercept
-    slope = cs.arctan2(y_prev, x_prev)
-    y_inter = y - slope * x
+    y_inter = y_nearest - slope * x_nearest
 
     # Line: ax + by + c = 0 -> slope * x - y + y_inter = 0
     # Point: (x1, y1) -> (x, y)
     # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
 
     # Contouring Error
-    cf += contouring_error_weight[0] * (
-                (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1))) - track_width) ** 2
+    cf += contouring_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
 
     # Tracking Error
     cf += contouring_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
@@ -219,11 +218,10 @@ def cost_function(state, state_prev, u, u_prev, contouring_error_weight, in_weig
 def generate_code(contouring_error_weight, in_weight, in_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", nx * 2)  # Initial state (=6) + Reference state (=6)
+    x0 = cs.MX.sym("x0_xref", nx * 2 + 3)  # Initial state (=6) + Reference state (=6) + slope (=1) + nearest x, y (=2)
 
     cost = 0
     x_t = x0
-    x_t_prev = [0] * nx
     F1 = []
     for t in range(0, nu * N, nu):
         if t >= 2:
@@ -233,24 +231,25 @@ def generate_code(contouring_error_weight, in_weight, in_change_weight):
 
         u = [u_seq[t], u_seq[t + 1]]
         # Update cost
-        cost += cost_function(x_t, x_t_prev, u, u_prev, contouring_error_weight, in_weight, in_change_weight)
+        cost += cost_function(x_t, u, u_prev, contouring_error_weight, in_weight, in_change_weight)
         f = tire_forces(x_t, u)
-        x_t_prev = x_t
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
         # f_fy = forces[0]
         # f_rx = forces[1]
         # f_ry = forces[2]
-        F1 = cs.vertcat(F1, x_t[3], x_t[4], u[0], u[1])
-        # f[2] ** 2 + (p_long * 0.5 * f[1])**2, f[0] ** 2 + (p_long * 0.5 * f[1]) ** 2) # Friction ellipse
+        F1 = cs.vertcat(F1, u[0], u[1], (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)
+        # f[2] ** 2 + (p_long * 0.5 * f[1]) ** 2,
+        # f[0] ** 2 + (p_long * 0.5 * f[1]) ** 2)  # Friction ellipse
 
     # Terminal Cost
     # cost += 300 * ((x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2 - track_width ** 2)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([v_x_min, v_y_min, d_min, delta_min],  # , 0, 0],
-                                 [v_x_max, v_y_max, d_max, delta_max])  # , (p_ellipse * D_r) ** 2, (p_ellipse * D_f) ** 2])
+    C = og.constraints.Rectangle([d_min, delta_min, 0],  # 0, 0],
+                                 [d_max, delta_max, track_width ** 2])
+    # , (p_ellipse * D_r) ** 2, (p_ellipse * D_f) ** 2])
 
     # Code Generation
     # -------------------------------------
@@ -265,9 +264,6 @@ def generate_code(contouring_error_weight, in_weight, in_change_weight):
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_initial_penalty(4) \
-        .with_max_outer_iterations(20) \
-        .with_max_outer_iterations(100) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,

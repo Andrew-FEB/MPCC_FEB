@@ -2,11 +2,13 @@ import CodeGenerator as cg
 import numpy as np
 from scipy import interpolate
 import matplotlib.pyplot as plt
+
+
 # import rosbag
 
 # Author: Darina Abaffyová
 # Created: 04/03/2020
-# Last updated: 19/03/2020
+# Last updated: 21/03/2020
 
 
 def generate_reference_state(start_state, control, num_steps):
@@ -19,17 +21,17 @@ def generate_reference_state(start_state, control, num_steps):
 
 
 def generate_track(num_steps):
-    x_plus = np.array([7, -4.5, 11, 25.5, 16.5, 21.5])
-    y_plus = np.array([10.5, -1.5, -1.5, 6.5, 6, 13])
+    x_plus = np.array([11, 25.5, 16.5, 21.5, 7, -4.5])
+    y_plus = np.array([-1.5, 6.5, 6, 13, 10.5, -1.5])
 
-    x_minus = np.array([7, -1.5, 11, 21, 13.5, 18.5])
-    y_minus = np.array([7.5, 1, 1, 4.5, 4, 11.5])
+    x_minus = np.array([11, 21, 13.5, 18.5, 7, -1.5])
+    y_minus = np.array([1, 4.5, 4, 11.5, 7.5, 1])
 
     x = [0] * 6
     y = [0] * 6
     for i in range(6):
-        x[i] = x_plus[i] - (x_plus[i] - x_minus[i])/2
-        y[i] = y_plus[i] - (y_plus[i] - y_minus[i])/2
+        x[i] = x_plus[i] - (x_plus[i] - x_minus[i]) / 2
+        y[i] = y_plus[i] - (y_plus[i] - y_minus[i]) / 2
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]
@@ -61,6 +63,45 @@ def generate_track(num_steps):
 
     return [xi, yi]
 
+
+def generate_circular_track(num_steps):
+    x = np.array([0, 1, 0, -1])
+    y = np.array([-1, 0, 1, 0])
+
+    # append the starting x,y coordinates
+    x = np.r_[x, x[0]]
+    y = np.r_[y, y[0]]
+
+    # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
+    # is needed in order to force the spline fit to pass through all the input points.
+    tck, u = interpolate.splprep([x, y], s=0, per=True)
+
+    # evaluate the spline fits for 1000 evenly spaced distance values
+    xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
+
+    # plot the result
+    # fig, ax = plt.subplots(1, 1)
+    # ax.plot(xi, yi, 'or')
+    # plt.show()
+
+    return [xi, yi]
+
+
+def generate_linear_track(num_steps):
+    y = np.arange(3, 0, - 3 / num_steps)
+    x = np.arange(0, 7, 7 / num_steps)
+
+    upper = np.arange(1.5, 4.5, 3 / num_steps)
+    lower = np.arange(-1.5, 1.5, 3 / num_steps)
+
+    # plot the result
+    # fig, ax = plt.subplots(1, 1)
+    # ax.plot(x, y, 'or')
+    # ax.plot(x, upper, '--g')
+    # ax.plot(x, lower, '--g')
+    # plt.show()
+
+    return [x, y, upper, lower]
 
 # def read_data():
 #     data = []

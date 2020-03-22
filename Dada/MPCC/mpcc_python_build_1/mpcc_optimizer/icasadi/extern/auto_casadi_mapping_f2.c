@@ -10,7 +10,7 @@ extern "C" {
   #define _CASADI_NAMESPACE_CONCAT(NS, ID) NS ## ID
   #define CASADI_PREFIX(ID) CASADI_NAMESPACE_CONCAT(CODEGEN_PREFIX, ID)
 #else
-  #define CASADI_PREFIX(ID) mapping_f2_OwoVLkvLvxCYdrdmBxHx_ ## ID
+  #define CASADI_PREFIX(ID) mapping_f2_sdNmkqoMxiNYNuHfLjTk_ ## ID
 #endif
 
 #include <math.h>
@@ -45,10 +45,10 @@ extern "C" {
 #endif
 
 static const casadi_int casadi_s0[84] = {80, 1, 0, 80, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79};
-static const casadi_int casadi_s1[16] = {12, 1, 0, 12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+static const casadi_int casadi_s1[19] = {15, 1, 0, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 static const casadi_int casadi_s2[5] = {1, 1, 0, 1, 0};
 
-/* mapping_f2_OwoVLkvLvxCYdrdmBxHx:(i0[80],i1[12])->(o0) */
+/* mapping_f2_sdNmkqoMxiNYNuHfLjTk:(i0[80],i1[15])->(o0) */
 static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem) {
   casadi_real w0;
   /* #0: @0 = 0 */
@@ -58,45 +58,45 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   return 0;
 }
 
-CASADI_SYMBOL_EXPORT int mapping_f2_OwoVLkvLvxCYdrdmBxHx(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem){
+CASADI_SYMBOL_EXPORT int mapping_f2_sdNmkqoMxiNYNuHfLjTk(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem){
   return casadi_f0(arg, res, iw, w, mem);
 }
 
-CASADI_SYMBOL_EXPORT int mapping_f2_OwoVLkvLvxCYdrdmBxHx_alloc_mem(void) {
+CASADI_SYMBOL_EXPORT int mapping_f2_sdNmkqoMxiNYNuHfLjTk_alloc_mem(void) {
   return 0;
 }
 
-CASADI_SYMBOL_EXPORT int mapping_f2_OwoVLkvLvxCYdrdmBxHx_init_mem(int mem) {
+CASADI_SYMBOL_EXPORT int mapping_f2_sdNmkqoMxiNYNuHfLjTk_init_mem(int mem) {
   return 0;
 }
 
-CASADI_SYMBOL_EXPORT void mapping_f2_OwoVLkvLvxCYdrdmBxHx_free_mem(int mem) {
+CASADI_SYMBOL_EXPORT void mapping_f2_sdNmkqoMxiNYNuHfLjTk_free_mem(int mem) {
 }
 
-CASADI_SYMBOL_EXPORT int mapping_f2_OwoVLkvLvxCYdrdmBxHx_checkout(void) {
+CASADI_SYMBOL_EXPORT int mapping_f2_sdNmkqoMxiNYNuHfLjTk_checkout(void) {
   return 0;
 }
 
-CASADI_SYMBOL_EXPORT void mapping_f2_OwoVLkvLvxCYdrdmBxHx_release(int mem) {
+CASADI_SYMBOL_EXPORT void mapping_f2_sdNmkqoMxiNYNuHfLjTk_release(int mem) {
 }
 
-CASADI_SYMBOL_EXPORT void mapping_f2_OwoVLkvLvxCYdrdmBxHx_incref(void) {
+CASADI_SYMBOL_EXPORT void mapping_f2_sdNmkqoMxiNYNuHfLjTk_incref(void) {
 }
 
-CASADI_SYMBOL_EXPORT void mapping_f2_OwoVLkvLvxCYdrdmBxHx_decref(void) {
+CASADI_SYMBOL_EXPORT void mapping_f2_sdNmkqoMxiNYNuHfLjTk_decref(void) {
 }
 
-CASADI_SYMBOL_EXPORT casadi_int mapping_f2_OwoVLkvLvxCYdrdmBxHx_n_in(void) { return 2;}
+CASADI_SYMBOL_EXPORT casadi_int mapping_f2_sdNmkqoMxiNYNuHfLjTk_n_in(void) { return 2;}
 
-CASADI_SYMBOL_EXPORT casadi_int mapping_f2_OwoVLkvLvxCYdrdmBxHx_n_out(void) { return 1;}
+CASADI_SYMBOL_EXPORT casadi_int mapping_f2_sdNmkqoMxiNYNuHfLjTk_n_out(void) { return 1;}
 
-CASADI_SYMBOL_EXPORT casadi_real mapping_f2_OwoVLkvLvxCYdrdmBxHx_default_in(casadi_int i){
+CASADI_SYMBOL_EXPORT casadi_real mapping_f2_sdNmkqoMxiNYNuHfLjTk_default_in(casadi_int i){
   switch (i) {
     default: return 0;
   }
 }
 
-CASADI_SYMBOL_EXPORT const char* mapping_f2_OwoVLkvLvxCYdrdmBxHx_name_in(casadi_int i){
+CASADI_SYMBOL_EXPORT const char* mapping_f2_sdNmkqoMxiNYNuHfLjTk_name_in(casadi_int i){
   switch (i) {
     case 0: return "i0";
     case 1: return "i1";
@@ -104,14 +104,14 @@ CASADI_SYMBOL_EXPORT const char* mapping_f2_OwoVLkvLvxCYdrdmBxHx_name_in(casadi_
   }
 }
 
-CASADI_SYMBOL_EXPORT const char* mapping_f2_OwoVLkvLvxCYdrdmBxHx_name_out(casadi_int i){
+CASADI_SYMBOL_EXPORT const char* mapping_f2_sdNmkqoMxiNYNuHfLjTk_name_out(casadi_int i){
   switch (i) {
     case 0: return "o0";
     default: return 0;
   }
 }
 
-CASADI_SYMBOL_EXPORT const casadi_int* mapping_f2_OwoVLkvLvxCYdrdmBxHx_sparsity_in(casadi_int i) {
+CASADI_SYMBOL_EXPORT const casadi_int* mapping_f2_sdNmkqoMxiNYNuHfLjTk_sparsity_in(casadi_int i) {
   switch (i) {
     case 0: return casadi_s0;
     case 1: return casadi_s1;
@@ -119,14 +119,14 @@ CASADI_SYMBOL_EXPORT const casadi_int* mapping_f2_OwoVLkvLvxCYdrdmBxHx_sparsity_
   }
 }
 
-CASADI_SYMBOL_EXPORT const casadi_int* mapping_f2_OwoVLkvLvxCYdrdmBxHx_sparsity_out(casadi_int i) {
+CASADI_SYMBOL_EXPORT const casadi_int* mapping_f2_sdNmkqoMxiNYNuHfLjTk_sparsity_out(casadi_int i) {
   switch (i) {
     case 0: return casadi_s2;
     default: return 0;
   }
 }
 
-CASADI_SYMBOL_EXPORT int mapping_f2_OwoVLkvLvxCYdrdmBxHx_work(casadi_int *sz_arg, casadi_int* sz_res, casadi_int *sz_iw, casadi_int *sz_w) {
+CASADI_SYMBOL_EXPORT int mapping_f2_sdNmkqoMxiNYNuHfLjTk_work(casadi_int *sz_arg, casadi_int* sz_res, casadi_int *sz_iw, casadi_int *sz_w) {
   if (sz_arg) *sz_arg = 2;
   if (sz_res) *sz_res = 2;
   if (sz_iw) *sz_iw = 0;

@@ -8,32 +8,28 @@ import Simulator as sim
 # Created: 24/02/2020
 # Last updated: 17/03/2020
 
+simulation_steps = 400
 
-simulation_steps = 50
-
-contouring_error_weight = [500, 70]
-in_weight = [3, 3]
-in_change_weight = [9, 9]
+contouring_error_weight = [10, 0]
+in_weight = [0, 0]
+in_change_weight = [0, 0]
 
 print("Generating code")
 st = time.time()
-cg.generate_code(contouring_error_weight, in_weight, in_change_weight)
+# cg.generate_code(contouring_error_weight, in_weight, in_change_weight)
 print('Code generated in ' + str(time.time() - st) + ' s')
 
 print("Running simulation")
 if simulation_steps > 1:
-    [track_x, track_y] = gd.generate_track(simulation_steps)
-    [in_seq, state_seq, state_ref, simulation_steps] = sim.simulate(track_x, track_y, simulation_steps)
+    [track_x, track_y, upper, lower] = gd.generate_linear_track(simulation_steps)
+    # [track_x, track_y] = gd.generate_track(simulation_steps)
+    [in_seq, state_seq, state_ref, nearest_seq, simulation_steps] = sim.simulate(track_x, track_y, simulation_steps)
     sim.plot_simulation(simulation_steps, in_seq, state_seq, state_ref)
-    sim.plot_track(track_x, track_y, state_ref, state_seq)
+    sim.plot_track(track_x, track_y, upper, lower, state_ref, state_seq)
+    sim.plot_nearest(track_x, track_y, nearest_seq, state_seq)
 else:
-    state_0 = [-3.0000000000000018, -0.24999999999999878, -1.6539375586833374, 10, 3, 0.1]
-    state_ref = [-1.32006763, -1.26766852, -0.47161536, 15, 5, 0.7]
-    # state_0 = [23, -2, 0, 1, 1, 0]
-    # state_ref = [23.723, -2.915, -1.259, 15.774, 3.103, 0.736]
+    state_0 = [2.475682289964297, 6.28597816922657, 1.1956098063101206, 10, 7, 0.5]
+    state_ref = [1.47357417, 5.57542534, -2.50728534, 15, 5, 0.7]
 
     [in_seq, state_seq] = sim.simulate_one_step(state_0, state_ref)
     sim.plot_simulation(cg.N, in_seq, state_seq, state_ref)
-
-s = state_seq.size
-print("Simulation finished with:\nstate_0 = " + str([state_seq[:6]]) + "\nstate_end = " + str([state_seq[s - 6:s]]))
