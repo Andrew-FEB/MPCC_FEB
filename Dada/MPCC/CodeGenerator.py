@@ -4,7 +4,7 @@ import numpy as np
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 20/03/2020
+# Last updated: 23/03/2020
 
 # Parameters
 # -------------------------------------
@@ -56,7 +56,7 @@ omega_max = 2 * np.pi
 omega_min = -omega_max
 # Control limits
 d_max = 1
-d_min = -d_max
+d_min = 0  # -d_max
 delta_max = 0.506  # [rad] =  29 degrees
 delta_min = -delta_max
 
@@ -93,8 +93,8 @@ def kinetic_model(state, v_x_prev, delta, delta_prev, F_x, calc_casadi, dt):
         return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
                           state[6], state[7], state[8], state[9], state[10], state[11])
     else:
-        return [x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                state[6], state[7], state[8], state[9], state[10], state[11]]
+        return (x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
+                state[6], state[7], state[8], state[9], state[10], state[11])
 
 
 def dynamic_model(state, control, forces, calc_casadi):
@@ -123,8 +123,8 @@ def dynamic_model(state, control, forces, calc_casadi):
         return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
                           state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
     else:
-        return [x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14]]
+        return (x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
+                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
 
 
 # Runge-Kutta 4th order method
@@ -143,8 +143,8 @@ def dynamic_model_rk(state, control, forces, dt, calc_casadi):
         k3 = dt * np.array(dynamic_model(state + dt * 0.5 * k2, control, forces, calc_casadi))
         k4 = dt * np.array(dynamic_model(state + dt * k3, control, forces, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
-        return [next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14]]
+        return (next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
+                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
 
 
 def tire_forces(state, control):
@@ -158,8 +158,8 @@ def tire_forces(state, control):
 
     # Force calculations
 
-    alpha_f = cs.arctan2((v_y + l_f * omega), v_x) - delta
-    alpha_r = cs.arctan2((v_y - l_r * omega), v_x)
+    alpha_f = - cs.arctan2((l_f * omega + v_y), v_x) + delta
+    alpha_r = cs.arctan2((l_r * omega - v_y), v_x)
 
     F_fy = D_f * cs.sin(C_f * cs.arctan(B_f * alpha_f))
     F_ry = D_r * cs.sin(C_r * cs.arctan(B_r * alpha_r))
@@ -171,7 +171,7 @@ def tire_forces(state, control):
     return [F_fy, F_rx, F_ry]
 
 
-def cost_function(state, u, u_prev, contouring_error_weight, in_weight, in_change_weight):
+def cost_function(state, contouring_error_weight):
     # TODO - add remaining costs
     cf = 0
 
@@ -196,26 +196,10 @@ def cost_function(state, u, u_prev, contouring_error_weight, in_weight, in_chang
     # Tracking Error
     cf += contouring_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
 
-    # Contouring Formulation
-    # e_c = cs.sin(phi) * (x - x_ref) - cs.cos(phi) * (y - y_ref)
-    # e_l = - cs.cos(phi) * (x - x_ref) - cs.sin(phi) * (y - y_ref)
-
-    # cf += contouring_error_weight[0] * e_c ** 2
-    # cf += contouring_error_weight[1] * e_l ** 2
-    # cf -= contouring_error_weight[2] * v ** 2
-
-    # Cost on input
-    cf += in_weight[0] * u[0] ** 2
-    cf += in_weight[1] * u[1] ** 2
-
-    # Cost on input change
-    cf += in_change_weight[0] * (u_prev[0] - u[0]) ** 2
-    cf += in_change_weight[1] * (u_prev[1] - u[1]) ** 2
-
     return cf
 
 
-def generate_code(contouring_error_weight, in_weight, in_change_weight):
+def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
     x0 = cs.MX.sym("x0_xref", nx * 2 + 3)  # Initial state (=6) + Reference state (=6) + slope (=1) + nearest x, y (=2)
@@ -223,37 +207,25 @@ def generate_code(contouring_error_weight, in_weight, in_change_weight):
     cost = 0
     x_t = x0
     F1 = []
+    # F2 = []
     for t in range(0, nu * N, nu):
-        if t >= 2:
-            u_prev = [u_seq[t - 2], u_seq[t - 1]]
-        else:
-            u_prev = [0, 0]
-
         u = [u_seq[t], u_seq[t + 1]]
-        # Update cost
-        cost += cost_function(x_t, u, u_prev, contouring_error_weight, in_weight, in_change_weight)
+        cost += cost_function(x_t, contouring_error_weight)  # Update cost
         f = tire_forces(x_t, u)
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        # f_fy = forces[0]
-        # f_rx = forces[1]
-        # f_ry = forces[2]
-        F1 = cs.vertcat(F1, u[0], u[1], (x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2)
-        # f[2] ** 2 + (p_long * 0.5 * f[1]) ** 2,
-        # f[0] ** 2 + (p_long * 0.5 * f[1]) ** 2)  # Friction ellipse
-
-    # Terminal Cost
-    # cost += 300 * ((x_t[0] - x_t[6]) ** 2 + (x_t[1] - x_t[7]) ** 2 - track_width ** 2)
+        F1 = cs.vertcat(F1, x_t[3], x_t[4], u[0], u[1])
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([d_min, delta_min, 0],  # 0, 0],
-                                 [d_max, delta_max, track_width ** 2])
-    # , (p_ellipse * D_r) ** 2, (p_ellipse * D_f) ** 2])
+    C = og.constraints.Rectangle([v_x_min, v_y_min],
+                                 [v_x_max, v_y_max])
+    U = og.constraints.Rectangle([d_min, delta_min], [d_max, delta_max])
 
     # Code Generation
     # -------------------------------------
     problem = og.builder.Problem(u_seq, x0, cost) \
+        .with_constraints(U) \
         .with_aug_lagrangian_constraints(F1, C)
 
     build_config = og.config.BuildConfiguration() \
@@ -264,6 +236,7 @@ def generate_code(contouring_error_weight, in_weight, in_change_weight):
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
+        .with_penalty_weight_update_factor(15) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,

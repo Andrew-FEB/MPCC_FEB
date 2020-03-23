@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-03-21 22:36:00.076517
+// Generated at: 2020-03-23 14:37:51.520946
 //
 
 use icasadi;
@@ -36,7 +36,7 @@ const MAX_OUTER_ITERATIONS: usize = 10;
 const MAX_DURATION_MICROS: u64 = 500000;
 
 /// Penalty update factor
-const PENALTY_UPDATE_FACTOR: f64 = 5.0;
+const PENALTY_UPDATE_FACTOR: f64 = 15.0;
 
 /// Initial penalty
 const INITIAL_PENALTY_PARAMETER: f64 = 1.0;
@@ -54,7 +54,7 @@ pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 15;
 
 /// Number of parameters associated with augmented Lagrangian
-pub const MPCC_OPTIMIZER_N1: usize = 120;
+pub const MPCC_OPTIMIZER_N1: usize = 160;
 
 /// Number of penalty constraints
 pub const MPCC_OPTIMIZER_N2: usize = 0;
@@ -63,24 +63,26 @@ pub const MPCC_OPTIMIZER_N2: usize = 0;
 
 // ---Parameters of the constraints----------------------------------------------------------------------
 
+const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[0.0,-0.506,]);
+const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[1.0,0.506,]);
 
 
 
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-1.0,-0.506,0.0,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[1.0,0.506,2.25,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[0.5,0.5,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[50.0,50.0,]);
 
 
 
 
 // ---Parameters of ALM-type constraints (Set Y)---------------------------------------------------------
 /// Y_min
-const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0]);
+const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0]);
 
 /// Y_max
-const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0]);
+const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0]);
 
 
 
@@ -90,7 +92,7 @@ const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000
 /// Make constraints U
 fn make_constraints() -> impl Constraint {
 
-    let bounds = NoConstraints::new();
+    let bounds = Rectangle::new(CONSTRAINTS_XMIN, CONSTRAINTS_XMAX);
     bounds
 }
 

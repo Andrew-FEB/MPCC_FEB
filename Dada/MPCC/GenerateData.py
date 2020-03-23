@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # Author: Darina Abaffyová
 # Created: 04/03/2020
-# Last updated: 21/03/2020
+# Last updated: 23/03/2020
 
 
 def generate_reference_state(start_state, control, num_steps):
@@ -89,10 +89,10 @@ def generate_circular_track(num_steps):
 
 def generate_linear_track(num_steps):
     y = np.arange(3, 0, - 3 / num_steps)
-    x = np.arange(0, 7, 7 / num_steps)
+    x = np.arange(0, 6, 6 / num_steps)
 
-    upper = np.arange(1.5, 4.5, 3 / num_steps)
-    lower = np.arange(-1.5, 1.5, 3 / num_steps)
+    upper = np.arange(4.5, 1.5, - 3 / num_steps)
+    lower = np.arange(1.5, - 1.5, - 3 / num_steps)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
