@@ -202,8 +202,11 @@ def simulate_one_step(x_state_0, ref):
     slope = ref[1] / ref[0]
     input_sequence = [(np.nan, np.nan)]
 
+    state_next = state
     state = np.concatenate((state, ref, [slope, ref[0], ref[1]]))
     solver_status = mng.call(state)
+
+    states = []
     try:
         print('Result in: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
               + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
@@ -214,8 +217,11 @@ def simulate_one_step(x_state_0, ref):
             D = controls_sequence[i]
             delta = controls_sequence[i + 1]
             forces = cg.tire_forces(state, [D, delta])
-            state_next = cg.dynamic_model_rk(np.concatenate((state[0:6], ref, [slope, ref[0], ref[1]])), [D, delta],
+            state_next = cg.dynamic_model_rk(np.concatenate((state_next[0:6], ref, [slope, ref[0], ref[1]])), [D, delta],
                                              forces, cg.Ts, False)
+
+            states.append(state_next)
+
             state_sequence.append(tuple(state_next[:6]))
             input_sequence.append(tuple([D, delta]))
     except AttributeError:
@@ -225,6 +231,8 @@ def simulate_one_step(x_state_0, ref):
         sys.exit(0)
 
     mng.kill()
+
+    plot_cost(states, [100, 10])
 
     return [input_sequence, state_sequence]
 

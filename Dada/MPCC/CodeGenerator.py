@@ -9,15 +9,11 @@ import numpy as np
 # Parameters
 # -------------------------------------
 # Vehicle parameters TODO - get all these
-# I_z = 7  # [kg m^2] moment of inertia of the vehicle ASK FOR THIS VALUE!!!!!!!
-# m = 208  # [kg] mass of the vehicle
-# l_f = 0.845  # [m] length of the front part of the vehicle (this is from front axle to COG)
-# l_r = 0.690  # [m] length of the rear part of the vehicle  (this is from front axle to COG)
+I_z = 7e-3  # [kg m^2] moment of inertia of the vehicle ASK FOR THIS VALUE!!!!!!!
+m = 208  # [kg] mass of the vehicle
+l_f = 0.845  # [m] length of the front part of the vehicle (this is from front axle to COG)
+l_r = 0.690  # [m] length of the rear part of the vehicle  (this is from front axle to COG)
 # I_z = 2873
-m = 1573
-I_z = 2873
-l_f = 1.35
-l_r = 1.35
 
 wight_f = l_r / (l_f + l_r)
 wight_r = l_f / (l_f + l_r)
@@ -38,21 +34,21 @@ C_f = 2
 D_f = wight_r * m * 9.81 * 1.2
 
 # Friction ellipse
-p_long = 95
-p_ellipse = 90
+p_long = 0.9
+p_ellipse = 0.95
 
 # TODO Model limits (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
 x_max = 26
 x_min = -3.5
 y_max = 17
 y_min = -3
-phi_max = np.pi
+phi_max = 10
 phi_min = -phi_max
 v_x_max = 50
-v_x_min = 0.5
+v_x_min = 0.05
 v_y_max = 50
-v_y_min = 0.5
-omega_max = 2 * np.pi
+v_y_min = -3
+omega_max = 8
 omega_min = -omega_max
 # Control limits
 d_max = 1
@@ -236,7 +232,6 @@ def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_penalty_weight_update_factor(15) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,
