@@ -21,8 +21,8 @@ def simulate(track_x, track_y, simulation_steps):
 
     # Set all values needed for simulation
     # TODO - organize these!!!
-    i_start = 0
-    phi = np.arctan2(track_y[i_start], track_x[i_start])
+    i_start = 1 # must be at least one
+    phi = np.arctan2(track_y[i_start] - track_y[i_start-1], track_x[i_start] - track_x[i_start-1])
     # State is a tuple which contains the six state-defining parameters
     x_state_0 = (track_x[i_start], track_y[i_start], phi, 10, 7, 0.5)
     # At the end of the simulation, state sequence will contain
@@ -62,13 +62,15 @@ def simulate(track_x, track_y, simulation_steps):
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
                   + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
                   + '. Inner iterations: ' + str(solver_status['num_inner_iterations']))
+
             first_control_input, forces, state_next = update_state(slope, solver_status, state,
                                                                    state_ref, x_nearest, y_nearest)
 
-            end_of_track_reached, i_nearest, state_ref, x, y = update_reference(first_control_input, forces, i_nearest,
-                                                                                k, simulation_steps, slope, state_next,
-                                                                                state_ref, track_x, track_y, x,
-                                                                                x_nearest, y, y_nearest)
+            end_of_track_reached, i_nearest, state_ref, x, y, phi = update_reference(first_control_input, forces,
+                                                                                     i_nearest, k, simulation_steps,
+                                                                                     slope, state_next, state_ref,
+                                                                                     track_x, track_y,
+                                                                                     x_nearest, y_nearest)
 
             if end_of_track_reached:
                 break
@@ -80,7 +82,8 @@ def simulate(track_x, track_y, simulation_steps):
             y_nearest_prev = track_y[i_nearest - 1]
             slope = (y_nearest - y_nearest_prev) / (x_nearest - x_nearest_prev)
 
-            state_ref = (x, y) + tuple(state_ref[2:6])
+            state_ref = (x, y, phi) + tuple(state_ref[3:6])
+            # state_ref = state_ref[0:6]
             state = state_next[:6]
             input_sequence.append(first_control_input)
             state_sequence.append(tuple(state_next[:6]))
@@ -88,7 +91,7 @@ def simulate(track_x, track_y, simulation_steps):
             nearest_sequence.append((x_nearest, y_nearest))
 
         except AttributeError:
-            print('Failed after ' + str(len(state_sequence)) + 'simulation steps\n'
+            print('Failed after ' + str(len(state_sequence)) + ' simulation steps\n'
                   + 'Error[' + str(solver_status['code']) + ']: ' + solver_status['message'])
             break
             # mng.kill()
@@ -100,7 +103,7 @@ def simulate(track_x, track_y, simulation_steps):
 
 
 def update_reference(first_control_input, forces, i_nearest, k, simulation_steps, slope,
-                     state_next, state_ref, track_x, track_y, x, x_nearest, y, y_nearest):
+                     state_next, state_ref, track_x, track_y, x_nearest, y_nearest):
     # Find the index of the reference point (depending on the current velocity), as above
     dist_ahead = (np.arctan2(state_next[4], state_next[3])) * cg.N * cg.Ts  # Using tangential velocity
     [i_nearest, nearest_dist] = find_closest_point_centreline([state_next[0], state_next[1]], track_x, track_y,
@@ -109,13 +112,13 @@ def update_reference(first_control_input, forces, i_nearest, k, simulation_steps
     [i_ahead, end_of_track_reached] = move_along_track(track_x, track_y, dist_ahead, i_nearest)
     # Find the angle in the direction of the previous step - should this be from current position instead?
     [x, y] = [track_x[(i_ahead + 1 + k) % simulation_steps], track_y[(i_ahead + 1 + k) % simulation_steps]]
-    # [x_prev, y_prev] = [track_x[(i_ahead + k) % simulation_steps], track_y[(i_ahead + k) % simulation_steps]]
-    # phi = np.arctan2(y - y_prev, x - x_prev)
+    [x_prev, y_prev] = [track_x[(i_ahead + k) % simulation_steps], track_y[(i_ahead + k) % simulation_steps]]
+    phi = np.arctan2(y - y_prev, x - x_prev)
     # The next reference state, taking into account all the previous calculations, and using the vehicle
     # model with regard to the obtained control inputs
     state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref, [slope, x_nearest, y_nearest])),
                                     first_control_input, forces, cg.Ts, False)
-    return end_of_track_reached, i_nearest, state_ref, x, y
+    return end_of_track_reached, i_nearest, state_ref, x, y, phi
 
 
 def update_state(slope, solver_status, state, state_ref, x_nearest, y_nearest):
@@ -225,7 +228,7 @@ def simulate_one_step(x_state_0, ref):
             state_sequence.append(tuple(state_next[:6]))
             input_sequence.append(tuple([D, delta]))
     except AttributeError:
-        print('Failed after ' + str(state_sequence.__len__() / cg.nx) + 'simulation steps\n'
+        print('Failed after ' + str(len(state_sequence)) + ' simulation steps\n'
               + 'Error[' + str(solver_status['code']) + ']: ' + solver_status['message'])
         mng.kill()
         sys.exit(0)
@@ -240,7 +243,7 @@ def simulate_one_step(x_state_0, ref):
 def plot_simulation(simulation_steps, input_seq, state_seq, ref_seq):
     t = np.arange(0, cg.Ts * (simulation_steps - cg.Ts), cg.Ts)  # - cg.Ts
 
-    plt.plot(t, [D for D, delta in input_seq], '-', label="Throttle")
+    plt.plot(t, [D for D, delta in input_seq], '-', label="Duty cycle")
     plt.plot(t, [delta for D, delta in input_seq], '-', label="Front steering angle")
     plt.grid()
     plt.ylabel('Input')

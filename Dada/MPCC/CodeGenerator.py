@@ -9,11 +9,15 @@ import numpy as np
 # Parameters
 # -------------------------------------
 # Vehicle parameters TODO - get all these
-I_z = 7e-3  # [kg m^2] moment of inertia of the vehicle ASK FOR THIS VALUE!!!!!!!
-m = 208  # [kg] mass of the vehicle
-l_f = 0.845  # [m] length of the front part of the vehicle (this is from front axle to COG)
-l_r = 0.690  # [m] length of the rear part of the vehicle  (this is from front axle to COG)
+# I_z = 7  # [kg m^2] moment of inertia of the vehicle ASK FOR THIS VALUE!!!!!!!
+# m = 208  # [kg] mass of the vehicle
+# l_f = 0.845  # [m] length of the front part of the vehicle (this is from front axle to COG)
+# l_r = 0.690  # [m] length of the rear part of the vehicle  (this is from front axle to COG)
 # I_z = 2873
+m = 1573
+I_z = 2873
+l_f = 1.35
+l_r = 1.35
 
 wight_f = l_r / (l_f + l_r)
 wight_r = l_f / (l_f + l_r)
@@ -38,16 +42,16 @@ p_long = 0.9
 p_ellipse = 0.95
 
 # TODO Model limits (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
-x_max = 26
-x_min = -3.5
-y_max = 17
+x_max = 10
+x_min = -3
+y_max = 10
 y_min = -3
 phi_max = 10
 phi_min = -phi_max
 v_x_max = 50
 v_x_min = 0.05
 v_y_max = 50
-v_y_min = -3
+v_y_min = 0.05
 omega_max = 8
 omega_min = -omega_max
 # Control limits
@@ -210,18 +214,22 @@ def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
         f = tire_forces(x_t, u)
         x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         # TODO - add the missing constraints
-        F1 = cs.vertcat(F1, x_t[3], x_t[4], u[0], u[1])
+        # Contouring Error
+        slope = x_t[12]
+        x_nearest = x_t[13]
+        y_nearest = x_t[14]
+        y_inter = y_nearest - slope * x_nearest
+        c_e = (cs.fabs((slope * x_t[0] - x_t[1] + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1], c_e)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([v_x_min, v_y_min],
-                                 [v_x_max, v_y_max])
-    U = og.constraints.Rectangle([d_min, delta_min], [d_max, delta_max])
+    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width],
+                                 [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width])
 
     # Code Generation
     # -------------------------------------
     problem = og.builder.Problem(u_seq, x0, cost) \
-        .with_constraints(U) \
         .with_aug_lagrangian_constraints(F1, C)
 
     build_config = og.config.BuildConfiguration() \
@@ -232,6 +240,9 @@ def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
+        .with_initial_penalty(10) \
+        .with_penalty_weight_update_factor(25) \
+        .with_max_outer_iterations(1000) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,

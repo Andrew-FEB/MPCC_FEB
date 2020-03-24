@@ -88,11 +88,11 @@ def generate_circular_track(num_steps):
 
 
 def generate_linear_track(num_steps):
-    y = np.arange(3, 0, - 3 / num_steps)
-    x = np.arange(0, 6, 6 / num_steps)
+    y = np.arange(0, 3, 3 / num_steps)
+    x = np.arange(0, 2, 2 / num_steps)
 
-    upper = np.arange(4.5, 1.5, - 3 / num_steps)
-    lower = np.arange(1.5, - 1.5, - 3 / num_steps)
+    upper = np.arange(1.5, 4.5, 3 / num_steps)
+    lower = np.arange(-1.5, 1.5, 3 / num_steps)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
