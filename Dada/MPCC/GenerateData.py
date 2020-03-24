@@ -65,8 +65,8 @@ def generate_track(num_steps):
 
 
 def generate_circular_track(num_steps):
-    x = np.array([0, 1, 0, -1])
-    y = np.array([-1, 0, 1, 0])
+    x = np.array([0, 5, 0, -5])
+    y = np.array([-5, 0, 5, 0])
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]
@@ -88,8 +88,8 @@ def generate_circular_track(num_steps):
 
 
 def generate_linear_track(num_steps):
-    y = np.arange(0, 3, 3 / num_steps)
-    x = np.arange(0, 2, 2 / num_steps)
+    y = np.arange(3, 0, - 3 / num_steps)
+    x = np.arange(0, 7, 7 / num_steps)
 
     upper = np.arange(1.5, 4.5, 3 / num_steps)
     lower = np.arange(-1.5, 1.5, 3 / num_steps)

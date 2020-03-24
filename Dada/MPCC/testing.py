@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 # Created: 24/02/2020
 # Last updated: 23/03/2020
 
-simulation_steps = 100
+simulation_steps = 500
 
-contouring_error_weight = [1, 1]
+contouring_error_weight = [100, 1]
 # in_weight = [0, 0]
 # in_change_weight = [0, 0]
 
@@ -23,11 +23,12 @@ print('Code generated in ' + str(time.time() - st) + ' s')
 
 print("Running simulation")
 if simulation_steps > 1:
-    [track_x, track_y, upper, lower] = gd.generate_linear_track(simulation_steps)
-    # [track_x, track_y] = gd.generate_track(simulation_steps)
+    # [track_x, track_y, upper, lower] = gd.generate_linear_track(simulation_steps)
+    [track_x, track_y] = gd.generate_circular_track(simulation_steps)
     [in_seq, state_seq, state_ref, nearest_seq, simulation_steps] = sim.simulate(track_x, track_y, simulation_steps)
-    # sim.plot_simulation(simulation_steps, in_seq, state_seq, state_ref)
-    sim.plot_track(track_x, track_y, upper, lower, state_ref, state_seq)
+    sim.plot_simulation(simulation_steps, in_seq, state_seq, state_ref)
+    sim.plot_track2(track_x, track_y, state_ref, state_seq)
+    # sim.plot_track(track_x, track_y, upper, lower, state_ref, state_seq)
     sim.plot_nearest(track_x, track_y, nearest_seq, state_seq)
 else:
     state_0 = [0.0, 0.0, 0.0, 10, 7, 0.5]

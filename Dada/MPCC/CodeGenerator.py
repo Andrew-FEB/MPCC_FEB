@@ -42,10 +42,10 @@ p_long = 0.9
 p_ellipse = 0.95
 
 # TODO Model limits (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
-x_max = 10
-x_min = -3
-y_max = 10
-y_min = -3
+x_max = 30
+x_min = -30
+y_max = 30
+y_min = -30
 phi_max = 10
 phi_min = -phi_max
 v_x_max = 50
@@ -61,12 +61,12 @@ delta_max = 0.506  # [rad] =  29 degrees
 delta_min = -delta_max
 
 # Track parameters
-track_width = 1.5
+track_width = 0.3
 
 # Optimizer parameters
 N = 40  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
-nx = 6  # Number of Parameters (state)
+nx = 4  # 6  # Number of Parameters (state)
 Ts = 0.05  # Sampling time (length of one time step in seconds)
 
 
@@ -95,6 +95,53 @@ def kinetic_model(state, v_x_prev, delta, delta_prev, F_x, calc_casadi, dt):
     else:
         return (x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
                 state[6], state[7], state[8], state[9], state[10], state[11])
+
+
+def kinetic_model_temp(state, control, calc_casadi):
+    # First simple (kinematic) model (source: https://github.com/MPC-Berkeley/barc/wiki/Car-Model):
+    # get states / inputs
+    x = state[0]  # Longitudinal position
+    y = state[1]  # Lateral Position
+    psi = state[2]  # Yaw rate
+    v = state[3]  # Velocity
+    d_f = control[0]  # Front steering angle
+    a = control[1]  # Acceleration
+
+    # compute slip angle
+    beta = cs.arctan2(l_r * cs.tan(d_f), (l_f + l_r) )
+
+    # compute next state
+    x_next = v * cs.cos(psi + beta)
+    y_next = v * cs.sin(psi + beta)
+    psi_next = v / l_r * cs.sin(beta)
+    v_next = a
+
+    if calc_casadi:
+        return cs.vertcat(x_next, y_next, psi_next, v_next,
+                          state[4], state[5], state[6], state[7], state[8], state[9], state[10])
+    else:
+        return (x_next, y_next, psi_next, v_next,
+                state[4], state[5], state[6], state[7], state[8], state[9], state[10])
+
+
+# Runge-Kutta 4th order method
+def kinetic_model_rk(state, control, dt, calc_casadi):
+    if calc_casadi:
+        k1 = dt * kinetic_model_temp(state, control, calc_casadi)
+        k2 = dt * kinetic_model_temp(state + dt * 0.5 * k1, control, calc_casadi)
+        k3 = dt * kinetic_model_temp(state + dt * 0.5 * k2, control, calc_casadi)
+        k4 = dt * kinetic_model_temp(state + dt * k3, control, calc_casadi)
+        next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
+        return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3],
+                          state[4], state[5], state[6], state[7], state[8], state[9], state[10])
+    else:
+        k1 = dt * np.array(kinetic_model_temp(state, control, calc_casadi))
+        k2 = dt * np.array(kinetic_model_temp(state + dt * 0.5 * k1, control, calc_casadi))
+        k3 = dt * np.array(kinetic_model_temp(state + dt * 0.5 * k2, control, calc_casadi))
+        k4 = dt * np.array(kinetic_model_temp(state + dt * k3, control, calc_casadi))
+        next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
+        return (next_state[0], next_state[1], next_state[2], next_state[3],
+                state[4], state[5], state[6], state[7], state[8], state[9], state[10])
 
 
 def dynamic_model(state, control, forces, calc_casadi):
@@ -177,11 +224,16 @@ def cost_function(state, contouring_error_weight):
 
     x = state[0]
     y = state[1]
-    x_ref = state[6]
-    y_ref = state[7]
-    slope = state[12]
-    x_nearest = state[13]
-    y_nearest = state[14]
+    x_ref = state[4]
+    y_ref = state[5]
+    slope = state[8]
+    x_nearest = state[9]
+    y_nearest = state[10]
+    # x_ref = state[6]
+    # y_ref = state[7]
+    # slope = state[12]
+    # x_nearest = state[13]
+    # y_nearest = state[14]
 
     # y = slope * x + y_intercept
     y_inter = y_nearest - slope * x_nearest
@@ -211,21 +263,25 @@ def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
     for t in range(0, nu * N, nu):
         u = [u_seq[t], u_seq[t + 1]]
         cost += cost_function(x_t, contouring_error_weight)  # Update cost
-        f = tire_forces(x_t, u)
-        x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
+        # f = tire_forces(x_t, u)
+        # x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
+        x_t = kinetic_model_rk(x_t, u, Ts, True)
         # TODO - add the missing constraints
         # Contouring Error
-        slope = x_t[12]
-        x_nearest = x_t[13]
-        y_nearest = x_t[14]
+        slope = x_t[8]
+        x_nearest = x_t[9]
+        y_nearest = x_t[10]
         y_inter = y_nearest - slope * x_nearest
         c_e = (cs.fabs((slope * x_t[0] - x_t[1] + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1], c_e)
+        # F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1], c_e)
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], u[0], u[1], c_e)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width],
-                                 [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width])
+    # C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width],
+    #                              [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width])
+    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, d_min, delta_min, -track_width],
+                                 [x_max, y_max, phi_max, v_x_max, d_max, delta_max, track_width])
 
     # Code Generation
     # -------------------------------------
@@ -242,7 +298,6 @@ def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
     solver_config = og.config.SolverConfiguration() \
         .with_initial_penalty(10) \
         .with_penalty_weight_update_factor(25) \
-        .with_max_outer_iterations(1000) \
         .with_max_duration_micros(500000)  # 0.5s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,
