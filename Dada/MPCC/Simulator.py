@@ -24,7 +24,7 @@ def simulate(track_x, track_y, simulation_steps):
     i_start = 1  # must be at least one
     phi = np.arctan2(track_y[i_start] - track_y[i_start - 1], track_x[i_start] - track_x[i_start - 1])
     # State is a tuple which contains the six state-defining parameters
-    x_state_0 = (track_x[i_start], track_y[i_start], phi, 10)  # , 7, 0.5)
+    x_state_0 = (track_x[i_start], track_y[i_start], phi, 0.035)  # , 7, 0.5)
     # At the end of the simulation, state sequence will contain
     # all the states that the vehicle went through during the simulation
     state_sequence = [x_state_0]
@@ -45,7 +45,7 @@ def simulate(track_x, track_y, simulation_steps):
     (x, y) = [track_x[i_ahead], track_y[i_ahead]]
     (x_prev, y_prev) = [track_x[i_ahead - 1], track_y[i_ahead - 1]]
     phi = np.arctan2(y - y_prev, x - x_prev)
-    state_ref = (x, y, phi, 15)  # , 5, 0.7)  # reference state tuple
+    state_ref = (x, y, phi, 0.07)  # , 5, 0.7)  # reference state tuple
     reference_sequence = [state_ref]
 
     # The nearest sequence will contain tuples (x, y) of the positions
@@ -254,8 +254,8 @@ def simulate_one_step(x_state_0, ref):
 def plot_simulation(simulation_steps, input_seq, state_seq, ref_seq):
     t = np.arange(0, cg.Ts * (simulation_steps - cg.Ts), cg.Ts)  # - cg.Ts
 
-    plt.plot(t, [D for D, delta in input_seq], '-', label="Duty cycle")
-    plt.plot(t, [delta for D, delta in input_seq], '-', label="Front steering angle")
+    plt.plot(t, [delta for D, delta in input_seq], '-', label="Acceleration")
+    plt.plot(t, [D for D, delta in input_seq], '-', label="Front steering angle")
     plt.grid()
     plt.ylabel('Input')
     plt.xlabel('Time')
@@ -334,8 +334,8 @@ def plot_track2(track_x, track_y, ref_seq, state_seq):
 def plot_nearest(track_x, track_y, nearest_seq, state_seq):
     state_x = [x for x, *_ in state_seq]
     state_y = [y for x, y, *_ in state_seq]
-    nearest_x = [x for x, y in nearest_seq]
-    nearest_y = [y for x, y in nearest_seq]
+    nearest_x = [x for x, y, *_ in nearest_seq]
+    nearest_y = [y for x, y, *_ in nearest_seq]
 
     fig, ax = plt.subplots(1, 1)
     ax.plot(track_x, track_y, '.y', label="Complete track")

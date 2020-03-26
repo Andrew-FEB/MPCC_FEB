@@ -10,15 +10,15 @@ import matplotlib.pyplot as plt
 # Created: 24/02/2020
 # Last updated: 23/03/2020
 
-simulation_steps = 500
+simulation_steps = 300
 
-contouring_error_weight = [100, 1]
-# in_weight = [0, 0]
-# in_change_weight = [0, 0]
+track_error_weight = [1, 0.5, 1]
+in_weight = [1, 1]
+in_change_weight = [1, 1]
 
 print("Generating code")
 st = time.time()
-# cg.generate_code(contouring_error_weight)  # , in_weight, in_change_weight)
+# cg.generate_code(track_error_weight, in_weight, in_change_weight)
 print('Code generated in ' + str(time.time() - st) + ' s')
 
 print("Running simulation")
@@ -29,7 +29,7 @@ if simulation_steps > 1:
     sim.plot_simulation(simulation_steps, in_seq, state_seq, state_ref)
     sim.plot_track2(track_x, track_y, state_ref, state_seq)
     # sim.plot_track(track_x, track_y, upper, lower, state_ref, state_seq)
-    sim.plot_nearest(track_x, track_y, nearest_seq, state_seq)
+    # sim.plot_nearest(track_x, track_y, nearest_seq, state_seq)
 else:
     state_0 = [0.0, 0.0, 0.0, 10, 7, 0.5]
     state_ref = [1.14, 0.57, 0.4636476090008061, 15, 5, 0.7]
@@ -55,9 +55,9 @@ def test_cost_function(points):
     nearest_point2 = [track_x[nearest_point_i2], track_y[nearest_point_i2]]
     nearest_point3 = [track_x[nearest_point_i3], track_y[nearest_point_i3]]
 
-    cost1 = cost_function(point1, ref_point, nearest_point1, -0.5, contouring_error_weight)
-    cost2 = cost_function(point2, ref_point, nearest_point2, -0.5, contouring_error_weight)
-    cost3 = cost_function(point3, ref_point, nearest_point3, -0.5, contouring_error_weight)
+    cost1 = cost_function(point1, ref_point, nearest_point1, -0.5, track_error_weight)
+    cost2 = cost_function(point2, ref_point, nearest_point2, -0.5, track_error_weight)
+    cost3 = cost_function(point3, ref_point, nearest_point3, -0.5, track_error_weight)
 
     # plot the result
     fig, ax = plt.subplots(1, 1)

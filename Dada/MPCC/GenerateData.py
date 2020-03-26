@@ -21,11 +21,11 @@ def generate_reference_state(start_state, control, num_steps):
 
 
 def generate_track(num_steps):
-    x_plus = np.array([11, 25.5, 16.5, 21.5, 7, -4.5])
-    y_plus = np.array([-1.5, 6.5, 6, 13, 10.5, -1.5])
+    x_plus = np.array([7, -4.5, 11, 25.5, 16.5, 21.5])
+    y_plus = np.array([10.5, -1.5, -1.5, 6.5, 6, 13])
 
-    x_minus = np.array([11, 21, 13.5, 18.5, 7, -1.5])
-    y_minus = np.array([1, 4.5, 4, 11.5, 7.5, 1])
+    x_minus = np.array([7, -1.5, 11, 21, 13.5, 18.5])
+    y_minus = np.array([7.5, 1, 1, 4.5, 4, 11.5])
 
     x = [0] * 6
     y = [0] * 6
@@ -65,8 +65,8 @@ def generate_track(num_steps):
 
 
 def generate_circular_track(num_steps):
-    x = np.array([0, 5, 0, -5])
-    y = np.array([-5, 0, 5, 0])
+    x = np.array([0, 3, 0, -3])
+    y = np.array([-3, 0, 3, 0])
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]
@@ -88,11 +88,11 @@ def generate_circular_track(num_steps):
 
 
 def generate_linear_track(num_steps):
-    y = np.arange(3, 0, - 3 / num_steps)
+    y = np.arange(3, 0, -3 / num_steps)
     x = np.arange(0, 7, 7 / num_steps)
 
-    upper = np.arange(1.5, 4.5, 3 / num_steps)
-    lower = np.arange(-1.5, 1.5, 3 / num_steps)
+    upper = np.arange(4.5, 1.5, -3 / num_steps)
+    lower = np.arange(1.5, -1.5, -3 / num_steps)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)

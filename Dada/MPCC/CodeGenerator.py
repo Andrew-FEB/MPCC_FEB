@@ -43,25 +43,25 @@ p_ellipse = 0.95
 
 # TODO Model limits (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
 x_max = 30
-x_min = -30
+x_min = -x_max
 y_max = 30
-y_min = -30
+y_min = -y_max
 phi_max = 10
 phi_min = -phi_max
-v_x_max = 50
-v_x_min = 0.05
-v_y_max = 50
-v_y_min = 0.05
+v_x_max = 3
+v_x_min = 0.03
+v_y_max = 3
+v_y_min = -v_y_max
 omega_max = 8
 omega_min = -omega_max
 # Control limits
 d_max = 1
-d_min = 0  # -d_max
+d_min = -d_max
 delta_max = 0.506  # [rad] =  29 degrees
 delta_min = -delta_max
 
 # Track parameters
-track_width = 0.3
+track_width = 1.5
 
 # Optimizer parameters
 N = 40  # Prediction Horizon (in time steps)
@@ -218,7 +218,7 @@ def tire_forces(state, control):
     return [F_fy, F_rx, F_ry]
 
 
-def cost_function(state, contouring_error_weight):
+def cost_function(state, control, track_error_weight, in_weight, in_change_weight):
     # TODO - add remaining costs
     cf = 0
 
@@ -243,15 +243,22 @@ def cost_function(state, contouring_error_weight):
     # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
 
     # Contouring Error
-    cf += contouring_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
+    cf += track_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
 
     # Tracking Error
-    cf += contouring_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
+    cf += track_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
+
+    # Velocity
+    cf -= track_error_weight[2] * state[2] ** 2
+
+    # Input Weights
+    cf += in_weight[0] * control[0] ** 2
+    cf += in_weight[1] * control[1] ** 2
 
     return cf
 
 
-def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
+def generate_code(track_error_weight, in_weight, in_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
     x0 = cs.MX.sym("x0_xref", nx * 2 + 3)  # Initial state (=6) + Reference state (=6) + slope (=1) + nearest x, y (=2)
@@ -262,7 +269,7 @@ def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
     # F2 = []
     for t in range(0, nu * N, nu):
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function(x_t, contouring_error_weight)  # Update cost
+        cost += cost_function(x_t, u, track_error_weight, in_weight, in_change_weight)  # Update cost
         # f = tire_forces(x_t, u)
         # x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         x_t = kinetic_model_rk(x_t, u, Ts, True)
@@ -280,8 +287,8 @@ def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
     # -------------------------------------
     # C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width],
     #                              [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width])
-    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, d_min, delta_min, -track_width],
-                                 [x_max, y_max, phi_max, v_x_max, d_max, delta_max, track_width])
+    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, delta_min, d_min, -track_width],
+                                 [x_max, y_max, phi_max, v_x_max, delta_max, d_max, track_width])
 
     # Code Generation
     # -------------------------------------
@@ -298,7 +305,7 @@ def generate_code(contouring_error_weight):  # , in_weight, in_change_weight):
     solver_config = og.config.SolverConfiguration() \
         .with_initial_penalty(10) \
         .with_penalty_weight_update_factor(25) \
-        .with_max_duration_micros(500000)  # 0.5s
+        .with_max_duration_micros(50000)  # 0.05s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,
                                               build_config, solver_config)
