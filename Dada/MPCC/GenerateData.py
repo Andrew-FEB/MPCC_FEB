@@ -64,9 +64,36 @@ def generate_track(num_steps):
     return [xi, yi]
 
 
+def generate_racing_track(num_steps):
+    x = np.array([-3, 5, 9, 13])
+    y = np.array([0, 0, 3, 3])
+    upper = np.array([1.5, 1.5, 4.5, 4.5])
+    lower = np.array([-1.5, -1.5, 1.5, 1.5])
+
+    # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
+    # is needed in order to force the spline fit to pass through all the input points.
+    tck, u = interpolate.splprep([x, y], s=0, per=False)
+    tcku, u = interpolate.splprep([x, upper], s=0, per=False)
+    tckl, u = interpolate.splprep([x, lower], s=0, per=False)
+
+    # evaluate the spline fits for 1000 evenly spaced distance values
+    xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
+    xu, yu = interpolate.splev(np.linspace(0, 1, num_steps), tcku)
+    xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
+
+    # plot the result
+    # fig, ax = plt.subplots(1, 1)
+    # ax.plot(xi, yi, 'or')
+    # ax.plot(xi, yu, '--g')
+    # ax.plot(xi, yl, '--g')
+    # plt.show()
+
+    return [xi, yi, yu, yl]
+
+
 def generate_circular_track(num_steps):
-    x = np.array([0, 3, 0, -3])
-    y = np.array([-3, 0, 3, 0])
+    x = np.array([-30, 0, 30, 0])
+    y = np.array([0, -30, 0, 30])
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]

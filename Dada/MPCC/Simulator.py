@@ -22,9 +22,11 @@ def simulate(track_x, track_y, simulation_steps):
     # Set all values needed for simulation
     # TODO - organize these!!!
     i_start = 1  # must be at least one
-    phi = np.arctan2(track_y[i_start] - track_y[i_start - 1], track_x[i_start] - track_x[i_start - 1])
+    # phi = np.arctan2(track_y[i_start] - track_y[i_start - 1], track_x[i_start] - track_x[i_start - 1])
     # State is a tuple which contains the six state-defining parameters
-    x_state_0 = (track_x[i_start], track_y[i_start], phi, 0.035)  # , 7, 0.5)
+    # x_state_0 = (track_x[i_start], track_y[i_start], phi, 0.035)  # , 7, 0.5)
+    x_state_0 = (-3, -1, np.arctan(-1/-3), 0.35)  # , 7, 0.5)
+
     # At the end of the simulation, state sequence will contain
     # all the states that the vehicle went through during the simulation
     state_sequence = [x_state_0]
@@ -40,12 +42,12 @@ def simulate(track_x, track_y, simulation_steps):
     # dist_ahead = (np.arctan2(x_state_0[4], x_state_0[3])) * cg.N * cg.Ts  # Using tangential velocity
     dist_ahead = x_state_0[3] * cg.N * cg.Ts
     # i_nearest is the index of the nearest point on the reference line
-    i_nearest = i_start
+    i_nearest, sth = find_closest_point_centreline((x_state_0[0], x_state_0[1]), track_x, track_y, cg.track_width, 100, 0)
     [i_ahead, end_of_track_reached] = move_along_track(track_x, track_y, dist_ahead, i_nearest)
     (x, y) = [track_x[i_ahead], track_y[i_ahead]]
     (x_prev, y_prev) = [track_x[i_ahead - 1], track_y[i_ahead - 1]]
-    phi = np.arctan2(y - y_prev, x - x_prev)
-    state_ref = (x, y, phi, 0.07)  # , 5, 0.7)  # reference state tuple
+    phi = np.arctan2(y - x_state_0[1], x - x_state_0[0])
+    state_ref = (x, y, phi, 0.7)  # , 5, 0.7)  # reference state tuple
     reference_sequence = [state_ref]
 
     # The nearest sequence will contain tuples (x, y) of the positions
@@ -62,17 +64,20 @@ def simulate(track_x, track_y, simulation_steps):
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
                   + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
-                  + '. Inner iterations: ' + str(solver_status['num_inner_iterations']))
+                  + '. Inner iterations: ' + str(solver_status['num_inner_iterations'])
+                  + '. Velocity = ' + str(state[3]) + '. Ref index = ' + str(i_ahead))
 
             first_control_input, state_next = update_state(slope, solver_status, state,
                                                            state_ref, x_nearest, y_nearest)
             # forces,
 
-            end_of_track_reached, i_nearest, state_ref, x, y, phi = update_reference(first_control_input,
-                                                                                     i_nearest, k, simulation_steps,
-                                                                                     slope, state_next, state_ref,
-                                                                                     track_x, track_y,
-                                                                                     x_nearest, y_nearest)
+            end_of_track_reached, i_nearest, state_ref, i_ahead, x, y, phi = update_reference(first_control_input,
+                                                                                              i_nearest, k,
+                                                                                              simulation_steps,
+                                                                                              slope, state_next,
+                                                                                              state_ref,
+                                                                                              track_x, track_y,
+                                                                                              x_nearest, y_nearest)
             # forces,
 
             if end_of_track_reached:
@@ -126,7 +131,7 @@ def update_reference(first_control_input, i_nearest, k, simulation_steps, slope,
     #                                 first_control_input, forces, cg.Ts, False)
     state_ref = cg.kinetic_model_rk(np.concatenate((state_ref, state_ref, [slope, x_nearest, y_nearest])),
                                     first_control_input, cg.Ts, False)
-    return end_of_track_reached, i_nearest, state_ref, x, y, phi
+    return end_of_track_reached, i_nearest, state_ref, i_ahead, x, y, phi
 
 
 def update_state(slope, solver_status, state, state_ref, x_nearest, y_nearest):
@@ -254,8 +259,8 @@ def simulate_one_step(x_state_0, ref):
 def plot_simulation(simulation_steps, input_seq, state_seq, ref_seq):
     t = np.arange(0, cg.Ts * (simulation_steps - cg.Ts), cg.Ts)  # - cg.Ts
 
-    plt.plot(t, [delta for D, delta in input_seq], '-', label="Acceleration")
-    plt.plot(t, [D for D, delta in input_seq], '-', label="Front steering angle")
+    plt.plot(t, [D for D, delta in input_seq], '-', label="Acceleration")
+    plt.plot(t, [delta for D, delta in input_seq], '-', label="Front steering angle")
     plt.grid()
     plt.ylabel('Input')
     plt.xlabel('Time')

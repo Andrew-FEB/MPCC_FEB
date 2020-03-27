@@ -48,7 +48,7 @@ y_max = 30
 y_min = -y_max
 phi_max = 10
 phi_min = -phi_max
-v_x_max = 3
+v_x_max = 15
 v_x_min = 0.03
 v_y_max = 3
 v_y_min = -v_y_max
@@ -61,7 +61,7 @@ delta_max = 0.506  # [rad] =  29 degrees
 delta_min = -delta_max
 
 # Track parameters
-track_width = 1.5
+track_width = 1.2
 
 # Optimizer parameters
 N = 40  # Prediction Horizon (in time steps)
@@ -104,8 +104,8 @@ def kinetic_model_temp(state, control, calc_casadi):
     y = state[1]  # Lateral Position
     psi = state[2]  # Yaw rate
     v = state[3]  # Velocity
-    d_f = control[0]  # Front steering angle
-    a = control[1]  # Acceleration
+    a = control[0]  # Acceleration
+    d_f = control[1]  # Front steering angle
 
     # compute slip angle
     beta = cs.arctan2(l_r * cs.tan(d_f), (l_f + l_r) )
@@ -243,13 +243,13 @@ def cost_function(state, control, track_error_weight, in_weight, in_change_weigh
     # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
 
     # Contouring Error
-    cf += track_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
+    cf += track_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)) - track_width) ** 2
 
     # Tracking Error
     cf += track_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
 
     # Velocity
-    cf -= track_error_weight[2] * state[2] ** 2
+    cf -= track_error_weight[2] * state[3]
 
     # Input Weights
     cf += in_weight[0] * control[0] ** 2
@@ -287,8 +287,8 @@ def generate_code(track_error_weight, in_weight, in_change_weight):
     # -------------------------------------
     # C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width],
     #                              [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width])
-    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, delta_min, d_min, -track_width],
-                                 [x_max, y_max, phi_max, v_x_max, delta_max, d_max, track_width])
+    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, d_min, delta_min, -track_width],
+                                 [x_max, y_max, phi_max, v_x_max, d_max, delta_max, track_width])
 
     # Code Generation
     # -------------------------------------
