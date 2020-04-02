@@ -48,7 +48,7 @@ y_max = 30
 y_min = -y_max
 phi_max = 10
 phi_min = -phi_max
-v_x_max = 15
+v_x_max = 5
 v_x_min = 0.03
 v_y_max = 3
 v_y_min = -v_y_max
@@ -64,10 +64,10 @@ delta_min = -delta_max
 track_width = 1.2
 
 # Optimizer parameters
-N = 40  # Prediction Horizon (in time steps)
+N = 100  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
 nx = 4  # 6  # Number of Parameters (state)
-Ts = 0.05  # Sampling time (length of one time step in seconds)
+Ts = 0.02  # Sampling time (length of one time step in seconds)
 
 
 # Model
@@ -243,7 +243,7 @@ def cost_function(state, control, track_error_weight, in_weight, in_change_weigh
     # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
 
     # Contouring Error
-    cf += track_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)) - track_width) ** 2
+    cf += track_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
 
     # Tracking Error
     cf += track_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
@@ -281,14 +281,14 @@ def generate_code(track_error_weight, in_weight, in_change_weight):
         y_inter = y_nearest - slope * x_nearest
         c_e = (cs.fabs((slope * x_t[0] - x_t[1] + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
         # F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1], c_e)
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], u[0], u[1], c_e)
+        F1 = cs.vertcat(F1, x_t[2], x_t[3], u[0], u[1], c_e)
 
     # Constraints
     # -------------------------------------
     # C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width],
     #                              [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width])
-    C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, d_min, delta_min, -track_width],
-                                 [x_max, y_max, phi_max, v_x_max, d_max, delta_max, track_width])
+    C = og.constraints.Rectangle([phi_min, v_x_min, d_min, delta_min, -track_width],
+                                 [phi_max, v_x_max, d_max, delta_max, track_width])
 
     # Code Generation
     # -------------------------------------
