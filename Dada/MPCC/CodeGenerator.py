@@ -4,7 +4,7 @@ import numpy as np
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 23/03/2020
+# Last updated: 03/04/2020
 
 # Parameters
 # -------------------------------------
@@ -48,7 +48,7 @@ y_max = 30
 y_min = -y_max
 phi_max = 10
 phi_min = -phi_max
-v_x_max = 5
+v_x_max = 3
 v_x_min = 0.03
 v_y_max = 3
 v_y_min = -v_y_max
@@ -61,13 +61,13 @@ delta_max = 0.506  # [rad] =  29 degrees
 delta_min = -delta_max
 
 # Track parameters
-track_width = 1.2
+track_width = 3
 
 # Optimizer parameters
-N = 100  # Prediction Horizon (in time steps)
+N = 40  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
 nx = 4  # 6  # Number of Parameters (state)
-Ts = 0.02  # Sampling time (length of one time step in seconds)
+Ts = 0.05  # Sampling time (length of one time step in seconds)
 
 
 # Model
@@ -108,7 +108,7 @@ def kinetic_model_temp(state, control, calc_casadi):
     d_f = control[1]  # Front steering angle
 
     # compute slip angle
-    beta = cs.arctan2(l_r * cs.tan(d_f), (l_f + l_r) )
+    beta = cs.arctan2(l_r * cs.tan(d_f), (l_f + l_r))
 
     # compute next state
     x_next = v * cs.cos(psi + beta)
@@ -118,10 +118,10 @@ def kinetic_model_temp(state, control, calc_casadi):
 
     if calc_casadi:
         return cs.vertcat(x_next, y_next, psi_next, v_next,
-                          state[4], state[5], state[6], state[7], state[8], state[9], state[10])
+                          state[4], state[5], state[6], state[7])
     else:
         return (x_next, y_next, psi_next, v_next,
-                state[4], state[5], state[6], state[7], state[8], state[9], state[10])
+                state[4], state[5], state[6], state[7])
 
 
 # Runge-Kutta 4th order method
@@ -133,7 +133,7 @@ def kinetic_model_rk(state, control, dt, calc_casadi):
         k4 = dt * kinetic_model_temp(state + dt * k3, control, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3],
-                          state[4], state[5], state[6], state[7], state[8], state[9], state[10])
+                          state[4], state[5], state[6], state[7])
     else:
         k1 = dt * np.array(kinetic_model_temp(state, control, calc_casadi))
         k2 = dt * np.array(kinetic_model_temp(state + dt * 0.5 * k1, control, calc_casadi))
@@ -141,7 +141,7 @@ def kinetic_model_rk(state, control, dt, calc_casadi):
         k4 = dt * np.array(kinetic_model_temp(state + dt * k3, control, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return (next_state[0], next_state[1], next_state[2], next_state[3],
-                state[4], state[5], state[6], state[7], state[8], state[9], state[10])
+                state[4], state[5], state[6], state[7])
 
 
 def dynamic_model(state, control, forces, calc_casadi):
@@ -218,7 +218,7 @@ def tire_forces(state, control):
     return [F_fy, F_rx, F_ry]
 
 
-def cost_function(state, control, track_error_weight, in_weight, in_change_weight):
+def cost_function(state, control, control_prev, track_error_weight, in_weight, in_change_weight):
     # TODO - add remaining costs
     cf = 0
 
@@ -249,11 +249,15 @@ def cost_function(state, control, track_error_weight, in_weight, in_change_weigh
     cf += track_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
 
     # Velocity
-    cf -= track_error_weight[2] * state[3]
+    cf -= track_error_weight[2] * cs.fabs(state[3] - state[7])
 
     # Input Weights
     cf += in_weight[0] * control[0] ** 2
     cf += in_weight[1] * control[1] ** 2
+
+    # Input Change Weights
+    cf += in_change_weight[0] * (control[0] - control_prev[0]) ** 2
+    cf += in_change_weight[1] * (control[1] - control_prev[1]) ** 2
 
     return cf
 
@@ -261,34 +265,56 @@ def cost_function(state, control, track_error_weight, in_weight, in_change_weigh
 def generate_code(track_error_weight, in_weight, in_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", nx * 2 + 3)  # Initial state (=6) + Reference state (=6) + slope (=1) + nearest x, y (=2)
+    x0 = cs.MX.sym("x0_xref", nx * 2 + 3 + 6)  # Initial state (=4) + Reference state (=4)
+    # + slope (=1) + nearest x, y (=2)
+    # + 2x(slope, x, y) for each boundary (=6)
 
     cost = 0
-    x_t = x0
+    x_t = x0[0:8]
     F1 = []
     # F2 = []
     for t in range(0, nu * N, nu):
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function(x_t, u, track_error_weight, in_weight, in_change_weight)  # Update cost
+        if t > 1:
+            u_prev = [u_seq[t - 2], u_seq[t - 1]]
+        else:
+            u_prev = [0, 0]
+        cost += cost_function(cs.vertcat(x_t, x0[8:17]), u, u_prev, track_error_weight, in_weight,
+                              in_change_weight)  # Update cost
         # f = tire_forces(x_t, u)
         # x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
         x_t = kinetic_model_rk(x_t, u, Ts, True)
         # TODO - add the missing constraints
-        # Contouring Error
-        slope = x_t[8]
-        x_nearest = x_t[9]
-        y_nearest = x_t[10]
-        y_inter = y_nearest - slope * x_nearest
-        c_e = (cs.fabs((slope * x_t[0] - x_t[1] + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
+        # Contouring Constraint
+        # slope = x_t[8]
+        # x_nearest = x_t[9]
+        # y_nearest = x_t[10]
+        # y_inter = y_nearest - slope * x_nearest
+        # c_e = cs.fabs((slope * x_t[0] - x_t[1] + y_inter)) / (cs.sqrt(slope ** 2 + 1))
+        # Boundary Constraints
+        bound_slope1 = x0[11]
+        bound_x1 = x0[12]
+        bound_y1 = x0[13]
+        bound_inter1 = bound_y1 - bound_slope1 * bound_x1
+        bound_slope2 = x0[14]
+        bound_x2 = x0[15]
+        bound_y2 = x0[16]
+        bound_inter2 = bound_y2 - bound_slope2 * bound_x2
+        bound_dist1 = (bound_slope1 * x_t[0] - x_t[1] + bound_inter1) / cs.sqrt(bound_slope1 ** 2 + 1)
+        bound_dist2 = (bound_slope2 * x_t[0] - x_t[1] + bound_inter2) / cs.sqrt(bound_slope2 ** 2 + 1)
+
         # F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1], c_e)
-        F1 = cs.vertcat(F1, x_t[2], x_t[3], u[0], u[1], c_e)
+        # F1 = cs.vertcat(F1, x_t[2], x_t[3], u[0], u[1], c_e)
+        F1 = cs.vertcat(F1, x_t[2], x_t[3], u[0], u[1], bound_dist1, bound_dist2)
 
     # Constraints
     # -------------------------------------
     # C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width],
     #                              [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width])
-    C = og.constraints.Rectangle([phi_min, v_x_min, d_min, delta_min, -track_width],
-                                 [phi_max, v_x_max, d_max, delta_max, track_width])
+    # C = og.constraints.Rectangle([phi_min, v_x_min, d_min, delta_min, 0],
+    #                              [phi_max, v_x_max, d_max, delta_max, track_width])
+    C = og.constraints.Rectangle([phi_min, v_x_min, d_min, delta_min, 0, -track_width],
+                                 [phi_max, v_x_max, d_max, delta_max, track_width, 0])
 
     # Code Generation
     # -------------------------------------
@@ -303,8 +329,7 @@ def generate_code(track_error_weight, in_weight, in_change_weight):
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_initial_penalty(10) \
-        .with_penalty_weight_update_factor(25) \
+        .with_initial_penalty(256) \
         .with_max_duration_micros(50000)  # 0.05s
 
     builder = og.builder.OpEnOptimizerBuilder(problem, meta,

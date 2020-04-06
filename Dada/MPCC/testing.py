@@ -8,13 +8,14 @@ import matplotlib.pyplot as plt
 
 # Author: Darina Abaffyová
 # Created: 24/02/2020
-# Last updated: 23/03/2020
+# Last updated: 03/04/2020
 
-simulation_steps = 5000
+track_points = 1000
+simulation_steps = 300
 
-track_error_weight = [3, 0.5, 0.1]
-in_weight = [1, 1]
-in_change_weight = [1, 1]
+track_error_weight = [1, 0, 0.3]
+in_weight = [0, 0]
+in_change_weight = [0.3, 0.5]
 
 print("Generating code")
 st = time.time()
@@ -23,13 +24,14 @@ print('Code generated in ' + str(time.time() - st) + ' s')
 
 print("Running simulation")
 if simulation_steps > 1:
-    [track_x, track_y, upper, lower] = gd.generate_racing_track(simulation_steps)
+    [track_x, track_y, upper, lower] = gd.generate_racing_track(track_points)
     # [track_x, track_y] = gd.generate_circular_track(track_points)
-    [in_seq, state_seq, ref_seq, nearest_seq, simulation_steps] = sim.simulate(track_x, track_y, simulation_steps)
+    [in_seq, state_seq, ref_seq, nearest_seq, simulation_steps] = sim.simulate(track_x, track_y,
+                                                                               upper, lower, simulation_steps)
     sim.plot_simulation(simulation_steps, in_seq, state_seq, ref_seq)
-    # sim.plot_track2(track_x, track_y, state_ref, state_seq)
+    # sim.plot_track2(track_x, track_y, ref_seq, state_seq)
     sim.plot_track(track_x, track_y, upper, lower, ref_seq, state_seq)
-    # sim.plot_nearest(track_x, track_y, nearest_seq, state_seq)
+    # sim.plot_nearest(track_x, track_y, ref_seq, state_seq)
 else:
     state_0 = [0.0, 0.0, 0.0, 10, 7, 0.5]
     ref_seq = [1.14, 0.57, 0.4636476090008061, 15, 5, 0.7]

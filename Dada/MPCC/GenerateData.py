@@ -66,9 +66,9 @@ def generate_track(num_steps):
 
 def generate_racing_track(num_steps):
     x = np.array([-3, 5, 9, 13, 17, 27, 37])
-    y = np.array([0, 0, 4, 4, 1, 1, 1])
-    upper = np.array([1.5, 1.5, 5.5, 5.5, 2.5, 2.5, 2.5])
-    lower = np.array([-1.5, -1.5, 2.5, 2.5, -0.5, -0.5, -0.5])
+    y = np.array([0, 0, 3, 3, 1, 1, 1])
+    upper = np.array([1.5, 1.5, 4.5, 4.5, 2.5, 2.5, 2.5])
+    lower = np.array([-1.5, -1.5, 1.5, 1.5, -0.5, -0.5, -0.5])
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
@@ -92,8 +92,8 @@ def generate_racing_track(num_steps):
 
 
 def generate_circular_track(num_steps):
-    x = np.array([-30, 0, 30, 0])
-    y = np.array([0, -30, 0, 30])
+    x = np.array([-3, 0, 3, 0])
+    y = np.array([0, -3, 0, 3])
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]
@@ -115,11 +115,11 @@ def generate_circular_track(num_steps):
 
 
 def generate_linear_track(num_steps):
-    y = np.arange(3, 0, -3 / num_steps)
-    x = np.arange(0, 7, 7 / num_steps)
+    y = np.arange(0, 3, 3 / num_steps)
+    x = np.arange(0, 17, 17 / num_steps)
 
-    upper = np.arange(4.5, 1.5, -3 / num_steps)
-    lower = np.arange(1.5, -1.5, -3 / num_steps)
+    upper = np.arange(1.5, 4.5, 3 / num_steps)
+    lower = np.arange(-1.5, 1.5, 3 / num_steps)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
