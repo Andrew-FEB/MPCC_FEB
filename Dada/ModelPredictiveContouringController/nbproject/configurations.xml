@@ -37,7 +37,36 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../MPCC/mpcc_c_build_1/mpcc_optimizer</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerCopySharedLibs>true</linkerCopySharedLibs>
+          <linkerLibItems>
+            <linkerLibFileItem>/home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.so</linkerLibFileItem>
+            <linkerLibFileItem>/home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.a</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/libmpcc_optimizer.so"
+                            from="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libmpcc_optimizer.so"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
       <item path="Simulator.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Simulator.h" ex="false" tool="3" flavor2="0">

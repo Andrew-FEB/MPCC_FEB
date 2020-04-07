@@ -111,7 +111,7 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
             slope_low = (y_low - lower_bound[i_nearest - 1]) / (x_nearest - x_nearest_prev)
 
             # state_ref = (x, y, phi) + tuple(state_ref[3:6])
-            state_ref = (x, y, phi, 2)  # state_ref[3]
+            state_ref = (x, y, phi, 2.5)  # state_ref[3]
             # state_ref = state_ref[0:6]
             # state = state_next[:6]
             state = state_next[:4]
@@ -136,7 +136,7 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
 def update_reference(first_control_input, i_nearest, state_next, state_ref, track_x, track_y):
     # Find the index of the reference point (depending on the current velocity), as above
     # dist_ahead = (np.arctan2(state_next[4], state_next[3])) * cg.N * cg.Ts  # Using tangential velocity
-    dist_ahead = state_next[3] * (cg.N * cg.Ts)  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
+    dist_ahead = state_next[3] * 2.01  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
     print("DIST AHEAD = " + str(dist_ahead) + ", v = " + str(state_next[3]))
     [i_nearest, nearest_dist] = find_closest_point_centreline([state_next[0], state_next[1]], track_x, track_y,
                                                               cg.track_width,

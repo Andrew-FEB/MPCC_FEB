@@ -322,8 +322,9 @@ def generate_code(track_error_weight, in_weight, in_change_weight):
         .with_aug_lagrangian_constraints(F1, C)
 
     build_config = og.config.BuildConfiguration() \
-        .with_build_directory("mpcc_python_build_1") \
-        .with_tcp_interface_config()
+        .with_build_directory("mpcc_c_build_1") \
+        .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
+        .with_build_c_bindings()
 
     meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \
         .with_authors("Darina Abaffyova")
@@ -332,6 +333,8 @@ def generate_code(track_error_weight, in_weight, in_change_weight):
         .with_initial_penalty(256) \
         .with_max_duration_micros(50000)  # 0.05s
 
-    builder = og.builder.OpEnOptimizerBuilder(problem, meta,
-                                              build_config, solver_config)
+    builder = og.builder.OpEnOptimizerBuilder(problem,
+                                              metadata=meta,
+                                              build_configuration=build_config,
+                                              solver_configuration=solver_config)
     builder.build()

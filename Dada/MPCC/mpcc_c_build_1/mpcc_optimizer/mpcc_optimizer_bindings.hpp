@@ -11,11 +11,11 @@
 
 static const uintptr_t MPCC_OPTIMIZER_N1 = 240;
 
-static const uintptr_t MPCC_OPTIMIZER_N2 = 80;
+static const uintptr_t MPCC_OPTIMIZER_N2 = 0;
 
 static const uintptr_t MPCC_OPTIMIZER_NUM_DECISION_VARIABLES = 80;
 
-static const uintptr_t MPCC_OPTIMIZER_NUM_PARAMETERS = 12;
+static const uintptr_t MPCC_OPTIMIZER_NUM_PARAMETERS = 17;
 
 /// mpcc_optimizer version of ExitStatus
 /// Structure: `mpcc_optimizerExitStatus`

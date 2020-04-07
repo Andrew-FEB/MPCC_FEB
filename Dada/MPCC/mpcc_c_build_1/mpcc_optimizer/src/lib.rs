@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-03-02 11:23:23.636994
+// Generated at: 2020-04-07 12:54:11.260877
 //
 
 use icasadi;
@@ -13,34 +13,34 @@ use optimization_engine::{constraints::*, panoc::*, alm::*, *};
 // ---Private Constants----------------------------------------------------------------------------------
 
 /// Tolerance of inner solver
-const EPSILON_TOLERANCE: f64 = 1e-07;
+const EPSILON_TOLERANCE: f64 = 0.0001;
 
 /// Initial tolerance
-const INITIAL_EPSILON_TOLERANCE: f64 = 1e-07;
+const INITIAL_EPSILON_TOLERANCE: f64 = 0.0001;
 
 /// Update factor for inner tolerance
 const EPSILON_TOLERANCE_UPDATE_FACTOR: f64 = 0.1;
 
 /// Delta tolerance
-const DELTA_TOLERANCE: f64 = 1e-07;
+const DELTA_TOLERANCE: f64 = 0.0001;
 
 /// LBFGS memory
 const LBFGS_MEMORY: usize = 10;
 
 /// Maximum number of iterations of the inner solver
-const MAX_INNER_ITERATIONS: usize = 100000;
+const MAX_INNER_ITERATIONS: usize = 500;
 
 /// Maximum number of outer iterations
-const MAX_OUTER_ITERATIONS: usize = 100000;
+const MAX_OUTER_ITERATIONS: usize = 10;
 
 /// Maximum execution duration in microseconds
-const MAX_DURATION_MICROS: u64 = 10000000;
+const MAX_DURATION_MICROS: u64 = 50000;
 
 /// Penalty update factor
-const PENALTY_UPDATE_FACTOR: f64 = 1.5;
+const PENALTY_UPDATE_FACTOR: f64 = 5.0;
 
 /// Initial penalty
-const INITIAL_PENALTY_PARAMETER: f64 = 3.0;
+const INITIAL_PENALTY_PARAMETER: f64 = 256.0;
 
 /// Sufficient decrease coefficient
 const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
@@ -52,13 +52,13 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
-pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 12;
+pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 17;
 
 /// Number of parameters associated with augmented Lagrangian
 pub const MPCC_OPTIMIZER_N1: usize = 240;
 
 /// Number of penalty constraints
-pub const MPCC_OPTIMIZER_N2: usize = 80;
+pub const MPCC_OPTIMIZER_N2: usize = 0;
 
 // ---Export functionality from Rust to C/C++------------------------------------------------------------
 
@@ -254,16 +254,14 @@ pub extern "C" fn mpcc_optimizer_free(instance: *mut mpcc_optimizerCache) {
 
 // ---Parameters of the constraints----------------------------------------------------------------------
 
-const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[-0.75,-0.95,]);
-const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[0.75,0.95,]);
 
 
 
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,-3.141592653589793,-30.0,-30.0,-6.283185307179586,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,3.141592653589793,30.0,30.0,6.283185307179586,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-10.0,0.03,-1.0,-0.506,0.0,-3.0,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[10.0,3.0,1.0,0.506,3.0,0.0,]);
 
 
 
@@ -283,7 +281,7 @@ const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000
 /// Make constraints U
 fn make_constraints() -> impl Constraint {
 
-    let bounds = Rectangle::new(CONSTRAINTS_XMIN, CONSTRAINTS_XMAX);
+    let bounds = NoConstraints::new();
     bounds
 }
 
@@ -338,10 +336,7 @@ pub fn solve(
         icasadi::mapping_f1(&u, &p, res);
         Ok(())
     };
-    let f2 = |u: &[f64], res: &mut [f64]| -> Result<(), SolverError> {
-        icasadi::mapping_f2(&u, &p, res);
-        Ok(())
-    };let bounds = make_constraints();
+    let bounds = make_constraints();
 
     let set_y = make_set_y();
     let set_c = make_set_c();
@@ -352,7 +347,7 @@ pub fn solve(
         psi,
         grad_psi,
         Some(f1),
-        Some(f2),
+        NO_MAPPING,
         MPCC_OPTIMIZER_N1,
         MPCC_OPTIMIZER_N2,
     );

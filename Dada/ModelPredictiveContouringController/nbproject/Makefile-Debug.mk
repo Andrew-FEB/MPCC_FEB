@@ -53,11 +53,16 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=/home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.so /home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/modelpredictivecontouringcontroller
+	${CP} /home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/modelpredictivecontouringcontroller: /home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.so
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/modelpredictivecontouringcontroller: /home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/modelpredictivecontouringcontroller: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
@@ -66,12 +71,12 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/modelpredictivecontouringcontroller: 
 ${OBJECTDIR}/Simulator.o: Simulator.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Simulator.o Simulator.cpp
+	$(COMPILE.cc) -g -I../MPCC/mpcc_c_build_1/mpcc_optimizer -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Simulator.o Simulator.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../MPCC/mpcc_c_build_1/mpcc_optimizer -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
@@ -79,6 +84,8 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
+	${RM} -r ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libmpcc_optimizer.so
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/modelpredictivecontouringcontroller
 
 # Subprojects
 .clean-subprojects:

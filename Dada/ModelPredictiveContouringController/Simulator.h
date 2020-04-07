@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Simulator.h
  * Author: Darina Abaffyova
@@ -14,9 +8,25 @@
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
 
+#include <vector>
+#include "mpcc_optimizer_bindings.hpp"
+
+using namespace std;
+        
+struct State {
+    int x;
+    int y;
+    int phi;
+    int v_x;
+    int v_y;
+    int omega;
+};
+
 class Simulator {
 public:
     Simulator();
+    Simulator(int simSteps, bool kin, double ph);
+    void runSimulation(vector<State> track);
     
 private:
     int simulationSteps = 100;
