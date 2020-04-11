@@ -19,12 +19,13 @@ in_change_weight = [0.3, 0.5]
 
 print("Generating code")
 st = time.time()
-cg.generate_code(track_error_weight, in_weight, in_change_weight)
+# cg.generate_code(track_error_weight, in_weight, in_change_weight)
 print('Code generated in ' + str(time.time() - st) + ' s')
 
 print("Running simulation")
 if simulation_steps > 1:
     [track_x, track_y, upper, lower] = gd.generate_racing_track(track_points)
+
     # [track_x, track_y] = gd.generate_circular_track(track_points)
     # [in_seq, state_seq, ref_seq, nearest_seq, simulation_steps] = sim.simulate(track_x, track_y,
     #                                                                            upper, lower, simulation_steps)
@@ -105,3 +106,15 @@ def cost_function(point, ref_point, nearest_point, slope, weight):
     cf += weight[1] * np.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
 
     return cf
+
+
+def save_track_to_file(track_x, track_y, upper, lower):
+    file = open("track.txt", "a+")
+    file.write("")
+    for i in range(0, len(track_x)):
+        file.write("%d %d %d %d\n" % (track_x[i], track_y[i], upper[i], lower[i]))
+
+    return 0
+
+
+save_track_to_file(track_x, track_y, upper, lower)

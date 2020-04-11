@@ -1,0 +1,17 @@
+#!/bin/bash
+
+kill $(ps aux | grep 'roscore' | awk '{print $2}')
+kill $(ps aux | grep 'rviz' | awk '{print $2}')
+roscore &
+sleep 1
+cd catkin_ws
+source ./catkin_ws/devel/setup.bash
+catkin_make
+sleep 1
+rosrun tf static_transform_publisher 0 0 0 0 0 0 1 tf_bound map 10 &
+sleep 1
+rosrun rviz rviz &
+sleep 1
+rosrun bound_est Bound_Est &
+
+#rosrun rqt_graph rqt_graph

@@ -1,0 +1,8 @@
+prefix=/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/install
+
+Name: bound_est
+Description: Description of bound_est
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
