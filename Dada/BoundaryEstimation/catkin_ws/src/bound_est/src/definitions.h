@@ -86,8 +86,8 @@ typedef struct triangle
 //Convenience struct for Car dimensions
 typedef struct carDims
 {
-	double length{ 0 };
-	double width{ 0 };
+	double length{0};
+	double width{0};
 } carDims;
 
 
@@ -97,4 +97,67 @@ typedef struct rect
 	double b;
 	double c;
 	double d;
-}rect;
+} rect;
+
+/**
+ * Structs regarding MPCC
+ */
+typedef struct TireForces {
+    double Ffy;
+    double Frx;
+    double Fry;
+} TireForces;
+
+typedef struct TrackContraints {
+    double centreSlope;
+	double centreX;
+	double centreY;
+    double upSlope;
+	double upX;
+	double upY;
+    double lowSlope;
+	double lowX;
+	double lowY;
+} TrackContraints;
+
+typedef struct ControlInputs {
+	double D; // throttle [-1, 1]
+	double delta; // steering angle [-0.506, 0.506]
+} ControlInputs;
+
+typedef struct Vel {
+	double vx;
+	double vy;
+} Vel;
+
+constexpr struct CarParams {
+	// Vehicle parameters TODO - get real values for all these
+	double Iz = 2873; // [kg m^2] moment of inertia of the vehicle ASK FOR THIS VALUE!!!!!!!
+	double m = 1573;  // [kg] mass of the vehicle
+	double lf = 1.35; // [m] length of the front part of the vehicle (this is from front axle to COG)
+	double lr = 1.35; // length of the rear part of the vehicle  (this is from front axle to COG)
+
+	double weightF = lr/(lf + lr);
+	double weightR = lf/(lf + lr);
+
+	// TODO Tire Parameters (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
+	double Cm1 = 17303; // Motor Model
+	double Cm2 = 175;  	// Motor Model
+	double Crr = 120;  	// Rolling Resistance
+	double Cd = 0.5 * 1.225 * 0.35 * 2.5;  // Drag
+
+	// Tire Force Curve
+	// Rear tires
+	double Br = 13;
+	double Cr = 2;
+	double Dr = weightF * m * 9.81 * 1.2;
+
+	// Front tires
+	double Bf = 13;
+	double Cf = 2;
+	double Df = weightR * m * 9.81 * 1.2;
+
+	// Friction ellipse
+	double p_long = 0.9;
+	double p_ellipse = 0.95;
+} CarParams;

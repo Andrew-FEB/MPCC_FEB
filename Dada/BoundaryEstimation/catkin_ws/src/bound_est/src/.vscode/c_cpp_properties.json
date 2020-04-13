@@ -9,7 +9,7 @@
                 "/opt/ros/melodic/include/**",
                 "~/catkin_ws/src/bound_est/include/**",
                 "/usr/include/**",
-		"/home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/**"
+		        "/home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/**"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",

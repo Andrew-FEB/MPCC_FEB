@@ -71,6 +71,9 @@ int main(int argc, char *argv[])
     track->addCone(7.0, 19.0, BoundPos::left);
 
     std::cout<<"Entering loop"<<std::endl;
+
+    MPCController mpcc{18, 2};
+
 #ifdef VISUALISE
     auto lastRosRefresh = std::chrono::high_resolution_clock::now();
 #endif
@@ -83,8 +86,13 @@ int main(int argc, char *argv[])
     //If outside track constraints - error state
     //Update track
     //Process track section
+    
     //DADA MPCC
+    // auto car = track->getCarRef();
+    // auto control = mpcc.solve(car, *track);
     //Update car outputs
+    // car.updateCarKinematicModel(control);
+
     //Check metadata (laps done, goal achievement, etc.)
     //Update visualisation
 #   ifdef VISUALISE

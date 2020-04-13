@@ -10,45 +10,32 @@
 
 #include <vector>
 #include <tuple>
-#include <fstream>
-#include <iostream>
 #include <string>
+#include <memory>
 #include "mpcc_optimizer_bindings.hpp"
 
 #include "car.h"
 #include "track.h"
+#include "definitions.h"
 
 using namespace std;
-        
-struct State {
-    double x;
-    double y;
-    double phi;
-    double v_x;
-    double v_y;
-    double omega;
-};
-
-struct Boundary {
-    // Each of these contains slope, x position, y position
-    tuple<double, double, double> track;
-    tuple<double, double, double> upBound;
-    tuple<double, double, double> lowBound;
-};
 
 class MPCController {
 public:
-    MPCController(int simSteps, double ph, State s0);
-    void runSimulation();
-    vector<State> readTrackFromFile(string filename) const;
+    MPCController(int simSteps, double ph);
+    ControlInputs solve(Car & current, Track & t);
+    void discretizeModelRungeKutta(Car & car, ControlInputs control, TireForces forces,
+                                    double dt, Car (*vehicleModel)(Car, ControlInputs, TireForces));
     
 private:
-    Boundary getTrackBoundary(State curState, Track track) const;
+    TrackContraints getTrackBoundary(Car & current, Track & track) const;
+    double calculateDistance();
+    // void initSolver();
+    // void freeSolver();
     
 private:
     int simulationSteps = 100;
-    double predictionHorizon = 2;
-    State firstState;
+    double predictionHorizon = 2; // in [s]
     
 };
 

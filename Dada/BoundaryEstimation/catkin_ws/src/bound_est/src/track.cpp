@@ -81,7 +81,7 @@ std::pair<Track::ConeError, Cone *> Track::checkConePos(const double &x, const d
 
 void Track::processTrackSect()
 {
-    auto carPos = car->getPos();
+    auto carPos = car->getPosition();
     coord lastPoint = {carPos.x, carPos.y};
     /*if (centreCoords.size()<1)    //Better to start at car always, or at last coordinate?
     {

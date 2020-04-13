@@ -68,5 +68,6 @@
         "codecvt": "cpp",
         "filesystem": "cpp"
     },
-    "C_Cpp.dimInactiveRegions": false
+    "C_Cpp.dimInactiveRegions": false,
+    "cmake.configureOnOpen": true
 }

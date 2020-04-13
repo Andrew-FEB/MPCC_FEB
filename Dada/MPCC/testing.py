@@ -117,4 +117,4 @@ def save_track_to_file(track_x, track_y, upper, lower):
     return 0
 
 
-save_track_to_file(track_x, track_y, upper, lower)
+# save_track_to_file(track_x, track_y, upper, lower)
