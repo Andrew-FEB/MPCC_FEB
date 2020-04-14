@@ -155,7 +155,7 @@ void Visualise::showCar(const std::unique_ptr<Car> &car)
 	carMark.color.b = 0.0f;
 	carMark.color.a = 1.0;
 	carMark.lifetime = ros::Duration(ROS_DURATION_TIME);
-	auto carPos = car->getPosition();
+	auto carPos = car->getPosition().p;
 	carMark.pose.position.x = carPos.x;
 	carMark.pose.position.y = carPos.y;
 	carMark.id = 0;	

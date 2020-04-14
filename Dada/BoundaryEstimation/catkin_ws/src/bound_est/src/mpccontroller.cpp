@@ -13,8 +13,6 @@ ControlInputs MPCController::solve(Car &current, Track &t)
 {
     auto pos = current.getPosition();
     auto vel = current.getVelocity();
-    auto phi = current.getHeadingAngle();
-    auto omega = current.getAngularVelocity();
 
     // Obtain reference and track constraints
     auto dist = calculateDistance();
@@ -60,14 +58,4 @@ TrackContraints MPCController::getTrackBoundary(Car & current, Track & track) co
 {
     TrackContraints tc;
     return tc;
-}
-
-void MPCController::discretizeModelRungeKutta(Car & car, ControlInputs control, TireForces forces,
-                                    double dt, Car (*vehicleModel)(Car, ControlInputs, TireForces))
-{
-    auto k1 = vehicleModel(car, control, forces) * dt;
-    auto k2 = vehicleModel(car + k1 * 0.5 * dt, control, forces) * dt;
-    auto k3 = vehicleModel(car + k2 * 0.5 * dt, control, forces) * dt;
-    auto k4 = vehicleModel(car + k3 * dt, control, forces) * dt;
-    car = car + (k1 + k2 * 2 + k3 * 2 + k4) * (1.0 / 6.0);
 }

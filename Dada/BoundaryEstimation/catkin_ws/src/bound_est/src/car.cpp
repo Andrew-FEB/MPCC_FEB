@@ -2,7 +2,7 @@
 
 Car::Car() : position{0,0} {}
 
-Car::Car(const coord &newPos) : position(newPos) {}
+Car::Car(const coord & newPos) : position({newPos, 0}) {}
 
 /**
  *  Bicycle Models
@@ -11,10 +11,10 @@ void Car::updateCarKinematicModel(ControlInputs control)
 {
     // First simple (kinematic) model (source: https://github.com/MPC-Berkeley/barc/wiki/Car-Model):
     // State parameters
-    auto x = position.x;           // Longitudinal position
-    auto y = position.y;           // Lateral Position
-    auto psi = headingAngle;       // Yaw rate
-    auto v = velocity.vx;          // Velocity
+    auto x = position.p.x;           // Longitudinal position
+    auto y = position.p.y;           // Lateral Position
+    auto psi = velocity.omega;       // Yaw rate
+    auto v = velocity.vx;            // Velocity
     // Control inputs
     auto a = control.D;                 // Acceleration
     auto delta = control.delta;         // Front steering angle
@@ -29,20 +29,19 @@ void Car::updateCarKinematicModel(ControlInputs control)
     auto vNext = a;
 
     // Set next state
-    position = {xNext, yNext};
-    headingAngle = psiNext;
-    velocity = {vNext, velocity.vy};
+    position = {xNext, yNext, atan2(yNext, xNext)};
+    velocity = {vNext, velocity.vy, psiNext};
 }
 
 void Car::updateCarDynamicModel(ControlInputs control, TireForces forces)
 {
     // State variables
-    auto x = position.x;
-    auto y = position.y;
-    auto phi = headingAngle;
+    auto x = position.p.x;
+    auto y = position.p.x;
+    auto phi = position.phi;
     auto vx = velocity.vx;
     auto vy = velocity.vy;
-    auto omega = angularVelocity;
+    auto omega = velocity.omega;
 
     // Control variables
     auto delta = control.delta;
@@ -61,11 +60,8 @@ void Car::updateCarDynamicModel(ControlInputs control, TireForces forces)
     auto omegaNext = 1 / CarParams.Iz * (Ffy * CarParams.lf * cos(delta) - Fry * CarParams.lr);
 
     // Set next state
-    position = {xNext, yNext};
-    headingAngle = phiNext;
-    velocity = {vxNext, vyNext};
-    angularVelocity = omega;
-
+    position = {xNext, yNext, phiNext};
+    velocity = {vxNext, vyNext, omegaNext};
 }
 
 /**
@@ -76,7 +72,7 @@ TireForces Car::tireModel(ControlInputs control) const
     // State variables
     auto vx = velocity.vx;
     auto vy = velocity.vy;
-    auto omega = angularVelocity;
+    auto omega = velocity.omega;
 
     // Control variables
     auto D = control.D;
@@ -95,12 +91,25 @@ TireForces Car::tireModel(ControlInputs control) const
     // TODO Tire constraints (i.e. the friction ellipse)
 }
 
-void Car::setPosition(const coord &newPos)
+/**
+ * Discretization of the model
+ */
+// void Car::discretizeModelRungeKutta(Car & car, ControlInputs control, TireForces forces,
+//                                     double dt, Car & (*vehicleModel)(Car &, ControlInputs, TireForces))
+// {
+//     auto k1 = vehicleModel(car, control, forces) * dt;
+//     auto k2 = vehicleModel(car + k1 * 0.5 * dt, control, forces) * dt;
+//     auto k3 = vehicleModel(car + k2 * 0.5 * dt, control, forces) * dt;
+//     auto k4 = vehicleModel(car + k3 * dt, control, forces) * dt;
+//     car = car + (k1 + k2 * 2 + k3 * 2 + k4) * (1.0 / 6.0);
+// }
+
+void Car::setPosition(const Pos & newPos)
 {
     this->position = newPos;
 }
 
-const coord &Car::getPosition() const
+const Pos & Car::getPosition() const
 {
     return position;
 }
@@ -115,47 +124,22 @@ const Vel & Car::getVelocity() const
     return velocity;
 }
 
-void Car::setHeadingAngle(const double &ang)
-{
-    this->headingAngle = ang;
-}
-
-const double &Car::getHeadingAngle() const
-{
-    return headingAngle;
-}
-
-void Car::setAngularVelocity(const double &av)
-{
-    this->angularVelocity = av;
-}
-
-const double Car::getAngularVelocity() const
-{
-    return angularVelocity;
-}
-
-const carDims Car::getDimensions()
-{
-    return {length, width};
-}
-
 Car Car::operator*(double a)
 {
-    position.x = a * position.x;
-    position.y = a * position.y;
-    headingAngle = a * headingAngle;
+    position.p.x = a * position.p.x;
+    position.p.y = a * position.p.y;
+    position.phi = a * position.phi;
     velocity.vx = a * velocity.vx;
     velocity.vy = a * velocity.vy;
-    angularVelocity = a * angularVelocity;
+    velocity.omega = a * velocity.omega;
 }
 
 Car Car::operator+(Car c)
 {
-    position.x = position.x + c.getPosition().x;
-    position.y = position.y + c.getPosition().y;
-    headingAngle = headingAngle + c.getHeadingAngle();
+    position.p.x = position.p.x + c.getPosition().p.x;
+    position.p.y = position.p.y + c.getPosition().p.y;
+    position.phi = position.phi + c.getPosition().phi;
     velocity.vx = velocity.vx + c.getVelocity().vx;
     velocity.vy = velocity.vy + c.getVelocity().vy;
-    angularVelocity = angularVelocity + c.getAngularVelocity();
+    velocity.omega = velocity.omega + c.getVelocity().omega;
 }

@@ -24,8 +24,6 @@ class MPCController {
 public:
     MPCController(int simSteps, double ph);
     ControlInputs solve(Car & current, Track & t);
-    void discretizeModelRungeKutta(Car & car, ControlInputs control, TireForces forces,
-                                    double dt, Car (*vehicleModel)(Car, ControlInputs, TireForces));
     
 private:
     TrackContraints getTrackBoundary(Car & current, Track & track) const;
