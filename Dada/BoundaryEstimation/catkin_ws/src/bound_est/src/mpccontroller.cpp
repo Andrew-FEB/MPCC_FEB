@@ -9,33 +9,33 @@
 
 MPCController::MPCController(int simSteps, double ph) : simulationSteps(simSteps), predictionHorizon(ph) {}
 
-ControlInputs MPCController::solve(Car &current, Track &t)
+ControlInputs MPCController::solve(Car & current, Track &t)
 {
     auto pos = current.getPosition();
     auto vel = current.getVelocity();
 
     // Obtain reference and track constraints
-    auto dist = calculateDistance();
-    auto ref = t.getCentreLine(dist).at(0);
-    TrackContraints tc = getTrackBoundary(current, t);
+    auto dist = calculateDistance(vel);
+    auto ref = t.getCentreLine(dist);
 
     /* parameters */
-    double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {};
-    // pos.x, pos.y, phi, vel.vx,               // Current state
-                                            //    ref.x, ref.y,                            // Reference position
-                                            //    tc.centreSlope, tc.centreX, tc.centreY,  // Nearest point on centreline
-                                            //    tc.upSlope, tc.upX, tc.upY,              // Nearest point on upper boundary
-                                            //    tc.lowSlope, tc.lowX, tc.lowY};          // Nearest point on lower boundary
+    double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {pos.p.x, pos.p.y, vel.omega, vel.vx,                     // Current state
+                                               ref.goal.x, ref.goal.y, vel.omega, 1.5,                  // Reference position
+                                               ref.slope, ref.nearest_point.x, ref.nearest_point.y};    // Nearest point on centreline
 
     /* initial guess */
     double u[MPCC_OPTIMIZER_NUM_DECISION_VARIABLES] = {0};
 
     /* initial penalty */
-    double initPenalty = 256.0;
+    double initPenalty = 128.0;
 
     /* initial lagrange mult. */
     double y[MPCC_OPTIMIZER_N1] = {0.0};
 
+    cout << "Parameters:" << endl;
+    for (int i = 0; i < MPCC_OPTIMIZER_NUM_PARAMETERS; ++i) {
+        printf("p[%d] = %g\n", i, p[i]);
+    }
     /* obtain cache */
     mpcc_optimizerCache * cache = mpcc_optimizer_new();
 
@@ -43,19 +43,32 @@ ControlInputs MPCController::solve(Car &current, Track &t)
     mpcc_optimizerSolverStatus status = mpcc_optimizer_solve(cache, u, p, y, &initPenalty);
     ControlInputs ci = {u[0], u[1]};
 
+    /* print results */
+    printf("\n\n-------------------------------------------------\n");
+    printf("  Solution\n");
+    printf("-------------------------------------------------\n");
+
+    cout << "Control Inputs (D, delta) = (" << ci.D << ", " << ci.delta << ")" << endl;
+
+    printf("\n\n-------------------------------------------------\n");
+    printf("  Solver Statistics\n");
+    printf("-------------------------------------------------\n");
+    printf("exit status      : %d\n", status.exit_status);
+    printf("iterations       : %lu\n", status.num_inner_iterations);
+    printf("outer iterations : %lu\n", status.num_outer_iterations);
+    printf("solve time       : %f ms\n", (double)status.solve_time_ns / 1000000.0);
+    printf("penalty          : %f\n", status.penalty);
+
+    // TODO - deal with errors here!!!
+
     /* free memory */
     mpcc_optimizer_free(cache);
 
     return ci;
 }
 
-double MPCController::calculateDistance()
+double MPCController::calculateDistance(Vel & velocity)
 {
-    return 0;
-}
-
-TrackContraints MPCController::getTrackBoundary(Car & current, Track & track) const
-{
-    TrackContraints tc;
-    return tc;
+    auto tanVel = velocity.vx; //atan2(velocity.vy, velocity.vx);
+    return predictionHorizon * tanVel;
 }

@@ -5,7 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Bound_Est.dir/src/track.cpp.o"
   "CMakeFiles/Bound_Est.dir/src/tree.cpp.o"
   "CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o"
-  "CMakeFiles/Bound_Est.dir/src/visualise.cpp.o"
+  "CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o"
   "CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o"
   "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est.pdb"
   "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est"

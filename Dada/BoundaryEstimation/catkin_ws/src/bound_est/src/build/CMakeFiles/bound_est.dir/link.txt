@@ -1,1 +1,0 @@
-/usr/bin/g++-9  -g  -rdynamic CMakeFiles/bound_est.dir/main.cpp.o  -o bound_est 

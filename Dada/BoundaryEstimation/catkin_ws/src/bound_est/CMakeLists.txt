@@ -208,5 +208,5 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(Bound_Est src/Bound_est_triang.cpp src/car.cpp src/cone.cpp src/track.cpp src/tree.cpp src/triangulation.cpp src/visualise.cpp src/mpccontroller.cpp)
+add_executable(Bound_Est src/Bound_est_triang.cpp src/car.cpp src/cone.cpp src/track.cpp src/tree.cpp src/triangulation.cpp src/visualisation.cpp src/mpccontroller.cpp)
 target_link_libraries(Bound_Est ${catkin_LIBRARIES} ${OpenMP_LIBS} /home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.a m dl pthread)

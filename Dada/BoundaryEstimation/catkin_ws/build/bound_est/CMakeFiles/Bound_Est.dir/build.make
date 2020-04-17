@@ -201,28 +201,28 @@ bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o.provides: bound_est/C
 bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o.provides.build: bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o
 
 
-bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o: bound_est/CMakeFiles/Bound_Est.dir/flags.make
-bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o: /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/visualise.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o"
-	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Bound_Est.dir/src/visualise.cpp.o -c /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/visualise.cpp
+bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o: bound_est/CMakeFiles/Bound_Est.dir/flags.make
+bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o: /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/visualisation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o"
+	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o -c /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/visualisation.cpp
 
-bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Bound_Est.dir/src/visualise.cpp.i"
-	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/visualise.cpp > CMakeFiles/Bound_Est.dir/src/visualise.cpp.i
+bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Bound_Est.dir/src/visualisation.cpp.i"
+	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/visualisation.cpp > CMakeFiles/Bound_Est.dir/src/visualisation.cpp.i
 
-bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bound_Est.dir/src/visualise.cpp.s"
-	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/visualise.cpp -o CMakeFiles/Bound_Est.dir/src/visualise.cpp.s
+bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bound_Est.dir/src/visualisation.cpp.s"
+	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/visualisation.cpp -o CMakeFiles/Bound_Est.dir/src/visualisation.cpp.s
 
-bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o.requires:
+bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o.requires:
 
-.PHONY : bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o.requires
+.PHONY : bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o.requires
 
-bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o.provides: bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o.requires
-	$(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o.provides.build
-.PHONY : bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o.provides
+bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o.provides: bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o.requires
+	$(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o.provides.build
+.PHONY : bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o.provides
 
-bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o.provides.build: bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o
+bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o.provides.build: bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o
 
 
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: bound_est/CMakeFiles/Bound_Est.dir/flags.make
@@ -257,7 +257,7 @@ Bound_Est_OBJECTS = \
 "CMakeFiles/Bound_Est.dir/src/track.cpp.o" \
 "CMakeFiles/Bound_Est.dir/src/tree.cpp.o" \
 "CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o" \
-"CMakeFiles/Bound_Est.dir/src/visualise.cpp.o" \
+"CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o" \
 "CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o"
 
 # External object files for target Bound_Est
@@ -269,7 +269,7 @@ Bound_Est_EXTERNAL_OBJECTS =
 /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est: bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o
 /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est: bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o
 /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est: bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o
-/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est: bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o
+/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est: bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o
 /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est: bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o
 /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est: bound_est/CMakeFiles/Bound_Est.dir/build.make
 /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel/lib/bound_est/Bound_Est: /opt/ros/melodic/lib/libtf.so
@@ -311,7 +311,7 @@ bound_est/CMakeFiles/Bound_Est.dir/requires: bound_est/CMakeFiles/Bound_Est.dir/
 bound_est/CMakeFiles/Bound_Est.dir/requires: bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o.requires
 bound_est/CMakeFiles/Bound_Est.dir/requires: bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o.requires
 bound_est/CMakeFiles/Bound_Est.dir/requires: bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o.requires
-bound_est/CMakeFiles/Bound_Est.dir/requires: bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o.requires
+bound_est/CMakeFiles/Bound_Est.dir/requires: bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o.requires
 bound_est/CMakeFiles/Bound_Est.dir/requires: bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o.requires
 
 .PHONY : bound_est/CMakeFiles/Bound_Est.dir/requires

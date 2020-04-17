@@ -5,7 +5,7 @@
 #include <cmath>
 
 #include "cone.h"
-#include "visualise.h"
+#include "visualisation.h"
 #include "definitions.h"
 #include "tree.h"
 
@@ -18,7 +18,7 @@ class Triangulation
 {
 
 public:
-	Triangulation(std::shared_ptr<Visualise> visualise_cont);
+	Triangulation(std::shared_ptr<Visualisation> visualise_cont);
 	~Triangulation() = default;
 	std::vector<coord> getCentreCoords(std::vector<std::unique_ptr<Cone>>& coneList, coord lastPoint);
   
@@ -47,7 +47,7 @@ private:
 	void calcFirstPoint(const std::vector<triang> &triangleList, std::vector<coord> &finalLine, const coord &startPoint);
 
 	std::vector<coord> collectMidpoints(std::vector<triang> &triangList);
-	std::shared_ptr<Visualise> visualise{ nullptr };
+	std::shared_ptr<Visualisation> visualise{ nullptr };
 };
 
 std::ostream& operator<<(std::ostream& os, std::vector<triang> &triangList);

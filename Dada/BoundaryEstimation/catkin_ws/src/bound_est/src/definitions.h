@@ -108,21 +108,9 @@ typedef struct TireForces {
     double Fry;
 } TireForces;
 
-typedef struct TrackContraints {
-    double centreSlope;
-	double centreX;
-	double centreY;
-    double upSlope;
-	double upX;
-	double upY;
-    double lowSlope;
-	double lowX;
-	double lowY;
-} TrackContraints;
-
 typedef struct ControlInputs {
-	double D; // throttle [-1, 1]
-	double delta; // steering angle [-0.506, 0.506]
+	double D; 		// throttle [-1, 1]
+	double delta; 	// steering angle [-0.506, 0.506]
 } ControlInputs;
 
 typedef struct Vel {
@@ -144,7 +132,6 @@ constexpr struct CarParams {
 	double lr = 1.35; // length of the rear part of the vehicle  (this is from front axle to COG)
 	double length = 24; // JUNK NUMBER
 	double width = 12;
-
 
 	double weightF = lr/(lf + lr);
 	double weightR = lf/(lf + lr);
@@ -170,3 +157,10 @@ constexpr struct CarParams {
 	double p_long = 0.9;
 	double p_ellipse = 0.95;
 } CarParams;
+
+typedef struct MPC_targets
+{
+	coord nearest_point;
+	coord goal;
+	double slope;
+} MPC_targets;

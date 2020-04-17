@@ -1121,32 +1121,32 @@ src/triangulation.cpp.s:
 	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build && $(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.s
 .PHONY : src/triangulation.cpp.s
 
-src/visualise.o: src/visualise.cpp.o
+src/visualisation.o: src/visualisation.cpp.o
 
-.PHONY : src/visualise.o
+.PHONY : src/visualisation.o
 
 # target to build an object file
-src/visualise.cpp.o:
-	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build && $(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.o
-.PHONY : src/visualise.cpp.o
+src/visualisation.cpp.o:
+	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build && $(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.o
+.PHONY : src/visualisation.cpp.o
 
-src/visualise.i: src/visualise.cpp.i
+src/visualisation.i: src/visualisation.cpp.i
 
-.PHONY : src/visualise.i
+.PHONY : src/visualisation.i
 
 # target to preprocess a source file
-src/visualise.cpp.i:
-	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build && $(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.i
-.PHONY : src/visualise.cpp.i
+src/visualisation.cpp.i:
+	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build && $(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.i
+.PHONY : src/visualisation.cpp.i
 
-src/visualise.s: src/visualise.cpp.s
+src/visualisation.s: src/visualisation.cpp.s
 
-.PHONY : src/visualise.s
+.PHONY : src/visualisation.s
 
 # target to generate assembly for a file
-src/visualise.cpp.s:
-	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build && $(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/visualise.cpp.s
-.PHONY : src/visualise.cpp.s
+src/visualisation.cpp.s:
+	cd /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build && $(MAKE) -f bound_est/CMakeFiles/Bound_Est.dir/build.make bound_est/CMakeFiles/Bound_Est.dir/src/visualisation.cpp.s
+.PHONY : src/visualisation.cpp.s
 
 # Help Target
 help:
@@ -1233,9 +1233,9 @@ help:
 	@echo "... src/triangulation.o"
 	@echo "... src/triangulation.i"
 	@echo "... src/triangulation.s"
-	@echo "... src/visualise.o"
-	@echo "... src/visualise.i"
-	@echo "... src/visualise.s"
+	@echo "... src/visualisation.o"
+	@echo "... src/visualisation.i"
+	@echo "... src/visualisation.s"
 .PHONY : help
 
 

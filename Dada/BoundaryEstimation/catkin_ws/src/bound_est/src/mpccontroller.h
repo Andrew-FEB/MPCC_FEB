@@ -17,6 +17,7 @@
 #include "car.h"
 #include "track.h"
 #include "definitions.h"
+#include "visualisation.h"
 
 using namespace std;
 
@@ -26,8 +27,8 @@ public:
     ControlInputs solve(Car & current, Track & t);
     
 private:
-    TrackContraints getTrackBoundary(Car & current, Track & track) const;
-    double calculateDistance();
+    double calculateDistance(Vel & velocity);
+    // void showCalculatedPath(double * inputs);
     // void initSolver();
     // void freeSolver();
     

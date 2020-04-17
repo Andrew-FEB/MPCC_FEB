@@ -1,6 +1,6 @@
 #include "tree.h"
 
-Tree::Tree(std::shared_ptr<Visualise> visualise_cont, int est_node_size)
+Tree::Tree(std::shared_ptr<Visualisation> visualise_cont, int est_node_size)
 {
 #ifdef VISUALISE
 	if (visualise_cont!=nullptr)

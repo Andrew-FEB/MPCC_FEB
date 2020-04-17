@@ -1,7 +1,7 @@
 #include "triangulation.h"
 #include "include/delaunay/delaunator.hpp"
 
-Triangulation::Triangulation(std::shared_ptr<Visualise> visualise_cont)
+Triangulation::Triangulation(std::shared_ptr<Visualisation> visualise_cont)
 {
 #ifdef VISUALISE
 	if (visualise_cont!=nullptr)
