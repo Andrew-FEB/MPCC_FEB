@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-04-13 18:35:43.648929
+// Generated at: 2020-04-17 11:17:14.592237
 //
 
 use icasadi;
@@ -52,10 +52,10 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
-pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 17;
+pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 11;
 
 /// Number of parameters associated with augmented Lagrangian
-pub const MPCC_OPTIMIZER_N1: usize = 240;
+pub const MPCC_OPTIMIZER_N1: usize = 360;
 
 /// Number of penalty constraints
 pub const MPCC_OPTIMIZER_N2: usize = 0;
@@ -260,18 +260,18 @@ pub extern "C" fn mpcc_optimizer_free(instance: *mut mpcc_optimizerCache) {
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-10.0,0.03,-1.0,-0.506,0.0,-3.0,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[10.0,3.0,1.0,0.506,3.0,0.0,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-30.0,-30.0,-8.0,0.03,-1.0,-0.506,-3.0,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[30.0,30.0,8.0,3.0,1.0,0.506,3.0,]);
 
 
 
 
 // ---Parameters of ALM-type constraints (Set Y)---------------------------------------------------------
 /// Y_min
-const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
+const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
 
 /// Y_max
-const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
+const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
 
 
 

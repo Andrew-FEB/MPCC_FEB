@@ -9,13 +9,13 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define MPCC_OPTIMIZER_N1 240
+#define MPCC_OPTIMIZER_N1 360
 
 #define MPCC_OPTIMIZER_N2 0
 
 #define MPCC_OPTIMIZER_NUM_DECISION_VARIABLES 80
 
-#define MPCC_OPTIMIZER_NUM_PARAMETERS 17
+#define MPCC_OPTIMIZER_NUM_PARAMETERS 11
 
 /**
  * mpcc_optimizer version of ExitStatus

@@ -224,16 +224,12 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
 
     x = state[0]
     y = state[1]
+    v = state[3]
     x_ref = state[4]
     y_ref = state[5]
-    slope = state[8]
-    x_nearest = state[9]
-    y_nearest = state[10]
-    # x_ref = state[6]
-    # y_ref = state[7]
-    # slope = state[12]
-    # x_nearest = state[13]
-    # y_nearest = state[14]
+    slope = state[6]
+    x_nearest = state[7]
+    y_nearest = state[8]
 
     # y = slope * x + y_intercept
     y_inter = y_nearest - slope * x_nearest
@@ -249,7 +245,7 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     cf += track_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
 
     # Velocity
-    cf -= track_error_weight[2] * cs.fabs(state[3] - state[7])
+    cf -= track_error_weight[2] * v
 
     # Input Weights
     cf += in_weight[0] * control[0] ** 2
@@ -265,56 +261,35 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
 def generate_code(track_error_weight, in_weight, in_change_weight):
     # Not sure about the u_seq - should it be nu*N large ???
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", nx * 2 + 3 + 6)  # Initial state (=4) + Reference state (=4)
-    # + slope (=1) + nearest x, y (=2)
-    # + 2x(slope, x, y) for each boundary (=6)
+    x0 = cs.MX.sym("x0_xref", nx * 2 + 3)  # Initial state (=4) + Reference point (=4) + slope (=1) + nearest x, y (=2)
 
     cost = 0
     x_t = x0[0:8]
     F1 = []
-    # F2 = []
     for t in range(0, nu * N, nu):
         u = [u_seq[t], u_seq[t + 1]]
         if t > 1:
             u_prev = [u_seq[t - 2], u_seq[t - 1]]
         else:
             u_prev = [0, 0]
-        cost += cost_function(cs.vertcat(x_t, x0[8:17]), u, u_prev, track_error_weight, in_weight,
+        cost += cost_function(cs.vertcat(x_t, x0[8:11]), u, u_prev, track_error_weight, in_weight,
                               in_change_weight)  # Update cost
-        # f = tire_forces(x_t, u)
-        # x_t = dynamic_model_rk(x_t, u, f, Ts, True)  # Update state
+        # Update state
         x_t = kinetic_model_rk(x_t, u, Ts, True)
         # TODO - add the missing constraints
         # Contouring Constraint
-        # slope = x_t[8]
-        # x_nearest = x_t[9]
-        # y_nearest = x_t[10]
-        # y_inter = y_nearest - slope * x_nearest
-        # c_e = cs.fabs((slope * x_t[0] - x_t[1] + y_inter)) / (cs.sqrt(slope ** 2 + 1))
-        # Boundary Constraints
-        bound_slope1 = x0[11]
-        bound_x1 = x0[12]
-        bound_y1 = x0[13]
-        bound_inter1 = bound_y1 - bound_slope1 * bound_x1
-        bound_slope2 = x0[14]
-        bound_x2 = x0[15]
-        bound_y2 = x0[16]
-        bound_inter2 = bound_y2 - bound_slope2 * bound_x2
-        bound_dist1 = (bound_slope1 * x_t[0] - x_t[1] + bound_inter1) / cs.sqrt(bound_slope1 ** 2 + 1)
-        bound_dist2 = (bound_slope2 * x_t[0] - x_t[1] + bound_inter2) / cs.sqrt(bound_slope2 ** 2 + 1)
+        slope = x0[8]
+        x_nearest = x0[9]
+        y_nearest = x0[10]
+        y_inter = y_nearest - slope * x_nearest
+        c_e = cs.fabs((slope * x_t[0] - x_t[1] + y_inter)) / (cs.sqrt(slope ** 2 + 1))
 
-        # F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1], c_e)
-        # F1 = cs.vertcat(F1, x_t[2], x_t[3], u[0], u[1], c_e)
-        F1 = cs.vertcat(F1, x_t[2], x_t[3], u[0], u[1], bound_dist1, bound_dist2)
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1], c_e)
 
     # Constraints
     # -------------------------------------
-    # C = og.constraints.Rectangle([x_min, y_min, phi_min, v_x_min, v_y_min, omega_min, d_min, delta_min, -track_width],
-    #                              [x_max, y_max, phi_max, v_x_max, v_y_max, omega_max, d_max, delta_max, track_width])
-    # C = og.constraints.Rectangle([phi_min, v_x_min, d_min, delta_min, 0],
-    #                              [phi_max, v_x_max, d_max, delta_max, track_width])
-    C = og.constraints.Rectangle([phi_min, v_x_min, d_min, delta_min, 0, -track_width],
-                                 [phi_max, v_x_max, d_max, delta_max, track_width, 0])
+    C = og.constraints.Rectangle([x_min, y_min, omega_min, v_x_min, d_min, delta_min, -track_width],
+                                 [x_max, y_max, omega_max, v_x_max, d_max, delta_max, track_width])
 
     # Code Generation
     # -------------------------------------
