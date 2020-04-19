@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-04-17 11:17:14.592237
+// Generated at: 2020-04-19 11:59:50.061822
 //
 
 use icasadi;
@@ -40,7 +40,7 @@ const MAX_DURATION_MICROS: u64 = 50000;
 const PENALTY_UPDATE_FACTOR: f64 = 5.0;
 
 /// Initial penalty
-const INITIAL_PENALTY_PARAMETER: f64 = 256.0;
+const INITIAL_PENALTY_PARAMETER: f64 = 500.0;
 
 /// Sufficient decrease coefficient
 const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;

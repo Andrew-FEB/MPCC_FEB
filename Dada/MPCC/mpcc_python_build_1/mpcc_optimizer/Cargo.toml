@@ -20,6 +20,7 @@ publish=false
 [dependencies]
 optimization_engine = "*"
 
+
 icasadi = {path = "./icasadi/"}
 
 

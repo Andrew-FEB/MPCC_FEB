@@ -4,6 +4,7 @@
 #include <utility>
 #include <cmath>
 #include <memory>
+#include <iostream>
 
 #include "cone.h"
 #include "definitions.h"
@@ -14,6 +15,7 @@ using namespace std;
 class Car
 {
 public:
+    Car();
     Car(shared_ptr<Visualisation> vis);
     Car(const Pos & newPos, const Vel & newVel);
     ~Car() = default;
@@ -22,23 +24,24 @@ public:
     void setVelocity(const Vel & vel);
     const Vel & getVelocity() const;
 
-    Car & updateCarKinematicModel(ControlInputs control);
-    Car & updateCarDynamicModel(ControlInputs control);
-    void updateCar(ControlInputs control, double dt, Car & (*vehicleModel)(Car &, ControlInputs));
+    Car & updateCarKinematicModel(const ControlInputs & control);
+    Car & updateCarDynamicModel(const ControlInputs & control);
+    void updateCar(ControlInputs control, double dt, Car & (*vehicleModel)(const Car &, const ControlInputs &));
 
-    Car & operator*(double a);
-    Car & operator+(Car c);
-    
-private:
-    TireForces tireModel(ControlInputs ci) const;
+    Car operator*(double a);
+    Car operator+(Car c);
+    friend ostream & operator<<(ostream & os, const Car & car);
 
 private:
-    Pos position = {5, 1, 0};
-    Vel velocity = {1, 0, 0};
+    TireForces tireModel(const ControlInputs & control) const;
+
+private:
+    Pos position = {0, 0, 0};
+    Vel velocity = {1.5, 0, 0};
     shared_ptr<Visualisation> visualisation;
 };
 
-Car & kinematicModel(Car & car, ControlInputs control);
-Car & dynamicModel(Car & car, ControlInputs control);
+Car & kinematicModel(const Car & car, const ControlInputs & control);
+Car & dynamicModel(const Car & car, const ControlInputs & control);
 
 #endif // CAR_H

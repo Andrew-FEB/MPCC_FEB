@@ -128,17 +128,17 @@ def kinetic_model_temp(state, control, calc_casadi):
 def kinetic_model_rk(state, control, dt, calc_casadi):
     if calc_casadi:
         k1 = dt * kinetic_model_temp(state, control, calc_casadi)
-        k2 = dt * kinetic_model_temp(state + dt * 0.5 * k1, control, calc_casadi)
-        k3 = dt * kinetic_model_temp(state + dt * 0.5 * k2, control, calc_casadi)
-        k4 = dt * kinetic_model_temp(state + dt * k3, control, calc_casadi)
+        k2 = dt * kinetic_model_temp(state + 0.5 * k1, control, calc_casadi)
+        k3 = dt * kinetic_model_temp(state + 0.5 * k2, control, calc_casadi)
+        k4 = dt * kinetic_model_temp(state + k3, control, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3],
                           state[4], state[5], state[6], state[7])
     else:
         k1 = dt * np.array(kinetic_model_temp(state, control, calc_casadi))
-        k2 = dt * np.array(kinetic_model_temp(state + dt * 0.5 * k1, control, calc_casadi))
-        k3 = dt * np.array(kinetic_model_temp(state + dt * 0.5 * k2, control, calc_casadi))
-        k4 = dt * np.array(kinetic_model_temp(state + dt * k3, control, calc_casadi))
+        k2 = dt * np.array(kinetic_model_temp(state + 0.5 * k1, control, calc_casadi))
+        k3 = dt * np.array(kinetic_model_temp(state + 0.5 * k2, control, calc_casadi))
+        k4 = dt * np.array(kinetic_model_temp(state + k3, control, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return (next_state[0], next_state[1], next_state[2], next_state[3],
                 state[4], state[5], state[6], state[7])
@@ -178,17 +178,17 @@ def dynamic_model(state, control, forces, calc_casadi):
 def dynamic_model_rk(state, control, forces, dt, calc_casadi):
     if calc_casadi:
         k1 = dt * dynamic_model(state, control, forces, calc_casadi)
-        k2 = dt * dynamic_model(state + dt * 0.5 * k1, control, forces, calc_casadi)
-        k3 = dt * dynamic_model(state + dt * 0.5 * k2, control, forces, calc_casadi)
-        k4 = dt * dynamic_model(state + dt * k3, control, forces, calc_casadi)
+        k2 = dt * dynamic_model(state + 0.5 * k1, control, forces, calc_casadi)
+        k3 = dt * dynamic_model(state + 0.5 * k2, control, forces, calc_casadi)
+        k4 = dt * dynamic_model(state + k3, control, forces, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
                           state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
     else:
         k1 = dt * np.array(dynamic_model(state, control, forces, calc_casadi))
-        k2 = dt * np.array(dynamic_model(state + dt * 0.5 * k1, control, forces, calc_casadi))
-        k3 = dt * np.array(dynamic_model(state + dt * 0.5 * k2, control, forces, calc_casadi))
-        k4 = dt * np.array(dynamic_model(state + dt * k3, control, forces, calc_casadi))
+        k2 = dt * np.array(dynamic_model(state + 0.5 * k1, control, forces, calc_casadi))
+        k3 = dt * np.array(dynamic_model(state + 0.5 * k2, control, forces, calc_casadi))
+        k4 = dt * np.array(dynamic_model(state + k3, control, forces, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
         return (next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
                 state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
@@ -227,9 +227,10 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     v = state[3]
     x_ref = state[4]
     y_ref = state[5]
-    slope = state[6]
-    x_nearest = state[7]
-    y_nearest = state[8]
+    v_ref = state[7]
+    slope = state[8]
+    x_nearest = state[9]
+    y_nearest = state[10]
 
     # y = slope * x + y_intercept
     y_inter = y_nearest - slope * x_nearest
@@ -245,7 +246,7 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     cf += track_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
 
     # Velocity
-    cf -= track_error_weight[2] * v
+    cf -= track_error_weight[2] * cs.fabs(v - v_ref)
 
     # Input Weights
     cf += in_weight[0] * control[0] ** 2
@@ -300,12 +301,13 @@ def generate_code(track_error_weight, in_weight, in_change_weight):
         .with_build_directory("mpcc_c_build_1") \
         .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
         .with_build_c_bindings()
+    # .with_tcp_interface_config()
 
     meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
-        .with_initial_penalty(256) \
+        .with_initial_penalty(500) \
         .with_max_duration_micros(50000)  # 0.05s
 
     builder = og.builder.OpEnOptimizerBuilder(problem,

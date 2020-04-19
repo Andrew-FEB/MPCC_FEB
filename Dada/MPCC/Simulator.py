@@ -24,7 +24,7 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
     i_start = 1  # must be at least one
     phi = np.arctan2(track_y[i_start] - track_y[i_start - 1], track_x[i_start] - track_x[i_start - 1])
     # State is a tuple which contains the six state-defining parameters
-    x_state_0 = (track_x[i_start], track_y[i_start], phi, 2)  # , 7, 0.5)
+    x_state_0 = (track_x[i_start], track_y[i_start], phi, 1.5)  # , 7, 0.5)
     # x_state_0 = (1, 3, np.arctan(3/1), 0.2)  # , 7, 0.5)
 
     # At the end of the simulation, state sequence will contain
@@ -69,8 +69,8 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
 
     # Run simulation
     for k in range(simulation_steps):
-        solver_status = mng.call(np.concatenate((state, state_ref, [slope, x_nearest, y_nearest],
-                                                 [slope_up, x_up, y_up, slope_low, x_low, y_low])))
+        solver_status = mng.call(np.concatenate((state, state_ref, [slope, x_nearest, y_nearest])))
+                                                 # [slope_up, x_up, y_up, slope_low, x_low, y_low])))
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
                   + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
@@ -136,7 +136,7 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
 def update_reference(first_control_input, i_nearest, state_next, state_ref, track_x, track_y):
     # Find the index of the reference point (depending on the current velocity), as above
     # dist_ahead = (np.arctan2(state_next[4], state_next[3])) * cg.N * cg.Ts  # Using tangential velocity
-    dist_ahead = state_next[3] * 2.01  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
+    dist_ahead = state_next[3] * 2  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
     print("DIST AHEAD = " + str(dist_ahead) + ", v = " + str(state_next[3]))
     [i_nearest, nearest_dist] = find_closest_point_centreline([state_next[0], state_next[1]], track_x, track_y,
                                                               cg.track_width,

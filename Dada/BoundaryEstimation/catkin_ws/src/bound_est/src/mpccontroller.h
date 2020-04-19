@@ -23,7 +23,7 @@ using namespace std;
 
 class MPCController {
 public:
-    MPCController(int simSteps, double ph);
+    MPCController(double ph);
     ControlInputs solve(Car & current, Track & t);
     
 private:
@@ -33,7 +33,6 @@ private:
     // void freeSolver();
     
 private:
-    int simulationSteps = 100;
     double predictionHorizon = 2; // in [s]
     
 };

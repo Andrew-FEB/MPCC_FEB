@@ -126,8 +126,8 @@ MPC_targets Track::getCentreLine(const double &desired_dist)
     std::cout<<"Desired distance to travel = "<<desired_dist<<std::endl;
     MPC_targets output;
 
-    std::vector<double> x_points_dummy = {0, 12, 19, 38, 52, 65, 80, 100, 150, 300};
-    std::vector<double> y_points_dummy = {0, 19, 5, -7, 22, 29, 16, 0, -40, -160};
+    std::vector<double> x_points_dummy = {0, 8, 12, 16, 20, 30, 40};
+    std::vector<double> y_points_dummy = {0, 1.5, 2.5, 3, 1, 0.5, 0};
     std::vector<coord> set_points;
     for (int i = 0; i<x_points_dummy.size(); i++)
     {
@@ -139,7 +139,7 @@ MPC_targets Track::getCentreLine(const double &desired_dist)
     tk::spline centreline_spline;
     centreline_spline.set_points(x_points_dummy, y_points_dummy, true);
     std::vector<coord> vis_coords;
-    for (double i = 0; i<*x_points_dummy.end(); i=i+2)
+    for (double i = 0; i < x_points_dummy.back(); i += 2)
     {
         vis_coords.push_back({i, centreline_spline(i)});
     }
@@ -151,7 +151,7 @@ MPC_targets Track::getCentreLine(const double &desired_dist)
     double best_distance = std::numeric_limits<double>::max();
     double best_spline_x = std::numeric_limits<double>::min();
     auto car_pos = car->getPosition().p;
-    for (double i = 0; i<*x_points_dummy.end(); i=i+0.5)
+    for (double i = 0; i < x_points_dummy.back(); i += 0.01)
     {
         coord spline_pos = {i, centreline_spline(i)};
         double spline_dis = pow(car_pos.x-spline_pos.x, 2) + pow(car_pos.y-spline_pos.y, 2);
