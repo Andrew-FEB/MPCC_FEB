@@ -3,12 +3,13 @@
 Car::Car() {}
 Car::Car(shared_ptr<Visualisation> vis) : visualisation(vis) {}
 Car::Car(const Pos & newPos, const Vel & newVel) : position(newPos), velocity(newVel) {}
+Car::Car(const Pos & newPos, const Vel & newVel, shared_ptr<Visualisation> vis) : position(newPos), velocity(newVel), visualisation(vis) {}
 
 /**
  *  Bicycle Models
  */
 
-Car & Car::updateCarKinematicModel(const ControlInputs & control)
+Car Car::updateCarKinematicModel(const ControlInputs & control) const
 {
     // State parameters
     auto x = position.p.x;           // Longitudinal position
@@ -29,13 +30,10 @@ Car & Car::updateCarKinematicModel(const ControlInputs & control)
     auto vNext = a;
 
     // Set next state
-    position = {xNext, yNext, position.phi};
-    velocity = {vNext, velocity.vy, psiNext};
-
-    return *this;
+    return Car({xNext, yNext, position.phi}, {vNext, velocity.vy, psiNext});
 }
 
-Car & Car::updateCarDynamicModel(const ControlInputs & control)
+Car Car::updateCarDynamicModel(const ControlInputs & control) const
 {
     auto forces = tireModel(control);
     // State variables
@@ -63,10 +61,7 @@ Car & Car::updateCarDynamicModel(const ControlInputs & control)
     auto omegaNext = 1 / CarParams.Iz * (Ffy * CarParams.lf * cos(delta) - Fry * CarParams.lr);
 
     // Set next state
-    position = {xNext, yNext, phiNext};
-    velocity = {vxNext, vyNext, omegaNext};
-
-    return *this;
+    return Car({xNext, yNext, phiNext}, {vxNext, vyNext, omegaNext});
 }
 
 /**
@@ -99,18 +94,29 @@ TireForces Car::tireModel(const ControlInputs & control) const
 /**
  * Discretization of the model (4th order Runge-Kutta method)
  */
-void Car::updateCar(ControlInputs control, double dt, Car & (*vehicleModel)(const Car &, const ControlInputs &))
+void Car::updateCar(ControlInputs control, double dt, Car (*vehicleModel)(const Car &, const ControlInputs &))
 {
     Car & car{*this};
     cout << "BEFORE UPDATE:\n"  << car << endl;
 
     auto k1 = vehicleModel(car, control) * dt;
-    auto k2 = vehicleModel(car + k1 * 0.5, control) * dt;
-    auto k3 = vehicleModel(car + k2 * 0.5, control) * dt;
-    auto k4 = vehicleModel(car + k3, control) * dt;
-    car = car + (k1 + k2 * 2 + k3 * 2 + k4) * (1.0 / 6.0);
+    // cout << "K1 = \n" << k1 << endl;
+    // cout << "CAR:\n"  << car << endl;
 
-    cout << "AFTER UPDATE:\n" << car << endl;
+    auto k2 = vehicleModel(car + k1 * 0.5, control) * dt;
+    // cout << "K2 = \n" << k2 << endl;
+    // cout << "CAR:\n"  << car << endl;
+
+    auto k3 = vehicleModel(car + k2 * 0.5, control) * dt;
+    // cout << "K3 = \n" << k3 << endl;
+    // cout << "CAR:\n"  << car << endl;
+
+    auto k4 = vehicleModel(car + k3, control) * dt;
+    // cout << "K4 = \n" << k4 << endl;
+    // cout << "CAR:\n"  << car << endl;
+
+    car = car + (k1 + k2 * 2 + k3 * 2 + k4) * (1.0 / 6.0);
+    // cout << "AFTER UPDATE:\n" << car << endl;
 
     #ifdef VISUALISE
     visualisation->showCar(position.p);
@@ -139,14 +145,32 @@ const Vel & Car::getVelocity() const
 
 Car Car::operator*(double a)
 {
+    // position.p.x = a * position.p.x;
+    // position.p.y = a * position.p.y;
+    // position.phi = a * position.phi;
+    // velocity.vx = a * velocity.vx;
+    // velocity.vy = a * velocity.vy;
+    // velocity.omega = a * velocity.omega;
+
+    // return *this;
     return Car({a * position.p.x, a * position.p.y, a * position.phi},
-                {a * velocity.vx, a * velocity.vy, a * velocity.omega});
+                {a * velocity.vx, a * velocity.vy, a * velocity.omega},
+                visualisation);
 }
 
 Car Car::operator+(Car c)
 {
+    // position.p.x = position.p.x + c.getPosition().p.x;
+    // position.p.y = position.p.y + c.getPosition().p.y;
+    // position.phi = position.phi + c.getPosition().phi;
+    // velocity.vx = velocity.vx + c.getVelocity().vx;
+    // velocity.vy = velocity.vy + c.getVelocity().vy;
+    // velocity.omega = velocity.omega + c.getVelocity().omega;
+
+    // return *this;
     return Car({position.p.x + c.getPosition().p.x, position.p.y + c.getPosition().p.y, position.phi + c.getPosition().phi},
-                {velocity.vx + c.getVelocity().vx, velocity.vy + c.getVelocity().vy, velocity.omega + c.getVelocity().omega});
+                {velocity.vx + c.getVelocity().vx, velocity.vy + c.getVelocity().vy, velocity.omega + c.getVelocity().omega},
+                visualisation);
 }
 
 ostream & operator<<(ostream & os, const Car & car)
@@ -162,12 +186,12 @@ ostream & operator<<(ostream & os, const Car & car)
  * function handle parameter to the updateCar function.
  */
 
-Car & kinematicModel(const Car & car, const ControlInputs & control)
+Car kinematicModel(const Car & car, const ControlInputs & control)
 {
-    return const_cast<Car &>(car).updateCarKinematicModel(control);
+    return car.updateCarKinematicModel(control);
 }
 
-Car & dynamicModel(const Car & car, const ControlInputs & control)
+Car dynamicModel(const Car & car, const ControlInputs & control)
 {
-    return const_cast<Car &>(car).updateCarDynamicModel(control);
+    return car.updateCarDynamicModel(control);
 }

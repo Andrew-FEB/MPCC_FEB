@@ -11,7 +11,7 @@
 #include "visualisation.h"
 #include "mpccontroller.h"
 
-constexpr long rosRefreshTime_ms = 1000;
+constexpr long rosRefreshTime_ms = 350;
 constexpr double timeStep = 0.05;
 
 int main(int argc, char *argv[])
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     //Configure track, car and cones
     std::unique_ptr<Track> track = std::make_unique<Track>(visualise);
 
-    MPCController mpcc{2};
+    MPCController mpcc{3};
     auto car = track->getCar();
 
     std::cout << "Entering loop" << std::endl;
