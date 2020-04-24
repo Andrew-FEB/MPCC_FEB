@@ -21,7 +21,7 @@ public:
 	void refreshRosOutput();
 	void showTriangles(const std::vector<triang> &triangles);
 	void showCones(const std::vector < std::unique_ptr<Cone>> &coneList);
-	void showCar(const coord & car);
+	void showCar(const coord & car, const double & angle);
 	void showEndPoint(const coord &endPoint);
 	void showCentreCoords(const std::vector<coord> &centreCoords);
 	void showNodeMids(const std::vector<coord> &midPoints);	

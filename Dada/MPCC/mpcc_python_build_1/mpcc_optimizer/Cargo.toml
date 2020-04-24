@@ -21,7 +21,7 @@ publish=false
 optimization_engine = "*"
 
 
-icasadi = {path = "./icasadi/"}
+icasadi_mpcc_optimizer = {path = "./icasadi_mpcc_optimizer/"}
 
 
 

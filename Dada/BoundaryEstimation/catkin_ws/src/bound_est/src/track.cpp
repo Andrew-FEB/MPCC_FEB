@@ -13,7 +13,7 @@ Track::Track(std::shared_ptr<Visualisation> visualise_cont)
     triangulate = std::make_unique<Triangulation>(visualise_cont);
     car = std::make_unique<Car>(visualise_cont);
 #ifdef VISUALISE
-    visualise->showCar(car->getPosition().p);
+    visualise->showCar(car->getPosition().p, car->getPosition().phi);
 #endif
 }
 
@@ -126,8 +126,9 @@ MPC_targets Track::getCentreLine(const double &desired_dist)
     std::cout<<"Desired distance to travel = "<<desired_dist<<std::endl;
     MPC_targets output;
 
-    std::vector<double> x_points_dummy = {0, 8, 12, 16, 20, 30, 40};
-    std::vector<double> y_points_dummy = {0, 1.5, 2.5, 3, 1, 0.5, 0};
+    std::vector<double> x_points_dummy = {0, 2, 4, 8, 16, 20, 25};
+    std::vector<double> y_points_dummy = {0, 1, 5, 10, 2, 15, 5};
+
     std::vector<coord> set_points;
     for (int i = 0; i<x_points_dummy.size(); i++)
     {
@@ -139,7 +140,7 @@ MPC_targets Track::getCentreLine(const double &desired_dist)
     tk::spline centreline_spline;
     centreline_spline.set_points(x_points_dummy, y_points_dummy, true);
     std::vector<coord> vis_coords;
-    for (double i = 0; i < x_points_dummy.back(); i += 2)
+    for (double i = 0; i < x_points_dummy.back(); i++)
     {
         vis_coords.push_back({i, centreline_spline(i)});
     }
@@ -161,7 +162,7 @@ MPC_targets Track::getCentreLine(const double &desired_dist)
             best_spline_x = i;
         }
     }
-    std::cout<<"Nearest point: x("<<best_spline_x<<"), y("<<centreline_spline(best_spline_x)<<")"<<std::endl;
+    std::cout << "Nearest point (" << best_distance << "): x(" << best_spline_x<<"), y("<<centreline_spline(best_spline_x)<<")"<<std::endl;
     output.nearest_point  = {best_spline_x, centreline_spline(best_spline_x)};
     std::pair<coord, coord> path_to_nearest = std::make_pair(car_pos, output.nearest_point);
     #ifdef VISUALISE

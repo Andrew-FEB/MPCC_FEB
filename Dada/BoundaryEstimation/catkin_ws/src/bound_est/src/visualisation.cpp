@@ -130,7 +130,7 @@ void Visualisation::showCones(const std::vector < std::unique_ptr<Cone>> & coneL
 	cone_pub.publish(coneMarkerList);
 }
 
-void Visualisation::showCar(const coord & car)
+void Visualisation::showCar(const coord & car, const double & angle)
 {
 	if (car_pub.getNumSubscribers()<1)
 	{
@@ -145,8 +145,8 @@ void Visualisation::showCar(const coord & car)
 	carMark.mesh_resource = "file:///home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
 	carMark.action = visualization_msgs::Marker::ADD;
 	carMark.pose.position.z = 0.0;
-	carMark.pose.orientation.z = 0.0;
-	carMark.pose.orientation.w = 1.0;
+	carMark.pose.orientation.z = tf::createQuaternionMsgFromYaw(angle).z;
+	carMark.pose.orientation.w = tf::createQuaternionMsgFromYaw(angle).w;
 	carMark.scale.x = 0.5;
 	carMark.scale.y = 0.5;
 	carMark.scale.z = 0.5;
@@ -216,8 +216,8 @@ void Visualisation::showCentreCoords(const std::vector<coord> &centreCoords)
 		centreList.markers[i].scale.x = 0.1;
 		centreList.markers[i].scale.y = 0.1;
 		centreList.markers[i].scale.z = 1.0;
-		centreList.markers[i].color.r = 1.0f;
-		centreList.markers[i].color.g = 1.0f;
+		centreList.markers[i].color.r = 0.0f;
+		centreList.markers[i].color.g = 0.0f;
 		centreList.markers[i].color.b = 0.0f;
 		centreList.markers[i].color.a = 1.0;
 		centreList.markers[i].lifetime = ros::Duration(ROS_DURATION_TIME);

@@ -22,9 +22,9 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
     # Set all values needed for simulation
     # TODO - organize these!!!
     i_start = 1  # must be at least one
-    phi = np.arctan2(track_y[i_start] - track_y[i_start - 1], track_x[i_start] - track_x[i_start - 1])
+    # phi = np.arctan2(track_y[i_start] - track_y[i_start - 1], track_x[i_start] - track_x[i_start - 1])
     # State is a tuple which contains the six state-defining parameters
-    x_state_0 = (track_x[i_start], track_y[i_start], phi, 1.5)  # , 7, 0.5)
+    x_state_0 = (track_x[i_start], track_y[i_start], 0, 1.5)  # , 7, 0.5)
     # x_state_0 = (1, 3, np.arctan(3/1), 0.2)  # , 7, 0.5)
 
     # At the end of the simulation, state sequence will contain
@@ -46,26 +46,25 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
                                                    0)
     [i_ahead, end_of_track_reached] = move_along_track(track_x, track_y, dist_ahead, i_nearest)
     (x, y) = [track_x[i_ahead], track_y[i_ahead]]
-    (x_prev, y_prev) = [track_x[i_ahead - 1], track_y[i_ahead - 1]]
-    phi = np.arctan2(y - x_state_0[1], x - x_state_0[0])
-    state_ref = (x, y, phi, 1)  # , 5, 0.7)  # reference state tuple
+    # phi = np.arctan2(y - x_state_0[1], x - x_state_0[0])
+    state_ref = (x, y, 0, 1)  # , 5, 0.7)  # reference state tuple
     reference_sequence = [state_ref]
 
     # The nearest sequence will contain tuples (x, y) of the positions
     # on the reference line which correspond to the nearest point found
     # for each state in the state sequence
-    x_nearest = track_x[i_nearest + 1]
-    y_nearest = track_y[i_nearest + 1]
-    slope = (y_nearest - track_y[i_nearest]) / (x_nearest - track_x[i_nearest])
+    x_nearest = track_x[i_nearest]
+    y_nearest = track_y[i_nearest]
+    slope = (track_y[i_nearest+1] - y_nearest) / (track_x[i_nearest+1] - x_nearest)
     nearest_sequence = [(x_nearest, y_nearest)]
 
     # Get the boundaries
     x_up = x_nearest
-    y_up = upper_bound[i_nearest + 1]
-    slope_up = (y_up - upper_bound[i_nearest]) / (x_nearest - track_x[i_nearest])
+    y_up = upper_bound[i_nearest]
+    slope_up = (upper_bound[i_nearest+1] - y_up) / (track_x[i_nearest+1] - x_nearest)
     x_low = x_nearest
-    y_low = lower_bound[i_nearest + 1]
-    slope_low = (y_low - lower_bound[i_nearest]) / (x_nearest - track_x[i_nearest])
+    y_low = lower_bound[i_nearest]
+    slope_low = (lower_bound[i_nearest+1] - y_low) / (track_x[i_nearest+1] - x_nearest)
 
     # Run simulation
     for k in range(simulation_steps):
@@ -75,18 +74,18 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
                   + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
                   + '. Inner iterations: ' + str(solver_status['num_inner_iterations'])
-                  + '. Ref index = ' + str(i_ahead))
+                  + '. Penalty: ' + str(solver_status['penalty'])
+                  + '. Ref index = ' + str(i_ahead) + '. Nearest index = ' + str(i_nearest))
 
             control_inputs = solver_status['solution']
             first_control_input = (control_inputs[0], control_inputs[1])
             # forces = cg.tire_forces(state, first_control_input)
             # state_next = cg.dynamic_model_rk(np.concatenate((state, state_ref, [slope, x_nearest, y_nearest])),
             #                                  first_control_input, forces, cg.Ts, False)
-            state_next = cg.kinetic_model_rk(np.concatenate((state, state_ref)),
-                                             first_control_input, cg.Ts, False)
+            state_next = cg.kinetic_model_rk(state, first_control_input, cg.Ts, False)
             # forces,
 
-            end_of_track_reached, i_nearest, state_ref, i_ahead, x, y, phi = update_reference(first_control_input,
+            end_of_track_reached, i_nearest, state_ref, i_ahead, x, y = update_reference(first_control_input,
                                                                                               i_nearest, state_next,
                                                                                               state_ref, track_x,
                                                                                               track_y)
@@ -97,28 +96,28 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
 
             # Update all variables needed for the next iteration and save values in the sequences to be plotted
             x_nearest = track_x[i_nearest]
-            x_nearest_prev = track_x[i_nearest - 1]
+            x_nearest_next = track_x[i_nearest + 1]
             y_nearest = track_y[i_nearest]
-            y_nearest_prev = track_y[i_nearest - 1]
-            slope = (y_nearest - y_nearest_prev) / (x_nearest - x_nearest_prev)
+            y_nearest_next = track_y[i_nearest + 1]
+            slope = (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
 
             # Update the boundaries
             x_up = x_nearest
             y_up = upper_bound[i_nearest]
-            slope_up = (y_up - upper_bound[i_nearest - 1]) / (x_nearest - x_nearest_prev)
+            slope_up = (upper_bound[i_nearest + 1] - y_up) / (x_nearest_next - x_nearest)
             x_low = x_nearest
             y_low = lower_bound[i_nearest]
-            slope_low = (y_low - lower_bound[i_nearest - 1]) / (x_nearest - x_nearest_prev)
+            slope_low = (lower_bound[i_nearest + 1] - y_low) / (x_nearest_next - x_nearest)
 
             # state_ref = (x, y, phi) + tuple(state_ref[3:6])
-            state_ref = (x, y, phi, 2.5)  # state_ref[3]
+            state_ref = (x, y, state_ref[2], state_ref[3])  # state_ref[3]
             # state_ref = state_ref[0:6]
             # state = state_next[:6]
-            state = state_next[:4]
+            state = tuple(state_next[:4])
             input_sequence.append(first_control_input)
-            state_sequence.append(tuple(state_next[:4]))
+            state_sequence.append(state)
             # state_sequence.append(tuple(state_next[:6]))
-            reference_sequence.append(tuple(state_ref))
+            reference_sequence.append(state_ref)
             nearest_sequence.append((x_nearest, y_nearest))
 
         except AttributeError:
@@ -136,7 +135,7 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
 def update_reference(first_control_input, i_nearest, state_next, state_ref, track_x, track_y):
     # Find the index of the reference point (depending on the current velocity), as above
     # dist_ahead = (np.arctan2(state_next[4], state_next[3])) * cg.N * cg.Ts  # Using tangential velocity
-    dist_ahead = state_next[3] * 2  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
+    dist_ahead = state_next[3] * (cg.N * cg.Ts)  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
     print("DIST AHEAD = " + str(dist_ahead) + ", v = " + str(state_next[3]))
     [i_nearest, nearest_dist] = find_closest_point_centreline([state_next[0], state_next[1]], track_x, track_y,
                                                               cg.track_width,
@@ -144,15 +143,12 @@ def update_reference(first_control_input, i_nearest, state_next, state_ref, trac
     [i_ahead, end_of_track_reached] = move_along_track(track_x, track_y, dist_ahead, i_nearest)
     # Find the angle in the direction of the previous step - should this be from current position instead?
     [x, y] = [track_x[i_ahead], track_y[i_ahead]]
-    [x_prev, y_prev] = [track_x[i_ahead-1], track_y[i_ahead-1]]
-    phi = np.arctan2(y - y_prev, x - x_prev)
     # The next reference state, taking into account all the previous calculations, and using the vehicle
     # model with regard to the obtained control inputs
     # state_ref = cg.dynamic_model_rk(np.concatenate((state_ref, state_ref, [slope, x_nearest, y_nearest])),
     #                                 first_control_input, forces, cg.Ts, False)
-    state_ref = cg.kinetic_model_rk(np.concatenate((state_ref, state_ref)),
-                                    first_control_input, cg.Ts, False)
-    return end_of_track_reached, i_nearest, state_ref, i_ahead, x, y, phi
+    state_ref = cg.kinetic_model_rk(state_ref, first_control_input, cg.Ts, False)
+    return end_of_track_reached, i_nearest, state_ref, i_ahead, x, y
 
 
 def find_closest_point_centreline(current_pos, track_x, track_y, track_width, search_region, prev_closest):
@@ -160,7 +156,7 @@ def find_closest_point_centreline(current_pos, track_x, track_y, track_width, se
     # Find the index of the point on the centreline which is the closest to the current position
 
     # Investigate at search region
-    back = int(search_region * 0.05)  # 5%
+    back = int(search_region * 0.5)  # 50%
     # front = search_region - back
     smallest_dist_i = prev_closest - (back - 1)
     if smallest_dist_i < 0:

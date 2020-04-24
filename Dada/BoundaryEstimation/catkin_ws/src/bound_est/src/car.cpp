@@ -9,7 +9,7 @@ Car::Car(const Pos & newPos, const Vel & newVel, shared_ptr<Visualisation> vis) 
  *  Bicycle Models
  */
 
-Car Car::updateCarKinematicModel(const ControlInputs & control) const
+Car Car::kinematicModel(const ControlInputs & control) const
 {
     // State parameters
     auto x = position.p.x;           // Longitudinal position
@@ -30,10 +30,10 @@ Car Car::updateCarKinematicModel(const ControlInputs & control) const
     auto vNext = a;
 
     // Set next state
-    return Car({xNext, yNext, position.phi}, {vNext, velocity.vy, psiNext});
+    return Car({xNext, yNext, delta}, {vNext, velocity.vy, psiNext});
 }
 
-Car Car::updateCarDynamicModel(const ControlInputs & control) const
+Car Car::dynamicModel(const ControlInputs & control) const
 {
     auto forces = tireModel(control);
     // State variables
@@ -94,33 +94,33 @@ TireForces Car::tireModel(const ControlInputs & control) const
 /**
  * Discretization of the model (4th order Runge-Kutta method)
  */
-void Car::updateCar(ControlInputs control, double dt, Car (*vehicleModel)(const Car &, const ControlInputs &))
+void Car::updateCar(ControlInputs control, double dt)
 {
     Car & car{*this};
-    cout << "BEFORE UPDATE:\n"  << car << endl;
+    // cout << "BEFORE UPDATE:\n"  << car << endl;
 
-    auto k1 = vehicleModel(car, control) * dt;
+    auto k1 = car.kinematicModel(control) * dt;
     // cout << "K1 = \n" << k1 << endl;
     // cout << "CAR:\n"  << car << endl;
 
-    auto k2 = vehicleModel(car + k1 * 0.5, control) * dt;
+    auto k2 = (car + k1 * 0.5).kinematicModel(control) * dt;
     // cout << "K2 = \n" << k2 << endl;
     // cout << "CAR:\n"  << car << endl;
 
-    auto k3 = vehicleModel(car + k2 * 0.5, control) * dt;
+    auto k3 = (car + k2 * 0.5).kinematicModel(control) * dt;
     // cout << "K3 = \n" << k3 << endl;
     // cout << "CAR:\n"  << car << endl;
 
-    auto k4 = vehicleModel(car + k3, control) * dt;
+    auto k4 = (car + k3).kinematicModel(control) * dt;
     // cout << "K4 = \n" << k4 << endl;
     // cout << "CAR:\n"  << car << endl;
 
     car = car + (k1 + k2 * 2 + k3 * 2 + k4) * (1.0 / 6.0);
     // cout << "AFTER UPDATE:\n" << car << endl;
 
-    #ifdef VISUALISE
-    visualisation->showCar(position.p);
-    #endif
+    // #ifdef VISUALISE
+    // visualisation->showCar(position.p);
+    // #endif
 }
 
 void Car::setPosition(const Pos & newPos)
@@ -178,20 +178,4 @@ ostream & operator<<(ostream & os, const Car & car)
     os << "Position = {" << car.position.p.x << ", " << car.position.p.y << ", " << car.position.phi
             << "}\nVelocity = {" << car.velocity.vx << ", " << car.velocity.vy << ", " << car.velocity.omega << "}\n";
     return os;
-}
-
-/**
- * Non-member functions
- * These forward the member carModel functions so they can be used as the 
- * function handle parameter to the updateCar function.
- */
-
-Car kinematicModel(const Car & car, const ControlInputs & control)
-{
-    return car.updateCarKinematicModel(control);
-}
-
-Car dynamicModel(const Car & car, const ControlInputs & control)
-{
-    return car.updateCarDynamicModel(control);
 }

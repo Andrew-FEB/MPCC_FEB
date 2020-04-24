@@ -13,7 +13,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "95e28fa049fda1c330bcf9d723be7663a899c4679724b34c81e9f5a326aab8cd"
 
 [[package]]
-name = "icasadi"
+name = "icasadi_mpcc_optimizer"
 version = "0.2.1"
 dependencies = [
  "cc",
@@ -39,7 +39,7 @@ checksum = "eb147597cdf94ed43ab7a9038716637d2d1bf2bc571da995d0028dec06bd3018"
 name = "mpcc_optimizer"
 version = "0.0.0"
 dependencies = [
- "icasadi",
+ "icasadi_mpcc_optimizer",
  "optimization_engine",
 ]
 

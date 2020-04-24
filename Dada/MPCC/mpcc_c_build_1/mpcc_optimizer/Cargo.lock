@@ -98,7 +98,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "icasadi"
+name = "icasadi_mpcc_optimizer"
 version = "0.2.1"
 dependencies = [
  "cc",
@@ -140,7 +140,7 @@ name = "mpcc_optimizer"
 version = "0.0.0"
 dependencies = [
  "cbindgen",
- "icasadi",
+ "icasadi_mpcc_optimizer",
  "libc",
  "optimization_engine",
 ]

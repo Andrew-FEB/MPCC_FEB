@@ -11,8 +11,9 @@
 #include "visualisation.h"
 #include "mpccontroller.h"
 
-constexpr long rosRefreshTime_ms = 350;
+constexpr long rosRefreshTime_ms = 70;
 constexpr double timeStep = 0.05;
+constexpr int predHorizon = 40;
 
 int main(int argc, char *argv[])
 {
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
     //Configure track, car and cones
     std::unique_ptr<Track> track = std::make_unique<Track>(visualise);
 
-    MPCController mpcc{3};
+    MPCController mpcc(predHorizon, timeStep, visualise);
     auto car = track->getCar();
 
     std::cout << "Entering loop" << std::endl;
@@ -56,9 +57,10 @@ int main(int argc, char *argv[])
             //DADA MPCC
             auto control = mpcc.solve(*car, *track);
             //Update car outputs
-            car->updateCar(control, timeStep, kinematicModel);
+            car->updateCar(control, timeStep);
 
             #ifdef VISUALISE
+            visualise->showCar(car->getPosition().p, car->getPosition().phi);
             visualise->refreshRosOutput();
             #endif
 

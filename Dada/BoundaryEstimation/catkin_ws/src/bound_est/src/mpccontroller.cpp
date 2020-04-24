@@ -7,9 +7,12 @@
 
 #include "mpccontroller.h"
 
-MPCController::MPCController(double ph) : predictionHorizon(ph) {}
+MPCController::MPCController() {}
+MPCController::MPCController(shared_ptr<Visualisation> vis) : visualisation(vis) {}
+MPCController::MPCController(int ph, double dt) : predictionHorizon(ph), timeStep(dt) {}
+MPCController::MPCController(int ph, double dt, shared_ptr<Visualisation> vis) : predictionHorizon(ph), timeStep(dt), visualisation(vis) {}
 
-ControlInputs MPCController::solve(Car &current, Track &t)
+ControlInputs MPCController::solve(const Car &current, Track &t) const
 {
     ControlInputs ci;
     auto pos = current.getPosition();
@@ -28,7 +31,7 @@ ControlInputs MPCController::solve(Car &current, Track &t)
     double u[MPCC_OPTIMIZER_NUM_DECISION_VARIABLES] = {0};
 
     /* initial penalty */
-    double initPenalty = 256.0;
+    double initPenalty = 25.0;
 
     /* initial lagrange mult. */
     double y[MPCC_OPTIMIZER_N1] = {0.0};
@@ -67,14 +70,37 @@ ControlInputs MPCController::solve(Car &current, Track &t)
     printf("solve time       : %f ms\n", (double)status.solve_time_ns / 1000000.0);
     printf("penalty          : %f\n", status.penalty);
 
+    #ifdef VISUALISE
+    showPredictedPath(current, u);
+    #endif
+
     /* free memory */
     mpcc_optimizer_free(cache);
 
     return ci;
 }
 
-double MPCController::calculateDistance(Vel &velocity)
+void MPCController::showPredictedPath(const Car & car, double * inputs) const
+{
+    Car c(car.getPosition(), car.getVelocity());
+    vector<pair<coord, coord>> path;
+    coord prev = car.getPosition().p;
+    // Every odd value in the inputs array is ControlInputs.D,
+    // while every even value is ControlInputs.delta
+    for (int i = 0; i < MPCC_OPTIMIZER_NUM_DECISION_VARIABLES; i += 2)
+    {
+        // Calculate vector of coordinates
+        c.updateCar({inputs[i], inputs[i+1]}, timeStep);
+        path.push_back(make_pair(prev, c.getPosition().p));
+        prev = c.getPosition().p;
+    }
+
+    visualisation->showNodeParentLinks(path);
+
+}
+
+double MPCController::calculateDistance(Vel &velocity) const
 {
     auto tanVel = velocity.vx; //atan2(velocity.vy, velocity.vx);
-    return predictionHorizon * tanVel;
+    return predictionHorizon * timeStep * tanVel;
 }

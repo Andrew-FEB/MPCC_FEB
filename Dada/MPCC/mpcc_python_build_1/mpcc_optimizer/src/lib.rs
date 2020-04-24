@@ -2,10 +2,10 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-04-19 11:54:51.096331
+// Generated at: 2020-04-24 14:54:30.922679
 //
 
-use icasadi;
+use icasadi_mpcc_optimizer;
 
 use optimization_engine::{constraints::*, panoc::*, alm::*, *};
 
@@ -30,7 +30,7 @@ const LBFGS_MEMORY: usize = 10;
 const MAX_INNER_ITERATIONS: usize = 500;
 
 /// Maximum number of outer iterations
-const MAX_OUTER_ITERATIONS: usize = 10;
+const MAX_OUTER_ITERATIONS: usize = 100;
 
 /// Maximum execution duration in microseconds
 const MAX_DURATION_MICROS: u64 = 50000;
@@ -39,7 +39,7 @@ const MAX_DURATION_MICROS: u64 = 50000;
 const PENALTY_UPDATE_FACTOR: f64 = 5.0;
 
 /// Initial penalty
-const INITIAL_PENALTY_PARAMETER: f64 = 500.0;
+const INITIAL_PENALTY_PARAMETER: f64 = 7.0;
 
 /// Sufficient decrease coefficient
 const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
@@ -54,7 +54,7 @@ pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 11;
 
 /// Number of parameters associated with augmented Lagrangian
-pub const MPCC_OPTIMIZER_N1: usize = 360;
+pub const MPCC_OPTIMIZER_N1: usize = 160;
 
 /// Number of penalty constraints
 pub const MPCC_OPTIMIZER_N2: usize = 0;
@@ -69,18 +69,18 @@ pub const MPCC_OPTIMIZER_N2: usize = 0;
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-30.0,-30.0,-8.0,0.03,-1.0,-0.506,-3.0,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[30.0,30.0,8.0,3.0,1.0,0.506,3.0,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[0.03,-1.0,-29.0,0.0,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[3.0,1.0,29.0,1.5,]);
 
 
 
 
 // ---Parameters of ALM-type constraints (Set Y)---------------------------------------------------------
 /// Y_min
-const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
+const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
 
 /// Y_max
-const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
+const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
 
 
 
@@ -133,16 +133,16 @@ pub fn solve(
     assert_eq!(u.len(), MPCC_OPTIMIZER_NUM_DECISION_VARIABLES, "Wrong number of decision variables (u)");
 
     let psi = |u: &[f64], xi: &[f64], cost: &mut f64| -> Result<(), SolverError> {
-        icasadi::cost(&u, &xi, &p, cost);
+        icasadi_mpcc_optimizer::cost(&u, &xi, &p, cost);
         Ok(())
     };
     let grad_psi = |u: &[f64], xi: &[f64], grad: &mut [f64]| -> Result<(), SolverError> {
-        icasadi::grad(&u, &xi, &p, grad);
+        icasadi_mpcc_optimizer::grad(&u, &xi, &p, grad);
         Ok(())
     };
     
     let f1 = |u: &[f64], res: &mut [f64]| -> Result<(), SolverError> {
-        icasadi::mapping_f1(&u, &p, res);
+        icasadi_mpcc_optimizer::mapping_f1(&u, &p, res);
         Ok(())
     };
     let bounds = make_constraints();

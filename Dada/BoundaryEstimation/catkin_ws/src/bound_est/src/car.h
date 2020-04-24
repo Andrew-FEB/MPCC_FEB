@@ -25,15 +25,15 @@ public:
     void setVelocity(const Vel & vel);
     const Vel & getVelocity() const;
 
-    Car updateCarKinematicModel(const ControlInputs & control) const;
-    Car updateCarDynamicModel(const ControlInputs & control) const;
-    void updateCar(ControlInputs control, double dt, Car (*vehicleModel)(const Car &, const ControlInputs &));
+    void updateCar(ControlInputs control, double dt);
 
     Car operator*(double a);
     Car operator+(Car c);
     friend ostream & operator<<(ostream & os, const Car & car);
 
 private:
+    Car kinematicModel(const ControlInputs & control) const;
+    Car dynamicModel(const ControlInputs & control) const;
     TireForces tireModel(const ControlInputs & control) const;
 
 private:
@@ -41,8 +41,5 @@ private:
     Vel velocity = {1.5, 0, 0};
     shared_ptr<Visualisation> visualisation = nullptr;
 };
-
-Car kinematicModel(const Car & car, const ControlInputs & control);
-Car dynamicModel(const Car & car, const ControlInputs & control);
 
 #endif // CAR_H

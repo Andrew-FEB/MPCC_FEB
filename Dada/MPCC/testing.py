@@ -11,18 +11,19 @@ import matplotlib.pyplot as plt
 # Last updated: 03/04/2020
 
 track_points = 300
-simulation_steps = 100
+simulation_steps = 500
 
-track_error_weight = [1, 1, 1]
-in_weight = [0.1, 0.1]
-in_change_weight = [0.3, 0.5]
+# Weights in cost function
+track_error_weight = [1, 1.3, 0.3]  # contouring, tracking, velocity
+in_weight = [0.1, 0.1]  # acceleration, steering angle
+in_change_weight = [0.3, 0.5]  # change of acceleration, change of steering angle
 
 print("Generating code")
 start_time = time.time()
-# cg.generate_code(track_error_weight, in_weight, in_change_weight)
+cg.generate_code(track_error_weight, in_weight, in_change_weight)
 print('Code generated in ' + str(time.time() - start_time) + ' s')
 
-# print("Running simulation")
+print("Running simulation")
 if simulation_steps > 1:
     [track_x, track_y, upper, lower] = gd.generate_racing_track(track_points)
 
@@ -32,7 +33,7 @@ if simulation_steps > 1:
     sim.plot_simulation(simulation_steps, in_seq, state_seq, ref_seq)
     # sim.plot_track2(track_x, track_y, ref_seq, state_seq)
     sim.plot_track(track_x, track_y, upper, lower, ref_seq, state_seq)
-    # sim.plot_nearest(track_x, track_y, ref_seq, state_seq)
+    # sim.plot_nearest(track_x, track_y, nearest_seq, state_seq)
 else:
     state_0 = [0.0, 0.0, 0.0, 10, 7, 0.5]
     ref_seq = [1.14, 0.57, 0.4636476090008061, 15, 5, 0.7]

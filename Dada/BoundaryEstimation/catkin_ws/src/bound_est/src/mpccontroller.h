@@ -23,17 +23,20 @@ using namespace std;
 
 class MPCController {
 public:
-    MPCController(double ph);
-    ControlInputs solve(Car & current, Track & t);
+    MPCController();
+    MPCController(shared_ptr<Visualisation> vis);
+    MPCController(int ph, double dt);
+    MPCController(int ph, double dt, shared_ptr<Visualisation> vis);
+    ControlInputs solve(const Car & current, Track & t) const;
     
 private:
-    double calculateDistance(Vel & velocity);
-    // void showCalculatedPath(double * inputs);
-    // void initSolver();
-    // void freeSolver();
+    double calculateDistance(Vel & velocity) const;
+    void showPredictedPath(const Car & car, double * inputs) const;
     
 private:
-    double predictionHorizon = 2; // in [s]
+    int predictionHorizon = 40; // in time steps
+    double timeStep = 0.05; // in [s]
+    shared_ptr<Visualisation> visualisation = nullptr;
     
 };
 
