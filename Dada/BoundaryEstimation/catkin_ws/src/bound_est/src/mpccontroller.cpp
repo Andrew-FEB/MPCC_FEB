@@ -31,7 +31,7 @@ ControlInputs MPCController::solve(const Car &current, Track &t) const
     double u[MPCC_OPTIMIZER_NUM_DECISION_VARIABLES] = {0};
 
     /* initial penalty */
-    double initPenalty = 25.0;
+    double initPenalty = 7.0;
 
     /* initial lagrange mult. */
     double y[MPCC_OPTIMIZER_N1] = {0.0};

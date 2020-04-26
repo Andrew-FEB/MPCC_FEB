@@ -65,10 +65,10 @@ def generate_track(num_steps):
 
 
 def generate_racing_track(num_steps):
-    x = np.array([0, 2, 4, 8, 16, 20, 25])
-    y = np.array([0, 1, 5, 10, 2, 15, 5])
-    upper = np.array([1.5, 2.5, 6.5, 11.5, 3.5, 16.5, 6.5])
-    lower = np.array([-1.5, -0.5, 3.5, 8.5, 0.5, 13.5, 3.5])
+    x = np.array([0, 2, 4, 8, 14, 20, 25])
+    y = np.array([0, 1, 5, 10, 2, 13, 5])
+    upper = np.array([1.5, 2.5, 6.5, 11.5, 3.5, 14.5, 6.5])
+    lower = np.array([-1.5, -0.5, 3.5, 8.5, 0.5, 11.5, 3.5])
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.

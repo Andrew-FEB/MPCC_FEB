@@ -126,8 +126,8 @@ MPC_targets Track::getCentreLine(const double &desired_dist)
     std::cout<<"Desired distance to travel = "<<desired_dist<<std::endl;
     MPC_targets output;
 
-    std::vector<double> x_points_dummy = {0, 2, 4, 8, 16, 20, 25};
-    std::vector<double> y_points_dummy = {0, 1, 5, 10, 2, 15, 5};
+    std::vector<double> x_points_dummy = {-9, -5, -3, 0, 2, 4, 8, 16, 20, 25};
+    std::vector<double> y_points_dummy = {0, 0, 0, 0, 1, 5, 7, 4, 8, 5};
 
     std::vector<coord> set_points;
     for (int i = 0; i<x_points_dummy.size(); i++)
