@@ -1,6 +1,7 @@
 import casadi.casadi as cs
 import opengen as og
 import numpy as np
+from warnings import warn
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
@@ -9,55 +10,50 @@ import numpy as np
 # Parameters
 # -------------------------------------
 # Vehicle parameters TODO - get all these
-# I_z = 7  # [kg m^2] moment of inertia of the vehicle ASK FOR THIS VALUE!!!!!!!
+# I_z = 2873  # [kg m^2] moment of inertia of the vehicle ASK FOR THIS VALUE!!!!!!!
 # m = 208  # [kg] mass of the vehicle
 # l_f = 0.845  # [m] length of the front part of the vehicle (this is from front axle to COG)
 # l_r = 0.690  # [m] length of the rear part of the vehicle  (this is from front axle to COG)
-# I_z = 2873
-m = 1573
-I_z = 2873
-l_f = 1.35
-l_r = 1.35
 
-wight_f = l_r / (l_f + l_r)
-wight_r = l_f / (l_f + l_r)
+C_m1 = 0.287
+C_m2 = 0.0545
+C_r0 = 0.0518
+C_r2 = 0.00035
 
-# TODO Tire Parameters (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
-C_m1 = 17303  # Motor Model
-C_m2 = 175  # Motor Model
-C_rr = 120  # Rolling Resistance
-C_d = 0.5 * 1.225 * 0.35 * 2.5  # Drag
+B_r = 3.3852
+C_r = 1.2691
+D_r = 0.1737
 
-# Tire Force Curve
-B_r = 13
-C_r = 2
-D_r = wight_f * m * 9.81 * 1.2
+B_f = 2.579
+C_f = 1.2
+D_f = 0.192
 
-B_f = 13
-C_f = 2
-D_f = wight_r * m * 9.81 * 1.2
+m = 0.041
+I_z = 27.8E-6
+l_f = 0.029
+l_r = 0.033
 
 # Friction ellipse
 p_long = 0.9
 p_ellipse = 0.95
 
 # TODO Model limits (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FORMULA
-x_max = 30
+x_max = 3
 x_min = -x_max
-y_max = 30
+y_max = 3
 y_min = -y_max
 phi_max = 10
 phi_min = -phi_max
-v_x_max = 3
-v_x_min = 0.03
+v_x_max = 3.5
+v_x_min = 0.05
 v_y_max = 3
 v_y_min = -v_y_max
 omega_max = 8
 omega_min = -omega_max
 # Control limits
 d_max = 1
-d_min = -1
-delta_max = 29  # 0.506 rad =  29 degrees
+d_min = -0.1
+delta_max = 0.35  # 0.506 rad =  29 degrees
 delta_min = -delta_max
 
 # Track parameters
@@ -130,14 +126,14 @@ def kinetic_model_rk(state, control, dt, calc_casadi):
         k3 = dt * kinetic_model_temp(state + 0.5 * k2, control, calc_casadi)
         k4 = dt * kinetic_model_temp(state + k3, control, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
-        return next_state
     else:
         k1 = dt * np.array(kinetic_model_temp(state, control, calc_casadi))
         k2 = dt * np.array(kinetic_model_temp(state + 0.5 * k1, control, calc_casadi))
         k3 = dt * np.array(kinetic_model_temp(state + 0.5 * k2, control, calc_casadi))
         k4 = dt * np.array(kinetic_model_temp(state + k3, control, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
-        return next_state
+
+    return next_state
 
 
 def dynamic_model(state, control, forces, calc_casadi):
@@ -163,11 +159,9 @@ def dynamic_model(state, control, forces, calc_casadi):
     omega_next = 1 / I_z * (f_fy * l_f * cs.cos(delta) - f_ry * l_r)
 
     if calc_casadi:
-        return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                          state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
+        return cs.vertcat(x_next, y_next, phi_next, v_x_next, v_y_next, omega_next)
     else:
-        return (x_next, y_next, phi_next, v_x_next, v_y_next, omega_next,
-                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
+        return x_next, y_next, phi_next, v_x_next, v_y_next, omega_next
 
 
 # Runge-Kutta 4th order method
@@ -178,19 +172,17 @@ def dynamic_model_rk(state, control, forces, dt, calc_casadi):
         k3 = dt * dynamic_model(state + 0.5 * k2, control, forces, calc_casadi)
         k4 = dt * dynamic_model(state + k3, control, forces, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
-        return cs.vertcat(next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                          state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
     else:
         k1 = dt * np.array(dynamic_model(state, control, forces, calc_casadi))
         k2 = dt * np.array(dynamic_model(state + 0.5 * k1, control, forces, calc_casadi))
         k3 = dt * np.array(dynamic_model(state + 0.5 * k2, control, forces, calc_casadi))
         k4 = dt * np.array(dynamic_model(state + k3, control, forces, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
-        return (next_state[0], next_state[1], next_state[2], next_state[3], next_state[4], next_state[5],
-                state[6], state[7], state[8], state[9], state[10], state[11], state[12], state[13], state[14])
+
+    return next_state
 
 
-def tire_forces(state, control):
+def pacejka_tire_forces(state, control):
     # State variables
     v_x = state[3]
     v_y = state[4]
@@ -207,9 +199,7 @@ def tire_forces(state, control):
     F_fy = D_f * cs.sin(C_f * cs.arctan(B_f * alpha_f))
     F_ry = D_r * cs.sin(C_r * cs.arctan(B_r * alpha_r))
 
-    F_rx = (C_m1 - C_m2 * v_x) * D - C_rr - C_d * v_x ** 2
-
-    # TODO Tire constraints
+    F_rx = (C_m1 - C_m2 * v_x) * D  # - C_r0 - C_r2 * v_x ** 2
 
     return [F_fy, F_rx, F_ry]
 
@@ -311,11 +301,11 @@ def generate_code(track_error_weight, in_weight, in_change_weight):
         .with_aug_lagrangian_constraints(F1, C)
 
     build_config = og.config.BuildConfiguration() \
-        .with_build_directory("mpcc_python_build_1") \
-        .with_tcp_interface_config()
-        # .with_build_directory("mpcc_c_build_1") \
-        # .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
-        # .with_build_c_bindings()
+        .with_build_directory("mpcc_c_build_1") \
+        .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
+        .with_build_c_bindings()
+    # .with_build_directory("mpcc_python_build_1") \
+    # .with_tcp_interface_config()
 
     meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \
         .with_authors("Darina Abaffyova")

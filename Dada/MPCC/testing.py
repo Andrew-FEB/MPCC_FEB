@@ -12,8 +12,8 @@ track_points = 300
 simulation_steps = 500
 
 # Weights in cost function
-track_error_weight = [1, 1.22, 0.35]  # contouring, tracking, velocity
-in_weight = [0.1, 0.1]  # acceleration, steering angle
+track_error_weight = [1, 1.3, 0.3]  # contouring, tracking, velocity
+in_weight = [0.5, 0.5]  # acceleration, steering angle
 in_change_weight = [0.3, 0.1]  # change of acceleration, change of steering angle
 
 print("Generating code")
@@ -23,7 +23,6 @@ print('Code generated in ' + str(time.time() - start_time) + ' s')
 
 print("Running simulation")
 [track_x, track_y, upper, lower] = gd.generate_racing_track(track_points)
-
 # [track_x, track_y] = gd.generate_circular_track(track_points)
 [in_seq, state_seq, ref_seq, nearest_seq, simulation_steps] = sim.simulate(track_x, track_y,
                                                                            upper, lower, simulation_steps)
@@ -31,13 +30,12 @@ sim.plot_simulation(simulation_steps, in_seq, state_seq, ref_seq)
 # sim.plot_track2(track_x, track_y, ref_seq, state_seq)
 sim.plot_track(track_x, track_y, upper, lower, ref_seq, state_seq)
 # sim.plot_nearest(track_x, track_y, nearest_seq, state_seq)
-sim.plot_cost(state_seq, )
 
 
-def save_track_to_file(track_x, track_y, upper, lower):
+def save_track_to_file(t_x, t_y, up, low):
     file = open("track.txt", "a+")
     file.write("")
-    for i in range(0, len(track_x)):
-        file.write("%d %d %d %d\n" % (track_x[i], track_y[i], upper[i], lower[i]))
+    for i in range(0, len(t_x)):
+        file.write("%d %d %d %d\n" % (t_x[i], t_y[i], up[i], low[i]))
 
     return 0

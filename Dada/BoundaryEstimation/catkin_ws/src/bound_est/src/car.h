@@ -37,7 +37,7 @@ private:
     TireForces tireModel(const ControlInputs & control) const;
 
 private:
-    Pos position = {-9, 0, 0};
+    Pos position = {0, 0, 0};
     Vel velocity = {1.5, 0, 0};
     shared_ptr<Visualisation> visualisation = nullptr;
 };

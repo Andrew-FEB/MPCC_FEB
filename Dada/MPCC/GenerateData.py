@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 def generate_reference_state(start_state, control, num_steps):
     s = np.concatenate((start_state, [0] * cg.nx))
     for i in range(0, num_steps):
-        tf = cg.tire_forces(s, control)
+        tf = cg.pacejka_tire_forces(s, control)
         s = cg.dynamic_model_rk(s, control, tf, cg.Ts, False)
 
     return s[0:6]
@@ -65,7 +65,7 @@ def generate_track(num_steps):
 
 
 def generate_racing_track(num_steps):
-    x = np.array([0, 2, 4, 8, 14, 20, 25])
+    x = np.array([0, 2, 4, 8, 14, 19, 25])
     y = np.array([0, 1, 5, 10, 2, 13, 5])
     upper = np.array([1.5, 2.5, 6.5, 11.5, 3.5, 14.5, 6.5])
     lower = np.array([-1.5, -0.5, 3.5, 8.5, 0.5, 11.5, 3.5])

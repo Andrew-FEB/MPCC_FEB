@@ -6,8 +6,10 @@
       <w>casadi</w>
       <w>centreline</w>
       <w>darina</w>
+      <w>dugoff</w>
       <w>kutta</w>
       <w>mpcc</w>
+      <w>pacejka</w>
       <w>runge</w>
     </words>
   </dictionary>
