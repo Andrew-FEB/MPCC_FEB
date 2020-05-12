@@ -8,28 +8,27 @@ import Simulator as sim
 # Created: 24/02/2020
 # Last updated: 03/04/2020
 
-track_points = 300
-simulation_steps = 500
+track_points = 1000
+simulation_steps = 100
 
 # Weights in cost function
-track_error_weight = [1, 1.3, 0.3]  # contouring, tracking, velocity
-in_weight = [0.5, 0.5]  # acceleration, steering angle
-in_change_weight = [0.3, 0.1]  # change of acceleration, change of steering angle
+track_error_weight = [10, 0, 0]  # contouring, tracking, velocity
+in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
+in_change_weight = [0.01, 0.1]  # change of duty cycle, change of steering angle
+# track_error_weight = [0.1, 1000, 2]  # contouring, tracking, velocity
+# in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
+# in_change_weight = [0.01, 1]  # change of duty cycle, change of steering angle
 
 print("Generating code")
 start_time = time.time()
-cg.generate_code(track_error_weight, in_weight, in_change_weight)
+# cg.generate_code(track_error_weight, in_weight, in_change_weight, 'p')
+# cg.generate_code_warm_start(track_error_weight, in_weight, in_change_weight, 'p')
 print('Code generated in ' + str(time.time() - start_time) + ' s')
 
 print("Running simulation")
-[track_x, track_y, upper, lower] = gd.generate_racing_track(track_points)
-# [track_x, track_y] = gd.generate_circular_track(track_points)
-[in_seq, state_seq, ref_seq, nearest_seq, simulation_steps] = sim.simulate(track_x, track_y,
-                                                                           upper, lower, simulation_steps)
-sim.plot_simulation(simulation_steps, in_seq, state_seq, ref_seq)
-# sim.plot_track2(track_x, track_y, ref_seq, state_seq)
-sim.plot_track(track_x, track_y, upper, lower, ref_seq, state_seq)
-# sim.plot_nearest(track_x, track_y, nearest_seq, state_seq)
+[track_x, track_y, upper, lower] = gd.generate_linear_track(track_points)
+# [track_x, track_y] = gd.generate_track(track_points)
+sim.simulate(track_x, track_y, upper, lower, simulation_steps)
 
 
 def save_track_to_file(t_x, t_y, up, low):

@@ -38,7 +38,7 @@ private:
 
 private:
     Pos position = {0, 0, 0};
-    Vel velocity = {1.5, 0, 0};
+    Vel velocity = {2, 0, 0};
     shared_ptr<Visualisation> visualisation = nullptr;
 };
 

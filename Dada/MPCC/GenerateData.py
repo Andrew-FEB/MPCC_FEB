@@ -15,17 +15,17 @@ def generate_reference_state(start_state, control, num_steps):
     s = np.concatenate((start_state, [0] * cg.nx))
     for i in range(0, num_steps):
         tf = cg.pacejka_tire_forces(s, control)
-        s = cg.dynamic_model_rk(s, control, tf, cg.Ts, False)
+        s = cg.dynamic_model_rk(s, control, cg.Ts, False)
 
     return s[0:6]
 
 
 def generate_track(num_steps):
     x_plus = np.array([7, -4.5, 11, 25.5, 16.5, 21.5])
-    y_plus = np.array([10.5, -1.5, -1.5, 6.5, 6, 13])
+    y_plus = np.array([10.5, -1.5, -1.5, 6.5, 9, 14.5])
 
     x_minus = np.array([7, -1.5, 11, 21, 13.5, 18.5])
-    y_minus = np.array([7.5, 1, 1, 4.5, 4, 11.5])
+    y_minus = np.array([7.5, 1.5, 1.5, 3.5, 6, 11.5])
 
     x = [0] * 6
     y = [0] * 6
@@ -116,7 +116,7 @@ def generate_circular_track(num_steps):
 
 def generate_linear_track(num_steps):
     y = np.arange(0, 3, 3 / num_steps)
-    x = np.arange(0, 17, 17 / num_steps)
+    x = np.arange(0, 13, 13 / num_steps)
 
     upper = np.arange(1.5, 4.5, 3 / num_steps)
     lower = np.arange(-1.5, 1.5, 3 / num_steps)

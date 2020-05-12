@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-04-26 11:27:54.827244
+// Generated at: 2020-05-01 07:51:39.947201
 //
 
 use icasadi_mpcc_optimizer;
@@ -55,7 +55,7 @@ pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 11;
 
 /// Number of parameters associated with augmented Lagrangian
-pub const MPCC_OPTIMIZER_N1: usize = 160;
+pub const MPCC_OPTIMIZER_N1: usize = 280;
 
 /// Number of penalty constraints
 pub const MPCC_OPTIMIZER_N2: usize = 0;
@@ -260,18 +260,18 @@ pub extern "C" fn mpcc_optimizer_free(instance: *mut mpcc_optimizerCache) {
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[0.03,-1.0,-29.0,0.0,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[3.0,1.0,29.0,1.5,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-30.0,-30.0,-8.0,0.05,-0.1,-29.0,-1.5,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[30.0,30.0,8.0,3.5,1.0,29.0,1.5,]);
 
 
 
 
 // ---Parameters of ALM-type constraints (Set Y)---------------------------------------------------------
 /// Y_min
-const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
+const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
 
 /// Y_max
-const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
+const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
 
 
 

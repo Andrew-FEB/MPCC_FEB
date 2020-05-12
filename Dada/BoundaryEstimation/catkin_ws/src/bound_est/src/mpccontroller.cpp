@@ -24,14 +24,14 @@ ControlInputs MPCController::solve(const Car &current, Track &t) const
 
     /* parameters */
     double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {pos.p.x, pos.p.y, vel.omega, vel.vx,                  // Current state
-                                               ref.goal.x, ref.goal.y, vel.omega, 2.5,               // Reference position
+                                               ref.goal.x, ref.goal.y, vel.omega, vel.vx,            // Reference position
                                                ref.slope, ref.nearest_point.x, ref.nearest_point.y}; // Nearest point on centreline
 
     /* initial guess */
     double u[MPCC_OPTIMIZER_NUM_DECISION_VARIABLES] = {0};
 
     /* initial penalty */
-    double initPenalty = 7.0;
+    double initPenalty = 10.0;
 
     /* initial lagrange mult. */
     double y[MPCC_OPTIMIZER_N1] = {0.0};

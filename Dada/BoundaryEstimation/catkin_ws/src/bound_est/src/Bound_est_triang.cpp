@@ -11,7 +11,7 @@
 #include "visualisation.h"
 #include "mpccontroller.h"
 
-constexpr long rosRefreshTime_ms = 100;
+constexpr long rosRefreshTime_ms = 50;
 constexpr double timeStep = 0.05;
 constexpr int predHorizon = 40;
 

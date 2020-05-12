@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define MPCC_OPTIMIZER_N1 160
+#define MPCC_OPTIMIZER_N1 280
 
 #define MPCC_OPTIMIZER_N2 0
 

@@ -11,19 +11,19 @@
 //! This file is part of OptimizationEngine
 //! (see https://alphaville.github.io/optimization-engine/)
 //!
-//! Generated at: 2020-04-26 11:26:14.849878
+//! Generated at: 2020-05-09 21:15:39.454116
 //!
 
 // #![no_std]
 
 /// Number of static parameters (this also includes penalty constraints)
-const NUM_STATIC_PARAMETERS: usize = 11;
+const NUM_STATIC_PARAMETERS: usize = 15;
 
 /// Number of decision variables
 const NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of ALM-type constraints (dimension of F1, i.e., n1)
-const NUM_CONSTRAINTS_TYPE_ALM: usize = 160;
+const NUM_CONSTRAINTS_TYPE_ALM: usize = 320;
 
 /// Number of penalty constraints (dimension of F2, i.e., n2)
 const NUM_CONSTRAINTS_TYPE_PENALTY: usize = 0;
@@ -240,7 +240,6 @@ mod tests {
         let xi = [2.0; NUM_CONSTRAINTS_TYPE_ALM+1];
         let mut cost = 0.0;
         assert_eq!(0, super::cost(&u, &xi, &p, &mut cost));
-	println!("psi(u, xi, p) = {}", cost);
     }
 
     #[test]
@@ -250,7 +249,6 @@ mod tests {
         let xi = [10.0; NUM_CONSTRAINTS_TYPE_ALM+1];
         let mut grad = [0.0; NUM_DECISION_VARIABLES];
         assert_eq!(0, super::grad(&u, &xi, &p, &mut grad));
-	println!("D_u psi(u, xi, p) = {:#?}", grad);
     }
 
     #[test]
@@ -259,7 +257,6 @@ mod tests {
         let p = [0.1; NUM_STATIC_PARAMETERS];
         let mut f1up = [0.0; NUM_CONSTRAINTS_TYPE_ALM];
         assert_eq!(0, super::mapping_f1(&u, &p, &mut f1up));
-	println!("F1(u, p) = {:#?}", f1up);
     }
 
     #[test]
@@ -268,7 +265,6 @@ mod tests {
         let p = [0.1; NUM_STATIC_PARAMETERS];
         let mut f2up = [0.0; NUM_CONSTRAINTS_TYPE_PENALTY];
         assert_eq!(0, super::mapping_f2(&u, &p, &mut f2up));
-        println!("F2(u, p) = {:#?}", f2up);
     }
 
 }
