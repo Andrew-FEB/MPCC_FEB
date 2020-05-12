@@ -122,9 +122,9 @@ dependencies = [
 
 [[package]]
 name = "optimization_engine"
-version = "0.6.2"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "947e91be2b61109cd675153f5271c535b1b4f1a840844552e48b752735ae5338"
+checksum = "10815e92805d5132ed5bdef91786e676063bc89aebf26874db88cca427d9dc27"
 dependencies = [
  "lbfgs",
  "num",

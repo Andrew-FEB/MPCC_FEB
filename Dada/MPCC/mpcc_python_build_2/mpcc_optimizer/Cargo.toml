@@ -12,13 +12,13 @@
 name = "mpcc_optimizer"
 version = "0.0.0"
 license = "MIT"
-authors = ["D", "a", "r", "i", "n", "a", " ", "A", "b", "a", "f", "f", "y", "o", "v", "a"]
+authors = ["D&#34;, &#34;a&#34;, &#34;r&#34;, &#34;i&#34;, &#34;n&#34;, &#34;a&#34;, &#34; &#34;, &#34;A&#34;, &#34;b&#34;, &#34;a&#34;, &#34;f&#34;, &#34;f&#34;, &#34;y&#34;, &#34;o&#34;, &#34;v&#34;, &#34;a"]
 edition = "2018"
 publish=false
 
 
 [dependencies]
-optimization_engine = "*"
+optimization_engine = "0.7.0-alpha.1"
 
 
 icasadi_mpcc_optimizer = {path = "./icasadi_mpcc_optimizer/"}

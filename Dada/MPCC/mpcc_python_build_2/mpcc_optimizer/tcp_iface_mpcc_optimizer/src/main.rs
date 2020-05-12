@@ -1,6 +1,6 @@
 ///
 /// Auto-generated TCP server for optimizer: mpcc_optimizer
-/// Generated at: 2020-05-09 21:17:39.151404
+/// Generated at: 2020-05-12 17:52:08.655678
 ///
 use optimization_engine::alm::*;
 use serde::{Deserialize, Serialize};
@@ -60,6 +60,7 @@ struct OptimizerSolution<'a> {
     penalty: f64,
     solution: &'a [f64],
     lagrange_multipliers: &'a [f64],
+    cost: f64,
 }
 
 fn pong(stream: &mut std::net::TcpStream, code: i32) {
@@ -103,7 +104,8 @@ fn return_solution_to_client(
         penalty: status.penalty(),
         lagrange_multipliers: if let Some(y) = &status.lagrange_multipliers() { y } else { &empty_vec },
         solve_time_ms: (status.solve_time().as_nanos() as f64) / 1e6,
-        solution: solution,
+        solution,
+        cost: status.cost(),
 
     };
     let solution_json = serde_json::to_string_pretty(&solution).unwrap();

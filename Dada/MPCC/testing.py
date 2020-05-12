@@ -12,7 +12,7 @@ track_points = 1000
 simulation_steps = 100
 
 # Weights in cost function
-track_error_weight = [10, 0, 0]  # contouring, tracking, velocity
+track_error_weight = [1, 1, 1]  # contouring, tracking, velocity
 in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
 in_change_weight = [0.01, 0.1]  # change of duty cycle, change of steering angle
 # track_error_weight = [0.1, 1000, 2]  # contouring, tracking, velocity

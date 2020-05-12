@@ -71,7 +71,7 @@ omega_min = -omega_max
 # Control limits
 d_max = 1
 d_min = -0.1
-delta_max = 29 # 0.506 rad =  29 degrees
+delta_max = 0.506 # 0.506 rad =  29 degrees
 delta_min = -delta_max
 
 # Track parameters
@@ -281,7 +281,7 @@ def cost_function_warm_start(state, control, control_prev, track_error_weight, i
 
 def generate_code(track_error_weight, in_weight, in_change_weight, lang):
     u_seq = cs.MX.sym("u", nu * N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", nx * 2 + N*3)  # Initial state (=6) + Reference point (=6) + slope (=1) + nearest x, y (=2)
+    x0 = cs.MX.sym("x0_xref", nx * 2 + 3)  # Initial state (=6) + Reference point (=6) + slope (=1) + nearest x, y (=2)
 
     cost = 0
     u_prev = [0, 0]
@@ -339,10 +339,12 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
         build_config = og.config.BuildConfiguration() \
             .with_build_directory("mpcc_c_build_1") \
             .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
+            .with_open_version('0.7.0-alpha.1') \
             .with_build_c_bindings()
     elif lang == 'p':
         build_config = og.config.BuildConfiguration() \
             .with_build_directory("mpcc_python_build_1") \
+            .with_open_version('0.7.0-alpha.1') \
             .with_tcp_interface_config()
 
     meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \
@@ -400,10 +402,12 @@ def generate_code_warm_start(track_error_weight, in_weight, in_change_weight, la
         build_config = og.config.BuildConfiguration() \
             .with_build_directory("mpcc_c_build_2") \
             .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
+            .with_open_version('0.7.0-alpha.1') \
             .with_build_c_bindings()
     elif lang == 'p':
         build_config = og.config.BuildConfiguration() \
             .with_build_directory("mpcc_python_build_2") \
+            .with_open_version('0.7.0-alpha.1') \
             .with_tcp_interface_config()
 
     meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \

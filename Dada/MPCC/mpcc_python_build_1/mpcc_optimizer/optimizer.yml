@@ -2,12 +2,12 @@ _comment: auto-generated file; do not modify
 build:
   build_dir: mpcc_python_build_1
   build_mode: release
-  cost_function_name: phi_NaDqKAPHsvfQgyvnLaLc
-  grad_function_name: grad_phi_NaDqKAPHsvfQgyvnLaLc
-  id: NaDqKAPHsvfQgyvnLaLc
-  mapping_f1: mapping_f1_NaDqKAPHsvfQgyvnLaLc
-  mapping_f2: mapping_f2_NaDqKAPHsvfQgyvnLaLc
-  open_version: null
+  cost_function_name: phi_qjJeHxNrXNjyDcdPfZsA
+  grad_function_name: grad_phi_qjJeHxNrXNjyDcdPfZsA
+  id: qjJeHxNrXNjyDcdPfZsA
+  mapping_f1: mapping_f1_qjJeHxNrXNjyDcdPfZsA
+  mapping_f2: mapping_f2_qjJeHxNrXNjyDcdPfZsA
+  open_version: 0.7.0-alpha.1
   target_system: null
 meta:
   authors: Darina Abaffyova

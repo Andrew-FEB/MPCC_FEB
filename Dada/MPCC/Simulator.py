@@ -69,7 +69,7 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
     # y_low = lower_bound[i_nearest]
     # slope_low = (lower_bound[i_nearest+1] - y_low) / (track_x[i_nearest+1] - x_nearest)
 
-    control_inputs = warm_start(state, state_ref, [slope, x_nearest, y_nearest])
+    control_inputs = warm_start(state, state_ref, [slope, x_nearest, y_nearest])   # [0] * cg.N * cg.nu
 
     # Create a TCP connection manager
     mng = og.tcp.OptimizerTcpManager("mpcc_python_build_1/mpcc_optimizer")
@@ -121,8 +121,7 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
             state_sequence.append(state)
             reference_sequence.append(state_ref)
             nearest_sequence.append((x_nearest, y_nearest))
-            cost_sequence.append(
-                get_cost(control_inputs, np.concatenate((state, state_ref, [slope, x_nearest, y_nearest]))))
+            cost_sequence.append(solver_status['cost'])
 
         except AttributeError:
             print('Failed after ' + str(len(state_sequence)) + ' simulation steps\n'
@@ -237,25 +236,6 @@ def move_along_track(track_x, track_y, distance, start_i):
         y = y_next
 
     return [i, end_of_track_reached]
-
-
-def get_cost(controls, state0):
-    # Weights in cost function
-    track_error_weight = [0.1, 10, 2]  # contouring, tracking, velocity
-    in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
-    in_change_weight = [0.01, 1]  # change of duty cycle, change of steering angle
-
-    cost = 0
-    u_prev = [0, 0]
-    state = state0
-
-    for i in range(0, cg.nu * cg.N, cg.nu):
-        u = [controls[i], controls[i + 1]]
-        cost += cg.cost_function(state, u, u_prev, track_error_weight, in_weight, in_change_weight)
-        state = np.concatenate((cg.dynamic_model_rk(state[0:6], u, cg.Ts, False), state[6:15]))
-        u_prev = u
-
-    return cost
 
 
 def plot_cost(cost_seq):
