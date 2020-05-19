@@ -50,22 +50,22 @@ p_long = 0.9
 p_ellipse = 0.95
 
 # TODO Model limits (TBD) - THESE STILL NEED TO BE CHANGED TO THE ONES CORRESPONDING TO THE FEB FORMULA
-x_max = 30
+x_max = 100
 x_min = -x_max
-y_max = 30
+y_max = 100
 y_min = -y_max
 phi_max = 10
 phi_min = -phi_max
-v_x_max = 4
+v_x_max = 40
 v_x_min = -0.1
-v_y_max = 2
+v_y_max = 20
 v_y_min = -v_y_max
 omega_max = 7
 omega_min = -omega_max
 # Control limits
 d_max = 1
 d_min = -0.1
-delta_max = 29 # 0.506 rad =  29 degrees
+delta_max = 0.506 # 0.506 rad =  29 degrees
 delta_min = -delta_max
 
 # Track parameters

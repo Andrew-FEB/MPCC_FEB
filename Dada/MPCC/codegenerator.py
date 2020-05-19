@@ -122,10 +122,24 @@ def pacejka_tire_forces(state, control):
     return [F_fy, F_rx, F_ry]
 
 
+def normalise(val, min_val, max_val):
+    return (val - min_val) / (max_val - min_val)
+
+
 def cost_function(state, control, control_prev, track_error_weight, in_weight, in_change_weight):
     # TODO - add remaining costs
     cf = 0
 
+    # TODO - NORMALISE!
+    # x = normalise(state[0], p.x_min, p.x_max)
+    # y = normalise(state[1], p.y_min, p.y_max)
+    # v_x = normalise(state[3], p.v_x_min, p.v_x_max)
+    # v_y = normalise(state[4], p.v_y_min, p.v_y_max)
+    # x_ref = normalise(state[6], p.x_min, p.x_max)
+    # y_ref = normalise(state[7], p.y_min, p.y_max)
+    # slope = normalise(state[12], p.x_min, p.x_max)  # NOT SURE ABOUT THIS ONE TODO
+    # x_nearest = normalise(state[13], p.x_min, p.x_max)
+    # y_nearest = normalise(state[14], p.y_min, p.y_max)
     x = state[0]
     y = state[1]
     v_x = state[3]
@@ -133,11 +147,7 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     x_ref = state[6]
     y_ref = state[7]
     slope = state[12]
-    x_nearest = state[13]
-    y_nearest = state[14]
-
-    # y = slope * x + y_intercept
-    y_inter = y_nearest - slope * x_nearest
+    y_inter = state[13]
 
     # Line: ax + by + c = 0 -> slope * x - y + y_inter = 0
     # Point: (x1, y1) -> (x, y)
@@ -206,30 +216,18 @@ def cost_function_warm_start(state, control, control_prev, track_error_weight, i
 
 def generate_code(track_error_weight, in_weight, in_change_weight, lang):
     u_seq = cs.MX.sym("u", p.nu * p.N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", p.nx * 2 + 3)  # Initial state (=6) + Reference point (=6) + slope (=1) + nearest x, y (=2)
+    x0 = cs.MX.sym("x0_xref", p.nx * 2 + 2)  # Initial state (=6) + Reference point (=6) + slope (=1) + intercept (=1)
 
     cost = 0
     u_prev = [0, 0]
     x_t = x0[0:12]
     slope = x0[12]
-    x_nearest = x0[13]
-    y_nearest = x0[14]
-    y_inter = y_nearest - slope * x_nearest
-
-    # slope_b1 = x0[11]
-    # x_nearest_b1 = x0[12]
-    # y_nearest_b1 = x0[13]
-    # y_inter_b1 = y_nearest_b1 - slope_b1 * x_nearest_b1
-
-    # slope_b2 = x0[14]
-    # x_nearest_b2 = x0[15]
-    # y_nearest_b2 = x0[16]
-    # y_inter_b2 = y_nearest_b2 - slope_b2 * x_nearest_b2
+    y_inter = x0[13]
 
     F1 = []
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function(cs.vertcat(x_t, x0[12:15]), u, u_prev, track_error_weight, in_weight,
+        cost += cost_function(cs.vertcat(x_t, x0[12:14]), u, u_prev, track_error_weight, in_weight,
                               in_change_weight)  # Update cost
         u_prev = u
         # Update state
@@ -237,25 +235,21 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
         # TODO - add the missing constraints
         # Contouring Constraint
         c_e = (slope * x_t[0] - x_t[1] + y_inter) / (cs.sqrt(slope ** 2 + 1))
-        # dist1 = (slope_b1 * x_t[0] - x_t[1] + y_inter_b1) / (cs.sqrt(slope_b1 ** 2 + 1))
-        # dist2 = (slope_b2 * x_t[0] - x_t[1] + y_inter_b2) / (cs.sqrt(slope_b2 ** 2 + 1))
-
-        # F1 = cs.vertcat(F1, x_t[3], u[0], u[1], dist1, dist2)
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], u[0], u[1])  # , c_e)
-        # F1 = cs.vertcat(F1, x_t[0], x_t[1], c_e)
+        # F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], x_t[4], x_t[5], c_e)
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[3], x_t[4], c_e)
 
     # Constraints
     # -------------------------------------
-    # C = og.constraints.Rectangle([v_x_min, d_min, delta_min, 0, -track_width],
-    #                              [v_x_max, d_max, delta_max, track_width, 0])
-    C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min, p.v_y_min, p.omega_min, p.d_min, p.delta_min, -p.track_width],
-                                 [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.v_y_max, p.omega_max, p.d_max, p.delta_max, p.track_width])
-    # C = og.constraints.Rectangle([x_min, y_min, -track_width],
-    #                              [x_max, y_max, track_width])
+    # C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min, p.v_y_min, p.omega_min, -p.track_width],
+    #                               [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.v_y_max, p.omega_max, p.track_width])
+    C = og.constraints.Rectangle([p.x_min, p.y_min, p.v_x_min, p.v_y_min, -p.track_width],
+                                 [p.x_max, p.y_max, p.v_x_max, p.v_y_max, p.track_width])
+    U = og.constraints.Rectangle([p.d_min, p.delta_min], [p.d_max, p.delta_max])
 
     # Code Generation
     # -------------------------------------
     problem = og.builder.Problem(u_seq, x0, cost) \
+        .with_constraints(U) \
         .with_aug_lagrangian_constraints(F1, C)
 
     if lang == 'c':
@@ -274,6 +268,7 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
+        .with_max_outer_iterations(100) \
         .with_max_duration_micros(50000)  # 0.05s = 50000us
 
     builder = og.builder.OpEnOptimizerBuilder(problem,

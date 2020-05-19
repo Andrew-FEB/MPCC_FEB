@@ -103,7 +103,7 @@ def generate_circular_track(num_steps):
 
 def generate_linear_track(num_steps):
     y = np.arange(0, 13, 13 / num_steps)
-    x = np.arange(0, 13, 13 / num_steps)
+    x = np.arange(0, 25, 25 / num_steps)
 
     upper = np.arange(1.5, 14.5, 13 / num_steps)
     lower = np.arange(-1.5, 11.5, 13 / num_steps)

@@ -9,15 +9,12 @@ import visualisator as vis
 # Last updated: 03/04/2020
 
 track_points = 1000
-simulation_steps = 100
+simulation_steps = 50
 
 # Weights in cost function
-track_error_weight = [0, 1, 0]  # contouring, tracking, velocity
-in_weight = [0, 0]  # duty cycle, steering angle
-in_change_weight = [0, 0]  # change of duty cycle, change of steering angle
-# track_error_weight = [0.1, 1000, 2]  # contouring, tracking, velocity
-# in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
-# in_change_weight = [0.01, 1]  # change of duty cycle, change of steering angle
+track_error_weight = [8, 50, 0]  # contouring, tracking, velocity
+in_weight = [1e-4, 0]  # duty cycle, steering angle
+in_change_weight = [0.01, 0]  # change of duty cycle, change of steering angle
 
 print("Generating code")
 start_time = time.time()
@@ -26,6 +23,6 @@ start_time = time.time()
 print('Code generated in ' + str(time.time() - start_time) + ' s')
 
 print("Running simulation")
-[track_x, track_y, upper, lower] = gd.generate_linear_track(track_points)
-state_seq, reference_seq, nearest_seq, cost_seq, control_inputs_seq = sim.simulate(track_x, track_y, upper, lower, simulation_steps)
-vis.plot_dynamic(track_x, track_y, upper, lower, state_seq, reference_seq, nearest_seq, cost_seq, control_inputs_seq)
+[track_x, track_y, upper, lower] = gd.generate_racing_track(track_points)
+state_seq, ref_seq, nearest_seq, cost_seq, controls_seq = sim.simulate(track_x, track_y, simulation_steps)
+vis.plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, nearest_seq, cost_seq, controls_seq)

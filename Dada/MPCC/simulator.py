@@ -9,7 +9,7 @@ import parameters as param
 # Created: 13/02/2020
 # Last updated: 03/04/2020
 
-def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
+def simulate(track_x, track_y, simulation_steps):
     # Set all values needed for simulation
     # TODO - organize these!!!
     i_start = 0
@@ -17,8 +17,8 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
     x = track_x[i_start]
     y = track_y[i_start]
     phi = np.arctan2(y, x)
-    v_x = 1
-    v_y = 0
+    v_x = 10
+    v_y = 2
     omega = np.arctan2(v_y, v_x)
     x_state_0 = (x, y, phi, v_x, v_y, omega)
 
@@ -55,17 +55,11 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
     x_nearest = track_x[i_nearest]
     y_nearest = track_y[i_nearest]
     slope = (track_y[i_nearest + 1] - y_nearest) / (track_x[i_nearest + 1] - x_nearest)
-    nearest_seq = [(x_nearest, y_nearest)]
+    # y = slope * x + y_intercept
+    intercept = y_nearest - slope * x_nearest
+    nearest_seq = [(slope, intercept, i_nearest)]
 
-    # Get the boundaries
-    # x_up = x_nearest
-    # y_up = upper_bound[i_nearest]
-    # slope_up = (upper_bound[i_nearest+1] - y_up) / (track_x[i_nearest+1] - x_nearest)
-    # x_low = x_nearest
-    # y_low = lower_bound[i_nearest]
-    # slope_low = (lower_bound[i_nearest+1] - y_low) / (track_x[i_nearest+1] - x_nearest)
-
-    control_inputs = [0.1] * param.N * param.nu  # warm_start(state, state_ref, [slope, x_nearest, y_nearest])
+    control_inputs = [0] * param.N * param.nu  # warm_start(state, state_ref, [slope, x_nearest, y_nearest])
     control_inputs_seq = []
 
     # Create a TCP connection manager
@@ -75,8 +69,8 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
 
     # Run simulation
     for k in range(simulation_steps):
-        solver_status = mng.call(np.concatenate((state, state_ref, [slope, x_nearest, y_nearest])), control_inputs)
-        # [slope_up, x_up, y_up, slope_low, x_low, y_low])))
+        solver_status = mng.call(np.concatenate((state, state_ref, [slope,intercept])), control_inputs)
+
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
                   + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
@@ -101,14 +95,8 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
             y_nearest = track_y[i_nearest]
             y_nearest_next = track_y[i_nearest + 1]
             slope = (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
-
-            # Update the boundaries
-            # x_up = x_nearest
-            # y_up = upper_bound[i_nearest]
-            # slope_up = (upper_bound[i_nearest + 1] - y_up) / (x_nearest_next - x_nearest)
-            # x_low = x_nearest
-            # y_low = lower_bound[i_nearest]
-            # slope_low = (lower_bound[i_nearest + 1] - y_low) / (x_nearest_next - x_nearest)
+            # y = slope * x + y_intercept
+            intercept = y_nearest - slope * x_nearest
 
             state_ref = (x, y, state_ref[2], state_ref[3], state_ref[4], state_ref[5])
             state = tuple(state_next[:6])
@@ -117,7 +105,7 @@ def simulate(track_x, track_y, upper_bound, lower_bound, simulation_steps):
             print("CONTROL = " + str(first_control_input))
             state_seq.append(state)
             reference_seq.append(state_ref)
-            nearest_seq.append((x_nearest, y_nearest))
+            nearest_seq.append((slope, intercept, i_nearest))
             cost_seq.append(solver_status['cost'])
             control_inputs_seq.append(control_inputs)
 
@@ -154,7 +142,7 @@ def warm_start(state, state_ref, bound):
 def update_reference(first_control_input, i_nearest, state_next, state_ref, track_x, track_y):
     # Find the index of the reference point (depending on the current velocity), as above
     v = np.sqrt(state_next[3] ** 2 + state_next[4] ** 2)
-    dist_ahead = v * (param.N * param.Ts)  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
+    dist_ahead = 5  # v * (param.N * param.Ts)  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
     print("DIST AHEAD = " + str(dist_ahead) + ", v = " + str(v))
     [i_nearest, nearest_dist] = get_nearest_point([state_next[0], state_next[1]], track_x, track_y, param.track_width,
                                                   300, i_nearest)
