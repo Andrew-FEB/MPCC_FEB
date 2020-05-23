@@ -36,7 +36,8 @@ def kinetic_model_temp(state, control, calc_casadi):
 
 
 # Runge-Kutta 4th order method
-def kinetic_model_rk(state, control, dt, calc_casadi):
+def kinetic_model_rk(state, control, calc_casadi):
+    dt = p.Ts
     if calc_casadi:
         k1 = dt * kinetic_model_temp(state, control, calc_casadi)
         k2 = dt * kinetic_model_temp(state + 0.5 * k1, control, calc_casadi)
@@ -142,10 +143,12 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     # y_nearest = normalise(state[14], p.y_min, p.y_max)
     x = state[0]
     y = state[1]
+    phi = state[2]
     v_x = state[3]
     v_y = state[4]
     x_ref = state[6]
     y_ref = state[7]
+    phi_ref = state[8]
     slope = state[12]
     y_inter = state[13]
 
@@ -163,6 +166,9 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     v = cs.sqrt(v_x ** 2 - v_y ** 2)
     cf -= track_error_weight[2] * v
 
+    # Phi
+    cf += track_error_weight[3] * (phi - phi_ref)
+
     # Input Weights
     cf += in_weight[0] * control[0] ** 2
     cf += in_weight[1] * control[1] ** 2
@@ -174,7 +180,7 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     return cf
 
 
-def cost_function_warm_start(state, control, control_prev, track_error_weight, in_weight, in_change_weight):
+def cost_function_kinematic(state, control, control_prev, track_error_weight, in_weight, in_change_weight):
     # TODO - add remaining costs
     cf = 0
 
@@ -184,18 +190,14 @@ def cost_function_warm_start(state, control, control_prev, track_error_weight, i
     x_ref = state[4]
     y_ref = state[5]
     slope = state[8]
-    x_nearest = state[9]
-    y_nearest = state[10]
+    intercept = state[9]
 
-    # y = slope * x + y_intercept
-    y_inter = y_nearest - slope * x_nearest
-
-    # Line: ax + by + c = 0 -> slope * x - y + y_inter = 0
+    # Line: ax + by + c = 0 -> slope * x - y + intercept = 0
     # Point: (x1, y1) -> (x, y)
     # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
 
     # Contouring Error = distance from reference line
-    cf += track_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
+    cf += track_error_weight[0] * (cs.fabs((slope * x - y + intercept)) / (cs.sqrt(slope ** 2 + 1)))
 
     # Tracking Error = distance from reference point
     cf += track_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
@@ -281,29 +283,27 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
 # ----------------------------------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
-def generate_code_warm_start(track_error_weight, in_weight, in_change_weight, lang):
+def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lang):
     u_seq = cs.MX.sym("u", p.nu * p.N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", 11)  # Initial state (=4) + Reference point (=4) + slope (=1) + nearest x, y (=2)
+    x0 = cs.MX.sym("x0_xref", 10)  # Initial state (=4) + Reference point (=4) + slope (=1) + intercept (=1)
 
     cost = 0
     u_prev = [0, 0]
     x_t = x0[0:8]
     slope = x0[8]
-    x_nearest = x0[9]
-    y_nearest = x0[10]
-    y_inter = y_nearest - slope * x_nearest
+    intercept = x0[9]
 
     F1 = []
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function_warm_start(cs.vertcat(x_t, x0[8:11]), u, u_prev, track_error_weight, in_weight,
-                                         in_change_weight)  # Update cost
+        cost += cost_function_kinematic(cs.vertcat(x_t, x0[8:10]), u, u_prev, track_error_weight, in_weight,
+                                        in_change_weight)  # Update cost
         u_prev = u
         # Update state
-        x_t = cs.vertcat(kinetic_model_rk(x_t[0:4], u, p.Ts, True), x_t[4:8])
+        x_t = cs.vertcat(kinetic_model_rk(x_t[0:4], u, True), x_t[4:8])
         # TODO - add the missing constraints
         # Contouring Constraint
-        c_e = (slope * x_t[0] - x_t[1] + y_inter) / (cs.sqrt(slope ** 2 + 1))
+        c_e = (slope * x_t[0] - x_t[1] + intercept) / (cs.sqrt(slope ** 2 + 1))
         F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], u[0], u[1], c_e)
 
     # Constraints

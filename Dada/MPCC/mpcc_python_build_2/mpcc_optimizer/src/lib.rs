@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-05-19 16:51:08.744129
+// Generated at: 2020-05-23 13:35:02.221208
 //
 
 use icasadi_mpcc_optimizer;
@@ -51,7 +51,7 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
-pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 11;
+pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 10;
 
 /// Number of parameters associated with augmented Lagrangian
 pub const MPCC_OPTIMIZER_N1: usize = 280;
@@ -69,8 +69,8 @@ pub const MPCC_OPTIMIZER_N2: usize = 0;
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-30.0,-30.0,-7.0,-0.1,-0.1,-29.0,-1.5,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[30.0,30.0,7.0,4.0,1.0,29.0,1.5,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,-70.0,-5.0,-0.1,-0.506,-1.5,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,70.0,5.0,1.0,0.506,1.5,]);
 
 
 

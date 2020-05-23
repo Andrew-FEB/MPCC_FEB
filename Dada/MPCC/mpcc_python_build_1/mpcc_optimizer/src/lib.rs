@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-05-19 21:16:35.821983
+// Generated at: 2020-05-21 22:05:59.782481
 //
 
 use icasadi_mpcc_optimizer;
@@ -71,8 +71,8 @@ const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[1.0,0.506,]);
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,-0.1,-20.0,-1.5,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,40.0,20.0,1.5,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,3.0,-10.0,-1.5,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,20.0,10.0,1.5,]);
 
 
 

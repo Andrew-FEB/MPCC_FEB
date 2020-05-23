@@ -1,6 +1,8 @@
 import numpy as np
 from scipy import interpolate
+import parameters as param
 import matplotlib.pyplot as plt
+
 
 # Author: Darina Abaffyová
 # Created: 04/03/2020
@@ -54,19 +56,25 @@ def generate_track(num_steps):
 def generate_racing_track(num_steps):
     x = np.array([0, 2, 4, 8, 14, 19, 25])
     y = np.array([0, 1, 5, 10, 2, 13, 5])
-    upper = np.array([1.5, 2.5, 6.5, 11.5, 3.5, 14.5, 6.5])
-    lower = np.array([-1.5, -0.5, 3.5, 8.5, 0.5, 11.5, 3.5])
+    # upper = np.array([1.5, 2.5, 6.5, 11.5, 3.5, 14.5, 6.5])
+    # lower = np.array([-1.5, -0.5, 3.5, 8.5, 0.5, 11.5, 3.5])
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
     tck, u = interpolate.splprep([x, y], s=0, per=False)
-    tcku, u = interpolate.splprep([x, upper], s=0, per=False)
-    tckl, u = interpolate.splprep([x, lower], s=0, per=False)
+    # tcku, u = interpolate.splprep([x, upper], s=0, per=False)
+    # tckl, u = interpolate.splprep([x, lower], s=0, per=False)
 
     # evaluate the spline fits for 1000 evenly spaced distance values
     xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
-    xu, yu = interpolate.splev(np.linspace(0, 1, num_steps), tcku)
-    xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
+    # xu, yu = interpolate.splev(np.linspace(0, 1, num_steps), tcku)
+    # xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
+
+    yu = []
+    yl = []
+    for i in range(len(xi)):
+        yu.append(yi[i] + param.track_width)
+        yl.append(yi[i] - param.track_width)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
@@ -102,11 +110,11 @@ def generate_circular_track(num_steps):
 
 
 def generate_linear_track(num_steps):
-    y = np.arange(0, 13, 13 / num_steps)
-    x = np.arange(0, 25, 25 / num_steps)
+    y = np.arange(0, 25, 25 / num_steps)
+    x = np.arange(0, 20, 20 / num_steps)
 
-    upper = np.arange(1.5, 14.5, 13 / num_steps)
-    lower = np.arange(-1.5, 11.5, 13 / num_steps)
+    upper = np.arange(1.5, 26.5, 25 / num_steps)
+    lower = np.arange(-1.5, 23.5, 25 / num_steps)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
@@ -116,4 +124,3 @@ def generate_linear_track(num_steps):
     # plt.show()
 
     return [x, y, upper, lower]
-

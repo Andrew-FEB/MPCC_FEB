@@ -11,13 +11,13 @@
 //! This file is part of OptimizationEngine
 //! (see https://alphaville.github.io/optimization-engine/)
 //!
-//! Generated at: 2020-05-19 16:51:08.406572
+//! Generated at: 2020-05-23 13:35:01.845278
 //!
 
 // #![no_std]
 
 /// Number of static parameters (this also includes penalty constraints)
-const NUM_STATIC_PARAMETERS: usize = 11;
+const NUM_STATIC_PARAMETERS: usize = 10;
 
 /// Number of decision variables
 const NUM_DECISION_VARIABLES: usize = 80;

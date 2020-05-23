@@ -163,16 +163,16 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, nearest_seq
     ax = plt.gca()
 
     ax.plot(track_x, track_y, '.y', label="Complete track")
-    line1, = ax.plot(state_x[0], state_y[0], 'or', label="Achieved track")
+    achieved_line, = ax.plot(state_x[0], state_y[0], 'or', label="Achieved track")
     ax.plot(track_x, upper, '--g', label="Boundaries")
     ax.plot(track_x, lower, '--g')
-    line2, = ax.plot(track_x[0], track_y[0], 'b.', label="Predicted track")
+    predicted_line, = ax.plot(track_x[0], track_y[0], 'b.', label="Predicted track")
     ref_point, = ax.plot(ref_x[0], ref_y[0], 'rx', label="Reference point", markersize=10)
     tan_len = 70
-    nearest_point, = ax.plot(track_x[index[0]:index[0]+tan_len], [slope[0] * x + intercept[0]
-                                                             for x in track_x[index[0]:index[0]+tan_len]],
+    nearest_point, = ax.plot(track_x[index[0]:index[0] + tan_len], [slope[0] * x + intercept[0]
+                                                                    for x in track_x[index[0]:index[0] + tan_len]],
                              'm--', label="Nearest tangent line", markersize=10)
-    txt = plt.text(2, 7, 'Cost = 0\nLine distance = 0\nReference distance = 0\nVelocity = 0', color="black", fontsize=12)
+    txt = plt.text(2, 7, '', color="black", fontsize=12)
 
     plt.grid()
     plt.ylabel('Y position')
@@ -189,26 +189,26 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, nearest_seq
         y = [state[1]]
         # Calculate positions obtain with these control inputs
         for j in range(0, len(control_seq[i]), param.nu):
-            next_state = cg.dynamic_model_rk(state, [control_seq[i][j], control_seq[i][j+1]], False)
+            next_state = cg.kinetic_model_rk(state, [control_seq[i][j], control_seq[i][j + 1]], False)
             x.append(next_state[0])
             y.append(next_state[1])
             state = next_state
 
-        line1.set_xdata(state_x[0:i])
-        line1.set_ydata(state_y[0:i])
-        line2.set_xdata(x)
-        line2.set_ydata(y)
+        achieved_line.set_xdata(state_x[0:i])
+        achieved_line.set_ydata(state_y[0:i])
+        nearest_point.set_xdata(track_x[index[i]:index[i] + tan_len])
+        nearest_point.set_ydata([slope[i] * x + intercept[i] for x in track_x[index[i]:index[i] + tan_len]])
         ref_point.set_xdata(ref_x[i])
         ref_point.set_ydata(ref_y[i])
-        nearest_point.set_xdata(track_x[index[i]:index[i]+tan_len])
-        nearest_point.set_ydata([slope[i] * x + intercept[i] for x in track_x[index[i]:index[i]+tan_len]])
-        dist1 = round(np.sqrt((state_x[i] - ref_x[i])**2 + (state_y[i] - ref_y[i])**2), 3)
+        predicted_line.set_xdata(x)
+        predicted_line.set_ydata(y)
+        dist1 = round(np.sqrt((state_x[i] - ref_x[i]) ** 2 + (state_y[i] - ref_y[i]) ** 2), 3)
         dist2 = round((abs((slope[i] * state_x[i] - state_y[i] + intercept[i])) / (np.sqrt(slope[i] ** 2 + 1))), 3)
-        vel = round(np.sqrt(state_seq[i][3]**2 + state_seq[i][4]), 3)
+        omega = round(state_seq[i][2], 3)  # round(np.sqrt(state_seq[i][3]**2 + state_seq[i][4]), 3)
         txt.set_text('Cost = ' + str(round(cost_seq[i], 3)) + '\nReference distance = ' + str(dist1) +
-                     '\nLine distance = ' + str(dist2) + '\nVelocity = ' + str(vel))
+                     '\nLine distance = ' + str(dist2) + '\nOmega = ' + str(omega))
         plt.draw()
         plt.pause(1e-17)
-        time.sleep(0.5)
+        time.sleep(0.025)
 
     plt.show()
