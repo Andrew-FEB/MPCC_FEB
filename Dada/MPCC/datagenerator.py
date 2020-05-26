@@ -73,8 +73,8 @@ def generate_racing_track(num_steps):
     yu = []
     yl = []
     for i in range(len(xi)):
-        yu.append(yi[i] + param.track_width)
-        yl.append(yi[i] - param.track_width)
+        yu.append(yi[i] + 2)
+        yl.append(yi[i] - 2)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)

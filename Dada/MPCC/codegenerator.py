@@ -10,20 +10,20 @@ import parameters as p
 
 # Model
 # -------------------------------------
-def kinetic_model_temp(state, control, calc_casadi):
-    # First simple (kinematic) model (source: https://github.com/MPC-Berkeley/barc/wiki/Car-Model):
-    # get states / inputs
+def kinematic_model(state, control, calc_casadi):
+    # get states
     x = state[0]  # Longitudinal position
     y = state[1]  # Lateral Position
     psi = state[2]  # Yaw rate
     v = state[3]  # Velocity
+    # get inputs
     a = control[0]  # Acceleration
-    d_f = control[1]  # Front steering angle
+    d = control[1]  # Front steering angle
 
     # compute slip angle
-    beta = cs.arctan2(p.l_r * cs.tan(d_f), (p.l_f + p.l_r))
+    beta = cs.arctan2(p.l_r * cs.tan(d), (p.l_f + p.l_r))
 
-    # compute next state
+    # compute change in state
     x_next = v * cs.cos(psi + beta)
     y_next = v * cs.sin(psi + beta)
     psi_next = v / p.l_r * cs.sin(beta)
@@ -36,19 +36,19 @@ def kinetic_model_temp(state, control, calc_casadi):
 
 
 # Runge-Kutta 4th order method
-def kinetic_model_rk(state, control, calc_casadi):
+def kinematic_model_rk(state, control, calc_casadi):
     dt = p.Ts
     if calc_casadi:
-        k1 = dt * kinetic_model_temp(state, control, calc_casadi)
-        k2 = dt * kinetic_model_temp(state + 0.5 * k1, control, calc_casadi)
-        k3 = dt * kinetic_model_temp(state + 0.5 * k2, control, calc_casadi)
-        k4 = dt * kinetic_model_temp(state + k3, control, calc_casadi)
+        k1 = dt * kinematic_model(state, control, calc_casadi)
+        k2 = dt * kinematic_model(state + 0.5 * k1, control, calc_casadi)
+        k3 = dt * kinematic_model(state + 0.5 * k2, control, calc_casadi)
+        k4 = dt * kinematic_model(state + k3, control, calc_casadi)
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
     else:
-        k1 = dt * np.array(kinetic_model_temp(state, control, calc_casadi))
-        k2 = dt * np.array(kinetic_model_temp(state + 0.5 * k1, control, calc_casadi))
-        k3 = dt * np.array(kinetic_model_temp(state + 0.5 * k2, control, calc_casadi))
-        k4 = dt * np.array(kinetic_model_temp(state + k3, control, calc_casadi))
+        k1 = dt * np.array(kinematic_model(state, control, calc_casadi))
+        k2 = dt * np.array(kinematic_model(state + 0.5 * k1, control, calc_casadi))
+        k3 = dt * np.array(kinematic_model(state + 0.5 * k2, control, calc_casadi))
+        k4 = dt * np.array(kinematic_model(state + k3, control, calc_casadi))
         next_state = state + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
 
     return next_state
@@ -285,31 +285,37 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
 # ----------------------------------------------------------------------------------------------------------------------
 def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lang):
     u_seq = cs.MX.sym("u", p.nu * p.N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", 10)  # Initial state (=4) + Reference point (=4) + slope (=1) + intercept (=1)
+    x0 = cs.MX.sym("x0_xref", 14)  # Initial state (=4) + Reference point (=4) + slopes (=3) + intercepts (=3)
 
     cost = 0
     u_prev = [0, 0]
     x_t = x0[0:8]
-    slope = x0[8]
-    intercept = x0[9]
+    slope_up = x0[8]
+    intercept_up = x0[9]
+    slope_low = x0[10]
+    intercept_low = x0[11]
+    slope_centre = x0[12]
+    intercept_centre = x0[13]
 
     F1 = []
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function_kinematic(cs.vertcat(x_t, x0[8:10]), u, u_prev, track_error_weight, in_weight,
+        cost += cost_function_kinematic(cs.vertcat(x_t, x0[12:14]), u, u_prev, track_error_weight, in_weight,
                                         in_change_weight)  # Update cost
         u_prev = u
         # Update state
-        x_t = cs.vertcat(kinetic_model_rk(x_t[0:4], u, True), x_t[4:8])
+        x_t = cs.vertcat(kinematic_model_rk(x_t[0:4], u, True), x_t[4:8])
         # TODO - add the missing constraints
-        # Contouring Constraint
-        c_e = (slope * x_t[0] - x_t[1] + intercept) / (cs.sqrt(slope ** 2 + 1))
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], u[0], u[1], c_e)
+        # Boundary Constraint
+        e_up = (slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
+        e_low = (slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
+        # e_centre = (slope_centre * x_t[0] - x_t[1] + intercept_centre) / (cs.sqrt(slope_centre ** 2 + 1))
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], u[0], u[1], e_up, e_low)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([p.x_min, p.y_min, p.omega_min, p.v_x_min, p.d_min, p.delta_min, -p.track_width],
-                                 [p.x_max, p.y_max, p.omega_max, p.v_x_max, p.d_max, p.delta_max, p.track_width])
+    C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min, p.d_min, p.delta_min, 0, -p.track_width],
+                                 [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.d_max, p.delta_max, p.track_width, 0])
 
     # Code Generation
     # -------------------------------------
@@ -332,6 +338,7 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
         .with_authors("Darina Abaffyova")
 
     solver_config = og.config.SolverConfiguration() \
+        .with_max_outer_iterations(100) \
         .with_max_duration_micros(50000)  # 0.05s = 50000us
 
     builder = og.builder.OpEnOptimizerBuilder(problem,

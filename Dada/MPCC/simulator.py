@@ -9,7 +9,7 @@ import parameters as param
 # Created: 13/02/2020
 # Last updated: 03/04/2020
 
-def simulate(track_x, track_y, simulation_steps):
+def simulate(track_x, track_y, upper, lower, simulation_steps):
     # Set all values needed for simulation
     # TODO - organize these!!!
     i_start = 0
@@ -17,7 +17,7 @@ def simulate(track_x, track_y, simulation_steps):
     x = track_x[i_start]
     y = track_y[i_start]
     phi = np.arctan2(y, x)
-    v_x = 3
+    v_x = 1
     v_y = 1
     omega = np.arctan2(v_y, v_x)
     x_state_0 = (x, y, omega, v_x)  # , v_y, omega)
@@ -41,7 +41,7 @@ def simulate(track_x, track_y, simulation_steps):
     (x, y) = [track_x[i_ahead], track_y[i_ahead]]
     phi = np.arctan2(y, x)
     v_x = 1
-    v_y = 0
+    v_y = 1
     omega = 0  # np.arctan2(v_y, v_x)
     state_ref = (x, y, omega, v_x)  # , v_y, omega)  # reference state tuple
     reference_seq = [state_ref]
@@ -51,13 +51,30 @@ def simulate(track_x, track_y, simulation_steps):
     # The nearest sequence will contain tuples (x, y) of the positions
     # on the reference line which correspond to the nearest point found
     # for each state in the state sequence
-    i_nearest = i_nearest + round((i_ahead-i_nearest)/4)
     x_nearest = track_x[i_nearest]
+    x_nearest_next = track_x[len(track_x) - 1 if i_nearest + 1 >= len(track_x) else i_nearest + 1]
+    # Centre
     y_nearest = track_y[i_nearest]
-    slope = (track_y[i_nearest + 1] - y_nearest) / (track_x[i_nearest + 1] - x_nearest)
+    y_nearest_next = track_y[len(track_y) - 1 if i_nearest + 1 >= len(track_y) else i_nearest + 1]
+    slope = (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
     # y = slope * x + y_intercept
     intercept = y_nearest - slope * x_nearest
-    nearest_seq = [(slope, intercept, i_nearest)]
+
+    # Upper boundary
+    y_up = upper[i_nearest]
+    y_up_next = upper[len(upper) - 1 if i_nearest + 1 >= len(upper) else i_nearest + 1]
+    slope_up = (y_up_next - y_up) / (x_nearest_next - x_nearest)
+    # y = slope * x + y_intercept
+    intercept_up = y_up - slope_up * x_nearest
+
+    # Lower boundary
+    y_low = lower[i_nearest]
+    y_low_next = lower[len(lower) - 1 if i_nearest + 1 >= len(lower) else i_nearest + 1]
+    slope_low = (y_low_next - y_low) / (x_nearest_next - x_nearest)
+    # y = slope * x + y_intercept
+    intercept_low = y_low - slope_low * x_nearest
+
+    bound_seq = [(slope_up, intercept_up, slope_low, intercept_low, i_nearest, i_ahead)]
 
     control_inputs = [0] * param.N * param.nu  # warm_start(state, state_ref, [slope, x_nearest, y_nearest])
     control_inputs_seq = []
@@ -69,7 +86,8 @@ def simulate(track_x, track_y, simulation_steps):
 
     # Run simulation
     for k in range(simulation_steps):
-        solver_status = mng.call(np.concatenate((state, state_ref, [slope, intercept])), control_inputs)
+        solver_status = mng.call(np.concatenate((state, state_ref, [slope_up, intercept_up, slope_low, intercept_low,
+                                                                    slope, intercept])), control_inputs)
 
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
@@ -80,7 +98,7 @@ def simulate(track_x, track_y, simulation_steps):
 
             control_inputs = solver_status['solution']
             first_control_input = (control_inputs[0], control_inputs[1])
-            state_next = cg.kinetic_model_rk(state, first_control_input, False)
+            state_next = cg.kinematic_model_rk(state, first_control_input, False)
 
             end_of_track_reached, i_nearest, state_ref, i_ahead, x, y = update_reference(first_control_input,
                                                                                          i_nearest, state_next,
@@ -89,14 +107,31 @@ def simulate(track_x, track_y, simulation_steps):
             if end_of_track_reached: break
 
             # Update all variables needed for the next iteration and save values in the sequences to be plotted
-            # i_nearest = i_nearest + round((i_ahead - i_nearest))
+            # i_nearest = i_nearest + round((i_ahead - i_nearest)/2)
             x_nearest = track_x[i_nearest]
-            x_nearest_next = track_x[i_nearest + 1]  # len(track_x) - 1 if i_nearest + 1 >= len(track_x) else
+            x_nearest_next = track_x[len(track_x) - 1 if i_nearest + 1 >= len(track_x) else i_nearest + 1]
+            # Centre
             y_nearest = track_y[i_nearest]
-            y_nearest_next = track_y[i_nearest + 1]  # len(track_y) - 1 if i_nearest + 1 >= len(track_y) else
+            y_nearest_next = track_y[len(track_y) - 1 if i_nearest + 1 >= len(track_y) else i_nearest + 1]
             slope = (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
             # y = slope * x + y_intercept
             intercept = y_nearest - slope * x_nearest
+
+            x_nearest_next = track_x[i_ahead]
+
+            # Upper boundary
+            y_up = upper[i_nearest]
+            y_up_next = upper[i_ahead]  # upper[len(upper) - 1 if i_nearest + 1 >= len(upper) else i_nearest + 1]
+            slope_up = (y_up_next - y_up) / (x_nearest_next - x_nearest)
+            # y = slope * x + y_intercept
+            intercept_up = y_up - slope_up * x_nearest
+
+            # Lower boundary
+            y_low = lower[i_nearest]
+            y_low_next = lower[i_ahead]  # lower[len(lower) - 1 if i_nearest + 1 >= len(lower) else i_nearest + 1]
+            slope_low = (y_low_next - y_low) / (x_nearest_next - x_nearest)
+            # y = slope * x + y_intercept
+            intercept_low = y_low - slope_low * x_nearest
 
             state_ref = (x, y, state_ref[2], state_ref[3])
             state = tuple(state_next[:4])
@@ -105,7 +140,7 @@ def simulate(track_x, track_y, simulation_steps):
             print("CONTROL = " + str(first_control_input))
             state_seq.append(state)
             reference_seq.append(state_ref)
-            nearest_seq.append((slope, intercept, i_nearest))
+            bound_seq.append((slope_up, intercept_up, slope_low, intercept_low, i_nearest, i_ahead))
             cost_seq.append(solver_status['cost'])
             control_inputs_seq.append(control_inputs)
 
@@ -115,7 +150,7 @@ def simulate(track_x, track_y, simulation_steps):
             break
 
     mng.kill()
-    return state_seq, reference_seq, nearest_seq, cost_seq, input_seq, control_inputs_seq, len(state_seq)
+    return state_seq, reference_seq, bound_seq, cost_seq, input_seq, control_inputs_seq, len(state_seq)
 
 
 def warm_start(state, state_ref, bound):
@@ -151,7 +186,7 @@ def update_reference(first_control_input, i_nearest, state_next, state_ref, trac
     [x, y] = [track_x[i_ahead], track_y[i_ahead]]
     # The next reference state, taking into account all the previous calculations, and using the vehicle
     # model with regard to the obtained control inputs
-    state_ref = cg.kinetic_model_rk(state_ref, first_control_input, False)
+    state_ref = cg.kinematic_model_rk(state_ref, first_control_input, False)
 
     return end_of_track_reached, i_nearest, state_ref, i_ahead, x, y
 

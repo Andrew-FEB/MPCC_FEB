@@ -56,7 +56,7 @@ y_max = 100
 y_min = -y_max
 phi_max = 10
 phi_min = -phi_max
-v_x_max = 5
+v_x_max = 3.5
 v_x_min = -v_x_max
 v_y_max = 5
 v_y_min = -v_y_max
@@ -70,11 +70,11 @@ delta_min = -delta_max
 
 # Track parameters
 # -------------------------------------
-track_width = 1.5
+track_width = 4
 
 # Optimizer parameters
 # -------------------------------------
-N = 40  # Prediction Horizon (in time steps)
+N = 50  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
 nx = 6  # Number of Parameters (state)
 Ts = 0.05  # Sampling time (length of one time step in seconds)
