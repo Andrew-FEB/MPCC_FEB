@@ -12,14 +12,14 @@ track_points = 3000
 sim_steps = 300
 
 # Weights in cost function
-track_error_weight = [0, 1, 0.04, 0]  # contouring, tracking, velocity, phi
+track_error_weight = [0.5, 1, 0.04]  # contouring, tracking, velocity
 in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
 in_change_weight = [0.01, 0.001]  # change of duty cycle, change of steering angle
 
 print("Generating code")
 start_time = time.time()
 # cg.generate_code(track_error_weight, in_weight, in_change_weight, 'p')
-cg.generate_code_kinematic(track_error_weight, in_weight, in_change_weight, 'p')
+# cg.generate_code_kinematic(track_error_weight, in_weight, in_change_weight, 'p')
 print('Code generated in ' + str(time.time() - start_time) + ' s')
 
 print("Running simulation")

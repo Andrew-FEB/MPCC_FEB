@@ -309,13 +309,13 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
         # Boundary Constraint
         e_up = (slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
         e_low = (slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
-        # e_centre = (slope_centre * x_t[0] - x_t[1] + intercept_centre) / (cs.sqrt(slope_centre ** 2 + 1))
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], u[0], u[1], e_up, e_low)
+        e_centre = (slope_centre * x_t[0] - x_t[1] + intercept_centre) / (cs.sqrt(slope_centre ** 2 + 1))
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], u[0], u[1], e_up, e_low, e_centre)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min, p.d_min, p.delta_min, 0, -p.track_width],
-                                 [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.d_max, p.delta_max, p.track_width, 0])
+    C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min, p.d_min, p.delta_min, 0, -p.track_width, -p.track_width],
+                                 [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.d_max, p.delta_max, p.track_width, 0, p.track_width])
 
     # Code Generation
     # -------------------------------------

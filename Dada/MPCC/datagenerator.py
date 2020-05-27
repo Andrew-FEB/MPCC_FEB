@@ -87,23 +87,37 @@ def generate_racing_track(num_steps):
 
 
 def generate_circular_track(num_steps):
-    x = np.array([-3, 0, 3, 0])
-    y = np.array([0, -3, 0, 3])
+    x = np.array([-7, 0, 7, 0])
+    y = np.array([0, -7, 0, 7])
+    upper_x = np.array([-5, 0, 5, 0])
+    upper_y = np.array([0, -5, 0, 5])
+    lower_x = np.array([-9, 0, 9, 0])
+    lower_y = np.array([0, -9, 0, 9])
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]
     y = np.r_[y, y[0]]
+    upper_x = np.r_[upper_x, upper_x[0]]
+    upper_y = np.r_[upper_y, upper_y[0]]
+    lower_x = np.r_[lower_x, lower_x[0]]
+    lower_y = np.r_[lower_y, lower_y[0]]
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
     tck, u = interpolate.splprep([x, y], s=0, per=True)
+    tcku, u = interpolate.splprep([upper_x, upper_y], s=0, per=False)
+    tckl, u = interpolate.splprep([lower_x, lower_y], s=0, per=False)
 
     # evaluate the spline fits for 1000 evenly spaced distance values
     xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
+    xu, yu = interpolate.splev(np.linspace(0, 1, num_steps), tcku)
+    xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
     # ax.plot(xi, yi, 'or')
+    # ax.plot(xu, yu, '--g')
+    # ax.plot(xl, yl, '--g')
     # plt.show()
 
     return [xi, yi]

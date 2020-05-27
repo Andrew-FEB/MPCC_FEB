@@ -1,5 +1,6 @@
 from warnings import warn
 import numpy as np
+import math
 import opengen as og
 import codegenerator as cg
 import parameters as param
@@ -113,7 +114,8 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
             # Centre
             y_nearest = track_y[i_nearest]
             y_nearest_next = track_y[len(track_y) - 1 if i_nearest + 1 >= len(track_y) else i_nearest + 1]
-            slope = (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
+            slope = 0 if math.isnan((y_nearest_next - y_nearest) / (x_nearest_next - x_nearest))\
+                else (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
             # y = slope * x + y_intercept
             intercept = y_nearest - slope * x_nearest
 
@@ -122,14 +124,16 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
             # Upper boundary
             y_up = upper[i_nearest]
             y_up_next = upper[i_ahead]  # upper[len(upper) - 1 if i_nearest + 1 >= len(upper) else i_nearest + 1]
-            slope_up = (y_up_next - y_up) / (x_nearest_next - x_nearest)
+            slope_up = 0 if math.isnan((y_up_next - y_up) / (x_nearest_next - x_nearest))\
+                else (y_up_next - y_up) / (x_nearest_next - x_nearest)
             # y = slope * x + y_intercept
             intercept_up = y_up - slope_up * x_nearest
 
             # Lower boundary
             y_low = lower[i_nearest]
             y_low_next = lower[i_ahead]  # lower[len(lower) - 1 if i_nearest + 1 >= len(lower) else i_nearest + 1]
-            slope_low = (y_low_next - y_low) / (x_nearest_next - x_nearest)
+            slope_low = 0 if math.isnan((y_low_next - y_low) / (x_nearest_next - x_nearest))\
+                else (y_low_next - y_low) / (x_nearest_next - x_nearest)
             # y = slope * x + y_intercept
             intercept_low = y_low - slope_low * x_nearest
 

@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-05-26 20:51:15.051384
+// Generated at: 2020-05-27 11:18:43.971832
 //
 
 use icasadi_mpcc_optimizer;
@@ -48,13 +48,13 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 // ---Public Constants-----------------------------------------------------------------------------------
 
 /// Number of decision variables
-pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 100;
+pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 120;
 
 /// Number of parameters
 pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 14;
 
 /// Number of parameters associated with augmented Lagrangian
-pub const MPCC_OPTIMIZER_N1: usize = 400;
+pub const MPCC_OPTIMIZER_N1: usize = 540;
 
 /// Number of penalty constraints
 pub const MPCC_OPTIMIZER_N2: usize = 0;
@@ -69,18 +69,18 @@ pub const MPCC_OPTIMIZER_N2: usize = 0;
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,-10.0,-3.5,-0.1,-0.506,0.0,-4.0,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,10.0,3.5,1.0,0.506,4.0,0.0,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,-10.0,-3.5,-0.1,-0.506,0.0,-4.0,-4.0,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,10.0,3.5,1.0,0.506,4.0,0.0,4.0,]);
 
 
 
 
 // ---Parameters of ALM-type constraints (Set Y)---------------------------------------------------------
 /// Y_min
-const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
+const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
 
 /// Y_max
-const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
+const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
 
 
 
