@@ -180,17 +180,17 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     return cf
 
 
-def cost_function_kinematic(state, control, control_prev, track_error_weight, in_weight, in_change_weight):
+def cost_function_kinematic(state, ref, tan, control, control_prev, track_error_weight, in_weight, in_change_weight):
     # TODO - add remaining costs
     cf = 0
 
     x = state[0]
     y = state[1]
     v = state[3]
-    x_ref = state[4]
-    y_ref = state[5]
-    slope = state[8]
-    intercept = state[9]
+    x_ref = ref[0]
+    y_ref = ref[1]
+    slope = tan[0]
+    intercept = tan[1]
 
     # Line: ax + by + c = 0 -> slope * x - y + intercept = 0
     # Point: (x1, y1) -> (x, y)
@@ -285,41 +285,46 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
 # ----------------------------------------------------------------------------------------------------------------------
 def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lang):
     u_seq = cs.MX.sym("u", p.nu * p.N)  # Sequence of all inputs
-    x0 = cs.MX.sym("x0_xref", 14)  # Initial state (=4) + Reference point (=4) + slopes (=3) + intercepts (=3)
+    # Initial state (=4) + slopes (=3) + intercepts (=3) + Prediction horizon * Reference point (=2 * N)
+    x0 = cs.MX.sym("x0_xref", p.nx + 6 + 2 * p.N)
 
     cost = 0
     u_prev = [0, 0]
-    x_t = x0[0:8]
-    slope_up = x0[8]
-    intercept_up = x0[9]
-    slope_low = x0[10]
-    intercept_low = x0[11]
-    slope_centre = x0[12]
-    intercept_centre = x0[13]
+    x_t = x0[0:4]
+    slope_centre = x0[4]
+    slope_up = x0[5]
+    slope_low = x0[6]
+    intercept_centre = x0[7]
+    intercept_up = x0[8]
+    intercept_low = x0[9]
+    ref_list = x0[10:x0.shape[0]]
 
     F1 = []
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function_kinematic(cs.vertcat(x_t, x0[12:14]), u, u_prev, track_error_weight, in_weight,
-                                        in_change_weight)  # Update cost
+        cost += cost_function_kinematic(x_t, ref_list[t:t+2], [slope_centre, intercept_centre], u, u_prev,
+                                        track_error_weight, in_weight, in_change_weight)  # Update cost
         u_prev = u
         # Update state
-        x_t = cs.vertcat(kinematic_model_rk(x_t[0:4], u, True), x_t[4:8])
+        x_t = kinematic_model_rk(x_t, u, True)
         # TODO - add the missing constraints
         # Boundary Constraint
-        e_up = (slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
-        e_low = (slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
-        e_centre = (slope_centre * x_t[0] - x_t[1] + intercept_centre) / (cs.sqrt(slope_centre ** 2 + 1))
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], u[0], u[1], e_up, e_low, e_centre)
+        e_up = cs.fabs(slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
+        e_low = cs.fabs(slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
+        e_centre = cs.fabs(slope_centre * x_t[0] - x_t[1] + intercept_centre) / (cs.sqrt(slope_centre ** 2 + 1))
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], e_up, e_low)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min, p.d_min, p.delta_min, 0, -p.track_width, -p.track_width],
-                                 [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.d_max, p.delta_max, p.track_width, 0, p.track_width])
+    C = og.constraints.Rectangle(
+        [p.x_min, p.y_min, p.phi_min, p.v_x_min, 0, 0],
+        [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.track_width, p.track_width])
+    U = og.constraints.Rectangle([p.d_min, p.delta_min], [p.d_max, p.delta_max])
 
     # Code Generation
     # -------------------------------------
     problem = og.builder.Problem(u_seq, x0, cost) \
+        .with_constraints(U) \
         .with_aug_lagrangian_constraints(F1, C)
 
     if lang == 'c':

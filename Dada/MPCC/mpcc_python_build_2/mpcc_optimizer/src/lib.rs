@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-05-27 11:18:43.971832
+// Generated at: 2020-05-30 21:10:18.761048
 //
 
 use icasadi_mpcc_optimizer;
@@ -48,13 +48,13 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 // ---Public Constants-----------------------------------------------------------------------------------
 
 /// Number of decision variables
-pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 120;
+pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
-pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 14;
+pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 90;
 
 /// Number of parameters associated with augmented Lagrangian
-pub const MPCC_OPTIMIZER_N1: usize = 540;
+pub const MPCC_OPTIMIZER_N1: usize = 240;
 
 /// Number of penalty constraints
 pub const MPCC_OPTIMIZER_N2: usize = 0;
@@ -63,24 +63,26 @@ pub const MPCC_OPTIMIZER_N2: usize = 0;
 
 // ---Parameters of the constraints----------------------------------------------------------------------
 
+const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[-0.1,-0.506,]);
+const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[1.0,0.506,]);
 
 
 
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,-10.0,-3.5,-0.1,-0.506,0.0,-4.0,-4.0,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,10.0,3.5,1.0,0.506,4.0,0.0,4.0,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-100.0,-100.0,-10.0,-3.5,0.0,0.0,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[100.0,100.0,10.0,3.5,4.0,4.0,]);
 
 
 
 
 // ---Parameters of ALM-type constraints (Set Y)---------------------------------------------------------
 /// Y_min
-const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
+const SET_Y_XMIN :Option<&[f64]> = Some(&[-1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0, -1000000000000.0]);
 
 /// Y_max
-const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
+const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0, 1000000000000.0]);
 
 
 
@@ -90,7 +92,7 @@ const SET_Y_XMAX :Option<&[f64]> = Some(&[1000000000000.0, 1000000000000.0, 1000
 /// Make constraints U
 fn make_constraints() -> impl Constraint {
 
-    let bounds = NoConstraints::new();
+    let bounds = Rectangle::new(CONSTRAINTS_XMIN, CONSTRAINTS_XMAX);
     bounds
 }
 

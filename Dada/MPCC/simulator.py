@@ -1,14 +1,22 @@
 from warnings import warn
 import numpy as np
-import math
+from collections import namedtuple
+from scipy import interpolate
 import opengen as og
 import codegenerator as cg
 import parameters as param
 
-
 # Author: Darina Abaffyová
 # Created: 13/02/2020
 # Last updated: 03/04/2020
+
+# Define all named tuples here
+KinematicState = namedtuple('KinematicState', 'x y psi v')
+DynamicState = namedtuple('DynamicState', 'x y phi v_x v_y omega')
+Control = namedtuple('Control', 'D delta')
+Intercept = namedtuple('intercept', 'centre upper lower')
+Slope = namedtuple('slope', 'centre upper lower')
+
 
 def simulate(track_x, track_y, upper, lower, simulation_steps):
     # Set all values needed for simulation
@@ -17,67 +25,39 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
     # State is a tuple which contains the four state-defining parameters
     x = track_x[i_start]
     y = track_y[i_start]
-    phi = np.arctan2(y, x)
     v_x = 1
     v_y = 1
-    omega = np.arctan2(v_y, v_x)
-    x_state_0 = (x, y, omega, v_x)  # , v_y, omega)
+    psi = np.arctan2(v_y, v_x)  # TODO - is this rate or just the angle???
+    state_0 = KinematicState(x, y, psi, v_x)
 
     # At the end of the simulation, state sequence will contain
     # all the states that the vehicle went through during the simulation
-    state_seq = [x_state_0]
+    state_seq = [state_0]
     # Input sequence will contain all the inputs calculated during the simulation, also as tuples
-    input_seq = [(np.nan, np.nan)]
-    state = x_state_0
+    first_control_seq = [(np.nan, np.nan)]
+    state = state_0
 
     # Here the first reference point is calculated:
     # ---------------------------------------------
     # dist_ahead is the distance that the vehicle will travel if it keeps
     # the same (tangential) velocity for the next cg.N time steps, with
     # each time step being cg.Ts second long
-    dist_ahead = x_state_0[3] * param.N * param.Ts
+    dist_ahead = state_0.v * param.N * param.Ts
     # i_nearest is the index of the nearest point on the reference line
-    i_nearest, dummy = get_nearest_point((x_state_0[0], x_state_0[1]), track_x, track_y, param.track_width, 300, 0)
+    i_nearest, dummy = get_nearest_point((state_0.x, state_0.y), track_x, track_y, 300, 0)
     i_ahead, dummy = move_along_track(track_x, track_y, dist_ahead, i_nearest)
-    (x, y) = [track_x[i_ahead], track_y[i_ahead]]
-    phi = np.arctan2(y, x)
-    v_x = 1
-    v_y = 1
-    omega = 0  # np.arctan2(v_y, v_x)
-    state_ref = (x, y, omega, v_x)  # , v_y, omega)  # reference state tuple
-    reference_seq = [state_ref]
+    ref_state = get_reference(i_nearest, i_ahead, track_x, track_y)
+    ref_seq = [ref_state]
 
     cost_seq = [0]
 
     # The nearest sequence will contain tuples (x, y) of the positions
     # on the reference line which correspond to the nearest point found
     # for each state in the state sequence
-    x_nearest = track_x[i_nearest]
-    x_nearest_next = track_x[len(track_x) - 1 if i_nearest + 1 >= len(track_x) else i_nearest + 1]
-    # Centre
-    y_nearest = track_y[i_nearest]
-    y_nearest_next = track_y[len(track_y) - 1 if i_nearest + 1 >= len(track_y) else i_nearest + 1]
-    slope = (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
-    # y = slope * x + y_intercept
-    intercept = y_nearest - slope * x_nearest
+    intercept, slope = get_boundaries(i_ahead, i_nearest, lower, track_x, track_y, upper)
+    bound_seq = [(slope, intercept, i_nearest, i_ahead)]
 
-    # Upper boundary
-    y_up = upper[i_nearest]
-    y_up_next = upper[len(upper) - 1 if i_nearest + 1 >= len(upper) else i_nearest + 1]
-    slope_up = (y_up_next - y_up) / (x_nearest_next - x_nearest)
-    # y = slope * x + y_intercept
-    intercept_up = y_up - slope_up * x_nearest
-
-    # Lower boundary
-    y_low = lower[i_nearest]
-    y_low_next = lower[len(lower) - 1 if i_nearest + 1 >= len(lower) else i_nearest + 1]
-    slope_low = (y_low_next - y_low) / (x_nearest_next - x_nearest)
-    # y = slope * x + y_intercept
-    intercept_low = y_low - slope_low * x_nearest
-
-    bound_seq = [(slope_up, intercept_up, slope_low, intercept_low, i_nearest, i_ahead)]
-
-    control_inputs = [0] * param.N * param.nu  # warm_start(state, state_ref, [slope, x_nearest, y_nearest])
+    control_inputs = [0] * param.N * param.nu  # warm_start(state, ref_state, [slope, x_nearest, y_nearest])
     control_inputs_seq = []
 
     # Create a TCP connection manager
@@ -87,8 +67,8 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
 
     # Run simulation
     for k in range(simulation_steps):
-        solver_status = mng.call(np.concatenate((state, state_ref, [slope_up, intercept_up, slope_low, intercept_low,
-                                                                    slope, intercept])), control_inputs)
+        solver_status = mng.call(np.concatenate((state, slope, intercept, np.reshape(ref_state, 2 * param.N))),
+                                 control_inputs)
 
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
@@ -98,55 +78,28 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
                   + '. Ref index = ' + str(i_ahead) + '. Nearest index = ' + str(i_nearest))
 
             control_inputs = solver_status['solution']
-            first_control_input = (control_inputs[0], control_inputs[1])
+            first_control_input = Control(control_inputs[0], control_inputs[1])
             state_next = cg.kinematic_model_rk(state, first_control_input, False)
 
-            end_of_track_reached, i_nearest, state_ref, i_ahead, x, y = update_reference(first_control_input,
-                                                                                         i_nearest, state_next,
-                                                                                         state_ref, track_x,
-                                                                                         track_y)
+            end_of_track_reached, i_nearest, ref_state, i_ahead = update_reference(first_control_input, i_nearest,
+                                                                                   state_next, ref_state, track_x,
+                                                                                   track_y)
             if end_of_track_reached: break
 
             # Update all variables needed for the next iteration and save values in the sequences to be plotted
-            # i_nearest = i_nearest + round((i_ahead - i_nearest)/2)
-            x_nearest = track_x[i_nearest]
-            x_nearest_next = track_x[len(track_x) - 1 if i_nearest + 1 >= len(track_x) else i_nearest + 1]
-            # Centre
-            y_nearest = track_y[i_nearest]
-            y_nearest_next = track_y[len(track_y) - 1 if i_nearest + 1 >= len(track_y) else i_nearest + 1]
-            slope = 0 if math.isnan((y_nearest_next - y_nearest) / (x_nearest_next - x_nearest))\
-                else (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
-            # y = slope * x + y_intercept
-            intercept = y_nearest - slope * x_nearest
+            intercept, slope = get_boundaries(i_ahead, i_nearest, lower, track_x, track_y, upper)
 
-            x_nearest_next = track_x[i_ahead]
-
-            # Upper boundary
-            y_up = upper[i_nearest]
-            y_up_next = upper[i_ahead]  # upper[len(upper) - 1 if i_nearest + 1 >= len(upper) else i_nearest + 1]
-            slope_up = 0 if math.isnan((y_up_next - y_up) / (x_nearest_next - x_nearest))\
-                else (y_up_next - y_up) / (x_nearest_next - x_nearest)
-            # y = slope * x + y_intercept
-            intercept_up = y_up - slope_up * x_nearest
-
-            # Lower boundary
-            y_low = lower[i_nearest]
-            y_low_next = lower[i_ahead]  # lower[len(lower) - 1 if i_nearest + 1 >= len(lower) else i_nearest + 1]
-            slope_low = 0 if math.isnan((y_low_next - y_low) / (x_nearest_next - x_nearest))\
-                else (y_low_next - y_low) / (x_nearest_next - x_nearest)
-            # y = slope * x + y_intercept
-            intercept_low = y_low - slope_low * x_nearest
-
-            state_ref = (x, y, state_ref[2], state_ref[3])
-            state = tuple(state_next[:4])
-            print("STATE = " + str(state))
-            input_seq.append(first_control_input)
-            print("CONTROL = " + str(first_control_input))
+            # ref_state = get_reference(i_nearest, i_ahead, track_x, track_y)
+            state = KinematicState(state_next[0], state_next[1], state_next[2], state_next[3])
+            first_control_seq.append(first_control_input)
             state_seq.append(state)
-            reference_seq.append(state_ref)
-            bound_seq.append((slope_up, intercept_up, slope_low, intercept_low, i_nearest, i_ahead))
+            ref_seq.append(ref_state)
+            bound_seq.append((slope, intercept, i_nearest, i_ahead))
             cost_seq.append(solver_status['cost'])
             control_inputs_seq.append(control_inputs)
+
+            print("STATE = " + str(state))
+            print("CONTROL = " + str(first_control_input))
 
         except AttributeError:
             print('Failed after ' + str(len(state_seq)) + ' simulation steps\n'
@@ -154,7 +107,64 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
             break
 
     mng.kill()
-    return state_seq, reference_seq, bound_seq, cost_seq, input_seq, control_inputs_seq, len(state_seq)
+    return state_seq, ref_seq, bound_seq, cost_seq, first_control_seq, control_inputs_seq, len(state_seq)
+
+
+def get_boundaries(i_ahead, i_nearest, lower, track_x, track_y, upper):
+    i_next = i_nearest + 1
+
+    # i_nearest = i_nearest + round((i_ahead - i_nearest)/2)
+    x_nearest = track_x[i_nearest]
+    x_nearest_next = track_x[len(track_x) - 1 if i_nearest + 1 >= len(track_x) else i_nearest + 1]
+
+    # Centre
+    y_nearest = track_y[i_nearest]
+    y_nearest_next = track_y[len(track_y) - 1 if i_nearest + 1 >= len(track_y) else i_nearest + 1]
+    slope = (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
+    # 0 if math.isnan((y_nearest_next - y_nearest) / (x_nearest_next - x_nearest))\
+    #     else (y_nearest_next - y_nearest) / (x_nearest_next - x_nearest)
+    # y = slope * x + y_intercept
+    intercept = y_nearest - slope * x_nearest
+    x_nearest_next = track_x[i_next]
+
+    # Upper boundary
+    y_up = upper[i_nearest]
+    y_up_next = upper[i_next]  # upper[len(upper) - 1 if i_nearest + 1 >= len(upper) else i_nearest + 1]
+    slope_up = (y_up_next - y_up) / (x_nearest_next - x_nearest)
+    # 0 if math.isnan((y_up_next - y_up) / (x_nearest_next - x_nearest))\
+    # else (y_up_next - y_up) / (x_nearest_next - x_nearest)
+    # y = slope * x + y_intercept
+    intercept_up = y_up - slope_up * x_nearest
+
+    # Lower boundary
+    y_low = lower[i_nearest]
+    y_low_next = lower[i_next]  # lower[len(lower) - 1 if i_nearest + 1 >= len(lower) else i_nearest + 1]
+    slope_low = (y_low_next - y_low) / (x_nearest_next - x_nearest)
+    # 0 if math.isnan((y_low_next - y_low) / (x_nearest_next - x_nearest))\
+    # else (y_low_next - y_low) / (x_nearest_next - x_nearest)
+    # y = slope * x + y_intercept
+    intercept_low = y_low - slope_low * x_nearest
+
+    intercepts = Intercept(intercept, intercept_up, intercept_low)
+    slopes = Slope(slope, slope_up, slope_low)
+
+    return intercepts, slopes
+
+
+def get_reference(i_nearest, i_ahead, track_x, track_y):
+    x = np.array([track_x[i_nearest], track_x[round(i_nearest + (i_ahead - i_nearest)/4)],
+                  track_x[round(i_nearest + (i_ahead - i_nearest)/2)], track_x[i_ahead]])
+    y = np.array([track_y[i_nearest], track_y[round(i_nearest + (i_ahead - i_nearest)/4)],
+                  track_y[round(i_nearest + (i_ahead - i_nearest)/2)], track_y[i_ahead]])
+
+    # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
+    # is needed in order to force the spline fit to pass through all the input points.
+    tck, u = interpolate.splprep([x, y], s=0, per=False)
+
+    # evaluate the spline fits for 1000 evenly spaced distance values
+    x, y = interpolate.splev(np.linspace(0, 1, param.N), tck)
+
+    return list(zip(x, y))
 
 
 def warm_start(state, state_ref, bound):
@@ -180,24 +190,24 @@ def warm_start(state, state_ref, bound):
 
 def update_reference(first_control_input, i_nearest, state_next, state_ref, track_x, track_y):
     # Find the index of the reference point (depending on the current velocity), as above
-    v = state_next[3]  # np.sqrt(state_next[3] ** 2 + state_next[4] ** 2)
+    v = state_next[3]
     dist_ahead = v * (param.N * param.Ts)  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
     print("DIST AHEAD = " + str(dist_ahead) + ", v = " + str(v))
-    [i_nearest, nearest_dist] = get_nearest_point([state_next[0], state_next[1]], track_x, track_y, param.track_width,
-                                                  300, i_nearest)
-    [i_ahead, end_of_track_reached] = move_along_track(track_x, track_y, dist_ahead, i_nearest)
-    # Find the angle in the direction of the previous step - should this be from current position instead?
-    [x, y] = [track_x[i_ahead], track_y[i_ahead]]
+    i_nearest, nearest_dist = get_nearest_point([state_next[0], state_next[1]], track_x, track_y, 300, i_nearest)
+    i_ahead, end_of_track_reached = move_along_track(track_x, track_y, dist_ahead, i_nearest)
+
     # The next reference state, taking into account all the previous calculations, and using the vehicle
     # model with regard to the obtained control inputs
-    state_ref = cg.kinematic_model_rk(state_ref, first_control_input, False)
+    state_ref = get_reference(i_nearest, i_ahead, track_x, track_y)
+    # cg.kinematic_model_rk(state_ref, first_control_input, False)
 
-    return end_of_track_reached, i_nearest, state_ref, i_ahead, x, y
+    return end_of_track_reached, i_nearest, state_ref, i_ahead
 
 
-def get_nearest_point(current_pos, track_x, track_y, track_width, search_region, prev_closest):
+def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest):
     # Inspired here: https://github.com/alexliniger/MPCC/blob/master/Matlab/findTheta.m
     # Find the index of the point on the centreline which is the closest to the current position
+    track_width = param.track_width
 
     # Investigate at search region
     back = int(search_region * 0.5)  # 50%

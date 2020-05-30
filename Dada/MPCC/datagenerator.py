@@ -55,35 +55,68 @@ def generate_track(num_steps):
 
 def generate_racing_track(num_steps):
     x = np.array([0, 2, 4, 8, 14, 19, 25])
-    y = np.array([0, 1, 5, 10, 2, 13, 5])
-    # upper = np.array([1.5, 2.5, 6.5, 11.5, 3.5, 14.5, 6.5])
-    # lower = np.array([-1.5, -0.5, 3.5, 8.5, 0.5, 11.5, 3.5])
+    y = np.array([0, 1, 5, 7, 4, 5, 5])
+    # y = np.array([0, 1, 5, 10, 2, 13, 5])
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
     tck, u = interpolate.splprep([x, y], s=0, per=False)
-    # tcku, u = interpolate.splprep([x, upper], s=0, per=False)
-    # tckl, u = interpolate.splprep([x, lower], s=0, per=False)
 
     # evaluate the spline fits for 1000 evenly spaced distance values
     xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
-    # xu, yu = interpolate.splev(np.linspace(0, 1, num_steps), tcku)
-    # xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
 
     yu = []
     yl = []
     for i in range(len(xi)):
-        yu.append(yi[i] + 2)
-        yl.append(yi[i] - 2)
+        yu.append(yi[i] + param.track_width/2)
+        yl.append(yi[i] - param.track_width/2)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
     # ax.plot(xi, yi, 'or')
-    # ax.plot(xi, yu, '--g')
-    # ax.plot(xi, yl, '--g')
+    # ax.plot(xi, yu, 'og')
+    # ax.plot(xi, yl, 'og')
     # plt.show()
 
     return [xi, yi, yu, yl]
+
+
+def offset(coordinates, distance):
+    # coordinates = iter(coordinates)
+    x1, y1 = coordinates[0]
+    z = distance
+    points = []
+
+    for x2, y2 in coordinates:
+        # tangential slope approximation
+        try:
+            slope = (y2 - y1) / (x2 - x1)
+            # perpendicular slope
+            pslope = - 1 / slope  # (might be 1/slope depending on direction of travel)
+        except ZeroDivisionError:
+            continue
+        mid_x = (x1 + x2) / 2
+        mid_y = (y1 + y2) / 2
+
+        sign = ((pslope > 0) == (x1 > x2)) * 2 - 1
+
+        # if z is the distance to your parallel curve,
+        # then your delta-x and delta-y calculations are:
+        #   z**2 = x**2 + y**2
+        #   y = pslope * x
+        #   z**2 = x**2 + (pslope * x)**2
+        #   z**2 = x**2 + pslope**2 * x**2
+        #   z**2 = (1 + pslope**2) * x**2
+        #   z**2 / (1 + pslope**2) = x**2
+        #   z / (1 + pslope**2)**0.5 = x
+
+        delta_x = sign * z / ((1 + pslope ** 2) ** 0.5)
+        delta_y = pslope * delta_x
+
+        points.append((mid_x + delta_x, mid_y + delta_y))
+        x1, y1 = x2, y2
+
+    return points
 
 
 def generate_circular_track(num_steps):
@@ -124,8 +157,8 @@ def generate_circular_track(num_steps):
 
 
 def generate_linear_track(num_steps):
-    y = np.arange(0, 25, 25 / num_steps)
     x = np.arange(0, 20, 20 / num_steps)
+    y = np.arange(0, 25, 25 / num_steps)
 
     upper = np.arange(1.5, 26.5, 25 / num_steps)
     lower = np.arange(-1.5, 23.5, 25 / num_steps)

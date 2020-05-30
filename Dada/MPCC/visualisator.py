@@ -150,17 +150,15 @@ def plot_track_with_cost_values(track_x, track_y, state_seq, cost_seq, nearest_s
     plt.show()
 
 
-def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, nearest_seq, cost_seq, control_seq):
+def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, cost_seq, control_seq):
     state_x = [x for x, *_ in state_seq]
     state_y = [y for x, y, *_ in state_seq]
-    ref_x = [x for x, *_ in ref_seq]
-    ref_y = [y for x, y, *_ in ref_seq]
-    slope_up = [s1 for s1, i1, s2, i2, index1, index2 in nearest_seq]
-    intercept_up = [i1 for s1, i1, s2, i2, index1, index2 in nearest_seq]
-    slope_low = [s2 for s1, i1, s2, i2, index1, index2 in nearest_seq]
-    intercept_low = [i2 for s1, i1, s2, i2, index1, index2 in nearest_seq]
-    index1 = [index1 for s1, i1, s2, i2, index1, index2 in nearest_seq]
-    index2 = [index2 for s1, i1, s2, i2, index1, index2 in nearest_seq]
+    ref_x = [x for x, *_ in ref_seq[0]]
+    ref_y = [y for x, y in ref_seq[0]]
+    slopes = [s for s, *_ in bound_seq]
+    intercepts = [i for s, i, *_ in bound_seq]
+    index1 = [index1 for s, i, index1, *_ in bound_seq]
+    index2 = [index2 for s, i, index1, index2 in bound_seq]
 
     plt.show()
     ax = plt.gca()
@@ -170,16 +168,15 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, nearest_seq
     ax.plot(track_x, upper, '--g', label="Boundaries")
     ax.plot(track_x, lower, '--g')
     predicted_line, = ax.plot(track_x[0], track_y[0], 'b.', label="Predicted track")
-    ref_point, = ax.plot(ref_x[0], ref_y[0], 'rx', label="Reference point", markersize=10)
+    ref_line, = ax.plot(ref_x, ref_y, '--r', label="Reference point")
     bound_up, = ax.plot(track_x[index1[0]:index2[0]],
-                        [slope_up[0] * x + intercept_up[0] for x in track_x[index1[0]:index2[0]]],
+                        [slopes[0].upper * x + intercepts[0].upper for x in track_x[index1[0]:index2[0]]],
                         'm--', label="Upper tangent line", markersize=10)
-    bound_low, = ax.plot(track_x[index1[0]:index2[0]], [slope_low[0] * x + intercept_low[0]
+    bound_low, = ax.plot(track_x[index1[0]:index2[0]], [slopes[0].lower * x + intercepts[0].lower
                                                         for x in track_x[index1[0]:index2[0]]],
                          'c--', label="Lower tangent line", markersize=10)
-    txt = plt.text(5, 13, '', color="black", fontsize=12)
+    txt = plt.text(5, 0, '', color="black", fontsize=12)
 
-    plt.axis('equal')
     plt.grid()
     plt.ylabel('Y position')
     plt.xlabel('X position')
@@ -187,7 +184,7 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, nearest_seq
     plt.legend(loc='best', borderaxespad=0.)
 
     plt.pause(1e-17)
-    time.sleep(1)
+    time.sleep(3)
 
     for i in range(len(control_seq)):
         state = state_seq[i]
@@ -203,17 +200,23 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, nearest_seq
         achieved_line.set_xdata(state_x[0:i])
         achieved_line.set_ydata(state_y[0:i])
         bound_up.set_xdata(track_x[index1[i]:index2[i]])
-        bound_up.set_ydata([slope_up[i] * x + intercept_up[i] for x in track_x[index1[i]:index2[i]]])
+        bound_up.set_ydata([slopes[i].upper * x + intercepts[i].upper for x in track_x[index1[i]:index2[i]]])
         bound_low.set_xdata(track_x[index1[i]:index2[i]])
-        bound_low.set_ydata([slope_low[i] * x + intercept_low[i] for x in track_x[index1[i]:index2[i]]])
-        ref_point.set_xdata(ref_x[i])
-        ref_point.set_ydata(ref_y[i])
+        bound_low.set_ydata([slopes[i].lower * x + intercepts[i].lower for x in track_x[index1[i]:index2[i]]])
+        ref_line.set_xdata([x for x, *_ in ref_seq[i]])
+        ref_line.set_ydata([y for x, y in ref_seq[i]])
         predicted_line.set_xdata(x)
         predicted_line.set_ydata(y)
-        dist1 = round(np.sqrt((state_x[i] - ref_x[i]) ** 2 + (state_y[i] - ref_y[i]) ** 2), 3)
-        # dist2 = round((abs((slope[i] * state_x[i] - state_y[i] + intercept[i])) / (np.sqrt(slope[i] ** 2 + 1))), 3)
-        txt.set_text('Cost = ' + str(round(cost_seq[i], 3)) + '\nReference distance = ' + str(dist1) +
-                     '\n[x, y, omega, v] = ' + str(state_seq[i]))  # '\nLine distance = ' + str(dist2) +
+        # dist_ref = round(np.sqrt((state_x[i] - ref_x[i]) ** 2 + (state_y[i] - ref_y[i]) ** 2), 3)
+        dist_centre = round((abs((slopes[i].centre * state_x[i] - state_y[i] + intercepts[i].centre)) /
+                       (np.sqrt(slopes[i].centre ** 2 + 1))), 3)
+        dist_up = round((abs((slopes[i].upper * state_x[i] - state_y[i] + intercepts[i].upper)) /
+                       (np.sqrt(slopes[i].upper ** 2 + 1))), 3)
+        dist_low = round((abs((slopes[i].lower * state_x[i] - state_y[i] + intercepts[i].lower)) /
+                       (np.sqrt(slopes[i].lower ** 2 + 1))), 3)
+        txt.set_text('Cost = ' + str(round(cost_seq[i], 3)) +  # '\nReference distance = ' + str(dist_ref) +
+                     '\nCentre line distance = ' + str(dist_centre) + '\nUpper bound distance = ' + str(dist_up) +
+                     '\nLower bound distance = ' + str(dist_low) + '\n' + str(state_seq[i]))
         plt.draw()
         plt.pause(1e-17)
         time.sleep(0.005)

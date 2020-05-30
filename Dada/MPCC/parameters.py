@@ -74,7 +74,7 @@ track_width = 4
 
 # Optimizer parameters
 # -------------------------------------
-N = 60  # Prediction Horizon (in time steps)
+N = 40  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
-nx = 6  # Number of Parameters (state)
+nx = 4  # Number of Parameters (state)
 Ts = 0.05  # Sampling time (length of one time step in seconds)
