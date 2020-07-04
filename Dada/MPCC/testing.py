@@ -3,13 +3,14 @@ import time
 import datagenerator as gd
 import simulator as sim
 import visualisator as vis
+import codegenerator as cg
 
 # Author: Darina Abaffyová
 # Created: 24/02/2020
 # Last updated: 30/05/2020
 
-track_points = 5000
-sim_steps = 200
+track_points = 3000
+sim_steps = 250
 
 # Weights in cost function
 track_error_weight = [0, 1, 0]  # contouring, tracking, velocity

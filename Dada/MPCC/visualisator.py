@@ -158,8 +158,8 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
     ref_y = [y for x, y in ref_seq[0]]
     slopes = [s for s, *_ in bound_seq]
     intercepts = [i for s, i, *_ in bound_seq]
-    index1 = [index1 for s, i, index1, *_ in bound_seq]
-    index2 = [index2 for s, i, index1, index2 in bound_seq]
+    index1 = [index for s, i, index in bound_seq]
+    index2 = [index + 75 for s, i, index in bound_seq]
 
     plt.show()
     ax = plt.gca()
@@ -170,19 +170,24 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
     ax.plot(track_x, lower, '--g')
     predicted_line, = ax.plot(track_x[0], track_y[0], 'b.', label="Predicted track")
     ref_line, = ax.plot(ref_x, ref_y, 'c.', label="Reference line")
-    bound_up, = ax.plot(track_x[index1[0]:index2[0]],
-                        [slopes[0].upper * x + intercepts[0].upper for x in track_x[index1[0]:index2[0]]],
-                        'm--', label="Boundary tangents", markersize=10)
-    bound_low, = ax.plot(track_x[index1[0]:index2[0]], [slopes[0].lower * x + intercepts[0].lower
-                                                        for x in track_x[index1[0]:index2[0]]],
-                         'm--', markersize=10)
-    txt = plt.text(5, 0, '', color="black", fontsize=12)
+
+    bound_up = [0] * param.N
+    bound_low = [0] * param.N
+    for j in range(param.N):
+        bound_up[j], = ax.plot(track_x[index1[0][j]:index2[0][j]],
+                               [slopes[0][j].upper * x + intercepts[0][j].upper for x in
+                                track_x[index1[0][j]:index2[0][j]]],
+                               'm--', label="Boundary tangents", markersize=10)
+        bound_low[j], = ax.plot(track_x[index1[0][j]:index2[0][j]], [slopes[0][j].lower * x + intercepts[0][j].lower
+                                                                     for x in track_x[index1[0][j]:index2[0][j]]],
+                                'm--', markersize=10)
+    # txt = plt.text(5, 0, '', color="black", fontsize=12)
 
     plt.grid()
     plt.ylabel('Y position')
     plt.xlabel('X position')
     plt.title('Track')
-    plt.legend(loc='best', borderaxespad=0.)
+    # plt.legend(loc='best', borderaxespad=0.)
 
     plt.pause(1e-17)
     time.sleep(3)
@@ -200,23 +205,28 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
 
         achieved_line.set_xdata(state_x[0:i])
         achieved_line.set_ydata(state_y[0:i])
-        bound_up.set_xdata(track_x[index1[i]:index2[i]])
-        bound_up.set_ydata([slopes[i].upper * x + intercepts[i].upper for x in track_x[index1[i]:index2[i]]])
-        bound_low.set_xdata(track_x[index1[i]:index2[i]])
-        bound_low.set_ydata([slopes[i].lower * x + intercepts[i].lower for x in track_x[index1[i]:index2[i]]])
+
+        for j in range(param.N):
+            bound_up[j].set_xdata(track_x[index1[i][j]:index2[i][j]])
+            bound_up[j].set_ydata(
+                [slopes[i][j].upper * x + intercepts[i][j].upper for x in track_x[index1[i][j]:index2[i][j]]])
+            bound_low[j].set_xdata(track_x[index1[i][j]:index2[i][j]])
+            bound_low[j].set_ydata(
+                [slopes[i][j].lower * x + intercepts[i][j].lower for x in track_x[index1[i][j]:index2[i][j]]])
+
         ref_line.set_xdata([x for x, *_ in ref_seq[i]])
         ref_line.set_ydata([y for x, y in ref_seq[i]])
         predicted_line.set_xdata(x)
         predicted_line.set_ydata(y)
-        dist_centre = round((abs((slopes[i].centre * state_x[i] - state_y[i] + intercepts[i].centre)) /
-                             (np.sqrt(slopes[i].centre ** 2 + 1))), 3)
-        dist_up = round((abs((slopes[i].upper * state_x[i] - state_y[i] + intercepts[i].upper)) /
-                         (np.sqrt(slopes[i].upper ** 2 + 1))), 3)
-        dist_low = round((abs((slopes[i].lower * state_x[i] - state_y[i] + intercepts[i].lower)) /
-                          (np.sqrt(slopes[i].lower ** 2 + 1))), 3)
-        txt.set_text('Cost = ' + str(round(cost_seq[i], 3)) + '\nCentre line distance = ' + str(dist_centre)
-                     + '\nUpper bound distance = ' + str(dist_up) + '\nLower bound distance = '
-                     + str(dist_low) + '\n' + str(state_seq[i]))
+        # dist_centre = round((abs((slopes[i].centre * state_x[i] - state_y[i] + intercepts[i].centre)) /
+        #                      (np.sqrt(slopes[i].centre ** 2 + 1))), 3)
+        # dist_up = round((abs((slopes[i].upper * state_x[i] - state_y[i] + intercepts[i].upper)) /
+        #                  (np.sqrt(slopes[i].upper ** 2 + 1))), 3)
+        # dist_low = round((abs((slopes[i].lower * state_x[i] - state_y[i] + intercepts[i].lower)) /
+        #                   (np.sqrt(slopes[i].lower ** 2 + 1))), 3)
+        # txt.set_text('Cost = ' + str(round(cost_seq[i], 3)) + '\nCentre line distance = ' + str(dist_centre)
+        #              + '\nUpper bound distance = ' + str(dist_up) + '\nLower bound distance = '
+        #              + str(dist_low) + '\n' + str(state_seq[i]))
         plt.draw()
         plt.pause(1e-17)
         time.sleep(0.005)

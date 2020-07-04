@@ -183,7 +183,7 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     return cf
 
 
-def cost_function_kinematic(state, ref, tan, control, control_prev, track_error_weight, in_weight, in_change_weight):
+def cost_function_kinematic(state, ref, control, control_prev, track_error_weight, in_weight, in_change_weight):
     # TODO - add remaining costs
     cf = 0
 
@@ -192,15 +192,15 @@ def cost_function_kinematic(state, ref, tan, control, control_prev, track_error_
     v = state[3]
     x_ref = ref[0]
     y_ref = ref[1]
-    slope = tan[0]
-    intercept = tan[1]
+    # slope = tan[0]
+    # intercept = tan[1]
 
     # Line: ax + by + c = 0 -> slope * x - y + intercept = 0
     # Point: (x1, y1) -> (x, y)
     # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b))
 
     # Contouring Error = distance from reference line
-    cf += track_error_weight[0] * (cs.fabs((slope * x - y + intercept)) / (cs.sqrt(slope ** 2 + 1)))
+    # cf += track_error_weight[0] * (cs.fabs((slope * x - y + intercept)) / (cs.sqrt(slope ** 2 + 1)))
 
     # Tracking Error = distance from reference point
     cf += track_error_weight[1] * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
@@ -288,44 +288,41 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
 # ----------------------------------------------------------------------------------------------------------------------
 def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lang):
     u_seq = cs.MX.sym("u", p.nu * p.N)  # Sequence of all inputs
-    # Initial state (=4) + slopes (=3) + intercepts (=3) + Prediction horizon * Reference point (=2 * N)
-    x0 = cs.MX.sym("x0_xref", p.nx + 6 + 2 * p.N)
+    # Initial state(=4) + Prediction horizon * (slopes(=2) + intercepts(=2)) + Prediction horizon * Reference point(=2)
+    x0 = cs.MX.sym("x0_xref", p.nx + p.N * 4 + p.N * 2)
 
     cost = 0
     u_prev = [0, 0]
-    x_t = x0[0:4]
-    slope_centre = x0[4]
-    slope_up = x0[5]
-    slope_low = x0[6]
-    intercept_centre = x0[7]
-    intercept_up = x0[8]
-    intercept_low = x0[9]
-    ref_list = x0[10:x0.shape[0]]
-
-    tracking_weight = track_error_weight[1]
+    x_t = x0[0:p.nx]
+    slope_list = x0[p.nx:p.nx+p.N*2]
+    intercept_list = x0[p.nx+p.N*2:p.nx+p.N*4]
+    ref_list = x0[p.nx+p.N*4:x0.shape[0]]
 
     F1 = []
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
         # Update cost
-        cost += cost_function_kinematic(x_t, ref_list[t:t + 2], [slope_centre, intercept_centre], u, u_prev,
-                                        track_error_weight, in_weight, in_change_weight)
-        # The cost keeps increasing slightly
-        track_error_weight[1] = tracking_weight * (1 + t/p.N)
+        cost += cost_function_kinematic(x_t, ref_list[t:t + 2], u, u_prev, track_error_weight, in_weight,
+                                        in_change_weight)
         u_prev = u
         # Update state
         x_t = kinematic_model_rk(x_t, u, True)
         # TODO - add the missing constraints
         # Boundary Constraint
-        e_up = cs.fabs(slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
-        e_low = cs.fabs(slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
-        e_centre = cs.fabs(slope_centre * x_t[0] - x_t[1] + intercept_centre) / (cs.sqrt(slope_centre ** 2 + 1))
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3])  # , e_up, e_low)
+        slope_up = slope_list[t]
+        slope_low = slope_list[t+1]
+        intercept_up = intercept_list[t]
+        intercept_low = intercept_list[t+1]
+        d_up = cs.fabs(slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
+        d_low = cs.fabs(slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
+        # F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], d_up, d_low)
+        F1 = cs.vertcat(F1, d_up, d_low)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min],  # , 0, 0],
-                                 [p.x_max, p.y_max, p.phi_max, p.v_x_max])  # , p.track_width, p.track_width])
+    # C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min, 0, 0],
+    #                              [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.track_width, p.track_width])
+    C = og.constraints.Rectangle([0], [p.track_width])
     U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
 
     # Code Generation
