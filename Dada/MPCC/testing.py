@@ -1,18 +1,18 @@
 import time
-import codegenerator as cg
+
 import datagenerator as gd
 import simulator as sim
 import visualisator as vis
 
 # Author: Darina Abaffyová
 # Created: 24/02/2020
-# Last updated: 03/04/2020
+# Last updated: 30/05/2020
 
-track_points = 1000
+track_points = 5000
 sim_steps = 200
 
 # Weights in cost function
-track_error_weight = [0.1, 0.5, 0.06]  # contouring, tracking, velocity
+track_error_weight = [0, 1, 0]  # contouring, tracking, velocity
 in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
 in_change_weight = [0.01, 0.001]  # change of duty cycle, change of steering angle
 

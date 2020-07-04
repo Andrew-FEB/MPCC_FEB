@@ -1,14 +1,15 @@
-import matplotlib
+import time
+
 import matplotlib.pyplot as plt
 import numpy as np
-import time
-import parameters as param
+
 import codegenerator as cg
+import parameters as param
 
 
 # Author: Darina Abaffyová
 # Created: 16/05/2020
-# Last updated: 16/05/2020
+# Last updated: 30/05/2020
 
 def plot_cost(cost_seq):
     t = np.arange(0, param.Ts * len(cost_seq), param.Ts)
@@ -21,7 +22,7 @@ def plot_cost(cost_seq):
 
 
 def plot_simulation(simulation_steps, input_seq, state_seq, ref_seq):
-    t = np.arange(0, param.Ts * (simulation_steps - param.Ts), param.Ts)  # - cg.Ts
+    t = np.arange(0, param.Ts * (simulation_steps - param.Ts), param.Ts)
 
     plt.plot(t, [D for D, delta in input_seq], '-', label="Throttle")
     plt.plot(t, [delta for D, delta in input_seq], '-', label="Front steering angle")
@@ -168,13 +169,13 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
     ax.plot(track_x, upper, '--g', label="Boundaries")
     ax.plot(track_x, lower, '--g')
     predicted_line, = ax.plot(track_x[0], track_y[0], 'b.', label="Predicted track")
-    ref_line, = ax.plot(ref_x, ref_y, '--r', label="Reference point")
+    ref_line, = ax.plot(ref_x, ref_y, 'c.', label="Reference line")
     bound_up, = ax.plot(track_x[index1[0]:index2[0]],
                         [slopes[0].upper * x + intercepts[0].upper for x in track_x[index1[0]:index2[0]]],
-                        'm--', label="Upper tangent line", markersize=10)
+                        'm--', label="Boundary tangents", markersize=10)
     bound_low, = ax.plot(track_x[index1[0]:index2[0]], [slopes[0].lower * x + intercepts[0].lower
                                                         for x in track_x[index1[0]:index2[0]]],
-                         'c--', label="Lower tangent line", markersize=10)
+                         'm--', markersize=10)
     txt = plt.text(5, 0, '', color="black", fontsize=12)
 
     plt.grid()
@@ -190,7 +191,7 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
         state = state_seq[i]
         x = [state[0]]
         y = [state[1]]
-        # Calculate positions obtain with these control inputs
+        # Calculate positions obtained with these control inputs
         for j in range(0, len(control_seq[i]), param.nu):
             next_state = cg.kinematic_model_rk(state, [control_seq[i][j], control_seq[i][j + 1]], False)
             x.append(next_state[0])
@@ -207,16 +208,15 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
         ref_line.set_ydata([y for x, y in ref_seq[i]])
         predicted_line.set_xdata(x)
         predicted_line.set_ydata(y)
-        # dist_ref = round(np.sqrt((state_x[i] - ref_x[i]) ** 2 + (state_y[i] - ref_y[i]) ** 2), 3)
         dist_centre = round((abs((slopes[i].centre * state_x[i] - state_y[i] + intercepts[i].centre)) /
-                       (np.sqrt(slopes[i].centre ** 2 + 1))), 3)
+                             (np.sqrt(slopes[i].centre ** 2 + 1))), 3)
         dist_up = round((abs((slopes[i].upper * state_x[i] - state_y[i] + intercepts[i].upper)) /
-                       (np.sqrt(slopes[i].upper ** 2 + 1))), 3)
+                         (np.sqrt(slopes[i].upper ** 2 + 1))), 3)
         dist_low = round((abs((slopes[i].lower * state_x[i] - state_y[i] + intercepts[i].lower)) /
-                       (np.sqrt(slopes[i].lower ** 2 + 1))), 3)
-        txt.set_text('Cost = ' + str(round(cost_seq[i], 3)) +  # '\nReference distance = ' + str(dist_ref) +
-                     '\nCentre line distance = ' + str(dist_centre) + '\nUpper bound distance = ' + str(dist_up) +
-                     '\nLower bound distance = ' + str(dist_low) + '\n' + str(state_seq[i]))
+                          (np.sqrt(slopes[i].lower ** 2 + 1))), 3)
+        txt.set_text('Cost = ' + str(round(cost_seq[i], 3)) + '\nCentre line distance = ' + str(dist_centre)
+                     + '\nUpper bound distance = ' + str(dist_up) + '\nLower bound distance = '
+                     + str(dist_low) + '\n' + str(state_seq[i]))
         plt.draw()
         plt.pause(1e-17)
         time.sleep(0.005)

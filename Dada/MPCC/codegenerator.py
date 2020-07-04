@@ -1,12 +1,15 @@
+import sys
+
 import casadi.casadi as cs
-import opengen as og
 import numpy as np
+import opengen as og
+
 import parameters as p
 
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 03/04/2020
+# Last updated: 30/05/2020
 
 # Model
 # -------------------------------------
@@ -138,7 +141,7 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
     # v_y = normalise(state[4], p.v_y_min, p.v_y_max)
     # x_ref = normalise(state[6], p.x_min, p.x_max)
     # y_ref = normalise(state[7], p.y_min, p.y_max)
-    # slope = normalise(state[12], p.x_min, p.x_max)  # NOT SURE ABOUT THIS ONE TODO
+    # slope = normalise(state[12], p.x_min, p.x_max)  # NOT SURE ABOUT THIS ONE
     # x_nearest = normalise(state[13], p.x_min, p.x_max)
     # y_nearest = normalise(state[14], p.y_min, p.y_max)
     x = state[0]
@@ -154,7 +157,7 @@ def cost_function(state, control, control_prev, track_error_weight, in_weight, i
 
     # Line: ax + by + c = 0 -> slope * x - y + y_inter = 0
     # Point: (x1, y1) -> (x, y)
-    # Distance = (| a*x1 + b*y1 + c |) / (sqrt(a*a + b*b)) -> (| slope*x - y + y_inter |) / (sqrt(slope*slope + (-1)*(-1)))
+    # Distance = (| a*x1 + b*y1 + c |)/(sqrt(a*a + b*b)) -> (| slope*x - y + y_inter |)/(sqrt(slope*slope + (-1)*(-1)))
 
     # Contouring Error = distance from reference line
     cf += track_error_weight[0] * (cs.fabs((slope * x - y + y_inter)) / (cs.sqrt(slope ** 2 + 1)))
@@ -246,7 +249,7 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
     #                               [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.v_y_max, p.omega_max, p.track_width])
     C = og.constraints.Rectangle([p.x_min, p.y_min, p.v_x_min, p.v_y_min, -p.track_width],
                                  [p.x_max, p.y_max, p.v_x_max, p.v_y_max, p.track_width])
-    U = og.constraints.Rectangle([p.d_min, p.delta_min], [p.d_max, p.delta_max])
+    U = og.constraints.Rectangle([p.a_min, p.delta_min], [p.a_max, p.delta_max])
 
     # Code Generation
     # -------------------------------------
@@ -299,11 +302,16 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
     intercept_low = x0[9]
     ref_list = x0[10:x0.shape[0]]
 
+    tracking_weight = track_error_weight[1]
+
     F1 = []
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
-        cost += cost_function_kinematic(x_t, ref_list[t:t+2], [slope_centre, intercept_centre], u, u_prev,
-                                        track_error_weight, in_weight, in_change_weight)  # Update cost
+        # Update cost
+        cost += cost_function_kinematic(x_t, ref_list[t:t + 2], [slope_centre, intercept_centre], u, u_prev,
+                                        track_error_weight, in_weight, in_change_weight)
+        # The cost keeps increasing slightly
+        track_error_weight[1] = tracking_weight * (1 + t/p.N)
         u_prev = u
         # Update state
         x_t = kinematic_model_rk(x_t, u, True)
@@ -312,14 +320,13 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
         e_up = cs.fabs(slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
         e_low = cs.fabs(slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
         e_centre = cs.fabs(slope_centre * x_t[0] - x_t[1] + intercept_centre) / (cs.sqrt(slope_centre ** 2 + 1))
-        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], e_up, e_low)
+        F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3])  # , e_up, e_low)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle(
-        [p.x_min, p.y_min, p.phi_min, p.v_x_min, 0, 0],
-        [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.track_width, p.track_width])
-    U = og.constraints.Rectangle([p.d_min, p.delta_min], [p.d_max, p.delta_max])
+    C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min],  # , 0, 0],
+                                 [p.x_max, p.y_max, p.phi_max, p.v_x_max])  # , p.track_width, p.track_width])
+    U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
 
     # Code Generation
     # -------------------------------------
@@ -338,6 +345,8 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
             .with_build_directory("mpcc_python_build_2") \
             .with_open_version('0.7.0-alpha.1') \
             .with_tcp_interface_config()
+    else:
+        sys.exit("Invalid value for parameter lang - this can only be 'p' (=python) or 'c' (=C)")
 
     meta = og.config.OptimizerMeta().with_optimizer_name("mpcc_optimizer") \
         .with_authors("Darina Abaffyova")

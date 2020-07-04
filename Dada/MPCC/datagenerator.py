@@ -1,12 +1,12 @@
 import numpy as np
 from scipy import interpolate
+
 import parameters as param
-import matplotlib.pyplot as plt
 
 
 # Author: Darina Abaffyová
 # Created: 04/03/2020
-# Last updated: 23/03/2020
+# Last updated: 30/05/2020
 
 
 def generate_track(num_steps):
@@ -55,8 +55,8 @@ def generate_track(num_steps):
 
 def generate_racing_track(num_steps):
     x = np.array([0, 2, 4, 8, 14, 19, 25])
-    y = np.array([0, 1, 5, 7, 4, 5, 5])
-    # y = np.array([0, 1, 5, 10, 2, 13, 5])
+    # y = np.array([0, 1, 5, 7, 4, 5, 5])
+    y = np.array([0, 1, 5, 10, 2, 13, 5])
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.

@@ -1,14 +1,15 @@
-from warnings import warn
-import numpy as np
 from collections import namedtuple
-from scipy import interpolate
+from warnings import warn
+
+import numpy as np
 import opengen as og
+
 import codegenerator as cg
 import parameters as param
 
 # Author: Darina Abaffyová
 # Created: 13/02/2020
-# Last updated: 03/04/2020
+# Last updated: 03/07/2020
 
 # Define all named tuples here
 KinematicState = namedtuple('KinematicState', 'x y psi v')
@@ -46,7 +47,7 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
     # i_nearest is the index of the nearest point on the reference line
     i_nearest, dummy = get_nearest_point((state_0.x, state_0.y), track_x, track_y, 300, 0)
     i_ahead, dummy = move_along_track(track_x, track_y, dist_ahead, i_nearest)
-    ref_state = get_reference(i_nearest, i_ahead, track_x, track_y)
+    ref_state = get_reference(track_x, track_y, i_nearest)
     ref_seq = [ref_state]
 
     cost_seq = [0]
@@ -81,8 +82,8 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
             first_control_input = Control(control_inputs[0], control_inputs[1])
             state_next = cg.kinematic_model_rk(state, first_control_input, False)
 
-            end_of_track_reached, i_nearest, ref_state, i_ahead = update_reference(first_control_input, i_nearest,
-                                                                                   state_next, ref_state, track_x,
+            end_of_track_reached, i_nearest, ref_state, i_ahead = update_reference(i_nearest,
+                                                                                   state_next, track_x,
                                                                                    track_y)
             if end_of_track_reached: break
 
@@ -111,9 +112,9 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
 
 
 def get_boundaries(i_ahead, i_nearest, lower, track_x, track_y, upper):
+    # i_nearest = i_nearest + round((i_ahead - i_nearest)/2)
     i_next = i_nearest + 1
 
-    # i_nearest = i_nearest + round((i_ahead - i_nearest)/2)
     x_nearest = track_x[i_nearest]
     x_nearest_next = track_x[len(track_x) - 1 if i_nearest + 1 >= len(track_x) else i_nearest + 1]
 
@@ -151,18 +152,36 @@ def get_boundaries(i_ahead, i_nearest, lower, track_x, track_y, upper):
     return intercepts, slopes
 
 
-def get_reference(i_nearest, i_ahead, track_x, track_y):
-    x = np.array([track_x[i_nearest], track_x[round(i_nearest + (i_ahead - i_nearest)/4)],
-                  track_x[round(i_nearest + (i_ahead - i_nearest)/2)], track_x[i_ahead]])
-    y = np.array([track_y[i_nearest], track_y[round(i_nearest + (i_ahead - i_nearest)/4)],
-                  track_y[round(i_nearest + (i_ahead - i_nearest)/2)], track_y[i_ahead]])
+def get_reference(track_x, track_y, i_nearest):
+    # TODO: construct a reference trajectory (within the prediction horizon!) instead of a single point (either using
+    #  the maximum velocity or the current velocity). So starting from the current position, the reference position
+    #  for timestep 1 will be the closest point on the path to the current position + Ts * current velocity,
+    #  after timestep 2, it will be that point + Ts * (current velocity (+ some acceleration) ), where "some
+    #  acceleration" could be either the maximum acceleration or 0. You can quite efficiently compute such a sequence
+    #  of points using the cumsum function in numpy.
 
-    # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
-    # is needed in order to force the spline fit to pass through all the input points.
-    tck, u = interpolate.splprep([x, y], s=0, per=False)
+    x = [track_x[i_nearest]]
+    y = [track_y[i_nearest]]
+    dist = param.Ts * param.v_x_max
+    j = i_nearest
+    dist_prev = dist
 
-    # evaluate the spline fits for 1000 evenly spaced distance values
-    x, y = interpolate.splev(np.linspace(0, 1, param.N), tck)
+    for i in range(0, param.N-1):
+        d = dist_prev + param.a_max * param.Ts ** 2
+        dist_prev = d
+        x_temp = x[len(x) - 1]
+        y_temp = y[len(y) - 1]
+        while d > 0:
+            j += 1
+            x_next = track_x[min(j, len(track_x)-1)]
+            y_next = track_y[min(j, len(track_y)-1)]
+            d -= np.sqrt((x_next - x_temp) ** 2 + (y_next - y_temp) ** 2)
+            x_temp = x_next
+            y_temp = y_next
+            if j >= len(track_x) : break
+        x = np.concatenate([x, [x_temp]])
+        y = np.concatenate([y, [y_temp]])
+        if j >= len(track_x): break
 
     return list(zip(x, y))
 
@@ -188,9 +207,9 @@ def warm_start(state, state_ref, bound):
     return resp['solution']
 
 
-def update_reference(first_control_input, i_nearest, state_next, state_ref, track_x, track_y):
+def update_reference(i_nearest, state_next, track_x, track_y):
     # Find the index of the reference point (depending on the current velocity), as above
-    v = state_next[3]
+    v = param.v_x_max  # state_next[3]
     dist_ahead = v * (param.N * param.Ts)  # = velocity * prediction horizon in seconds (cg.N * cg.Ts)
     print("DIST AHEAD = " + str(dist_ahead) + ", v = " + str(v))
     i_nearest, nearest_dist = get_nearest_point([state_next[0], state_next[1]], track_x, track_y, 300, i_nearest)
@@ -198,7 +217,7 @@ def update_reference(first_control_input, i_nearest, state_next, state_ref, trac
 
     # The next reference state, taking into account all the previous calculations, and using the vehicle
     # model with regard to the obtained control inputs
-    state_ref = get_reference(i_nearest, i_ahead, track_x, track_y)
+    state_ref = get_reference(track_x, track_y, i_nearest)
     # cg.kinematic_model_rk(state_ref, first_control_input, False)
 
     return end_of_track_reached, i_nearest, state_ref, i_ahead
