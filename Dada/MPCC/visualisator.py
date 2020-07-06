@@ -229,6 +229,6 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
         #              + str(dist_low) + '\n' + str(state_seq[i]))
         plt.draw()
         plt.pause(1e-17)
-        time.sleep(0.005)
+        time.sleep(1e-5)
 
     plt.show()

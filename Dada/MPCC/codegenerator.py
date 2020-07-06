@@ -307,7 +307,6 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
         u_prev = u
         # Update state
         x_t = kinematic_model_rk(x_t, u, True)
-        # TODO - add the missing constraints
         # Boundary Constraint
         slope_up = slope_list[t]
         slope_low = slope_list[t+1]
@@ -315,14 +314,14 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
         intercept_low = intercept_list[t+1]
         d_up = cs.fabs(slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
         d_low = cs.fabs(slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
-        # F1 = cs.vertcat(F1, x_t[0], x_t[1], x_t[2], x_t[3], d_up, d_low)
-        F1 = cs.vertcat(F1, d_up, d_low)
+        F1 = cs.vertcat(F1, x_t[2], x_t[3], d_up, d_low)
+        # F1 = cs.vertcat(F1, d_up, d_low)
 
     # Constraints
     # -------------------------------------
-    # C = og.constraints.Rectangle([p.x_min, p.y_min, p.phi_min, p.v_x_min, 0, 0],
-    #                              [p.x_max, p.y_max, p.phi_max, p.v_x_max, p.track_width, p.track_width])
-    C = og.constraints.Rectangle([0], [p.track_width])
+    C = og.constraints.Rectangle([p.phi_min, p.v_x_min, 0, 0],
+                                 [p.phi_max, p.v_x_max, p.track_width, p.track_width])
+    # C = og.constraints.Rectangle([0], [p.track_width])
     U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
 
     # Code Generation
@@ -350,7 +349,7 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
 
     solver_config = og.config.SolverConfiguration() \
         .with_max_outer_iterations(100) \
-        .with_max_duration_micros(50000)  # 0.05s = 50000us
+        .with_max_duration_micros(5000000)  #TODO 0.05s = 50000us
 
     builder = og.builder.OpEnOptimizerBuilder(problem,
                                               metadata=meta,

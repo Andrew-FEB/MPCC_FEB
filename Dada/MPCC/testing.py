@@ -10,10 +10,10 @@ import codegenerator as cg
 # Last updated: 30/05/2020
 
 track_points = 3000
-sim_steps = 250
+sim_steps = 300
 
 # Weights in cost function
-track_error_weight = [0, 1, 0]  # contouring, tracking, velocity
+track_error_weight = [0, 1, 5]  # contouring, tracking, velocity
 in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
 in_change_weight = [0.01, 0.001]  # change of duty cycle, change of steering angle
 

@@ -54,7 +54,7 @@ def generate_track(num_steps):
 
 
 def generate_racing_track(num_steps):
-    x = np.array([0, 2, 4, 8, 14, 19, 25, 29, 33])
+    x = np.array([0, 2, 4, 8, 14, 19, 25, 27, 29])
     # y = np.array([0, 1, 5, 7, 4, 5, 5])
     y = np.array([0, 1, 5, 10, 2, 13, 5, 0, -3])
 
@@ -157,11 +157,11 @@ def generate_circular_track(num_steps):
 
 
 def generate_linear_track(num_steps):
-    x = np.arange(0, 20, 20 / num_steps)
+    x = np.arange(0, 50, 50 / num_steps)
     y = np.arange(0, 25, 25 / num_steps)
 
-    upper = np.arange(1.5, 26.5, 25 / num_steps)
-    lower = np.arange(-1.5, 23.5, 25 / num_steps)
+    upper = np.arange(2, 27, 25 / num_steps)
+    lower = np.arange(-2, 23, 25 / num_steps)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)

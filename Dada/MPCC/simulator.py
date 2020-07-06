@@ -154,7 +154,7 @@ def get_reference(track_x, track_y, i_nearest):
     end_reached = False
 
     for i in range(0, param.N - 1):
-        d = dist_prev + param.a_max * param.Ts ** 2
+        d = dist_prev + 2 * param.a_max * param.Ts ** 2
         dist_prev = d
         x_temp = x[len(x) - 1]
         y_temp = y[len(y) - 1]
@@ -206,14 +206,14 @@ def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest
     # Find the index of the point on the centreline which is the closest to the current position
     track_width = param.track_width
 
-    # Investigate at search region
-    back = int(search_region * 0.05)  # 5%
-    # front = search_region - back
-    smallest_dist_i = prev_closest - (back - 1)
-    if smallest_dist_i < 0:
-        smallest_dist_i = len(track_x) + smallest_dist_i
-    smallest_dist = np.sqrt(
-        (current_pos[0] - track_x[smallest_dist_i]) ** 2 + (current_pos[1] - track_y[smallest_dist_i]) ** 2)
+    # # Investigate at search region
+    # back = int(search_region * 0.05)  # 5%
+    # # front = search_region - back
+    # smallest_dist_i = prev_closest - (back - 1)
+    # if smallest_dist_i < 0:
+    #     smallest_dist_i = len(track_x) + smallest_dist_i
+    # smallest_dist = np.sqrt((current_pos[0] - track_x[smallest_dist_i]) ** 2
+    #                         + (current_pos[1] - track_y[smallest_dist_i]) ** 2)
     # for i in range(smallest_dist_i + 1, smallest_dist_i + search_region):
     #     ii = i % len(track_x)
     #     dist = np.sqrt((current_pos[0] - track_x[ii]) ** 2 + (current_pos[1] - track_y[ii]) ** 2)
@@ -221,16 +221,18 @@ def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest
     #         smallest_dist = dist
     #         smallest_dist_i = ii
 
+    smallest_dist = 1e5
+    smallest_dist_i = prev_closest
     # Search through the whole track if the distance is too long
-    if smallest_dist > track_width:
-        for i in range(len(track_x)):
-            dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
-            if dist < smallest_dist:
-                smallest_dist = dist
-                smallest_dist_i = i
+    # if smallest_dist > track_width:
+    for i in range(len(track_x)):
+        dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
+        if dist < smallest_dist:
+            smallest_dist = dist
+            smallest_dist_i = i
 
     # Crash if still too big (for now - TODO ?)
-    if smallest_dist > track_width:
+    if smallest_dist > track_width/2:
         warn("OUT OF TRACK BOUNDARIES!")
         # sys.exit("OUT OF TRACK BOUNDARIES!")
 
