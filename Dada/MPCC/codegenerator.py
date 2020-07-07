@@ -288,17 +288,20 @@ def generate_code(track_error_weight, in_weight, in_change_weight, lang):
 # ----------------------------------------------------------------------------------------------------------------------
 def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lang):
     u_seq = cs.MX.sym("u", p.nu * p.N)  # Sequence of all inputs
-    # Initial state(=4) + Prediction horizon * (slopes(=2) + intercepts(=2)) + Prediction horizon * Reference point(=2)
-    x0 = cs.MX.sym("x0_xref", p.nx + p.N * 4 + p.N * 2)
+    # Initial state(=4) + Prediction horizon * (slopes(=2) + intercepts(=2) + widths(=1))
+    # + Prediction horizon * Reference point(=2)
+    x0 = cs.MX.sym("x0_xref", p.nx + p.N * 5 + p.N * 2)
 
     cost = 0
     u_prev = [0, 0]
     x_t = x0[0:p.nx]
-    slope_list = x0[p.nx:p.nx+p.N*2]
-    intercept_list = x0[p.nx+p.N*2:p.nx+p.N*4]
-    ref_list = x0[p.nx+p.N*4:x0.shape[0]]
+    slope_list = x0[p.nx:p.nx + p.N * 2]
+    intercept_list = x0[p.nx + p.N * 2:p.nx + p.N * 4]
+    track_width_list = x0[p.nx + p.N * 4:p.nx + p.N * 5]
+    ref_list = x0[p.nx + p.N * 5:x0.shape[0]]
 
     F1 = []
+    F2 = []
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
         # Update cost
@@ -309,26 +312,27 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
         x_t = kinematic_model_rk(x_t, u, True)
         # Boundary Constraint
         slope_up = slope_list[t]
-        slope_low = slope_list[t+1]
+        slope_low = slope_list[t + 1]
         intercept_up = intercept_list[t]
-        intercept_low = intercept_list[t+1]
+        intercept_low = intercept_list[t + 1]
         d_up = cs.fabs(slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
         d_low = cs.fabs(slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
+        track_width = track_width_list[t/2]
         F1 = cs.vertcat(F1, x_t[2], x_t[3], d_up, d_low)
-        # F1 = cs.vertcat(F1, d_up, d_low)
+        # F1 = cs.vertcat(F1, x_t[2], x_t[3])
+        # F2 = cs.vertcat(F2, cs.fmax(track_width, d_up), cs.fmax(track_width, d_low))
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([p.phi_min, p.v_x_min, 0, 0],
-                                 [p.phi_max, p.v_x_max, p.track_width, p.track_width])
-    # C = og.constraints.Rectangle([0], [p.track_width])
+    C = og.constraints.Rectangle([p.phi_min, p.v_x_min, 0, 0], [p.phi_max, p.v_x_max, p.track_width, p.track_width])
+    # C = og.constraints.Rectangle([p.phi_min, p.v_x_min], [p.phi_max, p.v_x_max])
     U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
 
     # Code Generation
     # -------------------------------------
     problem = og.builder.Problem(u_seq, x0, cost) \
-        .with_constraints(U) \
-        .with_aug_lagrangian_constraints(F1, C)
+        .with_aug_lagrangian_constraints(F1, C) \
+        .with_constraints(U)
 
     if lang == 'c':
         build_config = og.config.BuildConfiguration() \
@@ -349,7 +353,7 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
 
     solver_config = og.config.SolverConfiguration() \
         .with_max_outer_iterations(100) \
-        .with_max_duration_micros(5000000)  #TODO 0.05s = 50000us
+        .with_max_duration_micros(500000)  # TODO 0.05s = 50000us
 
     builder = og.builder.OpEnOptimizerBuilder(problem,
                                               metadata=meta,

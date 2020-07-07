@@ -159,35 +159,35 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
     slopes = [s for s, *_ in bound_seq]
     intercepts = [i for s, i, *_ in bound_seq]
     index1 = [index for s, i, index in bound_seq]
-    index2 = [index + 75 for s, i, index in bound_seq]
+    index2 = [index + 10 for s, i, index in bound_seq]
 
     plt.show()
     ax = plt.gca()
 
-    ax.plot(track_x, track_y, '.y', label="Complete track")
+    ax.plot(track_x, track_y, '.y', label="Complete track", markersize=1)
     achieved_line, = ax.plot(state_x[0], state_y[0], 'or', label="Achieved track")
-    ax.plot(track_x, upper, '--g', label="Boundaries")
-    ax.plot(track_x, lower, '--g')
-    predicted_line, = ax.plot(track_x[0], track_y[0], 'b.', label="Predicted track")
-    ref_line, = ax.plot(ref_x, ref_y, 'c.', label="Reference line")
+    ax.plot(track_x, upper, '--g', label="Complete boundaries", linewidth=1)
+    ax.plot(track_x, lower, '--g', linewidth=1)
+    predicted_line, = ax.plot(track_x[0], track_y[0], '.b', label="Predicted track")
+    ref_line, = ax.plot(ref_x, ref_y, '.c', label="Reference line for PH")
 
     bound_up = [0] * param.N
     bound_low = [0] * param.N
     for j in range(param.N):
         bound_up[j], = ax.plot(track_x[index1[0][j]:index2[0][j]],
                                [slopes[0][j].upper * x + intercepts[0][j].upper for x in
-                                track_x[index1[0][j]:index2[0][j]]],
-                               'm--', label="Boundary tangents", markersize=10)
-        bound_low[j], = ax.plot(track_x[index1[0][j]:index2[0][j]], [slopes[0][j].lower * x + intercepts[0][j].lower
-                                                                     for x in track_x[index1[0][j]:index2[0][j]]],
-                                'm--', markersize=10)
+                                track_x[index1[0][j]:index2[0][j]]], 'm--')
+        bound_low[j], = ax.plot(track_x[index1[0][j]:index2[0][j]],
+                                [slopes[0][j].lower * x + intercepts[0][j].lower
+                                 for x in track_x[index1[0][j]:index2[0][j]]], 'm--')
     # txt = plt.text(5, 0, '', color="black", fontsize=12)
 
+    bound_up[0].set_label("Boundaries for PH")
     plt.grid()
     plt.ylabel('Y position')
     plt.xlabel('X position')
     plt.title('Track')
-    # plt.legend(loc='best', borderaxespad=0.)
+    plt.legend(loc='best', borderaxespad=0.)
 
     plt.pause(1e-17)
     time.sleep(3)

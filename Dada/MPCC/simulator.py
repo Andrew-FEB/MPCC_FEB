@@ -45,16 +45,16 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
     # the same (tangential) velocity for the next param.N time steps, with
     # each time step being param.Ts seconds long
     # i_nearest is the index of the nearest point on the reference line
-    i_nearest = get_nearest_point((state_0.x, state_0.y), track_x, track_y, 300, 0)
-    ref_state, ref_indexes, end_reached = get_reference(track_x, track_y, i_nearest)
-    ref_seq = [ref_state]
+    i_nearest = get_nearest_point((state_0.x, state_0.y), track_x, track_y, int(len(track_x) * 0.1), 0)
+    ref_list, ref_indexes, end_reached = get_reference_list(track_x, track_y, i_nearest)
+    ref_seq = [ref_list]
 
     cost_seq = [0]
 
     # The nearest sequence will contain tuples (x, y) of the positions
     # on the reference line which correspond to the nearest point found
     # for each state in the state sequence
-    intercepts, slopes = get_boundaries(lower, track_x, upper, ref_indexes)
+    intercepts, slopes, track_widths = get_boundaries(lower, track_x, upper, ref_indexes, ref_list)
     bound_seq = [(slopes, intercepts, ref_indexes)]
 
     control_inputs = [0] * param.N * param.nu  # warm_start(state, ref_state, [slope, x_nearest, y_nearest])
@@ -67,8 +67,9 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
 
     # Run simulation
     for k in range(simulation_steps):
-        solver_status = mng.call(np.concatenate((state, np.reshape(slopes, 2*param.N), np.reshape(intercepts, 2*param.N)
-                                                 , np.reshape(ref_state, 2 * param.N))), control_inputs)
+        solver_status = mng.call(
+            np.concatenate((state, np.reshape(slopes, 2 * param.N), np.reshape(intercepts, 2 * param.N)
+                            , track_widths, np.reshape(ref_list, 2 * param.N))), control_inputs)
 
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
@@ -80,19 +81,19 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
             control_inputs = solver_status['solution']
             first_control_input = Control(control_inputs[0], control_inputs[1])
             state_next = cg.kinematic_model_rk(state, first_control_input, False)
-            i_nearest = get_nearest_point(state_next[0:2], track_x, track_y, 300, 0)
-            ref_state, ref_indexes, end_of_track_reached = get_reference(track_x, track_y, i_nearest)
+            i_nearest = get_nearest_point(state_next[0:2], track_x, track_y, int(len(track_x) * 0.1), 0)
+            ref_list, ref_indexes, end_of_track_reached = get_reference_list(track_x, track_y, i_nearest)
 
             if end_of_track_reached: break
 
             # Update all variables needed for the next iteration and save values in the sequences to be plotted
-            intercepts, slopes = get_boundaries(lower, track_x, upper, ref_indexes)
+            intercepts, slopes, track_widths = get_boundaries(lower, track_x, upper, ref_indexes, ref_list)
 
             # ref_state = get_reference(i_nearest, i_ahead, track_x, track_y)
             state = KinematicState(state_next[0], state_next[1], state_next[2], state_next[3])
             first_control_seq.append(first_control_input)
             state_seq.append(state)
-            ref_seq.append(ref_state)
+            ref_seq.append(ref_list)
             bound_seq.append((slopes, intercepts, ref_indexes))
             cost_seq.append(solver_status['cost'])
             control_inputs_seq.append(control_inputs)
@@ -109,33 +110,39 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
     return state_seq, ref_seq, bound_seq, cost_seq, first_control_seq, control_inputs_seq, len(state_seq)
 
 
-def get_boundaries(lower, track_x, upper, indexes):
+def get_boundaries(lower, track_x, upper, indexes, ref_list):
     # A set of slopes and intercepts will be needed that will span the whole prediction horizon
     intercepts = []
     slopes = []
+    track_widths = []
 
-    for i in indexes:
-        i_next = i + 1
-
-        x_nearest = track_x[i]
-        x_nearest_next = track_x[i_next]
+    for i in range(len(ref_list)):
+        i_up = get_nearest_point(ref_list[i], track_x, upper, int(len(track_x) * 0.1), indexes[i])
+        if i_up > len(track_x) - 2: i_up = len(track_x) - 2
+        i_low = get_nearest_point(ref_list[i], track_x, lower, int(len(track_x) * 0.1), indexes[i])
+        if i_low > len(track_x) - 2: i_low = len(track_x) - 2
 
         # Upper boundary
-        y_up = upper[i]
-        y_up_next = upper[i_next]
-        slope_up = (y_up_next - y_up) / (x_nearest_next - x_nearest)
-        intercept_up = y_up - slope_up * x_nearest
+        x_up = track_x[i_up]
+        x_up_next = track_x[i_up + 1]
+        y_up = upper[i_up]
+        y_up_next = upper[i_up + 1]
+        slope_up = (y_up_next - y_up) / (x_up_next - x_up)
+        intercept_up = y_up - slope_up * x_up
 
         # Lower boundary
-        y_low = lower[i]
-        y_low_next = lower[i_next]
-        slope_low = (y_low_next - y_low) / (x_nearest_next - x_nearest)
-        intercept_low = y_low - slope_low * x_nearest
+        x_low = track_x[i_low]
+        x_low_next = track_x[i_low + 1]
+        y_low = lower[i_low]
+        y_low_next = lower[i_low + 1]
+        slope_low = (y_low_next - y_low) / (x_low_next - x_low)
+        intercept_low = y_low - slope_low * x_low
 
         intercepts.append(Intercept(intercept_up, intercept_low))
         slopes.append(Slope(slope_up, slope_low))
+        track_widths.append(np.sqrt((x_up - x_low) ** 2 + (y_up - y_low) ** 2))
 
-    return intercepts, slopes
+    return intercepts, slopes, track_widths
 
 
 # Construct a reference trajectory (within the prediction horizon!) instead of a single point (either using
@@ -144,7 +151,7 @@ def get_boundaries(lower, track_x, upper, indexes):
 # after timestep 2, it will be that point + Ts * (current velocity (+ some acceleration) ), where "some
 # acceleration" could be either the maximum acceleration or 0. You can quite efficiently compute such a sequence
 # of points using the cumsum function in numpy.
-def get_reference(track_x, track_y, i_nearest):
+def get_reference_list(track_x, track_y, i_nearest):
     x = [track_x[i_nearest]]
     y = [track_y[i_nearest]]
     dist = param.Ts * param.v_x_max
@@ -165,13 +172,13 @@ def get_reference(track_x, track_y, i_nearest):
             d -= np.sqrt((x_next - x_temp) ** 2 + (y_next - y_temp) ** 2)
             x_temp = x_next
             y_temp = y_next
-            if j >= len(track_x)-3:
+            if j >= len(track_x) - 3:
                 end_reached = True
                 break
         x = np.concatenate([x, [x_temp]])
         y = np.concatenate([y, [y_temp]])
         indexes = np.concatenate([indexes, [j]])
-        if j >= len(track_x)-3:
+        if j >= len(track_x) - 3:
             end_reached = True
             break
 
@@ -206,23 +213,21 @@ def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest
     # Find the index of the point on the centreline which is the closest to the current position
     track_width = param.track_width
 
-    # # Investigate at search region
-    # back = int(search_region * 0.05)  # 5%
-    # # front = search_region - back
-    # smallest_dist_i = prev_closest - (back - 1)
-    # if smallest_dist_i < 0:
-    #     smallest_dist_i = len(track_x) + smallest_dist_i
-    # smallest_dist = np.sqrt((current_pos[0] - track_x[smallest_dist_i]) ** 2
-    #                         + (current_pos[1] - track_y[smallest_dist_i]) ** 2)
-    # for i in range(smallest_dist_i + 1, smallest_dist_i + search_region):
-    #     ii = i % len(track_x)
-    #     dist = np.sqrt((current_pos[0] - track_x[ii]) ** 2 + (current_pos[1] - track_y[ii]) ** 2)
-    #     if dist < smallest_dist:
-    #         smallest_dist = dist
-    #         smallest_dist_i = ii
+    # Investigate at search region
+    back = int(search_region * 0.05)  # 5%
+    # front = search_region - back
+    smallest_dist_i = prev_closest - (back - 1)
+    if smallest_dist_i < 0:
+        smallest_dist_i = len(track_x) + smallest_dist_i
+    smallest_dist = np.sqrt((current_pos[0] - track_x[smallest_dist_i]) ** 2
+                            + (current_pos[1] - track_y[smallest_dist_i]) ** 2)
+    for i in range(smallest_dist_i + 1, smallest_dist_i + search_region):
+        ii = i % len(track_x)
+        dist = np.sqrt((current_pos[0] - track_x[ii]) ** 2 + (current_pos[1] - track_y[ii]) ** 2)
+        if dist < smallest_dist:
+            smallest_dist = dist
+            smallest_dist_i = ii
 
-    smallest_dist = 1e5
-    smallest_dist_i = prev_closest
     # Search through the whole track if the distance is too long
     # if smallest_dist > track_width:
     for i in range(len(track_x)):
@@ -232,7 +237,7 @@ def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest
             smallest_dist_i = i
 
     # Crash if still too big (for now - TODO ?)
-    if smallest_dist > track_width/2:
+    if smallest_dist > track_width / 2:
         warn("OUT OF TRACK BOUNDARIES!")
         # sys.exit("OUT OF TRACK BOUNDARIES!")
 

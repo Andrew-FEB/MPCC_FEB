@@ -1,5 +1,6 @@
 import numpy as np
 from scipy import interpolate
+import matplotlib.pyplot as plt
 
 import parameters as param
 
@@ -44,11 +45,11 @@ def generate_track(num_steps):
     xi_minus, yi_minus = interpolate.splev(np.linspace(0, 1, num_steps), tck_minus)
 
     # plot the result
-    # fig, ax = plt.subplots(1, 1)
-    # ax.plot(xi, yi, 'or')
-    # ax.plot(xi_plus, yi_plus, '--b')
-    # ax.plot(xi_minus, yi_minus, '--g')
-    # plt.show()
+    fig, ax = plt.subplots(1, 1)
+    ax.plot(xi, yi, 'or')
+    ax.plot(xi_plus, yi_plus, '--b')
+    ax.plot(xi_minus, yi_minus, '--g')
+    plt.show()
 
     return [xi, yi]
 
@@ -68,8 +69,8 @@ def generate_racing_track(num_steps):
     yu = []
     yl = []
     for i in range(len(xi)):
-        yu.append(yi[i] + param.track_width/2)
-        yl.append(yi[i] - param.track_width/2)
+        yu.append(yi[i] + 1)
+        yl.append(yi[i] - 1)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
@@ -153,7 +154,7 @@ def generate_circular_track(num_steps):
     # ax.plot(xl, yl, '--g')
     # plt.show()
 
-    return [xi, yi]
+    return [xi, yi, yu, yl]
 
 
 def generate_linear_track(num_steps):

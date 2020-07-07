@@ -9,7 +9,7 @@ import codegenerator as cg
 # Created: 24/02/2020
 # Last updated: 30/05/2020
 
-track_points = 3000
+track_points = 1000
 sim_steps = 300
 
 # Weights in cost function
@@ -19,7 +19,6 @@ in_change_weight = [0.01, 0.001]  # change of duty cycle, change of steering ang
 
 print("Generating code")
 start_time = time.time()
-# cg.generate_code(track_error_weight, in_weight, in_change_weight, 'p')
 # cg.generate_code_kinematic(track_error_weight, in_weight, in_change_weight, 'p')
 print('Code generated in ' + str(time.time() - start_time) + ' s')
 

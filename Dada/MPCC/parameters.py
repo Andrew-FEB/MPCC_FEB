@@ -52,7 +52,7 @@ delta_min = -delta_max
 
 # Track parameters
 # -------------------------------------
-track_width = 2
+track_width = 1
 
 # Optimizer parameters
 # -------------------------------------

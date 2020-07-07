@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-07-06 20:58:49.457614
+// Generated at: 2020-07-07 20:00:11.195940
 //
 
 use icasadi_mpcc_optimizer;
@@ -33,7 +33,7 @@ const MAX_INNER_ITERATIONS: usize = 500;
 const MAX_OUTER_ITERATIONS: usize = 100;
 
 /// Maximum execution duration in microseconds
-const MAX_DURATION_MICROS: u64 = 5000000;
+const MAX_DURATION_MICROS: u64 = 500000;
 
 /// Penalty update factor
 const PENALTY_UPDATE_FACTOR: f64 = 5.0;
@@ -51,7 +51,7 @@ const SUFFICIENT_INFEASIBILITY_DECREASE_COEFFICIENT: f64 = 0.1;
 pub const MPCC_OPTIMIZER_NUM_DECISION_VARIABLES: usize = 80;
 
 /// Number of parameters
-pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 244;
+pub const MPCC_OPTIMIZER_NUM_PARAMETERS: usize = 284;
 
 /// Number of parameters associated with augmented Lagrangian
 pub const MPCC_OPTIMIZER_N1: usize = 160;
