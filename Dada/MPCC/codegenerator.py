@@ -301,7 +301,6 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
     ref_list = x0[p.nx + p.N * 5:x0.shape[0]]
 
     F1 = []
-    F2 = []
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
         # Update cost
@@ -318,14 +317,11 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
         d_up = cs.fabs(slope_up * x_t[0] - x_t[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
         d_low = cs.fabs(slope_low * x_t[0] - x_t[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
         track_width = track_width_list[t/2]
-        F1 = cs.vertcat(F1, x_t[2], x_t[3], d_up, d_low)
-        # F1 = cs.vertcat(F1, x_t[2], x_t[3])
-        # F2 = cs.vertcat(F2, cs.fmax(track_width, d_up), cs.fmax(track_width, d_low))
+        F1 = cs.vertcat(F1, x_t[2], x_t[3], d_up-track_width, d_low-track_width)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([p.phi_min, p.v_x_min, 0, 0], [p.phi_max, p.v_x_max, p.track_width, p.track_width])
-    # C = og.constraints.Rectangle([p.phi_min, p.v_x_min], [p.phi_max, p.v_x_max])
+    C = og.constraints.Rectangle([p.phi_min, p.v_x_min, -np.inf, -np.inf], [p.phi_max, p.v_x_max, 0, 0])
     U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
 
     # Code Generation
