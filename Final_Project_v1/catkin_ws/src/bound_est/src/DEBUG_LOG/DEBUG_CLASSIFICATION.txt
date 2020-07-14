@@ -1,0 +1,112 @@
+Log message for Classification log data at Tue Jul 14 05:28:08 2020
+-----------------------------------
+-----------------------------------
+Entered determinant check
+Cone position, x = -2.5, y = -2
+Coord car, x = 0, y = -1.75
+Coord car projection, x = 0.164399, y = -0.763606
+Determinant: -2.42489 so selected left
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Entered determinant check
+Cone position, x = 2.5, y = -1.5
+Coord car, x = 0, y = -1.75
+Coord car projection, x = 0.164399, y = -0.763606
+Determinant: 2.42489 so selected right
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Entered non-determinant check
+Cone position, x = -2, y = 1
+previous cone position left, x = -2.5, y = -2
+previous cone position right, x = 2.5, y = -1.5
+Selected left
+Distance from left = 9.25
+Distance from right = 26.5
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Entered non-determinant check
+Cone position, x = 3, y = 1.5
+previous cone position left, x = -2, y = 1
+previous cone position right, x = 2.5, y = -1.5
+Selected right
+Distance from left = 25.25
+Distance from right = 9.25
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Entered non-determinant check
+Cone position, x = -2.5, y = 4
+previous cone position left, x = -2, y = 1
+previous cone position right, x = 3, y = 1.5
+Selected left
+Distance from left = 9.25
+Distance from right = 36.5
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Entered non-determinant check
+Cone position, x = 2.6, y = 3.7
+previous cone position left, x = -2.5, y = 4
+previous cone position right, x = 3, y = 1.5
+Selected right
+Distance from left = 26.1
+Distance from right = 5
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+Entered non-determinant check
+Cone position, x = -1, y = 6.5
+previous cone position left, x = -2.5, y = 4
+previous cone position right, x = 2.6, y = 3.7
+Selected left
+Distance from left = 8.5
+Distance from right = 20.8
+Printout of list states
+Left list size: 4, Right list size: 3
+--------
+Entered non-determinant check
+Cone position, x = 5, y = 7
+previous cone position left, x = -1, y = 6.5
+previous cone position right, x = 2.6, y = 3.7
+Selected right
+Distance from left = 36.25
+Distance from right = 16.65
+Printout of list states
+Left list size: 4, Right list size: 4
+--------
+Entered non-determinant check
+Cone position, x = -0.5, y = 9
+previous cone position left, x = -1, y = 6.5
+previous cone position right, x = 5, y = 7
+Selected left
+Distance from left = 6.5
+Distance from right = 34.25
+Printout of list states
+Left list size: 5, Right list size: 4
+--------
+Entered non-determinant check
+Cone position, x = 6.7, y = 11.3
+previous cone position left, x = -0.5, y = 9
+previous cone position right, x = 5, y = 7
+Selected right
+Distance from left = 57.13
+Distance from right = 21.38
+Printout of list states
+Left list size: 5, Right list size: 5
+--------
+Entered non-determinant check
+Cone position, x = 1, y = 13
+previous cone position left, x = -0.5, y = 9
+previous cone position right, x = 6.7, y = 11.3
+Selected left
+Distance from left = 18.25
+Distance from right = 35.38
+Printout of list states
+Left list size: 6, Right list size: 5
+--------
+///////////////////////////////////
+///////////////////////////////////
+

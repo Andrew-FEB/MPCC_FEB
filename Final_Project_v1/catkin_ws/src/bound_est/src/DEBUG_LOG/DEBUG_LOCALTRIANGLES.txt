@@ -1,0 +1,28 @@
+Log message for findTrianglesAroundPoint() log data at Tue Jul 14 12:14:00 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Value derived from car position: 1
+Origin point x(3), y(10)
+Triangle list size = 16
+Checking triangle with points a(2.6,3.7), b(3,1.5), c(-2,1)
+Checking triangle with points a(-2,1), b(-2.5,4), c(2.6,3.7)
+Checking triangle with points a(3,1.5), b(0,-1.75), c(-2,1)
+Checking triangle with points a(3,1.5), b(2.5,-1.5), c(0,-1.75)
+Checking triangle with points a(-2.5,4), b(-1,6.5), c(2.6,3.7)
+Checking triangle with points a(0,-1.75), b(-2.5,-2), c(-2,1)
+Checking triangle with points a(-2,1), b(-2.5,-2), c(-2.5,4)
+Checking triangle with points a(-1,6.5), b(5,7), c(2.6,3.7)
+Checking triangle with points a(2.6,3.7), b(5,7), c(3,1.5)
+Checking triangle with points a(3,1.5), b(5,7), c(2.5,-1.5)
+Checking triangle with points a(-2.5,4), b(-0.5,9), c(-1,6.5)
+Checking triangle with points a(-1,6.5), b(-0.5,9), c(5,7)
+Checking triangle with points a(-0.5,9), b(1,13), c(5,7)
+Triangle found on vertices and added to list
+Checking triangle with points a(-2.5,4), b(1,13), c(-0.5,9)
+Checking triangle with points a(1,13), b(6.7,11.3), c(5,7)
+Triangle found on vertices and added to list
+Checking triangle with points a(5,7), b(6.7,11.3), c(2.5,-1.5)
+///////////////////////////////////
+///////////////////////////////////
+

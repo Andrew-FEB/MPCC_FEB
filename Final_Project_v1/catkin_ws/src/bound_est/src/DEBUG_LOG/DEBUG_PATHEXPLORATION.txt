@@ -1,0 +1,318 @@
+Log message for Path Exploration log data at Tue Jul 14 12:14:00 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Car location point x(0), y(-1.75)
+Section start point x(0.5), y(1.25)
+Section end point x(3.85), y(-1.75)
+Triangle list size = 16
+Number of midpoints in section = 17
+Given as follows:
+Centre point 0 = X pos 0.3, Y pos 2.35
+Centre point 1 = X pos 0.05, Y pos 3.85
+Centre point 2 = X pos 0.3, Y pos 2.35
+Centre point 3 = X pos 1.5, Y pos -0.125
+Centre point 4 = X pos -1, Y pos -0.375
+Centre point 5 = X pos 1.25, Y pos -1.625
+Centre point 6 = X pos 1.5, Y pos -0.125
+Centre point 7 = X pos 0.8, Y pos 5.1
+Centre point 8 = X pos 0.05, Y pos 3.85
+Centre point 9 = X pos 2, Y pos 6.75
+Centre point 10 = X pos 0.8, Y pos 5.1
+Centre point 11 = X pos 2.25, Y pos 8
+Centre point 12 = X pos 2, Y pos 6.75
+Centre point 13 = X pos 3, Y pos 10
+Centre point 14 = X pos 2.25, Y pos 8
+Centre point 15 = X pos 3.85, Y pos 12.15
+Centre point 16 = X pos 3, Y pos 10
+
+Distance to goal over full section: 130.032
+--------
+Entering tree exploration loop
+--------
+Loop number: 1
+Search origin point x(0.5), y(1.25)
+Size of local triangles: 2
+Size of vector of all triangle mids: 3
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(0.3) y(2.35)
+Distance to goal from proposed midpoint: 108.643
+Change in distance to goal if point selected: -21.39
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Mid value 2 x(1.5) y(-0.125)
+Distance to goal from proposed midpoint: 156.198
+Change in distance to goal if point selected: 26.1656
+This point rejected and not added to tree
+--------
+Mid value 3 x(-1) y(-0.375)
+Distance to goal from proposed midpoint: 180.398
+Change in distance to goal if point selected: 50.3656
+This point rejected and not added to tree
+--------
+Requesting next point to explore...
+Next suggested point by tree to investigate at x(0.3) y(2.35)
+--------
+Loop number: 2
+Search origin point x(0.3), y(2.35)
+Size of local triangles: 2
+Size of vector of all triangle mids: 2
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(0.5) y(1.25)
+Distance to goal from proposed midpoint: 130.032
+Change in distance to goal if point selected: 21.39
+This point rejected and not added to tree
+--------
+Mid value 2 x(0.05) y(3.85)
+Distance to goal from proposed midpoint: 83.33
+Change in distance to goal if point selected: -25.3125
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Requesting next point to explore...
+Next suggested point by tree to investigate at x(0.05) y(3.85)
+--------
+Loop number: 3
+Search origin point x(0.05), y(3.85)
+Size of local triangles: 2
+Size of vector of all triangle mids: 2
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(0.3) y(2.35)
+Distance to goal from proposed midpoint: 108.643
+Change in distance to goal if point selected: 25.3125
+This point rejected and not added to tree
+--------
+Mid value 2 x(0.8) y(5.1)
+Distance to goal from proposed midpoint: 59.005
+Change in distance to goal if point selected: -24.325
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Requesting next point to explore...
+Next suggested point by tree to investigate at x(0.8) y(5.1)
+--------
+Loop number: 4
+Search origin point x(0.8), y(5.1)
+Size of local triangles: 2
+Size of vector of all triangle mids: 2
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(0.05) y(3.85)
+Distance to goal from proposed midpoint: 83.33
+Change in distance to goal if point selected: 24.325
+This point rejected and not added to tree
+--------
+Mid value 2 x(2) y(6.75)
+Distance to goal from proposed midpoint: 32.5825
+Change in distance to goal if point selected: -26.4225
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Requesting next point to explore...
+Next suggested point by tree to investigate at x(2) y(6.75)
+--------
+Loop number: 5
+Search origin point x(2), y(6.75)
+Size of local triangles: 2
+Size of vector of all triangle mids: 2
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(0.8) y(5.1)
+Distance to goal from proposed midpoint: 59.005
+Change in distance to goal if point selected: 26.4225
+This point rejected and not added to tree
+--------
+Mid value 2 x(2.25) y(8)
+Distance to goal from proposed midpoint: 19.7825
+Change in distance to goal if point selected: -12.8
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Requesting next point to explore...
+Next suggested point by tree to investigate at x(2.25) y(8)
+--------
+Loop number: 6
+Search origin point x(2.25), y(8)
+Size of local triangles: 2
+Size of vector of all triangle mids: 2
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(2) y(6.75)
+Distance to goal from proposed midpoint: 32.5825
+Change in distance to goal if point selected: 12.8
+This point rejected and not added to tree
+--------
+Mid value 2 x(3) y(10)
+Distance to goal from proposed midpoint: 5.345
+Change in distance to goal if point selected: -14.4375
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Requesting next point to explore...
+Next suggested point by tree to investigate at x(3) y(10)
+--------
+Loop number: 7
+Search origin point x(3), y(10)
+Size of local triangles: 2
+Size of vector of all triangle mids: 2
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(2.25) y(8)
+Distance to goal from proposed midpoint: 19.7825
+Change in distance to goal if point selected: 14.4375
+This point rejected and not added to tree
+--------
+Mid value 2 x(3.85) y(12.15)
+Distance to goal from proposed midpoint: 0
+Change in distance to goal if point selected: -5.345
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Requesting next point to explore...
+Next suggested point by tree to investigate at x(3.85) y(12.15)
+--------
+Loop number: 8
+Search origin point x(3.85), y(12.15)
+Size of local triangles: 1
+Size of vector of all triangle mids: 1
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(3) y(10)
+Distance to goal from proposed midpoint: 5.345
+Change in distance to goal if point selected: 5.345
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Requesting next point to explore...
+Next suggested point by tree to investigate at x(3) y(10)
+--------
+Loop number: 9
+Search origin point x(3), y(10)
+Size of local triangles: 2
+Size of vector of all triangle mids: 2
+Entering loop through vector of possible mids
+--------
+Mid value 1 x(2.25) y(8)
+Distance to goal from proposed midpoint: 19.7825
+Change in distance to goal if point selected: 14.4375
+This point rejected and not added to tree
+--------
+Mid value 2 x(3.85) y(12.15)
+Distance to goal from proposed midpoint: 0
+Change in distance to goal if point selected: -5.345
+This point selected as potentially valuable and node ended to tree for further exploration
+--------
+Requesting next point to explore...
+Tree formation complete. Tree as follows: 
+Node 1 with position: x(0.5) y(1.25), a checked status of 1 and a parent with pos at: Parent is nullptr!
+Child 1 has position: x(0.3) y(2.35)
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+Node 2 with position: x(0.3) y(2.35), a checked status of 1 and a parent with pos at: x(0.5) y(1.25)
+Child 1 has position: x(0.05) y(3.85)
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+Node 3 with position: x(0.05) y(3.85), a checked status of 1 and a parent with pos at: x(0.3) y(2.35)
+Child 1 has position: x(0.8) y(5.1)
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+Node 4 with position: x(0.8) y(5.1), a checked status of 1 and a parent with pos at: x(0.05) y(3.85)
+Child 1 has position: x(2) y(6.75)
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+Node 5 with position: x(2) y(6.75), a checked status of 1 and a parent with pos at: x(0.8) y(5.1)
+Child 1 has position: x(2.25) y(8)
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+Node 6 with position: x(2.25) y(8), a checked status of 1 and a parent with pos at: x(2) y(6.75)
+Child 1 has position: x(3) y(10)
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+Node 7 with position: x(3) y(10), a checked status of 1 and a parent with pos at: x(2.25) y(8)
+Child 1 has position: x(3.85) y(12.15)
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+Node 8 with position: x(3.85) y(12.15), a checked status of 1 and a parent with pos at: x(3) y(10)
+Child 1 has position: x(3) y(10)
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+Node 9 with position: x(3) y(10), a checked status of 1 and a parent with pos at: x(3.85) y(12.15)
+Child 1 is a nullptr
+Child 2 is a nullptr
+Child 3 is a nullptr
+Child 4 is a nullptr
+
+Moving into path development
+--------
+Adding paths of length 20:
+Paths collected. List of paths contains: 
+Path 1
+Point 1 at x(0.5) y(1.25)
+Point 2 at x(0.3) y(2.35)
+Point 3 at x(0.05) y(3.85)
+
+--------
+Path 2
+Point 1 at x(0.5) y(1.25)
+Point 2 at x(0.3) y(2.35)
+Point 3 at x(0.05) y(3.85)
+Point 4 at x(0.8) y(5.1)
+
+--------
+Path 3
+Point 1 at x(0.5) y(1.25)
+Point 2 at x(0.3) y(2.35)
+Point 3 at x(0.05) y(3.85)
+Point 4 at x(0.8) y(5.1)
+Point 5 at x(2) y(6.75)
+
+--------
+Path 4
+Point 1 at x(0.5) y(1.25)
+Point 2 at x(0.3) y(2.35)
+Point 3 at x(0.05) y(3.85)
+Point 4 at x(0.8) y(5.1)
+Point 5 at x(2) y(6.75)
+Point 6 at x(2.25) y(8)
+
+--------
+Path 5
+Point 1 at x(0.5) y(1.25)
+Point 2 at x(0.3) y(2.35)
+Point 3 at x(0.05) y(3.85)
+Point 4 at x(0.8) y(5.1)
+Point 5 at x(2) y(6.75)
+Point 6 at x(2.25) y(8)
+Point 7 at x(3) y(10)
+
+--------
+Path 6
+Point 1 at x(0.5) y(1.25)
+Point 2 at x(0.3) y(2.35)
+Point 3 at x(0.05) y(3.85)
+Point 4 at x(0.8) y(5.1)
+Point 5 at x(2) y(6.75)
+Point 6 at x(2.25) y(8)
+Point 7 at x(3) y(10)
+Point 8 at x(3.85) y(12.15)
+
+--------
+Path 7
+Point 1 at x(0.5) y(1.25)
+Point 2 at x(0.3) y(2.35)
+Point 3 at x(0.05) y(3.85)
+Point 4 at x(0.8) y(5.1)
+Point 5 at x(2) y(6.75)
+Point 6 at x(2.25) y(8)
+Point 7 at x(3) y(10)
+Point 8 at x(3.85) y(12.15)
+Point 9 at x(3) y(10)
+
+--------
+///////////////////////////////////
+///////////////////////////////////
+

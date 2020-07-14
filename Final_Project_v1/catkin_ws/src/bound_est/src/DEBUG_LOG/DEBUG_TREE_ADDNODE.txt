@@ -1,0 +1,90 @@
+Log message for Tree addNode() log data at Tue Jul 14 12:14:00 2020
+-----------------------------------
+-----------------------------------
+Trying to add node:
+Node position x(0.5), y(1.25)
+Node parent should have position x(-1.79769e+308), y(-1.79769e+308)
+And distance to end of section = 130.032
+Node placed in head position
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(0.3), y(2.35)
+Node parent should have position x(0.5), y(1.25)
+And distance to end of section = 108.643
+Attempting to find parent...
+Parent found with position x(0.5), y(1.25)
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(0.05), y(3.85)
+Node parent should have position x(0.3), y(2.35)
+And distance to end of section = 83.33
+Attempting to find parent...
+Parent found with position x(0.3), y(2.35)
+Parent's own parent has position x(0.5), y(1.25)
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(0.8), y(5.1)
+Node parent should have position x(0.05), y(3.85)
+And distance to end of section = 59.005
+Attempting to find parent...
+Parent found with position x(0.05), y(3.85)
+Parent's own parent has position x(0.3), y(2.35)
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(2), y(6.75)
+Node parent should have position x(0.8), y(5.1)
+And distance to end of section = 32.5825
+Attempting to find parent...
+Parent found with position x(0.8), y(5.1)
+Parent's own parent has position x(0.05), y(3.85)
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(2.25), y(8)
+Node parent should have position x(2), y(6.75)
+And distance to end of section = 19.7825
+Attempting to find parent...
+Parent found with position x(2), y(6.75)
+Parent's own parent has position x(0.8), y(5.1)
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(3), y(10)
+Node parent should have position x(2.25), y(8)
+And distance to end of section = 5.345
+Attempting to find parent...
+Parent found with position x(2.25), y(8)
+Parent's own parent has position x(2), y(6.75)
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(3.85), y(12.15)
+Node parent should have position x(3), y(10)
+And distance to end of section = 0
+Attempting to find parent...
+Parent found with position x(3), y(10)
+Parent's own parent has position x(2.25), y(8)
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(3), y(10)
+Node parent should have position x(3.85), y(12.15)
+And distance to end of section = 5.345
+Attempting to find parent...
+Parent found with position x(3.85), y(12.15)
+Parent's own parent has position x(3), y(10)
+Node addition operation complete
+--------
+Trying to add node:
+Node position x(3.85), y(12.15)
+Node parent should have position x(3), y(10)
+And distance to end of section = 0
+Node was already found in tree. Point skipped
+--------
+///////////////////////////////////
+///////////////////////////////////
+

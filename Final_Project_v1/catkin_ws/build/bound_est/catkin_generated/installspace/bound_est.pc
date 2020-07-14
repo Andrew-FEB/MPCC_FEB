@@ -1,0 +1,8 @@
+prefix=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/install
+
+Name: bound_est
+Description: Description of bound_est
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime roscpp
