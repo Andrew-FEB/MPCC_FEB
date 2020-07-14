@@ -9,7 +9,7 @@ import parameters as p
 
 # Author: Darina Abaffyová
 # Created: 12/02/2020
-# Last updated: 30/05/2020
+# Last updated: 12/07/2020
 
 # Model
 # -------------------------------------
@@ -301,12 +301,14 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
     ref_list = x0[p.nx + p.N * 5:x0.shape[0]]
 
     F1 = []
+    tracking_weight = track_error_weight[1]
     for t in range(0, p.nu * p.N, p.nu):
         u = [u_seq[t], u_seq[t + 1]]
         # Update cost
         cost += cost_function_kinematic(x_t, ref_list[t:t + 2], u, u_prev, track_error_weight, in_weight,
                                         in_change_weight)
         u_prev = u
+        track_error_weight[1] = tracking_weight * (1 + t/p.N)
         # Update state
         x_t = kinematic_model_rk(x_t, u, True)
         # Boundary Constraint

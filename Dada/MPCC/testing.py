@@ -7,13 +7,13 @@ import codegenerator as cg
 
 # Author: Darina Abaffyová
 # Created: 24/02/2020
-# Last updated: 30/05/2020
+# Last updated: 12/07/2020
 
-track_points = 1000
-sim_steps = 300
+track_points = 1500
+sim_steps = 500
 
 # Weights in cost function
-track_error_weight = [0, 1, 0]  # contouring, tracking, velocity
+track_error_weight = [0, 1, 2]  # contouring, tracking, velocity
 in_weight = [1e-4, 1e-4]  # duty cycle, steering angle
 in_change_weight = [0.01, 0.001]  # change of duty cycle, change of steering angle
 

@@ -10,12 +10,12 @@ import parameters as param
 
 # Author: Darina Abaffyová
 # Created: 13/02/2020
-# Last updated: 03/07/2020
+# Last updated: 12/07/2020
 
 # Define all named tuples here
 KinematicState = namedtuple('KinematicState', 'x y psi v')
 DynamicState = namedtuple('DynamicState', 'x y phi v_x v_y omega')
-Control = namedtuple('Control', 'D delta')
+Control = namedtuple('Control', 'acc delta')
 Intercept = namedtuple('intercept', 'upper lower')
 Slope = namedtuple('slope', 'upper lower')
 
@@ -211,7 +211,7 @@ def warm_start(state, state_ref, bound):
 def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest):
     # Inspired here: https://github.com/alexliniger/MPCC/blob/master/Matlab/findTheta.m
     # Find the index of the point on the centreline which is the closest to the current position
-    track_width = param.track_width
+    track_width = param.track_width/2
 
     # Investigate at search region
     back = int(search_region * 0.05)  # 5%
@@ -237,7 +237,7 @@ def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest
             smallest_dist_i = i
 
     # Crash if still too big (for now - TODO ?)
-    if smallest_dist > track_width / 2:
+    if smallest_dist > track_width:
         warn("OUT OF TRACK BOUNDARIES!")
         # sys.exit("OUT OF TRACK BOUNDARIES!")
 

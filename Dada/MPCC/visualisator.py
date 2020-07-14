@@ -9,7 +9,7 @@ import parameters as param
 
 # Author: Darina Abaffyová
 # Created: 16/05/2020
-# Last updated: 30/05/2020
+# Last updated: 12/07/2020
 
 def plot_cost(cost_seq):
     t = np.arange(0, param.Ts * len(cost_seq), param.Ts)
@@ -159,7 +159,7 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
     slopes = [s for s, *_ in bound_seq]
     intercepts = [i for s, i, *_ in bound_seq]
     index1 = [index for s, i, index in bound_seq]
-    index2 = [index + 10 for s, i, index in bound_seq]
+    index2 = [index + 20 for s, i, index in bound_seq]
 
     plt.show()
     ax = plt.gca()

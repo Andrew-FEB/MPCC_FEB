@@ -52,11 +52,11 @@ delta_min = -delta_max
 
 # Track parameters
 # -------------------------------------
-track_width = 1
+track_width = 3
 
 # Optimizer parameters
 # -------------------------------------
-N = 50  # Prediction Horizon (in time steps)
+N = 40  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
 nx = 4  # Number of Parameters (state)
 Ts = 0.05  # Sampling time (length of one time step in seconds)

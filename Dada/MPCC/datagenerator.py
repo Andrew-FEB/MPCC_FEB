@@ -7,7 +7,7 @@ import parameters as param
 
 # Author: Darina Abaffyová
 # Created: 04/03/2020
-# Last updated: 30/05/2020
+# Last updated: 12/07/2020
 
 
 def generate_track(num_steps):
@@ -55,9 +55,9 @@ def generate_track(num_steps):
 
 
 def generate_racing_track(num_steps):
-    x = np.array([0, 2, 4, 8, 14, 19, 25, 27, 29])
+    x = np.array([-10, -5, 0, 2, 4, 8, 14, 19, 25, 27, 29, 31, 33, 35, 37])
     # y = np.array([0, 1, 5, 7, 4, 5, 5])
-    y = np.array([0, 1, 5, 10, 2, 13, 5, 0, -3])
+    y = np.array([0, 0, 0, -1, -5, -10, 5, 13, 5, 0, 0, 0, 0, 0, 0])
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
@@ -69,8 +69,8 @@ def generate_racing_track(num_steps):
     yu = []
     yl = []
     for i in range(len(xi)):
-        yu.append(yi[i] + 1)
-        yl.append(yi[i] - 1)
+        yu.append(yi[i] + param.track_width/2)
+        yl.append(yi[i] - param.track_width/2)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
