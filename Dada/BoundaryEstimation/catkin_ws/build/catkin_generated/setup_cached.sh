@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build"
+export PWD="/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build"

@@ -8,7 +8,7 @@
             "includePath": [
                 "/opt/ros/melodic/include/**",
                 "/usr/include/**",
-		        "/home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/**"
+		        "/home/dm501/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/**"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",

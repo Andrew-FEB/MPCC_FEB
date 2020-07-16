@@ -1,8 +1,8 @@
-# Install script for directory: /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est
+# Install script for directory: /home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est/catkin_generated/installspace/bound_est.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est/catkin_generated/installspace/bound_est.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bound_est/cmake" TYPE FILE FILES
-    "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est/catkin_generated/installspace/bound_estConfig.cmake"
-    "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est/catkin_generated/installspace/bound_estConfig-version.cmake"
+    "/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est/catkin_generated/installspace/bound_estConfig.cmake"
+    "/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/build/bound_est/catkin_generated/installspace/bound_estConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bound_est" TYPE FILE FILES "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bound_est" TYPE FILE FILES "/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/package.xml")
 endif()
 
