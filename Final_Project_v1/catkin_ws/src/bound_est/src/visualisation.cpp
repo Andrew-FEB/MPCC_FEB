@@ -129,7 +129,7 @@ void Visualisation::showNewCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		new_cone_markers.markers[i].header.stamp = ros::Time();
 		new_cone_markers.markers[i].ns = "new_cones";
 		new_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		new_cone_markers.markers[i].mesh_resource = "file:///home/dm501/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		new_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		new_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		new_cone_markers.markers[i].pose.position.z = 0.0;
 		new_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -170,7 +170,7 @@ void Visualisation::showFramedCones(const std::vector<std::unique_ptr<Cone>> &co
 		framed_cone_markers.markers[i].header.stamp = ros::Time();
 		framed_cone_markers.markers[i].ns = "new_cones";
 		framed_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		framed_cone_markers.markers[i].mesh_resource = "file:///home/dm501/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		framed_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		framed_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		framed_cone_markers.markers[i].pose.position.z = 0.0;
 		framed_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -211,7 +211,7 @@ void Visualisation::showOldCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		old_cone_markers.markers[i].header.stamp = ros::Time();
 		old_cone_markers.markers[i].ns = "old_cones";
 		old_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		old_cone_markers.markers[i].mesh_resource = "file:///home/dm501/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		old_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		old_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		old_cone_markers.markers[i].pose.position.z = 0.0;
 		old_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -244,7 +244,7 @@ void Visualisation::showCar(const Pos &pos)
 	car_marker.header.stamp = ros::Time();
 	car_marker.ns = "car_image";
 	car_marker.type = visualization_msgs::Marker::MESH_RESOURCE;
-	car_marker.mesh_resource = "file:///home/dm501/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
+	car_marker.mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
 	car_marker.action = visualization_msgs::Marker::ADD;
 	car_marker.pose.position.z = 0.0;
 	car_marker.pose.orientation.z = 0.0;
@@ -698,14 +698,14 @@ void Visualisation::showReferencePath(const std::vector<MPC_targets> &reference_
 	{
 		//Slope left and right
 		geometry_msgs::Point sla, slb, sra, srb;
-		sla.x = target.left_boundary.p.x + 2*cos(atan(target.left_boundary.phi)*180/M_PI);
-		sla.y = target.left_boundary.p.y + 2*sin(atan(target.left_boundary.phi)*180/M_PI);
-		slb.x = target.left_boundary.p.x - 2*cos(atan(target.left_boundary.phi)*180/M_PI);
-		slb.y = target.left_boundary.p.y - 2*sin(atan(target.left_boundary.phi)*180/M_PI);
-		sra.x = target.right_boundary.p.x + 2*cos(atan(target.right_boundary.phi)*180/M_PI);
-		sra.y = target.right_boundary.p.y + 2*sin(atan(target.right_boundary.phi)*180/M_PI);
-		srb.x = target.right_boundary.p.x - 2*cos(atan(target.right_boundary.phi)*180/M_PI);
-		srb.y = target.right_boundary.p.y - 2*sin(atan(target.right_boundary.phi)*180/M_PI);
+		sla.x = target.left_boundary.p.x + 2*cos(atan(target.left_boundary.phi));
+		sla.y = target.left_boundary.p.y + 2*sin(atan(target.left_boundary.phi));
+		slb.x = target.left_boundary.p.x - 2*cos(atan(target.left_boundary.phi));
+		slb.y = target.left_boundary.p.y - 2*sin(atan(target.left_boundary.phi));
+		sra.x = target.right_boundary.p.x + 2*cos(atan(target.right_boundary.phi));
+		sra.y = target.right_boundary.p.y + 2*sin(atan(target.right_boundary.phi));
+		srb.x = target.right_boundary.p.x - 2*cos(atan(target.right_boundary.phi));
+		srb.y = target.right_boundary.p.y - 2*sin(atan(target.right_boundary.phi));
 		boundary_slope_markers.points.push_back(sla);
 		boundary_slope_markers.points.push_back(slb);
 		boundary_slope_markers.points.push_back(sra);

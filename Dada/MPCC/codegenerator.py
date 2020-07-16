@@ -334,13 +334,13 @@ def generate_code_kinematic(track_error_weight, in_weight, in_change_weight, lan
 
     if lang == 'c':
         build_config = og.config.BuildConfiguration() \
-            .with_build_directory("mpcc_c_build_2") \
+            .with_build_directory("mpcc_c_build_kin") \
             .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
             .with_open_version('0.7.0-alpha.1') \
             .with_build_c_bindings()
     elif lang == 'p':
         build_config = og.config.BuildConfiguration() \
-            .with_build_directory("mpcc_python_build_2") \
+            .with_build_directory("mpcc_python_build_kin") \
             .with_open_version('0.7.0-alpha.1') \
             .with_tcp_interface_config()
     else:

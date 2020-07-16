@@ -1,4 +1,4 @@
-Log message for findFirstMidpoint() log data at Thu Jul 16 08:33:01 2020
+Log message for findFirstMidpoint() log data at Thu Jul 16 17:21:29 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:

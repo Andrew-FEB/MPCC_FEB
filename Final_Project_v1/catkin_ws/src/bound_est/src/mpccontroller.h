@@ -27,7 +27,6 @@ public:
     MPCController(shared_ptr<Visualisation> vis);
     MPCController(int ph, double dt);
     MPCController(int ph, double dt, shared_ptr<Visualisation> vis);
-    ~MPCController() = default;
     ControlInputs solve(const Car & current, Track & t) const;
     
 private:

@@ -196,6 +196,7 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
         state = state_seq[i]
         x = [state[0]]
         y = [state[1]]
+        plt.arrow(state[0], state[1], 2, 2 * np.tan(state[3]), ec='black')
         # Calculate positions obtained with these control inputs
         for j in range(0, len(control_seq[i]), param.nu):
             next_state = cg.kinematic_model_rk(state, [control_seq[i][j], control_seq[i][j + 1]], False)

@@ -39,7 +39,6 @@ int main(int argc, char *argv[])
 
     //Configure visualisation
     #ifdef VISUALISE
-        
         auto visualisation = std::make_shared<Visualisation>();
     #else
         auto visualisation = nullptr;
@@ -48,11 +47,11 @@ int main(int argc, char *argv[])
     //Setup essential configuration variables
     //Configure track
     std::unique_ptr<Track> track = std::make_unique<Track>(visualisation);
-    std::unique_ptr<MPCController> mpcc = std::make_unique<MPCController>(pred_horizon, time_step, visualisation);
+    // std::unique_ptr<MPCController> mpcc = std::make_unique<MPCController>(pred_horizon, time_step, visualisation);
 
     // //Configure ros messages
     // rosbag::Bag cone_data;
-    // cone_data.open("/home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
+    // cone_data.open("/home/dada/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
     // rosbag::View view(cone_data);
     // std::vector<std::string> topics;
     // //topics.push_back(std::string("carpos")); //Testing topic, remove in final

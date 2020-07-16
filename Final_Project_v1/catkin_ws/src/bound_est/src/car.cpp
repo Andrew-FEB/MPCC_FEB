@@ -97,30 +97,12 @@ TireForces Car::tireModel(const ControlInputs & control) const
 void Car::updateCar(ControlInputs control, double dt)
 {
     Car & car{*this};
-    // cout << "BEFORE UPDATE:\n"  << car << endl;
-
     auto k1 = car.kinematicModel(control) * dt;
-    // cout << "K1 = \n" << k1 << endl;
-    // cout << "CAR:\n"  << car << endl;
-
     auto k2 = (car + k1 * 0.5).kinematicModel(control) * dt;
-    // cout << "K2 = \n" << k2 << endl;
-    // cout << "CAR:\n"  << car << endl;
-
     auto k3 = (car + k2 * 0.5).kinematicModel(control) * dt;
-    // cout << "K3 = \n" << k3 << endl;
-    // cout << "CAR:\n"  << car << endl;
-
     auto k4 = (car + k3).kinematicModel(control) * dt;
-    // cout << "K4 = \n" << k4 << endl;
-    // cout << "CAR:\n"  << car << endl;
 
     car = car + (k1 + k2 * 2 + k3 * 2 + k4) * (1.0 / 6.0);
-    // cout << "AFTER UPDATE:\n" << car << endl;
-
-    // #ifdef VISUALISE
-    // visualisation->showCar(position.p);
-    // #endif
 }
 
 void Car::setPosition(const Pos & newPos)

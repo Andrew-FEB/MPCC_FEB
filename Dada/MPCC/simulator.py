@@ -61,7 +61,7 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
     control_inputs_seq = []
 
     # Create a TCP connection manager
-    mng = og.tcp.OptimizerTcpManager("mpcc_python_build_2/mpcc_optimizer")
+    mng = og.tcp.OptimizerTcpManager("mpcc_python_build_kin/mpcc_optimizer")
     # Start the TCP server
     mng.start()
 

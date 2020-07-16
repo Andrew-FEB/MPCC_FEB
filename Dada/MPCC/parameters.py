@@ -45,7 +45,7 @@ omega_min = -omega_max
 # Control limits
 # Acceleration
 a_max = 1
-a_min = -0.1
+a_min = -a_max
 # Steering angle
 delta_max = 0.506  # 0.506 rad =  29 degrees
 delta_min = -delta_max

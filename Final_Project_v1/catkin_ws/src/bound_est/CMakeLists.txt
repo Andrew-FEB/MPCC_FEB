@@ -230,7 +230,7 @@ include_directories(
   include/Bound_Est
   include
   ${catkin_INCLUDE_DIRS}
- "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer"
+ "/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer"
 )
 
 add_executable(Bound_Est 
@@ -246,6 +246,6 @@ add_executable(Bound_Est
   src/mpccontroller.cpp
 )
 
-target_link_libraries(Bound_Est ${catkin_LIBRARIES} ${OpenMP_LIBS} /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/target/release/libmpcc_optimizer.a m dl pthread)
+target_link_libraries(Bound_Est ${catkin_LIBRARIES} ${OpenMP_LIBS} /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/target/release/libmpcc_optimizer.a m dl pthread)
 
 add_dependencies(Bound_Est bound_est_generate_messages_cpp ${catkin_EXPORTED_TARGETS} )

@@ -411,8 +411,8 @@ coord Track::getClosestPointOnLine (const coord &a, const coord &b, const coord 
     double a_to_b_squared = pow(a_to_b.x, 2)+pow(a_to_b.y,2);
     double dot_prod = a_to_p.x*a_to_b.x + a_to_p.y*a_to_b.y;
     double normalized_dist = dot_prod/a_to_b_squared;
-    if (normalized_dist <0) normalized_dist = 0;
-    if (normalized_dist >1) normalized_dist = 1;
+    // if (normalized_dist <0) normalized_dist = 0;
+    // if (normalized_dist >1) normalized_dist = 1;
     return {a.x+a_to_b.x*normalized_dist, a.y+a_to_b.y*normalized_dist};
 }
 
