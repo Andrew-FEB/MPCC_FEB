@@ -110,7 +110,6 @@ int main(int argc, char *argv[])
     while (1)
     {
         //TEST
-        std::cerr<<"Correct version running"<<std::endl;
         //ETEST
         //MAIN LOOP
         //Collect IMU data
@@ -125,15 +124,18 @@ int main(int argc, char *argv[])
         */
         //Process track section
         track->processNextSection();
-        
+        //TEST
+        auto path = track->getReferencePath(1, 10);
+        std::cerr<<"ref path size = "<<path.size()<<std::endl;
+        //ETEST
         //DADA MPCC
-         auto car = track->getCar();
-        auto control = mpcc->solve(*car, *track);
+        auto car = track->getCar();
+        /*auto control = mpcc->solve(*car, *track);
         //Update car outputs
-        car->updateCar(control, time_step);
+        car->updateCar(control, time_step);*/
         #ifdef VISUALISE
-            visualisation->showCar(car);
-            visualisation->showCarDirection(car);
+            visualisation->showCar(car->getPosition());
+            visualisation->showCarDirection(car->getPosition());
         #endif
 
 

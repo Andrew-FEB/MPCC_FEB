@@ -32,7 +32,7 @@ public:
     std::vector<const Cone *> getNewCones();
     Car *getCar();
     friend std::ostream& operator<<(std::ostream& os, Track &track);
-    MPC_targets getCentreLine(const double &desired_dist);
+    std::vector<MPC_targets> getReferencePath(const double &dist_between_points, const int &number_of_points);
     bool checkForCollision(const coord &carPos, const double &carDirection);
     void processNextSection();
     enum class ConeError
@@ -49,7 +49,9 @@ private:
     bool checkShapeOverlap();
     std::pair<std::vector<const Cone *>, std::vector<const Cone *>> seperateConeList(std::vector<std::unique_ptr<Cone>> &coneList);    //0 = left, 1 = right
     void extractNewConesInRange (std::vector<std::unique_ptr<Cone>> &cones_to_extract, std::vector<std::unique_ptr<Cone>> &extracted_cones, const std::unique_ptr<Car> &car);
-
+    std::vector<coord> interpolateCentreCoordsDiscrete(const int &original_index, const int &number_of_points, const double &distance);
+    std::vector<Pos> findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cone_list, const std::vector<coord> &coord_list);
+    coord getClosestPointOnLine (const coord &a, const coord &b, const coord &p);
     std::vector<std::unique_ptr<Cone>> processed_cone_list;
     std::vector<const Cone*> processed_cone_list_left;
     std::vector<const Cone*> processed_cone_list_right;
@@ -58,6 +60,9 @@ private:
     std::unique_ptr<Triangulation> triangulate;
     #ifdef VISUALISE
     std::shared_ptr<Visualisation> visualisation;
+    #endif
+    #ifdef DEBUG
+    std::unique_ptr<BoundaryLogger> boundaries_log;
     #endif
     std::unique_ptr<PathAnalysis> path_analysis;
     std::vector<coord> centre_coords;

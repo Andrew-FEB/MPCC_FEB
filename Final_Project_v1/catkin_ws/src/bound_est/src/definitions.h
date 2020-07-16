@@ -181,13 +181,12 @@ constexpr struct CarParams {
 	double p_ellipse = 0.95;
 } CarParams;
 
-typedef struct MPC_timestep_targets
+struct MPC_targets
 {
-	coord nearest_point;
-	coord goal;
-	double slope;
-	double slope_rads;
-} MPC_targets;
+	coord reference_point;
+	Pos left_boundary;
+	Pos right_boundary;
+};
 
 inline double distBetweenPoints(const coord &a, const coord &b)
 {

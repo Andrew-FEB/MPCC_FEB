@@ -45,6 +45,10 @@ void Visualisation::refreshRosOutput()
 		if (paths_pub.getNumSubscribers()>=1) paths_pub.publish(path_markers);
 		if (right_cone_pub.getNumSubscribers()>=1) right_cone_pub.publish(right_cone_markers);
 		if (left_cone_pub.getNumSubscribers()>=1) left_cone_pub.publish(left_cone_markers);
+		if (reference_point_pub.getNumSubscribers()>=1) reference_point_pub.publish(reference_point_markers);
+		if (boundary_slope_pub.getNumSubscribers()>=1) boundary_slope_pub.publish(boundary_slope_markers);
+		if (boundary_point_pub.getNumSubscribers()>=1) boundary_point_pub.publish(boundary_point_markers);
+		if (reference_to_boundary_pub.getNumSubscribers()>=1) reference_to_boundary_pub.publish(reference_to_boundary_markers);
 	}
 	else
 	{
@@ -616,3 +620,132 @@ void Visualisation::showRightCones(const std::vector <const Cone *> & coneList)
 	std::cerr<<"Visualisation connection completed - right cones."<<std::endl;
 }
 
+void Visualisation::showReferencePath(const std::vector<MPC_targets> &reference_path)
+{	
+	if (reference_point_pub.getNumSubscribers()<1 || boundary_slope_pub.getNumSubscribers()<1 || boundary_point_pub.getNumSubscribers()<1 || reference_to_boundary_pub.getNumSubscribers()<1 )
+	{
+		std::cerr<<"Waiting for subscription - reference path."<<std::endl;
+		reference_point_pub = n->advertise<visualization_msgs::MarkerArray>("reference_points", TIME_OUT_VAL);
+		boundary_slope_pub = n->advertise<visualization_msgs::Marker>("boundary_slopes", TIME_OUT_VAL);
+		boundary_point_pub = n->advertise<visualization_msgs::MarkerArray>("boundary_points", TIME_OUT_VAL);
+		reference_to_boundary_pub = n->advertise<visualization_msgs::Marker>("reference_boundary_lines", TIME_OUT_VAL);
+		waitForSubscribe(reference_point_pub);
+		waitForSubscribe(boundary_slope_pub);
+		waitForSubscribe(boundary_point_pub);
+		waitForSubscribe(reference_to_boundary_pub);
+	}
+	if (!reference_point_markers.markers.empty()) reference_point_markers.markers.clear();
+	if (!boundary_slope_markers.points.empty()) boundary_slope_markers.points.clear();
+	if (!boundary_point_markers.markers.empty()) boundary_point_markers.markers.clear();
+	if (!reference_to_boundary_markers.points.empty()) reference_to_boundary_markers.points.clear();
+
+
+	//Slopes
+	boundary_slope_markers.type = visualization_msgs::Marker::LINE_LIST;
+	boundary_slope_markers.color.r = 0.3f;
+	boundary_slope_markers.color.b = 1.0f;
+	boundary_slope_markers.color.a = 0.5f;
+	boundary_slope_markers.scale.x = 0.05;
+	boundary_slope_markers.lifetime = ros::Duration(ROS_DURATION_TIME);
+	boundary_slope_markers.header.frame_id = "/tf_bound";
+	boundary_slope_markers.header.stamp = ros::Time::now();
+	boundary_slope_markers.ns = "boundary_slopes";
+	boundary_slope_markers.action = visualization_msgs::Marker::ADD;
+	boundary_slope_markers.pose.orientation.w = 1.0;
+	boundary_slope_markers.id = 0;
+
+	//Reference to boundary points
+	reference_to_boundary_markers.type = visualization_msgs::Marker::LINE_LIST;
+	reference_to_boundary_markers.color.r = 0.5f;
+	reference_to_boundary_markers.color.b = 0.5f;
+	reference_to_boundary_markers.color.a = 0.5f;
+	reference_to_boundary_markers.scale.x = 0.05;
+	reference_to_boundary_markers.lifetime = ros::Duration(ROS_DURATION_TIME);
+	reference_to_boundary_markers.header.frame_id = "/tf_bound";
+	reference_to_boundary_markers.header.stamp = ros::Time::now();
+	reference_to_boundary_markers.ns = "reference_to_boundary_lines";
+	reference_to_boundary_markers.action = visualization_msgs::Marker::ADD;
+	reference_to_boundary_markers.pose.orientation.w = 1.0;
+	reference_to_boundary_markers.id = 0;
+
+	//Boundary points
+	visualization_msgs::Marker marker;
+	marker.header.frame_id = "/tf_bound";
+	marker.header.stamp = ros::Time();
+	marker.ns = "boundary_points";
+	marker.type = visualization_msgs::Marker::SPHERE;
+	marker.action = visualization_msgs::Marker::ADD;
+	marker.pose.position.z = 0.0;
+	marker.pose.orientation.z = 0.8;
+	marker.pose.orientation.w = 1.0;
+	marker.pose.orientation.y = 0.0;
+	marker.pose.orientation.x = 0.0;
+	marker.scale.x = 0.3;
+	marker.scale.y = 0.3;
+	marker.scale.z = 0.3;
+	marker.color.r = 0.3f;
+	marker.color.g = 0.0f;
+	marker.color.b = 1.0f;
+	marker.color.a = 0.5;
+	marker.lifetime = ros::Duration(ROS_DURATION_TIME);
+	int boundary_point_index {0};
+
+	//Reference points
+	marker.ns = "reference_points";
+	int reference_point_index {0};
+
+	for (auto target : reference_path)
+	{
+		//Slope left and right
+		geometry_msgs::Point sla, slb, sra, srb;
+		sla.x = target.left_boundary.p.x + 2*cos(atan(target.left_boundary.phi)*180/M_PI);
+		sla.y = target.left_boundary.p.y + 2*sin(atan(target.left_boundary.phi)*180/M_PI);
+		slb.x = target.left_boundary.p.x - 2*cos(atan(target.left_boundary.phi)*180/M_PI);
+		slb.y = target.left_boundary.p.y - 2*sin(atan(target.left_boundary.phi)*180/M_PI);
+		sra.x = target.right_boundary.p.x + 2*cos(atan(target.right_boundary.phi)*180/M_PI);
+		sra.y = target.right_boundary.p.y + 2*sin(atan(target.right_boundary.phi)*180/M_PI);
+		srb.x = target.right_boundary.p.x - 2*cos(atan(target.right_boundary.phi)*180/M_PI);
+		srb.y = target.right_boundary.p.y - 2*sin(atan(target.right_boundary.phi)*180/M_PI);
+		boundary_slope_markers.points.push_back(sla);
+		boundary_slope_markers.points.push_back(slb);
+		boundary_slope_markers.points.push_back(sra);
+		boundary_slope_markers.points.push_back(srb);
+
+		//Reference to boundary lines
+		geometry_msgs::Point reference, boundary_l, boundary_r;
+		reference.x = target.reference_point.x;
+		reference.y = target.reference_point.y;
+		boundary_l.x = target.left_boundary.p.x;
+		boundary_l.y = target.left_boundary.p.y;
+		boundary_r.x = target.right_boundary.p.x;
+		boundary_r.y = target.right_boundary.p.y;
+		reference_to_boundary_markers.points.push_back(reference);
+		reference_to_boundary_markers.points.push_back(boundary_l);
+		reference_to_boundary_markers.points.push_back(reference);
+		reference_to_boundary_markers.points.push_back(boundary_r);
+
+		//Boundary points
+		marker.pose.position.x = target.left_boundary.p.x;
+		marker.pose.position.y = target.left_boundary.p.y;
+		marker.id = boundary_point_index++;	
+		boundary_point_markers.markers.push_back(marker);
+		marker.pose.position.x = target.right_boundary.p.x;
+		marker.pose.position.y = target.right_boundary.p.y;
+		marker.id = boundary_point_index++;	
+		boundary_point_markers.markers.push_back(marker);
+
+		//reference points
+		marker.pose.position.x = target.reference_point.x;
+		marker.pose.position.y = target.reference_point.y;
+		marker.id = reference_point_index++;	
+		boundary_point_markers.markers.push_back(marker);
+	}
+	
+	boundary_point_pub.publish(boundary_point_markers);
+	boundary_slope_pub.publish(boundary_slope_markers);	
+	reference_point_pub.publish(reference_point_markers);
+	reference_to_boundary_pub.publish(reference_to_boundary_markers);
+
+
+	std::cerr<<"Visualisation connection completed - reference path."<<std::endl;
+}

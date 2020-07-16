@@ -20,7 +20,7 @@ ControlInputs MPCController::solve(const Car &current, Track &t) const
 
     // Obtain reference and track constraints
     auto dist = calculateDistance(vel);
-    auto ref = t.getCentreLine(dist);
+    auto ref = t.getReferencePath(dist);
 
     /* parameters */
     double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {pos.p.x, pos.p.y, vel.omega, vel.vx,                  // Current state

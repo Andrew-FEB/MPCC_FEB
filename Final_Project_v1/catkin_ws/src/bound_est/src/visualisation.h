@@ -3,7 +3,6 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
-#include <tf/transform_broadcaster.h>
 #include <vector>
 #include <string>
 #include <memory>
@@ -33,6 +32,7 @@ public:
 	void showViablePaths(const std::vector<std::vector<coord>> &paths, bool refresh = false);
 	void showLeftCones(const std::vector <const Cone *> &coneList);
 	void showRightCones(const std::vector <const Cone *> &coneList);
+	void showReferencePath(const std::vector<MPC_targets> &reference_path);
 
 private:
 	void waitForSubscribe(const ros::Publisher &pub);
@@ -51,6 +51,10 @@ private:
 	ros::Publisher paths_pub;
 	ros::Publisher left_cone_pub;
 	ros::Publisher right_cone_pub;
+	ros::Publisher reference_point_pub;
+	ros::Publisher boundary_slope_pub;
+	ros::Publisher boundary_point_pub;
+	ros::Publisher reference_to_boundary_pub;
 
 	visualization_msgs::MarkerArray node_mid_markers;
 	visualization_msgs::MarkerArray node_mid_parent_markers;
@@ -65,5 +69,9 @@ private:
 	visualization_msgs::Marker triangle_line_markers;
 	visualization_msgs::MarkerArray left_cone_markers;
 	visualization_msgs::MarkerArray right_cone_markers;
+	visualization_msgs::MarkerArray reference_point_markers;
+	visualization_msgs::Marker boundary_slope_markers;
+	visualization_msgs::MarkerArray boundary_point_markers;
+	visualization_msgs::Marker reference_to_boundary_markers;
 };
 
