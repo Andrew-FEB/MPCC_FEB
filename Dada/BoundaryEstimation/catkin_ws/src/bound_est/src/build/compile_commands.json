@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/build",
-  "command": "/usr/bin/g++-9    -g   -o CMakeFiles/bound_est.dir/main.cpp.o -c /home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/main.cpp",
-  "file": "/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/main.cpp"
+  "directory": "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/build",
+  "command": "/usr/bin/g++-9    -g   -o CMakeFiles/bound_est.dir/main.cpp.o -c /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/main.cpp",
+  "file": "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/main.cpp"
 }
 ]

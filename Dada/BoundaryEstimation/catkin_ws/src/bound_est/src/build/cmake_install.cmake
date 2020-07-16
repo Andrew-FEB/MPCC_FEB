@@ -1,4 +1,4 @@
-# Install script for directory: /home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src
+# Install script for directory: /home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

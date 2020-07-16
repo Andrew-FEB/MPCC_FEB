@@ -12,21 +12,22 @@
 #include <tuple>
 #include <string>
 #include <memory>
+#include <iostream>
 #include "mpcc_optimizer_bindings.hpp"
 
 #include "car.h"
 #include "track.h"
 #include "definitions.h"
 #include "visualisation.h"
-
-using namespace std;
+#include "boundaryLogger.h"
+#include "boundGlobals.h"
 
 class MPCController {
 public:
     MPCController();
-    MPCController(shared_ptr<Visualisation> vis);
+    MPCController(std::shared_ptr<Visualisation> vis);
     MPCController(int ph, double dt);
-    MPCController(int ph, double dt, shared_ptr<Visualisation> vis);
+    MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis);
     ControlInputs solve(const Car & current, Track & t) const;
     
 private:
@@ -36,7 +37,7 @@ private:
 private:
     int predictionHorizon = 40; // in time steps
     double timeStep = 0.05; // in [s]
-    shared_ptr<Visualisation> visualisation = nullptr;
+    std::shared_ptr<Visualisation> visualisation = nullptr;
     
 };
 

@@ -110,7 +110,7 @@ void Visualisation::showCones(const std::vector < std::unique_ptr<Cone>> & coneL
 		coneMarkerList.markers[i].header.stamp = ros::Time();
 		coneMarkerList.markers[i].ns = "cone_images";
 		coneMarkerList.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		coneMarkerList.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		coneMarkerList.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		coneMarkerList.markers[i].action = visualization_msgs::Marker::ADD;
 		coneMarkerList.markers[i].pose.position.z = 0.0;
 		coneMarkerList.markers[i].pose.orientation.z = 0.0;
@@ -142,7 +142,7 @@ void Visualisation::showCar(const coord & car, const double & angle)
 	carMark.header.stamp = ros::Time();
 	carMark.ns = "car_image";
 	carMark.type = visualization_msgs::Marker::MESH_RESOURCE;
-	carMark.mesh_resource = "file:///home/dm501/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
+	carMark.mesh_resource = "file:///home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
 	carMark.action = visualization_msgs::Marker::ADD;
 	carMark.pose.position.z = 0.0;
 	carMark.pose.orientation.z = tf::createQuaternionMsgFromYaw(angle).z;

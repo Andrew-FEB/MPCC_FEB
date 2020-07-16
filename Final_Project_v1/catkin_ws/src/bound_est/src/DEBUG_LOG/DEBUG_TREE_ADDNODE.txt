@@ -1,4 +1,4 @@
-Log message for Tree addNode() log data at Thu Jul 16 18:04:22 2020
+Log message for Tree addNode() log data at Thu Jul 16 20:51:04 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:

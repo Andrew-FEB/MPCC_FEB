@@ -120,7 +120,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
-  "/home/dm501/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer"
+  "/home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer"
 )
 
 ## Declare a C++ library
@@ -209,4 +209,4 @@ include_directories(
 # catkin_add_nosetests(test)
 
 add_executable(Bound_Est src/Bound_est_triang.cpp src/car.cpp src/cone.cpp src/track.cpp src/tree.cpp src/triangulation.cpp src/visualisation.cpp src/mpccontroller.cpp)
-target_link_libraries(Bound_Est ${catkin_LIBRARIES} ${OpenMP_LIBS} /home/dm501/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.a m dl pthread)
+target_link_libraries(Bound_Est ${catkin_LIBRARIES} ${OpenMP_LIBS} /home/dada/MPCC_FEB/Dada/MPCC/mpcc_c_build_1/mpcc_optimizer/target/release/libmpcc_optimizer.a m dl pthread)

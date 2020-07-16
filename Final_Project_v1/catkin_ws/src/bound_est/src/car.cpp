@@ -1,9 +1,9 @@
 #include "car.h"
 
 Car::Car() {}
-Car::Car(shared_ptr<Visualisation> vis) : visualisation(vis) {}
+Car::Car(std::shared_ptr<Visualisation> vis) : visualisation(vis) {}
 Car::Car(const Pos & newPos, const Vel & newVel) : position(newPos), velocity(newVel) {}
-Car::Car(const Pos & newPos, const Vel & newVel, shared_ptr<Visualisation> vis) : position(newPos), velocity(newVel), visualisation(vis) {}
+Car::Car(const Pos & newPos, const Vel & newVel, std::shared_ptr<Visualisation> vis) : position(newPos), velocity(newVel), visualisation(vis) {}
 
 /**
  *  Bicycle Models
@@ -17,8 +17,8 @@ Car Car::kinematicModel(const ControlInputs & control) const
     auto psi = velocity.omega;       // Yaw rate
     auto v = velocity.vx;            // Velocity
     // Control inputs
-    auto a = control.D;                 // Acceleration
-    auto delta = control.delta;         // Front steering angle
+    auto a = control.D;              // Acceleration
+    auto delta = control.delta;      // Front steering angle
 
     // Compute slip angle
     auto beta = atan2(CarParams.lr * tan(delta), (CarParams.lf + CarParams.lr));
@@ -155,7 +155,7 @@ Car Car::operator+(Car c)
                 visualisation);
 }
 
-ostream & operator<<(ostream & os, const Car & car)
+std::ostream & operator<<(std::ostream & os, const Car & car)
 {
     os << "Position = {" << car.position.p.x << ", " << car.position.p.y << ", " << car.position.phi
             << "}\nVelocity = {" << car.velocity.vx << ", " << car.velocity.vy << ", " << car.velocity.omega << "}\n";

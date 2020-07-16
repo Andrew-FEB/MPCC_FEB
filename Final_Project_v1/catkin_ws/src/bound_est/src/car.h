@@ -10,15 +10,13 @@
 #include "definitions.h"
 #include "visualisation.h"
 
-using namespace std;
-
 class Car
 {
 public:
     Car();
-    Car(shared_ptr<Visualisation> vis);
+    Car(std::shared_ptr<Visualisation> vis);
     Car(const Pos & newPos, const Vel & newVel);
-    Car(const Pos & newPos, const Vel & newVel, shared_ptr<Visualisation> vis);
+    Car(const Pos & newPos, const Vel & newVel, std::shared_ptr<Visualisation> vis);
     ~Car() = default;
     void setPosition(const Pos & newPos);
     const Pos & getPosition() const;
@@ -29,7 +27,7 @@ public:
 
     Car operator*(double a);
     Car operator+(Car c);
-    friend ostream & operator<<(ostream & os, const Car & car);
+    friend std::ostream & operator<<(std::ostream & os, const Car & car);
 
 private:
     Car kinematicModel(const ControlInputs & control) const;
@@ -39,7 +37,7 @@ private:
 private:
     Pos position = {0, 0, 0};
     Vel velocity = {2, 0, 0};
-    shared_ptr<Visualisation> visualisation = nullptr;
+    std::shared_ptr<Visualisation> visualisation = nullptr;
 };
 
 #endif // CAR_H

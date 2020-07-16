@@ -1,4 +1,4 @@
-Log message for Classification log data at Thu Jul 16 18:04:18 2020
+Log message for Classification log data at Thu Jul 16 20:51:00 2020
 -----------------------------------
 -----------------------------------
 Entered determinant check
@@ -106,6 +106,22 @@ Distance from left = 18.25
 Distance from right = 35.38
 Printout of list states
 Left list size: 6, Right list size: 5
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Jul 16 20:51:17 2020
+-----------------------------------
+-----------------------------------
+Entered non-determinant check
+Cone position, x = 2.7, y = 13.6
+previous cone position left, x = 1, y = 13
+previous cone position right, x = 6.7, y = 11.3
+Selected left
+Distance from left = 3.25
+Distance from right = 21.29
+Printout of list states
+Left list size: 1, Right list size: 0
 --------
 ///////////////////////////////////
 ///////////////////////////////////
