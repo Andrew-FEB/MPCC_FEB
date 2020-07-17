@@ -95,9 +95,8 @@ void Track::processNextSection()
 {
     if (new_cones.size()<=0) return;
     //Begin finding cones within valid ranges to find reference path
-    std::vector<std::unique_ptr<Cone>> cones_within_range;
     extractNewConesInRange(new_cones, cones_within_range, car);
-    if (cones_within_range.size()<=0) return;
+    if (cones_within_range.size()<=4) return;
     #ifdef VISUALISE
 	    visualisation->showNewCones(new_cones);
         visualisation->showFramedCones(cones_within_range);
@@ -107,7 +106,7 @@ void Track::processNextSection()
 
     //Seperate cones into left and right
     auto seperated_cones = seperateConeList(cones_within_range);
-
+    if (seperated_cones.first.size()<=0 || seperated_cones.second.size()<=0) return;
     #ifdef VISUALISE
         visualisation->showLeftCones(seperated_cones.first);
         visualisation->showRightCones(seperated_cones.second);
@@ -228,8 +227,14 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
                 else
                 {
                     auto cone_position = cone->getCoordinates();
-                    auto previous_cone_left = (left_list.empty()) ? processed_cone_list_left.back()->getCoordinates() : left_list.back()->getCoordinates();
-                    auto previous_cone_right = (right_list.empty()) ? processed_cone_list_right.back()->getCoordinates() : right_list.back()->getCoordinates();
+                    std::vector<const Cone *> *left_compare{nullptr};
+                    std::vector<const Cone *> *right_compare{nullptr};
+                    if (left_list.empty()) left_compare = &processed_cone_list_left;
+                    else left_compare = &left_list;
+                    if (right_list.empty()) right_compare = &processed_cone_list_right;
+                    else right_compare = &right_list;
+                    auto previous_cone_left = findClosestConeToPoint(cone_position, *left_compare)->getCoordinates();
+                    auto previous_cone_right = findClosestConeToPoint(cone_position, *right_compare)->getCoordinates();
                     #ifdef DEBUG
                     log->write(ss<<"Entered non-determinant check");
                     log->write(ss<<"Cone position, x = "<<cone->getCoordinates().x<<", y = "<<cone->getCoordinates().y);
@@ -265,6 +270,22 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
         #endif
     }
     return std::make_pair(left_list, right_list);
+}
+
+const Cone * Track::findClosestConeToPoint (const coord &point, const std::vector<const Cone *> &cones)
+{
+    const Cone * nearest_cone {nullptr};
+    double best_dist = std::numeric_limits<double>::max();
+    for (auto cone_p : cones)
+    {
+        auto dist = distBetweenPoints(point, cone_p->getCoordinates());
+        if (dist<best_dist)
+        {
+            best_dist = dist;
+            nearest_cone = cone_p;
+        }
+    }
+    return nearest_cone;
 }
 
 std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_points, const int &number_of_points)

@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,28 +23,28 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_37a85/fast"
 /usr/bin/make -f CMakeFiles/cmTC_37a85.dir/build.make CMakeFiles/cmTC_37a85.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_37a85.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_37a85.dir/testCCompiler.c.o   -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/testCCompiler.c
+/usr/bin/cc    -o CMakeFiles/cmTC_37a85.dir/testCCompiler.c.o   -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/testCCompiler.c
 Linking C executable cmTC_37a85
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37a85.dir/link.txt --verbose=1
 /usr/bin/cc      -rdynamic CMakeFiles/cmTC_37a85.dir/testCCompiler.c.o  -o cmTC_37a85 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_59f2a/fast"
 /usr/bin/make -f CMakeFiles/cmTC_59f2a.dir/build.make CMakeFiles/cmTC_59f2a.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_59f2a.dir/CMakeCCompilerABI.c.o
 /usr/bin/cc    -o CMakeFiles/cmTC_59f2a.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
 Linking C executable cmTC_59f2a
@@ -64,16 +64,16 @@ LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/..
 COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_59f2a' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4roCep.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_59f2a /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_59f2a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_59f2a' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp]
   ignore line: []
   ignore line: [Run Build Command:"/usr/bin/make" "cmTC_59f2a/fast"]
   ignore line: [/usr/bin/make -f CMakeFiles/cmTC_59f2a.dir/build.make CMakeFiles/cmTC_59f2a.dir/build]
-  ignore line: [make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp']
+  ignore line: [make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp']
   ignore line: [Building C object CMakeFiles/cmTC_59f2a.dir/CMakeCCompilerABI.c.o]
   ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_59f2a.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
   ignore line: [Linking C executable cmTC_59f2a]
@@ -157,17 +157,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_d24cc/fast"
 /usr/bin/make -f CMakeFiles/cmTC_d24cc.dir/build.make CMakeFiles/cmTC_d24cc.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_d24cc.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_d24cc.dir/feature_tests.c.o   -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.c
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_d24cc.dir/feature_tests.c.o   -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.c
 Linking C executable cmTC_d24cc
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d24cc.dir/link.txt --verbose=1
 /usr/bin/cc      -rdynamic CMakeFiles/cmTC_d24cc.dir/feature_tests.c.o  -o cmTC_d24cc 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -177,17 +177,17 @@ make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/b
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_4a378/fast"
 /usr/bin/make -f CMakeFiles/cmTC_4a378.dir/build.make CMakeFiles/cmTC_4a378.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_4a378.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_4a378.dir/feature_tests.c.o   -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.c
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_4a378.dir/feature_tests.c.o   -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.c
 Linking C executable cmTC_4a378
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a378.dir/link.txt --verbose=1
 /usr/bin/cc      -rdynamic CMakeFiles/cmTC_4a378.dir/feature_tests.c.o  -o cmTC_4a378 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -197,17 +197,17 @@ make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/b
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_b4dba/fast"
 /usr/bin/make -f CMakeFiles/cmTC_b4dba.dir/build.make CMakeFiles/cmTC_b4dba.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_b4dba.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_b4dba.dir/feature_tests.c.o   -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.c
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_b4dba.dir/feature_tests.c.o   -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.c
 Linking C executable cmTC_b4dba
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4dba.dir/link.txt --verbose=1
 /usr/bin/cc      -rdynamic CMakeFiles/cmTC_b4dba.dir/feature_tests.c.o  -o cmTC_b4dba 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -215,25 +215,25 @@ make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/b
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_698c6/fast"
 /usr/bin/make -f CMakeFiles/cmTC_698c6.dir/build.make CMakeFiles/cmTC_698c6.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building CXX object CMakeFiles/cmTC_698c6.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_698c6.dir/testCXXCompiler.cxx.o -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+/usr/bin/c++     -o CMakeFiles/cmTC_698c6.dir/testCXXCompiler.cxx.o -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
 Linking CXX executable cmTC_698c6
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_698c6.dir/link.txt --verbose=1
 /usr/bin/c++       -rdynamic CMakeFiles/cmTC_698c6.dir/testCXXCompiler.cxx.o  -o cmTC_698c6 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_31b00/fast"
 /usr/bin/make -f CMakeFiles/cmTC_31b00.dir/build.make CMakeFiles/cmTC_31b00.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building CXX object CMakeFiles/cmTC_31b00.dir/CMakeCXXCompilerABI.cpp.o
 /usr/bin/c++     -o CMakeFiles/cmTC_31b00.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
 Linking CXX executable cmTC_31b00
@@ -253,16 +253,16 @@ LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/..
 COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_31b00' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFvErwT.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_31b00 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_31b00.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_31b00' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp]
   ignore line: []
   ignore line: [Run Build Command:"/usr/bin/make" "cmTC_31b00/fast"]
   ignore line: [/usr/bin/make -f CMakeFiles/cmTC_31b00.dir/build.make CMakeFiles/cmTC_31b00.dir/build]
-  ignore line: [make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp']
+  ignore line: [make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp']
   ignore line: [Building CXX object CMakeFiles/cmTC_31b00.dir/CMakeCXXCompilerABI.cpp.o]
   ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_31b00.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Linking CXX executable cmTC_31b00]
@@ -342,17 +342,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_b08f1/fast"
 /usr/bin/make -f CMakeFiles/cmTC_b08f1.dir/build.make CMakeFiles/cmTC_b08f1.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building CXX object CMakeFiles/cmTC_b08f1.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_b08f1.dir/feature_tests.cxx.o -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.cxx
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_b08f1.dir/feature_tests.cxx.o -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.cxx
 Linking CXX executable cmTC_b08f1
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b08f1.dir/link.txt --verbose=1
 /usr/bin/c++       -rdynamic CMakeFiles/cmTC_b08f1.dir/feature_tests.cxx.o  -o cmTC_b08f1 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -415,17 +415,17 @@ make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/b
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_0f38b/fast"
 /usr/bin/make -f CMakeFiles/cmTC_0f38b.dir/build.make CMakeFiles/cmTC_0f38b.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building CXX object CMakeFiles/cmTC_0f38b.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_0f38b.dir/feature_tests.cxx.o -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.cxx
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_0f38b.dir/feature_tests.cxx.o -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.cxx
 Linking CXX executable cmTC_0f38b
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f38b.dir/link.txt --verbose=1
 /usr/bin/c++       -rdynamic CMakeFiles/cmTC_0f38b.dir/feature_tests.cxx.o  -o cmTC_0f38b 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -488,17 +488,17 @@ make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/b
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_5ebda/fast"
 /usr/bin/make -f CMakeFiles/cmTC_5ebda.dir/build.make CMakeFiles/cmTC_5ebda.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building CXX object CMakeFiles/cmTC_5ebda.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_5ebda.dir/feature_tests.cxx.o -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.cxx
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_5ebda.dir/feature_tests.cxx.o -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.cxx
 Linking CXX executable cmTC_5ebda
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ebda.dir/link.txt --verbose=1
 /usr/bin/c++       -rdynamic CMakeFiles/cmTC_5ebda.dir/feature_tests.cxx.o  -o cmTC_5ebda 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -561,17 +561,17 @@ make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/b
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_6e531/fast"
 /usr/bin/make -f CMakeFiles/cmTC_6e531.dir/build.make CMakeFiles/cmTC_6e531.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building CXX object CMakeFiles/cmTC_6e531.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_6e531.dir/feature_tests.cxx.o -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.cxx
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_6e531.dir/feature_tests.cxx.o -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/feature_tests.cxx
 Linking CXX executable cmTC_6e531
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e531.dir/link.txt --verbose=1
 /usr/bin/c++       -rdynamic CMakeFiles/cmTC_6e531.dir/feature_tests.cxx.o  -o cmTC_6e531 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -632,30 +632,30 @@ make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/b
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_92437/fast"
 /usr/bin/make -f CMakeFiles/cmTC_92437.dir/build.make CMakeFiles/cmTC_92437.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_92437.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_92437.dir/CheckIncludeFile.c.o   -c /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/usr/bin/cc    -o CMakeFiles/cmTC_92437.dir/CheckIncludeFile.c.o   -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
 Linking C executable cmTC_92437
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92437.dir/link.txt --verbose=1
 /usr/bin/cc      -rdynamic CMakeFiles/cmTC_92437.dir/CheckIncludeFile.c.o  -o cmTC_92437 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTC_d20cd/fast"
 /usr/bin/make -f CMakeFiles/cmTC_d20cd.dir/build.make CMakeFiles/cmTC_d20cd.dir/build
-make[1]: Entering directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_d20cd.dir/CheckFunctionExists.c.o
 /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d20cd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
 Linking C executable cmTC_d20cd
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d20cd.dir/link.txt --verbose=1
 /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_d20cd.dir/CheckFunctionExists.c.o  -o cmTC_d20cd -lpthread 
-make[1]: Leaving directory '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 
 

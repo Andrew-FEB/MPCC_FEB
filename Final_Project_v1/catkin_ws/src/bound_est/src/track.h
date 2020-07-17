@@ -52,9 +52,11 @@ private:
     std::vector<coord> interpolateCentreCoordsDiscrete(const int &original_index, const int &number_of_points, const double &distance);
     std::vector<Pos> findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cone_list, const std::vector<coord> &coord_list);
     coord getClosestPointOnLine (const coord &a, const coord &b, const coord &p);
+    inline const Cone * findClosestConeToPoint (const coord &point, const std::vector<const Cone *> &cones);
     std::vector<std::unique_ptr<Cone>> processed_cone_list;
     std::vector<const Cone*> processed_cone_list_left;
     std::vector<const Cone*> processed_cone_list_right;
+    std::vector<std::unique_ptr<Cone>> cones_within_range;
     std::vector<std::unique_ptr<Cone>> new_cones;
     std::unique_ptr<Car> car;
     std::unique_ptr<Triangulation> triangulate;

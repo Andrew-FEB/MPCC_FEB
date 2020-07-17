@@ -25,7 +25,7 @@ std::vector<std::vector<coord>> Triangulation::getTraversingPaths(std::vector<st
 		if (triangle_list.size()>0) visualisation->showTriangles(triangle_list);
 	#endif
 	//Find end point goal of section
-	coord section_end = findEndGoal(seperated_cone_lists);
+	coord section_end = findEndGoal(last_position, seperated_cone_lists);
 
 	#ifdef VISUALISE
 		visualisation->showEndPoint(section_end);
@@ -232,12 +232,28 @@ std::vector<triang> Triangulation::findTrianglePoints(std::vector<std::unique_pt
 	return triangles;
 }
 
-coord Triangulation::findEndGoal(std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists)
+coord Triangulation::findEndGoal(const coord &last_point, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists)
 {
-	auto last_cone_left = seperated_cone_lists.first.back();
-	auto last_cone_right = seperated_cone_lists.second.back();
-	auto endPoint = findMidpoint(last_cone_left->getCoordinates(), last_cone_right->getCoordinates());
+	auto left_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.first);
+	auto right_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.second);
+	auto endPoint = findMidpoint(left_cone_best->getCoordinates(), right_cone_best->getCoordinates());
 	return endPoint;
+}
+
+inline const Cone * Triangulation::findFurthestConeFromPoint (const coord &point, const std::vector<const Cone *> &cones)
+{
+	const Cone * nearest_cone {nullptr};
+    double best_dist = std::numeric_limits<double>::min();
+    for (auto cone_p : cones)
+    {
+        auto dist = distBetweenPoints(point, cone_p->getCoordinates());
+        if (dist>best_dist)
+        {
+            best_dist = dist;
+            nearest_cone = cone_p;
+        }
+    }
+    return nearest_cone;
 }
 
 std::ostream& operator<<(std::ostream& os, std::vector<triang>& triangList)

@@ -1,4 +1,4 @@
-Log message for Tree getPathsOfLength() log data at Fri Jul 17 15:43:16 2020
+Log message for Tree getPathsOfLength() log data at Fri Jul 17 19:50:44 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 20
@@ -9,7 +9,7 @@ Completed potential path collected of length 1 containing:
 Coordinate 1 with position x(1.85), y(0)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 4.66513. Path added to collection
+Path ignored as invalid. Distance to end goal is 11.1802.
 --------
 Moving down tree to new tree depth of 2
 --------
@@ -19,7 +19,7 @@ Coordinate 1 with position x(1.85), y(0)
 Coordinate 2 with position x(2.79), y(0)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 3.72516. Path added to collection
+Path ignored as invalid. Distance to end goal is 10.2402.
 --------
 Moving down tree to new tree depth of 3
 --------
@@ -30,7 +30,7 @@ Coordinate 2 with position x(2.79), y(0)
 Coordinate 3 with position x(3.73), y(0)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 2.78522. Path added to collection
+Path decided to be valid, as distance to end goal is 9.30026. Path added to collection
 --------
 Moving down tree to new tree depth of 4
 --------
@@ -42,28 +42,8 @@ Coordinate 3 with position x(3.73), y(0)
 Coordinate 4 with position x(4.665), y(0)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 1.85033. Path added to collection
+Path decided to be valid, as distance to end goal is 8.36529. Path added to collection
 --------
-Moving down tree to new tree depth of 5
---------
-Currently pointing at node with position x(3.73), y(0)
-Completed potential path collected of length 5 containing:
-Coordinate 1 with position x(1.85), y(0)
-Coordinate 2 with position x(2.79), y(0)
-Coordinate 3 with position x(3.73), y(0)
-Coordinate 4 with position x(4.665), y(0)
-Coordinate 5 with position x(3.73), y(0)
-
-Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 2.78522. Path added to collection
---------
-No node at this children pointer. Ending search at this node
---------
-Currently pointing at node with position x(3.73), y(0)
-Children used up or at end of tree. Shifting backwards
-Moving back up tree to new tree depth of 4
---------
-Currently pointing at node with position x(4.665), y(0)
 Moving down tree to new tree depth of 5
 --------
 Currently pointing at node with position x(5.6), y(0)
@@ -75,29 +55,8 @@ Coordinate 4 with position x(4.665), y(0)
 Coordinate 5 with position x(5.6), y(0)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 0.915669. Path added to collection
+Path decided to be valid, as distance to end goal is 7.43033. Path added to collection
 --------
-Moving down tree to new tree depth of 6
---------
-Currently pointing at node with position x(4.665), y(0)
-Completed potential path collected of length 6 containing:
-Coordinate 1 with position x(1.85), y(0)
-Coordinate 2 with position x(2.79), y(0)
-Coordinate 3 with position x(3.73), y(0)
-Coordinate 4 with position x(4.665), y(0)
-Coordinate 5 with position x(5.6), y(0)
-Coordinate 6 with position x(4.665), y(0)
-
-Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 1.85033. Path added to collection
---------
-No node at this children pointer. Ending search at this node
---------
-Currently pointing at node with position x(4.665), y(0)
-Children used up or at end of tree. Shifting backwards
-Moving back up tree to new tree depth of 5
---------
-Currently pointing at node with position x(5.6), y(0)
 Moving down tree to new tree depth of 6
 --------
 Currently pointing at node with position x(6.535), y(0)
@@ -110,30 +69,8 @@ Coordinate 5 with position x(5.6), y(0)
 Coordinate 6 with position x(6.535), y(0)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 0.0403113. Path added to collection
+Path decided to be valid, as distance to end goal is 6.49538. Path added to collection
 --------
-Moving down tree to new tree depth of 7
---------
-Currently pointing at node with position x(5.6), y(0)
-Completed potential path collected of length 7 containing:
-Coordinate 1 with position x(1.85), y(0)
-Coordinate 2 with position x(2.79), y(0)
-Coordinate 3 with position x(3.73), y(0)
-Coordinate 4 with position x(4.665), y(0)
-Coordinate 5 with position x(5.6), y(0)
-Coordinate 6 with position x(6.535), y(0)
-Coordinate 7 with position x(5.6), y(0)
-
-Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 0.915669. Path added to collection
---------
-No node at this children pointer. Ending search at this node
---------
-Currently pointing at node with position x(5.6), y(0)
-Children used up or at end of tree. Shifting backwards
-Moving back up tree to new tree depth of 6
---------
-Currently pointing at node with position x(6.535), y(0)
 Moving down tree to new tree depth of 7
 --------
 Currently pointing at node with position x(7.47), y(0)
@@ -147,31 +84,8 @@ Coordinate 6 with position x(6.535), y(0)
 Coordinate 7 with position x(7.47), y(0)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 0.955641. Path added to collection
+Path decided to be valid, as distance to end goal is 5.56044. Path added to collection
 --------
-Moving down tree to new tree depth of 8
---------
-Currently pointing at node with position x(6.535), y(0)
-Completed potential path collected of length 8 containing:
-Coordinate 1 with position x(1.85), y(0)
-Coordinate 2 with position x(2.79), y(0)
-Coordinate 3 with position x(3.73), y(0)
-Coordinate 4 with position x(4.665), y(0)
-Coordinate 5 with position x(5.6), y(0)
-Coordinate 6 with position x(6.535), y(0)
-Coordinate 7 with position x(7.47), y(0)
-Coordinate 8 with position x(6.535), y(0)
-
-Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 0.0403113. Path added to collection
---------
-No node at this children pointer. Ending search at this node
---------
-Currently pointing at node with position x(6.535), y(0)
-Children used up or at end of tree. Shifting backwards
-Moving back up tree to new tree depth of 7
---------
-Currently pointing at node with position x(7.47), y(0)
 Moving down tree to new tree depth of 8
 --------
 Currently pointing at node with position x(8.39), y(0.025)
@@ -186,32 +100,8 @@ Coordinate 7 with position x(7.47), y(0)
 Coordinate 8 with position x(8.39), y(0.025)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 1.87503. Path added to collection
+Path decided to be valid, as distance to end goal is 4.64022. Path added to collection
 --------
-Moving down tree to new tree depth of 9
---------
-Currently pointing at node with position x(7.47), y(0)
-Completed potential path collected of length 9 containing:
-Coordinate 1 with position x(1.85), y(0)
-Coordinate 2 with position x(2.79), y(0)
-Coordinate 3 with position x(3.73), y(0)
-Coordinate 4 with position x(4.665), y(0)
-Coordinate 5 with position x(5.6), y(0)
-Coordinate 6 with position x(6.535), y(0)
-Coordinate 7 with position x(7.47), y(0)
-Coordinate 8 with position x(8.39), y(0.025)
-Coordinate 9 with position x(7.47), y(0)
-
-Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 0.955641. Path added to collection
---------
-No node at this children pointer. Ending search at this node
---------
-Currently pointing at node with position x(7.47), y(0)
-Children used up or at end of tree. Shifting backwards
-Moving back up tree to new tree depth of 8
---------
-Currently pointing at node with position x(8.39), y(0.025)
 Moving down tree to new tree depth of 9
 --------
 Currently pointing at node with position x(9.31), y(0.045)
@@ -227,7 +117,7 @@ Coordinate 8 with position x(8.39), y(0.025)
 Coordinate 9 with position x(9.31), y(0.045)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 2.79502. Path added to collection
+Path decided to be valid, as distance to end goal is 3.72008. Path added to collection
 --------
 Moving down tree to new tree depth of 10
 --------
@@ -245,7 +135,7 @@ Coordinate 9 with position x(9.31), y(0.045)
 Coordinate 10 with position x(8.39), y(0.025)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 1.87503. Path added to collection
+Path decided to be valid, as distance to end goal is 4.64022. Path added to collection
 --------
 No node at this children pointer. Ending search at this node
 --------
@@ -270,7 +160,7 @@ Coordinate 9 with position x(9.31), y(0.045)
 Coordinate 10 with position x(10.235), y(0.07)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 3.72016. Path added to collection
+Path decided to be valid, as distance to end goal is 2.795. Path added to collection
 --------
 Moving down tree to new tree depth of 11
 --------
@@ -289,7 +179,7 @@ Coordinate 10 with position x(10.235), y(0.07)
 Coordinate 11 with position x(9.31), y(0.045)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 2.79502. Path added to collection
+Path decided to be valid, as distance to end goal is 3.72008. Path added to collection
 --------
 No node at this children pointer. Ending search at this node
 --------
@@ -315,7 +205,7 @@ Coordinate 10 with position x(10.235), y(0.07)
 Coordinate 11 with position x(11.16), y(0.095)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 4.64539. Path added to collection
+Path decided to be valid, as distance to end goal is 1.87017. Path added to collection
 --------
 Moving down tree to new tree depth of 12
 --------
@@ -335,11 +225,123 @@ Coordinate 11 with position x(11.16), y(0.095)
 Coordinate 12 with position x(10.235), y(0.07)
 
 Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 3.72016. Path added to collection
+Path decided to be valid, as distance to end goal is 2.795. Path added to collection
 --------
 No node at this children pointer. Ending search at this node
 --------
 Currently pointing at node with position x(10.235), y(0.07)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 11
+--------
+Currently pointing at node with position x(11.16), y(0.095)
+Moving down tree to new tree depth of 12
+--------
+Currently pointing at node with position x(12.095), y(0.085)
+Completed potential path collected of length 12 containing:
+Coordinate 1 with position x(1.85), y(0)
+Coordinate 2 with position x(2.79), y(0)
+Coordinate 3 with position x(3.73), y(0)
+Coordinate 4 with position x(4.665), y(0)
+Coordinate 5 with position x(5.6), y(0)
+Coordinate 6 with position x(6.535), y(0)
+Coordinate 7 with position x(7.47), y(0)
+Coordinate 8 with position x(8.39), y(0.025)
+Coordinate 9 with position x(9.31), y(0.045)
+Coordinate 10 with position x(10.235), y(0.07)
+Coordinate 11 with position x(11.16), y(0.095)
+Coordinate 12 with position x(12.095), y(0.085)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 0.93512. Path added to collection
+--------
+Moving down tree to new tree depth of 13
+--------
+Currently pointing at node with position x(13.03), y(0.07)
+Completed potential path collected of length 13 containing:
+Coordinate 1 with position x(1.85), y(0)
+Coordinate 2 with position x(2.79), y(0)
+Coordinate 3 with position x(3.73), y(0)
+Coordinate 4 with position x(4.665), y(0)
+Coordinate 5 with position x(5.6), y(0)
+Coordinate 6 with position x(6.535), y(0)
+Coordinate 7 with position x(7.47), y(0)
+Coordinate 8 with position x(8.39), y(0.025)
+Coordinate 9 with position x(9.31), y(0.045)
+Coordinate 10 with position x(10.235), y(0.07)
+Coordinate 11 with position x(11.16), y(0.095)
+Coordinate 12 with position x(12.095), y(0.085)
+Coordinate 13 with position x(13.03), y(0.07)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 0. Path added to collection
+--------
+Moving down tree to new tree depth of 14
+--------
+Currently pointing at node with position x(12.095), y(0.085)
+Completed potential path collected of length 14 containing:
+Coordinate 1 with position x(1.85), y(0)
+Coordinate 2 with position x(2.79), y(0)
+Coordinate 3 with position x(3.73), y(0)
+Coordinate 4 with position x(4.665), y(0)
+Coordinate 5 with position x(5.6), y(0)
+Coordinate 6 with position x(6.535), y(0)
+Coordinate 7 with position x(7.47), y(0)
+Coordinate 8 with position x(8.39), y(0.025)
+Coordinate 9 with position x(9.31), y(0.045)
+Coordinate 10 with position x(10.235), y(0.07)
+Coordinate 11 with position x(11.16), y(0.095)
+Coordinate 12 with position x(12.095), y(0.085)
+Coordinate 13 with position x(13.03), y(0.07)
+Coordinate 14 with position x(12.095), y(0.085)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 0.93512. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(12.095), y(0.085)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 13
+--------
+Currently pointing at node with position x(13.03), y(0.07)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(13.03), y(0.07)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 12
+--------
+Currently pointing at node with position x(12.095), y(0.085)
+Moving down tree to new tree depth of 13
+--------
+Currently pointing at node with position x(11.16), y(0.095)
+Completed potential path collected of length 13 containing:
+Coordinate 1 with position x(1.85), y(0)
+Coordinate 2 with position x(2.79), y(0)
+Coordinate 3 with position x(3.73), y(0)
+Coordinate 4 with position x(4.665), y(0)
+Coordinate 5 with position x(5.6), y(0)
+Coordinate 6 with position x(6.535), y(0)
+Coordinate 7 with position x(7.47), y(0)
+Coordinate 8 with position x(8.39), y(0.025)
+Coordinate 9 with position x(9.31), y(0.045)
+Coordinate 10 with position x(10.235), y(0.07)
+Coordinate 11 with position x(11.16), y(0.095)
+Coordinate 12 with position x(12.095), y(0.085)
+Coordinate 13 with position x(11.16), y(0.095)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 1.87017. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(11.16), y(0.095)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 12
+--------
+Currently pointing at node with position x(12.095), y(0.085)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(12.095), y(0.085)
 Children used up or at end of tree. Shifting backwards
 Moving back up tree to new tree depth of 11
 --------
@@ -400,25 +402,6 @@ Children used up or at end of tree. Shifting backwards
 Moving back up tree to new tree depth of 3
 --------
 Currently pointing at node with position x(3.73), y(0)
-Moving down tree to new tree depth of 4
---------
-Currently pointing at node with position x(2.79), y(0)
-Completed potential path collected of length 4 containing:
-Coordinate 1 with position x(1.85), y(0)
-Coordinate 2 with position x(2.79), y(0)
-Coordinate 3 with position x(3.73), y(0)
-Coordinate 4 with position x(2.79), y(0)
-
-Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 3.72516. Path added to collection
---------
-No node at this children pointer. Ending search at this node
---------
-Currently pointing at node with position x(2.79), y(0)
-Children used up or at end of tree. Shifting backwards
-Moving back up tree to new tree depth of 3
---------
-Currently pointing at node with position x(3.73), y(0)
 No node at this children pointer. Ending search at this node
 --------
 Currently pointing at node with position x(3.73), y(0)
@@ -437,7 +420,309 @@ No node at this children pointer. Ending search at this node
 --------
 Currently pointing at node with position x(1.85), y(0)
 Children used up or at end of tree. Shifting backwards
-Head node detected to have been completed. Tree returning paths collection, containing 20 paths
+Head node detected to have been completed. Tree returning paths collection, containing 16 paths
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Tree getPathsOfLength() log data at Fri Jul 17 19:51:17 2020
+-----------------------------------
+-----------------------------------
+Request made for paths of length 20
+Maximum number of paths expected is -2147483648
+Path collection begun...
+Currently pointing at node with position x(14.99), y(-0.105)
+Completed potential path collected of length 1 containing:
+Coordinate 1 with position x(14.99), y(-0.105)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 3.72. Path added to collection
+--------
+Moving down tree to new tree depth of 2
+--------
+Currently pointing at node with position x(15.965), y(-0.195)
+Completed potential path collected of length 2 containing:
+Coordinate 1 with position x(14.99), y(-0.105)
+Coordinate 2 with position x(15.965), y(-0.195)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 2.74664. Path added to collection
+--------
+Moving down tree to new tree depth of 3
+--------
+Currently pointing at node with position x(16.94), y(-0.285)
+Completed potential path collected of length 3 containing:
+Coordinate 1 with position x(14.99), y(-0.105)
+Coordinate 2 with position x(15.965), y(-0.195)
+Coordinate 3 with position x(16.94), y(-0.285)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 1.77964. Path added to collection
+--------
+Moving down tree to new tree depth of 4
+--------
+Currently pointing at node with position x(15.965), y(-0.195)
+Completed potential path collected of length 4 containing:
+Coordinate 1 with position x(14.99), y(-0.105)
+Coordinate 2 with position x(15.965), y(-0.195)
+Coordinate 3 with position x(16.94), y(-0.285)
+Coordinate 4 with position x(15.965), y(-0.195)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 2.74664. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(15.965), y(-0.195)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 3
+--------
+Currently pointing at node with position x(16.94), y(-0.285)
+Moving down tree to new tree depth of 4
+--------
+Currently pointing at node with position x(17.825), y(-0.195)
+Completed potential path collected of length 4 containing:
+Coordinate 1 with position x(14.99), y(-0.105)
+Coordinate 2 with position x(15.965), y(-0.195)
+Coordinate 3 with position x(16.94), y(-0.285)
+Coordinate 4 with position x(17.825), y(-0.195)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 0.890084. Path added to collection
+--------
+Moving down tree to new tree depth of 5
+--------
+Currently pointing at node with position x(16.94), y(-0.285)
+Completed potential path collected of length 5 containing:
+Coordinate 1 with position x(14.99), y(-0.105)
+Coordinate 2 with position x(15.965), y(-0.195)
+Coordinate 3 with position x(16.94), y(-0.285)
+Coordinate 4 with position x(17.825), y(-0.195)
+Coordinate 5 with position x(16.94), y(-0.285)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 1.77964. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(16.94), y(-0.285)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 4
+--------
+Currently pointing at node with position x(17.825), y(-0.195)
+Moving down tree to new tree depth of 5
+--------
+Currently pointing at node with position x(18.71), y(-0.1)
+Completed potential path collected of length 5 containing:
+Coordinate 1 with position x(14.99), y(-0.105)
+Coordinate 2 with position x(15.965), y(-0.195)
+Coordinate 3 with position x(16.94), y(-0.285)
+Coordinate 4 with position x(17.825), y(-0.195)
+Coordinate 5 with position x(18.71), y(-0.1)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 0. Path added to collection
+--------
+Moving down tree to new tree depth of 6
+--------
+Currently pointing at node with position x(17.825), y(-0.195)
+Completed potential path collected of length 6 containing:
+Coordinate 1 with position x(14.99), y(-0.105)
+Coordinate 2 with position x(15.965), y(-0.195)
+Coordinate 3 with position x(16.94), y(-0.285)
+Coordinate 4 with position x(17.825), y(-0.195)
+Coordinate 5 with position x(18.71), y(-0.1)
+Coordinate 6 with position x(17.825), y(-0.195)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 0.890084. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(17.825), y(-0.195)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 5
+--------
+Currently pointing at node with position x(18.71), y(-0.1)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(18.71), y(-0.1)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 4
+--------
+Currently pointing at node with position x(17.825), y(-0.195)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(17.825), y(-0.195)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 3
+--------
+Currently pointing at node with position x(16.94), y(-0.285)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(16.94), y(-0.285)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 2
+--------
+Currently pointing at node with position x(15.965), y(-0.195)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(15.965), y(-0.195)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 1
+--------
+Currently pointing at node with position x(14.99), y(-0.105)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(14.99), y(-0.105)
+Children used up or at end of tree. Shifting backwards
+Head node detected to have been completed. Tree returning paths collection, containing 8 paths
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Tree getPathsOfLength() log data at Fri Jul 17 19:51:31 2020
+-----------------------------------
+-----------------------------------
+Request made for paths of length 20
+Maximum number of paths expected is -2147483648
+Path collection begun...
+Currently pointing at node with position x(20.75), y(1.49)
+Completed potential path collected of length 1 containing:
+Coordinate 1 with position x(20.75), y(1.49)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 0.932363. Path added to collection
+--------
+Moving down tree to new tree depth of 2
+--------
+Currently pointing at node with position x(21.83), y(1.63)
+Completed potential path collected of length 2 containing:
+Coordinate 1 with position x(20.75), y(1.49)
+Coordinate 2 with position x(21.83), y(1.63)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 0.773369. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(21.83), y(1.63)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 1
+--------
+Currently pointing at node with position x(20.75), y(1.49)
+Moving down tree to new tree depth of 2
+--------
+Currently pointing at node with position x(20.02), y(0.31)
+Completed potential path collected of length 2 containing:
+Coordinate 1 with position x(20.75), y(1.49)
+Coordinate 2 with position x(20.02), y(0.31)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 2.31607. Path added to collection
+--------
+Moving down tree to new tree depth of 3
+--------
+Currently pointing at node with position x(19.44), y(1.08)
+Completed potential path collected of length 3 containing:
+Coordinate 1 with position x(20.75), y(1.49)
+Coordinate 2 with position x(20.02), y(0.31)
+Coordinate 3 with position x(19.44), y(1.08)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 2.20719. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(19.44), y(1.08)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 2
+--------
+Currently pointing at node with position x(20.02), y(0.31)
+Moving down tree to new tree depth of 3
+--------
+Currently pointing at node with position x(19.44), y(-0.415)
+Completed potential path collected of length 3 containing:
+Coordinate 1 with position x(20.75), y(1.49)
+Coordinate 2 with position x(20.02), y(0.31)
+Coordinate 3 with position x(19.44), y(-0.415)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 3.24273. Path added to collection
+--------
+Moving down tree to new tree depth of 4
+--------
+Currently pointing at node with position x(20.02), y(0.31)
+Completed potential path collected of length 4 containing:
+Coordinate 1 with position x(20.75), y(1.49)
+Coordinate 2 with position x(20.02), y(0.31)
+Coordinate 3 with position x(19.44), y(-0.415)
+Coordinate 4 with position x(20.02), y(0.31)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 2.31607. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(20.02), y(0.31)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 3
+--------
+Currently pointing at node with position x(19.44), y(-0.415)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(19.44), y(-0.415)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 2
+--------
+Currently pointing at node with position x(20.02), y(0.31)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(20.02), y(0.31)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 1
+--------
+Currently pointing at node with position x(20.75), y(1.49)
+Moving down tree to new tree depth of 2
+--------
+Currently pointing at node with position x(19.44), y(1.08)
+Completed potential path collected of length 2 containing:
+Coordinate 1 with position x(20.75), y(1.49)
+Coordinate 2 with position x(19.44), y(1.08)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 2.20719. Path added to collection
+--------
+Moving down tree to new tree depth of 3
+--------
+Currently pointing at node with position x(20.02), y(0.31)
+Completed potential path collected of length 3 containing:
+Coordinate 1 with position x(20.75), y(1.49)
+Coordinate 2 with position x(19.44), y(1.08)
+Coordinate 3 with position x(20.02), y(0.31)
+
+Checking if path contains end goal...
+Path decided to be valid, as distance to end goal is 2.31607. Path added to collection
+--------
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(20.02), y(0.31)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 2
+--------
+Currently pointing at node with position x(19.44), y(1.08)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(19.44), y(1.08)
+Children used up or at end of tree. Shifting backwards
+Moving back up tree to new tree depth of 1
+--------
+Currently pointing at node with position x(20.75), y(1.49)
+No node at this children pointer. Ending search at this node
+--------
+Currently pointing at node with position x(20.75), y(1.49)
+Children used up or at end of tree. Shifting backwards
+Head node detected to have been completed. Tree returning paths collection, containing 8 paths
 --------
 ///////////////////////////////////
 ///////////////////////////////////
