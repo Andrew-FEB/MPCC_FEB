@@ -247,8 +247,8 @@ void Visualisation::showCar(const Pos &pos)
 	car_marker.mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
 	car_marker.action = visualization_msgs::Marker::ADD;
 	car_marker.pose.position.z = 0.0;
-	car_marker.pose.orientation.z = 0.0;
-	car_marker.pose.orientation.w = 1.0;
+	car_marker.pose.orientation.z = tf::createQuaternionMsgFromYaw(pos.phi).z;
+	car_marker.pose.orientation.w = tf::createQuaternionMsgFromYaw(pos.phi).w;
 	car_marker.scale.x = 0.5;
 	car_marker.scale.y = 0.5;
 	car_marker.scale.z = 0.5;
@@ -292,8 +292,8 @@ void Visualisation::showCarDirection(const Pos &pos)
 	car_pos.x = pos.p.x;
 	car_pos.y = pos.p.y;
 	car_direction_marker.points.push_back(car_pos);
-	car_project_pos.x = cos(pos.phi*M_PI/180)*3+pos.p.x;
-	car_project_pos.y = sin(pos.phi*M_PI/180)*3+pos.p.y;
+	car_project_pos.x = cos(pos.phi)*3+pos.p.x;
+	car_project_pos.y = sin(pos.phi)*3+pos.p.y;
 	car_direction_marker.points.push_back(car_project_pos);
 	car_direction_pub.publish(car_direction_marker);
 	std::cerr<<"Visualisation connection completed - car direction."<<std::endl;

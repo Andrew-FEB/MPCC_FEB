@@ -35,8 +35,8 @@ private:
     void showPredictedPath(const Car & car, double * inputs) const;
     
 private:
-    int predictionHorizon = 40; // in time steps
-    double timeStep = 0.05; // in [s]
+    int prediction_horizon = 40; // in time steps
+    double time_step = 0.05; // in [s]
     std::shared_ptr<Visualisation> visualisation = nullptr;
     
 };

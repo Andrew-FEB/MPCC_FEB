@@ -36,7 +36,7 @@ private:
 
 private:
     Pos position = {0, 0, 0};
-    Vel velocity = {2, 0, 0};
+    Vel velocity = {0.5, 0, 0};
     std::shared_ptr<Visualisation> visualisation = nullptr;
 };
 

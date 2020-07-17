@@ -21,7 +21,7 @@ constexpr long ROS_REFRESH_TIME_MS = 1000;
 
 //Configure globals
 #ifdef DEBUG
-bool reset_logs = true;
+    bool reset_logs = true;
 #endif
 
 constexpr double time_step = 0.05;
@@ -74,35 +74,66 @@ int main(int argc, char *argv[])
 
     //Angle car to be pointing forward at beginning of race
     auto car = track->getCar();
-    coord midpoint{(2.5-2.5) / 2, (-2 + -1.5) / 2 };
-    coord midpoint_2{(-2.0 + 3.0)/2, (1+1.5)/2};
-    double angle = atan2(midpoint_2.y-midpoint.y, midpoint_2.x-midpoint.x)*180/M_PI;
-    car->setPosition({midpoint, angle});
-    track->addCone(-2.5, -2.0, BoundPos::undefined);    //left
-    track->addCone(2.5, -1.5, BoundPos::undefined); //right
-    track->addCone(-2.0, 1.0, BoundPos::undefined);   //left
-    track->addCone(3.0, 1.5, BoundPos::undefined); //right
-    track->addCone(-2.5, 4.0, BoundPos::undefined); //left
-    track->addCone(2.6, 3.7, BoundPos::undefined); //right
-    track->addCone(-1.0, 6.5, BoundPos::undefined); //left
-    track->addCone(5.0, 7.0, BoundPos::undefined); //right
-    track->addCone(-0.5, 9.0, BoundPos::undefined); //left
-    track->addCone(6.7, 11.3, BoundPos::undefined); //right
-    track->addCone(1.0, 13.0, BoundPos::undefined); //left
-    track->addCone(8.7, 12.3, BoundPos::undefined); //right
-    track->addCone(2.7, 13.6, BoundPos::undefined); //left
-    track->addCone(11, 14.5, BoundPos::undefined); //right
-    track->addCone(4.9, 14.2, BoundPos::undefined); //left
-    track->addCone(12, 16.0, BoundPos::undefined); //right
-    track->addCone(6.2, 15.5, BoundPos::undefined); //left
-    track->addCone(12.5, 20.3, BoundPos::undefined); //right
-    track->addCone(7.0, 19.0, BoundPos::undefined);  //left
+    car->setPosition({{0,0}, 0.1});
+    // LEFT
+    track->addCone(0.00, 1.50, BoundPos::undefined);
+    track->addCone(1.85, 1.50, BoundPos::undefined);
+    track->addCone(3.73, 1.50, BoundPos::undefined);
+    track->addCone(5.60, 1.50, BoundPos::undefined);
+    track->addCone(7.47, 1.50, BoundPos::undefined);
+    track->addCone(9.31, 1.54, BoundPos::undefined);
+    track->addCone(11.16, 1.59, BoundPos::undefined); 
+    track->addCone(13.03, 1.57, BoundPos::undefined);
+    track->addCone(14.99, 1.39, BoundPos::undefined);
+    track->addCone(16.94, 1.21, BoundPos::undefined);
+    track->addCone(18.71, 1.40, BoundPos::undefined);
+    track->addCone(20.17, 2.26, BoundPos::undefined);
+    track->addCone(21.33, 3.72, BoundPos::undefined);
+    track->addCone(22.33, 5.54, BoundPos::undefined);
+    track->addCone(23.27, 7.47, BoundPos::undefined);
+    track->addCone(24.27, 9.26, BoundPos::undefined);
+    track->addCone(25.45, 10.68, BoundPos::undefined);
+    track->addCone(26.94, 11.49, BoundPos::undefined);
+    track->addCone(28.76, 11.57, BoundPos::undefined);
+    track->addCone(30.66, 11.50, BoundPos::undefined);
+    track->addCone(32.52, 11.50, BoundPos::undefined);
+    track->addCone(34.39, 11.50, BoundPos::undefined);
+    track->addCone(36.26, 11.50, BoundPos::undefined);
+    track->addCone(38.13, 11.50, BoundPos::undefined);
+    track->addCone(40.00, 11.50, BoundPos::undefined);
+
+    // RIGHT
+    track->addCone(0.00, -1.50, BoundPos::undefined);
+    track->addCone(1.85, -1.50, BoundPos::undefined);
+    track->addCone(3.73, -1.50, BoundPos::undefined);
+    track->addCone(5.60, -1.50, BoundPos::undefined);
+    track->addCone(7.47, -1.50, BoundPos::undefined);
+    track->addCone(9.31, -1.45, BoundPos::undefined);
+    track->addCone(11.16, -1.40, BoundPos::undefined); 
+    track->addCone(13.03, -1.43, BoundPos::undefined);
+    track->addCone(14.99, -1.6, BoundPos::undefined);
+    track->addCone(16.94, -1.78, BoundPos::undefined);
+    track->addCone(18.71, -1.60, BoundPos::undefined);
+    track->addCone(20.17, -0.73, BoundPos::undefined);
+    track->addCone(21.33, 0.72, BoundPos::undefined);
+    track->addCone(22.33, 2.54, BoundPos::undefined);
+    track->addCone(23.27, 4.47, BoundPos::undefined);
+    track->addCone(24.27, 6.26, BoundPos::undefined);
+    track->addCone(25.45, 7.68, BoundPos::undefined);
+    track->addCone(26.94, 8.49, BoundPos::undefined);
+    track->addCone(28.76, 8.57, BoundPos::undefined);
+    track->addCone(30.66, 8.50, BoundPos::undefined);
+    track->addCone(32.52, 8.50, BoundPos::undefined);
+    track->addCone(34.39, 8.50, BoundPos::undefined);
+    track->addCone(36.26, 8.50, BoundPos::undefined);
+    track->addCone(38.13, 8.50, BoundPos::undefined);
+    track->addCone(40.00, 8.50, BoundPos::undefined);
 
     std::cout<<"Entering loop"<<std::endl;
     auto ros_refresh_timer = std::chrono::high_resolution_clock::now();
 
     #if defined(DEBUG_LOOPS) || defined(DEBUG_SLOW)
-    int loops_completed = 0;
+        int loops_completed = 0;
     #endif
 
     //Enter refresh loop
@@ -127,40 +158,45 @@ int main(int argc, char *argv[])
         auto path = track->getReferencePath(1, 10);
         std::cerr<<"ref path size = "<<path.size()<<std::endl;
         //ETEST
-        //DADA MPCC
+        //MPCC
         auto car = track->getCar();
         auto control = mpcc->solve(*car, *track);
         //Update car outputs
         car->updateCar(control, time_step);
+
         #ifdef VISUALISE
             visualisation->showCar(car->getPosition());
             visualisation->showCarDirection(car->getPosition());
         #endif
 
-
         //Check metadata (laps done, goal achievement, etc.)
         //Update visualisation
         #ifdef VISUALISE    
-        if ((std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now()-ros_refresh_timer)).count() > ROS_REFRESH_TIME_MS)
-        {
-                visualisation->refreshRosOutput();
-                ros_refresh_timer = std::chrono::high_resolution_clock::now();
-        }
+            if ((std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now()-ros_refresh_timer)).count() > ROS_REFRESH_TIME_MS)
+            {
+                    visualisation->refreshRosOutput();
+                    ros_refresh_timer = std::chrono::high_resolution_clock::now();
+            }
         #endif
-        #ifdef DEBUG_SLOW
-        usleep(300000);
-        std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
 
+        #ifdef DEBUG_SLOW
+            usleep(500000);
+            std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
         #endif
+
         #ifdef DEBUG_LOOPS
+            if (++loops_completed>=1) 
         if (++loops_completed>=1) 
-        {
-            std::cout<<"Completed request number of loops"<<std::endl;
-            break;
-        }
+            if (++loops_completed>=1) 
+        if (++loops_completed>=1) 
+            if (++loops_completed>=1) 
+            {
+                std::cout<<"Completed request number of loops"<<std::endl;
+                break;
+            }
         #endif
         #ifdef DEBUG
-        reset_logs = false;
+            reset_logs = false;
         #endif
     }
    

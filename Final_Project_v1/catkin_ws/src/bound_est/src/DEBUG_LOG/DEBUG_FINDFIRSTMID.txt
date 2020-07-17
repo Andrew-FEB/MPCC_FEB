@@ -1,16 +1,16 @@
-Log message for findFirstMidpoint() log data at Thu Jul 16 20:51:04 2020
+Log message for findFirstMidpoint() log data at Fri Jul 17 15:43:16 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
-Comparison  point x(0), y(-1.75)
+Comparison  point x(0), y(0)
 Vector of triangles of size 3 contains:
-Triangle 1 with points A (x=3, y=1.5, pos=right) B (x=0, y=-1.75, pos=undefined) and C (x=-2, y=1, pos=left)
-Triangle 2 with points A (x=3, y=1.5, pos=right) B (x=2.5, y=-1.5, pos=right) and C (x=0, y=-1.75, pos=undefined)
-Triangle 3 with points A (x=0, y=-1.75, pos=left) B (x=-2.5, y=-2, pos=left) and C (x=-2, y=1, pos=left)
+Triangle 1 with points A (x=1.85, y=-1.5, pos=right) B (x=0, y=0, pos=undefined) and C (x=1.85, y=1.5, pos=left)
+Triangle 2 with points A (x=1.85, y=-1.5, pos=right) B (x=0, y=-1.5, pos=right) and C (x=0, y=0, pos=undefined)
+Triangle 3 with points A (x=0, y=0, pos=left) B (x=0, y=1.5, pos=left) and C (x=1.85, y=1.5, pos=left)
 
 Point identified as being point B on triangle 1
 Points A and C identified as not being on boundary, so this position selected
-Returned coordinate has coordinates x(0.5), y(1.25)
+Returned coordinate has coordinates x(1.85), y(0)
 --------
 ///////////////////////////////////
 ///////////////////////////////////

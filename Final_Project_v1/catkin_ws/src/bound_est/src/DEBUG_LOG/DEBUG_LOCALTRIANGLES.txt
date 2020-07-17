@@ -1,28 +1,34 @@
-Log message for findTrianglesAroundPoint() log data at Thu Jul 16 20:51:04 2020
+Log message for findTrianglesAroundPoint() log data at Fri Jul 17 15:43:16 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
 Value derived from car position: 1
-Origin point x(3), y(10)
-Triangle list size = 16
-Checking triangle with points a(2.6,3.7), b(3,1.5), c(-2,1)
-Checking triangle with points a(-2,1), b(-2.5,4), c(2.6,3.7)
-Checking triangle with points a(3,1.5), b(0,-1.75), c(-2,1)
-Checking triangle with points a(3,1.5), b(2.5,-1.5), c(0,-1.75)
-Checking triangle with points a(-2.5,4), b(-1,6.5), c(2.6,3.7)
-Checking triangle with points a(0,-1.75), b(-2.5,-2), c(-2,1)
-Checking triangle with points a(-2,1), b(-2.5,-2), c(-2.5,4)
-Checking triangle with points a(-1,6.5), b(5,7), c(2.6,3.7)
-Checking triangle with points a(2.6,3.7), b(5,7), c(3,1.5)
-Checking triangle with points a(3,1.5), b(5,7), c(2.5,-1.5)
-Checking triangle with points a(-2.5,4), b(-0.5,9), c(-1,6.5)
-Checking triangle with points a(-1,6.5), b(-0.5,9), c(5,7)
-Checking triangle with points a(-0.5,9), b(1,13), c(5,7)
+Origin point x(10.235), y(0.07)
+Triangle list size = 22
+Checking triangle with points a(5.6,1.5), b(3.73,-1.5), c(3.73,1.5)
+Checking triangle with points a(5.6,1.5), b(5.6,-1.5), c(3.73,-1.5)
+Checking triangle with points a(5.6,1.5), b(7.47,1.5), c(5.6,-1.5)
+Checking triangle with points a(7.47,1.5), b(7.47,-1.5), c(5.6,-1.5)
+Checking triangle with points a(3.73,-1.5), b(1.85,-1.5), c(3.73,1.5)
+Checking triangle with points a(1.85,-1.5), b(1.85,1.5), c(3.73,1.5)
+Checking triangle with points a(1.85,-1.5), b(0,0), c(1.85,1.5)
+Checking triangle with points a(7.47,1.5), b(9.31,-1.45), c(7.47,-1.5)
+Checking triangle with points a(5.6,1.5), b(9.31,1.54), c(7.47,1.5)
+Checking triangle with points a(7.47,1.5), b(9.31,1.54), c(9.31,-1.45)
+Checking triangle with points a(11.16,1.59), b(9.31,1.54), c(5.6,1.5)
+Checking triangle with points a(11.16,1.59), b(5.6,1.5), c(3.73,1.5)
+Checking triangle with points a(1.85,-1.5), b(0,-1.5), c(0,0)
+Checking triangle with points a(0,0), b(0,1.5), c(1.85,1.5)
+Checking triangle with points a(1.85,1.5), b(11.16,1.59), c(3.73,1.5)
+Checking triangle with points a(9.31,1.54), b(11.16,-1.4), c(9.31,-1.45)
 Triangle found on vertices and added to list
-Checking triangle with points a(-2.5,4), b(1,13), c(-0.5,9)
-Checking triangle with points a(1,13), b(6.7,11.3), c(5,7)
+Checking triangle with points a(9.31,-1.45), b(13.03,-1.43), c(7.47,-1.5)
+Checking triangle with points a(0,1.5), b(11.16,1.59), c(1.85,1.5)
+Checking triangle with points a(9.31,1.54), b(11.16,1.59), c(11.16,-1.4)
 Triangle found on vertices and added to list
-Checking triangle with points a(5,7), b(6.7,11.3), c(2.5,-1.5)
+Checking triangle with points a(13.03,1.57), b(13.03,-1.43), c(11.16,-1.4)
+Checking triangle with points a(11.16,-1.4), b(13.03,-1.43), c(9.31,-1.45)
+Checking triangle with points a(11.16,1.59), b(13.03,1.57), c(11.16,-1.4)
 ///////////////////////////////////
 ///////////////////////////////////
 

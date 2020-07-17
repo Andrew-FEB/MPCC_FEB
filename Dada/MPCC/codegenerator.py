@@ -15,10 +15,10 @@ import parameters as p
 # -------------------------------------
 def kinematic_model(state, control, calc_casadi):
     # get states
-    x = state[0]  # Longitudinal position
-    y = state[1]  # Lateral Position
-    psi = state[2]  # Yaw rate
-    v = state[3]  # Velocity
+    x = state[0]    # Longitudinal position
+    y = state[1]    # Lateral Position
+    psi = state[2]  # Heading Angle
+    v = state[3]    # Velocity
     # get inputs
     a = control[0]  # Acceleration
     d = control[1]  # Front steering angle

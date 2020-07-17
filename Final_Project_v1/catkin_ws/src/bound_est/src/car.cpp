@@ -14,7 +14,7 @@ Car Car::kinematicModel(const ControlInputs & control) const
     // State parameters
     auto x = position.p.x;           // Longitudinal position
     auto y = position.p.y;           // Lateral Position
-    auto psi = velocity.omega;       // Yaw rate
+    auto psi = position.phi;         // Heading Angle
     auto v = velocity.vx;            // Velocity
     // Control inputs
     auto a = control.D;              // Acceleration
