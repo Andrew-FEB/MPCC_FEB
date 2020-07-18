@@ -192,9 +192,9 @@ cmake_minimum_required(VERSION 2.8.3)
 project(bound_est)
 add_compile_options(-std=c++14)
 add_compile_options(-DDEBUG)
-#add_compile_options(-DDEBUG_LOOPS)
-add_compile_options(-DDEBUG_SLOW)
-add_compile_options(-DVISUALISE)
+add_compile_options(-DDEBUG_LOOPS)
+#add_compile_options(-DDEBUG_SLOW)
+#add_compile_options(-DVISUALISE)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp

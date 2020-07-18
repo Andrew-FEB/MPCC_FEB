@@ -7,6 +7,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o: /home/dm501/MPCC_
 bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/mpcc_optimizer_bindings.hpp
 bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
 bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
@@ -236,6 +237,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /home/dm501/MPCC_FEB
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/mpcc_optimizer_bindings.hpp
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.cpp
@@ -347,9 +349,12 @@ bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /opt/ros/melodic/inc
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 
+bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
+bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.cpp
 bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
 bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
@@ -460,6 +465,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o: /home/dm501/MPCC_FEB/Final_P
 bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
 bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
 bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.cpp
@@ -573,6 +579,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o: /home/dm501/MPCC_FEB/Final_Pr
 bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.cpp
 bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
 bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
@@ -682,6 +689,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o: /home/dm501/MPCC_FEB
 bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/delaunay/delaunator.hpp
 bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
 bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.cpp

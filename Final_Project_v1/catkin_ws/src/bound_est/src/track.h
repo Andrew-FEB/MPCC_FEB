@@ -17,10 +17,11 @@
 #include "pathAnalysis.h"
 #include "include/spline/spline.h"
 #include "boundaryLogger.h"
+#include "freeFunctions.h"
 
-double constexpr minRadiusSquared = 2.0; //0.707^2
+double constexpr minRadiusSquared = 0.707;
 double constexpr MIN_CONE_FRAME_RANGE = 0.0;
-double constexpr MAX_CONE_FRAME_RANGE = 225.0;  //15²
+double constexpr MAX_CONE_FRAME_RANGE = 15;
 
 class Track
 {
@@ -49,10 +50,10 @@ private:
     bool checkShapeOverlap();
     std::pair<std::vector<const Cone *>, std::vector<const Cone *>> seperateConeList(std::vector<std::unique_ptr<Cone>> &coneList);    //0 = left, 1 = right
     void extractNewConesInRange (std::vector<std::unique_ptr<Cone>> &cones_to_extract, std::vector<std::unique_ptr<Cone>> &extracted_cones, const std::unique_ptr<Car> &car);
-    std::vector<coord> interpolateCentreCoordsDiscrete(const int &original_index, const int &number_of_points, const double &distance);
+    std::pair<std::vector<coord>, double> interpolateCentreCoordsDiscrete(const int &original_index, const int &number_of_points, const double &distance);
     std::vector<Pos> findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cone_list, const std::vector<coord> &coord_list);
     coord getClosestPointOnLine (const coord &a, const coord &b, const coord &p);
-    inline const Cone * findClosestConeToPoint (const coord &point, const std::vector<const Cone *> &cones);
+    coord findEndGoal(const coord &last_point, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists);
     std::vector<std::unique_ptr<Cone>> processed_cone_list;
     std::vector<const Cone*> processed_cone_list_left;
     std::vector<const Cone*> processed_cone_list_right;
@@ -60,13 +61,13 @@ private:
     std::vector<std::unique_ptr<Cone>> new_cones;
     std::unique_ptr<Car> car;
     std::unique_ptr<Triangulation> triangulate;
+    std::unique_ptr<PathAnalysis> path_analysis;
     #ifdef VISUALISE
     std::shared_ptr<Visualisation> visualisation;
     #endif
     #ifdef DEBUG
     std::unique_ptr<BoundaryLogger> boundaries_log;
     #endif
-    std::unique_ptr<PathAnalysis> path_analysis;
     std::vector<coord> centre_coords;
 };
 

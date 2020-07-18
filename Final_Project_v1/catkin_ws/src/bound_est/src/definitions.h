@@ -188,8 +188,4 @@ struct MPC_targets
 	Pos right_boundary;
 };
 
-inline double distBetweenPoints(const coord &a, const coord &b)
-{
-	return (pow((a.x-b.x), 2) + pow((a.y-b.y),2));
-}
 

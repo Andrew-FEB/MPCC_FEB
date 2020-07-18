@@ -8,6 +8,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/Bound_est_triang.cpp.o
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+ /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/mpcc_optimizer_bindings.hpp
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
@@ -237,6 +238,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+ /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/mpcc_optimizer_bindings.hpp
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.cpp
@@ -348,9 +350,12 @@ bound_est/CMakeFiles/Bound_Est.dir/src/mpccontroller.cpp.o
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 bound_est/CMakeFiles/Bound_Est.dir/src/pathAnalysis.cpp.o
+ /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
+ /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+ /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.cpp
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
@@ -461,6 +466,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/track.cpp.o
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+ /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.cpp
@@ -574,6 +580,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/tree.cpp.o
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+ /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.cpp
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
@@ -683,6 +690,7 @@ bound_est/CMakeFiles/Bound_Est.dir/src/triangulation.cpp.o
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+ /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/delaunay/delaunator.hpp
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
  /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.cpp

@@ -14,7 +14,7 @@ Track::Track(std::shared_ptr<Visualisation> visualisation_cont)
 
     triangulate = std::make_unique<Triangulation>(visualisation_cont);
     car = std::make_unique<Car>();
-    path_analysis = std::make_unique<PathAnalysis>(*car);
+    path_analysis = std::make_unique<PathAnalysis>();
     #ifdef DEBUG
     boundaries_log = std::make_unique<BoundaryLogger>("FIND_BOUNDS_AND_SLOPES", "findBoundaryPointsAndSlopes()", reset_logs);
     #endif
@@ -103,25 +103,25 @@ void Track::processNextSection()
     #endif
     //Find entry point into next track section
     coord entry_point = (centre_coords.size()<1) ? car->getPosition().p : centre_coords.back();
-
     //Seperate cones into left and right
     auto seperated_cones = seperateConeList(cones_within_range);
     if (seperated_cones.first.size()<=0 || seperated_cones.second.size()<=0) return;
+//Find end point goal of section
+	coord section_end = findEndGoal(entry_point, seperated_cones);
     #ifdef VISUALISE
         visualisation->showLeftCones(seperated_cones.first);
         visualisation->showRightCones(seperated_cones.second);
     #endif
     //Get paths traversing framed track region
-    auto paths = triangulate->getTraversingPaths(cones_within_range, entry_point, seperated_cones);
+    auto paths = triangulate->getTraversingPaths(cones_within_range, entry_point, section_end, seperated_cones);
     #ifdef VISUALISE
         visualisation->showViablePaths(paths);
     #endif
     //Add new coordinates into final result
-    //auto best_path = path_analysis->findBestPath(paths, new_cones);
-    //std::move(best_path.begin(), best_path.end(), std::back_inserter(centre_coords));
-    //TEST
-    std::move((paths[6]).begin(), (paths[6]).end(), std::back_inserter(centre_coords));
-    //ETEST
+
+    auto best_path = path_analysis->findBestPath(paths, section_end, cones_within_range, seperated_cones.first, seperated_cones.second);
+    std::move(best_path.begin(), best_path.end(), std::back_inserter(centre_coords));
+
 
     //Move new cones into processed cones
     std::move(cones_within_range.begin(), cones_within_range.end(), std::back_inserter(processed_cone_list)); 
@@ -142,6 +142,14 @@ std::vector<const Cone*> Track::getConeList()
         conePtrs.push_back(cone.get());
     }
     return conePtrs;
+}
+
+coord Track::findEndGoal(const coord &last_point, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists)
+{
+	auto left_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.first);
+	auto right_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.second);
+	auto endPoint = findMidpoint(left_cone_best.first->getCoordinates(), right_cone_best.first->getCoordinates());
+	return endPoint;
 }
 
 std::vector<const Cone*> Track::getNewCones()
@@ -171,6 +179,7 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
     #ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("DEBUG_CLASSIFICATION", "Classification", reset_logs);
     std::stringstream ss;
+    log->write(ss<<"Cone list size to be sorted = "<<cone_list.size(), true);
     #endif
 
     for (std::unique_ptr<Cone> &cone : cone_list)
@@ -229,12 +238,14 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
                     auto cone_position = cone->getCoordinates();
                     std::vector<const Cone *> *left_compare{nullptr};
                     std::vector<const Cone *> *right_compare{nullptr};
+
                     if (left_list.empty()) left_compare = &processed_cone_list_left;
                     else left_compare = &left_list;
                     if (right_list.empty()) right_compare = &processed_cone_list_right;
                     else right_compare = &right_list;
-                    auto previous_cone_left = findClosestConeToPoint(cone_position, *left_compare)->getCoordinates();
-                    auto previous_cone_right = findClosestConeToPoint(cone_position, *right_compare)->getCoordinates();
+
+                    auto previous_cone_left = findClosestConeToPoint(cone_position, *left_compare).first->getCoordinates();
+                    auto previous_cone_right = findClosestConeToPoint(cone_position, *right_compare).first->getCoordinates();
                     #ifdef DEBUG
                     log->write(ss<<"Entered non-determinant check");
                     log->write(ss<<"Cone position, x = "<<cone->getCoordinates().x<<", y = "<<cone->getCoordinates().y);
@@ -272,21 +283,6 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
     return std::make_pair(left_list, right_list);
 }
 
-const Cone * Track::findClosestConeToPoint (const coord &point, const std::vector<const Cone *> &cones)
-{
-    const Cone * nearest_cone {nullptr};
-    double best_dist = std::numeric_limits<double>::max();
-    for (auto cone_p : cones)
-    {
-        auto dist = distBetweenPoints(point, cone_p->getCoordinates());
-        if (dist<best_dist)
-        {
-            best_dist = dist;
-            nearest_cone = cone_p;
-        }
-    }
-    return nearest_cone;
-}
 
 std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_points, const int &number_of_points)
 {
@@ -355,29 +351,15 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
     log->write(ss<<"Next, getting centre coordinates");
     #endif
     //Get centre coords
-    bool received_coord_vector{false};
-    std::vector<coord> requested_centre_line_coords;
-    double temp_dist {dist};
-    while (!received_coord_vector)
-    {
-      requested_centre_line_coords = interpolateCentreCoordsDiscrete(best_dist_index, number_of_points, temp_dist); 
-      if (requested_centre_line_coords.empty())
-      {
-            temp_dist *=0.75;
-            std::cerr<<"New temporary distance between points = "<<temp_dist<<std::endl;
-            #ifdef DEBUG
-            log->write(ss<<"Not enough centre coordinates with given distance. New temporary distance between points of "<<temp_dist);
-            #endif
-      }
-      else
-      {
-            received_coord_vector = true;        
-      }
-    }
+    auto centre_coord_pair = interpolateCentreCoordsDiscrete(best_dist_index, number_of_points, dist_between_points); 
+    #ifdef DEBUG
+    log->write(ss<<"Not enough centre coordinates with given distance. New temporary distance between points of "<<centre_coord_pair.second);
+    #endif
+
     #ifdef DEBUG
     int debug_centre_index {0};
     log->write(ss<<"Centre path coordinates calculated: ");
-    for (auto coord : requested_centre_line_coords)
+    for (auto coord : centre_coord_pair.first)
     {
         ss<<"Coordinate "<<++debug_centre_index<<" with position x("<<coord.x<<"), y("<<coord.y<<")"<<std::endl;
     }
@@ -388,8 +370,8 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
     log->write(ss<<"Next, getting Boundary points and slopes");
     #endif
     //Get boundary positions and slopes
-    auto left_boundary_positions = findBoundaryPointsAndSlopes(processed_cone_list_left, requested_centre_line_coords);
-    auto right_boundary_positions = findBoundaryPointsAndSlopes(processed_cone_list_right, requested_centre_line_coords);
+    auto left_boundary_positions = findBoundaryPointsAndSlopes(processed_cone_list_left, centre_coord_pair.first);
+    auto right_boundary_positions = findBoundaryPointsAndSlopes(processed_cone_list_right, centre_coord_pair.first);
 
     #ifdef DEBUG
     int debug_left_index {0};
@@ -413,7 +395,7 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
 
     for (int i = 0; i<number_of_points; i++)
     {
-        output_struct.reference_point = requested_centre_line_coords[i];
+        output_struct.reference_point = centre_coord_pair.first[i];
         output_struct.left_boundary = left_boundary_positions[i];
         output_struct.right_boundary = right_boundary_positions[i];
         output_vec.push_back(output_struct);
@@ -509,7 +491,7 @@ std::vector<Pos> Track::findBoundaryPointsAndSlopes(const std::vector<const Cone
     return output_vec;
 }
 
-std::vector<coord> Track::interpolateCentreCoordsDiscrete(const int &original_index, const int &number_of_points, const double &distance)
+std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(const int &original_index, const int &number_of_points, const double &distance)
 {
     #ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("INTERPOLATE_CENTRE", "interpolateCentreCoordsDiscrete()", reset_logs);
@@ -519,6 +501,26 @@ std::vector<coord> Track::interpolateCentreCoordsDiscrete(const int &original_in
     log->write(ss<<"Requested distance between points of "<<distance);
     log->write(ss<<"Requested number of points of "<<number_of_points, true);
     #endif
+    double temp_distance = distance;
+    //Check available distance versus requested distance
+    double available_dist{0};
+    for (int i = (original_index+1); i<centre_coords.size(); i++)
+    {
+        available_dist+=distBetweenPoints(centre_coords[i-1], centre_coords[i]);
+    }
+    available_dist -= 0.01; //compensate for double rounding
+    #ifdef DEBUG
+    log->write(ss<<"Actual available distance is "<<available_dist);
+    #endif
+    if (available_dist<(number_of_points*distance))
+    {
+        temp_distance = available_dist/number_of_points;
+        #ifdef DEBUG
+        log->write(ss<<"Insufficient distance available so distance between points reduced to "<<temp_distance, true);
+        #endif
+    }
+
+    //Move into developing points
     std::vector<coord> output_vec;
     int current_index{original_index};
     coord current_coord {centre_coords[original_index]};
@@ -527,7 +529,7 @@ std::vector<coord> Track::interpolateCentreCoordsDiscrete(const int &original_in
     for (int i = 0; i<number_of_points; i++)
     {
         bool point_found{false};
-        next_distance = distance;
+        next_distance = temp_distance;
         #ifdef DEBUG
         log->write(ss<<"Finding point "<<i+1<< " of "<<number_of_points);
         #endif
@@ -536,8 +538,23 @@ std::vector<coord> Track::interpolateCentreCoordsDiscrete(const int &original_in
             //Distance between next pair of centre coordinates
             auto coord_distance = distBetweenPoints(current_coord, centre_coords[current_index+1]);
             #ifdef DEBUG
-            log->write(ss<<"Distance between current point x("<<current_coord.x<<"), y("<<current_coord.y<<") and next point x("<<centre_coords[current_index+1].x
-                        <<"), y("<<centre_coords[current_index+1].y<<") is "<<coord_distance);
+            double debug_dist = 0;
+            coord temp_coord = current_coord;
+            //Check available distance versus requested distance
+            if (current_index+1<centre_coords.size())
+            {
+                for (int i = (original_index+1); i<centre_coords.size(); i++)
+                {
+                    debug_dist+=distBetweenPoints(temp_coord, centre_coords[i]);
+                    temp_coord = centre_coords[i];
+                }
+            }
+            log->write(ss<<"Current centre coordinate x("<<centre_coords[current_index].x<<"), y("<<centre_coords[current_index].y<<")");
+            log->write(ss<<"Distance remaining to final centre coord is "<<debug_dist);
+            log->write(ss<<"Distance between current coord x("<<current_coord.x<<"), y("<<current_coord.y<<") and next centre coord x("<<centre_coords[current_index+1].x
+                        <<"), y("<<centre_coords[current_index+1].y<<") is "<<coord_distance<<" and distance to travel till next point is "<<next_distance);
+            log->write(ss<<"Distance until next coord should now be "<<((coord_distance-next_distance<0) ? 0 : coord_distance-next_distance));
+            log->write(ss<<" ");
             #endif
             //If next set of coordinates closer than remaining distance, reduce remaining distance and start calculating from new centre coord
             if (coord_distance<next_distance)
@@ -546,7 +563,7 @@ std::vector<coord> Track::interpolateCentreCoordsDiscrete(const int &original_in
                 current_index++;
                 current_coord = centre_coords[current_index];
                 #ifdef DEBUG
-                log->write(ss<<"This is less than the required distance, so next_distance reduced to "<<next_distance<<" and new point set to x("<<centre_coords[current_index].x
+                log->write(ss<<"This is less than the required distance, so distance to travel reduced to "<<next_distance<<" and new coord set to x("<<centre_coords[current_index].x
                         <<"), y("<<centre_coords[current_index].y<<")");
                 #endif
             }
@@ -559,7 +576,7 @@ std::vector<coord> Track::interpolateCentreCoordsDiscrete(const int &original_in
                 current_coord = centre_coords[current_index];
                 output_vec.push_back(current_coord);
                 #ifdef DEBUG
-                log->write(ss<<"This is equal to the required distance, so next_distance reduced to 0, and new point set to x("<<centre_coords[current_index].x
+                log->write(ss<<"This is equal to the required distance, so distance to travel reduced to 0, and new coord set to x("<<centre_coords[current_index].x
                         <<"), y("<<centre_coords[current_index].y<<") and this point added to vector");
                 #endif
             }
@@ -572,27 +589,27 @@ std::vector<coord> Track::interpolateCentreCoordsDiscrete(const int &original_in
                 point_found = true;
                 next_distance = 0;
                 #ifdef DEBUG
-                log->write(ss<<"This is more than the required distance, so next_distance reduced to 0, and new point set to x("<<current_coord.x
-                        <<"), y("<<current_coord.y<<") and this point added to vector");
+                log->write(ss<<"This is more than the required distance, so distance to travel reduced to 0, and new coord set to x("<<current_coord.x
+                        <<"), y("<<current_coord.y<<") and this point added to vector. Distance to next centre coord is "<<distBetweenPoints(current_coord, centre_coords[current_index+1]));
                 #endif
             }
             if(current_index+1>=centre_coords.size())
             {
                 #ifdef DEBUG
-                log->write(ss<<"Not enough coordinates available to satisfy request. Reducing distance", true);
+                log->write(ss<<"Error. Overrun available distance", true);
                 #endif
-                std::cerr<<"Not enough coordinates available to satisfy request. Reducing distance"<<std::endl;
-                return {};
+                std::cerr<<"Error. Overrun available distance"<<std::endl;
+                return std::make_pair(output_vec, std::numeric_limits<double>::min());
             }
             #ifdef DEBUG
-            log->write(ss<<"Distance at end of loop is "<<next_distance);
+            log->write(ss<<"Distance to travel at end of loop is "<<next_distance, true);
             #endif
         }
         #ifdef DEBUG
-        log->write(ss<<"Moving to next point", true);
+        log->write(ss<<"Moving to next point");
         #endif
     }
-    return output_vec;
+    return std::make_pair(output_vec, temp_distance);
 }
 
 coord getNearestPointOnArc(const coord &point)

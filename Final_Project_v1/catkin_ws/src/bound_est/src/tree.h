@@ -9,10 +9,10 @@
 #include "definitions.h"
 #include "visualisation.h"
 #include "boundaryLogger.h"
-//#include "triangulation.h"
+#include "freeFunctions.h"
 
 int constexpr MAX_CHILDREN = 4;
-double constexpr MAX_DIST_TO_END_GOAL = 100; //10² 
+double constexpr MAX_DIST_TO_END_GOAL = 10;
 
 struct tNode
 {
