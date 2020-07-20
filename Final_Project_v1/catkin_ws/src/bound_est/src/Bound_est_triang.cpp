@@ -22,6 +22,7 @@ constexpr long ROS_REFRESH_TIME_MS = 1000;
 //Configure globals
 #ifdef DEBUG
     bool reset_logs = true;
+    constexpr int DEBUG_LOOPS_TO_COMPLETE = 4;
 #endif
 
 constexpr double time_step = 0.05;
@@ -69,8 +70,6 @@ int main(int argc, char *argv[])
     //     // if (conePos != nullptr) std::cout << "x: "<<conePos->x<<", y: "<<conePos->y<<", and colour :"<<conePos->color<< std::endl;
     //     // if (conePos == nullptr) std::cout<<"Panic"<<std::endl;
     // }
-
-
 
     //Angle car to be pointing forward at beginning of race
     auto car = track->getCar();
@@ -149,15 +148,12 @@ int main(int argc, char *argv[])
         //BAG READ IN BLOCKING CALL
         /*
         *ros::NodeHandle cone_reader;
+        *ros::LoopRate = 
         *ros::Subscriber cone_sub = cone_reader.subscribe("/map", 1000, chatterCallback);
-        *ros::spin();
+        *ros::spinOnce();
         */
         //Process track section
         track->processNextSection();
-        //TEST
-        auto path = track->getReferencePath(1, 10);
-        std::cerr<<"ref path size = "<<path.size()<<std::endl;
-        //ETEST
         //MPCC
         auto car = track->getCar();
         auto control = mpcc->solve(*car, *track);
@@ -185,15 +181,11 @@ int main(int argc, char *argv[])
         #endif
 
         #ifdef DEBUG_LOOPS
-            if (++loops_completed>=1) 
-        if (++loops_completed>=1) 
-            if (++loops_completed>=1) 
-        if (++loops_completed>=1) 
-            if (++loops_completed>=1) 
-            {
-                std::cout<<"Completed request number of loops"<<std::endl;
-                break;
-            }
+        if (++loops_completed>=DEBUG_LOOPS_TO_COMPLETE) 
+        {
+            std::cout<<"Completed request number of loops"<<std::endl;
+            break;
+        }
         #endif
         #ifdef DEBUG
             reset_logs = false;

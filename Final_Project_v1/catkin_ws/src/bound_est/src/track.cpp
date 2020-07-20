@@ -14,7 +14,7 @@ Track::Track(std::shared_ptr<Visualisation> visualisation_cont)
 
     triangulate = std::make_unique<Triangulation>(visualisation_cont);
     car = std::make_unique<Car>();
-    path_analysis = std::make_unique<PathAnalysis>();
+    path_analysis = std::make_unique<PathAnalysis>(visualisation_cont, getCar());
     #ifdef DEBUG
     boundaries_log = std::make_unique<BoundaryLogger>("FIND_BOUNDS_AND_SLOPES", "findBoundaryPointsAndSlopes()", reset_logs);
     #endif
@@ -290,7 +290,7 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("GET_REFERENCE_PATH", "getReferencePath()", reset_logs);
     std::stringstream ss;
     log->write(ss<<"At entering function, important variables were...");
-    log->write(ss<<"Requested distance between points of "<<distBetweenPoints);
+    log->write(ss<<"Requested distance between points of "<<dist_between_points);
     log->write(ss<<"Requested number of points of "<<number_of_points, true);
     #endif
     //Check if sufficient centre coordinates available.

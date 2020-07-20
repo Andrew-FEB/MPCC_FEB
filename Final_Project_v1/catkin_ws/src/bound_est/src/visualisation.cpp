@@ -29,7 +29,7 @@ void Visualisation::configROS()
 }
 
 void Visualisation::refreshRosOutput()
-{
+{	
 	if (ros::ok())
 	{
 		if (new_cone_pub.getNumSubscribers()>=1) new_cone_pub.publish(new_cone_markers);
@@ -62,8 +62,6 @@ void Visualisation::refreshRosOutput()
 		}
 	}
 }
-
-
 
 void Visualisation::showTriangles(const std::vector<triang>& triangles)
 {

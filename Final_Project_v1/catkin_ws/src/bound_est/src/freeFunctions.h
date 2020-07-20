@@ -70,3 +70,4 @@ inline coord findMidpoint(const coord &a, const coord &b)
 	coord output{ (a.x + b.x) / 2, (a.y + b.y) / 2 };
 	return output;
 }
+

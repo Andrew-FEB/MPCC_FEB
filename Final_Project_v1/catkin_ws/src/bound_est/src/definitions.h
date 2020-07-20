@@ -101,13 +101,29 @@ typedef struct carDims
 } carDims;
 
 
-typedef struct rect
+struct Rect
 {
-	double a;
-	double b;
-	double c;
-	double d;
-} rect;
+	coord a;
+	coord b;
+	coord c;
+	coord d;
+
+	inline double dotProductThreePoints(coord origin, coord b, coord c)
+	{
+		coord vec_1 = {b.x-origin.x, b.y-origin.y};
+		coord vec_2 = {c.x-origin.x, c.y-origin.y};
+		return (vec_1.x*vec_2.x+vec_1.y*vec_2.y);
+	}
+
+	inline bool containsPoint(const coord &p)
+	{
+		auto dot_ab_ap = dotProductThreePoints(a, b, p);
+		auto dot_ab_ab = dotProductThreePoints(a, b, b);
+		auto dot_bc_bp = dotProductThreePoints(b, c, p);
+		auto dot_bc_bc = dotProductThreePoints(b, c, c);
+		return (0<=dot_ab_ap && dot_ab_ap<=dot_ab_ab && 0<=dot_bc_bp && dot_bc_bp<=dot_bc_bc);
+	}
+};
 
 /**
  * Structs regarding MPCC

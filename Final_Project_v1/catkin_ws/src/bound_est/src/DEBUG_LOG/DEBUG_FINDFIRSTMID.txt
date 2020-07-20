@@ -1,4 +1,4 @@
-Log message for findFirstMidpoint() log data at Sun Jul 19 00:52:45 2020
+Log message for findFirstMidpoint() log data at Mon Jul 20 12:02:36 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11,6 +11,38 @@ Triangle 3 with points A (x=0, y=0, pos=left) B (x=0, y=1.5, pos=left) and C (x=
 Point identified as being point B on triangle 1
 Points A and C identified as not being on boundary, so this position selected
 Returned coordinate has coordinates x(1.85), y(0)
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findFirstMidpoint() log data at Mon Jul 20 12:03:07 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(13.03), y(0.07)
+Vector of triangles of size 1 contains:
+Triangle 1 with points A (x=14.99, y=-1.6, pos=right) B (x=13.03, y=0.07, pos=undefined) and C (x=14.99, y=1.39, pos=left)
+
+Point identified as being point B on triangle 1
+Points A and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(14.99), y(-0.105)
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findFirstMidpoint() log data at Mon Jul 20 12:03:20 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(17.825), y(-0.19)
+Vector of triangles of size 3 contains:
+Triangle 1 with points A (x=20.17, y=-0.73, pos=right) B (x=17.825, y=-0.19, pos=undefined) and C (x=20.17, y=2.26, pos=left)
+Triangle 2 with points A (x=20.17, y=2.26, pos=left) B (x=17.825, y=-0.19, pos=undefined) and C (x=21.33, y=3.72, pos=left)
+Triangle 3 with points A (x=20.17, y=-0.73, pos=right) B (x=18.71, y=-1.6, pos=right) and C (x=17.825, y=-0.19, pos=undefined)
+
+Point identified as being point B on triangle 1
+Points A and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(20.17), y(0.765)
 --------
 ///////////////////////////////////
 ///////////////////////////////////
