@@ -1,2 +1,0 @@
-bound_est
--DCATKIN_DEVEL_PREFIX=/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dada/MPCC_FEB/Dada/BoundaryEstimation/catkin_ws/install -G Unix Makefiles

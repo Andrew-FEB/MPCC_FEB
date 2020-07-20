@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 Log message for Path Analysis log data at Mon Jul 20 12:02:39 2020
+=======
+Log message for Path Analysis log data at Mon Jul 20 10:47:32 2020
+>>>>>>> Stashed changes
 -----------------------------------
 -----------------------------------
 Beginning analysis of following list of paths:
@@ -11,13 +15,6 @@ Point 1 at x(1.85) y(0)
 Point 2 at x(2.79) y(0)
 Point 3 at x(3.73) y(0)
 Point 4 at x(4.665) y(0)
-
---------
-Point 1 at x(1.85) y(0)
-Point 2 at x(2.79) y(0)
-Point 3 at x(3.73) y(0)
-Point 4 at x(4.665) y(0)
-Point 5 at x(3.73) y(0)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -78,7 +75,7 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
+Point 8 at x(8.39) y(0.02)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -88,7 +85,7 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
+Point 8 at x(8.39) y(0.02)
 Point 9 at x(7.47) y(0)
 
 --------
@@ -99,8 +96,8 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -110,9 +107,9 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(8.39) y(0.025)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(8.39) y(0.02)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -122,9 +119,9 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(10.235) y(0.07)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(10.235) y(0.065)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -134,10 +131,10 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(10.235) y(0.07)
-Point 11 at x(9.31) y(0.045)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(10.235) y(0.065)
+Point 11 at x(9.31) y(0.04)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -147,10 +144,10 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(10.235) y(0.07)
-Point 11 at x(11.16) y(0.095)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(10.235) y(0.065)
+Point 11 at x(11.16) y(0.09)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -160,11 +157,11 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(10.235) y(0.07)
-Point 11 at x(11.16) y(0.095)
-Point 12 at x(10.235) y(0.07)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(10.235) y(0.065)
+Point 11 at x(11.16) y(0.09)
+Point 12 at x(10.235) y(0.065)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -174,11 +171,11 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(10.235) y(0.07)
-Point 11 at x(11.16) y(0.095)
-Point 12 at x(12.095) y(0.085)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(10.235) y(0.065)
+Point 11 at x(11.16) y(0.09)
+Point 12 at x(12.095) y(0.075)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -188,12 +185,12 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(10.235) y(0.07)
-Point 11 at x(11.16) y(0.095)
-Point 12 at x(12.095) y(0.085)
-Point 13 at x(13.03) y(0.07)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(10.235) y(0.065)
+Point 11 at x(11.16) y(0.09)
+Point 12 at x(12.095) y(0.075)
+Point 13 at x(13.03) y(0.065)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -203,13 +200,13 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(10.235) y(0.07)
-Point 11 at x(11.16) y(0.095)
-Point 12 at x(12.095) y(0.085)
-Point 13 at x(13.03) y(0.07)
-Point 14 at x(12.095) y(0.085)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(10.235) y(0.065)
+Point 11 at x(11.16) y(0.09)
+Point 12 at x(12.095) y(0.075)
+Point 13 at x(13.03) y(0.065)
+Point 14 at x(12.095) y(0.075)
 
 --------
 Point 1 at x(1.85) y(0)
@@ -219,18 +216,26 @@ Point 4 at x(4.665) y(0)
 Point 5 at x(5.6) y(0)
 Point 6 at x(6.535) y(0)
 Point 7 at x(7.47) y(0)
-Point 8 at x(8.39) y(0.025)
-Point 9 at x(9.31) y(0.045)
-Point 10 at x(10.235) y(0.07)
-Point 11 at x(11.16) y(0.095)
-Point 12 at x(12.095) y(0.085)
-Point 13 at x(11.16) y(0.095)
+Point 8 at x(8.39) y(0.02)
+Point 9 at x(9.31) y(0.04)
+Point 10 at x(10.235) y(0.065)
+Point 11 at x(11.16) y(0.09)
+Point 12 at x(12.095) y(0.075)
+Point 13 at x(11.16) y(0.09)
+
+--------
+Point 1 at x(1.85) y(0)
+Point 2 at x(2.79) y(0)
+Point 3 at x(3.73) y(0)
+Point 4 at x(4.665) y(0)
+Point 5 at x(3.73) y(0)
 
 --------
 Scores gathered as follows:
 --------
 For path 1
 Nearest classified cone contacts = 0
+<<<<<<< Updated upstream
 Nearest unclassified cone contacts = 0.0486712
 Distance to end goal = 8649.49
 Classified cones on each side = 20
@@ -470,6 +475,157 @@ Best index selected to be 18 which equates to path 19. Returning analysis to tra
 -----------------------------------
 Beginning analysis of following list of paths:
 Point 1 at x(14.99) y(-0.105)
+=======
+Nearest unclassified cone contacts = 2.06996
+Distance to end goal = 9.30023
+Total calculated score: 10*0 + 10*2.06996 + 1*9.30023 = 29.9999
+--------
+For path 2
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.10441
+Distance to end goal = 8.36525
+Total calculated score: 10*0 + 10*2.10441 + 1*8.36525 = 29.4094
+--------
+For path 3
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.08353
+Distance to end goal = 7.43028
+Total calculated score: 10*0 + 10*2.08353 + 1*7.43028 = 28.2656
+--------
+For path 4
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.10424
+Distance to end goal = 8.36525
+Total calculated score: 10*0 + 10*2.10424 + 1*8.36525 = 29.4076
+--------
+For path 5
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.10424
+Distance to end goal = 6.49533
+Total calculated score: 10*0 + 10*2.10424 + 1*6.49533 = 27.5377
+--------
+For path 6
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.08935
+Distance to end goal = 7.43028
+Total calculated score: 10*0 + 10*2.08935 + 1*7.43028 = 28.3237
+--------
+For path 7
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.08935
+Distance to end goal = 5.56038
+Total calculated score: 10*0 + 10*2.08935 + 1*5.56038 = 26.4538
+--------
+For path 8
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.10415
+Distance to end goal = 6.49533
+Total calculated score: 10*0 + 10*2.10415 + 1*6.49533 = 27.5368
+--------
+For path 9
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.10109
+Distance to end goal = 4.64022
+Total calculated score: 10*0 + 10*2.10109 + 1*4.64022 = 25.6511
+--------
+For path 10
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.08986
+Distance to end goal = 5.56038
+Total calculated score: 10*0 + 10*2.08986 + 1*5.56038 = 26.459
+--------
+For path 11
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.08986
+Distance to end goal = 3.72008
+Total calculated score: 10*0 + 10*2.08986 + 1*3.72008 = 24.6187
+--------
+For path 12
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.0992
+Distance to end goal = 4.64022
+Total calculated score: 10*0 + 10*2.0992 + 1*4.64022 = 25.6322
+--------
+For path 13
+Nearest classified cone contacts = 8.88178e-17
+Nearest unclassified cone contacts = 2.09896
+Distance to end goal = 2.795
+Total calculated score: 10*8.88178e-17 + 10*2.09896 + 1*2.795 = 23.7846
+--------
+For path 14
+Nearest classified cone contacts = 8.07435e-17
+Nearest unclassified cone contacts = 2.08996
+Distance to end goal = 3.72008
+Total calculated score: 10*8.07435e-17 + 10*2.08996 + 1*3.72008 = 24.6197
+--------
+For path 15
+Nearest classified cone contacts = 8.07435e-17
+Nearest unclassified cone contacts = 2.08996
+Distance to end goal = 1.87017
+Total calculated score: 10*8.07435e-17 + 10*2.08996 + 1*1.87017 = 22.7698
+--------
+For path 16
+Nearest classified cone contacts = 1.4803e-16
+Nearest unclassified cone contacts = 2.09754
+Distance to end goal = 2.795
+Total calculated score: 10*1.4803e-16 + 10*2.09754 + 1*2.795 = 23.7704
+--------
+For path 17
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.09865
+Distance to end goal = 0.935053
+Total calculated score: 10*0 + 10*2.09865 + 1*0.935053 = 21.9215
+--------
+For path 18
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.09068
+Distance to end goal = 0
+Total calculated score: 10*0 + 10*2.09068 + 1*0 = 20.9068
+--------
+For path 19
+Nearest classified cone contacts = 6.34413e-17
+Nearest unclassified cone contacts = 2.09807
+Distance to end goal = 0.935053
+Total calculated score: 10*6.34413e-17 + 10*2.09807 + 1*0.935053 = 21.9157
+--------
+For path 20
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.09106
+Distance to end goal = 1.87017
+Total calculated score: 10*0 + 10*2.09106 + 1*1.87017 = 22.7808
+--------
+For path 21
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.08353
+Distance to end goal = 9.30023
+Total calculated score: 10*0 + 10*2.08353 + 1*9.30023 = 30.1355
+--------
+List of scores:
+Path 0 has score 29.9999
+Path 0 has score 29.4094
+Path 0 has score 28.2656
+Path 0 has score 29.4076
+Path 0 has score 27.5377
+Path 0 has score 28.3237
+Path 0 has score 26.4538
+Path 0 has score 27.5368
+Path 0 has score 25.6511
+Path 0 has score 26.459
+Path 0 has score 24.6187
+Path 0 has score 25.6322
+Path 0 has score 23.7846
+Path 0 has score 24.6197
+Path 0 has score 22.7698
+Path 0 has score 23.7704
+Path 0 has score 21.9215
+Path 0 has score 20.9068
+Path 0 has score 21.9157
+Path 0 has score 22.7808
+Path 0 has score 30.1355
+Best index selected to be 17 which equates to path 18. Returning analysis to track.
+--------
+Beginning analysis of following list of paths:
+Point 1 at x(14.99) y(-0.105)
 
 --------
 Point 1 at x(14.99) y(-0.105)
@@ -478,23 +634,56 @@ Point 2 at x(15.965) y(-0.195)
 --------
 Point 1 at x(14.99) y(-0.105)
 Point 2 at x(15.965) y(-0.195)
+Point 3 at x(16.94) y(-0.28)
+>>>>>>> Stashed changes
+
+--------
+Point 1 at x(14.99) y(-0.105)
+Point 2 at x(15.965) y(-0.195)
+<<<<<<< Updated upstream
+=======
+Point 3 at x(16.94) y(-0.28)
+Point 4 at x(15.965) y(-0.195)
+>>>>>>> Stashed changes
+
+--------
+Point 1 at x(14.99) y(-0.105)
+Point 2 at x(15.965) y(-0.195)
+<<<<<<< Updated upstream
 Point 3 at x(16.94) y(-0.285)
+=======
+Point 3 at x(16.94) y(-0.28)
+Point 4 at x(17.825) y(-0.19)
+>>>>>>> Stashed changes
 
 --------
 Point 1 at x(14.99) y(-0.105)
 Point 2 at x(15.965) y(-0.195)
+<<<<<<< Updated upstream
 Point 3 at x(16.94) y(-0.285)
 Point 4 at x(15.965) y(-0.195)
+=======
+Point 3 at x(16.94) y(-0.28)
+Point 4 at x(17.825) y(-0.19)
+Point 5 at x(16.94) y(-0.28)
+>>>>>>> Stashed changes
 
 --------
 Point 1 at x(14.99) y(-0.105)
 Point 2 at x(15.965) y(-0.195)
+<<<<<<< Updated upstream
 Point 3 at x(16.94) y(-0.285)
 Point 4 at x(17.825) y(-0.19)
+=======
+Point 3 at x(16.94) y(-0.28)
+Point 4 at x(17.825) y(-0.19)
+Point 5 at x(18.71) y(-0.1)
+>>>>>>> Stashed changes
 
 --------
 Point 1 at x(14.99) y(-0.105)
 Point 2 at x(15.965) y(-0.195)
+<<<<<<< Updated upstream
 Point 3 at x(16.94) y(-0.285)
 Point 4 at x(17.825) y(-0.19)
 Point 5 at x(16.94) y(-0.285)
@@ -516,12 +705,37 @@ Point 2 at x(14.01) y(0.73)
 Point 1 at x(14.99) y(-0.105)
 Point 2 at x(14.01) y(0.73)
 Point 3 at x(14.01) y(-0.765)
+=======
+Point 3 at x(16.94) y(-0.28)
+Point 4 at x(17.825) y(-0.19)
+Point 5 at x(18.71) y(-0.1)
+Point 6 at x(17.825) y(-0.19)
+
+--------
+Point 1 at x(14.99) y(-0.105)
+Point 2 at x(14.01) y(-1.0225)
+
+--------
+Point 1 at x(14.99) y(-0.105)
+Point 2 at x(14.01) y(-1.0225)
+Point 3 at x(14.01) y(0.9825)
+
+--------
+Point 1 at x(14.99) y(-0.105)
+Point 2 at x(14.01) y(0.9825)
+
+--------
+Point 1 at x(14.99) y(-0.105)
+Point 2 at x(14.01) y(0.9825)
+Point 3 at x(14.01) y(-1.0225)
+>>>>>>> Stashed changes
 
 --------
 Scores gathered as follows:
 --------
 For path 1
 Nearest classified cone contacts = 0
+<<<<<<< Updated upstream
 Nearest unclassified cone contacts = 0
 Distance to end goal = 804.445
 Classified cones on each side = 20
@@ -696,11 +910,410 @@ Point 1 at x(20.17) y(0.765)
 Point 2 at x(18.9975) y(1.035)
 Point 3 at x(19.5775) y(1.765)
 Point 4 at x(18.9975) y(1.035)
+=======
+Nearest unclassified cone contacts = 2.005
+Distance to end goal = 3.72
+Total calculated score: 10*0 + 10*2.005 + 1*3.72 = 23.77
+--------
+For path 2
+Nearest classified cone contacts = 4.44089e-16
+Nearest unclassified cone contacts = 2.07696
+Distance to end goal = 2.74664
+Total calculated score: 10*4.44089e-16 + 10*2.07696 + 1*2.74664 = 23.5162
+--------
+For path 3
+Nearest classified cone contacts = 2.96059e-16
+Nearest unclassified cone contacts = 2.05131
+Distance to end goal = 1.77913
+Total calculated score: 10*2.96059e-16 + 10*2.05131 + 1*1.77913 = 22.2922
+--------
+For path 4
+Nearest classified cone contacts = 4.44089e-16
+Nearest unclassified cone contacts = 2.07571
+Distance to end goal = 2.74664
+Total calculated score: 10*4.44089e-16 + 10*2.07571 + 1*2.74664 = 23.5037
+--------
+For path 5
+Nearest classified cone contacts = 5.55112e-16
+Nearest unclassified cone contacts = 2.06475
+Distance to end goal = 0.889565
+Total calculated score: 10*5.55112e-16 + 10*2.06475 + 1*0.889565 = 21.537
+--------
+For path 6
+Nearest classified cone contacts = 4.44089e-16
+Nearest unclassified cone contacts = 2.0518
+Distance to end goal = 1.77913
+Total calculated score: 10*4.44089e-16 + 10*2.0518 + 1*1.77913 = 22.2971
+--------
+For path 7
+Nearest classified cone contacts = 4.44089e-16
+Nearest unclassified cone contacts = 2.0518
+Distance to end goal = 0
+Total calculated score: 10*4.44089e-16 + 10*2.0518 + 1*0 = 20.518
+--------
+For path 8
+Nearest classified cone contacts = 5.92119e-16
+Nearest unclassified cone contacts = 2.06068
+Distance to end goal = 0.889565
+Total calculated score: 10*5.92119e-16 + 10*2.06068 + 1*0.889565 = 21.4963
+--------
+For path 9
+Nearest classified cone contacts = 0.809259
+Nearest unclassified cone contacts = 1.73446
+Distance to end goal = 4.78968
+Total calculated score: 10*0.809259 + 10*1.73446 + 1*4.78968 = 30.2269
+--------
+For path 10
+Nearest classified cone contacts = 0.0943617
+Nearest unclassified cone contacts = 1.60379
+Distance to end goal = 4.82305
+Total calculated score: 10*0.0943617 + 10*1.60379 + 1*4.82305 = 21.8046
+--------
+For path 11
+Nearest classified cone contacts = 0.950801
+Nearest unclassified cone contacts = 1.67373
+Distance to end goal = 4.82305
+Total calculated score: 10*0.950801 + 10*1.67373 + 1*4.82305 = 31.0684
+--------
+For path 12
+Nearest classified cone contacts = 0.0943617
+Nearest unclassified cone contacts = 1.60379
+Distance to end goal = 4.78968
+Total calculated score: 10*0.0943617 + 10*1.60379 + 1*4.78968 = 21.7712
+--------
+List of scores:
+Path 0 has score 23.77
+Path 0 has score 23.5162
+Path 0 has score 22.2922
+Path 0 has score 23.5037
+Path 0 has score 21.537
+Path 0 has score 22.2971
+Path 0 has score 20.518
+Path 0 has score 21.4963
+Path 0 has score 30.2269
+Path 0 has score 21.8046
+Path 0 has score 31.0684
+Path 0 has score 21.7712
+Best index selected to be 6 which equates to path 7. Returning analysis to track.
+--------
+Beginning analysis of following list of paths:
+Point 1 at x(20.75) y(1.49)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(21.25) y(2.4)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(21.25) y(2.4)
+Point 3 at x(21.83) y(3.13)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(21.25) y(2.4)
+Point 3 at x(21.83) y(3.13)
+Point 4 at x(21.25) y(2.4)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(20.02) y(0.06)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(20.02) y(0.06)
+Point 3 at x(19.44) y(1.33)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(20.02) y(0.06)
+Point 3 at x(19.44) y(-0.665)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(20.02) y(0.06)
+Point 3 at x(19.44) y(-0.665)
+Point 4 at x(20.02) y(0.06)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(19.44) y(1.33)
+
+--------
+Point 1 at x(20.75) y(1.49)
+Point 2 at x(19.44) y(1.33)
+Point 3 at x(20.02) y(0.06)
 
 --------
 Scores gathered as follows:
 --------
 For path 1
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 1.39617
+Distance to end goal = 1.96367
+Total calculated score: 10*0 + 10*1.39617 + 1*1.96367 = 15.9254
+--------
+For path 2
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 1.2673
+Distance to end goal = 0.932363
+Total calculated score: 10*0 + 10*1.2673 + 1*0.932363 = 13.6053
+--------
+For path 3
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 1.2446
+Distance to end goal = 0
+Total calculated score: 10*0 + 10*1.2446 + 1*0 = 12.446
+--------
+For path 4
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 1.21806
+Distance to end goal = 0.932363
+Total calculated score: 10*0 + 10*1.21806 + 1*0.932363 = 13.1129
+--------
+For path 5
+Nearest classified cone contacts = 0.702736
+Nearest unclassified cone contacts = 1.34743
+Distance to end goal = 3.56385
+Total calculated score: 10*0.702736 + 10*1.34743 + 1*3.56385 = 24.0655
+--------
+For path 6
+Nearest classified cone contacts = 0.273059
+Nearest unclassified cone contacts = 1.43347
+Distance to end goal = 2.99201
+Total calculated score: 10*0.273059 + 10*1.43347 + 1*2.99201 = 20.0573
+--------
+For path 7
+Nearest classified cone contacts = 1.3281
+Nearest unclassified cone contacts = 1.20599
+Distance to end goal = 4.48488
+Total calculated score: 10*1.3281 + 10*1.20599 + 1*4.48488 = 29.8258
+--------
+For path 8
+Nearest classified cone contacts = 1.34744
+Nearest unclassified cone contacts = 1.22917
+Distance to end goal = 3.56385
+Total calculated score: 10*1.34744 + 10*1.22917 + 1*3.56385 = 29.3299
+--------
+For path 9
+Nearest classified cone contacts = 0.293148
+Nearest unclassified cone contacts = 1.50086
+Distance to end goal = 2.99201
+Total calculated score: 10*0.293148 + 10*1.50086 + 1*2.99201 = 20.9321
+--------
+For path 10
+Nearest classified cone contacts = 0.273059
+Nearest unclassified cone contacts = 1.43347
+Distance to end goal = 3.56385
+Total calculated score: 10*0.273059 + 10*1.43347 + 1*3.56385 = 20.6292
+--------
+List of scores:
+Path 0 has score 15.9254
+Path 0 has score 13.6053
+Path 0 has score 12.446
+Path 0 has score 13.1129
+Path 0 has score 24.0655
+Path 0 has score 20.0573
+Path 0 has score 29.8258
+Path 0 has score 29.3299
+Path 0 has score 20.9321
+Path 0 has score 20.6292
+Best index selected to be 2 which equates to path 3. Returning analysis to track.
+--------
+Beginning analysis of following list of paths:
+Point 1 at x(22.8) y(4.755)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(23.3) y(5.65)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(23.3) y(5.65)
+Point 3 at x(23.77) y(6.865)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(23.3) y(5.65)
+Point 3 at x(23.77) y(6.865)
+Point 4 at x(24.36) y(7.825)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(23.3) y(5.65)
+Point 3 at x(23.77) y(6.865)
+Point 4 at x(24.36) y(7.825)
+Point 5 at x(23.77) y(6.865)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(23.3) y(5.65)
+Point 3 at x(23.77) y(6.865)
+Point 4 at x(23.3) y(5.65)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(22.55) y(3.3)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(22.55) y(3.3)
+Point 3 at x(22.08) y(4.585)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(22.08) y(4.585)
+
+--------
+Point 1 at x(22.8) y(4.755)
+Point 2 at x(22.08) y(4.585)
+Point 3 at x(22.55) y(3.3)
+
+--------
+Scores gathered as follows:
+--------
+For path 1
+Nearest classified cone contacts = 8.88178e-16
+Nearest unclassified cone contacts = 1.36826
+Distance to end goal = 3.44362
+Total calculated score: 10*8.88178e-16 + 10*1.36826 + 1*3.44362 = 17.1262
+--------
+For path 2
+Nearest classified cone contacts = 2.33147e-15
+Nearest unclassified cone contacts = 1.20686
+Distance to end goal = 2.41955
+Total calculated score: 10*2.33147e-15 + 10*1.20686 + 1*2.41955 = 14.4882
+--------
+For path 3
+Nearest classified cone contacts = 0.00716424
+Nearest unclassified cone contacts = 1.35777
+Distance to end goal = 1.12681
+Total calculated score: 10*0.00716424 + 10*1.35777 + 1*1.12681 = 14.7761
+--------
+For path 4
+Nearest classified cone contacts = 0.00537318
+Nearest unclassified cone contacts = 1.33496
+Distance to end goal = 0
+Total calculated score: 10*0.00537318 + 10*1.33496 + 1*0 = 13.4034
+--------
+For path 5
+Nearest classified cone contacts = 0.00859709
+Nearest unclassified cone contacts = 1.39989
+Distance to end goal = 1.12681
+Total calculated score: 10*0.00859709 + 10*1.39989 + 1*1.12681 = 15.2117
+--------
+For path 6
+Nearest classified cone contacts = 0.00537318
+Nearest unclassified cone contacts = 1.27969
+Distance to end goal = 2.41955
+Total calculated score: 10*0.00537318 + 10*1.27969 + 1*2.41955 = 15.2702
+--------
+For path 7
+Nearest classified cone contacts = 1.00451
+Nearest unclassified cone contacts = 1.05403
+Distance to end goal = 4.87357
+Total calculated score: 10*1.00451 + 10*1.05403 + 1*4.87357 = 25.4589
+--------
+For path 8
+Nearest classified cone contacts = 0.618199
+Nearest unclassified cone contacts = 1.19479
+Distance to end goal = 3.96182
+Total calculated score: 10*0.618199 + 10*1.19479 + 1*3.96182 = 22.0917
+--------
+For path 9
+Nearest classified cone contacts = 0.0772111
+Nearest unclassified cone contacts = 1.42229
+Distance to end goal = 3.96182
+Total calculated score: 10*0.0772111 + 10*1.42229 + 1*3.96182 = 18.9568
+--------
+For path 10
+Nearest classified cone contacts = 0.618199
+Nearest unclassified cone contacts = 1.19479
+Distance to end goal = 4.87357
+Total calculated score: 10*0.618199 + 10*1.19479 + 1*4.87357 = 23.0035
+--------
+List of scores:
+Path 0 has score 17.1262
+Path 0 has score 14.4882
+Path 0 has score 14.7761
+Path 0 has score 13.4034
+Path 0 has score 15.2117
+Path 0 has score 15.2702
+Path 0 has score 25.4589
+Path 0 has score 22.0917
+Path 0 has score 18.9568
+Path 0 has score 23.0035
+Best index selected to be 3 which equates to path 4. Returning analysis to track.
+--------
+Beginning analysis of following list of paths:
+Point 1 at x(25.605) y(8.625)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(26.195) y(9.335)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(26.195) y(9.335)
+Point 3 at x(26.94) y(9.74)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(26.195) y(9.335)
+Point 3 at x(26.94) y(9.74)
+Point 4 at x(26.195) y(9.335)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(26.195) y(9.335)
+Point 3 at x(26.94) y(9.74)
+Point 4 at x(27.85) y(10.03)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(26.195) y(9.335)
+Point 3 at x(26.94) y(9.74)
+Point 4 at x(27.85) y(10.03)
+Point 5 at x(28.8) y(9.995)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(26.195) y(9.335)
+Point 3 at x(26.94) y(9.74)
+Point 4 at x(27.85) y(10.03)
+Point 5 at x(28.8) y(9.995)
+Point 6 at x(27.85) y(10.03)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(26.195) y(9.335)
+Point 3 at x(26.94) y(9.74)
+Point 4 at x(27.85) y(10.03)
+Point 5 at x(26.94) y(9.74)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(25.65) y(7.6575)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(25.65) y(7.6575)
+Point 3 at x(24.315) y(8.7925)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(24.315) y(8.7925)
+
+--------
+Point 1 at x(25.605) y(8.625)
+Point 2 at x(24.315) y(8.7925)
+Point 3 at x(25.65) y(7.6575)
+>>>>>>> Stashed changes
+
+--------
+Scores gathered as follows:
+--------
+For path 1
+<<<<<<< Updated upstream
 Nearest classified cone contacts = 0.111641
 Nearest unclassified cone contacts = 0
 Distance to end goal = 346.262
@@ -833,5 +1446,339 @@ Path 9 has score 754.767
 Path 10 has score 1316.97
 Path 11 has score 382.391
 Path 12 has score 830.658
+=======
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 1.75227
+Distance to end goal = 3.47634
+Total calculated score: 10*0 + 10*1.75227 + 1*3.47634 = 20.999
+--------
+For path 2
+Nearest classified cone contacts = 0.00918938
+Nearest unclassified cone contacts = 1.86181
+Distance to end goal = 2.68731
+Total calculated score: 10*0.00918938 + 10*1.86181 + 1*2.68731 = 21.3973
+--------
+For path 3
+Nearest classified cone contacts = 0.0654181
+Nearest unclassified cone contacts = 1.93192
+Distance to end goal = 1.8774
+Total calculated score: 10*0.0654181 + 10*1.93192 + 1*1.8774 = 21.8508
+--------
+For path 4
+Nearest classified cone contacts = 0.0536583
+Nearest unclassified cone contacts = 1.94178
+Distance to end goal = 2.68731
+Total calculated score: 10*0.0536583 + 10*1.94178 + 1*2.68731 = 22.6417
+--------
+For path 5
+Nearest classified cone contacts = 0.0490636
+Nearest unclassified cone contacts = 1.98918
+Distance to end goal = 0.950645
+Total calculated score: 10*0.0490636 + 10*1.98918 + 1*0.950645 = 21.333
+--------
+For path 6
+Nearest classified cone contacts = 0.12118
+Nearest unclassified cone contacts = 1.97642
+Distance to end goal = 0
+Total calculated score: 10*0.12118 + 10*1.97642 + 1*0 = 20.976
+--------
+For path 7
+Nearest classified cone contacts = 0.100983
+Nearest unclassified cone contacts = 2.00718
+Distance to end goal = 0.950645
+Total calculated score: 10*0.100983 + 10*2.00718 + 1*0.950645 = 22.0322
+--------
+For path 8
+Nearest classified cone contacts = 0.0748259
+Nearest unclassified cone contacts = 2.00577
+Distance to end goal = 1.8774
+Total calculated score: 10*0.0748259 + 10*2.00577 + 1*1.8774 = 22.6833
+--------
+For path 9
+Nearest classified cone contacts = 0.607054
+Nearest unclassified cone contacts = 1.52655
+Distance to end goal = 3.92255
+Total calculated score: 10*0.607054 + 10*1.52655 + 1*3.92255 = 25.2586
+--------
+For path 10
+Nearest classified cone contacts = 0.249242
+Nearest unclassified cone contacts = 1.34055
+Distance to end goal = 4.64341
+Total calculated score: 10*0.249242 + 10*1.34055 + 1*4.64341 = 20.5413
+--------
+For path 11
+Nearest classified cone contacts = 0.980917
+Nearest unclassified cone contacts = 1.36041
+Distance to end goal = 4.64341
+Total calculated score: 10*0.980917 + 10*1.36041 + 1*4.64341 = 28.0567
+--------
+For path 12
+Nearest classified cone contacts = 0.249242
+Nearest unclassified cone contacts = 1.34055
+Distance to end goal = 3.92255
+Total calculated score: 10*0.249242 + 10*1.34055 + 1*3.92255 = 19.8205
+--------
+List of scores:
+Path 0 has score 20.999
+Path 0 has score 21.3973
+Path 0 has score 21.8508
+Path 0 has score 22.6417
+Path 0 has score 21.333
+Path 0 has score 20.976
+Path 0 has score 22.0322
+Path 0 has score 22.6833
+Path 0 has score 25.2586
+Path 0 has score 20.5413
+Path 0 has score 28.0567
+Path 0 has score 19.8205
+Best index selected to be 11 which equates to path 12. Returning analysis to track.
+--------
+Beginning analysis of following list of paths:
+Point 1 at x(30.64) y(10.035)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(31.59) y(10)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(31.59) y(10)
+Point 3 at x(32.52) y(10)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(31.59) y(10)
+Point 3 at x(32.52) y(10)
+Point 4 at x(31.59) y(10)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(31.59) y(10)
+Point 3 at x(32.52) y(10)
+Point 4 at x(33.455) y(10)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(31.59) y(10)
+Point 3 at x(32.52) y(10)
+Point 4 at x(33.455) y(10)
+Point 5 at x(32.52) y(10)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(29.085) y(7.82875)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(29.085) y(7.82875)
+Point 3 at x(30.02) y(7.82875)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(29.085) y(7.82875)
+Point 3 at x(30.02) y(7.82875)
+Point 4 at x(29.085) y(7.82875)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(29.085) y(7.82875)
+Point 3 at x(27.205) y(9.86375)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(27.205) y(9.86375)
+
+--------
+Point 1 at x(30.64) y(10.035)
+Point 2 at x(27.205) y(9.86375)
+Point 3 at x(29.085) y(7.82875)
+
+--------
+Scores gathered as follows:
+--------
+For path 1
+Nearest classified cone contacts = 0.80539
+Nearest unclassified cone contacts = 1.9651
+Distance to end goal = 2.81522
+Total calculated score: 10*0.80539 + 10*1.9651 + 1*2.81522 = 30.5201
+--------
+For path 2
+Nearest classified cone contacts = 0.402695
+Nearest unclassified cone contacts = 2.08538
+Distance to end goal = 1.865
+Total calculated score: 10*0.402695 + 10*2.08538 + 1*1.865 = 26.7457
+--------
+For path 3
+Nearest classified cone contacts = 0.268463
+Nearest unclassified cone contacts = 2.05692
+Distance to end goal = 0.935
+Total calculated score: 10*0.268463 + 10*2.05692 + 1*0.935 = 24.1888
+--------
+For path 4
+Nearest classified cone contacts = 0.201348
+Nearest unclassified cone contacts = 2.0941
+Distance to end goal = 1.865
+Total calculated score: 10*0.201348 + 10*2.0941 + 1*1.865 = 24.8195
+--------
+For path 5
+Nearest classified cone contacts = 0.201348
+Nearest unclassified cone contacts = 2.09463
+Distance to end goal = 0
+Total calculated score: 10*0.201348 + 10*2.09463 + 1*0 = 22.9598
+--------
+For path 6
+Nearest classified cone contacts = 0.161078
+Nearest unclassified cone contacts = 2.0757
+Distance to end goal = 0.935
+Total calculated score: 10*0.161078 + 10*2.0757 + 1*0.935 = 23.3028
+--------
+For path 7
+Nearest classified cone contacts = 0.00451384
+Nearest unclassified cone contacts = 2.70218
+Distance to end goal = 4.87967
+Total calculated score: 10*0.00451384 + 10*2.70218 + 1*4.87967 = 31.9467
+--------
+For path 8
+Nearest classified cone contacts = 0.574411
+Nearest unclassified cone contacts = 2.63674
+Distance to end goal = 4.06369
+Total calculated score: 10*0.574411 + 10*2.63674 + 1*4.06369 = 36.1752
+--------
+For path 9
+Nearest classified cone contacts = 0.634412
+Nearest unclassified cone contacts = 2.83737
+Distance to end goal = 4.87967
+Total calculated score: 10*0.634412 + 10*2.83737 + 1*4.87967 = 39.5975
+--------
+For path 10
+Nearest classified cone contacts = 0.974698
+Nearest unclassified cone contacts = 2.70118
+Distance to end goal = 6.25148
+Total calculated score: 10*0.974698 + 10*2.70118 + 1*6.25148 = 43.0103
+--------
+For path 11
+Nearest classified cone contacts = 1.86926
+Nearest unclassified cone contacts = 2.33214
+Distance to end goal = 6.25148
+Total calculated score: 10*1.86926 + 10*2.33214 + 1*6.25148 = 48.2654
+--------
+For path 12
+Nearest classified cone contacts = 0.974698
+Nearest unclassified cone contacts = 2.70118
+Distance to end goal = 4.87967
+Total calculated score: 10*0.974698 + 10*2.70118 + 1*4.87967 = 41.6385
+--------
+List of scores:
+Path 0 has score 30.5201
+Path 0 has score 26.7457
+Path 0 has score 24.1888
+Path 0 has score 24.8195
+Path 0 has score 22.9598
+Path 0 has score 23.3028
+Path 0 has score 31.9467
+Path 0 has score 36.1752
+Path 0 has score 39.5975
+Path 0 has score 43.0103
+Path 0 has score 48.2654
+Path 0 has score 41.6385
+Best index selected to be 4 which equates to path 5. Returning analysis to track.
+--------
+Beginning analysis of following list of paths:
+Point 1 at x(36.26) y(10)
+
+--------
+Point 1 at x(36.26) y(10)
+Point 2 at x(37.195) y(10)
+
+--------
+Point 1 at x(36.26) y(10)
+Point 2 at x(37.195) y(10)
+Point 3 at x(38.13) y(10)
+
+--------
+Point 1 at x(36.26) y(10)
+Point 2 at x(37.195) y(10)
+Point 3 at x(38.13) y(10)
+Point 4 at x(37.195) y(10)
+
+--------
+Point 1 at x(36.26) y(10)
+Point 2 at x(34.8575) y(9)
+
+--------
+Point 1 at x(36.26) y(10)
+Point 2 at x(34.8575) y(9)
+Point 3 at x(34.8575) y(11)
+
+--------
+Point 1 at x(36.26) y(10)
+Point 2 at x(34.8575) y(11)
+
+--------
+Point 1 at x(36.26) y(10)
+Point 2 at x(34.8575) y(11)
+Point 3 at x(34.8575) y(9)
+
+--------
+Scores gathered as follows:
+--------
+For path 1
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2
+Distance to end goal = 1.87
+Total calculated score: 10*0 + 10*2 + 1*1.87 = 21.87
+--------
+For path 2
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.10388
+Distance to end goal = 0.935
+Total calculated score: 10*0 + 10*2.10388 + 1*0.935 = 21.9738
+--------
+For path 3
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.06925
+Distance to end goal = 0
+Total calculated score: 10*0 + 10*2.06925 + 1*0 = 20.6925
+--------
+For path 4
+Nearest classified cone contacts = 0
+Nearest unclassified cone contacts = 2.10388
+Distance to end goal = 0.935
+Total calculated score: 10*0 + 10*2.10388 + 1*0.935 = 21.9738
+--------
+For path 5
+Nearest classified cone contacts = 0.656854
+Nearest unclassified cone contacts = 1.86125
+Distance to end goal = 3.42188
+Total calculated score: 10*0.656854 + 10*1.86125 + 1*3.42188 = 28.6029
+--------
+For path 6
+Nearest classified cone contacts = 0.298019
+Nearest unclassified cone contacts = 1.60879
+Distance to end goal = 3.42188
+Total calculated score: 10*0.298019 + 10*1.60879 + 1*3.42188 = 22.49
+--------
+For path 7
+Nearest classified cone contacts = 1.10388
+Nearest unclassified cone contacts = 1.55194
+Distance to end goal = 3.42188
+Total calculated score: 10*1.10388 + 10*1.55194 + 1*3.42188 = 29.9801
+--------
+For path 8
+Nearest classified cone contacts = 0.298019
+Nearest unclassified cone contacts = 1.60879
+Distance to end goal = 3.42188
+Total calculated score: 10*0.298019 + 10*1.60879 + 1*3.42188 = 22.49
+--------
+List of scores:
+Path 0 has score 21.87
+Path 0 has score 21.9738
+Path 0 has score 20.6925
+Path 0 has score 21.9738
+Path 0 has score 28.6029
+Path 0 has score 22.49
+Path 0 has score 29.9801
+Path 0 has score 22.49
+>>>>>>> Stashed changes
 Best index selected to be 2 which equates to path 3. Returning analysis to track.
 --------

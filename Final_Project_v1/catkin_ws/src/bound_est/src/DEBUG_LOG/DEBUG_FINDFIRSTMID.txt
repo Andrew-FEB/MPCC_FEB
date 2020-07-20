@@ -1,12 +1,16 @@
+<<<<<<< Updated upstream
 Log message for findFirstMidpoint() log data at Mon Jul 20 12:02:36 2020
+=======
+Log message for findFirstMidpoint() log data at Mon Jul 20 10:47:38 2020
+>>>>>>> Stashed changes
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
 Comparison  point x(0), y(0)
 Vector of triangles of size 3 contains:
-Triangle 1 with points A (x=1.85, y=-1.5, pos=right) B (x=0, y=0, pos=undefined) and C (x=1.85, y=1.5, pos=left)
-Triangle 2 with points A (x=1.85, y=-1.5, pos=right) B (x=0, y=-1.5, pos=right) and C (x=0, y=0, pos=undefined)
-Triangle 3 with points A (x=0, y=0, pos=left) B (x=0, y=1.5, pos=left) and C (x=1.85, y=1.5, pos=left)
+Triangle 1 with points A (x=1.85, y=-2, pos=right) B (x=0, y=0, pos=undefined) and C (x=1.85, y=2, pos=left)
+Triangle 2 with points A (x=1.85, y=-2, pos=right) B (x=0, y=-2, pos=right) and C (x=0, y=0, pos=undefined)
+Triangle 3 with points A (x=0, y=0, pos=left) B (x=0, y=2, pos=left) and C (x=1.85, y=2, pos=left)
 
 Point identified as being point B on triangle 1
 Points A and C identified as not being on boundary, so this position selected
@@ -15,6 +19,7 @@ Returned coordinate has coordinates x(1.85), y(0)
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< Updated upstream
 Log message for findFirstMidpoint() log data at Mon Jul 20 12:03:07 2020
 -----------------------------------
 -----------------------------------
@@ -22,6 +27,15 @@ At time of entering function key variables were:
 Comparison  point x(13.03), y(0.07)
 Vector of triangles of size 1 contains:
 Triangle 1 with points A (x=14.99, y=-1.6, pos=right) B (x=13.03, y=0.07, pos=undefined) and C (x=14.99, y=1.39, pos=left)
+=======
+Log message for findFirstMidpoint() log data at Mon Jul 20 10:47:50 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(13.03), y(0.065)
+Vector of triangles of size 1 contains:
+Triangle 1 with points A (x=14.99, y=-2.11, pos=right) B (x=13.03, y=0.065, pos=undefined) and C (x=14.99, y=1.9, pos=left)
+>>>>>>> Stashed changes
 
 Point identified as being point B on triangle 1
 Points A and C identified as not being on boundary, so this position selected
@@ -30,6 +44,7 @@ Returned coordinate has coordinates x(14.99), y(-0.105)
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< Updated upstream
 Log message for findFirstMidpoint() log data at Mon Jul 20 12:03:20 2020
 -----------------------------------
 -----------------------------------
@@ -43,6 +58,84 @@ Triangle 3 with points A (x=20.17, y=-0.73, pos=right) B (x=18.71, y=-1.6, pos=r
 Point identified as being point B on triangle 1
 Points A and C identified as not being on boundary, so this position selected
 Returned coordinate has coordinates x(20.17), y(0.765)
+=======
+Log message for findFirstMidpoint() log data at Mon Jul 20 10:47:52 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(18.71), y(-0.1)
+Vector of triangles of size 2 contains:
+Triangle 1 with points A (x=21.33, y=0.22, pos=right) B (x=18.71, y=-0.1, pos=undefined) and C (x=20.17, y=2.76, pos=left)
+Triangle 2 with points A (x=21.33, y=0.22, pos=right) B (x=20.17, y=-1.23, pos=right) and C (x=18.71, y=-0.1, pos=undefined)
+
+Point identified as being point B on triangle 1
+Points A and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(20.75), y(1.49)
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findFirstMidpoint() log data at Mon Jul 20 10:47:58 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(21.83), y(3.13)
+Vector of triangles of size 1 contains:
+Triangle 1 with points A (x=23.27, y=3.47, pos=right) B (x=21.83, y=3.13, pos=undefined) and C (x=22.33, y=6.04, pos=left)
+
+Point identified as being point B on triangle 1
+Points A and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(22.8), y(4.755)
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findFirstMidpoint() log data at Mon Jul 20 10:48:06 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(24.36), y(7.825)
+Vector of triangles of size 1 contains:
+Triangle 1 with points A (x=26.94, y=7.49, pos=right) B (x=24.36, y=7.825, pos=undefined) and C (x=24.27, y=9.76, pos=left)
+
+Point identified as being point B on triangle 1
+Points A and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(25.605), y(8.625)
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findFirstMidpoint() log data at Mon Jul 20 10:48:12 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(25.65), y(7.6575)
+Vector of triangles of size 2 contains:
+Triangle 1 with points A (x=34.39, y=8, pos=right) B (x=25.65, y=7.6575, pos=undefined) and C (x=32.52, y=8, pos=right)
+Triangle 2 with points A (x=32.52, y=8, pos=right) B (x=25.65, y=7.6575, pos=undefined) and C (x=28.76, y=12.07, pos=left)
+
+Point identified as being point B on triangle 1
+Point identified as being point B on triangle 2
+Points A and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(30.64), y(10.035)
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findFirstMidpoint() log data at Mon Jul 20 10:48:19 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(33.455), y(10)
+Vector of triangles of size 2 contains:
+Triangle 1 with points A (x=33.455, y=10, pos=left) B (x=34.39, y=12, pos=left) and C (x=36.26, y=12, pos=left)
+Triangle 2 with points A (x=36.26, y=8, pos=right) B (x=33.455, y=10, pos=undefined) and C (x=36.26, y=12, pos=left)
+
+Point identified as being point A on triangle 1
+Point identified as being point B on triangle 2
+Points A and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(36.26), y(10)
+>>>>>>> Stashed changes
 --------
 ///////////////////////////////////
 ///////////////////////////////////

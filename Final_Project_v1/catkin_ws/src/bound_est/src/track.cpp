@@ -494,12 +494,12 @@ std::vector<Pos> Track::findBoundaryPointsAndSlopes(const std::vector<const Cone
 std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(const int &original_index, const int &number_of_points, const double &distance)
 {
     #ifdef DEBUG
-    std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("INTERPOLATE_CENTRE", "interpolateCentreCoordsDiscrete()", reset_logs);
-    std::stringstream ss;
-    log->write(ss<<"At entering function, important variables were...");
-    log->write(ss<<"Original index of "<<original_index);
-    log->write(ss<<"Requested distance between points of "<<distance);
-    log->write(ss<<"Requested number of points of "<<number_of_points, true);
+        std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("INTERPOLATE_CENTRE", "interpolateCentreCoordsDiscrete()", reset_logs);
+        std::stringstream ss;
+        log->write(ss<<"At entering function, important variables were...");
+        log->write(ss<<"Original index of "<<original_index);
+        log->write(ss<<"Requested distance between points of "<<distance);
+        log->write(ss<<"Requested number of points of "<<number_of_points, true);
     #endif
     double temp_distance = distance;
     //Check available distance versus requested distance
@@ -510,7 +510,7 @@ std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(con
     }
     available_dist -= 0.01; //compensate for double rounding
     #ifdef DEBUG
-    log->write(ss<<"Actual available distance is "<<available_dist);
+        log->write(ss<<"Actual available distance is "<<available_dist);
     #endif
     if (available_dist<(number_of_points*distance))
     {
@@ -531,7 +531,7 @@ std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(con
         bool point_found{false};
         next_distance = temp_distance;
         #ifdef DEBUG
-        log->write(ss<<"Finding point "<<i+1<< " of "<<number_of_points);
+            log->write(ss<<"Finding point "<<i+1<< " of "<<number_of_points);
         #endif
         while (!point_found)
         {
