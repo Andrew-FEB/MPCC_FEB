@@ -22,7 +22,7 @@ constexpr long ROS_REFRESH_TIME_MS = 1000;
 //Configure globals
 #ifdef DEBUG
     bool reset_logs = true;
-    constexpr int DEBUG_LOOPS_TO_COMPLETE = 4;
+    constexpr int DEBUG_LOOPS_TO_COMPLETE = 100;
 #endif
 
 constexpr double time_step = 0.05;

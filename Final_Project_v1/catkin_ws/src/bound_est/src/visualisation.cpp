@@ -49,6 +49,8 @@ void Visualisation::refreshRosOutput()
 		if (boundary_slope_pub.getNumSubscribers()>=1) boundary_slope_pub.publish(boundary_slope_markers);
 		if (boundary_point_pub.getNumSubscribers()>=1) boundary_point_pub.publish(boundary_point_markers);
 		if (reference_to_boundary_pub.getNumSubscribers()>=1) reference_to_boundary_pub.publish(reference_to_boundary_markers);
+		if (car_boundary_pub.getNumSubscribers()>=1) car_boundary_pub.publish(car_boundary_markers);
+		
 	}
 	else
 	{
@@ -746,4 +748,66 @@ void Visualisation::showReferencePath(const std::vector<MPC_targets> &reference_
 
 
 	std::cerr<<"Visualisation connection completed - reference path."<<std::endl;
+}
+
+void Visualisation::showCarBoundaryPoints(const Rect &car_rect, const bool &outside_track)
+{
+
+	if (car_boundary_pub.getNumSubscribers()<1)
+	{
+		std::cerr<<"Waiting for subscription - car boundaries."<<std::endl;
+		car_boundary_pub = n->advertise<visualization_msgs::MarkerArray>("car_boundaries", TIME_OUT_VAL);
+		waitForSubscribe(car_boundary_pub);
+	}
+	if (!car_boundary_markers.markers.empty()) car_boundary_markers.markers.clear();
+
+	visualization_msgs::Marker marker;
+	marker.header.frame_id = "/tf_bound";
+	marker.header.stamp = ros::Time();
+	marker.ns = "car_boundaries";
+	marker.type = visualization_msgs::Marker::CUBE;
+	marker.action = visualization_msgs::Marker::ADD;
+	marker.pose.position.z = 0.0;
+	marker.pose.orientation.z = 0.0;
+	marker.pose.orientation.w = 2.0;
+	marker.scale.x = 0.1;
+	marker.scale.y = 0.1;
+	marker.scale.z = 1.0;
+	if (outside_track)
+	{
+		marker.color.r = 1.0f;
+		marker.color.g = 0.0f;
+		marker.color.b = 0.0f;
+	}
+	else
+	{
+		marker.color.r = 0.0f;
+		marker.color.g = 1.0f;
+		marker.color.b = 1.0f;
+	}
+	marker.color.a = 1.0;
+	marker.lifetime = ros::Duration(ROS_DURATION_TIME);
+	int reference_point_index {0};
+
+	marker.pose.position.x = car_rect.a.x;
+	marker.pose.position.y = car_rect.a.y;
+	marker.id = reference_point_index++;	
+	car_boundary_markers.markers.push_back(marker);
+
+	marker.pose.position.x = car_rect.b.x;
+	marker.pose.position.y = car_rect.b.y;
+	marker.id = reference_point_index++;	
+	car_boundary_markers.markers.push_back(marker);
+
+	marker.pose.position.x = car_rect.c.x;
+	marker.pose.position.y = car_rect.c.y;
+	marker.id = reference_point_index++;	
+	car_boundary_markers.markers.push_back(marker);
+
+	marker.pose.position.x = car_rect.d.x;
+	marker.pose.position.y = car_rect.d.y;
+	marker.id = reference_point_index;	
+	car_boundary_markers.markers.push_back(marker);
+
+	car_boundary_pub.publish(car_boundary_markers);
 }

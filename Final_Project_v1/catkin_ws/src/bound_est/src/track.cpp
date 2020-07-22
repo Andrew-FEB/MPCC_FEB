@@ -352,18 +352,14 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
     auto right_boundary_positions = findBoundaryPointsAndSlopes(processed_cone_list_right, centre_coord_pair.first);
 
     #ifdef DEBUG
-    int debug_left_index {0};
-    log->write(ss<<"Centre path coordinates calculated: ");
-    for (auto pos : left_boundary_positions)
+    log->write(ss<<"Boundary path coordinates calculated with left boundary list size of "<<left_boundary_positions.size()<<" and right boundary list size of "<<right_boundary_positions.size());
+    for (int i = 0; i<left_boundary_positions.size(); i++)
     {
-        ss<<"Position "<<++debug_left_index<<" with coordinate x("<<pos.p.x<<"), y("<<pos.p.y<<") and angle of "<<pos.phi<<std::endl;
+        ss<<"Left position "<<i+1<<" with coordinate x("<<left_boundary_positions[i].p.x<<"), y("<<left_boundary_positions[i].p.y<<") and angle of "<<left_boundary_positions[i].phi<<std::endl;
+        ss<<"Right position "<<i+1<<" with coordinate x("<<right_boundary_positions[i].p.x<<"), y("<<right_boundary_positions[i].p.y<<") and angle of "<<right_boundary_positions[i].phi<<std::endl;
+        ss<<"Distance between these points is "<<distBetweenPoints(left_boundary_positions[i].p, right_boundary_positions[i].p)<<std::endl<<std::endl;
     }
     log->write(ss, true);
-    int debug_right_index {0};
-    for (auto pos : right_boundary_positions)
-    {
-        ss<<"Position "<<++debug_right_index<<" with coordinate x("<<pos.p.x<<"), y("<<pos.p.y<<") and angle of "<<pos.phi<<std::endl;
-    }
     log->write(ss, true);
     #endif
 
@@ -482,9 +478,13 @@ std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(con
     double temp_distance = distance;
     //Check available distance versus requested distance
     double available_dist{0};
-    for (int i = (original_index+1); i<centre_coords.size(); i++)
+    available_dist+=distBetweenPoints(start_point, centre_coords[original_index+1]);
+    if (centre_coords.size()>=original_index+2)
     {
-        available_dist+=distBetweenPoints(centre_coords[i-1], centre_coords[i]);
+        for (int i = (original_index+2); i<centre_coords.size(); i++)
+        {
+            available_dist+=distBetweenPoints(centre_coords[i-1], centre_coords[i]);
+        }
     }
     available_dist -= 0.01; //compensate for double rounding
     #ifdef DEBUG
@@ -665,7 +665,14 @@ bool Track::carIsInsideTrack()
         furthest_dist = dist_c;
         furthest_point = car_edges.c;
     }
+
+    #ifdef VISUALISE
+    auto inside_boundaries = withinCircleOfRadius(furthest_point, closest_point, radius);
+    visualisation->showCarBoundaryPoints(car_edges, inside_boundaries);
+    return inside_boundaries;
+    #else
     return withinCircleOfRadius(furthest_point, closest_point, radius);
+    #endif
 }
 
 bool Track::pointIsInsideTrack(const coord &point)
