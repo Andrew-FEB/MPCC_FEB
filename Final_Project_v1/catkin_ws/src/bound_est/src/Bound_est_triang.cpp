@@ -2,6 +2,7 @@
 #include <iostream>
 #include <chrono>
 #include <string>
+#include <time.h>
 
 #include <ros/ros.h>
 //#include "bound_est/ConeMap.h"
@@ -15,6 +16,7 @@
     #undef DDEBUG_LOOPS
     #undef DDEBUG_SLOW
     #undef VISUALISE
+    #undef VISUALISE_RQT
 #endif
 
 constexpr long ROS_REFRESH_TIME_MS = 1000;
@@ -35,6 +37,10 @@ constexpr int pred_horizon = 40;
 
 int main(int argc, char *argv[])
 {
+    #ifdef VISUALISE_RQT
+        // Recording starting time
+        auto start = clock();
+    #endif
     //Configure ros
     ros::init(argc, argv, "boundary_est");
 
@@ -52,7 +58,7 @@ int main(int argc, char *argv[])
 
     // //Configure ros messages
     // rosbag::Bag cone_data;
-    // cone_data.open("/home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
+    // cone_data.open("/home/dada/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
     // rosbag::View view(cone_data);
     // std::vector<std::string> topics;
     // //topics.push_back(std::string("carpos")); //Testing topic, remove in final
@@ -74,19 +80,19 @@ int main(int argc, char *argv[])
     //Angle car to be pointing forward at beginning of race
     auto car = track->getCar();
     // LEFT
-    track->addCone(0.00, 2.00, BoundPos::undefined);
+    track->addCone(0.00, 2.00, BoundPos::left);
     track->addCone(1.85, 2.00, BoundPos::undefined);
     track->addCone(3.73, 2.00, BoundPos::undefined);
-    track->addCone(5.60, 2.00, BoundPos::undefined);
+    track->addCone(5.60, 2.00, BoundPos::left);
     track->addCone(7.47, 2.00, BoundPos::undefined);
     track->addCone(9.31, 2.04, BoundPos::undefined);
     track->addCone(11.16, 2.09, BoundPos::undefined); 
     track->addCone(13.03, 2.06, BoundPos::undefined);
     track->addCone(14.99, 1.90, BoundPos::undefined);
-    track->addCone(16.94, 1.72, BoundPos::undefined);
+    track->addCone(16.94, 1.72, BoundPos::left);
     track->addCone(18.71, 1.9, BoundPos::undefined);
     track->addCone(20.17, 2.76, BoundPos::undefined);
-    track->addCone(21.33, 4.22, BoundPos::undefined);
+    track->addCone(21.33, 4.22, BoundPos::left);
     track->addCone(22.33, 6.04, BoundPos::undefined);
     track->addCone(23.27, 8.47, BoundPos::undefined);
     track->addCone(24.27, 9.76, BoundPos::undefined);
@@ -95,10 +101,15 @@ int main(int argc, char *argv[])
     track->addCone(28.76, 12.07, BoundPos::undefined);
     track->addCone(30.66, 12.00, BoundPos::undefined);
     track->addCone(32.52, 12.00, BoundPos::undefined);
-    track->addCone(34.39, 12.00, BoundPos::undefined);
+    track->addCone(34.39, 12.00, BoundPos::left);
     track->addCone(36.26, 12.00, BoundPos::undefined);
     track->addCone(38.13, 12.00, BoundPos::undefined);
     track->addCone(40.00, 12.00, BoundPos::undefined);
+    track->addCone(42.52, 12.00, BoundPos::undefined);
+    track->addCone(44.39, 12.00, BoundPos::undefined);
+    track->addCone(46.26, 12.00, BoundPos::left);
+    track->addCone(48.13, 12.00, BoundPos::undefined);
+    track->addCone(50.00, 12.00, BoundPos::undefined);
 
     // RIGHT
     track->addCone(0.00, -2.00, BoundPos::undefined);
@@ -106,7 +117,7 @@ int main(int argc, char *argv[])
     track->addCone(3.73, -2.00, BoundPos::undefined);
     track->addCone(5.60, -2.00, BoundPos::undefined);
     track->addCone(7.47, -2.00, BoundPos::undefined);
-    track->addCone(9.31, -1.96, BoundPos::undefined);
+    track->addCone(9.31, -1.96, BoundPos::right);
     track->addCone(11.16, -1.91, BoundPos::undefined); 
     track->addCone(13.03, -1.93, BoundPos::undefined);
     track->addCone(14.99, -2.11, BoundPos::undefined);
@@ -117,7 +128,7 @@ int main(int argc, char *argv[])
     track->addCone(22.33, 2.04, BoundPos::undefined);
     track->addCone(23.27, 3.47, BoundPos::undefined);
     track->addCone(24.27, 5.26, BoundPos::undefined);
-    track->addCone(25.45, 7.18, BoundPos::undefined);
+    track->addCone(25.45, 7.18, BoundPos::right);
     track->addCone(26.94, 7.49, BoundPos::undefined);
     track->addCone(28.76, 8.07, BoundPos::undefined);
     track->addCone(30.66, 8.00, BoundPos::undefined);
@@ -125,8 +136,12 @@ int main(int argc, char *argv[])
     track->addCone(34.39, 8.00, BoundPos::undefined);
     track->addCone(36.26, 8.00, BoundPos::undefined);
     track->addCone(38.13, 8.00, BoundPos::undefined);
-    track->addCone(40.00, 8.00, BoundPos::undefined);
-
+    track->addCone(40.00, 8.00, BoundPos::right);
+    track->addCone(42.52, 8.00, BoundPos::undefined);
+    track->addCone(44.39, 8.00, BoundPos::undefined);
+    track->addCone(46.26, 8.00, BoundPos::undefined);
+    track->addCone(48.13, 8.00, BoundPos::undefined);
+    track->addCone(50.00, 8.00, BoundPos::undefined);
 
     std::cout<<"Entering loop"<<std::endl;
     auto ros_refresh_timer = std::chrono::high_resolution_clock::now();
@@ -179,7 +194,7 @@ int main(int argc, char *argv[])
         #endif
 
         #ifdef DEBUG_SLOW
-            usleep(500000);
+            usleep(300000);
             std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
         #endif
 
@@ -192,6 +207,13 @@ int main(int argc, char *argv[])
         #endif
         #ifdef DEBUG
             reset_logs = false;
+        #endif
+
+        #ifdef VISUALISE_RQT
+            //Recording finish time
+            auto finish = clock();
+            auto solve_time = ((float)(finish-start))/CLOCKS_PER_SEC);
+            visualisation->plotSolveTime(solve_time);
         #endif
     }
    

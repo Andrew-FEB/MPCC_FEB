@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-07-15 15:56:18.233172
+// Generated at: 2020-07-22 15:48:34.866561
 //
 
 use icasadi_mpcc_optimizer;
@@ -12,10 +12,10 @@ use optimization_engine::{constraints::*, panoc::*, alm::*, *};
 // ---Private Constants----------------------------------------------------------------------------------
 
 /// Tolerance of inner solver
-const EPSILON_TOLERANCE: f64 = 0.0001;
+const EPSILON_TOLERANCE: f64 = 0.01;
 
 /// Initial tolerance
-const INITIAL_EPSILON_TOLERANCE: f64 = 0.0001;
+const INITIAL_EPSILON_TOLERANCE: f64 = 0.01;
 
 /// Update factor for inner tolerance
 const EPSILON_TOLERANCE_UPDATE_FACTOR: f64 = 0.1;
@@ -33,7 +33,7 @@ const MAX_INNER_ITERATIONS: usize = 500;
 const MAX_OUTER_ITERATIONS: usize = 100;
 
 /// Maximum execution duration in microseconds
-const MAX_DURATION_MICROS: u64 = 500000;
+const MAX_DURATION_MICROS: u64 = 50000;
 
 /// Penalty update factor
 const PENALTY_UPDATE_FACTOR: f64 = 5.0;
@@ -63,7 +63,7 @@ pub const MPCC_OPTIMIZER_N2: usize = 0;
 
 // ---Parameters of the constraints----------------------------------------------------------------------
 
-const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,-0.1,-0.506,]);
+const CONSTRAINTS_XMIN :Option<&[f64]> = Some(&[-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,-1.0,-0.506,]);
 const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,1.0,0.506,]);
 
 
@@ -71,8 +71,8 @@ const CONSTRAINTS_XMAX :Option<&[f64]> = Some(&[1.0,0.506,1.0,0.506,1.0,0.506,1.
 
 
 // ---Parameters of ALM-type constraints (Set C)---------------------------------------------------------
-const SET_C_XMIN :Option<&[f64]> = Some(&[-10.0,-3.5,std::f64::NEG_INFINITY,std::f64::NEG_INFINITY,]);
-const SET_C_XMAX :Option<&[f64]> = Some(&[10.0,3.5,0.0,0.0,]);
+const SET_C_XMIN :Option<&[f64]> = Some(&[-10.0,-5.0,std::f64::NEG_INFINITY,std::f64::NEG_INFINITY,]);
+const SET_C_XMAX :Option<&[f64]> = Some(&[10.0,5.0,0.0,0.0,]);
 
 
 

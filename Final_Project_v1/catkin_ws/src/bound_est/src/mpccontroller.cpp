@@ -20,7 +20,7 @@ ControlInputs MPCController::solve(const Car &current, Track &t) const
 
     // Obtain reference and track constraints
     auto dist = calculateDistance(vel);
-    auto ref = t.getReferencePath(dist, prediction_horizon);
+    auto ref = t.getReferencePath(dist > 0 ? dist : 0.5, prediction_horizon);
 
     // TODO Check if ref has the correct length
     

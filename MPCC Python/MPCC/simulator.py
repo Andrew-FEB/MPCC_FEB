@@ -10,7 +10,6 @@ import parameters as param
 
 # Author: Darina Abaffyová
 # Created: 13/02/2020
-# Last updated: 12/07/2020
 
 # Define all named tuples here
 KinematicState = namedtuple('KinematicState', 'x y psi v')
@@ -27,9 +26,9 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
     # State is a tuple which contains the four state-defining parameters
     x = track_x[i_start]
     y = track_y[i_start]
-    v_x = 1
-    v_y = 1
-    psi = np.arctan2(v_y, v_x)  # TODO - is this rate or just the angle???
+    v_x = 0
+    v_y = 0
+    psi = 0  # np.arctan2(v_y, v_x)
     state_0 = KinematicState(x, y, psi, v_x)
 
     # At the end of the simulation, state sequence will contain
@@ -50,6 +49,7 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
     ref_seq = [ref_list]
 
     cost_seq = [0]
+    solve_time_seq = [0]
 
     # The nearest sequence will contain tuples (x, y) of the positions
     # on the reference line which correspond to the nearest point found
@@ -96,6 +96,7 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
             ref_seq.append(ref_list)
             bound_seq.append((slopes, intercepts, ref_indexes))
             cost_seq.append(solver_status['cost'])
+            solve_time_seq.append(solver_status['solve_time_ms'])
             control_inputs_seq.append(control_inputs)
 
             print("STATE = " + str(state))
@@ -107,7 +108,7 @@ def simulate(track_x, track_y, upper, lower, simulation_steps):
             break
 
     mng.kill()
-    return state_seq, ref_seq, bound_seq, cost_seq, first_control_seq, control_inputs_seq, len(state_seq)
+    return state_seq, ref_seq, bound_seq, cost_seq, solve_time_seq, first_control_seq, control_inputs_seq, len(state_seq)
 
 
 def get_boundaries(lower, track_x, upper, indexes, ref_list):
@@ -161,7 +162,7 @@ def get_reference_list(track_x, track_y, i_nearest):
     end_reached = False
 
     for i in range(0, param.N - 1):
-        d = dist_prev + 2 * param.a_max * param.Ts ** 2
+        d = dist_prev + 3 * param.a_max * param.Ts ** 2
         dist_prev = d
         x_temp = x[len(x) - 1]
         y_temp = y[len(y) - 1]

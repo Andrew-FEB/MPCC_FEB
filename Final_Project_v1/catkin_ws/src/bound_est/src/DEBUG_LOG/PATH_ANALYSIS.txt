@@ -1,4 +1,4 @@
-Log message for Path Analysis log data at Wed Jul 22 20:31:07 2020
+Log message for Path Analysis log data at Wed Jul 22 21:41:32 2020
 -----------------------------------
 -----------------------------------
 Beginning analysis of following list of paths:
@@ -515,7 +515,7 @@ Path 11 has score 1517.74
 Path 12 has score 2278.3
 Best index selected to be 3 which equates to path 4. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Wed Jul 22 20:31:12 2020
+Log message for Path Analysis log data at Wed Jul 22 21:41:57 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -723,7 +723,7 @@ Path 11 has score 2362.18
 Path 12 has score 3268.04
 Best index selected to be 5 which equates to path 6. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Wed Jul 22 20:31:14 2020
+Log message for Path Analysis log data at Wed Jul 22 21:42:06 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -894,6 +894,3 @@ Path 9 has score 1402.88
 Path 10 has score 1302.75
 Best index selected to be 3 which equates to path 4. Returning analysis to track.
 --------
-///////////////////////////////////
-///////////////////////////////////
-

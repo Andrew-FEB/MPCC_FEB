@@ -1,4 +1,4 @@
-Log message for findFirstMidpoint() log data at Wed Jul 22 20:31:07 2020
+Log message for findFirstMidpoint() log data at Wed Jul 22 21:41:30 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -15,7 +15,7 @@ Returned coordinate has coordinates x(1.85), y(0)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Wed Jul 22 20:31:11 2020
+Log message for findFirstMidpoint() log data at Wed Jul 22 21:41:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -31,7 +31,7 @@ Returned coordinate has coordinates x(20.17), y(0.765)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Wed Jul 22 20:31:12 2020
+Log message for findFirstMidpoint() log data at Wed Jul 22 21:41:57 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -46,7 +46,7 @@ Returned coordinate has coordinates x(22.8), y(4.755)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Wed Jul 22 20:31:14 2020
+Log message for findFirstMidpoint() log data at Wed Jul 22 21:42:06 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:

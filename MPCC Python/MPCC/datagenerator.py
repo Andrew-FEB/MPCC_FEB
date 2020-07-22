@@ -7,7 +7,6 @@ import parameters as param
 
 # Author: Darina Abaffyová
 # Created: 04/03/2020
-# Last updated: 12/07/2020
 
 
 def generate_track(num_steps):
@@ -55,12 +54,14 @@ def generate_track(num_steps):
 
 
 def generate_racing_track(num_steps):
-    list = [0, 4, 8, 14, 19, 27, 30, 31, 37, 40]
+    # list = [0, 4, 8, 14, 19, 27, 30, 31, 37, 40]
+    list = [0, 4, 8, 14, 19, 27, 30, 31, 37, 40, 43, 47, 51, 55, 59]
     # list.reverse()
     x = np.array(list)
     # y = np.array([0, 0, 0, 1, 5, 10, 5, 13, 5, 0, 0, 0, 0, 0, 0])
     # y = np.array([0, 0, 0, 0, 0, 10, 10, 10, 10, 10])
-    y = np.array([0, 1, 5, 10, 7, 5, 9, 11, 8, 4])
+    # y = np.array([0, 1, 5, 10, 7, 5, 9, 11, 8, 4])
+    y = np.array([0, 1, 5, 10, 7, 5, 9, 11, 8, 4, 0, -3, -9, -5, 0])
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
@@ -72,8 +73,8 @@ def generate_racing_track(num_steps):
     yu = []
     yl = []
     for i in range(len(xi)):
-        yu.append(yi[i] + 2)  # param.track_width/2)
-        yl.append(yi[i] - 2)  # param.track_width/2)
+        yu.append(yi[i] + 3.5)  # param.track_width/2)
+        yl.append(yi[i] - 3.5)  # param.track_width/2)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
