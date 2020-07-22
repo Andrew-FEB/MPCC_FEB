@@ -1,4 +1,4 @@
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -298,12 +298,12 @@ Control Inputs (D, delta) = (1, 0.00410941)
 exit status      : 0
 inner iterations : 44
 outer iterations : 2
-solve time       : 8.6198 ms
+solve time       : 9.03387 ms
 penalty          : 10
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -603,12 +603,12 @@ Control Inputs (D, delta) = (1, 0.00303306)
 exit status      : 0
 inner iterations : 66
 outer iterations : 4
-solve time       : 17.4847 ms
+solve time       : 16.3976 ms
 penalty          : 250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -908,12 +908,12 @@ Control Inputs (D, delta) = (1, -0.000854655)
 exit status      : 0
 inner iterations : 69
 outer iterations : 5
-solve time       : 18.0226 ms
+solve time       : 19.0621 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -1213,12 +1213,12 @@ Control Inputs (D, delta) = (1, -0.000740646)
 exit status      : 0
 inner iterations : 80
 outer iterations : 5
-solve time       : 25.6974 ms
+solve time       : 27.3008 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -1518,12 +1518,12 @@ Control Inputs (D, delta) = (1, -0.000638812)
 exit status      : 0
 inner iterations : 84
 outer iterations : 5
-solve time       : 25.6401 ms
+solve time       : 25.8654 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -1823,12 +1823,12 @@ Control Inputs (D, delta) = (1, -0.000563378)
 exit status      : 0
 inner iterations : 83
 outer iterations : 5
-solve time       : 25.4927 ms
+solve time       : 25.762 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -2128,12 +2128,12 @@ Control Inputs (D, delta) = (1, -0.000497037)
 exit status      : 0
 inner iterations : 87
 outer iterations : 5
-solve time       : 26.6615 ms
+solve time       : 27.1838 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -2433,12 +2433,12 @@ Control Inputs (D, delta) = (1, -0.000449134)
 exit status      : 0
 inner iterations : 86
 outer iterations : 5
-solve time       : 28.2206 ms
+solve time       : 27.7315 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -2738,12 +2738,12 @@ Control Inputs (D, delta) = (1, -0.000362111)
 exit status      : 0
 inner iterations : 97
 outer iterations : 5
-solve time       : 41.9256 ms
+solve time       : 40.459 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -3043,12 +3043,12 @@ Control Inputs (D, delta) = (1, -0.000364582)
 exit status      : 0
 inner iterations : 92
 outer iterations : 5
-solve time       : 35.354 ms
+solve time       : 34.6457 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -3348,12 +3348,12 @@ Control Inputs (D, delta) = (1, -0.000230018)
 exit status      : 0
 inner iterations : 113
 outer iterations : 5
-solve time       : 49.3348 ms
+solve time       : 48.6341 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -3653,12 +3653,12 @@ Control Inputs (D, delta) = (1, -0.000266534)
 exit status      : 0
 inner iterations : 112
 outer iterations : 5
-solve time       : 51.9409 ms
+solve time       : 50.9547 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -3958,12 +3958,12 @@ Control Inputs (D, delta) = (1, -0.000262644)
 exit status      : 0
 inner iterations : 127
 outer iterations : 5
-solve time       : 59.9871 ms
+solve time       : 59.5057 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:30 2020
+Log message for solve() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -4263,12 +4263,12 @@ Control Inputs (D, delta) = (1, -0.000127373)
 exit status      : 0
 inner iterations : 164
 outer iterations : 5
-solve time       : 96.5323 ms
+solve time       : 97.4381 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:31 2020
+Log message for solve() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -4568,12 +4568,12 @@ Control Inputs (D, delta) = (1, -0.000190471)
 exit status      : 0
 inner iterations : 114
 outer iterations : 5
-solve time       : 53.776 ms
+solve time       : 51.7455 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:31 2020
+Log message for solve() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -4873,12 +4873,12 @@ Control Inputs (D, delta) = (1, -9.6745e-05)
 exit status      : 0
 inner iterations : 132
 outer iterations : 5
-solve time       : 75.4921 ms
+solve time       : 69.434 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:31 2020
+Log message for solve() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -5178,12 +5178,12 @@ Control Inputs (D, delta) = (1, -0.000173272)
 exit status      : 0
 inner iterations : 146
 outer iterations : 5
-solve time       : 73.0073 ms
+solve time       : 74.0269 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:31 2020
+Log message for solve() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -5483,12 +5483,12 @@ Control Inputs (D, delta) = (1, -0.000139583)
 exit status      : 0
 inner iterations : 138
 outer iterations : 5
-solve time       : 62.7444 ms
+solve time       : 64.3656 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:31 2020
+Log message for solve() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -5788,12 +5788,12 @@ Control Inputs (D, delta) = (1, -7.90493e-05)
 exit status      : 0
 inner iterations : 610
 outer iterations : 5
-solve time       : 463.051 ms
+solve time       : 467.396 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:31 2020
+Log message for solve() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -6093,12 +6093,12 @@ Control Inputs (D, delta) = (1, -0.000108143)
 exit status      : 0
 inner iterations : 401
 outer iterations : 5
-solve time       : 291.677 ms
+solve time       : 285.977 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:32 2020
+Log message for solve() log data at Wed Jul 22 20:31:09 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
@@ -6391,26 +6391,26 @@ p[280] = 14.6318
 p[281] = -0.0721032
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -4.14916e-05)
+Control Inputs (D, delta) = (1, -0.000114514)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 2
-inner iterations : 654
+inner iterations : 641
 outer iterations : 5
-solve time       : 501.267 ms
+solve time       : 502.023 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:32 2020
+Log message for solve() log data at Wed Jul 22 20:31:09 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.07625
-p[1] = 9.50393e-05
-p[2] = -2.97576e-05
+p[1] = 9.21154e-05
+p[2] = -3.18198e-05
 p[3] = 1.55
 ------------- Slopes -------------
 p[4] = -0
@@ -6696,26 +6696,26 @@ p[280] = 14.6337
 p[281] = -0.0722776
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -9.97532e-05)
+Control Inputs (D, delta) = (1, -0.000452172)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
-exit status      : 0
-inner iterations : 196
+exit status      : 2
+inner iterations : 624
 outer iterations : 5
-solve time       : 107.795 ms
+solve time       : 500.981 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:32 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.155
-p[1] = 9.46815e-05
-p[2] = -3.26671e-05
+p[1] = 7.6896e-05
+p[2] = -4.50082e-05
 p[3] = 1.6
 ------------- Slopes -------------
 p[4] = -0
@@ -7001,26 +7001,26 @@ p[280] = 14.6356
 p[281] = -0.0724576
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -1.94571e-05)
+Control Inputs (D, delta) = (1, 0.000283843)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 178
+inner iterations : 146
 outer iterations : 5
-solve time       : 91.4705 ms
+solve time       : 71.7666 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:32 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.23625
-p[1] = 9.7333e-05
-p[2] = -3.32526e-05
+p[1] = 9.076e-05
+p[2] = -3.64666e-05
 p[3] = 1.65
 ------------- Slopes -------------
 p[4] = -0
@@ -7306,26 +7306,26 @@ p[280] = 14.6377
 p[281] = -0.0726434
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -7.25823e-05)
+Control Inputs (D, delta) = (1, -0.000214946)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 118
+inner iterations : 97
 outer iterations : 5
-solve time       : 40.645 ms
+solve time       : 19.8231 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:32 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.32
-p[1] = 9.76483e-05
-p[2] = -3.5504e-05
+p[1] = 8.43028e-05
+p[2] = -4.31339e-05
 p[3] = 1.7
 ------------- Slopes -------------
 p[4] = -0
@@ -7566,7 +7566,7 @@ p[235] = 0
 p[236] = 7.12918
 p[237] = 0
 p[238] = 7.4709
-p[239] = 1.95717e-05
+p[239] = 1.95716e-05
 p[240] = 7.81254
 p[241] = 0.00744644
 p[242] = 8.15417
@@ -7611,26 +7611,26 @@ p[280] = 14.6398
 p[281] = -0.0728348
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -0.000111227)
+Control Inputs (D, delta) = (1, 0.000152952)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 140
+inner iterations : 150
 outer iterations : 5
-solve time       : 49.9173 ms
+solve time       : 56.9941 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:32 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.40625
-p[1] = 9.59096e-05
-p[2] = -3.90571e-05
+p[1] = 9.33886e-05
+p[2] = -3.82479e-05
 p[3] = 1.75
 ------------- Slopes -------------
 p[4] = -0
@@ -7916,26 +7916,26 @@ p[280] = 14.6419
 p[281] = -0.073032
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -7.31643e-05)
+Control Inputs (D, delta) = (1, -1.44593e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 150
+inner iterations : 137
 outer iterations : 5
-solve time       : 61.4179 ms
+solve time       : 46.3826 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.495
-p[1] = 9.5401e-05
-p[2] = -4.1462e-05
+p[1] = 9.56144e-05
+p[2] = -3.87232e-05
 p[3] = 1.8
 ------------- Slopes -------------
 p[4] = -0
@@ -8221,26 +8221,26 @@ p[280] = 14.6441
 p[281] = -0.0732349
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -2.48534e-05)
+Control Inputs (D, delta) = (1, 1.46758e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 140
+inner iterations : 131
 outer iterations : 5
-solve time       : 47.3621 ms
+solve time       : 42.449 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.58625
-p[1] = 9.68591e-05
-p[2] = -4.2302e-05
+p[1] = 9.92329e-05
+p[2] = -3.82272e-05
 p[3] = 1.85
 ------------- Slopes -------------
 p[4] = 0
@@ -8526,26 +8526,26 @@ p[280] = 14.6464
 p[281] = -0.0734436
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -1.80788e-05)
+Control Inputs (D, delta) = (1, -0.000124074)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 169
+inner iterations : 109
 outer iterations : 5
-solve time       : 65.2342 ms
+solve time       : 31.0828 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.68
-p[1] = 9.85742e-05
-p[2] = -4.29297e-05
+p[1] = 9.61889e-05
+p[2] = -4.25354e-05
 p[3] = 1.9
 ------------- Slopes -------------
 p[4] = 0
@@ -8831,26 +8831,26 @@ p[280] = 14.6487
 p[281] = -0.0736579
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, 5.58937e-05)
+Control Inputs (D, delta) = (1, 4.9327e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 134
+inner iterations : 141
 outer iterations : 5
-solve time       : 45.07 ms
+solve time       : 44.5326 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.77625
-p[1] = 0.000103987
-p[2] = -4.09372e-05
+p[1] = 0.000101231
+p[2] = -4.07769e-05
 p[3] = 1.95
 ------------- Slopes -------------
 p[4] = 0
@@ -9136,26 +9136,26 @@ p[280] = 14.6511
 p[281] = -0.073878
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -0.00182208)
+Control Inputs (D, delta) = (1, -9.8183e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 157
-outer iterations : 6
-solve time       : 52.2067 ms
-penalty          : 6250
+inner iterations : 120
+outer iterations : 5
+solve time       : 36.4193 ms
+penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.875
-p[1] = 1.24351e-05
-p[2] = -0.000107578
+p[1] = 9.89978e-05
+p[2] = -4.43679e-05
 p[3] = 2
 ------------- Slopes -------------
 p[4] = 0
@@ -9441,26 +9441,26 @@ p[280] = 14.6536
 p[281] = -0.0741037
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, 0.00148753)
+Control Inputs (D, delta) = (1, 6.416e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 165
+inner iterations : 114
 outer iterations : 5
-solve time       : 69.6104 ms
+solve time       : 32.8713 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 1.97625
-p[1] = 8.5303e-05
-p[2] = -5.17955e-05
+p[1] = 0.000104843
+p[2] = -4.19619e-05
 p[3] = 2.05
 ------------- Slopes -------------
 p[4] = 0
@@ -9699,9 +9699,9 @@ p[233] = 0
 p[234] = 7.18122
 p[235] = 0
 p[236] = 7.50652
-p[237] = 0.000793889
+p[237] = 0.00079389
 p[238] = 7.83175
-p[239] = 0.00786418
+p[239] = 0.00786419
 p[240] = 8.15699
 p[241] = 0.0149345
 p[242] = 8.48222
@@ -9746,26 +9746,26 @@ p[280] = 14.6561
 p[281] = -0.0743352
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, 0.000239673)
+Control Inputs (D, delta) = (1, -3.49746e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 127
+inner iterations : 130
 outer iterations : 5
-solve time       : 37.8632 ms
+solve time       : 41.5793 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 2.08
-p[1] = 9.97039e-05
-p[2] = -4.25858e-05
+p[1] = 0.000105764
+p[2] = -4.33058e-05
 p[3] = 2.1
 ------------- Slopes -------------
 p[4] = 0
@@ -10051,26 +10051,26 @@ p[280] = 14.6587
 p[281] = -0.0745724
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, 5.9502e-05)
+Control Inputs (D, delta) = (1, -8.81074e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 131
+inner iterations : 129
 outer iterations : 5
-solve time       : 37.6072 ms
+solve time       : 37.6068 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 2.18625
-p[1] = 0.000105673
-p[2] = -4.02443e-05
+p[1] = 0.000103557
+p[2] = -4.6773e-05
 p[3] = 2.15
 ------------- Slopes -------------
 p[4] = 0
@@ -10356,26 +10356,26 @@ p[280] = 14.6613
 p[281] = -0.0748153
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -0.000348177)
+Control Inputs (D, delta) = (1, -0.00162346)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 135
-outer iterations : 5
-solve time       : 39.0551 ms
-penalty          : 1250
+inner iterations : 172
+outer iterations : 6
+solve time       : 65.7201 ms
+penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 2.295
-p[1] = 8.88258e-05
-p[2] = -5.4268e-05
+p[1] = 1.31441e-05
+p[2] = -0.000112163
 p[3] = 2.2
 ------------- Slopes -------------
 p[4] = 0
@@ -10661,26 +10661,26 @@ p[280] = 14.664
 p[281] = -0.075064
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, 0.000169091)
+Control Inputs (D, delta) = (1, 0.00147001)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 120
+inner iterations : 247
 outer iterations : 5
-solve time       : 33.3484 ms
+solve time       : 142.6 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 2.40625
-p[1] = 9.98718e-05
-p[2] = -4.73009e-05
+p[1] = 9.23331e-05
+p[2] = -5.15926e-05
 p[3] = 2.25
 ------------- Slopes -------------
 p[4] = 0
@@ -10966,26 +10966,26 @@ p[280] = 14.6668
 p[281] = -0.0753183
 p[282] = 14.98
 p[283] = -0.104085
-Control Inputs (D, delta) = (1, -0.000507354)
+Control Inputs (D, delta) = (1, 0.000203183)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 119
+inner iterations : 106
 outer iterations : 5
-solve time       : 34.7082 ms
+solve time       : 31.1765 ms
 penalty          : 1250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 2.52
-p[1] = 7.17242e-05
-p[2] = -6.86755e-05
+p[1] = 0.000105995
+p[2] = -4.30326e-05
 p[3] = 2.3
 ------------- Slopes -------------
 p[4] = -0
@@ -11271,26 +11271,26 @@ p[280] = 21.5031
 p[281] = 2.71855
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, 0.000214034)
+Control Inputs (D, delta) = (1, -0.000433376)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 131
+inner iterations : 120
 outer iterations : 6
-solve time       : 31.7221 ms
+solve time       : 28.8826 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 2.63625
-p[1] = 8.40438e-05
-p[2] = -5.94601e-05
+p[1] = 8.22822e-05
+p[2] = -6.16918e-05
 p[3] = 2.35
 ------------- Slopes -------------
 p[4] = -0
@@ -11576,26 +11576,26 @@ p[280] = 21.5049
 p[281] = 2.72082
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -3.2039e-05)
+Control Inputs (D, delta) = (1, 2.3518e-06)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 139
+inner iterations : 140
 outer iterations : 6
-solve time       : 34.4017 ms
+solve time       : 43.0553 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 2.755
-p[1] = 8.25554e-05
-p[2] = -6.08693e-05
+p[1] = 8.26554e-05
+p[2] = -6.15884e-05
 p[3] = 2.4
 ------------- Slopes -------------
 p[4] = -0
@@ -11881,26 +11881,26 @@ p[280] = 21.5067
 p[281] = 2.72315
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -4.33868e-05)
+Control Inputs (D, delta) = (1, -4.37799e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 132
+inner iterations : 134
 outer iterations : 6
-solve time       : 30.1798 ms
+solve time       : 39.6015 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 2.87625
-p[1] = 8.0119e-05
-p[2] = -6.28176e-05
+p[1] = 8.01137e-05
+p[2] = -6.35544e-05
 p[3] = 2.45
 ------------- Slopes -------------
 p[4] = -0
@@ -12186,26 +12186,26 @@ p[280] = 21.506
 p[281] = 2.72215
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, 1.18512e-05)
+Control Inputs (D, delta) = (1, -1.32689e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 125
+inner iterations : 126
 outer iterations : 6
-solve time       : 28.632 ms
+solve time       : 30.0949 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 3
-p[1] = 8.09532e-05
-p[2] = -6.22745e-05
+p[1] = 7.92313e-05
+p[2] = -6.41626e-05
 p[3] = 2.5
 ------------- Slopes -------------
 p[4] = -0
@@ -12491,26 +12491,26 @@ p[280] = 21.504
 p[281] = 2.71972
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -6.54933e-05)
+Control Inputs (D, delta) = (1, -2.84263e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 133
+inner iterations : 129
 outer iterations : 6
-solve time       : 30.0907 ms
+solve time       : 27.4862 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 3.12625
-p[1] = 7.67518e-05
-p[2] = -6.53369e-05
+p[1] = 7.72425e-05
+p[2] = -6.54918e-05
 p[3] = 2.55
 ------------- Slopes -------------
 p[4] = -0
@@ -12759,7 +12759,7 @@ p[243] = 0.067505
 p[244] = 13.312
 p[245] = 0.0419801
 p[246] = 13.8274
-p[247] = -9.74748e-05
+p[247] = -9.74747e-05
 p[248] = 14.3426
 p[249] = -0.0455451
 p[250] = 14.8576
@@ -12796,26 +12796,26 @@ p[280] = 21.5021
 p[281] = 2.71725
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -1.39033e-05)
+Control Inputs (D, delta) = (1, -2.19176e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 141
+inner iterations : 142
 outer iterations : 6
-solve time       : 28.3351 ms
+solve time       : 30.8136 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 3.255
-p[1] = 7.55333e-05
-p[2] = -6.59999e-05
+p[1] = 7.54714e-05
+p[2] = -6.65369e-05
 p[3] = 2.6
 ------------- Slopes -------------
 p[4] = -0
@@ -13101,26 +13101,26 @@ p[280] = 21.5001
 p[281] = 2.71473
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, 5.08674e-05)
+Control Inputs (D, delta) = (1, 5.13077e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 145
+inner iterations : 151
 outer iterations : 6
-solve time       : 31.2496 ms
+solve time       : 31.2845 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 3.38625
-p[1] = 7.86637e-05
-p[2] = -6.35271e-05
+p[1] = 7.85684e-05
+p[2] = -6.40428e-05
 p[3] = 2.65
 ------------- Slopes -------------
 p[4] = -0
@@ -13406,26 +13406,26 @@ p[280] = 21.498
 p[281] = 2.71216
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -9.53915e-05)
+Control Inputs (D, delta) = (1, -9.20932e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 146
+inner iterations : 153
 outer iterations : 6
-solve time       : 30.7203 ms
+solve time       : 30.6349 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 3.52
-p[1] = 7.19222e-05
-p[2] = -6.82526e-05
+p[1] = 7.19967e-05
+p[2] = -6.86048e-05
 p[3] = 2.7
 ------------- Slopes -------------
 p[4] = -0
@@ -13711,26 +13711,26 @@ p[280] = 21.4959
 p[281] = 2.70955
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -4.64464e-05)
+Control Inputs (D, delta) = (1, -4.62243e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 155
+inner iterations : 153
 outer iterations : 6
-solve time       : 31.9658 ms
+solve time       : 32.7205 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:33 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 3.65625
-p[1] = 6.79065e-05
-p[2] = -7.05964e-05
+p[1] = 6.79562e-05
+p[2] = -7.09374e-05
 p[3] = 2.75
 ------------- Slopes -------------
 p[4] = -0
@@ -14016,26 +14016,26 @@ p[280] = 21.4938
 p[281] = 2.70688
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -0.000142796)
+Control Inputs (D, delta) = (1, -0.000138179)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 156
+inner iterations : 155
 outer iterations : 6
-solve time       : 33.0776 ms
+solve time       : 33.0047 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 3.795
-p[1] = 5.64755e-05
-p[2] = -7.79345e-05
+p[1] = 5.68217e-05
+p[2] = -7.80383e-05
 p[3] = 2.8
 ------------- Slopes -------------
 p[4] = -0
@@ -14321,26 +14321,26 @@ p[280] = 21.4917
 p[281] = 2.70416
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, 5.42554e-05)
+Control Inputs (D, delta) = (1, 5.12058e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 159
+inner iterations : 156
 outer iterations : 6
-solve time       : 35.9054 ms
+solve time       : 33.5027 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 3.93625
-p[1] = 5.84446e-05
-p[2] = -7.50961e-05
+p[1] = 5.85568e-05
+p[2] = -7.53595e-05
 p[3] = 2.85
 ------------- Slopes -------------
 p[4] = -0
@@ -14626,26 +14626,26 @@ p[280] = 21.4895
 p[281] = 2.7014
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -2.26955e-05)
+Control Inputs (D, delta) = (1, -2.69782e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 162
+inner iterations : 156
 outer iterations : 6
-solve time       : 31.9143 ms
+solve time       : 31.125 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 4.08
-p[1] = 5.50304e-05
-p[2] = -7.63045e-05
+p[1] = 5.47893e-05
+p[2] = -7.67958e-05
 p[3] = 2.9
 ------------- Slopes -------------
 p[4] = -0
@@ -14931,26 +14931,26 @@ p[280] = 21.4872
 p[281] = 2.69858
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -0.000101005)
+Control Inputs (D, delta) = (1, -4.60944e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 159
+inner iterations : 172
 outer iterations : 6
-solve time       : 31.2034 ms
+solve time       : 35.948 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 4.22625
-p[1] = 4.53773e-05
-p[2] = -8.17755e-05
+p[1] = 4.92911e-05
+p[2] = -7.92926e-05
 p[3] = 2.95
 ------------- Slopes -------------
 p[4] = -0
@@ -15236,26 +15236,26 @@ p[280] = 21.485
 p[281] = 2.69572
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -0.000120214)
+Control Inputs (D, delta) = (1, -0.000179682)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 160
+inner iterations : 161
 outer iterations : 6
-solve time       : 34.9803 ms
+solve time       : 33.2109 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 4.375
-p[1] = 3.33077e-05
-p[2] = -8.83984e-05
+p[1] = 3.29222e-05
+p[2] = -8.91917e-05
 p[3] = 3
 ------------- Slopes -------------
 p[4] = 0
@@ -15541,26 +15541,26 @@ p[280] = 21.4826
 p[281] = 2.69281
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, 0.000223356)
+Control Inputs (D, delta) = (1, 0.000220726)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 156
+inner iterations : 162
 outer iterations : 6
-solve time       : 36.7356 ms
+solve time       : 33.8584 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 4.52625
-p[1] = 4.74113e-05
-p[2] = -7.58864e-05
+p[1] = 4.67186e-05
+p[2] = -7.6827e-05
 p[3] = 3.05
 ------------- Slopes -------------
 p[4] = 0
@@ -15811,7 +15811,7 @@ p[245] = 0.0690861
 p[246] = 13.1995
 p[247] = 0.0511606
 p[248] = 13.7499
-p[249] = 0.00623533
+p[249] = 0.00623534
 p[250] = 14.2999
 p[251] = -0.0416278
 p[252] = 14.8498
@@ -15846,26 +15846,26 @@ p[280] = 21.4803
 p[281] = 2.68985
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -2.72277e-05)
+Control Inputs (D, delta) = (1, -9.41394e-06)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 168
+inner iterations : 173
 outer iterations : 6
-solve time       : 35.9204 ms
+solve time       : 33.8408 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 4.68
-p[1] = 4.32357e-05
-p[2] = -7.74368e-05
+p[1] = 4.38608e-05
+p[2] = -7.7363e-05
 p[3] = 3.1
 ------------- Slopes -------------
 p[4] = 0
@@ -16151,26 +16151,26 @@ p[280] = 21.4779
 p[281] = 2.68684
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -7.13481e-05)
+Control Inputs (D, delta) = (1, -4.60566e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 171
+inner iterations : 167
 outer iterations : 6
-solve time       : 36.5346 ms
+solve time       : 36.7067 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 4.83625
-p[1] = 3.51597e-05
-p[2] = -8.15658e-05
+p[1] = 3.78767e-05
+p[2] = -8.00284e-05
 p[3] = 3.15
 ------------- Slopes -------------
 p[4] = 0
@@ -16456,26 +16456,26 @@ p[280] = 21.4755
 p[281] = 2.68378
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -0.000150135)
+Control Inputs (D, delta) = (1, -0.000127148)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 175
+inner iterations : 172
 outer iterations : 6
-solve time       : 39.1809 ms
+solve time       : 34.4238 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 4.995
-p[1] = 1.98209e-05
-p[2] = -9.03932e-05
+p[1] = 2.46721e-05
+p[2] = -8.75042e-05
 p[3] = 3.2
 ------------- Slopes -------------
 p[4] = 0
@@ -16761,26 +16761,26 @@ p[280] = 21.473
 p[281] = 2.68067
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, 0.000195443)
+Control Inputs (D, delta) = (1, 0.00013108)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 167
+inner iterations : 173
 outer iterations : 6
-solve time       : 33.4156 ms
+solve time       : 33.5045 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 5.15625
-p[1] = 3.22892e-05
-p[2] = -7.87209e-05
+p[1] = 3.20977e-05
+p[2] = -7.96758e-05
 p[3] = 3.25
 ------------- Slopes -------------
 p[4] = 0
@@ -17066,26 +17066,26 @@ p[280] = 21.4705
 p[281] = 2.67752
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -5.78563e-05)
+Control Inputs (D, delta) = (1, -6.23666e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 188
+inner iterations : 176
 outer iterations : 6
-solve time       : 38.0017 ms
+solve time       : 33.542 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 5.32
-p[1] = 2.47724e-05
-p[2] = -8.22298e-05
+p[1] = 2.40792e-05
+p[2] = -8.34582e-05
 p[3] = 3.3
 ------------- Slopes -------------
 p[4] = -0
@@ -17371,26 +17371,26 @@ p[280] = 21.4679
 p[281] = 2.67431
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, 2.91412e-05)
+Control Inputs (D, delta) = (1, 4.03777e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 162
+inner iterations : 172
 outer iterations : 6
-solve time       : 30.4785 ms
+solve time       : 37.3143 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 5.48625
-p[1] = 2.42541e-05
-p[2] = -8.04354e-05
+p[1] = 2.43886e-05
+p[2] = -8.0972e-05
 p[3] = 3.35
 ------------- Slopes -------------
 p[4] = -0
@@ -17676,26 +17676,26 @@ p[280] = 21.4654
 p[281] = 2.67106
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -2.1128e-05)
+Control Inputs (D, delta) = (1, -1.45264e-07)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 198
+inner iterations : 195
 outer iterations : 6
-solve time       : 39.1436 ms
+solve time       : 36.039 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 5.655
-p[1] = 1.95198e-05
-p[2] = -8.17559e-05
+p[1] = 2.14528e-05
+p[2] = -8.09811e-05
 p[3] = 3.4
 ------------- Slopes -------------
 p[4] = -0
@@ -17981,26 +17981,26 @@ p[280] = 21.4627
 p[281] = 2.66775
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, 7.56006e-05)
+Control Inputs (D, delta) = (1, 3.68177e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 219
+inner iterations : 210
 outer iterations : 6
-solve time       : 47.2697 ms
+solve time       : 41.4522 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 5.82625
-p[1] = 2.3232e-05
-p[2] = -7.69609e-05
+p[1] = 2.17959e-05
+p[2] = -7.86459e-05
 p[3] = 3.45
 ------------- Slopes -------------
 p[4] = -0
@@ -18286,26 +18286,26 @@ p[280] = 21.4601
 p[281] = 2.6644
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1, -3.87598e-06)
+Control Inputs (D, delta) = (1, 3.00612e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 204
+inner iterations : 203
 outer iterations : 6
-solve time       : 43.9577 ms
+solve time       : 42.4758 ms
 penalty          : 6250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 6
-p[1] = 2.04045e-05
-p[2] = -7.72103e-05
+p[1] = 2.18475e-05
+p[2] = -7.67114e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0
@@ -18591,26 +18591,26 @@ p[280] = 21.4574
 p[281] = 2.661
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (0.000100507, -6.25498e-05)
+Control Inputs (D, delta) = (0.000100271, -7.95216e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 222
+inner iterations : 218
 outer iterations : 7
-solve time       : 42.1736 ms
+solve time       : 44.6507 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 6.175
-p[1] = 1.21322e-05
-p[2] = -8.12645e-05
+p[1] = 1.20942e-05
+p[2] = -8.18655e-05
 p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = -0
@@ -18896,26 +18896,26 @@ p[280] = 21.4546
 p[281] = 2.65758
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (1.38915e-05, 2.4031e-05)
+Control Inputs (D, delta) = (1.39387e-05, 2.61481e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 218
+inner iterations : 207
 outer iterations : 7
-solve time       : 38.7592 ms
+solve time       : 38.4758 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 6.35
-p[1] = 1.12672e-05
-p[2] = -7.97069e-05
+p[1] = 1.13535e-05
+p[2] = -8.01708e-05
 p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0
@@ -19201,26 +19201,26 @@ p[280] = 21.4519
 p[281] = 2.65415
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (0.000145753, 3.35711e-05)
+Control Inputs (D, delta) = (0.000144641, 3.58654e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 204
+inner iterations : 189
 outer iterations : 7
-solve time       : 41.1313 ms
+solve time       : 37.3577 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 6.525
-p[1] = 1.1489e-05
-p[2] = -7.7531e-05
+p[1] = 1.17344e-05
+p[2] = -7.78461e-05
 p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0
@@ -19506,26 +19506,26 @@ p[280] = 21.4492
 p[281] = 2.65073
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (-0.000131748, 8.3275e-05)
+Control Inputs (D, delta) = (-0.000122443, 7.9933e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 230
+inner iterations : 233
 outer iterations : 7
-solve time       : 47.6978 ms
+solve time       : 48.0573 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 6.7
-p[1] = 1.6571e-05
-p[2] = -7.21335e-05
+p[1] = 1.64778e-05
+p[2] = -7.26653e-05
 p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0
@@ -19811,27 +19811,27 @@ p[280] = 21.4465
 p[281] = 2.6473
 p[282] = 21.8238
 p[283] = 3.12217
-Control Inputs (D, delta) = (0.000375509, -3.62224e-05)
+Control Inputs (D, delta) = (0.000292042, -2.81329e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 240
+inner iterations : 242
 outer iterations : 7
-solve time       : 47.5282 ms
+solve time       : 49.2451 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 6.875
-p[1] = 1.14029e-05
-p[2] = -7.44813e-05
-p[3] = 3.50003
+p[1] = 1.19921e-05
+p[2] = -7.44887e-05
+p[3] = 3.50002
 ------------- Slopes -------------
 p[4] = 0
 p[5] = 0
@@ -20116,26 +20116,26 @@ p[280] = 24.3852
 p[281] = 7.85751
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-0.000512677, 5.64871e-05)
+Control Inputs (D, delta) = (-0.000437399, 4.98857e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 211
+inner iterations : 212
 outer iterations : 7
-solve time       : 41.0464 ms
+solve time       : 41.023 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:34 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 7.05
-p[1] = 1.44355e-05
-p[2] = -7.08201e-05
+p[1] = 1.44282e-05
+p[2] = -7.12554e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0
@@ -20380,7 +20380,7 @@ p[239] = 0.0719849
 p[240] = 13.1458
 p[241] = 0.0555444
 p[242] = 13.9126
-p[243] = -0.00705086
+p[243] = -0.00705087
 p[244] = 14.6788
 p[245] = -0.0764229
 p[246] = 15.4405
@@ -20421,26 +20421,26 @@ p[280] = 24.3825
 p[281] = 7.85405
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (5.37185e-06, 5.12311e-06)
+Control Inputs (D, delta) = (5.41401e-06, 6.15326e-06)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
 inner iterations : 214
 outer iterations : 7
-solve time       : 40.2384 ms
+solve time       : 42.8196 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 7.225
-p[1] = 1.32434e-05
-p[2] = -7.0488e-05
+p[1] = 1.32828e-05
+p[2] = -7.08566e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0
@@ -20685,11 +20685,11 @@ p[239] = 0.0730143
 p[240] = 13.0543
 p[241] = 0.0630195
 p[242] = 13.8254
-p[243] = 6.83121e-05
+p[243] = 6.83052e-05
 p[244] = 14.5961
-p[245] = -0.0688209
+p[245] = -0.068821
 p[246] = 15.3629
-p[247] = -0.0423723
+p[247] = -0.0423722
 p[248] = 16.1259
 p[249] = 0.0857815
 p[250] = 16.8889
@@ -20726,26 +20726,26 @@ p[280] = 24.3798
 p[281] = 7.8506
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (2.68236e-05, 4.10037e-05)
+Control Inputs (D, delta) = (2.68525e-05, 4.13029e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 229
+inner iterations : 215
 outer iterations : 7
-solve time       : 43.7245 ms
+solve time       : 42.6019 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 7.4
-p[1] = 1.53925e-05
-p[2] = -6.78304e-05
+p[1] = 1.54207e-05
+p[2] = -6.81795e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0
@@ -20990,7 +20990,7 @@ p[239] = 0.0740436
 p[240] = 12.9625
 p[241] = 0.0657222
 p[242] = 13.7382
-p[243] = 0.00718749
+p[243] = 0.00718748
 p[244] = 14.5133
 p[245] = -0.061219
 p[246] = 15.2852
@@ -21031,26 +21031,26 @@ p[280] = 24.3772
 p[281] = 7.84714
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (3.65394e-05, -1.57217e-05)
+Control Inputs (D, delta) = (3.6212e-05, -1.53754e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 210
+inner iterations : 216
 outer iterations : 7
-solve time       : 41.8863 ms
+solve time       : 43.1638 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 7.575
-p[1] = 1.26888e-05
-p[2] = -6.88494e-05
+p[1] = 1.27127e-05
+p[2] = -6.91761e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0
@@ -21285,7 +21285,7 @@ p[229] = 0.0153675
 p[230] = 8.95919
 p[231] = 0.0323736
 p[232] = 9.74141
-p[233] = 0.0516598
+p[233] = 0.0516599
 p[234] = 10.5236
 p[235] = 0.0727999
 p[236] = 11.3058
@@ -21336,26 +21336,26 @@ p[280] = 24.3745
 p[281] = 7.84368
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-0.000113444, 2.76407e-05)
+Control Inputs (D, delta) = (-0.000123916, 2.6669e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 221
+inner iterations : 213
 outer iterations : 7
-solve time       : 42.2965 ms
+solve time       : 42.2582 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 7.75
-p[1] = 1.38315e-05
-p[2] = -6.70578e-05
+p[1] = 1.37329e-05
+p[2] = -6.74475e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0
@@ -21596,7 +21596,7 @@ p[235] = 0.0699631
 p[236] = 11.2052
 p[237] = 0.0892749
 p[238] = 11.9919
-p[239] = 0.0766534
+p[239] = 0.0766533
 p[240] = 12.7787
 p[241] = 0.0676874
 p[242] = 13.5638
@@ -21641,26 +21641,26 @@ p[280] = 24.3718
 p[281] = 7.84022
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (0.000110092, -1.04386e-05)
+Control Inputs (D, delta) = (0.000120566, -8.71366e-06)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 211
+inner iterations : 216
 outer iterations : 7
-solve time       : 41.4549 ms
+solve time       : 41.1011 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 7.925
-p[1] = 1.17175e-05
-p[2] = -6.77344e-05
+p[1] = 1.17357e-05
+p[2] = -6.80123e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0
@@ -21946,26 +21946,26 @@ p[280] = 24.3691
 p[281] = 7.83677
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-2.85279e-05, 3.09011e-05)
+Control Inputs (D, delta) = (-2.81367e-05, 3.12593e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 231
+inner iterations : 226
 outer iterations : 7
-solve time       : 49.0214 ms
+solve time       : 40.5538 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 8.1
-p[1] = 1.33102e-05
-p[2] = -6.57316e-05
+p[1] = 1.33348e-05
+p[2] = -6.59862e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0
@@ -22196,7 +22196,7 @@ p[225] = 0
 p[226] = 7.0271
 p[227] = 0
 p[228] = 7.82261
-p[229] = 0.00766551
+p[229] = 0.00766552
 p[230] = 8.61802
 p[231] = 0.0249569
 p[232] = 9.41341
@@ -22251,26 +22251,26 @@ p[280] = 24.3664
 p[281] = 7.83331
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (4.26221e-05, -1.36943e-05)
+Control Inputs (D, delta) = (4.27342e-05, -1.34752e-05)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 210
+inner iterations : 223
 outer iterations : 7
-solve time       : 43.3273 ms
+solve time       : 43.9655 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 8.275
-p[1] = 1.10762e-05
-p[2] = -6.66192e-05
+p[1] = 1.10974e-05
+p[2] = -6.68596e-05
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0
@@ -22501,7 +22501,7 @@ p[225] = 0
 p[226] = 6.9046
 p[227] = 0
 p[228] = 7.70452
-p[229] = 0.00509818
+p[229] = 0.00509819
 p[230] = 8.50429
 p[231] = 0.0224847
 p[232] = 9.30407
@@ -22556,27 +22556,27 @@ p[280] = 24.3638
 p[281] = 7.82985
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (2.42215e-05, 0.23999)
+Control Inputs (D, delta) = (3.49895e-05, 0.239968)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 197
+inner iterations : 201
 outer iterations : 7
-solve time       : 43.2378 ms
+solve time       : 47.9114 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 8.44858
-p[1] = 0.022305
-p[2] = 0.0156766
-p[3] = 3.5
+p[1] = 0.0223029
+p[2] = 0.0156749
+p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0.0217391
 p[5] = 0.0217391
@@ -22826,7 +22826,7 @@ p[245] = -0.0156693
 p[246] = 14.8182
 p[247] = -0.0892247
 p[248] = 15.6131
-p[249] = -0.000351214
+p[249] = -0.00035122
 p[250] = 16.4063
 p[251] = 0.132869
 p[252] = 17.1995
@@ -22861,25 +22861,25 @@ p[280] = 24.3611
 p[281] = 7.82642
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (1.08034e-05, 0.00297143)
+Control Inputs (D, delta) = (-2.11127e-07, 0.00299899)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 214
+inner iterations : 227
 outer iterations : 7
-solve time       : 42.0427 ms
+solve time       : 45.2478 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 8.62356
-p[1] = 0.0246768
+p[1] = 0.0246769
 p[2] = 0.0158692
 p[3] = 3.50001
 ------------- Slopes -------------
@@ -23125,7 +23125,7 @@ p[239] = 0.0843602
 p[240] = 12.3201
 p[241] = 0.0725921
 p[242] = 13.1285
-p[243] = 0.056963
+p[243] = 0.0569631
 p[244] = 13.9345
 p[245] = -0.00883288
 p[246] = 14.7398
@@ -23166,26 +23166,26 @@ p[280] = 24.3587
 p[281] = 7.8228
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-1.81435e-05, 0.0187488)
+Control Inputs (D, delta) = (-1.77867e-05, 0.0187467)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 203
+inner iterations : 215
 outer iterations : 7
-solve time       : 39.4457 ms
+solve time       : 42.6934 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 8.79852
 p[1] = 0.028524
-p[2] = 0.0170845
+p[2] = 0.0170844
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.0217391
@@ -23471,26 +23471,26 @@ p[280] = 24.3564
 p[281] = 7.81908
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (4.20544e-06, 0.0158538)
+Control Inputs (D, delta) = (3.80117e-06, 0.0158539)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 221
+inner iterations : 225
 outer iterations : 7
-solve time       : 44.5346 ms
+solve time       : 44.6341 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 8.97348
 p[1] = 0.0322692
-p[2] = 0.0181121
+p[2] = 0.018112
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.0217391
@@ -23776,26 +23776,26 @@ p[280] = 24.3541
 p[281] = 7.81535
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-1.81941e-05, 0.0144825)
+Control Inputs (D, delta) = (-1.78616e-05, 0.0144823)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 189
+inner iterations : 203
 outer iterations : 7
-solve time       : 39.6175 ms
+solve time       : 40.7224 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 9.14844
 p[1] = 0.0360272
-p[2] = 0.0190508
+p[2] = 0.0190507
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.0217391
@@ -24081,26 +24081,26 @@ p[280] = 24.3518
 p[281] = 7.81162
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-2.16131e-05, 0.0131378)
+Control Inputs (D, delta) = (-2.8132e-05, 0.0131371)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 226
+inner iterations : 208
 outer iterations : 7
-solve time       : 43.1464 ms
+solve time       : 42.6351 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 9.3234
-p[1] = 0.0397883
-p[2] = 0.0199024
+p[1] = 0.0397882
+p[2] = 0.0199022
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.0217391
@@ -24361,7 +24361,7 @@ p[255] = 0.348595
 p[256] = 18.5055
 p[257] = 0.485438
 p[258] = 19.3202
-p[259] = 0.622281
+p[259] = 0.62228
 p[260] = 20.135
 p[261] = 0.759123
 p[262] = 20.6639
@@ -24386,26 +24386,26 @@ p[280] = 24.3495
 p[281] = 7.8079
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-8.98232e-05, 0.0119278)
+Control Inputs (D, delta) = (-8.09535e-05, 0.0119291)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 202
+inner iterations : 200
 outer iterations : 7
-solve time       : 40.6676 ms
+solve time       : 37.3526 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 9.49836
 p[1] = 0.0435532
-p[2] = 0.0206755
+p[2] = 0.0206754
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.0217391
@@ -24691,26 +24691,26 @@ p[280] = 24.3472
 p[281] = 7.80417
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (3.63265e-05, 0.0108422)
+Control Inputs (D, delta) = (3.20882e-05, 0.0108414)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 171
+inner iterations : 179
 outer iterations : 7
-solve time       : 32.487 ms
+solve time       : 37.3834 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 9.67332
 p[1] = 0.0473227
-p[2] = 0.0213783
+p[2] = 0.0213781
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.0217391
@@ -24961,7 +24961,7 @@ p[245] = 0.031737
 p[246] = 14.2694
 p[247] = -0.0388225
 p[248] = 15.0998
-p[249] = -0.086566
+p[249] = -0.0865661
 p[250] = 15.9231
 p[251] = 0.0517258
 p[252] = 16.7465
@@ -24996,27 +24996,27 @@ p[280] = 24.3449
 p[281] = 7.80045
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (1.23492e-05, 0.00983872)
+Control Inputs (D, delta) = (0.000304275, 0.00989267)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 179
+inner iterations : 227
 outer iterations : 7
-solve time       : 33.6936 ms
+solve time       : 46.7542 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 9.84828
-p[1] = 0.0510948
-p[2] = 0.022016
-p[3] = 3.5
+p[1] = 0.0510998
+p[2] = 0.0220193
+p[3] = 3.50002
 ------------- Slopes -------------
 p[4] = 0.0217391
 p[5] = 0.0217391
@@ -25239,7 +25239,7 @@ p[218] = 3.13388
 p[219] = 0
 p[220] = 3.28542
 p[221] = 0
-p[222] = 4.12472
+p[222] = 4.12471
 p[223] = 0
 p[224] = 4.96401
 p[225] = 0
@@ -25248,7 +25248,7 @@ p[227] = 0
 p[228] = 6.64261
 p[229] = 0
 p[230] = 7.48191
-p[231] = 0.000258885
+p[231] = 0.00025888
 p[232] = 8.32101
 p[233] = 0.0185002
 p[234] = 9.16011
@@ -25301,26 +25301,26 @@ p[280] = 24.3426
 p[281] = 7.79672
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (0.000250574, 0.00898008)
+Control Inputs (D, delta) = (-3.98339e-05, 0.00891794)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 211
+inner iterations : 219
 outer iterations : 7
-solve time       : 43.1493 ms
+solve time       : 42.9391 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 10.0232
-p[1] = 0.0548742
-p[2] = 0.022598
+p[1] = 0.054874
+p[2] = 0.0225974
 p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0.0217391
@@ -25544,7 +25544,7 @@ p[218] = 3.27385
 p[219] = 0
 p[220] = 3.14982
 p[221] = 0
-p[222] = 3.9935
+p[222] = 3.99349
 p[223] = 0
 p[224] = 4.83717
 p[225] = 0
@@ -25559,7 +25559,7 @@ p[233] = 0.0161236
 p[234] = 9.05516
 p[235] = 0.03446
 p[236] = 9.89856
-p[237] = 0.055907
+p[237] = 0.0559069
 p[238] = 10.7419
 p[239] = 0.0787006
 p[240] = 11.5854
@@ -25569,7 +25569,7 @@ p[243] = 0.0714281
 p[244] = 13.2718
 p[245] = 0.0452603
 p[246] = 14.1126
-p[247] = -0.0244222
+p[247] = -0.0244221
 p[248] = 14.9527
 p[249] = -0.101578
 p[250] = 15.7851
@@ -25606,26 +25606,26 @@ p[280] = 24.3403
 p[281] = 7.79299
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (5.24159e-05, 0.00810406)
+Control Inputs (D, delta) = (5.29533e-05, 0.0081082)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 196
+inner iterations : 197
 outer iterations : 7
-solve time       : 37.8593 ms
+solve time       : 39.0871 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 10.1982
 p[1] = 0.0586517
-p[2] = 0.0231233
+p[2] = 0.0231229
 p[3] = 3.50002
 ------------- Slopes -------------
 p[4] = 0.0217391
@@ -25835,7 +25835,7 @@ p[204] = 9.35015
 p[205] = 0
 p[206] = 8.5021
 p[207] = 0
-p[208] = 7.65405
+p[208] = 7.65406
 p[209] = 0
 p[210] = 6.80601
 p[211] = 0
@@ -25849,7 +25849,7 @@ p[218] = 3.41382
 p[219] = 0
 p[220] = 3.01423
 p[221] = 0
-p[222] = 3.86228
+p[222] = 3.86227
 p[223] = 0
 p[224] = 4.71032
 p[225] = 0
@@ -25878,7 +25878,7 @@ p[247] = -0.017222
 p[248] = 14.8787
 p[249] = -0.0947775
 p[250] = 15.7161
-p[251] = 0.0169507
+p[251] = 0.0169506
 p[252] = 16.5524
 p[253] = 0.157416
 p[254] = 17.3888
@@ -25896,7 +25896,7 @@ p[265] = 1.92084
 p[266] = 21.4374
 p[267] = 2.63592
 p[268] = 21.9412
-p[269] = 3.31634
+p[269] = 3.31633
 p[270] = 22.3759
 p[271] = 4.04452
 p[272] = 22.8101
@@ -25911,26 +25911,26 @@ p[280] = 24.338
 p[281] = 7.78927
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-4.7306e-05, 0.0722237)
+Control Inputs (D, delta) = (-6.58324e-05, 0.0722198)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 219
+inner iterations : 226
 outer iterations : 7
-solve time       : 43.4629 ms
+solve time       : 44.3248 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:35 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 10.3729
-p[1] = 0.0683946
-p[2] = 0.0278096
+p[1] = 0.0683942
+p[2] = 0.0278089
 p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0.027027
@@ -26177,13 +26177,13 @@ p[241] = 0.0861205
 p[242] = 12.2541
 p[243] = 0.0732979
 p[244] = 13.1063
-p[245] = 0.0587747
+p[245] = 0.0587748
 p[246] = 13.9558
 p[247] = -0.0105795
 p[248] = 14.8047
 p[249] = -0.0879863
 p[250] = 15.6472
-p[251] = 0.00537427
+p[251] = 0.00537422
 p[252] = 16.4878
 p[253] = 0.146563
 p[254] = 17.3285
@@ -26197,7 +26197,7 @@ p[261] = 0.711318
 p[262] = 20.5
 p[263] = 1.17755
 p[264] = 20.9678
-p[265] = 1.88639
+p[265] = 1.88638
 p[266] = 21.4157
 p[267] = 2.60856
 p[268] = 21.9256
@@ -26216,26 +26216,26 @@ p[280] = 24.3358
 p[281] = 7.78554
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-3.89453e-05, 0.00634516)
+Control Inputs (D, delta) = (-4.40639e-06, 0.00634984)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 223
+inner iterations : 213
 outer iterations : 7
-solve time       : 42.6433 ms
+solve time       : 41.0061 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 10.5479
-p[1] = 0.0727131
-p[2] = 0.0282208
+p[1] = 0.0727132
+p[2] = 0.0282205
 p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0.027027
@@ -26465,12 +26465,12 @@ p[224] = 4.45681
 p[225] = 0
 p[226] = 5.3136
 p[227] = 0
-p[228] = 6.17039
+p[228] = 6.17038
 p[229] = 0
 p[230] = 7.02717
 p[231] = 0
-p[232] = 7.88387
-p[233] = 0.00899707
+p[232] = 7.88386
+p[233] = 0.00899706
 p[234] = 8.74045
 p[235] = 0.0276185
 p[236] = 9.597
@@ -26478,17 +26478,17 @@ p[237] = 0.0477568
 p[238] = 10.4535
 p[239] = 0.0709048
 p[240] = 11.31
-p[241] = 0.0875937
+p[241] = 0.0875938
 p[242] = 12.1667
 p[243] = 0.0742334
 p[244] = 13.0234
 p[245] = 0.0650704
 p[246] = 13.8774
-p[247] = -0.00417416
+p[247] = -0.00417414
 p[248] = 14.7307
 p[249] = -0.0811866
 p[250] = 15.5782
-p[251] = -0.0062166
+p[251] = -0.00621665
 p[252] = 16.4231
 p[253] = 0.135697
 p[254] = 17.2681
@@ -26521,26 +26521,26 @@ p[280] = 24.3335
 p[281] = 7.78182
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (0.00010004, 0.0100936)
+Control Inputs (D, delta) = (7.91006e-05, 0.0100948)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 216
+inner iterations : 210
 outer iterations : 7
-solve time       : 41.8281 ms
+solve time       : 38.0154 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 10.7228
-p[1] = 0.0774315
-p[2] = 0.0288751
+p[1] = 0.0774316
+p[2] = 0.0288748
 p[3] = 3.50002
 ------------- Slopes -------------
 p[4] = 0.027027
@@ -26748,7 +26748,7 @@ p[203] = 1.55957
 ------------- Reference points -------------
 p[204] = 9.86165
 p[205] = 0
-p[206] = 9.00048
+p[206] = 9.00049
 p[207] = 0
 p[208] = 8.13932
 p[209] = 0
@@ -26756,7 +26756,7 @@ p[210] = 7.27816
 p[211] = 0
 p[212] = 6.417
 p[213] = 0
-p[214] = 5.55583
+p[214] = 5.55584
 p[215] = 0
 p[216] = 4.69467
 p[217] = 0
@@ -26764,7 +26764,7 @@ p[218] = 3.83351
 p[219] = 0
 p[220] = 2.97235
 p[221] = 0
-p[222] = 3.46882
+p[222] = 3.46881
 p[223] = 0
 p[224] = 4.32998
 p[225] = 0
@@ -26772,10 +26772,10 @@ p[226] = 5.19114
 p[227] = 0
 p[228] = 6.0523
 p[229] = 0
-p[230] = 6.91347
+p[230] = 6.91346
 p[231] = 0
 p[232] = 7.77456
-p[233] = 0.00662077
+p[233] = 0.00662076
 p[234] = 8.63551
 p[235] = 0.0253373
 p[236] = 9.49645
@@ -26789,11 +26789,11 @@ p[243] = 0.0752533
 p[244] = 12.9403
 p[245] = 0.0659591
 p[246] = 13.7989
-p[247] = 0.00223079
+p[247] = 0.00223082
 p[248] = 14.6567
 p[249] = -0.0743873
 p[250] = 15.5092
-p[251] = -0.0178068
+p[251] = -0.0178069
 p[252] = 16.3584
 p[253] = 0.124831
 p[254] = 17.2077
@@ -26826,26 +26826,26 @@ p[280] = 24.3312
 p[281] = 7.77809
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-0.000342243, 0.00893696)
+Control Inputs (D, delta) = (-0.000224392, 0.0089437)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 211
+inner iterations : 205
 outer iterations : 7
-solve time       : 40.3029 ms
+solve time       : 40.6956 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 10.8977
-p[1] = 0.0821319
-p[2] = 0.0294543
+p[1] = 0.0821327
+p[2] = 0.0294545
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.027027
@@ -27053,7 +27053,7 @@ p[203] = 1.55957
 ------------- Reference points -------------
 p[204] = 10.0322
 p[205] = 0
-p[206] = 9.16667
+p[206] = 9.16668
 p[207] = 0
 p[208] = 8.30114
 p[209] = 0
@@ -27079,12 +27079,12 @@ p[228] = 5.93422
 p[229] = 0
 p[230] = 6.79976
 p[231] = 0
-p[232] = 7.66525
-p[233] = 0.00424447
+p[232] = 7.66524
+p[233] = 0.00424446
 p[234] = 8.53058
 p[235] = 0.023056
 p[236] = 9.3959
-p[237] = 0.0423216
+p[237] = 0.0423215
 p[238] = 10.2611
 p[239] = 0.0657059
 p[240] = 11.1263
@@ -27094,11 +27094,11 @@ p[243] = 0.0766564
 p[244] = 12.8572
 p[245] = 0.0668478
 p[246] = 13.7205
-p[247] = 0.00863575
+p[247] = 0.00863578
 p[248] = 14.5826
 p[249] = -0.067588
 p[250] = 15.4401
-p[251] = -0.029397
+p[251] = -0.0293971
 p[252] = 16.2937
 p[253] = 0.113965
 p[254] = 17.1473
@@ -27118,7 +27118,7 @@ p[267] = 2.52638
 p[268] = 21.8785
 p[269] = 3.21122
 p[270] = 22.3221
-p[271] = 3.95442
+p[271] = 3.95441
 p[272] = 22.7657
 p[273] = 4.69761
 p[274] = 23.1895
@@ -27131,27 +27131,27 @@ p[280] = 24.3289
 p[281] = 7.77437
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (0.000109797, 0.00811499)
+Control Inputs (D, delta) = (8.55447e-05, 0.00813219)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 219
+inner iterations : 232
 outer iterations : 7
-solve time       : 42.1951 ms
+solve time       : 43.9391 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 11.0727
-p[1] = 0.086835
-p[2] = 0.0299803
-p[3] = 3.5
+p[1] = 0.0868374
+p[2] = 0.0299816
+p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0.027027
 p[5] = 0.027027
@@ -27358,7 +27358,7 @@ p[203] = 1.55957
 ------------- Reference points -------------
 p[204] = 10.2028
 p[205] = 0
-p[206] = 9.33286
+p[206] = 9.33287
 p[207] = 0
 p[208] = 8.46296
 p[209] = 0
@@ -27385,7 +27385,7 @@ p[229] = 0
 p[230] = 6.68605
 p[231] = 0
 p[232] = 7.55594
-p[233] = 0.00186817
+p[233] = 0.00186815
 p[234] = 8.42564
 p[235] = 0.0207748
 p[236] = 9.29534
@@ -27403,11 +27403,11 @@ p[247] = 0.0150407
 p[248] = 14.5086
 p[249] = -0.0607887
 p[250] = 15.3711
-p[251] = -0.0409872
+p[251] = -0.0409873
 p[252] = 16.229
 p[253] = 0.103099
 p[254] = 17.0869
-p[255] = 0.247186
+p[255] = 0.247185
 p[256] = 17.9448
 p[257] = 0.391272
 p[258] = 18.8027
@@ -27436,26 +27436,26 @@ p[280] = 24.3266
 p[281] = 7.77064
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (3.61719e-05, 0.00735053)
+Control Inputs (D, delta) = (-7.92135e-05, 0.00731908)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 262
+inner iterations : 270
 outer iterations : 7
-solve time       : 49.6292 ms
+solve time       : 49.1275 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 11.2476
-p[1] = 0.0915389
-p[2] = 0.0304567
+p[1] = 0.0915386
+p[2] = 0.030456
 p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0.027027
@@ -27671,7 +27671,7 @@ p[210] = 7.75049
 p[211] = 0
 p[212] = 6.87621
 p[213] = 0
-p[214] = 6.00192
+p[214] = 6.00193
 p[215] = 0
 p[216] = 5.12764
 p[217] = 0
@@ -27685,7 +27685,7 @@ p[224] = 3.94949
 p[225] = 0
 p[226] = 4.82377
 p[227] = 0
-p[228] = 5.69806
+p[228] = 5.69805
 p[229] = 0
 p[230] = 6.57234
 p[231] = 0
@@ -27706,11 +27706,11 @@ p[245] = 0.0686251
 p[246] = 13.5635
 p[247] = 0.0214457
 p[248] = 14.4346
-p[249] = -0.0539895
+p[249] = -0.0539894
 p[250] = 15.3021
-p[251] = -0.0525774
+p[251] = -0.0525775
 p[252] = 16.1643
-p[253] = 0.0922334
+p[253] = 0.0922333
 p[254] = 17.0265
 p[255] = 0.237044
 p[256] = 17.8887
@@ -27741,27 +27741,27 @@ p[280] = 24.3243
 p[281] = 7.76691
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-5.81902e-05, 0.00671835)
+Control Inputs (D, delta) = (1.18838e-05, 0.00670497)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 263
+inner iterations : 280
 outer iterations : 7
-solve time       : 49.6842 ms
+solve time       : 53.1893 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 11.4226
-p[1] = 0.096249
-p[2] = 0.0308922
-p[3] = 3.5
+p[1] = 0.0962473
+p[2] = 0.0308906
+p[3] = 3.50001
 ------------- Slopes -------------
 p[4] = 0.027027
 p[5] = 0.027027
@@ -27978,7 +27978,7 @@ p[212] = 7.02928
 p[213] = 0
 p[214] = 6.15062
 p[215] = 0
-p[216] = 5.27196
+p[216] = 5.27197
 p[217] = 0
 p[218] = 4.39331
 p[219] = 0
@@ -28011,11 +28011,11 @@ p[245] = 0.0695138
 p[246] = 13.4851
 p[247] = 0.0278506
 p[248] = 14.3605
-p[249] = -0.0471902
+p[249] = -0.0471901
 p[250] = 15.2331
-p[251] = -0.0641676
+p[251] = -0.0641677
 p[252] = 16.0996
-p[253] = 0.0813676
+p[253] = 0.0813675
 p[254] = 16.9662
 p[255] = 0.226903
 p[256] = 17.8327
@@ -28046,26 +28046,26 @@ p[280] = 24.322
 p[281] = 7.76319
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (1.15881e-05, 0.0060178)
+Control Inputs (D, delta) = (-2.28768e-05, 0.00602589)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 312
+inner iterations : 327
 outer iterations : 7
-solve time       : 58.6097 ms
+solve time       : 59.9343 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 11.5975
-p[1] = 0.100954
-p[2] = 0.0312822
+p[1] = 0.100952
+p[2] = 0.0312812
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.027027
@@ -28308,19 +28308,19 @@ p[237] = 0.0331228
 p[238] = 9.8764
 p[239] = 0.055308
 p[240] = 10.7591
-p[241] = 0.079165
+p[241] = 0.0791649
 p[242] = 11.6419
 p[243] = 0.0822686
 p[244] = 12.5249
 p[245] = 0.0704024
 p[246] = 13.4066
-p[247] = 0.0342555
+p[247] = 0.0342556
 p[248] = 14.2865
-p[249] = -0.0403909
+p[249] = -0.0403908
 p[250] = 15.1641
 p[251] = -0.0757578
 p[252] = 16.0349
-p[253] = 0.0705018
+p[253] = 0.0705017
 p[254] = 16.9058
 p[255] = 0.216761
 p[256] = 17.7766
@@ -28334,7 +28334,7 @@ p[263] = 0.938488
 p[264] = 20.8351
 p[265] = 1.64491
 p[266] = 21.2634
-p[267] = 2.41681
+p[267] = 2.4168
 p[268] = 21.8127
 p[269] = 3.10818
 p[270] = 22.2683
@@ -28351,26 +28351,26 @@ p[280] = 24.3197
 p[281] = 7.75946
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-2.31576e-05, 0.00554855)
+Control Inputs (D, delta) = (-2.23556e-06, 0.00554034)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 336
+inner iterations : 335
 outer iterations : 7
-solve time       : 59.7767 ms
+solve time       : 60.7565 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 11.7724
-p[1] = 0.105668
-p[2] = 0.0316419
+p[1] = 0.105666
+p[2] = 0.0316403
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.027027
@@ -28592,7 +28592,7 @@ p[216] = 5.56061
 p[217] = 0
 p[218] = 4.67321
 p[219] = 0
-p[220] = 3.7858
+p[220] = 3.78581
 p[221] = 0
 p[222] = 2.8984
 p[223] = 0
@@ -28611,11 +28611,11 @@ p[235] = 0.0116498
 p[236] = 8.89308
 p[237] = 0.0309366
 p[238] = 9.78022
-p[239] = 0.0527086
+p[239] = 0.0527085
 p[240] = 10.6673
-p[241] = 0.0766837
+p[241] = 0.0766836
 p[242] = 11.5545
-p[243] = 0.0836716
+p[243] = 0.0836717
 p[244] = 12.4418
 p[245] = 0.0712911
 p[246] = 13.3282
@@ -28623,9 +28623,9 @@ p[247] = 0.0406605
 p[248] = 14.2124
 p[249] = -0.0335916
 p[250] = 15.0951
-p[251] = -0.0873479
+p[251] = -0.087348
 p[252] = 15.9702
-p[253] = 0.059636
+p[253] = 0.0596359
 p[254] = 16.8454
 p[255] = 0.20662
 p[256] = 17.7205
@@ -28635,7 +28635,7 @@ p[259] = 0.500588
 p[260] = 19.4708
 p[261] = 0.647572
 p[262] = 20.2815
-p[263] = 0.904338
+p[263] = 0.904337
 p[264] = 20.8162
 p[265] = 1.61041
 p[266] = 21.2435
@@ -28656,26 +28656,26 @@ p[280] = 24.3174
 p[281] = 7.75574
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-4.08015e-07, 0.00495973)
+Control Inputs (D, delta) = (-1.84253e-05, 0.00498089)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 315
+inner iterations : 324
 outer iterations : 7
-solve time       : 58.1984 ms
+solve time       : 61.2511 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 11.9474
 p[1] = 0.110376
-p[2] = 0.0319633
+p[2] = 0.0319631
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = 0.027027
@@ -28905,32 +28905,32 @@ p[224] = 3.44217
 p[225] = 0
 p[226] = 4.33395
 p[227] = 0
-p[228] = 5.22573
+p[228] = 5.22572
 p[229] = 0
 p[230] = 6.1175
 p[231] = 0
 p[232] = 7.00928
 p[233] = 0
 p[234] = 7.90095
-p[235] = 0.00936854
+p[235] = 0.00936852
 p[236] = 8.79252
 p[237] = 0.0287504
 p[238] = 9.68404
 p[239] = 0.0501091
 p[240] = 10.5755
-p[241] = 0.0742024
+p[241] = 0.0742023
 p[242] = 11.467
 p[243] = 0.0850747
 p[244] = 12.3587
 p[245] = 0.0721798
 p[246] = 13.2497
-p[247] = 0.0470654
+p[247] = 0.0470655
 p[248] = 14.1384
 p[249] = -0.0267923
 p[250] = 15.0261
-p[251] = -0.0989381
+p[251] = -0.0989382
 p[252] = 15.9056
-p[253] = 0.0487702
+p[253] = 0.0487701
 p[254] = 16.785
 p[255] = 0.196478
 p[256] = 17.6645
@@ -28961,26 +28961,26 @@ p[280] = 24.3151
 p[281] = 7.75201
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (2.69196e-05, 0.00457804)
+Control Inputs (D, delta) = (2.0365e-05, 0.00455059)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 425
+inner iterations : 432
 outer iterations : 7
-solve time       : 77.8178 ms
+solve time       : 82.6881 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 12.1223
-p[1] = 0.115093
-p[2] = 0.0322601
+p[1] = 0.11509
+p[2] = 0.032258
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0.0160428
@@ -29190,7 +29190,7 @@ p[204] = 11.2262
 p[205] = 0
 p[206] = 10.33
 p[207] = 0
-p[208] = 9.43385
+p[208] = 9.43386
 p[209] = 0
 p[210] = 8.53771
 p[211] = 0
@@ -29216,26 +29216,26 @@ p[230] = 6.00379
 p[231] = 0
 p[232] = 6.89994
 p[233] = 0
-p[234] = 7.79602
-p[235] = 0.0070873
+p[234] = 7.79601
+p[235] = 0.00708728
 p[236] = 8.69195
 p[237] = 0.0265642
 p[238] = 9.58786
 p[239] = 0.0475096
 p[240] = 10.4837
-p[241] = 0.0717211
+p[241] = 0.071721
 p[242] = 11.3796
-p[243] = 0.0864777
+p[243] = 0.0864778
 p[244] = 12.2756
 p[245] = 0.0730684
 p[246] = 13.1712
 p[247] = 0.0534704
 p[248] = 14.0644
-p[249] = -0.0199931
+p[249] = -0.019993
 p[250] = 14.9568
 p[251] = -0.101948
 p[252] = 15.8409
-p[253] = 0.0379044
+p[253] = 0.0379043
 p[254] = 16.7246
 p[255] = 0.186337
 p[256] = 17.6084
@@ -29266,26 +29266,26 @@ p[280] = 24.3129
 p[281] = 7.74828
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (-1.42664e-06, -0.506)
+Control Inputs (D, delta) = (2.41073e-06, -0.506)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 424
+inner iterations : 392
 outer iterations : 7
-solve time       : 79.9276 ms
+solve time       : 73.1219 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 12.2915
-p[1] = 0.0704182
-p[2] = -0.00235125
+p[1] = 0.0704152
+p[2] = -0.00235327
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0.0160428
@@ -29511,28 +29511,28 @@ p[220] = 4.18808
 p[221] = 0
 p[222] = 3.2877
 p[223] = 0
-p[224] = 3.19268
+p[224] = 3.19267
 p[225] = 0
-p[226] = 4.09306
+p[226] = 4.09305
 p[227] = 0
-p[228] = 4.99344
+p[228] = 4.99343
 p[229] = 0
-p[230] = 5.89382
+p[230] = 5.89381
 p[231] = 0
 p[232] = 6.79419
 p[233] = 0
 p[234] = 7.69452
-p[235] = 0.00488091
+p[235] = 0.00488089
 p[236] = 8.59469
-p[237] = 0.0244498
+p[237] = 0.0244497
 p[238] = 9.49483
-p[239] = 0.0449955
+p[239] = 0.0449954
 p[240] = 10.3949
-p[241] = 0.0693212
+p[241] = 0.0693211
 p[242] = 11.295
 p[243] = 0.0878348
 p[244] = 12.1952
-p[245] = 0.0739279
+p[245] = 0.073928
 p[246] = 13.0954
 p[247] = 0.0596652
 p[248] = 13.9927
@@ -29571,26 +29571,26 @@ p[280] = 24.3106
 p[281] = 7.74468
 p[282] = 24.8539
 p[283] = 8.4621
-Control Inputs (D, delta) = (5.71179e-06, 0.0645544)
+Control Inputs (D, delta) = (-3.98208e-05, 0.0645512)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 367
+inner iterations : 356
 outer iterations : 7
-solve time       : 73.8007 ms
+solve time       : 67.8589 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 12.4664
-p[1] = 0.0762633
-p[2] = 0.00183647
+p[1] = 0.0762598
+p[2] = 0.00183425
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0.0160428
@@ -29800,7 +29800,7 @@ p[204] = 11.453
 p[205] = 0
 p[206] = 10.4397
 p[207] = 0
-p[208] = 9.42631
+p[208] = 9.42632
 p[209] = 0
 p[210] = 8.41295
 p[211] = 0
@@ -29837,9 +29837,9 @@ p[241] = 0.0720989
 p[242] = 13.3784
 p[243] = 0.0365575
 p[244] = 14.3881
-p[245] = -0.0497228
+p[245] = -0.0497227
 p[246] = 15.3933
-p[247] = -0.0372686
+p[247] = -0.0372687
 p[248] = 16.3926
 p[249] = 0.130579
 p[250] = 17.392
@@ -29849,7 +29849,7 @@ p[253] = 0.466273
 p[254] = 19.3907
 p[255] = 0.63412
 p[256] = 20.3094
-p[257] = 0.939281
+p[257] = 0.93928
 p[258] = 20.8984
 p[259] = 1.76002
 p[260] = 21.4261
@@ -29876,26 +29876,26 @@ p[280] = 27.7807
 p[281] = 10.0079
 p[282] = 28.79
 p[283] = 9.99537
-Control Inputs (D, delta) = (-0.000104864, -0.0316039)
+Control Inputs (D, delta) = (3.53271e-05, -0.03155)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 256
+inner iterations : 281
 outer iterations : 7
-solve time       : 49.6088 ms
+solve time       : 56.9035 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 12.6414
-p[1] = 0.0738333
-p[2] = -0.000212359
+p[1] = 0.0738344
+p[2] = -0.000211083
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0.0160428
@@ -30101,7 +30101,7 @@ p[201] = 2.01889
 p[202] = 2.06559
 p[203] = 2.09836
 ------------- Reference points -------------
-p[204] = 11.6236
+p[204] = 11.6237
 p[205] = 0
 p[206] = 10.6059
 p[207] = 0
@@ -30142,13 +30142,13 @@ p[241] = 0.0730814
 p[242] = 13.2912
 p[243] = 0.043676
 p[244] = 14.3053
-p[245] = -0.0421216
+p[245] = -0.0421215
 p[246] = 15.3156
-p[247] = -0.050311
+p[247] = -0.0503111
 p[248] = 16.3193
 p[249] = 0.118261
 p[250] = 17.323
-p[251] = 0.286833
+p[251] = 0.286832
 p[252] = 18.3267
 p[253] = 0.455404
 p[254] = 19.3303
@@ -30181,26 +30181,26 @@ p[280] = 27.7765
 p[281] = 10.0066
 p[282] = 28.79
 p[283] = 9.99537
-Control Inputs (D, delta) = (3.13381e-05, -0.0237977)
+Control Inputs (D, delta) = (-9.60289e-05, -0.0238231)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 292
+inner iterations : 250
 outer iterations : 7
-solve time       : 61.0121 ms
+solve time       : 52.179 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for solve() log data at Wed Jul 22 20:07:36 2020
+Log message for solve() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 PARAMETERS:
 ------------- Current state -------------
 p[0] = 12.8164
-p[1] = 0.0718443
-p[2] = -0.00175498
+p[1] = 0.0718433
+p[2] = -0.00175535
 p[3] = 3.5
 ------------- Slopes -------------
 p[4] = -0.0160428
@@ -30420,7 +30420,7 @@ p[214] = 6.6837
 p[215] = 0
 p[216] = 5.66159
 p[217] = 0
-p[218] = 4.63947
+p[218] = 4.63948
 p[219] = 0
 p[220] = 3.61736
 p[221] = 0
@@ -30439,19 +30439,19 @@ p[233] = 0.0135906
 p[234] = 9.11704
 p[235] = 0.0358052
 p[236] = 10.1388
-p[237] = 0.0624001
+p[237] = 0.0624
 p[238] = 11.1605
 p[239] = 0.0899913
 p[240] = 12.1825
 p[241] = 0.0740639
 p[242] = 13.204
-p[243] = 0.0507947
+p[243] = 0.0507948
 p[244] = 14.2226
-p[245] = -0.0345201
+p[245] = -0.03452
 p[246] = 15.238
-p[247] = -0.0633538
+p[247] = -0.0633539
 p[248] = 16.246
-p[249] = 0.105943
+p[249] = 0.105942
 p[250] = 17.254
 p[251] = 0.275239
 p[252] = 18.2619
@@ -30459,7 +30459,7 @@ p[253] = 0.444535
 p[254] = 19.2699
 p[255] = 0.613832
 p[256] = 20.2384
-p[257] = 0.850464
+p[257] = 0.850463
 p[258] = 20.8478
 p[259] = 1.66801
 p[260] = 21.3663
@@ -30486,14 +30486,14 @@ p[280] = 27.7724
 p[281] = 10.0053
 p[282] = 28.79
 p[283] = 9.99537
-Control Inputs (D, delta) = (0.000111444, -0.0220541)
+Control Inputs (D, delta) = (6.69134e-05, -0.0220133)
 -------------------------------------------------
   Solver Statistics
 -------------------------------------------------
 exit status      : 0
-inner iterations : 288
+inner iterations : 276
 outer iterations : 7
-solve time       : 66.7754 ms
+solve time       : 67.0081 ms
 penalty          : 31250
 ///////////////////////////////////
 ///////////////////////////////////

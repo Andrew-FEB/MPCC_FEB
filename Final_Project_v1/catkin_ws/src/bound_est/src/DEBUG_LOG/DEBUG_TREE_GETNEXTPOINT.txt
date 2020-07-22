@@ -1,4 +1,4 @@
-Log message for Tree getNextUnexploredPoint() log data at Wed Jul 22 20:07:30 2020
+Log message for Tree getNextUnexploredPoint() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 Next Unexplored point requested
@@ -1210,7 +1210,7 @@ No valid points found and nullptr returned
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getNextUnexploredPoint() log data at Wed Jul 22 20:07:33 2020
+Log message for Tree getNextUnexploredPoint() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 Next Unexplored point requested
@@ -1388,7 +1388,7 @@ No valid points found and nullptr returned
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getNextUnexploredPoint() log data at Wed Jul 22 20:07:34 2020
+Log message for Tree getNextUnexploredPoint() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 Next Unexplored point requested
@@ -1560,7 +1560,7 @@ No valid points found and nullptr returned
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getNextUnexploredPoint() log data at Wed Jul 22 20:07:36 2020
+Log message for Tree getNextUnexploredPoint() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 Next Unexplored point requested

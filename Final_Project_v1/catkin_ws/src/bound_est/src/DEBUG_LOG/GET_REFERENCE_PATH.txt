@@ -1,4 +1,4 @@
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -218,7 +218,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -438,7 +438,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -658,7 +658,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -878,7 +878,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -1098,7 +1098,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -1318,7 +1318,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -1538,7 +1538,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -1758,7 +1758,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -1978,7 +1978,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -2198,7 +2198,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -2418,7 +2418,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:07 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -2638,7 +2638,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -2858,7 +2858,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:30 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -3078,7 +3078,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:31 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -3298,7 +3298,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:31 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -3518,7 +3518,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:31 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -3738,7 +3738,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:31 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -3958,7 +3958,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:31 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -4178,7 +4178,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:31 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:08 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -4398,7 +4398,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:32 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:09 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -4618,7 +4618,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:32 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:09 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -4626,8 +4626,8 @@ Requested distance between points of 3.1
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.07625), y(9.50393e-05)
-Final coordinate selected at index 0 with position x(1.07625), y(0) and distance to car of 9.50393e-05
+Car has position x(1.07625), y(9.21154e-05)
+Final coordinate selected at index 0 with position x(1.07625), y(0) and distance to car of 9.21154e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.34781
@@ -4838,7 +4838,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:32 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -4846,8 +4846,8 @@ Requested distance between points of 3.2
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.155), y(9.46815e-05)
-Final coordinate selected at index 0 with position x(1.155), y(0) and distance to car of 9.46815e-05
+Car has position x(1.155), y(7.6896e-05)
+Final coordinate selected at index 0 with position x(1.155), y(0) and distance to car of 7.6896e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.345842
@@ -5058,7 +5058,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:32 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -5066,8 +5066,8 @@ Requested distance between points of 3.3
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.23625), y(9.7333e-05)
-Final coordinate selected at index 0 with position x(1.23625), y(0) and distance to car of 9.7333e-05
+Car has position x(1.23625), y(9.076e-05)
+Final coordinate selected at index 0 with position x(1.23625), y(0) and distance to car of 9.076e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.34381
@@ -5278,7 +5278,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:32 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -5286,8 +5286,8 @@ Requested distance between points of 3.4
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.32), y(9.76483e-05)
-Final coordinate selected at index 0 with position x(1.32), y(0) and distance to car of 9.76483e-05
+Car has position x(1.32), y(8.43028e-05)
+Final coordinate selected at index 0 with position x(1.32), y(0) and distance to car of 8.43028e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.341717
@@ -5309,7 +5309,7 @@ Coordinate 14 with position x(6.10403), y(0)
 Coordinate 15 with position x(6.44575), y(0)
 Coordinate 16 with position x(6.78747), y(0)
 Coordinate 17 with position x(7.12918), y(0)
-Coordinate 18 with position x(7.4709), y(1.95717e-05)
+Coordinate 18 with position x(7.4709), y(1.95716e-05)
 Coordinate 19 with position x(7.81254), y(0.00744644)
 Coordinate 20 with position x(8.15417), y(0.0148733)
 Coordinate 21 with position x(8.49581), y(0.0223002)
@@ -5498,7 +5498,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:32 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -5506,8 +5506,8 @@ Requested distance between points of 3.5
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.40625), y(9.59096e-05)
-Final coordinate selected at index 0 with position x(1.40625), y(0) and distance to car of 9.59096e-05
+Car has position x(1.40625), y(9.33886e-05)
+Final coordinate selected at index 0 with position x(1.40625), y(0) and distance to car of 9.33886e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.33956
@@ -5718,7 +5718,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -5726,8 +5726,8 @@ Requested distance between points of 3.6
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.495), y(9.5401e-05)
-Final coordinate selected at index 0 with position x(1.495), y(0) and distance to car of 9.5401e-05
+Car has position x(1.495), y(9.56144e-05)
+Final coordinate selected at index 0 with position x(1.495), y(0) and distance to car of 9.56144e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.337342
@@ -5938,7 +5938,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -5946,8 +5946,8 @@ Requested distance between points of 3.7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.58625), y(9.68591e-05)
-Final coordinate selected at index 0 with position x(1.58625), y(0) and distance to car of 9.68591e-05
+Car has position x(1.58625), y(9.92329e-05)
+Final coordinate selected at index 0 with position x(1.58625), y(0) and distance to car of 9.92329e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.33506
@@ -6158,7 +6158,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -6166,8 +6166,8 @@ Requested distance between points of 3.8
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.68), y(9.85742e-05)
-Final coordinate selected at index 0 with position x(1.68), y(0) and distance to car of 9.85742e-05
+Car has position x(1.68), y(9.61889e-05)
+Final coordinate selected at index 0 with position x(1.68), y(0) and distance to car of 9.61889e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.332717
@@ -6378,7 +6378,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -6386,8 +6386,8 @@ Requested distance between points of 3.9
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.77625), y(0.000103987)
-Final coordinate selected at index 0 with position x(1.77625), y(0) and distance to car of 0.000103987
+Car has position x(1.77625), y(0.000101231)
+Final coordinate selected at index 0 with position x(1.77625), y(0) and distance to car of 0.000101231
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.33031
@@ -6598,7 +6598,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -6606,8 +6606,8 @@ Requested distance between points of 4
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.875), y(1.24351e-05)
-Final coordinate selected at index 0 with position x(1.875), y(0) and distance to car of 1.24351e-05
+Car has position x(1.875), y(9.89978e-05)
+Final coordinate selected at index 0 with position x(1.875), y(0) and distance to car of 9.89978e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.327842
@@ -6818,7 +6818,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -6826,8 +6826,8 @@ Requested distance between points of 4.1
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(1.97625), y(8.5303e-05)
-Final coordinate selected at index 0 with position x(1.97625), y(0) and distance to car of 8.5303e-05
+Car has position x(1.97625), y(0.000104843)
+Final coordinate selected at index 0 with position x(1.97625), y(0) and distance to car of 0.000104843
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.32531
@@ -6848,8 +6848,8 @@ Coordinate 13 with position x(6.20529), y(0)
 Coordinate 14 with position x(6.5306), y(0)
 Coordinate 15 with position x(6.85591), y(0)
 Coordinate 16 with position x(7.18122), y(0)
-Coordinate 17 with position x(7.50652), y(0.000793889)
-Coordinate 18 with position x(7.83175), y(0.00786418)
+Coordinate 17 with position x(7.50652), y(0.00079389)
+Coordinate 18 with position x(7.83175), y(0.00786419)
 Coordinate 19 with position x(8.15699), y(0.0149345)
 Coordinate 20 with position x(8.48222), y(0.0220048)
 Coordinate 21 with position x(8.80745), y(0.0290751)
@@ -7038,7 +7038,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -7046,8 +7046,8 @@ Requested distance between points of 4.2
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(2.08), y(9.97039e-05)
-Final coordinate selected at index 0 with position x(2.08), y(0) and distance to car of 9.97039e-05
+Car has position x(2.08), y(0.000105764)
+Final coordinate selected at index 0 with position x(2.08), y(0) and distance to car of 0.000105764
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.322717
@@ -7258,7 +7258,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -7266,8 +7266,8 @@ Requested distance between points of 4.3
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(2.18625), y(0.000105673)
-Final coordinate selected at index 0 with position x(2.18625), y(0) and distance to car of 0.000105673
+Car has position x(2.18625), y(0.000103557)
+Final coordinate selected at index 0 with position x(2.18625), y(0) and distance to car of 0.000103557
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.32006
@@ -7478,7 +7478,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:10 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -7486,8 +7486,8 @@ Requested distance between points of 4.4
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(2.295), y(8.88258e-05)
-Final coordinate selected at index 0 with position x(2.295), y(0) and distance to car of 8.88258e-05
+Car has position x(2.295), y(1.31441e-05)
+Final coordinate selected at index 0 with position x(2.295), y(0) and distance to car of 1.31441e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.317342
@@ -7698,7 +7698,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -7706,8 +7706,8 @@ Requested distance between points of 4.5
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(2.40625), y(9.98718e-05)
-Final coordinate selected at index 0 with position x(2.40625), y(0) and distance to car of 9.98718e-05
+Car has position x(2.40625), y(9.23331e-05)
+Final coordinate selected at index 0 with position x(2.40625), y(0) and distance to car of 9.23331e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.31456
@@ -7918,7 +7918,7 @@ Distance between these points is 3.99311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -7926,8 +7926,8 @@ Requested distance between points of 4.6
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(2.52), y(7.17242e-05)
-Final coordinate selected at index 0 with position x(2.52), y(0) and distance to car of 7.17242e-05
+Car has position x(2.52), y(0.000105995)
+Final coordinate selected at index 0 with position x(2.52), y(0) and distance to car of 0.000105995
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.515509
@@ -8138,7 +8138,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -8146,8 +8146,8 @@ Requested distance between points of 4.7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(2.63625), y(8.40438e-05)
-Final coordinate selected at index 0 with position x(2.63625), y(0) and distance to car of 8.40438e-05
+Car has position x(2.63625), y(8.22822e-05)
+Final coordinate selected at index 0 with position x(2.63625), y(0) and distance to car of 8.22822e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.512603
@@ -8358,7 +8358,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -8366,8 +8366,8 @@ Requested distance between points of 4.8
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(2.755), y(8.25554e-05)
-Final coordinate selected at index 0 with position x(2.755), y(0) and distance to car of 8.25554e-05
+Car has position x(2.755), y(8.26554e-05)
+Final coordinate selected at index 0 with position x(2.755), y(0) and distance to car of 8.26554e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.509634
@@ -8578,7 +8578,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -8586,8 +8586,8 @@ Requested distance between points of 4.9
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(2.87625), y(8.0119e-05)
-Final coordinate selected at index 0 with position x(2.87625), y(0) and distance to car of 8.0119e-05
+Car has position x(2.87625), y(8.01137e-05)
+Final coordinate selected at index 0 with position x(2.87625), y(0) and distance to car of 8.01137e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.510915
@@ -8798,7 +8798,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -8806,8 +8806,8 @@ Requested distance between points of 5
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(3), y(8.09532e-05)
-Final coordinate selected at index 0 with position x(3), y(0) and distance to car of 8.09532e-05
+Car has position x(3), y(7.92313e-05)
+Final coordinate selected at index 0 with position x(3), y(0) and distance to car of 7.92313e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.514009
@@ -9018,7 +9018,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -9026,8 +9026,8 @@ Requested distance between points of 5.1
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(3.12625), y(7.67518e-05)
-Final coordinate selected at index 0 with position x(3.12625), y(0) and distance to car of 7.67518e-05
+Car has position x(3.12625), y(7.72425e-05)
+Final coordinate selected at index 0 with position x(3.12625), y(0) and distance to car of 7.72425e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.517165
@@ -9053,7 +9053,7 @@ Coordinate 18 with position x(11.7615), y(0.0803497)
 Coordinate 19 with position x(12.2786), y(0.0730359)
 Coordinate 20 with position x(12.7958), y(0.067505)
 Coordinate 21 with position x(13.312), y(0.0419801)
-Coordinate 22 with position x(13.8274), y(-9.74748e-05)
+Coordinate 22 with position x(13.8274), y(-9.74747e-05)
 Coordinate 23 with position x(14.3426), y(-0.0455451)
 Coordinate 24 with position x(14.8576), y(-0.0928408)
 Coordinate 25 with position x(15.3689), y(-0.0413622)
@@ -9238,7 +9238,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -9246,8 +9246,8 @@ Requested distance between points of 5.2
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(3.255), y(7.55333e-05)
-Final coordinate selected at index 0 with position x(3.255), y(0) and distance to car of 7.55333e-05
+Car has position x(3.255), y(7.54714e-05)
+Final coordinate selected at index 0 with position x(3.255), y(0) and distance to car of 7.54714e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.520384
@@ -9458,7 +9458,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -9466,8 +9466,8 @@ Requested distance between points of 5.3
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(3.38625), y(7.86637e-05)
-Final coordinate selected at index 0 with position x(3.38625), y(0) and distance to car of 7.86637e-05
+Car has position x(3.38625), y(7.85684e-05)
+Final coordinate selected at index 0 with position x(3.38625), y(0) and distance to car of 7.85684e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.523665
@@ -9678,7 +9678,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -9686,8 +9686,8 @@ Requested distance between points of 5.4
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(3.52), y(7.19222e-05)
-Final coordinate selected at index 0 with position x(3.52), y(0) and distance to car of 7.19222e-05
+Car has position x(3.52), y(7.19967e-05)
+Final coordinate selected at index 0 with position x(3.52), y(0) and distance to car of 7.19967e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.527009
@@ -9898,7 +9898,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:33 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -9906,8 +9906,8 @@ Requested distance between points of 5.5
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(3.65625), y(6.79065e-05)
-Final coordinate selected at index 0 with position x(3.65625), y(0) and distance to car of 6.79065e-05
+Car has position x(3.65625), y(6.79562e-05)
+Final coordinate selected at index 0 with position x(3.65625), y(0) and distance to car of 6.79562e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.530415
@@ -10118,7 +10118,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -10126,8 +10126,8 @@ Requested distance between points of 5.6
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(3.795), y(5.64755e-05)
-Final coordinate selected at index 0 with position x(3.795), y(0) and distance to car of 5.64755e-05
+Car has position x(3.795), y(5.68217e-05)
+Final coordinate selected at index 0 with position x(3.795), y(0) and distance to car of 5.68217e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.533884
@@ -10338,7 +10338,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -10346,8 +10346,8 @@ Requested distance between points of 5.7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(3.93625), y(5.84446e-05)
-Final coordinate selected at index 0 with position x(3.93625), y(0) and distance to car of 5.84446e-05
+Car has position x(3.93625), y(5.85568e-05)
+Final coordinate selected at index 0 with position x(3.93625), y(0) and distance to car of 5.85568e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.537415
@@ -10558,7 +10558,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -10566,8 +10566,8 @@ Requested distance between points of 5.8
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(4.08), y(5.50304e-05)
-Final coordinate selected at index 0 with position x(4.08), y(0) and distance to car of 5.50304e-05
+Car has position x(4.08), y(5.47893e-05)
+Final coordinate selected at index 0 with position x(4.08), y(0) and distance to car of 5.47893e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.541009
@@ -10778,7 +10778,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -10786,8 +10786,8 @@ Requested distance between points of 5.9
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(4.22625), y(4.53773e-05)
-Final coordinate selected at index 0 with position x(4.22625), y(0) and distance to car of 4.53773e-05
+Car has position x(4.22625), y(4.92911e-05)
+Final coordinate selected at index 0 with position x(4.22625), y(0) and distance to car of 4.92911e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.544665
@@ -10998,7 +10998,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -11006,8 +11006,8 @@ Requested distance between points of 6
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(4.375), y(3.33077e-05)
-Final coordinate selected at index 0 with position x(4.375), y(0) and distance to car of 3.33077e-05
+Car has position x(4.375), y(3.29222e-05)
+Final coordinate selected at index 0 with position x(4.375), y(0) and distance to car of 3.29222e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.548384
@@ -11218,7 +11218,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -11226,8 +11226,8 @@ Requested distance between points of 6.1
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(4.52625), y(4.74113e-05)
-Final coordinate selected at index 0 with position x(4.52625), y(0) and distance to car of 4.74113e-05
+Car has position x(4.52625), y(4.67186e-05)
+Final coordinate selected at index 0 with position x(4.52625), y(0) and distance to car of 4.67186e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.552165
@@ -11254,7 +11254,7 @@ Coordinate 19 with position x(11.5437), y(0.083844)
 Coordinate 20 with position x(12.0958), y(0.0749912)
 Coordinate 21 with position x(12.648), y(0.0690861)
 Coordinate 22 with position x(13.1995), y(0.0511606)
-Coordinate 23 with position x(13.7499), y(0.00623533)
+Coordinate 23 with position x(13.7499), y(0.00623534)
 Coordinate 24 with position x(14.2999), y(-0.0416278)
 Coordinate 25 with position x(14.8498), y(-0.0921243)
 Coordinate 26 with position x(15.3957), y(-0.0368627)
@@ -11438,7 +11438,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -11446,8 +11446,8 @@ Requested distance between points of 6.2
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(4.68), y(4.32357e-05)
-Final coordinate selected at index 0 with position x(4.68), y(0) and distance to car of 4.32357e-05
+Car has position x(4.68), y(4.38608e-05)
+Final coordinate selected at index 0 with position x(4.68), y(0) and distance to car of 4.38608e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.556009
@@ -11658,7 +11658,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -11666,8 +11666,8 @@ Requested distance between points of 6.3
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(4.83625), y(3.51597e-05)
-Final coordinate selected at index 0 with position x(4.83625), y(0) and distance to car of 3.51597e-05
+Car has position x(4.83625), y(3.78767e-05)
+Final coordinate selected at index 0 with position x(4.83625), y(0) and distance to car of 3.78767e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.559915
@@ -11878,7 +11878,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -11886,8 +11886,8 @@ Requested distance between points of 6.4
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(4.995), y(1.98209e-05)
-Final coordinate selected at index 0 with position x(4.995), y(0) and distance to car of 1.98209e-05
+Car has position x(4.995), y(2.46721e-05)
+Final coordinate selected at index 0 with position x(4.995), y(0) and distance to car of 2.46721e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.563884
@@ -12098,7 +12098,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -12106,8 +12106,8 @@ Requested distance between points of 6.5
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(5.15625), y(3.22892e-05)
-Final coordinate selected at index 0 with position x(5.15625), y(0) and distance to car of 3.22892e-05
+Car has position x(5.15625), y(3.20977e-05)
+Final coordinate selected at index 0 with position x(5.15625), y(0) and distance to car of 3.20977e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.567915
@@ -12318,7 +12318,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:11 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -12326,8 +12326,8 @@ Requested distance between points of 6.6
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(5.32), y(2.47724e-05)
-Final coordinate selected at index 0 with position x(5.32), y(0) and distance to car of 2.47724e-05
+Car has position x(5.32), y(2.40792e-05)
+Final coordinate selected at index 0 with position x(5.32), y(0) and distance to car of 2.40792e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.572009
@@ -12538,7 +12538,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -12546,8 +12546,8 @@ Requested distance between points of 6.7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(5.48625), y(2.42541e-05)
-Final coordinate selected at index 0 with position x(5.48625), y(0) and distance to car of 2.42541e-05
+Car has position x(5.48625), y(2.43886e-05)
+Final coordinate selected at index 0 with position x(5.48625), y(0) and distance to car of 2.43886e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.576165
@@ -12758,7 +12758,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -12766,8 +12766,8 @@ Requested distance between points of 6.8
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(5.655), y(1.95198e-05)
-Final coordinate selected at index 0 with position x(5.655), y(0) and distance to car of 1.95198e-05
+Car has position x(5.655), y(2.14528e-05)
+Final coordinate selected at index 0 with position x(5.655), y(0) and distance to car of 2.14528e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.580384
@@ -12978,7 +12978,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -12986,8 +12986,8 @@ Requested distance between points of 6.9
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(5.82625), y(2.3232e-05)
-Final coordinate selected at index 0 with position x(5.82625), y(0) and distance to car of 2.3232e-05
+Car has position x(5.82625), y(2.17959e-05)
+Final coordinate selected at index 0 with position x(5.82625), y(0) and distance to car of 2.17959e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.584665
@@ -13198,7 +13198,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -13206,8 +13206,8 @@ Requested distance between points of 7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(6), y(2.04045e-05)
-Final coordinate selected at index 0 with position x(6), y(0) and distance to car of 2.04045e-05
+Car has position x(6), y(2.18475e-05)
+Final coordinate selected at index 0 with position x(6), y(0) and distance to car of 2.18475e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.589009
@@ -13418,7 +13418,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -13426,8 +13426,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(6.175), y(1.21322e-05)
-Final coordinate selected at index 0 with position x(6.175), y(0) and distance to car of 1.21322e-05
+Car has position x(6.175), y(1.20942e-05)
+Final coordinate selected at index 0 with position x(6.175), y(0) and distance to car of 1.20942e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.593384
@@ -13638,7 +13638,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -13646,8 +13646,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(6.35), y(1.12672e-05)
-Final coordinate selected at index 0 with position x(6.35), y(0) and distance to car of 1.12672e-05
+Car has position x(6.35), y(1.13535e-05)
+Final coordinate selected at index 0 with position x(6.35), y(0) and distance to car of 1.13535e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.597759
@@ -13858,7 +13858,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -13866,8 +13866,8 @@ Requested distance between points of 7.00003
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(6.525), y(1.1489e-05)
-Final coordinate selected at index 0 with position x(6.525), y(0) and distance to car of 1.1489e-05
+Car has position x(6.525), y(1.17344e-05)
+Final coordinate selected at index 0 with position x(6.525), y(0) and distance to car of 1.17344e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.602134
@@ -14078,7 +14078,7 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -14086,8 +14086,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(6.7), y(1.6571e-05)
-Final coordinate selected at index 0 with position x(6.7), y(0) and distance to car of 1.6571e-05
+Car has position x(6.7), y(1.64778e-05)
+Final coordinate selected at index 0 with position x(6.7), y(0) and distance to car of 1.64778e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.606509
@@ -14298,16 +14298,16 @@ Distance between these points is 2.02708
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
-Requested distance between points of 7.00005
+Requested distance between points of 7.00004
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(6.875), y(1.14029e-05)
-Final coordinate selected at index 0 with position x(6.875), y(0) and distance to car of 1.14029e-05
+Car has position x(6.875), y(1.19921e-05)
+Final coordinate selected at index 0 with position x(6.875), y(0) and distance to car of 1.19921e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.764967
@@ -14518,7 +14518,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:34 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -14526,8 +14526,8 @@ Requested distance between points of 7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(7.05), y(1.44355e-05)
-Final coordinate selected at index 0 with position x(7.05), y(0) and distance to car of 1.44355e-05
+Car has position x(7.05), y(1.44282e-05)
+Final coordinate selected at index 0 with position x(7.05), y(0) and distance to car of 1.44282e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.769342
@@ -14551,7 +14551,7 @@ Coordinate 16 with position x(10.8385), y(0.0813103)
 Coordinate 17 with position x(11.6076), y(0.0828185)
 Coordinate 18 with position x(12.3769), y(0.0719849)
 Coordinate 19 with position x(13.1458), y(0.0555444)
-Coordinate 20 with position x(13.9126), y(-0.00705086)
+Coordinate 20 with position x(13.9126), y(-0.00705087)
 Coordinate 21 with position x(14.6788), y(-0.0764229)
 Coordinate 22 with position x(15.4405), y(-0.0293286)
 Coordinate 23 with position x(16.1993), y(0.0981005)
@@ -14738,7 +14738,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -14746,8 +14746,8 @@ Requested distance between points of 7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(7.225), y(1.32434e-05)
-Final coordinate selected at index 0 with position x(7.225), y(0) and distance to car of 1.32434e-05
+Car has position x(7.225), y(1.32828e-05)
+Final coordinate selected at index 0 with position x(7.225), y(0) and distance to car of 1.32828e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.773717
@@ -14771,9 +14771,9 @@ Coordinate 16 with position x(10.7335), y(0.0784735)
 Coordinate 17 with position x(11.507), y(0.0844326)
 Coordinate 18 with position x(12.2807), y(0.0730143)
 Coordinate 19 with position x(13.0543), y(0.0630195)
-Coordinate 20 with position x(13.8254), y(6.83121e-05)
-Coordinate 21 with position x(14.5961), y(-0.0688209)
-Coordinate 22 with position x(15.3629), y(-0.0423723)
+Coordinate 20 with position x(13.8254), y(6.83052e-05)
+Coordinate 21 with position x(14.5961), y(-0.068821)
+Coordinate 22 with position x(15.3629), y(-0.0423722)
 Coordinate 23 with position x(16.1259), y(0.0857815)
 Coordinate 24 with position x(16.8889), y(0.213935)
 Coordinate 25 with position x(17.652), y(0.342089)
@@ -14958,7 +14958,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -14966,8 +14966,8 @@ Requested distance between points of 7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(7.4), y(1.53925e-05)
-Final coordinate selected at index 0 with position x(7.4), y(0) and distance to car of 1.53925e-05
+Car has position x(7.4), y(1.54207e-05)
+Final coordinate selected at index 0 with position x(7.4), y(0) and distance to car of 1.54207e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.778092
@@ -14991,7 +14991,7 @@ Coordinate 16 with position x(10.6286), y(0.0756367)
 Coordinate 17 with position x(11.4064), y(0.0860467)
 Coordinate 18 with position x(12.1844), y(0.0740436)
 Coordinate 19 with position x(12.9625), y(0.0657222)
-Coordinate 20 with position x(13.7382), y(0.00718749)
+Coordinate 20 with position x(13.7382), y(0.00718748)
 Coordinate 21 with position x(14.5133), y(-0.061219)
 Coordinate 22 with position x(15.2852), y(-0.0554159)
 Coordinate 23 with position x(16.0526), y(0.0734625)
@@ -15072,7 +15072,7 @@ Left position 14 with coordinate x(9.02945), y(2.0339) and angle of 0.0217391
 Right position 14 with coordinate x(9.11637), y(-1.96421) and angle of 0.0217391
 Distance between these points is 3.99906
 
-Left position 15 with coordinate x(9.79673), y(2.05315) and angle of 0.027027
+Left position 15 with coordinate x(9.79674), y(2.05316) and angle of 0.027027
 Right position 15 with coordinate x(9.90476), y(-1.94393) and angle of 0.027027
 Distance between these points is 3.99854
 
@@ -15178,7 +15178,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -15186,8 +15186,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(7.575), y(1.26888e-05)
-Final coordinate selected at index 0 with position x(7.575), y(0) and distance to car of 1.26888e-05
+Car has position x(7.575), y(1.27127e-05)
+Final coordinate selected at index 0 with position x(7.575), y(0) and distance to car of 1.27127e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.782467
@@ -15206,7 +15206,7 @@ Coordinate 11 with position x(6.61214), y(0)
 Coordinate 12 with position x(7.3946), y(0)
 Coordinate 13 with position x(8.17691), y(0.0153675)
 Coordinate 14 with position x(8.95919), y(0.0323736)
-Coordinate 15 with position x(9.74141), y(0.0516598)
+Coordinate 15 with position x(9.74141), y(0.0516599)
 Coordinate 16 with position x(10.5236), y(0.0727999)
 Coordinate 17 with position x(11.3058), y(0.0876608)
 Coordinate 18 with position x(12.0882), y(0.0751094)
@@ -15398,7 +15398,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -15406,8 +15406,8 @@ Requested distance between points of 6.99999
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(7.75), y(1.38315e-05)
-Final coordinate selected at index 0 with position x(7.75), y(0) and distance to car of 1.38315e-05
+Car has position x(7.75), y(1.37329e-05)
+Final coordinate selected at index 0 with position x(7.75), y(0) and distance to car of 1.37329e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.786842
@@ -15429,7 +15429,7 @@ Coordinate 14 with position x(8.84546), y(0.0299014)
 Coordinate 15 with position x(9.63208), y(0.0487048)
 Coordinate 16 with position x(10.4186), y(0.0699631)
 Coordinate 17 with position x(11.2052), y(0.0892749)
-Coordinate 18 with position x(11.9919), y(0.0766534)
+Coordinate 18 with position x(11.9919), y(0.0766533)
 Coordinate 19 with position x(12.7787), y(0.0676874)
 Coordinate 20 with position x(13.5638), y(0.0214258)
 Coordinate 21 with position x(14.3477), y(-0.0460151)
@@ -15618,7 +15618,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -15626,8 +15626,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(7.925), y(1.17175e-05)
-Final coordinate selected at index 0 with position x(7.925), y(0) and distance to car of 1.17175e-05
+Car has position x(7.925), y(1.17357e-05)
+Final coordinate selected at index 0 with position x(7.925), y(0) and distance to car of 1.17357e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.791217
@@ -15781,7 +15781,7 @@ Right position 26 with coordinate x(18.4335), y(-2.12812) and angle of 0.101695
 Distance between these points is 3.97948
 
 Left position 27 with coordinate x(18.8164), y(1.91082) and angle of 0.101695
-Right position 27 with coordinate x(20.5689), y(-0.731428) and angle of 1.25
+Right position 27 with coordinate x(20.5689), y(-0.731427) and angle of 1.25
 Distance between these points is 3.17059
 
 Left position 28 with coordinate x(18.9418), y(2.03656) and angle of 0.589041
@@ -15838,7 +15838,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -15846,8 +15846,8 @@ Requested distance between points of 7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(8.1), y(1.33102e-05)
-Final coordinate selected at index 0 with position x(8.1), y(0) and distance to car of 1.33102e-05
+Car has position x(8.1), y(1.33348e-05)
+Final coordinate selected at index 0 with position x(8.1), y(0) and distance to car of 1.33348e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.795592
@@ -15864,7 +15864,7 @@ Coordinate 9 with position x(4.64033), y(0)
 Coordinate 10 with position x(5.43592), y(0)
 Coordinate 11 with position x(6.23151), y(0)
 Coordinate 12 with position x(7.0271), y(0)
-Coordinate 13 with position x(7.82261), y(0.00766551)
+Coordinate 13 with position x(7.82261), y(0.00766552)
 Coordinate 14 with position x(8.61802), y(0.0249569)
 Coordinate 15 with position x(9.41341), y(0.0427948)
 Coordinate 16 with position x(10.2087), y(0.0642895)
@@ -16058,7 +16058,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -16066,8 +16066,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(8.275), y(1.10762e-05)
-Final coordinate selected at index 0 with position x(8.275), y(0) and distance to car of 1.10762e-05
+Car has position x(8.275), y(1.10974e-05)
+Final coordinate selected at index 0 with position x(8.275), y(0) and distance to car of 1.10974e-05
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.799967
@@ -16084,7 +16084,7 @@ Coordinate 9 with position x(4.5047), y(0)
 Coordinate 10 with position x(5.30467), y(0)
 Coordinate 11 with position x(6.10464), y(0)
 Coordinate 12 with position x(6.9046), y(0)
-Coordinate 13 with position x(7.70452), y(0.00509818)
+Coordinate 13 with position x(7.70452), y(0.00509819)
 Coordinate 14 with position x(8.50429), y(0.0224847)
 Coordinate 15 with position x(9.30407), y(0.0398712)
 Coordinate 16 with position x(10.1037), y(0.0614527)
@@ -16278,7 +16278,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -16286,8 +16286,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(8.44858), y(0.022305)
-Final coordinate selected at index 0 with position x(8.44858), y(0) and distance to car of 0.022305
+Car has position x(8.44858), y(0.0223029)
+Final coordinate selected at index 0 with position x(8.44858), y(0) and distance to car of 0.0223029
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.804307
@@ -16314,7 +16314,7 @@ Coordinate 19 with position x(12.412), y(0.0716096)
 Coordinate 20 with position x(13.2157), y(0.0498445)
 Coordinate 21 with position x(14.0173), y(-0.0156693)
 Coordinate 22 with position x(14.8182), y(-0.0892247)
-Coordinate 23 with position x(15.6131), y(-0.000351214)
+Coordinate 23 with position x(15.6131), y(-0.00035122)
 Coordinate 24 with position x(16.4063), y(0.132869)
 Coordinate 25 with position x(17.1995), y(0.266089)
 Coordinate 26 with position x(17.9927), y(0.39931)
@@ -16337,7 +16337,7 @@ Coordinate 40 with position x(24.8539), y(8.4621)
 Next, getting Boundary points and slopes
 Boundary path coordinates calculated with left boundary list size of 40 and right boundary list size of 40
 Left position 1 with coordinate x(7.60073), y(2.00284) and angle of 0.0217391
-Right position 1 with coordinate x(7.68764), y(-1.99527) and angle of 0.0217391
+Right position 1 with coordinate x(7.68765), y(-1.99527) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 2 with coordinate x(6.83996), y(2) and angle of -0
@@ -16498,7 +16498,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:12 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -16506,8 +16506,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(8.62356), y(0.0246768)
-Final coordinate selected at index 0 with position x(8.62356), y(0) and distance to car of 0.0246768
+Car has position x(8.62356), y(0.0246769)
+Final coordinate selected at index 0 with position x(8.62356), y(0) and distance to car of 0.0246769
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.808681
@@ -16531,7 +16531,7 @@ Coordinate 16 with position x(9.89469), y(0.0558025)
 Coordinate 17 with position x(10.7031), y(0.0776507)
 Coordinate 18 with position x(11.5115), y(0.0843602)
 Coordinate 19 with position x(12.3201), y(0.0725921)
-Coordinate 20 with position x(13.1285), y(0.056963)
+Coordinate 20 with position x(13.1285), y(0.0569631)
 Coordinate 21 with position x(13.9345), y(-0.00883288)
 Coordinate 22 with position x(14.7398), y(-0.0820235)
 Coordinate 23 with position x(15.5397), y(-0.0126691)
@@ -16718,7 +16718,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -16938,7 +16938,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -17158,7 +17158,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -17329,7 +17329,7 @@ Right position 28 with coordinate x(20.7664), y(-0.484524) and angle of 1.25
 Distance between these points is 3.16273
 
 Left position 29 with coordinate x(19.3077), y(2.2521) and angle of 0.589041
-Right position 29 with coordinate x(21.1511), y(-0.00367097) and angle of 1.25
+Right position 29 with coordinate x(21.1511), y(-0.00367099) and angle of 1.25
 Distance between these points is 2.91313
 
 Left position 30 with coordinate x(19.9695), y(2.6419) and angle of 0.589041
@@ -17378,16 +17378,16 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
-Requested distance between points of 7.00001
+Requested distance between points of 7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(9.3234), y(0.0397883)
-Final coordinate selected at index 0 with position x(9.3234), y(0) and distance to car of 0.0397883
+Car has position x(9.3234), y(0.0397882)
+Final coordinate selected at index 0 with position x(9.3234), y(0) and distance to car of 0.0397882
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.826177
@@ -17419,7 +17419,7 @@ Coordinate 24 with position x(16.0612), y(0.0749091)
 Coordinate 25 with position x(16.8759), y(0.211752)
 Coordinate 26 with position x(17.6907), y(0.348595)
 Coordinate 27 with position x(18.5055), y(0.485438)
-Coordinate 28 with position x(19.3202), y(0.622281)
+Coordinate 28 with position x(19.3202), y(0.62228)
 Coordinate 29 with position x(20.135), y(0.759123)
 Coordinate 30 with position x(20.6639), y(1.38243)
 Coordinate 31 with position x(21.0815), y(2.09335)
@@ -17598,7 +17598,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -17818,7 +17818,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -17854,7 +17854,7 @@ Coordinate 19 with position x(11.7691), y(0.0802288)
 Coordinate 20 with position x(12.6039), y(0.0695569)
 Coordinate 21 with position x(13.4375), y(0.031737)
 Coordinate 22 with position x(14.2694), y(-0.0388225)
-Coordinate 23 with position x(15.0998), y(-0.086566)
+Coordinate 23 with position x(15.0998), y(-0.0865661)
 Coordinate 24 with position x(15.9231), y(0.0517258)
 Coordinate 25 with position x(16.7465), y(0.190018)
 Coordinate 26 with position x(17.5699), y(0.328309)
@@ -18038,16 +18038,16 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
-Requested distance between points of 7
+Requested distance between points of 7.00003
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(9.84828), y(0.0510948)
-Final coordinate selected at index 0 with position x(9.84828), y(0) and distance to car of 0.0510948
+Car has position x(9.84828), y(0.0510998)
+Final coordinate selected at index 0 with position x(9.84828), y(0) and distance to car of 0.0510998
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.839299
@@ -18061,11 +18061,11 @@ Coordinate 6 with position x(4.81248), y(0)
 Coordinate 7 with position x(3.97318), y(0)
 Coordinate 8 with position x(3.13388), y(0)
 Coordinate 9 with position x(3.28542), y(0)
-Coordinate 10 with position x(4.12472), y(0)
+Coordinate 10 with position x(4.12471), y(0)
 Coordinate 11 with position x(4.96401), y(0)
 Coordinate 12 with position x(5.80331), y(0)
 Coordinate 13 with position x(6.64261), y(0)
-Coordinate 14 with position x(7.48191), y(0.000258885)
+Coordinate 14 with position x(7.48191), y(0.00025888)
 Coordinate 15 with position x(8.32101), y(0.0185002)
 Coordinate 16 with position x(9.16011), y(0.0367415)
 Coordinate 17 with position x(9.99912), y(0.0586249)
@@ -18132,8 +18132,8 @@ Left position 9 with coordinate x(3.28542), y(2) and angle of -0
 Right position 9 with coordinate x(3.28542), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 10 with coordinate x(4.12472), y(2) and angle of 0
-Right position 10 with coordinate x(4.12472), y(-2) and angle of 0
+Left position 10 with coordinate x(4.12471), y(2) and angle of 0
+Right position 10 with coordinate x(4.12471), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 11 with coordinate x(4.96401), y(2) and angle of -0
@@ -18258,7 +18258,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -18266,8 +18266,8 @@ Requested distance between points of 7.00003
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(10.0232), y(0.0548742)
-Final coordinate selected at index 0 with position x(10.0232), y(0) and distance to car of 0.0548742
+Car has position x(10.0232), y(0.054874)
+Final coordinate selected at index 0 with position x(10.0232), y(0) and distance to car of 0.054874
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.843673
@@ -18281,19 +18281,19 @@ Coordinate 6 with position x(4.9612), y(0)
 Coordinate 7 with position x(4.11752), y(0)
 Coordinate 8 with position x(3.27385), y(0)
 Coordinate 9 with position x(3.14982), y(0)
-Coordinate 10 with position x(3.9935), y(0)
+Coordinate 10 with position x(3.99349), y(0)
 Coordinate 11 with position x(4.83717), y(0)
 Coordinate 12 with position x(5.68084), y(0)
 Coordinate 13 with position x(6.52451), y(0)
 Coordinate 14 with position x(7.36819), y(0)
 Coordinate 15 with position x(8.21169), y(0.0161236)
 Coordinate 16 with position x(9.05516), y(0.03446)
-Coordinate 17 with position x(9.89856), y(0.055907)
+Coordinate 17 with position x(9.89856), y(0.0559069)
 Coordinate 18 with position x(10.7419), y(0.0787006)
 Coordinate 19 with position x(11.5854), y(0.0831756)
 Coordinate 20 with position x(12.429), y(0.0714281)
 Coordinate 21 with position x(13.2718), y(0.0452603)
-Coordinate 22 with position x(14.1126), y(-0.0244222)
+Coordinate 22 with position x(14.1126), y(-0.0244221)
 Coordinate 23 with position x(14.9527), y(-0.101578)
 Coordinate 24 with position x(15.7851), y(0.0285424)
 Coordinate 25 with position x(16.6171), y(0.168283)
@@ -18352,8 +18352,8 @@ Left position 9 with coordinate x(3.14982), y(2) and angle of -0
 Right position 9 with coordinate x(3.14982), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 10 with coordinate x(3.9935), y(2) and angle of 0
-Right position 10 with coordinate x(3.9935), y(-2) and angle of 0
+Left position 10 with coordinate x(3.99349), y(2) and angle of 0
+Right position 10 with coordinate x(3.99349), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 11 with coordinate x(4.83717), y(2) and angle of -0
@@ -18433,7 +18433,7 @@ Right position 29 with coordinate x(21.037), y(-0.146209) and angle of 1.25
 Distance between these points is 2.98586
 
 Left position 30 with coordinate x(19.7934), y(2.53817) and angle of 0.589041
-Right position 30 with coordinate x(21.5831), y(0.680708) and angle of 1.82
+Right position 30 with coordinate x(21.5831), y(0.680707) and angle of 1.82
 Distance between these points is 2.5794
 
 Left position 31 with coordinate x(20.1015), y(2.67375) and angle of 1.25862
@@ -18478,7 +18478,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -18494,14 +18494,14 @@ Not enough centre coordinates with given distance. New temporary distance betwee
 Centre path coordinates calculated: 
 Coordinate 1 with position x(9.35015), y(0)
 Coordinate 2 with position x(8.5021), y(0)
-Coordinate 3 with position x(7.65405), y(0)
+Coordinate 3 with position x(7.65406), y(0)
 Coordinate 4 with position x(6.80601), y(0)
 Coordinate 5 with position x(5.95796), y(0)
 Coordinate 6 with position x(5.10991), y(0)
 Coordinate 7 with position x(4.26187), y(0)
 Coordinate 8 with position x(3.41382), y(0)
 Coordinate 9 with position x(3.01423), y(0)
-Coordinate 10 with position x(3.86228), y(0)
+Coordinate 10 with position x(3.86227), y(0)
 Coordinate 11 with position x(4.71032), y(0)
 Coordinate 12 with position x(5.55837), y(0)
 Coordinate 13 with position x(6.40642), y(0)
@@ -18515,7 +18515,7 @@ Coordinate 20 with position x(12.3415), y(0.0723636)
 Coordinate 21 with position x(13.189), y(0.052022)
 Coordinate 22 with position x(14.0342), y(-0.017222)
 Coordinate 23 with position x(14.8787), y(-0.0947775)
-Coordinate 24 with position x(15.7161), y(0.0169507)
+Coordinate 24 with position x(15.7161), y(0.0169506)
 Coordinate 25 with position x(16.5524), y(0.157416)
 Coordinate 26 with position x(17.3888), y(0.297881)
 Coordinate 27 with position x(18.2251), y(0.438346)
@@ -18524,7 +18524,7 @@ Coordinate 29 with position x(19.8978), y(0.719277)
 Coordinate 30 with position x(20.5273), y(1.21166)
 Coordinate 31 with position x(20.9867), y(1.92084)
 Coordinate 32 with position x(21.4374), y(2.63592)
-Coordinate 33 with position x(21.9412), y(3.31634)
+Coordinate 33 with position x(21.9412), y(3.31633)
 Coordinate 34 with position x(22.3759), y(4.04452)
 Coordinate 35 with position x(22.8101), y(4.77299)
 Coordinate 36 with position x(23.2237), y(5.51334)
@@ -18572,8 +18572,8 @@ Left position 9 with coordinate x(3.01423), y(2) and angle of -0
 Right position 9 with coordinate x(3.01423), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 10 with coordinate x(3.86228), y(2) and angle of 0
-Right position 10 with coordinate x(3.86228), y(-2) and angle of 0
+Left position 10 with coordinate x(3.86227), y(2) and angle of 0
+Right position 10 with coordinate x(3.86227), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 11 with coordinate x(4.71032), y(2) and angle of -0
@@ -18698,16 +18698,16 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:35 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
-Requested distance between points of 7.00003
+Requested distance between points of 7.00002
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(10.3729), y(0.0683946)
-Final coordinate selected at index 0 with position x(10.3729), y(0) and distance to car of 0.0683946
+Car has position x(10.3729), y(0.0683942)
+Final coordinate selected at index 0 with position x(10.3729), y(0) and distance to car of 0.0683942
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.852415
@@ -18732,17 +18732,17 @@ Coordinate 17 with position x(9.69756), y(0.0504746)
 Coordinate 18 with position x(10.5497), y(0.0735044)
 Coordinate 19 with position x(11.4018), y(0.0861205)
 Coordinate 20 with position x(12.2541), y(0.0732979)
-Coordinate 21 with position x(13.1063), y(0.0587747)
+Coordinate 21 with position x(13.1063), y(0.0587748)
 Coordinate 22 with position x(13.9558), y(-0.0105795)
 Coordinate 23 with position x(14.8047), y(-0.0879863)
-Coordinate 24 with position x(15.6472), y(0.00537427)
+Coordinate 24 with position x(15.6472), y(0.00537422)
 Coordinate 25 with position x(16.4878), y(0.146563)
 Coordinate 26 with position x(17.3285), y(0.287752)
 Coordinate 27 with position x(18.1691), y(0.428941)
 Coordinate 28 with position x(19.0097), y(0.570129)
 Coordinate 29 with position x(19.8504), y(0.711318)
 Coordinate 30 with position x(20.5), y(1.17755)
-Coordinate 31 with position x(20.9678), y(1.88639)
+Coordinate 31 with position x(20.9678), y(1.88638)
 Coordinate 32 with position x(21.4157), y(2.60856)
 Coordinate 33 with position x(21.9256), y(3.29008)
 Coordinate 34 with position x(22.3625), y(4.02201)
@@ -18820,7 +18820,7 @@ Left position 16 with coordinate x(8.80194), y(2.02896) and angle of 0.0217391
 Right position 16 with coordinate x(8.88885), y(-1.96916) and angle of 0.0217391
 Distance between these points is 3.99906
 
-Left position 17 with coordinate x(9.64355), y(2.04901) and angle of 0.027027
+Left position 17 with coordinate x(9.64354), y(2.04901) and angle of 0.027027
 Right position 17 with coordinate x(9.75157), y(-1.94807) and angle of 0.027027
 Distance between these points is 3.99854
 
@@ -18918,7 +18918,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -18926,8 +18926,8 @@ Requested distance between points of 7.00002
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(10.5479), y(0.0727131)
-Final coordinate selected at index 0 with position x(10.5479), y(0) and distance to car of 0.0727131
+Car has position x(10.5479), y(0.0727132)
+Final coordinate selected at index 0 with position x(10.5479), y(0) and distance to car of 0.0727132
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.856789
@@ -18944,18 +18944,18 @@ Coordinate 9 with position x(2.83677), y(0)
 Coordinate 10 with position x(3.60002), y(0)
 Coordinate 11 with position x(4.45681), y(0)
 Coordinate 12 with position x(5.3136), y(0)
-Coordinate 13 with position x(6.17039), y(0)
+Coordinate 13 with position x(6.17038), y(0)
 Coordinate 14 with position x(7.02717), y(0)
-Coordinate 15 with position x(7.88387), y(0.00899707)
+Coordinate 15 with position x(7.88386), y(0.00899706)
 Coordinate 16 with position x(8.74045), y(0.0276185)
 Coordinate 17 with position x(9.597), y(0.0477568)
 Coordinate 18 with position x(10.4535), y(0.0709048)
-Coordinate 19 with position x(11.31), y(0.0875937)
+Coordinate 19 with position x(11.31), y(0.0875938)
 Coordinate 20 with position x(12.1667), y(0.0742334)
 Coordinate 21 with position x(13.0234), y(0.0650704)
-Coordinate 22 with position x(13.8774), y(-0.00417416)
+Coordinate 22 with position x(13.8774), y(-0.00417414)
 Coordinate 23 with position x(14.7307), y(-0.0811866)
-Coordinate 24 with position x(15.5782), y(-0.0062166)
+Coordinate 24 with position x(15.5782), y(-0.00621665)
 Coordinate 25 with position x(16.4231), y(0.135697)
 Coordinate 26 with position x(17.2681), y(0.27761)
 Coordinate 27 with position x(18.113), y(0.419523)
@@ -19024,8 +19024,8 @@ Left position 12 with coordinate x(5.3136), y(2) and angle of -0
 Right position 12 with coordinate x(5.3136), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 13 with coordinate x(6.17039), y(2) and angle of 0
-Right position 13 with coordinate x(6.17039), y(-2) and angle of 0
+Left position 13 with coordinate x(6.17038), y(2) and angle of 0
+Right position 13 with coordinate x(6.17038), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 14 with coordinate x(7.02717), y(2) and angle of -0
@@ -19089,11 +19089,11 @@ Right position 28 with coordinate x(20.5709), y(-0.728892) and angle of 1.25
 Distance between these points is 3.16757
 
 Left position 29 with coordinate x(18.9981), y(2.0697) and angle of 0.589041
-Right position 29 with coordinate x(20.9699), y(-0.230186) and angle of 1.25
+Right position 29 with coordinate x(20.9699), y(-0.230187) and angle of 1.25
 Distance between these points is 3.02941
 
 Left position 30 with coordinate x(19.6878), y(2.47595) and angle of 0.589041
-Right position 30 with coordinate x(21.5209), y(0.56746) and angle of 1.82
+Right position 30 with coordinate x(21.5209), y(0.567459) and angle of 1.82
 Distance between these points is 2.64626
 
 Left position 31 with coordinate x(20.3511), y(2.86667) and angle of 0.589041
@@ -19138,7 +19138,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -19146,36 +19146,36 @@ Requested distance between points of 7.00003
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(10.7228), y(0.0774315)
-Final coordinate selected at index 0 with position x(10.7228), y(0) and distance to car of 0.0774315
+Car has position x(10.7228), y(0.0774316)
+Final coordinate selected at index 0 with position x(10.7228), y(0) and distance to car of 0.0774316
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.861162
 Centre path coordinates calculated: 
 Coordinate 1 with position x(9.86165), y(0)
-Coordinate 2 with position x(9.00048), y(0)
+Coordinate 2 with position x(9.00049), y(0)
 Coordinate 3 with position x(8.13932), y(0)
 Coordinate 4 with position x(7.27816), y(0)
 Coordinate 5 with position x(6.417), y(0)
-Coordinate 6 with position x(5.55583), y(0)
+Coordinate 6 with position x(5.55584), y(0)
 Coordinate 7 with position x(4.69467), y(0)
 Coordinate 8 with position x(3.83351), y(0)
 Coordinate 9 with position x(2.97235), y(0)
-Coordinate 10 with position x(3.46882), y(0)
+Coordinate 10 with position x(3.46881), y(0)
 Coordinate 11 with position x(4.32998), y(0)
 Coordinate 12 with position x(5.19114), y(0)
 Coordinate 13 with position x(6.0523), y(0)
-Coordinate 14 with position x(6.91347), y(0)
-Coordinate 15 with position x(7.77456), y(0.00662077)
+Coordinate 14 with position x(6.91346), y(0)
+Coordinate 15 with position x(7.77456), y(0.00662076)
 Coordinate 16 with position x(8.63551), y(0.0253373)
 Coordinate 17 with position x(9.49645), y(0.0450392)
 Coordinate 18 with position x(10.3573), y(0.0683053)
 Coordinate 19 with position x(11.2182), y(0.089067)
 Coordinate 20 with position x(12.0792), y(0.0752533)
 Coordinate 21 with position x(12.9403), y(0.0659591)
-Coordinate 22 with position x(13.7989), y(0.00223079)
+Coordinate 22 with position x(13.7989), y(0.00223082)
 Coordinate 23 with position x(14.6567), y(-0.0743873)
-Coordinate 24 with position x(15.5092), y(-0.0178068)
+Coordinate 24 with position x(15.5092), y(-0.0178069)
 Coordinate 25 with position x(16.3584), y(0.124831)
 Coordinate 26 with position x(17.2077), y(0.267468)
 Coordinate 27 with position x(18.057), y(0.410106)
@@ -19216,8 +19216,8 @@ Left position 5 with coordinate x(6.417), y(2) and angle of 0
 Right position 5 with coordinate x(6.417), y(-2) and angle of 0
 Distance between these points is 4
 
-Left position 6 with coordinate x(5.55583), y(2) and angle of -0
-Right position 6 with coordinate x(5.55583), y(-2) and angle of -0
+Left position 6 with coordinate x(5.55584), y(2) and angle of -0
+Right position 6 with coordinate x(5.55584), y(-2) and angle of -0
 Distance between these points is 4
 
 Left position 7 with coordinate x(4.69467), y(2) and angle of -0
@@ -19232,8 +19232,8 @@ Left position 9 with coordinate x(2.97235), y(2) and angle of -0
 Right position 9 with coordinate x(2.97235), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 10 with coordinate x(3.46882), y(2) and angle of -0
-Right position 10 with coordinate x(3.46882), y(-2) and angle of -0
+Left position 10 with coordinate x(3.46881), y(2) and angle of -0
+Right position 10 with coordinate x(3.46881), y(-2) and angle of -0
 Distance between these points is 4
 
 Left position 11 with coordinate x(4.32998), y(2) and angle of 0
@@ -19248,8 +19248,8 @@ Left position 13 with coordinate x(6.0523), y(2) and angle of 0
 Right position 13 with coordinate x(6.0523), y(-2) and angle of 0
 Distance between these points is 4
 
-Left position 14 with coordinate x(6.91347), y(2) and angle of -0
-Right position 14 with coordinate x(6.91347), y(-2) and angle of -0
+Left position 14 with coordinate x(6.91346), y(2) and angle of -0
+Right position 14 with coordinate x(6.91346), y(-2) and angle of -0
 Distance between these points is 4
 
 Left position 15 with coordinate x(7.7311), y(2.00568) and angle of 0.0217391
@@ -19358,22 +19358,22 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
-Requested distance between points of 7
+Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(10.8977), y(0.0821319)
-Final coordinate selected at index 0 with position x(10.8977), y(0) and distance to car of 0.0821319
+Car has position x(10.8977), y(0.0821327)
+Final coordinate selected at index 0 with position x(10.8977), y(0) and distance to car of 0.0821327
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.865536
 Centre path coordinates calculated: 
 Coordinate 1 with position x(10.0322), y(0)
-Coordinate 2 with position x(9.16667), y(0)
+Coordinate 2 with position x(9.16668), y(0)
 Coordinate 3 with position x(8.30114), y(0)
 Coordinate 4 with position x(7.4356), y(0)
 Coordinate 5 with position x(6.57007), y(0)
@@ -19386,16 +19386,16 @@ Coordinate 11 with position x(4.20315), y(0)
 Coordinate 12 with position x(5.06868), y(0)
 Coordinate 13 with position x(5.93422), y(0)
 Coordinate 14 with position x(6.79976), y(0)
-Coordinate 15 with position x(7.66525), y(0.00424447)
+Coordinate 15 with position x(7.66524), y(0.00424446)
 Coordinate 16 with position x(8.53058), y(0.023056)
-Coordinate 17 with position x(9.3959), y(0.0423216)
+Coordinate 17 with position x(9.3959), y(0.0423215)
 Coordinate 18 with position x(10.2611), y(0.0657059)
 Coordinate 19 with position x(11.1263), y(0.0890902)
 Coordinate 20 with position x(11.9918), y(0.0766564)
 Coordinate 21 with position x(12.8572), y(0.0668478)
-Coordinate 22 with position x(13.7205), y(0.00863575)
+Coordinate 22 with position x(13.7205), y(0.00863578)
 Coordinate 23 with position x(14.5826), y(-0.067588)
-Coordinate 24 with position x(15.4401), y(-0.029397)
+Coordinate 24 with position x(15.4401), y(-0.0293971)
 Coordinate 25 with position x(16.2937), y(0.113965)
 Coordinate 26 with position x(17.1473), y(0.257327)
 Coordinate 27 with position x(18.0009), y(0.400689)
@@ -19405,7 +19405,7 @@ Coordinate 30 with position x(20.4181), y(1.07509)
 Coordinate 31 with position x(20.9109), y(1.78289)
 Coordinate 32 with position x(21.3504), y(2.52638)
 Coordinate 33 with position x(21.8785), y(3.21122)
-Coordinate 34 with position x(22.3221), y(3.95442)
+Coordinate 34 with position x(22.3221), y(3.95441)
 Coordinate 35 with position x(22.7657), y(4.69761)
 Coordinate 36 with position x(23.1895), y(5.45227)
 Coordinate 37 with position x(23.5306), y(6.246)
@@ -19525,7 +19525,7 @@ Right position 27 with coordinate x(18.2598), y(-2.14578) and angle of 0.101695
 Distance between these points is 3.97948
 
 Left position 28 with coordinate x(18.7165), y(1.90066) and angle of 0.101695
-Right position 28 with coordinate x(20.522), y(-0.789986) and angle of 1.25
+Right position 28 with coordinate x(20.522), y(-0.789987) and angle of 1.25
 Distance between these points is 3.24028
 
 Left position 29 with coordinate x(18.9207), y(2.0241) and angle of 0.589041
@@ -19578,22 +19578,22 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
-Requested distance between points of 7.00001
+Requested distance between points of 7.00002
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(11.0727), y(0.086835)
-Final coordinate selected at index 0 with position x(11.0727), y(0) and distance to car of 0.086835
+Car has position x(11.0727), y(0.0868374)
+Final coordinate selected at index 0 with position x(11.0727), y(0) and distance to car of 0.0868374
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.869909
 Centre path coordinates calculated: 
 Coordinate 1 with position x(10.2028), y(0)
-Coordinate 2 with position x(9.33286), y(0)
+Coordinate 2 with position x(9.33287), y(0)
 Coordinate 3 with position x(8.46296), y(0)
 Coordinate 4 with position x(7.59305), y(0)
 Coordinate 5 with position x(6.72314), y(0)
@@ -19606,7 +19606,7 @@ Coordinate 11 with position x(4.07632), y(0)
 Coordinate 12 with position x(4.94623), y(0)
 Coordinate 13 with position x(5.81614), y(0)
 Coordinate 14 with position x(6.68605), y(0)
-Coordinate 15 with position x(7.55594), y(0.00186817)
+Coordinate 15 with position x(7.55594), y(0.00186815)
 Coordinate 16 with position x(8.42564), y(0.0207748)
 Coordinate 17 with position x(9.29534), y(0.0396814)
 Coordinate 18 with position x(10.1649), y(0.0631064)
@@ -19615,9 +19615,9 @@ Coordinate 20 with position x(11.9043), y(0.0780594)
 Coordinate 21 with position x(12.7741), y(0.0677364)
 Coordinate 22 with position x(13.642), y(0.0150407)
 Coordinate 23 with position x(14.5086), y(-0.0607887)
-Coordinate 24 with position x(15.3711), y(-0.0409872)
+Coordinate 24 with position x(15.3711), y(-0.0409873)
 Coordinate 25 with position x(16.229), y(0.103099)
-Coordinate 26 with position x(17.0869), y(0.247186)
+Coordinate 26 with position x(17.0869), y(0.247185)
 Coordinate 27 with position x(17.9448), y(0.391272)
 Coordinate 28 with position x(18.8027), y(0.535358)
 Coordinate 29 with position x(19.6606), y(0.679445)
@@ -19645,7 +19645,7 @@ Right position 2 with coordinate x(9.38578), y(-1.95795) and angle of 0.027027
 Distance between these points is 3.99867
 
 Left position 3 with coordinate x(8.41903), y(2.02063) and angle of 0.0217391
-Right position 3 with coordinate x(8.50594), y(-1.97748) and angle of 0.0217391
+Right position 3 with coordinate x(8.50595), y(-1.97748) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 4 with coordinate x(7.54953), y(2.00173) and angle of 0.0217391
@@ -19798,7 +19798,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -19806,8 +19806,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(11.2476), y(0.0915389)
-Final coordinate selected at index 0 with position x(11.2476), y(0) and distance to car of 0.0915389
+Car has position x(11.2476), y(0.0915386)
+Final coordinate selected at index 0 with position x(11.2476), y(0) and distance to car of 0.0915386
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.874283
@@ -19817,14 +19817,14 @@ Coordinate 2 with position x(9.49906), y(0)
 Coordinate 3 with position x(8.62477), y(0)
 Coordinate 4 with position x(7.75049), y(0)
 Coordinate 5 with position x(6.87621), y(0)
-Coordinate 6 with position x(6.00192), y(0)
+Coordinate 6 with position x(6.00193), y(0)
 Coordinate 7 with position x(5.12764), y(0)
 Coordinate 8 with position x(4.25336), y(0)
 Coordinate 9 with position x(3.37908), y(0)
 Coordinate 10 with position x(3.07521), y(0)
 Coordinate 11 with position x(3.94949), y(0)
 Coordinate 12 with position x(4.82377), y(0)
-Coordinate 13 with position x(5.69806), y(0)
+Coordinate 13 with position x(5.69805), y(0)
 Coordinate 14 with position x(6.57234), y(0)
 Coordinate 15 with position x(7.44662), y(0)
 Coordinate 16 with position x(8.3207), y(0.0184935)
@@ -19834,9 +19834,9 @@ Coordinate 19 with position x(10.9427), y(0.0841276)
 Coordinate 20 with position x(11.8168), y(0.0794625)
 Coordinate 21 with position x(12.6911), y(0.0686251)
 Coordinate 22 with position x(13.5635), y(0.0214457)
-Coordinate 23 with position x(14.4346), y(-0.0539895)
-Coordinate 24 with position x(15.3021), y(-0.0525774)
-Coordinate 25 with position x(16.1643), y(0.0922334)
+Coordinate 23 with position x(14.4346), y(-0.0539894)
+Coordinate 24 with position x(15.3021), y(-0.0525775)
+Coordinate 25 with position x(16.1643), y(0.0922333)
 Coordinate 26 with position x(17.0265), y(0.237044)
 Coordinate 27 with position x(17.8887), y(0.381855)
 Coordinate 28 with position x(18.751), y(0.526666)
@@ -19865,19 +19865,19 @@ Right position 2 with coordinate x(9.55185), y(-1.95346) and angle of 0.027027
 Distance between these points is 3.99854
 
 Left position 3 with coordinate x(8.58077), y(2.02415) and angle of 0.0217391
-Right position 3 with coordinate x(8.66768), y(-1.97396) and angle of 0.0217391
+Right position 3 with coordinate x(8.66769), y(-1.97396) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 4 with coordinate x(7.7069), y(2.00515) and angle of 0.0217391
-Right position 4 with coordinate x(7.79381), y(-1.99296) and angle of 0.0217391
+Right position 4 with coordinate x(7.79382), y(-1.99296) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 5 with coordinate x(6.87621), y(2) and angle of -0
 Right position 5 with coordinate x(6.87621), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 6 with coordinate x(6.00192), y(2) and angle of 0
-Right position 6 with coordinate x(6.00192), y(-2) and angle of 0
+Left position 6 with coordinate x(6.00193), y(2) and angle of 0
+Right position 6 with coordinate x(6.00193), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 7 with coordinate x(5.12764), y(2) and angle of -0
@@ -19904,8 +19904,8 @@ Left position 12 with coordinate x(4.82377), y(2) and angle of -0
 Right position 12 with coordinate x(4.82377), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 13 with coordinate x(5.69806), y(2) and angle of 0
-Right position 13 with coordinate x(5.69806), y(-2) and angle of 0
+Left position 13 with coordinate x(5.69805), y(2) and angle of 0
+Right position 13 with coordinate x(5.69805), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 14 with coordinate x(6.57234), y(2) and angle of -0
@@ -19969,7 +19969,7 @@ Right position 28 with coordinate x(20.4731), y(-0.851081) and angle of 1.25
 Distance between these points is 3.31309
 
 Left position 29 with coordinate x(18.8433), y(1.9785) and angle of 0.589041
-Right position 29 with coordinate x(20.8802), y(-0.342193) and angle of 1.25
+Right position 29 with coordinate x(20.8802), y(-0.342194) and angle of 1.25
 Distance between these points is 3.08786
 
 Left position 30 with coordinate x(19.5469), y(2.39298) and angle of 0.589041
@@ -20018,7 +20018,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -20026,8 +20026,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(11.4226), y(0.096249)
-Final coordinate selected at index 0 with position x(11.4226), y(0) and distance to car of 0.096249
+Car has position x(11.4226), y(0.0962473)
+Final coordinate selected at index 0 with position x(11.4226), y(0) and distance to car of 0.0962473
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.878656
@@ -20038,7 +20038,7 @@ Coordinate 3 with position x(8.78659), y(0)
 Coordinate 4 with position x(7.90793), y(0)
 Coordinate 5 with position x(7.02928), y(0)
 Coordinate 6 with position x(6.15062), y(0)
-Coordinate 7 with position x(5.27196), y(0)
+Coordinate 7 with position x(5.27197), y(0)
 Coordinate 8 with position x(4.39331), y(0)
 Coordinate 9 with position x(3.51465), y(0)
 Coordinate 10 with position x(2.944), y(0)
@@ -20054,9 +20054,9 @@ Coordinate 19 with position x(10.8509), y(0.0816463)
 Coordinate 20 with position x(11.7294), y(0.0808655)
 Coordinate 21 with position x(12.608), y(0.0695138)
 Coordinate 22 with position x(13.4851), y(0.0278506)
-Coordinate 23 with position x(14.3605), y(-0.0471902)
-Coordinate 24 with position x(15.2331), y(-0.0641676)
-Coordinate 25 with position x(16.0996), y(0.0813676)
+Coordinate 23 with position x(14.3605), y(-0.0471901)
+Coordinate 24 with position x(15.2331), y(-0.0641677)
+Coordinate 25 with position x(16.0996), y(0.0813675)
 Coordinate 26 with position x(16.9662), y(0.226903)
 Coordinate 27 with position x(17.8327), y(0.372438)
 Coordinate 28 with position x(18.6992), y(0.517973)
@@ -20077,7 +20077,7 @@ Coordinate 40 with position x(24.8539), y(8.4621)
 Next, getting Boundary points and slopes
 Boundary path coordinates calculated with left boundary list size of 40 and right boundary list size of 40
 Left position 1 with coordinate x(10.4879), y(2.07184) and angle of 0.027027
-Right position 1 with coordinate x(10.5959), y(-1.92525) and angle of 0.027027
+Right position 1 with coordinate x(10.5959), y(-1.92524) and angle of 0.027027
 Distance between these points is 3.99854
 
 Left position 2 with coordinate x(9.60989), y(2.04811) and angle of 0.027027
@@ -20085,7 +20085,7 @@ Right position 2 with coordinate x(9.71792), y(-1.94898) and angle of 0.027027
 Distance between these points is 3.99854
 
 Left position 3 with coordinate x(8.74251), y(2.02766) and angle of 0.0217391
-Right position 3 with coordinate x(8.82942), y(-1.97045) and angle of 0.0217391
+Right position 3 with coordinate x(8.82943), y(-1.97045) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 4 with coordinate x(7.86427), y(2.00857) and angle of 0.0217391
@@ -20100,8 +20100,8 @@ Left position 6 with coordinate x(6.15062), y(2) and angle of 0
 Right position 6 with coordinate x(6.15062), y(-2) and angle of 0
 Distance between these points is 4
 
-Left position 7 with coordinate x(5.27196), y(2) and angle of -0
-Right position 7 with coordinate x(5.27196), y(-2) and angle of -0
+Left position 7 with coordinate x(5.27197), y(2) and angle of -0
+Right position 7 with coordinate x(5.27197), y(-2) and angle of -0
 Distance between these points is 4
 
 Left position 8 with coordinate x(4.39331), y(2) and angle of 0
@@ -20185,7 +20185,7 @@ Right position 27 with coordinate x(18.0905), y(-2.163) and angle of 0.101695
 Distance between these points is 3.97948
 
 Left position 28 with coordinate x(18.5602), y(1.88477) and angle of 0.101695
-Right position 28 with coordinate x(20.4487), y(-0.881628) and angle of 1.25
+Right position 28 with coordinate x(20.4487), y(-0.881629) and angle of 1.25
 Distance between these points is 3.34953
 
 Left position 29 with coordinate x(18.8046), y(1.9557) and angle of 0.589041
@@ -20204,7 +20204,7 @@ Left position 32 with coordinate x(20.4477), y(3.10953) and angle of 1.25862
 Right position 32 with coordinate x(22.2583), y(1.90949) and angle of 1.82
 Distance between these points is 2.17217
 
-Left position 33 with coordinate x(20.9943), y(3.79747) and angle of 1.25862
+Left position 33 with coordinate x(20.9943), y(3.79746) and angle of 1.25862
 Right position 33 with coordinate x(22.681), y(2.57391) and angle of 1.52128
 Distance between these points is 2.08374
 
@@ -20225,7 +20225,7 @@ Right position 37 with coordinate x(24.4869), y(5.61284) and angle of 1.62712
 Distance between these points is 2.17549
 
 Left position 38 with coordinate x(22.8573), y(7.40322) and angle of 2.58511
-Right position 38 with coordinate x(24.9408), y(6.35154) and angle of 1.62712
+Right position 38 with coordinate x(24.9408), y(6.35153) and angle of 1.62712
 Distance between these points is 2.33389
 
 Left position 39 with coordinate x(23.3226), y(8.5379) and angle of 1.29
@@ -20238,7 +20238,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -20246,8 +20246,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(11.5975), y(0.100954)
-Final coordinate selected at index 0 with position x(11.5975), y(0) and distance to car of 0.100954
+Car has position x(11.5975), y(0.100952)
+Final coordinate selected at index 0 with position x(11.5975), y(0) and distance to car of 0.100952
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.88303
@@ -20270,20 +20270,20 @@ Coordinate 15 with position x(7.22795), y(0)
 Coordinate 16 with position x(8.11083), y(0.013931)
 Coordinate 17 with position x(8.99365), y(0.0331228)
 Coordinate 18 with position x(9.8764), y(0.055308)
-Coordinate 19 with position x(10.7591), y(0.079165)
+Coordinate 19 with position x(10.7591), y(0.0791649)
 Coordinate 20 with position x(11.6419), y(0.0822686)
 Coordinate 21 with position x(12.5249), y(0.0704024)
-Coordinate 22 with position x(13.4066), y(0.0342555)
-Coordinate 23 with position x(14.2865), y(-0.0403909)
+Coordinate 22 with position x(13.4066), y(0.0342556)
+Coordinate 23 with position x(14.2865), y(-0.0403908)
 Coordinate 24 with position x(15.1641), y(-0.0757578)
-Coordinate 25 with position x(16.0349), y(0.0705018)
+Coordinate 25 with position x(16.0349), y(0.0705017)
 Coordinate 26 with position x(16.9058), y(0.216761)
 Coordinate 27 with position x(17.7766), y(0.363021)
 Coordinate 28 with position x(18.6474), y(0.50928)
 Coordinate 29 with position x(19.5183), y(0.65554)
 Coordinate 30 with position x(20.3088), y(0.938488)
 Coordinate 31 with position x(20.8351), y(1.64491)
-Coordinate 32 with position x(21.2634), y(2.41681)
+Coordinate 32 with position x(21.2634), y(2.4168)
 Coordinate 33 with position x(21.8127), y(3.10818)
 Coordinate 34 with position x(22.2683), y(3.86429)
 Coordinate 35 with position x(22.7209), y(4.62251)
@@ -20305,7 +20305,7 @@ Right position 2 with coordinate x(9.88399), y(-1.94449) and angle of 0.027027
 Distance between these points is 3.99854
 
 Left position 3 with coordinate x(8.90425), y(2.03118) and angle of 0.0217391
-Right position 3 with coordinate x(8.99116), y(-1.96693) and angle of 0.0217391
+Right position 3 with coordinate x(8.99117), y(-1.96693) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 4 with coordinate x(8.02164), y(2.01199) and angle of 0.0217391
@@ -20357,7 +20357,7 @@ Right position 15 with coordinate x(7.22795), y(-2) and angle of -0
 Distance between these points is 4
 
 Left position 16 with coordinate x(8.06737), y(2.01299) and angle of 0.0217391
-Right position 16 with coordinate x(8.15429), y(-1.98512) and angle of 0.0217391
+Right position 16 with coordinate x(8.15428), y(-1.98512) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 17 with coordinate x(8.95019), y(2.03218) and angle of 0.0217391
@@ -20413,7 +20413,7 @@ Right position 29 with coordinate x(20.8354), y(-0.398197) and angle of 1.25
 Distance between these points is 3.11724
 
 Left position 30 with coordinate x(19.4765), y(2.35149) and angle of 0.589041
-Right position 30 with coordinate x(21.282), y(0.159952) and angle of 1.25
+Right position 30 with coordinate x(21.282), y(0.159951) and angle of 1.25
 Distance between these points is 2.83947
 
 Left position 31 with coordinate x(20.1761), y(2.76362) and angle of 0.589041
@@ -20458,7 +20458,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:13 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -20466,8 +20466,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(11.7724), y(0.105668)
-Final coordinate selected at index 0 with position x(11.7724), y(0) and distance to car of 0.105668
+Car has position x(11.7724), y(0.105666)
+Final coordinate selected at index 0 with position x(11.7724), y(0) and distance to car of 0.105666
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.887403
@@ -20480,7 +20480,7 @@ Coordinate 5 with position x(7.33542), y(0)
 Coordinate 6 with position x(6.44801), y(0)
 Coordinate 7 with position x(5.56061), y(0)
 Coordinate 8 with position x(4.67321), y(0)
-Coordinate 9 with position x(3.7858), y(0)
+Coordinate 9 with position x(3.78581), y(0)
 Coordinate 10 with position x(2.8984), y(0)
 Coordinate 11 with position x(3.569), y(0)
 Coordinate 12 with position x(4.4564), y(0)
@@ -20489,19 +20489,19 @@ Coordinate 14 with position x(6.23121), y(0)
 Coordinate 15 with position x(7.11861), y(0)
 Coordinate 16 with position x(8.00589), y(0.0116498)
 Coordinate 17 with position x(8.89308), y(0.0309366)
-Coordinate 18 with position x(9.78022), y(0.0527086)
-Coordinate 19 with position x(10.6673), y(0.0766837)
-Coordinate 20 with position x(11.5545), y(0.0836716)
+Coordinate 18 with position x(9.78022), y(0.0527085)
+Coordinate 19 with position x(10.6673), y(0.0766836)
+Coordinate 20 with position x(11.5545), y(0.0836717)
 Coordinate 21 with position x(12.4418), y(0.0712911)
 Coordinate 22 with position x(13.3282), y(0.0406605)
 Coordinate 23 with position x(14.2124), y(-0.0335916)
-Coordinate 24 with position x(15.0951), y(-0.0873479)
-Coordinate 25 with position x(15.9702), y(0.059636)
+Coordinate 24 with position x(15.0951), y(-0.087348)
+Coordinate 25 with position x(15.9702), y(0.0596359)
 Coordinate 26 with position x(16.8454), y(0.20662)
 Coordinate 27 with position x(17.7205), y(0.353604)
 Coordinate 28 with position x(18.5957), y(0.500588)
 Coordinate 29 with position x(19.4708), y(0.647572)
-Coordinate 30 with position x(20.2815), y(0.904338)
+Coordinate 30 with position x(20.2815), y(0.904337)
 Coordinate 31 with position x(20.8162), y(1.61041)
 Coordinate 32 with position x(21.2435), y(2.38815)
 Coordinate 33 with position x(21.7936), y(3.08421)
@@ -20525,7 +20525,7 @@ Right position 2 with coordinate x(10.0501), y(-1.94) and angle of 0.027027
 Distance between these points is 3.99854
 
 Left position 3 with coordinate x(9.06599), y(2.0347) and angle of 0.0217391
-Right position 3 with coordinate x(9.1529), y(-1.96342) and angle of 0.0217391
+Right position 3 with coordinate x(9.15291), y(-1.96342) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 4 with coordinate x(8.17901), y(2.01541) and angle of 0.0217391
@@ -20548,8 +20548,8 @@ Left position 8 with coordinate x(4.67321), y(2) and angle of -0
 Right position 8 with coordinate x(4.67321), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 9 with coordinate x(3.7858), y(2) and angle of 0
-Right position 9 with coordinate x(3.7858), y(-2) and angle of 0
+Left position 9 with coordinate x(3.78581), y(2) and angle of 0
+Right position 9 with coordinate x(3.78581), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 10 with coordinate x(2.8984), y(2) and angle of -0
@@ -20609,7 +20609,7 @@ Right position 23 with coordinate x(14.0298), y(-2.02182) and angle of -0.091836
 Distance between these points is 3.98699
 
 Left position 24 with coordinate x(15.2761), y(1.87359) and angle of -0.0923077
-Right position 24 with coordinate x(14.91), y(-2.10266) and angle of -0.0918367
+Right position 24 with coordinate x(14.91), y(-2.10265) and angle of -0.0918367
 Distance between these points is 3.99306
 
 Left position 25 with coordinate x(16.1304), y(1.79473) and angle of -0.0923077
@@ -20629,7 +20629,7 @@ Right position 28 with coordinate x(20.3998), y(-0.942723) and angle of 1.25
 Distance between these points is 3.42248
 
 Left position 29 with coordinate x(18.7271), y(1.9101) and angle of 0.589041
-Right position 29 with coordinate x(20.813), y(-0.426198) and angle of 1.25
+Right position 29 with coordinate x(20.813), y(-0.426199) and angle of 1.25
 Distance between these points is 3.13197
 
 Left position 30 with coordinate x(19.4413), y(2.33074) and angle of 0.589041
@@ -20649,7 +20649,7 @@ Right position 33 with coordinate x(22.6475), y(2.52294) and angle of 1.52128
 Distance between these points is 2.08923
 
 Left position 34 with coordinate x(21.3848), y(4.3198) and angle of 1.82
-Right position 34 with coordinate x(23.1343), y(3.26364) and angle of 1.52128
+Right position 34 with coordinate x(23.1343), y(3.26363) and angle of 1.52128
 Distance between these points is 2.04359
 
 Left position 35 with coordinate x(21.8119), y(5.09704) and angle of 1.82
@@ -20678,7 +20678,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -20704,19 +20704,19 @@ Coordinate 9 with position x(3.92138), y(0)
 Coordinate 10 with position x(3.0296), y(0)
 Coordinate 11 with position x(3.44217), y(0)
 Coordinate 12 with position x(4.33395), y(0)
-Coordinate 13 with position x(5.22573), y(0)
+Coordinate 13 with position x(5.22572), y(0)
 Coordinate 14 with position x(6.1175), y(0)
 Coordinate 15 with position x(7.00928), y(0)
-Coordinate 16 with position x(7.90095), y(0.00936854)
+Coordinate 16 with position x(7.90095), y(0.00936852)
 Coordinate 17 with position x(8.79252), y(0.0287504)
 Coordinate 18 with position x(9.68404), y(0.0501091)
-Coordinate 19 with position x(10.5755), y(0.0742024)
+Coordinate 19 with position x(10.5755), y(0.0742023)
 Coordinate 20 with position x(11.467), y(0.0850747)
 Coordinate 21 with position x(12.3587), y(0.0721798)
-Coordinate 22 with position x(13.2497), y(0.0470654)
+Coordinate 22 with position x(13.2497), y(0.0470655)
 Coordinate 23 with position x(14.1384), y(-0.0267923)
-Coordinate 24 with position x(15.0261), y(-0.0989381)
-Coordinate 25 with position x(15.9056), y(0.0487702)
+Coordinate 24 with position x(15.0261), y(-0.0989382)
+Coordinate 25 with position x(15.9056), y(0.0487701)
 Coordinate 26 with position x(16.785), y(0.196478)
 Coordinate 27 with position x(17.6645), y(0.344187)
 Coordinate 28 with position x(18.5439), y(0.491895)
@@ -20748,12 +20748,12 @@ Left position 3 with coordinate x(9.22773), y(2.03821) and angle of 0.0217391
 Right position 3 with coordinate x(9.325), y(-1.95959) and angle of 0.027027
 Distance between these points is 3.99899
 
-Left position 4 with coordinate x(8.33637), y(2.01883) and angle of 0.0217391
+Left position 4 with coordinate x(8.33638), y(2.01883) and angle of 0.0217391
 Right position 4 with coordinate x(8.42329), y(-1.97928) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 5 with coordinate x(7.44502), y(1.99946) and angle of 0.0217391
-Right position 5 with coordinate x(7.53193), y(-1.99865) and angle of 0.0217391
+Right position 5 with coordinate x(7.53194), y(-1.99865) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 6 with coordinate x(6.59671), y(2) and angle of -0
@@ -20784,8 +20784,8 @@ Left position 12 with coordinate x(4.33395), y(2) and angle of 0
 Right position 12 with coordinate x(4.33395), y(-2) and angle of 0
 Distance between these points is 4
 
-Left position 13 with coordinate x(5.22573), y(2) and angle of -0
-Right position 13 with coordinate x(5.22573), y(-2) and angle of -0
+Left position 13 with coordinate x(5.22572), y(2) and angle of -0
+Right position 13 with coordinate x(5.22572), y(-2) and angle of -0
 Distance between these points is 4
 
 Left position 14 with coordinate x(6.1175), y(2) and angle of 0
@@ -20796,7 +20796,7 @@ Left position 15 with coordinate x(7.00928), y(2) and angle of -0
 Right position 15 with coordinate x(7.00928), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 16 with coordinate x(7.8575), y(2.00842) and angle of 0.0217391
+Left position 16 with coordinate x(7.85749), y(2.00842) and angle of 0.0217391
 Right position 16 with coordinate x(7.94441), y(-1.98969) and angle of 0.0217391
 Distance between these points is 3.99906
 
@@ -20845,7 +20845,7 @@ Right position 27 with coordinate x(17.9212), y(-2.18022) and angle of 0.101695
 Distance between these points is 3.97948
 
 Left position 28 with coordinate x(18.4039), y(1.86887) and angle of 0.101695
-Right position 28 with coordinate x(20.3754), y(-0.97327) and angle of 1.25
+Right position 28 with coordinate x(20.3754), y(-0.973271) and angle of 1.25
 Distance between these points is 3.45898
 
 Left position 29 with coordinate x(18.6884), y(1.8873) and angle of 0.589041
@@ -20853,7 +20853,7 @@ Right position 29 with coordinate x(20.7906), y(-0.4542) and angle of 1.25
 Distance between these points is 3.14672
 
 Left position 30 with coordinate x(19.406), y(2.31) and angle of 0.589041
-Right position 30 with coordinate x(21.2273), y(0.0916503) and angle of 1.25
+Right position 30 with coordinate x(21.2273), y(0.09165) and angle of 1.25
 Distance between these points is 2.87021
 
 Left position 31 with coordinate x(20.1178), y(2.72927) and angle of 0.589041
@@ -20898,7 +20898,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -20906,15 +20906,15 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(12.1223), y(0.115093)
-Final coordinate selected at index 0 with position x(12.1223), y(0) and distance to car of 0.115093
+Car has position x(12.1223), y(0.11509)
+Final coordinate selected at index 0 with position x(12.1223), y(0) and distance to car of 0.11509
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.89615
 Centre path coordinates calculated: 
 Coordinate 1 with position x(11.2262), y(0)
 Coordinate 2 with position x(10.33), y(0)
-Coordinate 3 with position x(9.43385), y(0)
+Coordinate 3 with position x(9.43386), y(0)
 Coordinate 4 with position x(8.53771), y(0)
 Coordinate 5 with position x(7.64156), y(0)
 Coordinate 6 with position x(6.74541), y(0)
@@ -20927,16 +20927,16 @@ Coordinate 12 with position x(4.21149), y(0)
 Coordinate 13 with position x(5.10764), y(0)
 Coordinate 14 with position x(6.00379), y(0)
 Coordinate 15 with position x(6.89994), y(0)
-Coordinate 16 with position x(7.79602), y(0.0070873)
+Coordinate 16 with position x(7.79601), y(0.00708728)
 Coordinate 17 with position x(8.69195), y(0.0265642)
 Coordinate 18 with position x(9.58786), y(0.0475096)
-Coordinate 19 with position x(10.4837), y(0.0717211)
-Coordinate 20 with position x(11.3796), y(0.0864777)
+Coordinate 19 with position x(10.4837), y(0.071721)
+Coordinate 20 with position x(11.3796), y(0.0864778)
 Coordinate 21 with position x(12.2756), y(0.0730684)
 Coordinate 22 with position x(13.1712), y(0.0534704)
-Coordinate 23 with position x(14.0644), y(-0.0199931)
+Coordinate 23 with position x(14.0644), y(-0.019993)
 Coordinate 24 with position x(14.9568), y(-0.101948)
-Coordinate 25 with position x(15.8409), y(0.0379044)
+Coordinate 25 with position x(15.8409), y(0.0379043)
 Coordinate 26 with position x(16.7246), y(0.186337)
 Coordinate 27 with position x(17.6084), y(0.33477)
 Coordinate 28 with position x(18.4922), y(0.483202)
@@ -21073,7 +21073,7 @@ Right position 29 with coordinate x(20.7682), y(-0.482202) and angle of 1.25
 Distance between these points is 3.1615
 
 Left position 30 with coordinate x(19.3708), y(2.28925) and angle of 0.589041
-Right position 30 with coordinate x(21.2), y(0.0574997) and angle of 1.25
+Right position 30 with coordinate x(21.2), y(0.0574994) and angle of 1.25
 Distance between these points is 2.88559
 
 Left position 31 with coordinate x(20.0887), y(2.7121) and angle of 0.589041
@@ -21118,7 +21118,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -21126,8 +21126,8 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(12.2915), y(0.0704182)
-Final coordinate selected at index 0 with position x(12.2915), y(0) and distance to car of 0.0704182
+Car has position x(12.2915), y(0.0704152)
+Final coordinate selected at index 0 with position x(12.2915), y(0) and distance to car of 0.0704152
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 0.90038
@@ -21142,17 +21142,17 @@ Coordinate 7 with position x(5.98884), y(0)
 Coordinate 8 with position x(5.08846), y(0)
 Coordinate 9 with position x(4.18808), y(0)
 Coordinate 10 with position x(3.2877), y(0)
-Coordinate 11 with position x(3.19268), y(0)
-Coordinate 12 with position x(4.09306), y(0)
-Coordinate 13 with position x(4.99344), y(0)
-Coordinate 14 with position x(5.89382), y(0)
+Coordinate 11 with position x(3.19267), y(0)
+Coordinate 12 with position x(4.09305), y(0)
+Coordinate 13 with position x(4.99343), y(0)
+Coordinate 14 with position x(5.89381), y(0)
 Coordinate 15 with position x(6.79419), y(0)
-Coordinate 16 with position x(7.69452), y(0.00488091)
-Coordinate 17 with position x(8.59469), y(0.0244498)
-Coordinate 18 with position x(9.49483), y(0.0449955)
-Coordinate 19 with position x(10.3949), y(0.0693212)
+Coordinate 16 with position x(7.69452), y(0.00488089)
+Coordinate 17 with position x(8.59469), y(0.0244497)
+Coordinate 18 with position x(9.49483), y(0.0449954)
+Coordinate 19 with position x(10.3949), y(0.0693211)
 Coordinate 20 with position x(11.295), y(0.0878348)
-Coordinate 21 with position x(12.1952), y(0.0739279)
+Coordinate 21 with position x(12.1952), y(0.073928)
 Coordinate 22 with position x(13.0954), y(0.0596652)
 Coordinate 23 with position x(13.9927), y(-0.0135915)
 Coordinate 24 with position x(14.8894), y(-0.0957583)
@@ -21189,10 +21189,10 @@ Right position 3 with coordinate x(9.64309), y(-1.951) and angle of 0.027027
 Distance between these points is 3.99854
 
 Left position 4 with coordinate x(8.64595), y(2.02556) and angle of 0.0217391
-Right position 4 with coordinate x(8.73286), y(-1.97255) and angle of 0.0217391
+Right position 4 with coordinate x(8.73287), y(-1.97255) and angle of 0.0217391
 Distance between these points is 3.99906
 
-Left position 5 with coordinate x(7.74599), y(2.006) and angle of 0.0217391
+Left position 5 with coordinate x(7.746), y(2.006) and angle of 0.0217391
 Right position 5 with coordinate x(7.83291), y(-1.99211) and angle of 0.0217391
 Distance between these points is 3.99906
 
@@ -21216,20 +21216,20 @@ Left position 10 with coordinate x(3.2877), y(2) and angle of -0
 Right position 10 with coordinate x(3.2877), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 11 with coordinate x(3.19268), y(2) and angle of -0
-Right position 11 with coordinate x(3.19268), y(-2) and angle of -0
+Left position 11 with coordinate x(3.19267), y(2) and angle of -0
+Right position 11 with coordinate x(3.19267), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 12 with coordinate x(4.09306), y(2) and angle of 0
-Right position 12 with coordinate x(4.09306), y(-2) and angle of 0
+Left position 12 with coordinate x(4.09305), y(2) and angle of 0
+Right position 12 with coordinate x(4.09305), y(-2) and angle of 0
 Distance between these points is 4
 
-Left position 13 with coordinate x(4.99344), y(2) and angle of -0
-Right position 13 with coordinate x(4.99344), y(-2) and angle of -0
+Left position 13 with coordinate x(4.99343), y(2) and angle of -0
+Right position 13 with coordinate x(4.99343), y(-2) and angle of -0
 Distance between these points is 4
 
-Left position 14 with coordinate x(5.89382), y(2) and angle of 0
-Right position 14 with coordinate x(5.89382), y(-2) and angle of 0
+Left position 14 with coordinate x(5.89381), y(2) and angle of 0
+Right position 14 with coordinate x(5.89381), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 15 with coordinate x(6.79419), y(2) and angle of -0
@@ -21293,11 +21293,11 @@ Right position 29 with coordinate x(20.7466), y(-0.509285) and angle of 1.25
 Distance between these points is 3.17581
 
 Left position 30 with coordinate x(19.3368), y(2.26919) and angle of 0.589041
-Right position 30 with coordinate x(21.1736), y(0.0244695) and angle of 1.25
+Right position 30 with coordinate x(21.1736), y(0.0244692) and angle of 1.25
 Distance between these points is 2.90046
 
 Left position 31 with coordinate x(20.0605), y(2.69548) and angle of 0.589041
-Right position 31 with coordinate x(21.7414), y(0.968771) and angle of 1.82
+Right position 31 with coordinate x(21.7414), y(0.96877) and angle of 1.82
 Distance between these points is 2.40979
 
 Left position 32 with coordinate x(20.3406), y(2.97477) and angle of 1.25862
@@ -21338,7 +21338,7 @@ Distance between these points is 2.43226
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -21346,15 +21346,15 @@ Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(12.4664), y(0.0762633)
-Final coordinate selected at index 0 with position x(12.4664), y(0) and distance to car of 0.0762633
+Car has position x(12.4664), y(0.0762598)
+Final coordinate selected at index 0 with position x(12.4664), y(0) and distance to car of 0.0762598
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 1.01336
 Centre path coordinates calculated: 
 Coordinate 1 with position x(11.453), y(0)
 Coordinate 2 with position x(10.4397), y(0)
-Coordinate 3 with position x(9.42631), y(0)
+Coordinate 3 with position x(9.42632), y(0)
 Coordinate 4 with position x(8.41295), y(0)
 Coordinate 5 with position x(7.39959), y(0)
 Coordinate 6 with position x(6.38622), y(0)
@@ -21372,13 +21372,13 @@ Coordinate 17 with position x(10.34), y(0.0678368)
 Coordinate 18 with position x(11.353), y(0.0869037)
 Coordinate 19 with position x(12.3663), y(0.0720989)
 Coordinate 20 with position x(13.3784), y(0.0365575)
-Coordinate 21 with position x(14.3881), y(-0.0497228)
-Coordinate 22 with position x(15.3933), y(-0.0372686)
+Coordinate 21 with position x(14.3881), y(-0.0497227)
+Coordinate 22 with position x(15.3933), y(-0.0372687)
 Coordinate 23 with position x(16.3926), y(0.130579)
 Coordinate 24 with position x(17.392), y(0.298426)
 Coordinate 25 with position x(18.3914), y(0.466273)
 Coordinate 26 with position x(19.3907), y(0.63412)
-Coordinate 27 with position x(20.3094), y(0.939281)
+Coordinate 27 with position x(20.3094), y(0.93928)
 Coordinate 28 with position x(20.8984), y(1.76002)
 Coordinate 29 with position x(21.4261), y(2.62169)
 Coordinate 30 with position x(22.0166), y(3.44268)
@@ -21404,7 +21404,7 @@ Left position 2 with coordinate x(10.3838), y(2.06902) and angle of 0.027027
 Right position 2 with coordinate x(10.4918), y(-1.92806) and angle of 0.027027
 Distance between these points is 3.99854
 
-Left position 3 with coordinate x(9.37113), y(2.04165) and angle of 0.027027
+Left position 3 with coordinate x(9.37114), y(2.04165) and angle of 0.027027
 Right position 3 with coordinate x(9.47916), y(-1.95543) and angle of 0.027027
 Distance between these points is 3.99854
 
@@ -21453,7 +21453,7 @@ Right position 14 with coordinate x(7.30068), y(-2) and angle of -0
 Distance between these points is 4
 
 Left position 15 with coordinate x(8.27039), y(2.0174) and angle of 0.0217391
-Right position 15 with coordinate x(8.35731), y(-1.98071) and angle of 0.0217391
+Right position 15 with coordinate x(8.3573), y(-1.98071) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 16 with coordinate x(9.28351), y(2.03942) and angle of 0.0217391
@@ -21488,7 +21488,7 @@ Left position 23 with coordinate x(16.5427), y(1.75667) and angle of -0.0923077
 Right position 23 with coordinate x(16.1882), y(-2.21446) and angle of -0.0871795
 Distance between these points is 3.98692
 
-Left position 24 with coordinate x(17.2443), y(1.75095) and angle of 0.101695
+Left position 24 with coordinate x(17.2443), y(1.75094) and angle of 0.101695
 Right position 24 with coordinate x(17.6469), y(-2.20811) and angle of 0.101695
 Distance between these points is 3.97948
 
@@ -21502,7 +21502,7 @@ Distance between these points is 3.15689
 
 Left position 27 with coordinate x(19.4773), y(2.35197) and angle of 0.589041
 Right position 27 with coordinate x(21.2826), y(0.160744) and angle of 1.25
-Distance between these points is 2.83911
+Distance between these points is 2.83912
 
 Left position 28 with coordinate x(20.2734), y(2.82093) and angle of 0.589041
 Right position 28 with coordinate x(21.8799), y(1.22074) and angle of 1.82
@@ -21558,21 +21558,21 @@ Distance between these points is 4.40311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
-Requested distance between points of 7
+Requested distance between points of 7.00001
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(12.6414), y(0.0738333)
-Final coordinate selected at index 0 with position x(12.6414), y(0) and distance to car of 0.0738333
+Car has position x(12.6414), y(0.0738344)
+Final coordinate selected at index 0 with position x(12.6414), y(0) and distance to car of 0.0738344
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 1.01774
 Centre path coordinates calculated: 
-Coordinate 1 with position x(11.6236), y(0)
+Coordinate 1 with position x(11.6237), y(0)
 Coordinate 2 with position x(10.6059), y(0)
 Coordinate 3 with position x(9.58817), y(0)
 Coordinate 4 with position x(8.57044), y(0)
@@ -21592,10 +21592,10 @@ Coordinate 17 with position x(10.2394), y(0.0651185)
 Coordinate 18 with position x(11.2568), y(0.0884475)
 Coordinate 19 with position x(12.2744), y(0.0730814)
 Coordinate 20 with position x(13.2912), y(0.043676)
-Coordinate 21 with position x(14.3053), y(-0.0421216)
-Coordinate 22 with position x(15.3156), y(-0.050311)
+Coordinate 21 with position x(14.3053), y(-0.0421215)
+Coordinate 22 with position x(15.3156), y(-0.0503111)
 Coordinate 23 with position x(16.3193), y(0.118261)
-Coordinate 24 with position x(17.323), y(0.286833)
+Coordinate 24 with position x(17.323), y(0.286832)
 Coordinate 25 with position x(18.3267), y(0.455404)
 Coordinate 26 with position x(19.3303), y(0.623976)
 Coordinate 27 with position x(20.2739), y(0.894873)
@@ -21625,7 +21625,7 @@ Right position 2 with coordinate x(10.6579), y(-1.92357) and angle of 0.027027
 Distance between these points is 3.99854
 
 Left position 3 with coordinate x(9.53288), y(2.04602) and angle of 0.027027
-Right position 3 with coordinate x(9.6409), y(-1.95106) and angle of 0.027027
+Right position 3 with coordinate x(9.64091), y(-1.95106) and angle of 0.027027
 Distance between these points is 3.99854
 
 Left position 4 with coordinate x(8.52646), y(2.02297) and angle of 0.0217391
@@ -21778,7 +21778,7 @@ Distance between these points is 4.40311
 
 
 --------
-Log message for getReferencePath() log data at Wed Jul 22 20:07:36 2020
+Log message for getReferencePath() log data at Wed Jul 22 20:31:14 2020
 -----------------------------------
 -----------------------------------
 At entering function, important variables were...
@@ -21786,8 +21786,8 @@ Requested distance between points of 7
 Requested number of points of 40
 --------
 First, finding centre coordinate closest to car position
-Car has position x(12.8164), y(0.0718443)
-Final coordinate selected at index 0 with position x(12.8164), y(0) and distance to car of 0.0718443
+Car has position x(12.8164), y(0.0718433)
+Final coordinate selected at index 0 with position x(12.8164), y(0) and distance to car of 0.0718433
 --------
 Next, getting centre coordinates
 Not enough centre coordinates with given distance. New temporary distance between points of 1.02211
@@ -21799,7 +21799,7 @@ Coordinate 4 with position x(8.72793), y(0)
 Coordinate 5 with position x(7.70581), y(0)
 Coordinate 6 with position x(6.6837), y(0)
 Coordinate 7 with position x(5.66159), y(0)
-Coordinate 8 with position x(4.63947), y(0)
+Coordinate 8 with position x(4.63948), y(0)
 Coordinate 9 with position x(3.61736), y(0)
 Coordinate 10 with position x(2.98475), y(0)
 Coordinate 11 with position x(4.00686), y(0)
@@ -21808,17 +21808,17 @@ Coordinate 13 with position x(6.05109), y(0)
 Coordinate 14 with position x(7.0732), y(0)
 Coordinate 15 with position x(8.09517), y(0.0135906)
 Coordinate 16 with position x(9.11704), y(0.0358052)
-Coordinate 17 with position x(10.1388), y(0.0624001)
+Coordinate 17 with position x(10.1388), y(0.0624)
 Coordinate 18 with position x(11.1605), y(0.0899913)
 Coordinate 19 with position x(12.1825), y(0.0740639)
-Coordinate 20 with position x(13.204), y(0.0507947)
-Coordinate 21 with position x(14.2226), y(-0.0345201)
-Coordinate 22 with position x(15.238), y(-0.0633538)
-Coordinate 23 with position x(16.246), y(0.105943)
+Coordinate 20 with position x(13.204), y(0.0507948)
+Coordinate 21 with position x(14.2226), y(-0.03452)
+Coordinate 22 with position x(15.238), y(-0.0633539)
+Coordinate 23 with position x(16.246), y(0.105942)
 Coordinate 24 with position x(17.254), y(0.275239)
 Coordinate 25 with position x(18.2619), y(0.444535)
 Coordinate 26 with position x(19.2699), y(0.613832)
-Coordinate 27 with position x(20.2384), y(0.850464)
+Coordinate 27 with position x(20.2384), y(0.850463)
 Coordinate 28 with position x(20.8478), y(1.66801)
 Coordinate 29 with position x(21.3663), y(2.54634)
 Coordinate 30 with position x(21.9718), y(3.36755)
@@ -21864,8 +21864,8 @@ Left position 7 with coordinate x(5.66159), y(2) and angle of 0
 Right position 7 with coordinate x(5.66159), y(-2) and angle of 0
 Distance between these points is 4
 
-Left position 8 with coordinate x(4.63947), y(2) and angle of 0
-Right position 8 with coordinate x(4.63947), y(-2) and angle of 0
+Left position 8 with coordinate x(4.63948), y(2) and angle of 0
+Right position 8 with coordinate x(4.63948), y(-2) and angle of 0
 Distance between these points is 4
 
 Left position 9 with coordinate x(3.61736), y(2) and angle of -0
@@ -21897,7 +21897,7 @@ Right position 15 with coordinate x(8.13862), y(-1.98546) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 16 with coordinate x(9.07358), y(2.03486) and angle of 0.0217391
-Right position 16 with coordinate x(9.1605), y(-1.96325) and angle of 0.0217391
+Right position 16 with coordinate x(9.16049), y(-1.96325) and angle of 0.0217391
 Distance between these points is 3.99906
 
 Left position 17 with coordinate x(10.0848), y(2.06094) and angle of 0.027027
@@ -21934,14 +21934,14 @@ Distance between these points is 3.97948
 
 Left position 25 with coordinate x(18.12), y(1.84) and angle of 0.101695
 Right position 25 with coordinate x(20.2422), y(-1.1397) and angle of 1.25
-Distance between these points is 3.65819
+Distance between these points is 3.6582
 
 Left position 26 with coordinate x(18.5633), y(1.81356) and angle of 0.589041
 Right position 26 with coordinate x(20.7182), y(-0.544766) and angle of 1.25
 Distance between these points is 3.1946
 
 Left position 27 with coordinate x(19.3857), y(2.29802) and angle of 0.589041
-Right position 27 with coordinate x(21.2115), y(0.0719273) and angle of 1.25
+Right position 27 with coordinate x(21.2115), y(0.0719269) and angle of 1.25
 Distance between these points is 2.87909
 
 Left position 28 with coordinate x(20.1957), y(2.77512) and angle of 0.589041
