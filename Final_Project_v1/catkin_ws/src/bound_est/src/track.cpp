@@ -22,7 +22,7 @@ Track::Track(std::shared_ptr<Visualisation> visualisation_cont)
 
 void Track::addCone(const double &x, const double &y, const BoundPos &pos)
 {
-    auto cone_check = checkConePos(x, y);
+    auto cone_check = checkConePos({x, y});
     auto code = cone_check.first;
     switch (code)
     {
@@ -62,29 +62,20 @@ std::ostream& operator<<(std::ostream& os, Track& track)
     return os;
 }
 
-std::pair<Track::ConeError, Cone *> Track::checkConePos(const double &x, const double &y)
+std::pair<Track::ConeError, Cone *> Track::checkConePos(const coord &point)
 {
     //If vectors empty, std::find_if() returns last so no undefned behaviour at first check.
-
     //Check if cone in already processed cones
-    auto it = std::find_if(processed_cone_list.begin(), processed_cone_list.end(), [&x, &y] (auto const &cone)
+    auto it = std::find_if(processed_cone_list.begin(), processed_cone_list.end(), [&point] (auto const &cone)
     {
-        return ((abs(x-cone->getX())*abs(x-cone->getX())+(abs(y-cone->getY())*abs(y-cone->getY())))<=minRadiusSquared);
+        return withinCircleOfRadius(point, cone->getCoordinates(), REPEATED_CONE_RADIUS);
     });
     if (it!=processed_cone_list.end()) return std::make_pair(ConeError::overwrite, it->get());
 
-    //  Might not be necessary. Think it over
-    // //Cone is judged to be new cone. Check if cone is outlier
-    // auto &last_cone = cone_list.back();
-    // if ((powf(x-last_cone->getX(), 2)+powf(y-last_cone->getY(), 2))>=maxRadiusSquared)
-    // {
-    //     return std::make_pair(ConeError::outlier, nullptr);
-    // }
-  
     //Check if cone in cones yet to be processed
-    it = std::find_if(new_cones.begin(), new_cones.end(), [&x, &y] (auto const &cone)
+    it = std::find_if(new_cones.begin(), new_cones.end(), [&point] (auto const &cone)
     {
-        return ((abs(x-cone->getX())*abs(x-cone->getX())+(abs(y-cone->getY())*abs(y-cone->getY())))<=minRadiusSquared);
+        return withinCircleOfRadius(point, cone->getCoordinates(), REPEATED_CONE_RADIUS);
     });
     if (it!=new_cones.end()) return std::make_pair(ConeError::overwrite, it->get());
 
@@ -101,27 +92,41 @@ void Track::processNextSection()
 	    visualisation->showNewCones(new_cones);
         visualisation->showFramedCones(cones_within_range);
     #endif
-    //Find entry point into next track section
-    coord entry_point = (centre_coords.size()<1) ? car->getPosition().p : centre_coords.back();
+
     //Seperate cones into left and right
     auto seperated_cones = seperateConeList(cones_within_range);
     if (seperated_cones.first.size()<=0 || seperated_cones.second.size()<=0) return;
-//Find end point goal of section
-	coord section_end = findEndGoal(entry_point, seperated_cones);
     #ifdef VISUALISE
-        visualisation->showLeftCones(seperated_cones.first);
-        visualisation->showRightCones(seperated_cones.second);
+    visualisation->showLeftCones(seperated_cones.first);
+    visualisation->showRightCones(seperated_cones.second);
     #endif
-    //Get paths traversing framed track region
-    auto paths = triangulate->getTraversingPaths(cones_within_range, entry_point, section_end, seperated_cones);
-    #ifdef VISUALISE
-        visualisation->showViablePaths(paths);
-    #endif
-    //Add new coordinates into final result
 
+    //Find entry point into next track section
+    coord entry_point;
+    bool starting_from_car;
+    if (centre_coords.size()<1)
+    {
+        entry_point = car->getPosition().p;
+        starting_from_car = true;
+    }
+    else
+    {
+        entry_point = centre_coords.back();
+        starting_from_car = false;
+    }
+
+    //Find end point goal of section
+	coord section_end = findEndGoal(entry_point, seperated_cones);
+
+    //Get paths traversing framed track region
+    auto paths = triangulate->getTraversingPaths(cones_within_range, entry_point, section_end, seperated_cones, starting_from_car);
+    #ifdef VISUALISE
+        //visualisation->showViablePaths(paths);
+    #endif
+
+    //Add new coordinates into final result
     auto best_path = path_analysis->findBestPath(paths, section_end, cones_within_range, seperated_cones.first, seperated_cones.second);
     std::move(best_path.begin(), best_path.end(), std::back_inserter(centre_coords));
-
 
     //Move new cones into processed cones
     std::move(cones_within_range.begin(), cones_within_range.end(), std::back_inserter(processed_cone_list)); 
@@ -130,8 +135,10 @@ void Track::processNextSection()
     std::move(seperated_cones.second.begin(), seperated_cones.second.end(), std::back_inserter(processed_cone_list_right));
     #ifdef VISUALISE
 	    visualisation->showOldCones(processed_cone_list);
+        visualisation->showCentreCoords(centre_coords);
     #endif
-        cones_within_range.clear(); 
+    cones_within_range.clear(); 
+    if (centre_coords.size()>2) track_complete = checkIfTrackComplete(centre_coords.back());
 }
 
 std::vector<const Cone*> Track::getConeList()
@@ -160,16 +167,6 @@ std::vector<const Cone*> Track::getNewCones()
         conePtrs.push_back(cone.get());
     }
     return conePtrs;
-}
-
-void Track::recalcSpline()
-{
-    std::vector<double> x, y;
-    for (const coord &xy : centre_coords)
-    {
-        x.push_back(xy.x);
-        y.push_back(xy.y);
-    }
 }
 
 std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateConeList(std::vector<std::unique_ptr<Cone>> &cone_list)
@@ -306,7 +303,7 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
     //Santisise inputs
     if (dist_between_points<=0 || number_of_points<=0)
     {
-        std::cerr<<"getCentreLine given 0 or negative-valued parameters"<<std::endl;
+        std::cerr<<"getReferencePath given 0 or negative-valued parameters"<<std::endl;
         #ifdef DEBUG
         log->write(ss<<"Inappropriate input parameters, either 0 or negative valued. Returning from function", true);
         #endif
@@ -323,35 +320,16 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
     #ifdef DEBUG
     log->write(ss<<"Car has position x("<<car_pos.x<<"), y("<<car_pos.y<<")");
     #endif
-    int best_dist_index{0};
-    double best_dist{distBetweenPoints(centre_coords[best_dist_index], car_pos)};
-    #ifdef DEBUG
-    log->write(ss<<"Coordinate at index 0 with position x("<<centre_coords[best_dist_index].x<<"), y("<<centre_coords[best_dist_index].y<<") has distance to car of "<<best_dist);
-    #endif
-    for (int i = 1; i<centre_coords.size(); i++)
-    {
-        auto new_dist = distBetweenPoints(centre_coords[i], car_pos);
-        #ifdef DEBUG
-        log->write(ss<<"Coordinate at index "<<i<<" with position x("<<centre_coords[i].x<<"), y("<<centre_coords[i].y<<") has distance to car of "<<new_dist);
-        #endif
-        if (new_dist<best_dist)
-        {
-            #ifdef DEBUG
-            log->write(ss<<"Selected as new best centre coordinate");
-            #endif
-            best_dist_index = i;
-            best_dist = new_dist;
-        }
-    }
-    #ifdef DEBUG
-    log->write(ss<<"Final coordinate selected at index "<<best_dist_index<<" with position x("<<centre_coords[best_dist_index].x<<"), y("<<centre_coords[best_dist_index].y<<") and distance to car of "<<best_dist, true);
-    #endif
+
+    auto nearest_centre = getClosestPointOnCentreLine(car_pos);
 
     #ifdef DEBUG
+    double best_dist{distBetweenPoints(nearest_centre.first, car_pos)};
+    log->write(ss<<"Final coordinate selected at index "<<nearest_centre.second<<" with position x("<<nearest_centre.first.x<<"), y("<<nearest_centre.first.y<<") and distance to car of "<<best_dist, true);
     log->write(ss<<"Next, getting centre coordinates");
     #endif
     //Get centre coords
-    auto centre_coord_pair = interpolateCentreCoordsDiscrete(best_dist_index, number_of_points, dist_between_points); 
+    auto centre_coord_pair = interpolateCentreCoordsDiscrete(nearest_centre.second, nearest_centre.first, number_of_points, dist_between_points); 
     #ifdef DEBUG
     log->write(ss<<"Not enough centre coordinates with given distance. New temporary distance between points of "<<centre_coord_pair.second);
     #endif
@@ -491,7 +469,7 @@ std::vector<Pos> Track::findBoundaryPointsAndSlopes(const std::vector<const Cone
     return output_vec;
 }
 
-std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(const int &original_index, const int &number_of_points, const double &distance)
+std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(const int &original_index, const coord &start_point, const int &number_of_points, const double &distance)
 {
     #ifdef DEBUG
         std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("INTERPOLATE_CENTRE", "interpolateCentreCoordsDiscrete()", reset_logs);
@@ -523,7 +501,7 @@ std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(con
     //Move into developing points
     std::vector<coord> output_vec;
     int current_index{original_index};
-    coord current_coord {centre_coords[original_index]};
+    coord current_coord {start_point};
     double next_distance;
 
     for (int i = 0; i<number_of_points; i++)
@@ -612,22 +590,6 @@ std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(con
     return std::make_pair(output_vec, temp_distance);
 }
 
-coord getNearestPointOnArc(const coord &point)
-{
-    double t_val = 0;
-    double error_val = std::numeric_limits<double>::max();
-}
-
-bool Track::checkShapeOverlap()
-{
-
-}
-
-bool Track::checkForCollision(const coord &carPos, const double &carDirection)
-{
-    
-}
-
 void Track::extractNewConesInRange (std::vector<std::unique_ptr<Cone>> &cones_to_extract, std::vector<std::unique_ptr<Cone>> &extracted_cones, const std::unique_ptr<Car> &car)
 {
     auto car_pos = car->getPosition().p;
@@ -644,4 +606,103 @@ void Track::extractNewConesInRange (std::vector<std::unique_ptr<Cone>> &cones_to
         std::move(cones_to_extract.begin(), result, std::back_inserter(extracted_cones));
         cones_to_extract.erase(cones_to_extract.begin(), result);
     }
+}
+
+bool Track::trackIsComplete()
+{
+    return track_complete;
+}
+
+std::pair<coord, int> Track::getClosestPointOnCentreLine(const coord &point)
+{
+    coord final_point_to_check;
+    auto nearest_coord_index = findClosestCentreCoordIndex(point);
+    if (centre_coords.size()>1)
+    {
+        int second_closest_index;
+        int index_1 =  ((nearest_coord_index-1)>=0) ?  (nearest_coord_index-1) : (centre_coords.size()-1);
+        int index_2 =  ((nearest_coord_index+1)<centre_coords.size()) ? (nearest_coord_index+1) : 9;
+        if (index_1 == index_2) second_closest_index = index_1;
+        else
+        {
+            second_closest_index = (distBetweenPoints(point, centre_coords[index_1])<=distBetweenPoints(point, centre_coords[index_2])) ? index_1 : index_2;
+        }
+        final_point_to_check = getClosestPointOnLine(centre_coords[nearest_coord_index], centre_coords[second_closest_index], point);
+    }
+    else final_point_to_check = centre_coords[nearest_coord_index];
+    return std::make_pair(final_point_to_check, nearest_coord_index);
+}
+
+bool Track::carIsInsideTrack()
+{
+    if (centre_coords.size() <=0 ) return true;
+    auto car_pos = car->getPosition();
+    auto closest_point = getClosestPointOnCentreLine(car_pos.p).first;
+    auto radius = findClosestConeToPoint(car_pos.p, processed_cone_list).second;
+    Rect car_edges;
+    car_edges.a = projectPoint(car_pos, -CarParams.width_div_2, CarParams.length_div_2);
+    car_edges.b = projectPoint(car_pos, CarParams.width_div_2, CarParams.length_div_2);
+    car_edges.c = projectPoint(car_pos, CarParams.width_div_2, -CarParams.length_div_2);
+    car_edges.d = projectPoint(car_pos, -CarParams.width_div_2, -CarParams.length_div_2);
+
+    coord furthest_point{car_edges.a};
+    double furthest_dist{distBetweenPoints(closest_point, car_edges.a)};
+    auto dist_b = distBetweenPoints(car_edges.b, closest_point);
+    auto dist_c = distBetweenPoints(car_edges.c, closest_point);
+    auto dist_d = distBetweenPoints(car_edges.d, closest_point);
+    if (dist_b>furthest_dist)
+    {
+        furthest_dist = dist_b;
+        furthest_point = car_edges.b;
+    }
+    if (dist_b>furthest_dist)
+    {
+        furthest_dist = dist_c;
+        furthest_point = car_edges.c;
+    }
+    if (dist_b>furthest_dist)
+    {
+        furthest_dist = dist_c;
+        furthest_point = car_edges.c;
+    }
+    return withinCircleOfRadius(furthest_point, closest_point, radius);
+}
+
+bool Track::pointIsInsideTrack(const coord &point)
+{
+    auto closest_point = getClosestPointOnCentreLine(point);
+    auto radius = findClosestConeToPoint(point, processed_cone_list).second;
+    return withinCircleOfRadius(point, closest_point.first, radius);
+}   
+
+int Track::findClosestCentreCoordIndex(const coord &point)
+{
+    if (centre_coords.size()==1) return 0;
+    int best_dist_index{0};
+    double best_dist{distBetweenPoints(centre_coords[best_dist_index], point)};
+    for (int i = 1; i<centre_coords.size(); i++)
+    {
+        auto new_dist = distBetweenPoints(centre_coords[i], point);
+        if (new_dist<best_dist)
+        {
+            best_dist_index = i;
+            best_dist = new_dist;
+        }
+    }
+}
+
+bool Track::checkIfTrackComplete(const coord &last_centre_point)
+{
+    if (withinCircleOfRadius(last_centre_point, centre_coords[0], TRACK_COMPLETE_CHECK_RADIUS))
+    {
+        double div_dist = distBetweenPoints(last_centre_point, centre_coords[0])/NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS;
+        auto direction = atan2(centre_coords[0].y-centre_coords[0].y, centre_coords[0].x-centre_coords[0].x);
+        for (int i = 1; i<=NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS; i++)
+        {
+            auto projected_point = projectPoint({last_centre_point, direction}, div_dist, div_dist);
+            if (!pointIsInsideTrack(projected_point)) return false;
+        }
+        return true;
+    }
+    return false;
 }

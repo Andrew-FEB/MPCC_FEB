@@ -71,3 +71,15 @@ inline coord findMidpoint(const coord &a, const coord &b)
 	return output;
 }
 
+inline bool withinCircleOfRadius(const coord &point_to_check, const coord &circle_origin, const double &radius)
+{
+    return ((pow( (point_to_check.x-circle_origin.x) , 2) + pow( (point_to_check.y-circle_origin.y) , 2)) <= radius);
+}
+
+inline coord projectPoint(const Pos &pos, const double &width, const double &height)
+{
+    return {pos.p.x + width*cos(pos.phi), pos.p.y + height*sin(pos.phi)};
+}
+
+
+

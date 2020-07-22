@@ -93,14 +93,6 @@ struct triang
 	}
 };
 
-//Convenience struct for Car dimensions
-typedef struct carDims
-{
-	double length{0};
-	double width{0};
-} carDims;
-
-
 struct Rect
 {
 	coord a;
@@ -168,8 +160,8 @@ constexpr struct CarParams {
 	double m = 1573;  // [kg] mass of the vehicle
 	double lf = 1.35; // [m] length of the front part of the vehicle (this is from front axle to COG)
 	double lr = 1.35; // length of the rear part of the vehicle  (this is from front axle to COG)
-	double length = 24; // JUNK NUMBER
-	double width = 12;
+	double length_div_2 = 1; // JUNK NUMBER
+	double width_div_2 = 0.5;
 
 
 	double weightF = lr/(lf + lr);

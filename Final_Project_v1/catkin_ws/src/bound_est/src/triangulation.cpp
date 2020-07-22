@@ -14,24 +14,24 @@ Triangulation::Triangulation(std::shared_ptr<Visualisation> visualisation_cont)
 	#endif
 }
 
-std::vector<std::vector<coord>> Triangulation::getTraversingPaths(const std::vector<std::unique_ptr<Cone>>& cone_list, const coord &last_position, const coord &section_end, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists)
+std::vector<std::vector<coord>> Triangulation::getTraversingPaths(const std::vector<std::unique_ptr<Cone>>& cone_list, const coord &last_position, const coord &section_end, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists, const bool &starting_from_car)
 {
 	//Apply triangulation on cone points
 	std::vector<triang> triangle_list = findTrianglePoints(cone_list, last_position);
+
 	//Connect cone positions to triangle values for easier processing later
 	placeConesInTriangle(triangle_list, cone_list);
 
 	#ifdef VISUALISE
 		if (triangle_list.size()>0) visualisation->showTriangles(triangle_list);
-	#endif
-
-	#ifdef VISUALISE
 		visualisation->showEndPoint(section_end);
 	#endif
+
 	//Find triangle midpoint in section closest to car
 	auto first = calcFirstPoint(triangle_list, last_position);
+
 	//Collect all possible paths in search space
-	auto paths = findViablePaths(first, triangle_list, last_position, section_end);
+	auto paths = findViablePaths(first, triangle_list, section_end);
 	return paths;
 }
 
@@ -314,15 +314,14 @@ coord Triangulation::calcFirstPoint(const std::vector<triang> &triangle_list, co
 	return parent;
 }
 
-std::vector<std::vector<coord>> Triangulation::findViablePaths(coord &parent, std::vector<triang>& triangle_list, const coord &start_point, const coord &section_end)
+std::vector<std::vector<coord>> Triangulation::findViablePaths(coord &parent, std::vector<triang>& triangle_list, const coord &section_end)
 {
 	#ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("DEBUG_PATHEXPLORATION", "Path Exploration", reset_logs);
     std::stringstream ss;
 	log->write(ss<<"At time of entering function key variables were:");
-	log->write(ss<<"Car location point x("<<start_point.x<<"), y("<<start_point.y<<")");
 	log->write(ss<<"Section start point x("<<parent.x<<"), y("<<parent.y<<")");
-	log->write(ss<<"Section end point x("<<section_end.x<<"), y("<<start_point.y<<")");
+	log->write(ss<<"Section end point x("<<section_end.x<<"), y("<<section_end.y<<")");
 	log->write(ss<<"Triangle list size = "<<triangle_list.size()); 
 	auto debug_mids = findMidsInTriangVec(triangle_list, parent);
 	log->write(ss<<"Number of midpoints in section = "<<debug_mids.size());

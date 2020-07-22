@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
     // //Configure ros messages
     // rosbag::Bag cone_data;
-    // cone_data.open("/home/dada/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
+    // cone_data.open("/home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
     // rosbag::View view(cone_data);
     // std::vector<std::string> topics;
     // //topics.push_back(std::string("carpos")); //Testing topic, remove in final
@@ -135,6 +135,7 @@ int main(int argc, char *argv[])
         int loops_completed = 0;
     #endif
 
+    bool continue_driving{false};
     //Enter refresh loop
     while (1)
     {
@@ -143,7 +144,7 @@ int main(int argc, char *argv[])
         //MAIN LOOP
         //Collect IMU data
         //Check critical conditions 
-        //If outside track constraints - error state
+        continue_driving = track->carIsInsideTrack();
         //Update track - read-in data if available
         //BAG READ IN BLOCKING CALL
         /*
@@ -152,21 +153,16 @@ int main(int argc, char *argv[])
         *ros::Subscriber cone_sub = cone_reader.subscribe("/map", 1000, chatterCallback);
         *ros::spinOnce();
         */
-        //Process track section
-        track->processNextSection();
-<<<<<<< Updated upstream
-=======
-        //TEST
-        // auto path = track->getReferencePath(1, 10);
-        // std::cerr<<"ref path size = "<<path.size()<<std::endl;
-        //ETEST
->>>>>>> Stashed changes
-        //MPCC
-        auto car = track->getCar();
-        auto control = mpcc->solve(*car, *track);
-        //Update car outputs
-        car->updateCar(control, time_step);
-
+        if (continue_driving)
+        {
+            //Process track section
+            track->processNextSection();
+            //MPCC
+            auto car = track->getCar();
+            auto control = mpcc->solve(*car, *track);
+            //Update car outputs
+            car->updateCar(control, time_step);
+        }
         #ifdef VISUALISE
             visualisation->showCar(car->getPosition());
             visualisation->showCarDirection(car->getPosition());
