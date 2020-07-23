@@ -18,6 +18,9 @@
     #undef VISUALISE
     #undef VISUALISE_RQT
 #endif
+#ifndef VISUALISE
+    #undef VISUALISE_RQT
+#endif
 
 constexpr long ROS_REFRESH_TIME_MS = 1000;
 
@@ -37,10 +40,6 @@ constexpr int pred_horizon = 40;
 
 int main(int argc, char *argv[])
 {
-    #ifdef VISUALISE_RQT
-        // Recording starting time
-        auto start = clock();
-    #endif
     //Configure ros
     ros::init(argc, argv, "boundary_est");
 
@@ -154,6 +153,10 @@ int main(int argc, char *argv[])
     //Enter refresh loop
     while (1)
     {
+        #ifdef VISUALISE_RQT
+            // Recording starting time
+            auto start = clock();
+        #endif
         //TEST
         //ETEST
         //MAIN LOOP
@@ -192,7 +195,7 @@ int main(int argc, char *argv[])
         #endif
 
         #ifdef DEBUG_SLOW
-            usleep(300000);
+            usleep(100000);
             std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
         #endif
 
@@ -210,7 +213,7 @@ int main(int argc, char *argv[])
         #ifdef VISUALISE_RQT
             //Recording finish time
             auto finish = clock();
-            auto solve_time = ((float)(finish-start))/CLOCKS_PER_SEC);
+            auto solve_time = (((float)(finish-start))/CLOCKS_PER_SEC) * 1000; // in ms
             visualisation->plotSolveTime(solve_time);
         #endif
     }

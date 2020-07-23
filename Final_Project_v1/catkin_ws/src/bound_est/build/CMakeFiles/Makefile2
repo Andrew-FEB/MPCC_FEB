@@ -127,22 +127,11 @@ clean: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 # Target rules for target CMakeFiles/visualization_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-<<<<<<< HEAD
-CMakeFiles/bound_est_generate_messages_nodejs.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/all
-CMakeFiles/bound_est_generate_messages_nodejs.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Pos.dir/all
-CMakeFiles/bound_est_generate_messages_nodejs.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Conepos.dir/all
-CMakeFiles/bound_est_generate_messages_nodejs.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_nodejs.dir/build.make CMakeFiles/bound_est_generate_messages_nodejs.dir/depend
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_nodejs.dir/build.make CMakeFiles/bound_est_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num=22,23,24 "Built target bound_est_generate_messages_nodejs"
-.PHONY : CMakeFiles/bound_est_generate_messages_nodejs.dir/all
-=======
 CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all:
 	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target visualization_msgs_generate_messages_nodejs"
 .PHONY : CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
->>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 
 # Build rule for subdir invocation for target.
 CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
@@ -234,28 +223,11 @@ clean: CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
 # Target rules for target CMakeFiles/bound_est_genlisp.dir
 
 # All Build rule for target.
-<<<<<<< HEAD
-CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_eus.dir/all
-CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_nodejs.dir/all
-CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_lisp.dir/all
-CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_py.dir/all
-CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_cpp.dir/all
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages.dir/build.make CMakeFiles/bound_est_generate_messages.dir/depend
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages.dir/build.make CMakeFiles/bound_est_generate_messages.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target bound_est_generate_messages"
-.PHONY : CMakeFiles/bound_est_generate_messages.dir/all
-
-# Include target in all.
-all: CMakeFiles/bound_est_generate_messages.dir/all
-
-.PHONY : all
-=======
 CMakeFiles/bound_est_genlisp.dir/all: CMakeFiles/bound_est_generate_messages_lisp.dir/all
 	$(MAKE) -f CMakeFiles/bound_est_genlisp.dir/build.make CMakeFiles/bound_est_genlisp.dir/depend
 	$(MAKE) -f CMakeFiles/bound_est_genlisp.dir/build.make CMakeFiles/bound_est_genlisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target bound_est_genlisp"
 .PHONY : CMakeFiles/bound_est_genlisp.dir/all
->>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 
 # Build rule for subdir invocation for target.
 CMakeFiles/bound_est_genlisp.dir/rule: cmake_check_build_system
@@ -929,6 +901,48 @@ clean: CMakeFiles/actionlib_generate_messages_cpp.dir/clean
 # Target rules for target CMakeFiles/Bound_Est.dir
 
 # All Build rule for target.
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_eus.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_cpp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_py.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_py.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_cpp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_eus.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_eus.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_lisp.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_nodejs.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_py.dir/all
+CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_py.dir/all
@@ -948,48 +962,6 @@ CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_py.dir/all
 CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf2_msgs_generate_messages_py.dir/all
 CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/Bound_Est.dir/all: CMakeFiles/bound_est_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f CMakeFiles/Bound_Est.dir/build.make CMakeFiles/Bound_Est.dir/depend
 	$(MAKE) -f CMakeFiles/Bound_Est.dir/build.make CMakeFiles/Bound_Est.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target Bound_Est"
@@ -1090,86 +1062,11 @@ clean: CMakeFiles/tests.dir/clean
 # Target rules for target CMakeFiles/std_srvs_generate_messages_eus.dir
 
 # All Build rule for target.
-<<<<<<< HEAD
-CMakeFiles/roscpp_generate_messages_lisp.dir/all:
-	$(MAKE) -f CMakeFiles/roscpp_generate_messages_lisp.dir/build.make CMakeFiles/roscpp_generate_messages_lisp.dir/depend
-	$(MAKE) -f CMakeFiles/roscpp_generate_messages_lisp.dir/build.make CMakeFiles/roscpp_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
-.PHONY : CMakeFiles/roscpp_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/roscpp_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles 0
-.PHONY : CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# clean rule for target.
-CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	$(MAKE) -f CMakeFiles/roscpp_generate_messages_lisp.dir/build.make CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-.PHONY : CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/bound_est_generate_messages_eus.dir
-
-# All Build rule for target.
-CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/all
-CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Pos.dir/all
-CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Conepos.dir/all
-CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_eus.dir/build.make CMakeFiles/bound_est_generate_messages_eus.dir/depend
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_eus.dir/build.make CMakeFiles/bound_est_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num=15,16,17,18 "Built target bound_est_generate_messages_eus"
-.PHONY : CMakeFiles/bound_est_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/bound_est_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/bound_est_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles 0
-.PHONY : CMakeFiles/bound_est_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-bound_est_generate_messages_eus: CMakeFiles/bound_est_generate_messages_eus.dir/rule
-
-.PHONY : bound_est_generate_messages_eus
-
-# clean rule for target.
-CMakeFiles/bound_est_generate_messages_eus.dir/clean:
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_eus.dir/build.make CMakeFiles/bound_est_generate_messages_eus.dir/clean
-.PHONY : CMakeFiles/bound_est_generate_messages_eus.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/bound_est_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/clean_test_results.dir
-
-# All Build rule for target.
-CMakeFiles/clean_test_results.dir/all:
-	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/depend
-	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target clean_test_results"
-.PHONY : CMakeFiles/clean_test_results.dir/all
-=======
 CMakeFiles/std_srvs_generate_messages_eus.dir/all:
 	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_eus.dir/build.make CMakeFiles/std_srvs_generate_messages_eus.dir/depend
 	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_eus.dir/build.make CMakeFiles/std_srvs_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_eus"
 .PHONY : CMakeFiles/std_srvs_generate_messages_eus.dir/all
->>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 
 # Build rule for subdir invocation for target.
 CMakeFiles/std_srvs_generate_messages_eus.dir/rule: cmake_check_build_system
@@ -2029,22 +1926,11 @@ clean: CMakeFiles/tf_generate_messages_py.dir/clean
 # Target rules for target CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir
 
 # All Build rule for target.
-<<<<<<< HEAD
-CMakeFiles/bound_est_generate_messages_py.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/all
-CMakeFiles/bound_est_generate_messages_py.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Pos.dir/all
-CMakeFiles/bound_est_generate_messages_py.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Conepos.dir/all
-CMakeFiles/bound_est_generate_messages_py.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_py.dir/build.make CMakeFiles/bound_est_generate_messages_py.dir/depend
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_py.dir/build.make CMakeFiles/bound_est_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num=25,26,27,28 "Built target bound_est_generate_messages_py"
-.PHONY : CMakeFiles/bound_est_generate_messages_py.dir/all
-=======
 CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/all:
 	$(MAKE) -f CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/build.make CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/depend
 	$(MAKE) -f CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/build.make CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target _bound_est_generate_messages_check_deps_ConeMap"
 .PHONY : CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/all
->>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 
 # Build rule for subdir invocation for target.
 CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/rule: cmake_check_build_system
@@ -2200,10 +2086,10 @@ clean: CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
 # Target rules for target CMakeFiles/bound_est_generate_messages_eus.dir
 
 # All Build rule for target.
+CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
 CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Conepos.dir/all
 CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Pos.dir/all
 CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/all
-CMakeFiles/bound_est_generate_messages_eus.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f CMakeFiles/bound_est_generate_messages_eus.dir/build.make CMakeFiles/bound_est_generate_messages_eus.dir/depend
 	$(MAKE) -f CMakeFiles/bound_est_generate_messages_eus.dir/build.make CMakeFiles/bound_est_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num=15,16,17,18 "Built target bound_est_generate_messages_eus"
@@ -2491,22 +2377,11 @@ clean: CMakeFiles/actionlib_msgs_generate_messages_py.dir/clean
 # Target rules for target CMakeFiles/tf2_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-<<<<<<< HEAD
-CMakeFiles/bound_est_generate_messages_cpp.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-CMakeFiles/bound_est_generate_messages_cpp.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_ConeMap.dir/all
-CMakeFiles/bound_est_generate_messages_cpp.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Pos.dir/all
-CMakeFiles/bound_est_generate_messages_cpp.dir/all: CMakeFiles/_bound_est_generate_messages_check_deps_Conepos.dir/all
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_cpp.dir/build.make CMakeFiles/bound_est_generate_messages_cpp.dir/depend
-	$(MAKE) -f CMakeFiles/bound_est_generate_messages_cpp.dir/build.make CMakeFiles/bound_est_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num=12,13,14 "Built target bound_est_generate_messages_cpp"
-.PHONY : CMakeFiles/bound_est_generate_messages_cpp.dir/all
-=======
 CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all:
 	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make CMakeFiles/tf2_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target tf2_msgs_generate_messages_cpp"
 .PHONY : CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
->>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
@@ -2566,79 +2441,11 @@ clean: CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
 # Target rules for target CMakeFiles/tf2_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
-<<<<<<< HEAD
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf2_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_srvs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/topic_tools_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/bound_est_generate_messages_cpp.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/tf_generate_messages_py.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/Bound_Est.dir/all: CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
-	$(MAKE) -f CMakeFiles/Bound_Est.dir/build.make CMakeFiles/Bound_Est.dir/depend
-	$(MAKE) -f CMakeFiles/Bound_Est.dir/build.make CMakeFiles/Bound_Est.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target Bound_Est"
-.PHONY : CMakeFiles/Bound_Est.dir/all
-=======
 CMakeFiles/tf2_msgs_generate_messages_eus.dir/all:
 	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make CMakeFiles/tf2_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target tf2_msgs_generate_messages_eus"
 .PHONY : CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
->>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
@@ -2794,11 +2601,11 @@ clean: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/clean
 # Target rules for target CMakeFiles/bound_est_generate_messages.dir
 
 # All Build rule for target.
+CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_lisp.dir/all
+CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_py.dir/all
 CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_eus.dir/all
 CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_cpp.dir/all
 CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_nodejs.dir/all
-CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_py.dir/all
-CMakeFiles/bound_est_generate_messages.dir/all: CMakeFiles/bound_est_generate_messages_lisp.dir/all
 	$(MAKE) -f CMakeFiles/bound_est_generate_messages.dir/build.make CMakeFiles/bound_est_generate_messages.dir/depend
 	$(MAKE) -f CMakeFiles/bound_est_generate_messages.dir/build.make CMakeFiles/bound_est_generate_messages.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles --progress-num= "Built target bound_est_generate_messages"
