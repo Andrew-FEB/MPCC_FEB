@@ -3,11 +3,11 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
+#include <std_msgs/Float64.h>
 #include <tf/transform_broadcaster.h>
 #include <vector>
 #include <string>
 #include <memory>
-
 
 #include "cone.h"
 #include "definitions.h"
@@ -35,6 +35,8 @@ public:
 	void showRightCones(const std::vector <const Cone *> &coneList);
 	void showReferencePath(const std::vector<MPC_targets> &reference_path);
 	void showCarBoundaryPoints(const Rect &car_rect, const bool &outside_track);
+	void plotSolveTime(const float &solve_time);
+	void plotMPCCTime(const float &mpcc_time);
 
 private:
 	void waitForSubscribe(const ros::Publisher &pub);
@@ -58,6 +60,8 @@ private:
 	ros::Publisher boundary_point_pub;
 	ros::Publisher reference_to_boundary_pub;
 	ros::Publisher car_boundary_pub;
+	ros::Publisher solve_time_pub;
+	ros::Publisher mpcc_time_pub;
 
 	visualization_msgs::MarkerArray node_mid_markers;
 	visualization_msgs::MarkerArray node_mid_parent_markers;
@@ -78,4 +82,3 @@ private:
 	visualization_msgs::Marker reference_to_boundary_markers;
 	visualization_msgs::MarkerArray car_boundary_markers;
 };
-

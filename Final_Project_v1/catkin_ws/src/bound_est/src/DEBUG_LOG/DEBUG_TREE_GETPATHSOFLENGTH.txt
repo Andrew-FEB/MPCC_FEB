@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Log message for Tree getPathsOfLength() log data at Thu Jul 23 11:45:03 2020
+=======
+Log message for Tree getPathsOfLength() log data at Wed Jul 22 21:41:30 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -661,7 +665,11 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Tree getPathsOfLength() log data at Thu Jul 23 11:45:15 2020
+=======
+Log message for Tree getPathsOfLength() log data at Wed Jul 22 21:41:47 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -1070,7 +1078,11 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Tree getPathsOfLength() log data at Thu Jul 23 11:45:19 2020
+=======
+Log message for Tree getPathsOfLength() log data at Wed Jul 22 21:41:57 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -1255,7 +1267,11 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Tree getPathsOfLength() log data at Thu Jul 23 11:45:23 2020
+=======
+Log message for Tree getPathsOfLength() log data at Wed Jul 22 21:42:06 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+kill $(ps aux | grep 'roscore' | awk '{print $2}')
+kill $(ps aux | grep 'rviz' | awk '{print $2}')
+roscore &
+sleep 1
+cd ./catkin_ws
+source ./devel/setup.bash
+catkin_make
+sleep 1
+rqt -p BE_MPCC &
+sleep 1
+rosrun bound_est Bound_Est

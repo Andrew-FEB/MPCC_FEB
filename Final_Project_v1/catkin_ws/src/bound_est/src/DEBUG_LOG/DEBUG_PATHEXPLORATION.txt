@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Log message for Path Exploration log data at Thu Jul 23 11:45:03 2020
+=======
+Log message for Path Exploration log data at Wed Jul 22 21:41:30 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1416,7 +1420,11 @@ Point 3 at x(14.01) y(-1.0225)
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Path Exploration log data at Thu Jul 23 11:45:16 2020
+=======
+Log message for Path Exploration log data at Wed Jul 22 21:41:47 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1751,7 +1759,11 @@ Point 3 at x(20.02) y(0.06)
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Path Exploration log data at Thu Jul 23 11:45:19 2020
+=======
+Log message for Path Exploration log data at Wed Jul 22 21:41:57 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2078,7 +2090,11 @@ Point 3 at x(22.55) y(3.3)
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Path Exploration log data at Thu Jul 23 11:45:23 2020
+=======
+Log message for Path Exploration log data at Wed Jul 22 21:42:06 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:

@@ -19,9 +19,9 @@ except ImportError:
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/devel/env.sh')
+code = generate_environment_script('/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/devel/env.sh')
 
-output_filename = '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/catkin_generated/setup_cached.sh'
+output_filename = '/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     # print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

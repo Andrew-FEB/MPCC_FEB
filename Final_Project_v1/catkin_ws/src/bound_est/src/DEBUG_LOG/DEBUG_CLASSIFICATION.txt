@@ -1,13 +1,12 @@
+<<<<<<< HEAD
 Log message for Classification log data at Thu Jul 23 11:44:59 2020
+=======
+Log message for Classification log data at Wed Jul 22 21:41:26 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 16
 --------
-Entered determinant check
-Cone position, x = 0, y = 2
-Coord car, x = 0, y = 0
-Coord car projection, x = 1, y = 0
-Determinant: -2 so selected left
 Printout of list states
 Left list size: 1, Right list size: 0
 --------
@@ -27,11 +26,6 @@ Determinant: -2 so selected left
 Printout of list states
 Left list size: 3, Right list size: 0
 --------
-Entered determinant check
-Cone position, x = 5.6, y = 2
-Coord car, x = 0, y = 0
-Coord car projection, x = 1, y = 0
-Determinant: -2 so selected left
 Printout of list states
 Left list size: 4, Right list size: 0
 --------
@@ -68,7 +62,30 @@ Printout of list states
 Left list size: 8, Right list size: 0
 --------
 Entered determinant check
+<<<<<<< HEAD
 Cone position, x = 13.03, y = -1.93
+=======
+Cone position, x = 14.99, y = 1.9
+Coord car, x = 0, y = 0
+Coord car projection, x = 1, y = 0
+Determinant: -1.9 so selected left
+Printout of list states
+Left list size: 9, Right list size: 0
+--------
+Printout of list states
+Left list size: 10, Right list size: 0
+--------
+Entered determinant check
+Cone position, x = 18.71, y = 1.9
+Coord car, x = 0, y = 0
+Coord car projection, x = 1, y = 0
+Determinant: -1.9 so selected left
+Printout of list states
+Left list size: 11, Right list size: 0
+--------
+Entered determinant check
+Cone position, x = 18.71, y = -2.1
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 Coord car, x = 0, y = 0
 Coord car projection, x = 1, y = 0
 Determinant: 1.93 so selected right
@@ -85,13 +102,6 @@ Distance from right = 1.87011
 Printout of list states
 Left list size: 8, Right list size: 2
 --------
-Entered non-determinant check
-Cone position, x = 9.31, y = -1.96
-previous cone position left, x = 9.31, y = 2.04
-previous cone position right, x = 11.16, y = -1.91
-Selected right
-Distance from left = 4
-Distance from right = 1.85068
 Printout of list states
 Left list size: 8, Right list size: 3
 --------
@@ -216,7 +226,11 @@ Left list size: 3, Right list size: 3
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Classification log data at Thu Jul 23 11:45:16 2020
+=======
+Log message for Classification log data at Wed Jul 22 21:41:47 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5
@@ -251,13 +265,6 @@ Distance from right = 1.85691
 Printout of list states
 Left list size: 1, Right list size: 2
 --------
-Entered non-determinant check
-Cone position, x = 21.33, y = 4.22
-previous cone position left, x = 20.17, y = 2.76
-previous cone position right, x = 21.33, y = 0.22
-Selected left
-Distance from left = 1.86473
-Distance from right = 4
 Printout of list states
 Left list size: 2, Right list size: 2
 --------
@@ -274,7 +281,11 @@ Left list size: 2, Right list size: 3
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Classification log data at Thu Jul 23 11:45:19 2020
+=======
+Log message for Classification log data at Wed Jul 22 21:41:57 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5
@@ -319,20 +330,36 @@ Distance from right = 3.36216
 Printout of list states
 Left list size: 2, Right list size: 2
 --------
+Printout of list states
+Left list size: 2, Right list size: 3
+--------
 Entered non-determinant check
+<<<<<<< HEAD
 Cone position, x = 25.45, y = 7.18
 previous cone position left, x = 23.27, y = 8.47
 previous cone position right, x = 24.27, y = 5.26
 Selected right
 Distance from left = 2.53308
 Distance from right = 2.25362
+=======
+Cone position, x = 24.27, y = 9.76
+previous cone position left, x = 23.27, y = 8.47
+previous cone position right, x = 25.45, y = 7.18
+Selected left
+Distance from left = 1.63221
+Distance from right = 2.83704
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 Printout of list states
 Left list size: 2, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
+<<<<<<< HEAD
 Log message for Classification log data at Thu Jul 23 11:45:23 2020
+=======
+Log message for Classification log data at Wed Jul 22 21:42:06 2020
+>>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5

@@ -9,7 +9,6 @@ import parameters as param
 
 # Author: Darina Abaffyová
 # Created: 16/05/2020
-# Last updated: 12/07/2020
 
 def plot_cost(cost_seq):
     t = np.arange(0, param.Ts * len(cost_seq), param.Ts)
@@ -196,7 +195,7 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
         state = state_seq[i]
         x = [state[0]]
         y = [state[1]]
-        plt.arrow(state[0], state[1], 2, 2 * np.tan(state[3]), ec='black')
+        # plt.arrow(state[0], state[1], 2, 2 * np.tan(state[3]), ec='black')
         # Calculate positions obtained with these control inputs
         for j in range(0, len(control_seq[i]), param.nu):
             next_state = cg.kinematic_model_rk(state, [control_seq[i][j], control_seq[i][j + 1]], False)
@@ -232,4 +231,19 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
         plt.pause(1e-17)
         time.sleep(1e-5)
 
+    plt.show()
+
+
+def plot_solve_time(solve_time_seq):
+    t = np.arange(0, param.Ts * len(solve_time_seq), param.Ts)
+    avg = np.mean(solve_time_seq)
+
+    plt.plot(t[0:len(solve_time_seq)], solve_time_seq)
+    plt.plot(t[0:len(solve_time_seq)], [avg]*len(solve_time_seq), label='Average solve time')
+
+    plt.grid()
+    plt.ylabel('Solve time')
+    plt.xlabel('Time step')
+    plt.title('Solve time at each iteration')
+    plt.legend(loc='best', borderaxespad=0.)
     plt.show()

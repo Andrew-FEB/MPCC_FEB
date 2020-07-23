@@ -129,7 +129,7 @@ void Visualisation::showNewCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		new_cone_markers.markers[i].header.stamp = ros::Time();
 		new_cone_markers.markers[i].ns = "new_cones";
 		new_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		new_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		new_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		new_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		new_cone_markers.markers[i].pose.position.z = 0.0;
 		new_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -170,7 +170,7 @@ void Visualisation::showFramedCones(const std::vector<std::unique_ptr<Cone>> &co
 		framed_cone_markers.markers[i].header.stamp = ros::Time();
 		framed_cone_markers.markers[i].ns = "new_cones";
 		framed_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		framed_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		framed_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		framed_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		framed_cone_markers.markers[i].pose.position.z = 0.0;
 		framed_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -211,7 +211,7 @@ void Visualisation::showOldCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		old_cone_markers.markers[i].header.stamp = ros::Time();
 		old_cone_markers.markers[i].ns = "old_cones";
 		old_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		old_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		old_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		old_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		old_cone_markers.markers[i].pose.position.z = 0.0;
 		old_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -244,7 +244,7 @@ void Visualisation::showCar(const Pos &pos)
 	car_marker.header.stamp = ros::Time();
 	car_marker.ns = "car_image";
 	car_marker.type = visualization_msgs::Marker::MESH_RESOURCE;
-	car_marker.mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
+	car_marker.mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
 	car_marker.action = visualization_msgs::Marker::ADD;
 	car_marker.pose.position.z = 0.0;
 	car_marker.pose.orientation.z = tf::createQuaternionMsgFromYaw(pos.phi).z;
@@ -814,4 +814,30 @@ void Visualisation::showCarBoundaryPoints(const Rect &car_rect, const bool &insi
 	car_boundary_markers.markers.push_back(marker);
 
 	car_boundary_pub.publish(car_boundary_markers);
+}
+
+void Visualisation::plotSolveTime(const float &solve_time) {
+	if (solve_time_pub.getNumSubscribers()<1)
+	{
+		std::cerr<<"Waiting for subscription - solve times."<<std::endl;
+		solve_time_pub = n->advertise<std_msgs::Float64>("solve_times", TIME_OUT_VAL);
+		waitForSubscribe(solve_time_pub);
+	}
+
+	std_msgs::Float64 solve_time_msg;
+	solve_time_msg.data = solve_time;
+	solve_time_pub.publish(solve_time_msg);
+}
+
+void Visualisation::plotMPCCTime(const float &mpcc_time) {
+	if (mpcc_time_pub.getNumSubscribers()<1)
+	{
+		std::cerr<<"Waiting for subscription - mpcc times."<<std::endl;
+		mpcc_time_pub = n->advertise<std_msgs::Float64>("mpcc_times", TIME_OUT_VAL);
+		waitForSubscribe(mpcc_time_pub);
+	}
+
+	std_msgs::Float64 mpcc_time_msg;
+	mpcc_time_msg.data = mpcc_time;
+	mpcc_time_pub.publish(mpcc_time_msg);
 }
