@@ -24,43 +24,43 @@ const static std::unordered_map<BoundPos, std::string> BoundStrTranslate
 	{BoundPos::offramp, "Offramp"}	//small orange
 };
 
-//Convenience struct for coordinates
-struct coord
+//Convenience struct for Coordinates
+struct Coord
 {
 	double x;
 	double y;
 
-	bool operator==(const coord& a) const
+	bool operator==(const Coord& a) const
 	{
 		return (x==a.x && y == a.y);
 	}
 };
 
 //triangle struct for Triangulation
-struct triang
+struct Triang
 {
-	coord a;
+	Coord a;
 	BoundPos aPos{BoundPos::undefined};
-	coord b;
+	Coord b;
 	BoundPos bPos{BoundPos::undefined};
-	coord c;
+	Coord c;
 	BoundPos cPos{BoundPos::undefined};
 
-	inline bool touches(const coord &p) const
+	inline bool touches(const Coord &p) const
 	{
 		return ((a.x == p.x && a.y == p.y) 
 		|| (b.x == p.x && b.y == p.y) 
 		|| (c.x == p.x && c.y == p.y));
 	}
 	
-	inline bool onVertices(const coord &p) const
+	inline bool onVertices(const Coord &p) const
 	{
 		return (pointsAreEqual(p, {(a.x + b.x) / 2, (a.y + b.y) / 2}) 
 		||(pointsAreEqual(p, { (b.x + c.x) / 2, (b.y + c.y) / 2 })) 
 		||(pointsAreEqual(p, { (c.x + a.x) / 2, (c.y + a.y) / 2 })));
 	}
 
-	inline bool pointsAreEqual(const coord &a, const coord &b) const
+	inline bool pointsAreEqual(const Coord &a, const Coord &b) const
 	{
 		return (a.x == b.x && a.y == b.y);
 	}
@@ -70,13 +70,13 @@ struct triang
 		return (a==b);
 	}
 
-	inline coord findMidpoint(const coord &a, const coord &b)
+	inline Coord findMidpoint(const Coord &a, const Coord &b)
 {
-	coord output{ (a.x + b.x) / 2, (a.y + b.y) / 2 };
+	Coord output{ (a.x + b.x) / 2, (a.y + b.y) / 2 };
 	return output;
 }
 
-	inline bool pointsOnBoundary(const coord &x, const coord &y) const
+	inline bool pointsOnBoundary(const Coord &x, const Coord &y) const
 	{
 		const BoundPos *first;
 		const BoundPos *second;
@@ -95,19 +95,19 @@ struct triang
 
 struct Rect
 {
-	coord a;
-	coord b;
-	coord c;
-	coord d;
+	Coord a;
+	Coord b;
+	Coord c;
+	Coord d;
 
-	inline double dotProductThreePoints(coord origin, coord b, coord c)
+	inline double dotProductThreePoints(Coord origin, Coord b, Coord c)
 	{
-		coord vec_1 = {b.x-origin.x, b.y-origin.y};
-		coord vec_2 = {c.x-origin.x, c.y-origin.y};
+		Coord vec_1 = {b.x-origin.x, b.y-origin.y};
+		Coord vec_2 = {c.x-origin.x, c.y-origin.y};
 		return (vec_1.x*vec_2.x+vec_1.y*vec_2.y);
 	}
 
-	inline bool containsPoint(const coord &p)
+	inline bool containsPoint(const Coord &p)
 	{
 		auto dot_ab_ap = dotProductThreePoints(a, b, p);
 		auto dot_ab_ab = dotProductThreePoints(a, b, b);
@@ -150,7 +150,7 @@ typedef struct Vel {
 } Vel;
 
 typedef struct Pos {
-	coord p;
+	Coord p;
 	double phi;
 } Pos;
 
@@ -161,7 +161,7 @@ constexpr struct CarParams {
 	double lf = 1.35; // [m] length of the front part of the vehicle (this is from front axle to COG)
 	double lr = 1.35; // length of the rear part of the vehicle  (this is from front axle to COG)
 	double length_div_2 = 1; // JUNK NUMBER
-	double width_div_2 = 0.5;
+	double width_div_2 = 1;
 
 
 	double weightF = lr/(lf + lr);
@@ -191,7 +191,7 @@ constexpr struct CarParams {
 
 struct MPC_targets
 {
-	coord reference_point;
+	Coord reference_point;
 	Pos left_boundary;
 	Pos right_boundary;
 };

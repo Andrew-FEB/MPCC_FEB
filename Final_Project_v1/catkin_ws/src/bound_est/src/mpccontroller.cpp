@@ -138,8 +138,8 @@ ControlInputs MPCController::solve(const Car &current, Track &t) const
 void MPCController::showPredictedPath(const Car & car, double * inputs) const
 {
     Car c(car.getPosition(), car.getVelocity());
-    std::vector<std::pair<coord, coord>> path;
-    coord prev = car.getPosition().p;
+    std::vector<std::pair<Coord, Coord>> path;
+    Coord prev = car.getPosition().p;
     // Every odd value in the inputs array is ControlInputs.D,
     // while every even value is ControlInputs.delta
     for (int i = 0; i < MPCC_OPTIMIZER_NUM_DECISION_VARIABLES; i += 2)

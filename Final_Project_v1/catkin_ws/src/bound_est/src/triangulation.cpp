@@ -14,10 +14,10 @@ Triangulation::Triangulation(std::shared_ptr<Visualisation> visualisation_cont)
 	#endif
 }
 
-std::vector<std::vector<coord>> Triangulation::getTraversingPaths(const std::vector<std::unique_ptr<Cone>>& cone_list, const coord &last_position, const coord &section_end, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists, const bool &starting_from_car)
+std::vector<std::vector<Coord>> Triangulation::getTraversingPaths(const std::vector<std::unique_ptr<Cone>>& cone_list, const Coord &last_position, const Coord &section_end, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists, const bool &starting_from_car)
 {
 	//Apply triangulation on cone points
-	std::vector<triang> triangle_list = findTrianglePoints(cone_list, last_position);
+	std::vector<Triang> triangle_list = findTrianglePoints(cone_list, last_position);
 
 	//Connect cone positions to triangle values for easier processing later
 	placeConesInTriangle(triangle_list, cone_list);
@@ -35,7 +35,7 @@ std::vector<std::vector<coord>> Triangulation::getTraversingPaths(const std::vec
 	return paths;
 }
 
-std::vector<triang> Triangulation::findTrianglesAroundPoint(bool isMidpoint, const std::vector<triang> &triangList, const coord &point)
+std::vector<Triang> Triangulation::findTrianglesAroundPoint(bool isMidpoint, const std::vector<Triang> &triangList, const Coord &point)
 {
 	#ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("DEBUG_LOCALTRIANGLES", "findTrianglesAroundPoint()", reset_logs);
@@ -45,8 +45,8 @@ std::vector<triang> Triangulation::findTrianglesAroundPoint(bool isMidpoint, con
 	log->write(ss<<"Origin point x("<<point.x<<"), y("<<point.y<<")");
 	log->write(ss<<"Triangle list size = "<<triangList.size()); 
 	#endif
-	std::vector<triang> list;
-	std::vector<triang>::const_iterator it = triangList.begin();
+	std::vector<Triang> list;
+	std::vector<Triang>::const_iterator it = triangList.begin();
 	if (isMidpoint)
 	{
 		while (it!=triangList.end())
@@ -90,7 +90,7 @@ std::vector<triang> Triangulation::findTrianglesAroundPoint(bool isMidpoint, con
 	return list;
 }
 
-coord Triangulation::findFirstMidpoint(std::vector<triang> &vec, const coord &point)
+Coord Triangulation::findFirstMidpoint(std::vector<Triang> &vec, const Coord &point)
 {
 	#ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("DEBUG_FINDFIRSTMID", "findFirstMidpoint()", reset_logs);
@@ -101,9 +101,9 @@ coord Triangulation::findFirstMidpoint(std::vector<triang> &vec, const coord &po
 	log->write(ss<<"Vector of triangles of size "<<vec.size()<<" contains:");
 	log->write(ss<<vec);
 	#endif
-	coord first{0, 0};
-	coord second{0, 0};
-	for (triang &triangle : vec)
+	Coord first{0, 0};
+	Coord second{0, 0};
+	for (Triang &triangle : vec)
 	{
 		if (triangle.pointsAreEqual(point, triangle.a))
 		{
@@ -158,9 +158,9 @@ coord Triangulation::findFirstMidpoint(std::vector<triang> &vec, const coord &po
 	return findMidpoint(first,second);
 }
 
-void Triangulation::placeConesInTriangle(std::vector<triang> &triangList, const std::vector<std::unique_ptr<Cone>> &cone_list)
+void Triangulation::placeConesInTriangle(std::vector<Triang> &triangList, const std::vector<std::unique_ptr<Cone>> &cone_list)
 {
-	for (triang &triangle : triangList)
+	for (Triang &triangle : triangList)
 	{
 		triangle.aPos = BoundPos::left;
 		bool locatedA = false;
@@ -197,7 +197,7 @@ void Triangulation::placeConesInTriangle(std::vector<triang> &triangList, const 
 	}
 }
 
-std::vector<triang> Triangulation::findTrianglePoints(const std::vector<std::unique_ptr<Cone>>& cone_list, const coord &last_point)
+std::vector<Triang> Triangulation::findTrianglePoints(const std::vector<std::unique_ptr<Cone>>& cone_list, const Coord &last_point)
 {
 	std::vector<double> pointMap;
 	pointMap.push_back(last_point.x);
@@ -209,10 +209,10 @@ std::vector<triang> Triangulation::findTrianglePoints(const std::vector<std::uni
 	}
 	
 	delaunator::Delaunator d = delaunator::Delaunator(pointMap);
-	std::vector<triang> triangles;
+	std::vector<Triang> triangles;
 	for (std::size_t i = 0; i < d.triangles.size(); i += 3)
 	{
-		triang triangle;
+		Triang triangle;
 		triangle.a.x = d.coords[2*d.triangles[i]];
 		triangle.a.y = d.coords[2*d.triangles[i]+1];
 		triangle.b.x = d.coords[2*d.triangles[i+1]];
@@ -225,10 +225,10 @@ std::vector<triang> Triangulation::findTrianglePoints(const std::vector<std::uni
 }
 
 
-std::ostream& operator<<(std::ostream& os, std::vector<triang>& triangList)
+std::ostream& operator<<(std::ostream& os, std::vector<Triang>& triangList)
 {
 	int print_count{0};
-	for (triang &triangle : triangList)
+	for (Triang &triangle : triangList)
 	{
 		//BoundStrTranslate defined in definitions.h. Used as map to translate enum class to string.
 		os<<"Triangle "<<++print_count<<" with points A (x="<<triangle.a.x<<", y="<<triangle.a.y<<", pos="<<BoundStrTranslate.find(triangle.aPos)->second<<
@@ -239,14 +239,14 @@ std::ostream& operator<<(std::ostream& os, std::vector<triang>& triangList)
 } 
 
 
-std::vector<coord> Triangulation::findMidsInTriangVec(std::vector<triang> &bdrTriangles, const coord &currentPoint)
+std::vector<Coord> Triangulation::findMidsInTriangVec(std::vector<Triang> &bdrTriangles, const Coord &currentPoint)
 {
-	std::vector<coord> validMids;
-	for (triang &triangle : bdrTriangles)
+	std::vector<Coord> validMids;
+	for (Triang &triangle : bdrTriangles)
 	{
-		coord abMid = findMidpoint(triangle.a, triangle.b);
-		coord bcMid = findMidpoint(triangle.b, triangle.c);
-		coord caMid = findMidpoint(triangle.c, triangle.a);
+		Coord abMid = findMidpoint(triangle.a, triangle.b);
+		Coord bcMid = findMidpoint(triangle.b, triangle.c);
+		Coord caMid = findMidpoint(triangle.c, triangle.a);
 
 		if (triangle.pointsAreEqual(currentPoint, abMid))
 		{
@@ -278,9 +278,9 @@ std::vector<coord> Triangulation::findMidsInTriangVec(std::vector<triang> &bdrTr
 	else std::cerr<<"Currently returning no valid mid points - ERROR in triangulation"<<std::endl;
 }
 
-std::ostream& operator<<(std::ostream& os, std::vector<coord> &vec) 
+std::ostream& operator<<(std::ostream& os, std::vector<Coord> &vec) 
 {
-	for (coord &point : vec)
+	for (Coord &point : vec)
 	{
 		auto i = &point - &vec[0];
 		os<<"Centre point "<<i<<" = X pos "<<point.x<<", Y pos "<<point.y<<std::endl;
@@ -306,7 +306,7 @@ inline bool Triangulation::movingToGoal(const double &distanceFromGoal, const do
 	return (compare+tolerance) > distanceFromGoal;	//False if suggested point appears to moving away from goal including tolerance
 }
 
-coord Triangulation::calcFirstPoint(const std::vector<triang> &triangle_list, const coord &startPoint)
+Coord Triangulation::calcFirstPoint(const std::vector<Triang> &triangle_list, const Coord &startPoint)
 {
 	//Find first triangle mid from car
 	auto localTriangles = findTrianglesAroundPoint(false, triangle_list, startPoint);
@@ -314,7 +314,7 @@ coord Triangulation::calcFirstPoint(const std::vector<triang> &triangle_list, co
 	return parent;
 }
 
-std::vector<std::vector<coord>> Triangulation::findViablePaths(coord &parent, std::vector<triang>& triangle_list, const coord &section_end)
+std::vector<std::vector<Coord>> Triangulation::findViablePaths(Coord &parent, std::vector<Triang>& triangle_list, const Coord &section_end)
 {
 	#ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("DEBUG_PATHEXPLORATION", "Path Exploration", reset_logs);
@@ -433,11 +433,11 @@ std::vector<std::vector<coord>> Triangulation::findViablePaths(coord &parent, st
 	#ifdef DEBUG
 	log->write(ss<<"Paths collected. List of paths contains: ");
 	int path_count{0};
-	for (const std::vector<coord> &path : paths)
+	for (const std::vector<Coord> &path : paths)
 	{
 		log->write(ss<<"Path "<<++path_count);
 		int point_count{0};
-		for (const coord &point : path)
+		for (const Coord &point : path)
 		{
 			ss<<"Point "<<++point_count<<" at x("<<point.x<<") y("<<point.y<<")"<<std::endl;
 		}

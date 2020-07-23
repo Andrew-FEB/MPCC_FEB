@@ -16,7 +16,7 @@ double constexpr MAX_DIST_TO_END_GOAL = 10;
 
 struct tNode
 {
-    coord pos;
+    Coord pos;
     bool checked{false};
     double bestFirstDist{std::numeric_limits<double>::max()};
     tNode *parent {nullptr};
@@ -34,9 +34,9 @@ class Tree
     public:
         Tree(std::shared_ptr<Visualisation> visualisation_cont, int est_node_size);
         ~Tree() = default;
-        void addNode(const coord &point, double bestFirstDist, const coord &parent = {std::numeric_limits<double>::lowest(), std::numeric_limits<double>::lowest()});
-        const coord *getNextUnexploredPoint();  //Element one is vector, element two is error code
-        std::vector<std::vector<coord>> getPathsOfLength(int length, const coord &section_end);
+        void addNode(const Coord &point, double bestFirstDist, const Coord &parent = {std::numeric_limits<double>::lowest(), std::numeric_limits<double>::lowest()});
+        const Coord *getNextUnexploredPoint();  //Element one is vector, element two is error code
+        std::vector<std::vector<Coord>> getPathsOfLength(int length, const Coord &section_end);
         void visualiseTree();
         const std::vector<tNode> &getStorageList() const;
         const int &getTreeSize() const;
@@ -52,11 +52,11 @@ class Tree
         std::unique_ptr<BoundaryLogger>  log_get_paths;
         #endif
 
-        tNode * findNode(const coord &point);
-        bool nodeAlreadyExists(const coord &point, const coord &parent);
-        friend double distBetweenPoints(const coord &a, const coord &b);    //implemented in triangulation.cpp
+        tNode * findNode(const Coord &point);
+        bool nodeAlreadyExists(const Coord &point, const Coord &parent);
+        friend double distBetweenPoints(const Coord &a, const Coord &b);    //implemented in triangulation.cpp
         void sortVecBestFirst();
-        bool viablePathToEnd(const std::vector<coord> &path, const coord &section_end);
+        bool viablePathToEnd(const std::vector<Coord> &path, const Coord &section_end);
         
         tNode *head{nullptr};
         std::vector<tNode> storageList;

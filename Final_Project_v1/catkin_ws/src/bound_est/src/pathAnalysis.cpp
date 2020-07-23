@@ -12,7 +12,7 @@ PathAnalysis::PathAnalysis(std::shared_ptr<Visualisation> visualisation_cont, co
 	#endif
 }
 
-const std::vector<coord> &PathAnalysis::findBestPath(const std::vector<std::vector<coord>> &paths, const coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
+const std::vector<Coord> &PathAnalysis::findBestPath(const std::vector<std::vector<Coord>> &paths, const Coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
 {
     #ifdef DEBUG
     path_log = std::make_unique<BoundaryLogger>("PATH_ANALYSIS", "Path Analysis", reset_logs);
@@ -57,7 +57,7 @@ const std::vector<coord> &PathAnalysis::findBestPath(const std::vector<std::vect
 	return paths[best_index];	//return path associated with lowest cost function score
 }
 
-double PathAnalysis::findPathCost(const std::vector<coord> &path, const coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
+double PathAnalysis::findPathCost(const std::vector<Coord> &path, const Coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
 {
     #ifdef DEBUG
     std::stringstream ss;
@@ -118,7 +118,7 @@ int PathAnalysis::findLowestCostPath(const std::vector<double> &cost_scores)
     return index;
 }
 
-double PathAnalysis::classifiedConeContactCost(const std::vector<coord> &path, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
+double PathAnalysis::classifiedConeContactCost(const std::vector<Coord> &path, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
 {
     double cost {0};
     for (auto &coord : path)
@@ -130,7 +130,7 @@ double PathAnalysis::classifiedConeContactCost(const std::vector<coord> &path, c
     return cost/path.size();
 }
 
-double PathAnalysis::unclassifiedConeContactCost(const std::vector<coord> &path, const std::vector<std::unique_ptr<Cone>> &cone_list)
+double PathAnalysis::unclassifiedConeContactCost(const std::vector<Coord> &path, const std::vector<std::unique_ptr<Cone>> &cone_list)
 {
     double cost {0};
     std::vector<double> dists;
@@ -147,7 +147,7 @@ double PathAnalysis::unclassifiedConeContactCost(const std::vector<coord> &path,
 }
 
 
-double PathAnalysis::classifiedConesEachSide(const std::vector<coord> &path, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
+double PathAnalysis::classifiedConesEachSide(const std::vector<Coord> &path, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
 {
     auto car_pos = car->getPosition();
     Rect left;
@@ -188,7 +188,7 @@ double PathAnalysis::classifiedConesEachSide(const std::vector<coord> &path, con
     return cost/path.size();
 }
 
-double PathAnalysis::unclassifiedConesEachSide(const std::vector<coord> &path, const std::vector<std::unique_ptr<Cone>> &cone_list)
+double PathAnalysis::unclassifiedConesEachSide(const std::vector<Coord> &path, const std::vector<std::unique_ptr<Cone>> &cone_list)
 {
     auto car_pos = car->getPosition();
     Rect rect;
@@ -212,7 +212,7 @@ double PathAnalysis::unclassifiedConesEachSide(const std::vector<coord> &path, c
     return cost/path.size();
 }
 
-double PathAnalysis::advancingToGoal(const std::vector<coord> &path, const coord &end_goal)
+double PathAnalysis::advancingToGoal(const std::vector<Coord> &path, const Coord &end_goal)
 {
     double dist {0};
     for (int i = 1; i<path.size(); i++)
@@ -223,7 +223,7 @@ double PathAnalysis::advancingToGoal(const std::vector<coord> &path, const coord
     return pow(dist, 2)/path.size();
 }
 
-double PathAnalysis::checkForRepeatNodes(const std::vector<coord> &path)
+double PathAnalysis::checkForRepeatNodes(const std::vector<Coord> &path)
 {
     int duplicates {0};
     for (int i = 0; i<path.size(); i++)

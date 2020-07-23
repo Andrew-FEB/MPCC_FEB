@@ -22,7 +22,7 @@ constexpr long ROS_REFRESH_TIME_MS = 1000;
 //Configure globals
 #ifdef DEBUG
     bool reset_logs = true;
-    constexpr int DEBUG_LOOPS_TO_COMPLETE = 100;
+    constexpr int DEBUG_LOOPS_TO_COMPLETE = 60;
 #endif
 
 constexpr double time_step = 0.05;
@@ -153,20 +153,18 @@ int main(int argc, char *argv[])
         *ros::Subscriber cone_sub = cone_reader.subscribe("/map", 1000, chatterCallback);
         *ros::spinOnce();
         */
-        if (continue_driving)
-        {
-            //Process track section
-            track->processNextSection();
-            //MPCC
-            auto car = track->getCar();
-            auto control = mpcc->solve(*car, *track);
-            //Update car outputs
-            car->updateCar(control, time_step);
-        }
+        //Process track section
+        if (!track->trackIsComplete()) track->processNextSection();
+        //MPCC
+        auto car = track->getCar();
+        auto control = mpcc->solve(*car, *track);
+        //Update car outputs
+        car->updateCar(control, time_step);
         #ifdef VISUALISE
-            visualisation->showCar(car->getPosition());
-            visualisation->showCarDirection(car->getPosition());
+        visualisation->showCar(car->getPosition());
+        visualisation->showCarDirection(car->getPosition());
         #endif
+        
 
         //Check metadata (laps done, goal achievement, etc.)
         //Update visualisation

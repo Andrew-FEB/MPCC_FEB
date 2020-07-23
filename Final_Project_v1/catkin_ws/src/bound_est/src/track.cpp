@@ -9,7 +9,7 @@ Track::Track(std::shared_ptr<Visualisation> visualisation_cont)
     {
         visualisation = visualisation_cont;
     }
-    else std::cerr << "ERROR: Visualise pre-processor statement defined but nullptr Visualisation object passed to Track object";
+    else std::cerr << "ERROR: Visualise pre-processor statement defined but nullptr Visualisation object passed to Track object"<<std::endl;
     #endif
 
     triangulate = std::make_unique<Triangulation>(visualisation_cont);
@@ -62,7 +62,7 @@ std::ostream& operator<<(std::ostream& os, Track& track)
     return os;
 }
 
-std::pair<Track::ConeError, Cone *> Track::checkConePos(const coord &point)
+std::pair<Track::ConeError, Cone *> Track::checkConePos(const Coord &point)
 {
     //If vectors empty, std::find_if() returns last so no undefned behaviour at first check.
     //Check if cone in already processed cones
@@ -102,7 +102,7 @@ void Track::processNextSection()
     #endif
 
     //Find entry point into next track section
-    coord entry_point;
+    Coord entry_point;
     bool starting_from_car;
     if (centre_coords.size()<1)
     {
@@ -116,7 +116,7 @@ void Track::processNextSection()
     }
 
     //Find end point goal of section
-	coord section_end = findEndGoal(entry_point, seperated_cones);
+	Coord section_end = findEndGoal(entry_point, seperated_cones);
 
     //Get paths traversing framed track region
     auto paths = triangulate->getTraversingPaths(cones_within_range, entry_point, section_end, seperated_cones, starting_from_car);
@@ -126,7 +126,7 @@ void Track::processNextSection()
 
     //Add new coordinates into final result
     auto best_path = path_analysis->findBestPath(paths, section_end, cones_within_range, seperated_cones.first, seperated_cones.second);
-    std::move(best_path.begin(), best_path.end(), std::back_inserter(centre_coords));
+    if (!best_path.empty()) std::move(best_path.begin(), best_path.end(), std::back_inserter(centre_coords));
 
     //Move new cones into processed cones
     std::move(cones_within_range.begin(), cones_within_range.end(), std::back_inserter(processed_cone_list)); 
@@ -138,7 +138,7 @@ void Track::processNextSection()
         visualisation->showCentreCoords(centre_coords);
     #endif
     cones_within_range.clear(); 
-    if (centre_coords.size()>2) track_complete = checkIfTrackComplete(centre_coords.back());
+    if (centre_coords.size()>10) track_complete = checkIfTrackComplete(centre_coords.back());
 }
 
 std::vector<const Cone*> Track::getConeList()
@@ -151,7 +151,7 @@ std::vector<const Cone*> Track::getConeList()
     return conePtrs;
 }
 
-coord Track::findEndGoal(const coord &last_point, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists)
+Coord Track::findEndGoal(const Coord &last_point, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists)
 {
 	auto left_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.first);
 	auto right_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.second);
@@ -201,9 +201,9 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
                 //min track width 3m. Max distance between cones 5m
                 if ((right_list.empty() && processed_cone_list_right.empty()) || (left_list.empty() && processed_cone_list_left.empty()))   //No previous cone classifications to use as initial state
                 {
-                    coord a = car->getPosition().p;
+                    Coord a = car->getPosition().p;
                     auto angle = car->getPosition().phi;
-                    coord b = {cos(angle*M_PI/180)+a.x, sin(angle*M_PI/180)+a.y};
+                    Coord b = {cos(angle*M_PI/180)+a.x, sin(angle*M_PI/180)+a.y};
                     auto c = cone->getCoordinates();
 
                     #ifdef DEBUG
@@ -282,13 +282,10 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
 
 
 std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_points, const int &number_of_points)
-{
+{  
     #ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("GET_REFERENCE_PATH", "getReferencePath()", reset_logs);
     std::stringstream ss;
-    log->write(ss<<"At entering function, important variables were...");
-    log->write(ss<<"Requested distance between points of "<<dist_between_points);
-    log->write(ss<<"Requested number of points of "<<number_of_points, true);
     #endif
     //Check if sufficient centre coordinates available.
     if (centre_coords.size()<=1)
@@ -309,6 +306,17 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
         #endif
         return {};
     }    
+    #ifdef DEBUG
+    log->write(ss<<"At entering function, important variables were...");
+    log->write(ss<<"Requested distance between points of "<<dist_between_points);
+    log->write(ss<<"Requested number of points of "<<number_of_points, true);
+    log->write(ss<<"List of centre coordinates is as follows:");
+    for (int i = 0; i<centre_coords.size(); i++)
+    {
+        ss<<"x("<<centre_coords[i].x<<"), y("<<centre_coords[i].y<<")"<<std::endl;
+    }
+    log->write(ss, true);
+    #endif
 
     double dist = pow(dist_between_points, 2);  //distBetweenPoints function does not square root result for speed
 
@@ -375,25 +383,26 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
         output_vec.push_back(output_struct);
     }
     #ifdef VISUALISE
+        //TEST
+        std::cerr<<"Number of output vec markers being visualised in track is "<<output_vec.size()<<std::endl;
+        //ETEST
 	    visualisation->showReferencePath(output_vec);
     #endif
 
     return output_vec;
 }
 
-coord Track::getClosestPointOnLine (const coord &a, const coord &b, const coord &p)
+Coord Track::getClosestPointOnLine (const Coord &a, const Coord &b, const Coord &p)
 {
-    coord a_to_p {p.x-a.x, p.y-a.y};
-    coord a_to_b {b.x-a.x, b.y-a.y};
+    Coord a_to_p {p.x-a.x, p.y-a.y};
+    Coord a_to_b {b.x-a.x, b.y-a.y};
     double a_to_b_squared = pow(a_to_b.x, 2)+pow(a_to_b.y,2);
     double dot_prod = a_to_p.x*a_to_b.x + a_to_p.y*a_to_b.y;
     double normalized_dist = dot_prod/a_to_b_squared;
-    // if (normalized_dist <0) normalized_dist = 0;
-    // if (normalized_dist >1) normalized_dist = 1;
     return {a.x+a_to_b.x*normalized_dist, a.y+a_to_b.y*normalized_dist};
 }
 
-std::vector<Pos> Track::findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cones, const std::vector<coord> &coord_list)
+std::vector<Pos> Track::findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cones, const std::vector<Coord> &coord_list)
 {
     #ifdef DEBUG
     std::stringstream ss;
@@ -465,7 +474,7 @@ std::vector<Pos> Track::findBoundaryPointsAndSlopes(const std::vector<const Cone
     return output_vec;
 }
 
-std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(const int &original_index, const coord &start_point, const int &number_of_points, const double &distance)
+std::pair<std::vector<Coord>, double> Track::interpolateCentreCoordsDiscrete(const int &original_index, const Coord &start_point, const int &number_of_points, const double &distance)
 {
     #ifdef DEBUG
         std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("INTERPOLATE_CENTRE", "interpolateCentreCoordsDiscrete()", reset_logs);
@@ -499,9 +508,9 @@ std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(con
     }
 
     //Move into developing points
-    std::vector<coord> output_vec;
+    std::vector<Coord> output_vec;
     int current_index{original_index};
-    coord current_coord {start_point};
+    Coord current_coord {start_point};
     double next_distance;
 
     for (int i = 0; i<number_of_points; i++)
@@ -517,7 +526,7 @@ std::pair<std::vector<coord>, double> Track::interpolateCentreCoordsDiscrete(con
             auto coord_distance = distBetweenPoints(current_coord, centre_coords[current_index+1]);
             #ifdef DEBUG
             double debug_dist = 0;
-            coord temp_coord = current_coord;
+            Coord temp_coord = current_coord;
             //Check available distance versus requested distance
             if (current_index+1<centre_coords.size())
             {
@@ -613,9 +622,9 @@ bool Track::trackIsComplete()
     return track_complete;
 }
 
-std::pair<coord, int> Track::getClosestPointOnCentreLine(const coord &point)
+std::pair<Coord, int> Track::getClosestPointOnCentreLine(const Coord &point)
 {
-    coord final_point_to_check;
+    Coord final_point_to_check;
     auto nearest_coord_index = findClosestCentreCoordIndex(point);
     if (centre_coords.size()>1)
     {
@@ -640,12 +649,12 @@ bool Track::carIsInsideTrack()
     auto closest_point = getClosestPointOnCentreLine(car_pos.p).first;
     auto radius = findClosestConeToPoint(car_pos.p, processed_cone_list).second;
     Rect car_edges;
-    car_edges.a = projectPoint(car_pos, -CarParams.width_div_2, CarParams.length_div_2);
+    car_edges.a = projectPoint(car_pos, CarParams.width_div_2, CarParams.length_div_2);
     car_edges.b = projectPoint(car_pos, CarParams.width_div_2, CarParams.length_div_2);
     car_edges.c = projectPoint(car_pos, CarParams.width_div_2, -CarParams.length_div_2);
     car_edges.d = projectPoint(car_pos, -CarParams.width_div_2, -CarParams.length_div_2);
 
-    coord furthest_point{car_edges.a};
+    Coord furthest_point{car_edges.a};
     double furthest_dist{distBetweenPoints(closest_point, car_edges.a)};
     auto dist_b = distBetweenPoints(car_edges.b, closest_point);
     auto dist_c = distBetweenPoints(car_edges.c, closest_point);
@@ -668,6 +677,15 @@ bool Track::carIsInsideTrack()
 
     #ifdef VISUALISE
     auto inside_boundaries = withinCircleOfRadius(furthest_point, closest_point, radius);
+    //TEST
+    if (inside_boundaries) std::cout<<"Car still inside boundaries, continuing to operate..."<<std::endl;
+    else std::cout<<"Car outisde boundaries, ceasing operation!"<<std::endl;
+    std::cout<<"Car boundary points at:"<<std::endl;
+    std::cout<<"a: x("<<car_edges.a.x<<"), y("<<car_edges.a.y<<")"<<std::endl;
+    std::cout<<"b: x("<<car_edges.b.x<<"), y("<<car_edges.b.y<<")"<<std::endl;
+    std::cout<<"c: x("<<car_edges.c.x<<"), y("<<car_edges.c.y<<")"<<std::endl;
+    std::cout<<"d: x("<<car_edges.d.x<<"), y("<<car_edges.d.y<<")"<<std::endl;
+    //ETEST
     visualisation->showCarBoundaryPoints(car_edges, inside_boundaries);
     return inside_boundaries;
     #else
@@ -675,16 +693,16 @@ bool Track::carIsInsideTrack()
     #endif
 }
 
-bool Track::pointIsInsideTrack(const coord &point)
+bool Track::pointIsInsideTrack(const Coord &point)
 {
     auto closest_point = getClosestPointOnCentreLine(point);
     auto radius = findClosestConeToPoint(point, processed_cone_list).second;
     return withinCircleOfRadius(point, closest_point.first, radius);
 }   
 
-int Track::findClosestCentreCoordIndex(const coord &point)
+int Track::findClosestCentreCoordIndex(const Coord &point)
 {
-    if (centre_coords.size()==1) return 0;
+    if (centre_coords.size()<=1) return 0;
     int best_dist_index{0};
     double best_dist{distBetweenPoints(centre_coords[best_dist_index], point)};
     for (int i = 1; i<centre_coords.size(); i++)
@@ -696,9 +714,10 @@ int Track::findClosestCentreCoordIndex(const coord &point)
             best_dist = new_dist;
         }
     }
+    return best_dist_index;
 }
 
-bool Track::checkIfTrackComplete(const coord &last_centre_point)
+bool Track::checkIfTrackComplete(const Coord &last_centre_point)
 {
     if (withinCircleOfRadius(last_centre_point, centre_coords[0], TRACK_COMPLETE_CHECK_RADIUS))
     {

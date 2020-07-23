@@ -65,7 +65,7 @@ void Visualisation::refreshRosOutput()
 	}
 }
 
-void Visualisation::showTriangles(const std::vector<triang>& triangles)
+void Visualisation::showTriangles(const std::vector<Triang>& triangles)
 {
 	if (triangle_pub.getNumSubscribers()<1)
 	{
@@ -89,7 +89,7 @@ void Visualisation::showTriangles(const std::vector<triang>& triangles)
 	triangle_line_markers.pose.orientation.w = 1.0;
 	triangle_line_markers.id = 0;
 
-	for (const triang &triang : triangles)
+	for (const Triang &triang : triangles)
 	{
 		geometry_msgs::Point a, b, c;
 		a.x = triang.a.x;
@@ -299,7 +299,7 @@ void Visualisation::showCarDirection(const Pos &pos)
 	std::cerr<<"Visualisation connection completed - car direction."<<std::endl;
 }
 
-void Visualisation::showEndPoint(const coord &endPoint)
+void Visualisation::showEndPoint(const Coord &endPoint)
 {
 	if (target_pub.getNumSubscribers()<1)
 	{
@@ -331,7 +331,7 @@ void Visualisation::showEndPoint(const coord &endPoint)
 	std::cerr<<"Visualisation connection completed - end point."<<std::endl;
 }
 
-void Visualisation::showCentreCoords(const std::vector<coord> &centreCoords)
+void Visualisation::showCentreCoords(const std::vector<Coord> &centreCoords)
 {
 	if (centre_coord_pub.getNumSubscribers()<1)
 	{
@@ -345,7 +345,7 @@ void Visualisation::showCentreCoords(const std::vector<coord> &centreCoords)
 	}
 	centre_markers.markers.resize(centreCoords.size());
 	
-	for (const coord &point : centreCoords)
+	for (const Coord &point : centreCoords)
 	{
 		auto i = &point - &centreCoords[0];
 		centre_markers.markers[i].header.frame_id = "/tf_bound";
@@ -372,7 +372,7 @@ void Visualisation::showCentreCoords(const std::vector<coord> &centreCoords)
 	std::cerr<<"Visualisation connection completed - centre coords."<<std::endl;
 }
 
-void Visualisation::showNodeMids(const std::vector<coord> &midPoints)
+void Visualisation::showNodeMids(const std::vector<Coord> &midPoints)
 {
 	if (node_mid_pub.getNumSubscribers()<1)
 	{
@@ -386,7 +386,7 @@ void Visualisation::showNodeMids(const std::vector<coord> &midPoints)
 	}
 	node_mid_markers.markers.resize(midPoints.size());
 
-	for (const coord &point : midPoints)
+	for (const Coord &point : midPoints)
 	{
 		auto i = &point - &midPoints[0];
 		node_mid_markers.markers[i].header.frame_id = "/tf_bound";
@@ -415,7 +415,7 @@ void Visualisation::showNodeMids(const std::vector<coord> &midPoints)
 	std::cerr<<"Visualisation connection completed - node mids."<<std::endl;
 }
 
-void Visualisation::showNodeParentLinks(const std::vector<std::pair<coord, coord>> &connections)
+void Visualisation::showNodeParentLinks(const std::vector<std::pair<Coord, Coord>> &connections)
 {
 
 	if (node_mid_connections_pub.getNumSubscribers()<1)
@@ -468,7 +468,7 @@ void Visualisation::showNodeParentLinks(const std::vector<std::pair<coord, coord
 	std::cerr<<"Visualisation connection completed - node parent links."<<std::endl;
 }
 
-void Visualisation::showViablePaths(const std::vector<std::vector<coord>> &paths, bool refresh)
+void Visualisation::showViablePaths(const std::vector<std::vector<Coord>> &paths, bool refresh)
 {
 	if (paths_pub.getNumSubscribers()<1)
 	{
@@ -490,7 +490,7 @@ void Visualisation::showViablePaths(const std::vector<std::vector<coord>> &paths
 		}
 	}
 	geometry_msgs::Point child, parent;
-	coord previous_point = {0,0};
+	Coord previous_point = {0,0};
 	for (auto path : paths)
 	{
 		bool first{true};
@@ -638,7 +638,9 @@ void Visualisation::showReferencePath(const std::vector<MPC_targets> &reference_
 	if (!boundary_slope_markers.points.empty()) boundary_slope_markers.points.clear();
 	if (!boundary_point_markers.markers.empty()) boundary_point_markers.markers.clear();
 	if (!reference_to_boundary_markers.points.empty()) reference_to_boundary_markers.points.clear();
-
+	//TEST
+	std::cerr<<"Number of reference point markers being visualised in visualisation is "<<reference_point_markers.markers.size()<<std::endl;
+	//ETEST
 
 	//Slopes
 	boundary_slope_markers.type = visualization_msgs::Marker::LINE_LIST;
@@ -740,7 +742,9 @@ void Visualisation::showReferencePath(const std::vector<MPC_targets> &reference_
 		marker.id = reference_point_index++;	
 		reference_point_markers.markers.push_back(marker);
 	}
-	
+	//TEST
+	std::cerr<<"Number of reference point markers being visualised in visualisation after update is "<<reference_point_markers.markers.size()<<std::endl;
+	//ETEST
 	boundary_point_pub.publish(boundary_point_markers);
 	boundary_slope_pub.publish(boundary_slope_markers);	
 	reference_point_pub.publish(reference_point_markers);
@@ -750,7 +754,7 @@ void Visualisation::showReferencePath(const std::vector<MPC_targets> &reference_
 	std::cerr<<"Visualisation connection completed - reference path."<<std::endl;
 }
 
-void Visualisation::showCarBoundaryPoints(const Rect &car_rect, const bool &outside_track)
+void Visualisation::showCarBoundaryPoints(const Rect &car_rect, const bool &inside_track)
 {
 
 	if (car_boundary_pub.getNumSubscribers()<1)
@@ -773,7 +777,7 @@ void Visualisation::showCarBoundaryPoints(const Rect &car_rect, const bool &outs
 	marker.scale.x = 0.1;
 	marker.scale.y = 0.1;
 	marker.scale.z = 1.0;
-	if (outside_track)
+	if (!inside_track)
 	{
 		marker.color.r = 1.0f;
 		marker.color.g = 0.0f;
@@ -782,7 +786,7 @@ void Visualisation::showCarBoundaryPoints(const Rect &car_rect, const bool &outs
 	else
 	{
 		marker.color.r = 0.0f;
-		marker.color.g = 1.0f;
+		marker.color.g = 0.0f;
 		marker.color.b = 1.0f;
 	}
 	marker.color.a = 1.0;

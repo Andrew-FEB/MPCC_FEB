@@ -54,7 +54,7 @@ const double &Cone::getConeRadius()
     return radius;
 }
 
-const coord &Cone::getCoordinates() const
+const Coord &Cone::getCoordinates() const
 {
     return coordinates;
 }

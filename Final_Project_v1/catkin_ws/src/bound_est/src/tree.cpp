@@ -8,7 +8,7 @@ Tree::Tree(std::shared_ptr<Visualisation> visualisation_cont, int est_node_size)
 	{
 		visualisation = visualisation_cont;
 	}
-	else std::cerr << "ERROR: Visualise pre-processor statement defined but nullptr Visualisation object passed to Triangulation object";
+	else std::cerr << "ERROR: Visualise pre-processor statement defined but nullptr Visualisation object passed to Tree object"<<std::endl;
 #endif
 #ifdef DEBUG
 log_add_node = std::make_unique<BoundaryLogger>("DEBUG_TREE_ADDNODE", "Tree addNode()", reset_logs);
@@ -18,7 +18,7 @@ log_get_paths = std::make_unique<BoundaryLogger>("DEBUG_TREE_GETPATHSOFLENGTH", 
 storageList.reserve(est_node_size);
 }
 
-const coord *Tree::getNextUnexploredPoint()
+const Coord *Tree::getNextUnexploredPoint()
 {
     #ifdef DEBUG
     std::stringstream ss;
@@ -50,7 +50,7 @@ const coord *Tree::getNextUnexploredPoint()
     return nullptr;
 }
     
-void Tree::addNode(const coord &point, double bestFirstDist, const coord &parent)
+void Tree::addNode(const Coord &point, double bestFirstDist, const Coord &parent)
 {
     #ifdef DEBUG
     std::stringstream ss;
@@ -133,8 +133,8 @@ void Tree::addNode(const coord &point, double bestFirstDist, const coord &parent
 void Tree::visualiseTree()
 {
 #ifdef VISUALISE
-    std::vector<coord> nodeCoords;
-    std::vector<std::pair<coord, coord>> nodeParentLinks;
+    std::vector<Coord> nodeCoords;
+    std::vector<std::pair<Coord, Coord>> nodeParentLinks;
     for (auto node : storageList)
     {
         nodeCoords.push_back(node.pos);
@@ -159,7 +159,7 @@ void Tree::sortVecBestFirst()
     });
 }
 
-tNode *Tree::findNode(const coord &point)
+tNode *Tree::findNode(const Coord &point)
 {
     auto node = std::find_if(storageList.begin(), storageList.end(), [&point] (const tNode &n) 
     {
@@ -168,7 +168,7 @@ tNode *Tree::findNode(const coord &point)
     return (node!=storageList.end()) ? &(*node) : nullptr; 
 }
 
-bool Tree::nodeAlreadyExists(const coord &point, const coord &parent)
+bool Tree::nodeAlreadyExists(const Coord &point, const Coord &parent)
 {
     auto node = std::find_if(storageList.begin(), storageList.end(), [&point, &parent] (const tNode &n) 
     {
@@ -183,7 +183,7 @@ bool Tree::nodeAlreadyExists(const coord &point, const coord &parent)
     return (node!=storageList.end());
 }
 
-std::vector<std::vector<coord>> Tree::getPathsOfLength(int length, const coord &section_end)
+std::vector<std::vector<Coord>> Tree::getPathsOfLength(int length, const Coord &section_end)
 {
 
     #ifdef DEBUG
@@ -209,8 +209,8 @@ std::vector<std::vector<coord>> Tree::getPathsOfLength(int length, const coord &
     #ifdef DEBUG
     log_get_paths->write(ss<<"Maximum number of paths expected is "<<expectedNumPaths);
     #endif
-    std::vector<std::vector<coord>> paths;
-    std::vector<coord> path;
+    std::vector<std::vector<Coord>> paths;
+    std::vector<Coord> path;
 
     tNode *node_p {head};    //moving pointer to indicate currently checked node
 
@@ -318,7 +318,7 @@ const int &Tree::getTreeSize() const
     return treeSize;
 }
 
-bool Tree::viablePathToEnd(const std::vector<coord> &path, const coord &section_end)
+bool Tree::viablePathToEnd(const std::vector<Coord> &path, const Coord &section_end)
 {
     return (distBetweenPoints(path.back(), section_end)<MAX_DIST_TO_END_GOAL);
 }

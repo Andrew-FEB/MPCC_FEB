@@ -12,7 +12,7 @@
 #include "cone.h"
 #include "definitions.h"
 
-constexpr int ROS_DURATION_TIME {1};
+constexpr int ROS_DURATION_TIME {3};
 
 class Visualisation
 {
@@ -20,17 +20,17 @@ public:
 	Visualisation(); 
 	void configROS();
 	void refreshRosOutput();
-	void showTriangles(const std::vector<triang> &triangles);
+	void showTriangles(const std::vector<Triang> &triangles);
 	void showNewCones(const std::vector < std::unique_ptr<Cone>> &coneList);
 	void showOldCones(const std::vector < std::unique_ptr<Cone>> &coneList);
 	void showFramedCones(const std::vector < std::unique_ptr<Cone>> &coneList);
 	void showCar(const Pos &pos);
 	void showCarDirection(const Pos &pos);
-	void showEndPoint(const coord &endPoint);
-	void showCentreCoords(const std::vector<coord> &centreCoords);
-	void showNodeMids(const std::vector<coord> &midPoints);	
-	void showNodeParentLinks(const std::vector<std::pair<coord, coord>> &connections);
-	void showViablePaths(const std::vector<std::vector<coord>> &paths, bool refresh = false);
+	void showEndPoint(const Coord &endPoint);
+	void showCentreCoords(const std::vector<Coord> &centreCoords);
+	void showNodeMids(const std::vector<Coord> &midPoints);	
+	void showNodeParentLinks(const std::vector<std::pair<Coord, Coord>> &connections);
+	void showViablePaths(const std::vector<std::vector<Coord>> &paths, bool refresh = false);
 	void showLeftCones(const std::vector <const Cone *> &coneList);
 	void showRightCones(const std::vector <const Cone *> &coneList);
 	void showReferencePath(const std::vector<MPC_targets> &reference_path);

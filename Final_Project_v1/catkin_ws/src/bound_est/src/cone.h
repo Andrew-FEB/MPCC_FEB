@@ -18,7 +18,7 @@ public:
     
     const double &getY() const;
 
-    const coord &getCoordinates() const;
+    const Coord &getCoordinates() const;
 
     const int& getID() const;
 
@@ -34,7 +34,7 @@ public:
    
 
 private:
-    coord coordinates;
+    Coord coordinates;
     const int id = 0;
     BoundPos pos = BoundPos::undefined;
 };
