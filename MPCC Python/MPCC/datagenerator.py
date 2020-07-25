@@ -1,8 +1,6 @@
+import matplotlib.pyplot as plt
 import numpy as np
 from scipy import interpolate
-import matplotlib.pyplot as plt
-
-import parameters as param
 
 
 # Author: Darina Abaffyová
@@ -54,36 +52,52 @@ def generate_track(num_steps):
 
 
 def generate_racing_track(num_steps):
-    # list = [0, 4, 8, 14, 19, 27, 30, 31, 37, 40]
-    list = [0, 4, 8, 14, 19, 27, 30, 31, 37, 40, 43, 47, 51, 55, 59]
-    # list.reverse()
-    x = np.array(list)
-    # y = np.array([0, 0, 0, 1, 5, 10, 5, 13, 5, 0, 0, 0, 0, 0, 0])
-    # y = np.array([0, 0, 0, 0, 0, 10, 10, 10, 10, 10])
-    # y = np.array([0, 1, 5, 10, 7, 5, 9, 11, 8, 4])
-    y = np.array([0, 1, 5, 10, 7, 5, 9, 11, 8, 4, 0, -3, -9, -5, 0])
+    x = np.array([0, 4, 8, 12, 17, 20, 25, 29, 30, 32, 37, 40, 43, 45, 47, 56, 46, 35, 31, 25, 20, 15, 10, 0, -6])
+    y = np.array([0, 1, 5, 10, 7, 1, 9, 11, 8, 4, 0, -3, -9, -5, 0, 13, 27, 19, 29, 22, 29, 22, 17, 15, 8])
+    xl = np.array([0, 4, 8, 12, 17, 20, 25, 29, 30, 32, 37, 40, 43, 45, 47, 54, 46, 35, 31, 25, 20, 15, 10, 0, -4])
+    xr = np.array([0, 4, 8, 12, 17, 20, 25, 29, 30, 32, 37, 40, 43, 45, 47, 58, 46, 35, 31, 25, 20, 15, 10, 0, -8])
+
+    x_max = np.max(x)
+    swp = False
+    yl = []
+    yr = []
+    for i in range(len(x)):
+        if x[i] >= x_max:
+            swp = True
+        if swp:
+            yl.append(y[i] - 3.5)  # param.track_width/2)
+            yr.append(y[i] + 3.5)  # param.track_width/2)
+        else:
+            yl.append(y[i] + 3.5)  # param.track_width/2)
+            yr.append(y[i] - 3.5)  # param.track_width/2)
+
+    # append the starting x,y coordinates
+    x = np.r_[x, x[0]]
+    y = np.r_[y, y[0]]
+    xl = np.r_[xl, xl[0]]
+    yl = np.r_[yl, yl[0]]
+    xr = np.r_[xr, xr[0]]
+    yr = np.r_[yr, yr[0]]
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
     tck, u = interpolate.splprep([x, y], s=0, per=False)
+    tckl, u = interpolate.splprep([xl, yl], s=0, per=False)
+    tckr, u = interpolate.splprep([xr, yr], s=0, per=False)
 
     # evaluate the spline fits for 1000 evenly spaced distance values
     xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
-
-    yu = []
-    yl = []
-    for i in range(len(xi)):
-        yu.append(yi[i] + 3.5)  # param.track_width/2)
-        yl.append(yi[i] - 3.5)  # param.track_width/2)
+    xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
+    xr, yr = interpolate.splev(np.linspace(0, 1, num_steps), tckr)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
     # ax.plot(xi, yi, 'or')
-    # ax.plot(xi, yu, 'og')
-    # ax.plot(xi, yl, 'og')
+    # ax.plot(xl, yl, 'og')
+    # ax.plot(xr, yr, 'ob')
     # plt.show()
 
-    return [xi, yi, yu, yl]
+    return [xi, yi, xl, yl, xr, yr]
 
 
 def offset(coordinates, distance):
@@ -125,40 +139,40 @@ def offset(coordinates, distance):
 
 
 def generate_circular_track(num_steps):
-    x = np.array([-7, 0, 7, 0])
-    y = np.array([0, -7, 0, 7])
-    upper_x = np.array([-5, 0, 5, 0])
-    upper_y = np.array([0, -5, 0, 5])
-    lower_x = np.array([-9, 0, 9, 0])
-    lower_y = np.array([0, -9, 0, 9])
+    x = np.array([-17, 0, 17, 0])
+    y = np.array([0, -17, 0, 17])
+    left_x = np.array([-15, 0, 15, 0])
+    left_y = np.array([0, -15, 0, 15])
+    right_x = np.array([-19, 0, 19, 0])
+    right_y = np.array([0, -19, 0, 19])
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]
     y = np.r_[y, y[0]]
-    upper_x = np.r_[upper_x, upper_x[0]]
-    upper_y = np.r_[upper_y, upper_y[0]]
-    lower_x = np.r_[lower_x, lower_x[0]]
-    lower_y = np.r_[lower_y, lower_y[0]]
+    left_x = np.r_[left_x, left_x[0]]
+    left_y = np.r_[left_y, left_y[0]]
+    right_x = np.r_[right_x, right_x[0]]
+    right_y = np.r_[right_y, right_y[0]]
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
     tck, u = interpolate.splprep([x, y], s=0, per=True)
-    tcku, u = interpolate.splprep([upper_x, upper_y], s=0, per=False)
-    tckl, u = interpolate.splprep([lower_x, lower_y], s=0, per=False)
+    tckl, u = interpolate.splprep([left_x, left_y], s=0, per=True)
+    tckr, u = interpolate.splprep([right_x, right_y], s=0, per=True)
 
     # evaluate the spline fits for 1000 evenly spaced distance values
     xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
-    xu, yu = interpolate.splev(np.linspace(0, 1, num_steps), tcku)
     xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
+    xr, yr = interpolate.splev(np.linspace(0, 1, num_steps), tckr)
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
     # ax.plot(xi, yi, 'or')
-    # ax.plot(xu, yu, '--g')
     # ax.plot(xl, yl, '--g')
+    # ax.plot(xr, yr, '--g')
     # plt.show()
 
-    return [xi, yi, yu, yl]
+    return [xi, yi, xl, yl, xr, yr]
 
 
 def generate_linear_track(num_steps):
@@ -176,3 +190,12 @@ def generate_linear_track(num_steps):
     # plt.show()
 
     return [x, y, upper, lower]
+
+
+# TODO - this is not working
+def read_rosbag_track():
+    import rosbag
+    bag = rosbag.Bag('KartingGenk.bag')
+    for topic, msg, t in bag.read_messages(topics=['chatter', 'numbers']):
+        print(msg)
+    bag.close()

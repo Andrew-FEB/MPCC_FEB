@@ -150,38 +150,43 @@ def plot_track_with_cost_values(track_x, track_y, state_seq, cost_seq, nearest_s
     plt.show()
 
 
-def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, cost_seq, control_seq):
+def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, ref_seq, bound_seq, cost_seq,
+                 control_seq):
     state_x = [x for x, *_ in state_seq]
     state_y = [y for x, y, *_ in state_seq]
     ref_x = [x for x, *_ in ref_seq[0]]
     ref_y = [y for x, y in ref_seq[0]]
     slopes = [s for s, *_ in bound_seq]
     intercepts = [i for s, i, *_ in bound_seq]
-    index1 = [index for s, i, index in bound_seq]
-    index2 = [index + 20 for s, i, index in bound_seq]
+    i_left1 = [i_up for s, i, i_up, *_ in bound_seq]
+    i_left2 = [i_up + param.N for s, i, i_up, *_ in bound_seq]
+    i_right1 = [i_low for s, i, i_up, i_low in bound_seq]
+    i_right2 = [i_low + param.N for s, i, i_up, i_low in bound_seq]
 
     plt.show()
     ax = plt.gca()
 
     ax.plot(track_x, track_y, '.y', label="Complete track", markersize=1)
     achieved_line, = ax.plot(state_x[0], state_y[0], 'or', label="Achieved track")
-    ax.plot(track_x, upper, '--g', label="Complete boundaries", linewidth=1)
-    ax.plot(track_x, lower, '--g', linewidth=1)
+    ax.plot(left_x, left_y, '--g', label="Complete boundaries", linewidth=1)
+    ax.plot(right_x, right_y, '--g', linewidth=1)
     predicted_line, = ax.plot(track_x[0], track_y[0], '.b', label="Predicted track")
     ref_line, = ax.plot(ref_x, ref_y, '.c', label="Reference line for PH")
 
-    bound_up = [0] * param.N
-    bound_low = [0] * param.N
-    for j in range(param.N):
-        bound_up[j], = ax.plot(track_x[index1[0][j]:index2[0][j]],
-                               [slopes[0][j].upper * x + intercepts[0][j].upper for x in
-                                track_x[index1[0][j]:index2[0][j]]], 'm--')
-        bound_low[j], = ax.plot(track_x[index1[0][j]:index2[0][j]],
-                                [slopes[0][j].lower * x + intercepts[0][j].lower
-                                 for x in track_x[index1[0][j]:index2[0][j]]], 'm--')
+    # bound_left = [0] * param.N
+    # bound_right = [0] * param.N
+    # for j in range(param.N):
+    #     bound_left[j], = ax.plot(track_x[i_left1[0][j]:i_left2[0][j]],
+    #                            [slopes[0][j].upper * x + intercepts[0][j].upper for x in
+    #                             track_x[i_left1[0][j]:i_left2[0][j]]], 'm--')
+    #     bound_right[j], = ax.plot(track_x[i_left1[0][j]:i_left2[0][j]],
+    #                             [slopes[0][j].lower * x + intercepts[0][j].lower
+    #                              for x in track_x[i_left1[0][j]:i_left2[0][j]]], 'm--')
+    bound_left, = ax.plot(ref_x, [slopes[0].left * x + intercepts[0].left for x in ref_x], 'm--')
+    bound_right, = ax.plot(ref_x, [slopes[0].right * x + intercepts[0].right for x in ref_x], 'm--')
     # txt = plt.text(5, 0, '', color="black", fontsize=12)
 
-    bound_up[0].set_label("Boundaries for PH")
+    bound_left.set_label("Boundaries for PH")
     plt.grid()
     plt.ylabel('Y position')
     plt.xlabel('X position')
@@ -189,7 +194,7 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
     plt.legend(loc='best', borderaxespad=0.)
 
     plt.pause(1e-17)
-    time.sleep(3)
+    time.sleep(1)
 
     for i in range(len(control_seq)):
         state = state_seq[i]
@@ -206,13 +211,17 @@ def plot_dynamic(track_x, track_y, upper, lower, state_seq, ref_seq, bound_seq, 
         achieved_line.set_xdata(state_x[0:i])
         achieved_line.set_ydata(state_y[0:i])
 
-        for j in range(param.N):
-            bound_up[j].set_xdata(track_x[index1[i][j]:index2[i][j]])
-            bound_up[j].set_ydata(
-                [slopes[i][j].upper * x + intercepts[i][j].upper for x in track_x[index1[i][j]:index2[i][j]]])
-            bound_low[j].set_xdata(track_x[index1[i][j]:index2[i][j]])
-            bound_low[j].set_ydata(
-                [slopes[i][j].lower * x + intercepts[i][j].lower for x in track_x[index1[i][j]:index2[i][j]]])
+        # for j in range(param.N):
+        # bound_left[j].set_xdata(track_x[i_left1[i][j]:i_left2[i][j]])
+        # bound_left[j].set_ydata(
+        #     [slopes[i][j].upper * x + intercepts[i][j].upper for x in track_x[i_left1[i][j]:i_left2[i][j]]])
+        # bound_right[j].set_xdata(track_x[i_left1[i][j]:i_left2[i][j]])
+        # bound_right[j].set_ydata(
+        #     [slopes[i][j].lower * x + intercepts[i][j].lower for x in track_x[i_left1[i][j]:i_left2[i][j]]])
+        bound_left.set_xdata([x for x, *_ in ref_seq[i]])
+        bound_left.set_ydata([slopes[i].left * x + intercepts[i].left for x, *_ in ref_seq[i]])
+        bound_right.set_xdata([x for x, *_ in ref_seq[i]])
+        bound_right.set_ydata([slopes[i].right * x + intercepts[i].right for x, *_ in ref_seq[i]])
 
         ref_line.set_xdata([x for x, *_ in ref_seq[i]])
         ref_line.set_ydata([y for x, y in ref_seq[i]])
@@ -239,7 +248,7 @@ def plot_solve_time(solve_time_seq):
     avg = np.mean(solve_time_seq)
 
     plt.plot(t[0:len(solve_time_seq)], solve_time_seq)
-    plt.plot(t[0:len(solve_time_seq)], [avg]*len(solve_time_seq), label='Average solve time')
+    plt.plot(t[0:len(solve_time_seq)], [avg] * len(solve_time_seq), label='Average solve time')
 
     plt.grid()
     plt.ylabel('Solve time')
