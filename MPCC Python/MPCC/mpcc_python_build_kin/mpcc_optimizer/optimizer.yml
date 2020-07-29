@@ -1,13 +1,14 @@
 _comment: auto-generated file; do not modify
 build:
   build_dir: mpcc_python_build_kin
-  build_mode: release
-  cost_function_name: phi_YNFOUsNKwUqQygerwugm
-  grad_function_name: grad_phi_YNFOUsNKwUqQygerwugm
-  id: YNFOUsNKwUqQygerwugm
-  mapping_f1: mapping_f1_YNFOUsNKwUqQygerwugm
-  mapping_f2: mapping_f2_YNFOUsNKwUqQygerwugm
+  build_mode: debug
+  cost_function_name: phi_ntxxQDSLaCSrFjfTIGEI
+  grad_function_name: grad_phi_ntxxQDSLaCSrFjfTIGEI
+  id: ntxxQDSLaCSrFjfTIGEI
+  mapping_f1: mapping_f1_ntxxQDSLaCSrFjfTIGEI
+  mapping_f2: mapping_f2_ntxxQDSLaCSrFjfTIGEI
   open_version: 0.7.0-alpha.1
+  opengen_version: 0.6.0a1
   target_system: null
 meta:
   authors: Darina Abaffyova
@@ -17,10 +18,10 @@ meta:
 solver:
   constraints_tolerance: 0.0001
   lbfgs_memory: 10
-  max_duration_micros: 50000
+  max_duration_micros: 100000
   max_inner_iterations: 500
   max_outer_iterations: 100
-  penalty_weight_update_factor: 5.0
+  penalty_weight_update_factor: 8.0
   tolerance: 0.01
 tcp:
   ip: 127.0.0.1

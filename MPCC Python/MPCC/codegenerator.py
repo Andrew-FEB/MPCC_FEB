@@ -166,49 +166,46 @@ def cost_function(state, ref, control, control_prev, track_weight):
 # -------------------------------------
 def generate_code(lang):
     u_seq = cs.MX.sym("u", p.nu * p.N)  # Sequence of all inputs
-    # Initial state(=4) + Prediction horizon * (slopes(=2) + intercepts(=2) + widths(=1))
+    # Initial state(=4) + slopes(=2) + intercepts(=2) + track width(=1)
     # + Prediction horizon * Reference point(=2)
-    x0 = cs.MX.sym("x0_xref", p.nx + p.N * 5 + p.N * 2)
+    param_seq = cs.MX.sym("param", p.nx + 5 + p.N * 2)
 
     cost = 0
     u_prev = [0, 0]
-    x_est = x0[0:p.nx]
-    slope_list = x0[p.nx:p.nx + p.N * 2]
-    intercept_list = x0[p.nx + p.N * 2:p.nx + p.N * 4]
-    track_width_list = x0[p.nx + p.N * 4:p.nx + p.N * 5]
-    ref_list = x0[p.nx + p.N * 5:x0.shape[0]]
+    x_est = param_seq[0:p.nx]  # x0
+    slope_left = param_seq[p.nx]
+    slope_right = param_seq[p.nx+1]
+    intercept_left = param_seq[p.nx+2]
+    intercept_right = param_seq[p.nx+3]
+    track_width = param_seq[p.nx+4]
+    ref_list = param_seq[p.nx+5:param_seq.shape[0]]
 
     F1 = []
     track_weight = p.track_error_weight
     for t in range(0, p.nu * p.N, p.nu):
-        u = [u_seq[t], u_seq[t + 1]]
+        u = u_seq[t:t + 2]
         # Update cost
         cost += cost_function(x_est, ref_list[t:t + 2], u, u_prev, track_weight)
         u_prev = u
         # The weight increases in each iteration, as the last reference point
         # is more important to reach than the first one
-        # if t >= 2*p.N*3/4:
-        track_weight = p.track_error_weight * (1 + t / p.N)
+        if t >= 2*p.N*3/4:
+            track_weight = p.track_error_weight * (1 + 2 * t / p.N)
         # Update state estimate
         x_est = kinematic_model_rk(x_est, u, True)
         # Boundary Constraint
-        slope_up = slope_list[t]
-        slope_low = slope_list[t + 1]
-        intercept_up = intercept_list[t]
-        intercept_low = intercept_list[t + 1]
-        d_up = cs.fabs(slope_up * x_est[0] - x_est[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
-        d_low = cs.fabs(slope_low * x_est[0] - x_est[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
-        track_width = track_width_list[t / 2]
-        F1 = cs.vertcat(F1, x_est[2], x_est[3], d_up - track_width, d_low - track_width)
+        d_up = cs.fabs(slope_left * x_est[0] - x_est[1] + intercept_left) / (cs.sqrt(slope_left ** 2 + 1))
+        d_low = cs.fabs(slope_right * x_est[0] - x_est[1] + intercept_right) / (cs.sqrt(slope_right ** 2 + 1))
+        F1 = cs.vertcat(F1, x_est[3], d_up - track_width, d_low - track_width)
 
     # Constraints
     # -------------------------------------
-    C = og.constraints.Rectangle([p.phi_min, p.v_x_min, -np.inf, -np.inf], [p.phi_max, p.v_x_max, 0, 0])
+    C = og.constraints.Rectangle([p.v_x_min, -np.inf, -np.inf] * p.N, [p.v_x_max, 0, 0] * p.N)
     U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
 
     # Code Generation
     # -------------------------------------
-    problem = og.builder.Problem(u_seq, x0, cost) \
+    problem = og.builder.Problem(u_seq, param_seq, cost) \
         .with_aug_lagrangian_constraints(F1, C) \
         .with_constraints(U)
 
@@ -217,11 +214,14 @@ def generate_code(lang):
             .with_build_directory("mpcc_c_build_kin") \
             .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
             .with_open_version('0.7.0-alpha.1') \
+            .with_rebuild(True) \
             .with_build_c_bindings()
     elif lang == 'p':
         build_config = og.config.BuildConfiguration() \
             .with_build_directory("mpcc_python_build_kin") \
+            .with_build_mode(og.config.BuildConfiguration.DEBUG_MODE) \
             .with_open_version('0.7.0-alpha.1') \
+            .with_rebuild(True) \
             .with_tcp_interface_config()
     else:
         sys.exit("Invalid value for parameter lang - this can only be 'p' (=python) or 'c' (=C)")
@@ -232,8 +232,10 @@ def generate_code(lang):
     solver_config = og.config.SolverConfiguration() \
         .with_initial_tolerance(0.01) \
         .with_tolerance(0.01) \
+        .with_penalty_weight_update_factor(8.0) \
+        .with_initial_penalty(20.0) \
         .with_max_outer_iterations(100) \
-        .with_max_duration_micros(50000)  # 0.05s = 50000us
+        .with_max_duration_micros(100000)  # 0.05s = 50000us
 
     builder = og.builder.OpEnOptimizerBuilder(problem,
                                               metadata=meta,

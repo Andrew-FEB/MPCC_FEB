@@ -1,0 +1,5 @@
+<<<<<<< HEAD:MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/tcp_iface_mpcc_optimizer/target/release/.fingerprint/mpcc_optimizer-fc4e6639ec13d7a5/run-build-script-build_script_build-fc4e6639ec13d7a5.json
+{"rustc":14391035150081286987,"features":"","target":0,"profile":0,"path":0,"deps":[[15341030366318058636,"build_script_build",false,13259452064892681294]],"local":[{"Precalculated":"1595425714.879201390s (/home/dm501/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/optimizer.yml)"}],"rustflags":[],"metadata":0}
+=======
+{"rustc":14391035150081286987,"features":"","target":0,"profile":0,"path":0,"deps":[[15341030366318058636,"build_script_build",false,13623330006657882706]],"local":[{"Precalculated":"1596018180.796563008s (/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/optimizer.yml)"}],"rustflags":[],"metadata":0}
+>>>>>>> c197c884e1e07e17683f5f441c28ca902405be2e:MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/tcp_iface_mpcc_optimizer/target/debug/.fingerprint/mpcc_optimizer-0ba4883c96124bc2/run-build-script-build_script_build-0ba4883c96124bc2.json

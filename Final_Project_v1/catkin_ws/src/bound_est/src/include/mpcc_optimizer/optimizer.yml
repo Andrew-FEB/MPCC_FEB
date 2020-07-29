@@ -2,11 +2,11 @@ _comment: auto-generated file; do not modify
 build:
   build_dir: mpcc_c_build_kin
   build_mode: release
-  cost_function_name: phi_pqQGtbjlllgBKCUopGKN
-  grad_function_name: grad_phi_pqQGtbjlllgBKCUopGKN
-  id: pqQGtbjlllgBKCUopGKN
-  mapping_f1: mapping_f1_pqQGtbjlllgBKCUopGKN
-  mapping_f2: mapping_f2_pqQGtbjlllgBKCUopGKN
+  cost_function_name: phi_RFePYnxkyRwyAbKgShXj
+  grad_function_name: grad_phi_RFePYnxkyRwyAbKgShXj
+  id: RFePYnxkyRwyAbKgShXj
+  mapping_f1: mapping_f1_RFePYnxkyRwyAbKgShXj
+  mapping_f2: mapping_f2_RFePYnxkyRwyAbKgShXj
   open_version: 0.7.0-alpha.1
   opengen_version: 0.6.0a1
   target_system: null
@@ -18,9 +18,9 @@ meta:
 solver:
   constraints_tolerance: 0.0001
   lbfgs_memory: 10
-  max_duration_micros: 50000
+  max_duration_micros: 100000
   max_inner_iterations: 500
   max_outer_iterations: 100
-  penalty_weight_update_factor: 5.0
+  penalty_weight_update_factor: 8.0
   tolerance: 0.01
 tcp: null
