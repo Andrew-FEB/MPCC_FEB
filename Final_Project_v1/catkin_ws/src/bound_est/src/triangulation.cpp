@@ -329,10 +329,10 @@ std::vector<std::vector<Coord>> Triangulation::findViablePaths(Coord &parent, st
 	log->write(ss<<debug_mids);
 	#endif
 	//Init tree
-	std::unique_ptr<Tree> tree = std::make_unique<Tree>(visualisation, triangle_list.size()*3);
+	std::unique_ptr<Tree> tree = std::make_unique<Tree>(visualisation, triangle_list.size()*4);
 	bool filling_tree {true};
 	auto origin_to_goal_dist = distBetweenPoints(parent, section_end);
-	tree->addNode(parent, origin_to_goal_dist);
+	tree->addNode(parent);
 	#ifdef DEBUG
 	log->write(ss<<"Distance to goal over full section: "<<origin_to_goal_dist, true);
 	#endif
@@ -357,21 +357,21 @@ std::vector<std::vector<Coord>> Triangulation::findViablePaths(Coord &parent, st
 		int midVec_it = 1;
 		log->write(ss<<"Entering loop through vector of possible mids", true);
 		#endif
+		origin_to_goal_dist = distBetweenPoints(parent, section_end);
 		for (auto point : midVec)
 		{
 			auto best_first_dist = distBetweenPoints(point, section_end);
-			origin_to_goal_dist = distBetweenPoints(parent, section_end);
 			#ifdef DEBUG
 			log->write(ss<<"Mid value "<<midVec_it++<<" x("<<point.x<<") y("<<point.y<<")");
 			log->write(ss<<"Distance to goal from proposed midpoint: "<<best_first_dist);
 			log->write(ss<<"Change in distance to goal if point selected: "<<(best_first_dist-origin_to_goal_dist));
 			#endif
-			if (movingToGoal(best_first_dist, FILTER_DISTANCE_TOLERANCE, origin_to_goal_dist))
+			if (movingToGoal(best_first_dist, BEST_FIRST_TOLERANCE, origin_to_goal_dist))
 			{
 				#ifdef DEBUG
 				log->write(ss<<"This point selected as potentially valuable and node ended to tree for further exploration", true);
 				#endif
-				tree->addNode(point, best_first_dist, parent);
+				tree->addNode(point, parent);
 			}
 			#ifdef DEBUG
 			else

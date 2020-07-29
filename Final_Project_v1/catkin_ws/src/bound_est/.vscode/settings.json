@@ -67,7 +67,7 @@
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "python.autoComplete.extraPaths": [
-        "/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/python2.7/dist-packages",
+        "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/python2.7/dist-packages",
         "/opt/ros/melodic/lib/python2.7/dist-packages"
     ]
 }

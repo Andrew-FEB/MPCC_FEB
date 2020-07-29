@@ -11,7 +11,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/devel}
+: ${_CATKIN_SETUP_DIR:=/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/devel}
 _SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
 unset _CATKIN_SETUP_DIR
 

@@ -1,4 +1,4 @@
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:26:34 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:19:58 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -15,7 +15,7 @@ Returned coordinate has coordinates x(1.85), y(0)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:26:47 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:20:10 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -30,7 +30,7 @@ Returned coordinate has coordinates x(14.99), y(-0.105)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:26:50 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:20:13 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -48,7 +48,7 @@ Returned coordinate has coordinates x(20.75), y(1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:26:53 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:20:16 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -64,7 +64,7 @@ Returned coordinate has coordinates x(22.8), y(4.755)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:26:58 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:20:20 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -79,23 +79,24 @@ Returned coordinate has coordinates x(24.86), y(8.47)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:27:02 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:20:24 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
-Comparison  point x(27.105), y(9.625)
+Comparison  point x(25.605), y(8.625)
 Vector of triangles of size 2 contains:
-Triangle 1 with points A (x=30.66, y=8, pos=right) B (x=27.105, y=9.625, pos=undefined) and C (x=28.76, y=12.07, pos=left)
-Triangle 2 with points A (x=27.105, y=9.625, pos=left) B (x=26.94, y=11.99, pos=left) and C (x=28.76, y=12.07, pos=left)
+Triangle 1 with points A (x=28.76, y=12.07, pos=left) B (x=25.605, y=8.625, pos=undefined) and C (x=26.94, y=11.99, pos=left)
+Triangle 2 with points A (x=28.76, y=12.07, pos=left) B (x=30.66, y=8, pos=right) and C (x=25.605, y=8.625, pos=undefined)
 
 Point identified as being point B on triangle 1
-Points A and C identified as not being on boundary, so this position selected
+Point identified as being point C on triangle 2
+Points A and B identified as not being on boundary, so this position selected
 Returned coordinate has coordinates x(29.71), y(10.035)
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:27:07 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:20:28 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -112,7 +113,7 @@ Returned coordinate has coordinates x(34.39), y(10)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:27:14 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:20:35 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -127,14 +128,13 @@ Returned coordinate has coordinates x(38.13), y(10)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Jul 23 12:27:20 2020
+Log message for findFirstMidpoint() log data at Wed Jul 29 17:20:43 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
-Comparison  point x(41.26), y(10)
-Vector of triangles of size 2 contains:
-Triangle 1 with points A (x=44.39, y=8, pos=right) B (x=41.26, y=10, pos=undefined) and C (x=44.39, y=12, pos=left)
-Triangle 2 with points A (x=42.52, y=8, pos=right) B (x=41.26, y=10, pos=undefined) and C (x=44.39, y=8, pos=right)
+Comparison  point x(42.52), y(10)
+Vector of triangles of size 1 contains:
+Triangle 1 with points A (x=44.39, y=8, pos=right) B (x=42.52, y=10, pos=undefined) and C (x=44.39, y=12, pos=left)
 
 Point identified as being point B on triangle 1
 Points A and C identified as not being on boundary, so this position selected

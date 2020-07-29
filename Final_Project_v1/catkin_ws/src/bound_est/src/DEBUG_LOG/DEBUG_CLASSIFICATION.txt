@@ -1,4 +1,4 @@
-Log message for Classification log data at Thu Jul 23 12:26:30 2020
+Log message for Classification log data at Wed Jul 29 17:19:54 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 16
@@ -131,7 +131,7 @@ Left list size: 8, Right list size: 8
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Jul 23 12:26:47 2020
+Log message for Classification log data at Wed Jul 29 17:20:10 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5
@@ -182,7 +182,7 @@ Left list size: 3, Right list size: 2
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Jul 23 12:26:50 2020
+Log message for Classification log data at Wed Jul 29 17:20:13 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5
@@ -233,7 +233,7 @@ Left list size: 2, Right list size: 3
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Jul 23 12:26:53 2020
+Log message for Classification log data at Wed Jul 29 17:20:16 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5
@@ -291,7 +291,7 @@ Left list size: 2, Right list size: 3
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Jul 23 12:26:58 2020
+Log message for Classification log data at Wed Jul 29 17:20:20 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5
@@ -342,7 +342,7 @@ Left list size: 2, Right list size: 3
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Jul 23 12:27:02 2020
+Log message for Classification log data at Wed Jul 29 17:20:24 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5
@@ -400,7 +400,7 @@ Left list size: 3, Right list size: 2
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Jul 23 12:27:07 2020
+Log message for Classification log data at Wed Jul 29 17:20:28 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 5
@@ -451,10 +451,10 @@ Left list size: 3, Right list size: 2
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Jul 23 12:27:14 2020
+Log message for Classification log data at Wed Jul 29 17:20:35 2020
 -----------------------------------
 -----------------------------------
-Cone list size to be sorted = 5
+Cone list size to be sorted = 6
 --------
 Entered non-determinant check
 Cone position, x = 38.13, y = 8
@@ -499,14 +499,6 @@ Distance from right = 4.72762
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Jul 23 12:27:20 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
 Entered non-determinant check
 Cone position, x = 42.52, y = 8
 previous cone position left, x = 42.52, y = 12
@@ -515,7 +507,15 @@ Selected right
 Distance from left = 4
 Distance from right = 2.52
 Printout of list states
-Left list size: 0, Right list size: 1
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Wed Jul 29 17:20:43 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
 --------
 Entered non-determinant check
 Cone position, x = 44.39, y = 12
@@ -525,7 +525,7 @@ Selected left
 Distance from left = 1.87
 Distance from right = 4.41553
 Printout of list states
-Left list size: 1, Right list size: 1
+Left list size: 1, Right list size: 0
 --------
 Entered non-determinant check
 Cone position, x = 44.39, y = 8
@@ -535,7 +535,7 @@ Selected right
 Distance from left = 4
 Distance from right = 1.87
 Printout of list states
-Left list size: 1, Right list size: 2
+Left list size: 1, Right list size: 1
 --------
 Entered non-determinant check
 Cone position, x = 46.26, y = 8
@@ -545,10 +545,30 @@ Selected right
 Distance from left = 4.41553
 Distance from right = 1.87
 Printout of list states
-Left list size: 1, Right list size: 3
+Left list size: 1, Right list size: 2
 --------
 Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Entered non-determinant check
+Cone position, x = 48.13, y = 8
+previous cone position left, x = 46.26, y = 12
+previous cone position right, x = 46.26, y = 8
+Selected right
+Distance from left = 4.41553
+Distance from right = 1.87
+Printout of list states
 Left list size: 2, Right list size: 3
+--------
+Entered non-determinant check
+Cone position, x = 48.13, y = 12
+previous cone position left, x = 46.26, y = 12
+previous cone position right, x = 48.13, y = 8
+Selected left
+Distance from left = 1.87
+Distance from right = 4
+Printout of list states
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////

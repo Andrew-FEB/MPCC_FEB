@@ -24,6 +24,7 @@ double constexpr MIN_CONE_FRAME_RANGE = 0.0;
 double constexpr MAX_CONE_FRAME_RANGE = 15;
 double constexpr TRACK_COMPLETE_CHECK_RADIUS = 7.5;
 int constexpr NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS = 5;
+int constexpr NUM_CENTRELINE_COORDS_BEFORE_CHECK_TRACK_COMPLETE = 10;
 
 class Track
 {
@@ -58,6 +59,7 @@ private:
     int findClosestCentreCoordIndex(const Coord &point);
     std::pair<Coord, int> getClosestPointOnCentreLine(const Coord &point);
     bool checkIfTrackComplete(const Coord &last_centre_point);
+    inline std::vector<Coord> projectCarPoints(const Pos &pos, const double &width, const double &length);
 
     //Cone lists
     std::vector<std::unique_ptr<Cone>> cones_within_range;

@@ -50,14 +50,13 @@ const Coord *Tree::getNextUnexploredPoint()
     return nullptr;
 }
     
-void Tree::addNode(const Coord &point, double bestFirstDist, const Coord &parent)
+void Tree::addNode(const Coord &point, const Coord &parent)
 {
     #ifdef DEBUG
     std::stringstream ss;
 	log_add_node->write(ss<<"Trying to add node:");
     log_add_node->write(ss<<"Node position x("<<point.x<<"), y("<<point.y<<")");
     log_add_node->write(ss<<"Node parent should have position x("<<parent.x<<"), y("<<parent.y<<")");
-    log_add_node->write(ss<<"And distance to end of section = "<<bestFirstDist);
     #endif
     tNode node;
     if (head == nullptr)    //First node of already searched location
@@ -67,7 +66,6 @@ void Tree::addNode(const Coord &point, double bestFirstDist, const Coord &parent
         #endif
         node.checked = true;    //Initial node has already been explored
         node.pos = point;
-        node.bestFirstDist = bestFirstDist;
         treeSize++;
         storageList.push_back(node);
         head = &(storageList.back());
@@ -99,7 +97,6 @@ void Tree::addNode(const Coord &point, double bestFirstDist, const Coord &parent
         if (pNode->parent != nullptr)   log_add_node->write(ss<<"Parent's own parent has position x("<<pNode->parent->pos.x<<"), y("<<pNode->parent->pos.y<<")");
         #endif
         node.pos = point;
-        node.bestFirstDist = bestFirstDist;
         treeSize++;
         storageList.push_back(node);
 
@@ -127,7 +124,6 @@ void Tree::addNode(const Coord &point, double bestFirstDist, const Coord &parent
     #ifdef DEBUG
     log_add_node->write(ss<<"Node addition operation complete", true);
     #endif
-    //sortVecBestFirst(); //Maybe not needed
 }
 
 void Tree::visualiseTree()
@@ -148,15 +144,6 @@ void Tree::visualiseTree()
 #else
     return;
 #endif
-}
-
-
-void Tree::sortVecBestFirst()
-{
-    std::sort(storageList.begin(), storageList.end(), [](const tNode &a, const tNode &b)
-    {
-        return (a.bestFirstDist < b.bestFirstDist);
-    });
 }
 
 tNode *Tree::findNode(const Coord &point)
@@ -205,10 +192,6 @@ std::vector<std::vector<Coord>> Tree::getPathsOfLength(int length, const Coord &
         #endif
         return {};
     }
-    int expectedNumPaths = pow(4, length);
-    #ifdef DEBUG
-    log_get_paths->write(ss<<"Maximum number of paths expected is "<<expectedNumPaths);
-    #endif
     std::vector<std::vector<Coord>> paths;
     std::vector<Coord> path;
 

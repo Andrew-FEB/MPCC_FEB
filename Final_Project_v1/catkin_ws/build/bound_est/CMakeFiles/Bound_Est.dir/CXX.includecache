@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/Bound_est_triang.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/Bound_est_triang.cpp
 memory
 -
 iostream
@@ -20,21 +20,21 @@ time.h
 ros/ros.h
 -
 track.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.h
 car.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 mpccontroller.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.cpp
 boundaryLogger.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 fstream
 -
 ctime
@@ -46,11 +46,11 @@ string
 sstream
 -
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.cpp
 car.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 utility
 -
 cmath
@@ -60,23 +60,23 @@ memory
 iostream
 -
 cone.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 definitions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.cpp
 cone.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 iostream
 -
 definitions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 unordered_map
 -
 stdint.h
@@ -84,9 +84,9 @@ stdint.h
 cmath
 -
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/delaunay/delaunator.hpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/delaunay/delaunator.hpp
 algorithm
 -
 cmath
@@ -104,7 +104,7 @@ utility
 vector
 -
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/mpcc_optimizer_bindings.hpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/mpcc_optimizer_bindings.hpp
 cstdarg
 -
 cstdint
@@ -114,7 +114,7 @@ cstdlib
 new
 -
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
 cstdio
 -
 cassert
@@ -124,11 +124,11 @@ vector
 algorithm
 -
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.cpp
 mpccontroller.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
 vector
 -
 tuple
@@ -140,61 +140,51 @@ memory
 iostream
 -
 mpcc_optimizer_bindings.hpp
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpcc_optimizer_bindings.hpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpcc_optimizer_bindings.hpp
 car.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 track.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.h
 definitions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 boundaryLogger.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 boundGlobals.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.cpp
 pathAnalysis.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
 vector
 -
 memory
 -
 definitions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 car.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 cone.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 freeFunctions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 boundaryLogger.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 boundGlobals.h
-<<<<<<< HEAD
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
 visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
-=======
-<<<<<<< Updated upstream
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
-visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
-=======
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
->>>>>>> Stashed changes
->>>>>>> b214060e248e523a43a6d26575e5304795f0bed9
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.cpp
 track.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.h
 boundGlobals.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/track.h
 vector
 -
 memory
@@ -210,31 +200,31 @@ math.h
 limits
 -
 cone.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 car.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/car.h
 visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 triangulation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.h
 definitions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 pathAnalysis.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/pathAnalysis.h
 include/spline/spline.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/spline/spline.h
 boundaryLogger.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 freeFunctions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.cpp
 tree.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
 boundGlobals.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
 vector
 -
 algorithm
@@ -246,23 +236,23 @@ cmath
 memory
 -
 definitions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 boundaryLogger.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 freeFunctions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.cpp
 triangulation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.h
 include/delaunay/delaunator.hpp
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/delaunay/delaunator.hpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/delaunay/delaunator.hpp
 boundGlobals.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/triangulation.h
 vector
 -
 memory
@@ -270,28 +260,30 @@ memory
 cmath
 -
 cone.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 definitions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 tree.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/tree.h
 boundaryLogger.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 freeFunctions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/freeFunctions.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.cpp
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.cpp
 visualisation.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 ros/ros.h
 -
 visualization_msgs/Marker.h
 -
 visualization_msgs/MarkerArray.h
+-
+std_msgs/Float64.h
 -
 tf/transform_broadcaster.h
 -
@@ -302,9 +294,9 @@ string
 memory
 -
 cone.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/cone.h
 definitions.h
-/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/definitions.h
 
 /opt/ros/melodic/include/geometry_msgs/Point.h
 string
@@ -1181,6 +1173,22 @@ ros/forwards.h
 /opt/ros/melodic/include/rosconsole/macros_generated.h
 
 /opt/ros/melodic/include/std_msgs/ColorRGBA.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/melodic/include/std_msgs/Float64.h
 string
 -
 vector

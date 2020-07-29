@@ -11,8 +11,7 @@
 #include "boundaryLogger.h"
 #include "freeFunctions.h"
 
-constexpr double FILTER_DISTANCE_EDIT {3};
-constexpr double FILTER_DISTANCE_TOLERANCE {FILTER_DISTANCE_EDIT*FILTER_DISTANCE_EDIT};
+constexpr double BEST_FIRST_TOLERANCE {3};
 constexpr int MAX_PATH_LENGTH{15};
 
 class Triangulation

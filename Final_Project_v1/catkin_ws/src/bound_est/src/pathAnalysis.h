@@ -20,8 +20,8 @@ double constexpr ADVANCING_COEFF{10.0};
 
 
 //Cone contact sizes   
-double constexpr RECT_CHECK_WIDTH {1.5};  
-double constexpr RECT_CHECK_HEIGHT_DIV_2 {2.5}; //5/2
+double constexpr RECT_CHECK_WIDTH_DIV_2 {1.5};  
+double constexpr RECT_CHECK_LENGTH_DIV_2 {6}; //5/2
 
 //Punishment constants
 double constexpr NODE_REPEAT_COEFF{50.0};

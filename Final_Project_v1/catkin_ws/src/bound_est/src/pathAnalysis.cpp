@@ -62,6 +62,7 @@ double PathAnalysis::findPathCost(const std::vector<Coord> &path, const Coord &e
     #ifdef DEBUG
     std::stringstream ss;
     #endif
+
     //Find cone contact scores
     auto a1 = classifiedConeContactCost(path, left_cones, right_cones);
     auto a2 = unclassifiedConeContactCost(path, cone_list);
@@ -150,37 +151,35 @@ double PathAnalysis::unclassifiedConeContactCost(const std::vector<Coord> &path,
 double PathAnalysis::classifiedConesEachSide(const std::vector<Coord> &path, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
 {
     auto car_pos = car->getPosition();
-    Rect left;
-    left.a = {car_pos.p.x - RECT_CHECK_WIDTH*cos(atan(car_pos.phi)), car_pos.p.y + RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    left.b = {car_pos.p.x - cos(atan(car_pos.phi)), car_pos.p.y + RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    left.c = {car_pos.p.x - cos(atan(car_pos.phi)), car_pos.p.y - RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    left.d = {car_pos.p.x - RECT_CHECK_WIDTH*cos(atan(car_pos.phi)), car_pos.p.y - RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    Rect right;
-    right.a = {car_pos.p.x + cos(atan(car_pos.phi)), car_pos.p.y + RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    right.b = {car_pos.p.x + RECT_CHECK_WIDTH*cos(atan(car_pos.phi)), car_pos.p.y + RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    right.c = {car_pos.p.x + RECT_CHECK_WIDTH*cos(atan(car_pos.phi)), car_pos.p.y - RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    right.d = {car_pos.p.x + cos(atan(car_pos.phi)), car_pos.p.y - RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-
+    Rect rect;
     std::vector<int> detections;
     double cost {0};
-    for (auto coord : path)
+    int left_cones_count{0}, right_cones_count{0};
+    rect.points[0] = (rotateToAngle({RECT_CHECK_LENGTH_DIV_2, RECT_CHECK_WIDTH_DIV_2}, {path[0], car_pos.phi}));
+    rect.points[1] = (rotateToAngle({RECT_CHECK_LENGTH_DIV_2, -RECT_CHECK_WIDTH_DIV_2}, {path[0], car_pos.phi}));
+    rect.points[2] = (rotateToAngle({-RECT_CHECK_LENGTH_DIV_2, -RECT_CHECK_WIDTH_DIV_2}, {path[0], car_pos.phi}));
+    rect.points[3] = (rotateToAngle({-RECT_CHECK_LENGTH_DIV_2, RECT_CHECK_WIDTH_DIV_2}, {path[0], car_pos.phi}));
+
+    for (auto &cone : left_cones){if (rect.containsPoint(cone->getCoordinates())) left_cones_count++; }
+    for (auto &cone : right_cones){if (rect.containsPoint(cone->getCoordinates())) right_cones_count++; }
+    if (left_cones_count == 0 || right_cones_count == 0) cost+=NO_CONES_SPOTTED_COEFF;
+    else{ detections.push_back(left_cones_count-right_cones_count);}
+
+    for (int i = 1; i<path.size(); i++)
     {
-        int left_cones_count{0};
-        int right_cones_count{0};
-        for (auto &cone : left_cones)
-        {
-            if (left.containsPoint(cone->getCoordinates())) left_cones_count++;
-        }
-        for (auto &cone : right_cones)
-        {
-            if (right.containsPoint(cone->getCoordinates())) right_cones_count++;
-        }
+        left_cones_count = right_cones_count = 0;
+        double angle = atan2(path[i].y - path[i-1].y, path[i].y - path[i-1].y);
+        rect.points[0] = (rotateToAngle({RECT_CHECK_LENGTH_DIV_2, RECT_CHECK_WIDTH_DIV_2}, {path[i], car_pos.phi}));
+        rect.points[1] = (rotateToAngle({RECT_CHECK_LENGTH_DIV_2, -RECT_CHECK_WIDTH_DIV_2}, {path[i], car_pos.phi}));
+        rect.points[2] = (rotateToAngle({-RECT_CHECK_LENGTH_DIV_2, -RECT_CHECK_WIDTH_DIV_2}, {path[i], car_pos.phi}));
+        rect.points[3] = (rotateToAngle({-RECT_CHECK_LENGTH_DIV_2, RECT_CHECK_WIDTH_DIV_2}, {path[i], car_pos.phi}));
+
+        for (auto &cone : left_cones){if (rect.containsPoint(cone->getCoordinates())) left_cones_count++; }
+        for (auto &cone : right_cones){if (rect.containsPoint(cone->getCoordinates())) right_cones_count++; }
         if (left_cones_count == 0 || right_cones_count == 0) cost+=NO_CONES_SPOTTED_COEFF;
-        else
-        {
-            detections.push_back(left_cones_count-right_cones_count);
-        }
+        else{ detections.push_back(left_cones_count-right_cones_count);}
     }
+
     for (int i = 1; i<detections.size(); i++)
     {
         cost+= pow((detections[i]-detections[i-1])*CONE_IMBALANCE_COEFF, 2);
@@ -192,15 +191,15 @@ double PathAnalysis::unclassifiedConesEachSide(const std::vector<Coord> &path, c
 {
     auto car_pos = car->getPosition();
     Rect rect;
-    rect.a = {car_pos.p.x - RECT_CHECK_WIDTH*cos(atan(car_pos.phi)), car_pos.p.y + RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    rect.b = {car_pos.p.x + RECT_CHECK_WIDTH*cos(atan(car_pos.phi)), car_pos.p.y + RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    rect.c = {car_pos.p.x + RECT_CHECK_WIDTH*cos(atan(car_pos.phi)), car_pos.p.y - RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
-    rect.d = {car_pos.p.x - RECT_CHECK_WIDTH*cos(atan(car_pos.phi)), car_pos.p.y - RECT_CHECK_HEIGHT_DIV_2*sin(atan(car_pos.phi))};
 
     double cost {0};
     std::vector<int> detections;
     for (auto &cone : cone_list)
     {
+        rect.points[0] = (rotateToAngle({RECT_CHECK_LENGTH_DIV_2, RECT_CHECK_WIDTH_DIV_2}, {cone->getCoordinates(), car_pos.phi}));
+        rect.points[1] = (rotateToAngle({RECT_CHECK_LENGTH_DIV_2, -RECT_CHECK_WIDTH_DIV_2}, {cone->getCoordinates(), car_pos.phi}));
+        rect.points[2] = (rotateToAngle({-RECT_CHECK_LENGTH_DIV_2, -RECT_CHECK_WIDTH_DIV_2}, {cone->getCoordinates(), car_pos.phi}));
+        rect.points[3] = (rotateToAngle({-RECT_CHECK_LENGTH_DIV_2, RECT_CHECK_WIDTH_DIV_2}, {cone->getCoordinates(), car_pos.phi}));
         int cone_count{0};
         if (rect.containsPoint(cone->getCoordinates())) cone_count++;
         if (cone_count == 0) cost+=NO_CONES_SPOTTED_COEFF;

@@ -138,7 +138,7 @@ void Track::processNextSection()
         visualisation->showCentreCoords(centre_coords);
     #endif
     cones_within_range.clear(); 
-    if (centre_coords.size()>10) track_complete = checkIfTrackComplete(centre_coords.back());
+    if (centre_coords.size()>NUM_CENTRELINE_COORDS_BEFORE_CHECK_TRACK_COMPLETE) track_complete = checkIfTrackComplete(centre_coords.back());
 }
 
 std::vector<const Cone*> Track::getConeList()
@@ -203,7 +203,7 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
                 {
                     Coord a = car->getPosition().p;
                     auto angle = car->getPosition().phi;
-                    Coord b = {cos(angle*M_PI/180)+a.x, sin(angle*M_PI/180)+a.y};
+                    Coord b = {cos(angle)+a.x, sin(angle)+a.y};
                     auto c = cone->getCoordinates();
 
                     #ifdef DEBUG
@@ -318,8 +318,6 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
     log->write(ss, true);
     #endif
 
-    double dist = pow(dist_between_points, 2);  //distBetweenPoints function does not square root result for speed
-
     #ifdef DEBUG
     log->write(ss<<"First, finding centre coordinate closest to car position");
     #endif
@@ -383,9 +381,6 @@ std::vector<MPC_targets> Track::getReferencePath(const double &dist_between_poin
         output_vec.push_back(output_struct);
     }
     #ifdef VISUALISE
-        //TEST
-        std::cerr<<"Number of output vec markers being visualised in track is "<<output_vec.size()<<std::endl;
-        //ETEST
 	    visualisation->showReferencePath(output_vec);
     #endif
 
@@ -648,45 +643,24 @@ bool Track::carIsInsideTrack()
     auto car_pos = car->getPosition();
     auto closest_point = getClosestPointOnCentreLine(car_pos.p).first;
     auto radius = findClosestConeToPoint(car_pos.p, processed_cone_list).second;
-    Rect car_edges;
-    car_edges.a = projectPoint(car_pos, CarParams.width_div_2, CarParams.length_div_2);
-    car_edges.b = projectPoint(car_pos, CarParams.width_div_2, CarParams.length_div_2);
-    car_edges.c = projectPoint(car_pos, CarParams.width_div_2, -CarParams.length_div_2);
-    car_edges.d = projectPoint(car_pos, -CarParams.width_div_2, -CarParams.length_div_2);
 
-    Coord furthest_point{car_edges.a};
-    double furthest_dist{distBetweenPoints(closest_point, car_edges.a)};
-    auto dist_b = distBetweenPoints(car_edges.b, closest_point);
-    auto dist_c = distBetweenPoints(car_edges.c, closest_point);
-    auto dist_d = distBetweenPoints(car_edges.d, closest_point);
-    if (dist_b>furthest_dist)
+    auto car_edges = projectCarPoints(car_pos, CarParams.width_div_2, CarParams.length_div_2);
+    int furthest_point_index{0};
+    double furthest_dist{distBetweenPoints(car_edges[0], closest_point)};
+    for (int i = 1; i<car_edges.size(); i++)
     {
-        furthest_dist = dist_b;
-        furthest_point = car_edges.b;
-    }
-    if (dist_b>furthest_dist)
-    {
-        furthest_dist = dist_c;
-        furthest_point = car_edges.c;
-    }
-    if (dist_b>furthest_dist)
-    {
-        furthest_dist = dist_c;
-        furthest_point = car_edges.c;
+        auto dist = distBetweenPoints(car_edges[i], closest_point);
+        if (dist>furthest_dist)
+        {
+            furthest_point_index = i;
+            furthest_dist = dist;
+        }
     }
 
     #ifdef VISUALISE
-    auto inside_boundaries = withinCircleOfRadius(furthest_point, closest_point, radius);
-    //TEST
-    if (inside_boundaries) std::cout<<"Car still inside boundaries, continuing to operate..."<<std::endl;
-    else std::cout<<"Car outisde boundaries, ceasing operation!"<<std::endl;
-    std::cout<<"Car boundary points at:"<<std::endl;
-    std::cout<<"a: x("<<car_edges.a.x<<"), y("<<car_edges.a.y<<")"<<std::endl;
-    std::cout<<"b: x("<<car_edges.b.x<<"), y("<<car_edges.b.y<<")"<<std::endl;
-    std::cout<<"c: x("<<car_edges.c.x<<"), y("<<car_edges.c.y<<")"<<std::endl;
-    std::cout<<"d: x("<<car_edges.d.x<<"), y("<<car_edges.d.y<<")"<<std::endl;
-    //ETEST
-    visualisation->showCarBoundaryPoints(car_edges, inside_boundaries);
+    std::vector<Coord> non_crit_rect_points;
+    auto inside_boundaries = withinCircleOfRadius(car_edges[furthest_point_index], closest_point, radius);
+    visualisation->showCarBoundaryPoints(car_edges, furthest_point_index, inside_boundaries);
     return inside_boundaries;
     #else
     return withinCircleOfRadius(furthest_point, closest_point, radius);
@@ -725,10 +699,20 @@ bool Track::checkIfTrackComplete(const Coord &last_centre_point)
         auto direction = atan2(centre_coords[0].y-centre_coords[0].y, centre_coords[0].x-centre_coords[0].x);
         for (int i = 1; i<=NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS; i++)
         {
-            auto projected_point = projectPoint({last_centre_point, direction}, div_dist, div_dist);
+            Coord projected_point = {last_centre_point.x + div_dist*cos(direction), last_centre_point.y + div_dist*sin(direction)}; 
             if (!pointIsInsideTrack(projected_point)) return false;
         }
         return true;
     }
     return false;
+}
+
+inline std::vector<Coord> Track::projectCarPoints(const Pos &pos, const double &width, const double &length)
+{
+    std::vector<Coord> output;  
+    output.push_back(rotateToAngle({CarParams.length_div_2, CarParams.width_div_2}, pos));
+    output.push_back(rotateToAngle({CarParams.length_div_2, -CarParams.width_div_2}, pos));
+    output.push_back(rotateToAngle({-CarParams.length_div_2, -CarParams.width_div_2}, pos));
+    output.push_back(rotateToAngle({-CarParams.length_div_2, CarParams.width_div_2}, pos));
+    return output;
 }

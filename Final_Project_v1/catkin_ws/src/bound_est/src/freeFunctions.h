@@ -76,7 +76,7 @@ inline bool withinCircleOfRadius(const Coord &point_to_check, const Coord &circl
     return ((pow( (point_to_check.x-circle_origin.x) , 2) + pow( (point_to_check.y-circle_origin.y) , 2)) <= radius);
 }
 
-inline Coord projectPoint(const Pos &pos, const double &width, const double &height)
+inline Coord rotateToAngle(const Coord &point, const Pos &original_pos)
 {
-    return {pos.p.x + width*cos(pos.phi), pos.p.y + height*sin(pos.phi)};
+    return {(point.x*cos(original_pos.phi)-point.y*sin(original_pos.phi)+original_pos.p.x), (point.x*sin(original_pos.phi)+point.y*cos(original_pos.phi)+original_pos.p.y)};
 }

@@ -95,10 +95,7 @@ struct Triang
 
 struct Rect
 {
-	Coord a;
-	Coord b;
-	Coord c;
-	Coord d;
+	std::array<Coord, 4> points;
 
 	inline double dotProductThreePoints(Coord origin, Coord b, Coord c)
 	{
@@ -109,10 +106,10 @@ struct Rect
 
 	inline bool containsPoint(const Coord &p)
 	{
-		auto dot_ab_ap = dotProductThreePoints(a, b, p);
-		auto dot_ab_ab = dotProductThreePoints(a, b, b);
-		auto dot_bc_bp = dotProductThreePoints(b, c, p);
-		auto dot_bc_bc = dotProductThreePoints(b, c, c);
+		auto dot_ab_ap = dotProductThreePoints(points[0], points[1], p);
+		auto dot_ab_ab = dotProductThreePoints(points[0], points[1], points[1]);
+		auto dot_bc_bp = dotProductThreePoints(points[1], points[2], p);
+		auto dot_bc_bc = dotProductThreePoints(points[1], points[2], points[2]);
 		return (0<=dot_ab_ap && dot_ab_ap<=dot_ab_ab && 0<=dot_bc_bp && dot_bc_bp<=dot_bc_bc);
 	}
 };
@@ -160,8 +157,8 @@ constexpr struct CarParams {
 	double m = 1573;  // [kg] mass of the vehicle
 	double lf = 1.35; // [m] length of the front part of the vehicle (this is from front axle to COG)
 	double lr = 1.35; // length of the rear part of the vehicle  (this is from front axle to COG)
-	double length_div_2 = 1; // JUNK NUMBER
-	double width_div_2 = 1;
+	double length_div_2 = 0.6; // JUNK NUMBER
+	double width_div_2 = 0.2;
 
 
 	double weightF = lr/(lf + lr);

@@ -18,7 +18,6 @@ struct tNode
 {
     Coord pos;
     bool checked{false};
-    double bestFirstDist{std::numeric_limits<double>::max()};
     tNode *parent {nullptr};
     std::vector<tNode *> children;
     int pathsDerived{0};
@@ -34,7 +33,7 @@ class Tree
     public:
         Tree(std::shared_ptr<Visualisation> visualisation_cont, int est_node_size);
         ~Tree() = default;
-        void addNode(const Coord &point, double bestFirstDist, const Coord &parent = {std::numeric_limits<double>::lowest(), std::numeric_limits<double>::lowest()});
+        void addNode(const Coord &point, const Coord &parent = {std::numeric_limits<double>::lowest(), std::numeric_limits<double>::lowest()});
         const Coord *getNextUnexploredPoint();  //Element one is vector, element two is error code
         std::vector<std::vector<Coord>> getPathsOfLength(int length, const Coord &section_end);
         void visualiseTree();
