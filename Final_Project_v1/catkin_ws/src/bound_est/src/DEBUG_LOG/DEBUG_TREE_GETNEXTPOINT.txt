@@ -1,370 +1,370 @@
-Log message for Tree getNextUnexploredPoint() log data at Tue Jul 28 22:15:18 2020
+Log message for Tree getNextUnexploredPoint() log data at Wed Jul 29 12:51:54 2020
 -----------------------------------
 -----------------------------------
 Next Unexplored point requested
 Tree at this point has size: 4
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 2.55, 0.975
 
-Next point selected to be checked has position x(1.445), y(-0.895)
+Next point selected to be checked has position x(1.4165), y(-0.746)
 --------
 Next Unexplored point requested
 Tree at this point has size: 6
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: 1.445, -0.895
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: 1.4165, -0.746
 
-Next point selected to be checked has position x(1.105), y(1.87)
+Next point selected to be checked has position x(1.0765), y(2.019)
 --------
 Next Unexplored point requested
 Tree at this point has size: 8
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 0 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 0 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: 1.0765, 2.019
 
 Next point selected to be checked has position x(4.06), y(2.085)
 --------
 Next Unexplored point requested
 Tree at this point has size: 9
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 0 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 0 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 4.06, 2.085
 
-Next point selected to be checked has position x(1.105), y(1.87)
+Next point selected to be checked has position x(1.0765), y(2.019)
 --------
 Next Unexplored point requested
 Tree at this point has size: 9
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 0 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 0 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 4.06, 2.085
 
-Next point selected to be checked has position x(-0.005), y(-1.45)
+Next point selected to be checked has position x(-0.0335), y(-1.301)
 --------
 Next Unexplored point requested
 Tree at this point has size: 11
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 0 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 0 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -0.005, -1.45
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -0.0335, -1.301
 
-Next point selected to be checked has position x(-0.07), y(1.755)
+Next point selected to be checked has position x(-0.0985), y(1.904)
 --------
 Next Unexplored point requested
 Tree at this point has size: 14
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.0985, 1.904
 
-Next point selected to be checked has position x(1.445), y(-0.895)
+Next point selected to be checked has position x(1.4165), y(-0.746)
 --------
 Next Unexplored point requested
 Tree at this point has size: 14
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.0985, 1.904
 
 Next point selected to be checked has position x(5.335), y(2.85)
 --------
 Next Unexplored point requested
 Tree at this point has size: 16
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 0 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 0 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 0 and a parent with pos at: 5.335, 2.85
 
-Next point selected to be checked has position x(1.445), y(-0.895)
+Next point selected to be checked has position x(1.4165), y(-0.746)
 --------
 Next Unexplored point requested
 Tree at this point has size: 16
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 0 and a parent with pos at: 5.335, 2.85
 
-Next point selected to be checked has position x(-1.41), y(-0.925)
+Next point selected to be checked has position x(-1.4385), y(-0.776)
 --------
 Next Unexplored point requested
 Tree at this point has size: 18
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 0 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -1.41, -0.925
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -1.4385, -0.776
 
-Next point selected to be checked has position x(1.105), y(1.87)
+Next point selected to be checked has position x(1.0765), y(2.019)
 --------
 Next Unexplored point requested
 Tree at this point has size: 18
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 0 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -1.41, -0.925
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -1.4385, -0.776
 
-Next point selected to be checked has position x(-2.695), y(0.51)
+Next point selected to be checked has position x(-2.7235), y(0.659)
 --------
 Next Unexplored point requested
 Tree at this point has size: 20
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 0 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -2.7235, 0.659
 
 Next point selected to be checked has position x(-2.765), y(2.265)
 --------
 Next Unexplored point requested
 Tree at this point has size: 22
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 0 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 0 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 0 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -2.765, 2.265
 
 Next point selected to be checked has position x(4.06), y(2.085)
 --------
 Next Unexplored point requested
 Tree at this point has size: 22
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 0 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 0 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -2.765, 2.265
 
 Next point selected to be checked has position x(6.945), y(3.81)
 --------
 Next Unexplored point requested
 Tree at this point has size: 24
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 0 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 0 and a parent with pos at: 6.945, 3.81
 
-Next point selected to be checked has position x(-0.005), y(-1.45)
+Next point selected to be checked has position x(-0.0335), y(-1.301)
 --------
 Next Unexplored point requested
 Tree at this point has size: 24
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 0 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 0 and a parent with pos at: 6.945, 3.81
 
-Next point selected to be checked has position x(-2.695), y(0.51)
+Next point selected to be checked has position x(-2.7235), y(0.659)
 --------
 Next Unexplored point requested
 Tree at this point has size: 24
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 0 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 0 and a parent with pos at: 6.945, 3.81
 
@@ -373,56 +373,56 @@ Next point selected to be checked has position x(-2.765), y(2.265)
 Next Unexplored point requested
 Tree at this point has size: 24
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 0 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 0 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 0 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 0 and a parent with pos at: 6.945, 3.81
 
-Next point selected to be checked has position x(-1.41), y(-0.925)
+Next point selected to be checked has position x(-1.4385), y(-0.776)
 --------
 Next Unexplored point requested
 Tree at this point has size: 24
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 0 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 0 and a parent with pos at: 6.945, 3.81
 
@@ -431,58 +431,58 @@ Next point selected to be checked has position x(-3.805), y(3.1)
 Next Unexplored point requested
 Tree at this point has size: 26
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 0 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 0 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -3.805, 3.1
 Node with position: -4.84, 5.105, a checked status of 0 and a parent with pos at: -3.805, 3.1
 
-Next point selected to be checked has position x(-2.695), y(0.51)
+Next point selected to be checked has position x(-2.7235), y(0.659)
 --------
 Next Unexplored point requested
 Tree at this point has size: 26
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -3.805, 3.1
@@ -493,27 +493,27 @@ Next point selected to be checked has position x(5.335), y(2.85)
 Next Unexplored point requested
 Tree at this point has size: 26
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 0 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -3.805, 3.1
@@ -524,27 +524,27 @@ Next point selected to be checked has position x(8.285), y(4.75)
 Next Unexplored point requested
 Tree at this point has size: 28
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 0 and a parent with pos at: -3.805, 3.1
@@ -557,27 +557,27 @@ Next point selected to be checked has position x(-2.765), y(2.265)
 Next Unexplored point requested
 Tree at this point has size: 28
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -590,27 +590,27 @@ Next point selected to be checked has position x(-4.84), y(5.105)
 Next Unexplored point requested
 Tree at this point has size: 30
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -625,27 +625,27 @@ Next point selected to be checked has position x(6.945), y(3.81)
 Next Unexplored point requested
 Tree at this point has size: 30
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -660,27 +660,27 @@ Next point selected to be checked has position x(9.685), y(5.445)
 Next Unexplored point requested
 Tree at this point has size: 32
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -697,27 +697,27 @@ Next point selected to be checked has position x(-5.56), y(6.505)
 Next Unexplored point requested
 Tree at this point has size: 34
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -736,27 +736,27 @@ Next point selected to be checked has position x(-3.805), y(3.1)
 Next Unexplored point requested
 Tree at this point has size: 34
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -775,27 +775,27 @@ Next point selected to be checked has position x(8.285), y(4.75)
 Next Unexplored point requested
 Tree at this point has size: 34
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -814,27 +814,27 @@ Next point selected to be checked has position x(11.405), y(5.955)
 Next Unexplored point requested
 Tree at this point has size: 35
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -854,27 +854,27 @@ Next point selected to be checked has position x(-4.84), y(5.105)
 Next Unexplored point requested
 Tree at this point has size: 35
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -894,27 +894,27 @@ Next point selected to be checked has position x(-6.245), y(8.745)
 Next Unexplored point requested
 Tree at this point has size: 37
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -936,27 +936,27 @@ Next point selected to be checked has position x(9.685), y(5.445)
 Next Unexplored point requested
 Tree at this point has size: 37
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -978,27 +978,27 @@ Next point selected to be checked has position x(-6.43), y(10.16)
 Next Unexplored point requested
 Tree at this point has size: 39
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -1022,27 +1022,27 @@ Next point selected to be checked has position x(-5.56), y(6.505)
 Next Unexplored point requested
 Tree at this point has size: 39
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -1066,27 +1066,27 @@ Next point selected to be checked has position x(-6.245), y(8.745)
 Next Unexplored point requested
 Tree at this point has size: 39
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -1110,27 +1110,27 @@ Next point selected to be checked has position x(-5.89), y(11.07)
 Next Unexplored point requested
 Tree at this point has size: 40
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -1155,27 +1155,27 @@ Next point selected to be checked has position x(-6.43), y(10.16)
 Next Unexplored point requested
 Tree at this point has size: 40
 Node with position: 2.55, 0.975, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 2.55, 0.975
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 2.55, 0.975
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 2.55, 0.975
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: 1.445, -0.895
-Node with position: -0.07, 1.755, a checked status of 1 and a parent with pos at: 1.105, 1.87
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: 1.105, 1.87
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: 1.4165, -0.746
+Node with position: -0.0985, 1.904, a checked status of 1 and a parent with pos at: 1.0765, 2.019
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: 1.0765, 2.019
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 4.06, 2.085
-Node with position: 1.445, -0.895, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -0.005, -1.45
-Node with position: 1.105, 1.87, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -0.07, 1.755
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.07, 1.755
+Node with position: 1.4165, -0.746, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -0.0335, -1.301
+Node with position: 1.0765, 2.019, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -0.0985, 1.904
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -0.0985, 1.904
 Node with position: 4.06, 2.085, a checked status of 1 and a parent with pos at: 5.335, 2.85
 Node with position: 6.945, 3.81, a checked status of 1 and a parent with pos at: 5.335, 2.85
-Node with position: -0.005, -1.45, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -1.41, -0.925
-Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.695, 0.51
-Node with position: -1.41, -0.925, a checked status of 1 and a parent with pos at: -2.695, 0.51
+Node with position: -0.0335, -1.301, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -1.4385, -0.776
+Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -2.7235, 0.659
+Node with position: -1.4385, -0.776, a checked status of 1 and a parent with pos at: -2.7235, 0.659
 Node with position: -3.805, 3.1, a checked status of 1 and a parent with pos at: -2.765, 2.265
-Node with position: -2.695, 0.51, a checked status of 1 and a parent with pos at: -2.765, 2.265
+Node with position: -2.7235, 0.659, a checked status of 1 and a parent with pos at: -2.765, 2.265
 Node with position: 5.335, 2.85, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: 8.285, 4.75, a checked status of 1 and a parent with pos at: 6.945, 3.81
 Node with position: -2.765, 2.265, a checked status of 1 and a parent with pos at: -3.805, 3.1
@@ -1194,73 +1194,6 @@ Node with position: -5.56, 6.505, a checked status of 1 and a parent with pos at
 Node with position: -6.245, 8.745, a checked status of 1 and a parent with pos at: -6.43, 10.16
 Node with position: -5.89, 11.07, a checked status of 1 and a parent with pos at: -6.43, 10.16
 Node with position: -6.43, 10.16, a checked status of 1 and a parent with pos at: -5.89, 11.07
-
-No valid points found and nullptr returned
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Tree getNextUnexploredPoint() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-Next Unexplored point requested
-Tree at this point has size: 4
-Node with position: 14.615, 6.7, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 16.07, 7.02, a checked status of 0 and a parent with pos at: 14.615, 6.7
-Node with position: 12.9025, 4.7225, a checked status of 0 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 0 and a parent with pos at: 14.615, 6.7
-
-Next point selected to be checked has position x(16.07), y(7.02)
---------
-Next Unexplored point requested
-Tree at this point has size: 4
-Node with position: 14.615, 6.7, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 16.07, 7.02, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 12.9025, 4.7225, a checked status of 0 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 0 and a parent with pos at: 14.615, 6.7
-
-Next point selected to be checked has position x(12.9025), y(4.7225)
---------
-Next Unexplored point requested
-Tree at this point has size: 5
-Node with position: 14.615, 6.7, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 16.07, 7.02, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 12.9025, 4.7225, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 0 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 0 and a parent with pos at: 12.9025, 4.7225
-
-Next point selected to be checked has position x(11.3975), y(7.4225)
---------
-Next Unexplored point requested
-Tree at this point has size: 6
-Node with position: 14.615, 6.7, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 16.07, 7.02, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 12.9025, 4.7225, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 0 and a parent with pos at: 12.9025, 4.7225
-Node with position: 12.9025, 4.7225, a checked status of 0 and a parent with pos at: 11.3975, 7.4225
-
-Next point selected to be checked has position x(11.3975), y(7.4225)
---------
-Next Unexplored point requested
-Tree at this point has size: 6
-Node with position: 14.615, 6.7, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 16.07, 7.02, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 12.9025, 4.7225, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 1 and a parent with pos at: 12.9025, 4.7225
-Node with position: 12.9025, 4.7225, a checked status of 0 and a parent with pos at: 11.3975, 7.4225
-
-Next point selected to be checked has position x(12.9025), y(4.7225)
---------
-Next Unexplored point requested
-Tree at this point has size: 6
-Node with position: 14.615, 6.7, a checked status of 1 and a parent with pos at: Parent is nullptr!
-Node with position: 16.07, 7.02, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 12.9025, 4.7225, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 1 and a parent with pos at: 14.615, 6.7
-Node with position: 11.3975, 7.4225, a checked status of 1 and a parent with pos at: 12.9025, 4.7225
-Node with position: 12.9025, 4.7225, a checked status of 1 and a parent with pos at: 11.3975, 7.4225
 
 No valid points found and nullptr returned
 --------

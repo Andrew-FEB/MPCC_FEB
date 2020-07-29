@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     //Setup essential configuration variables
     //Configure track
     std::unique_ptr<Track> track = std::make_unique<Track>(visualisation);
-    std::unique_ptr<MPCController> mpcc = std::make_unique<MPCController>(pred_horizon, time_step, visualisation);
+    std::unique_ptr<MPCController> mpcc = std::make_unique<MPCController>(pred_horizon, time_step, visualisation, *track);
 
     // //Configure ros messages
     // rosbag::Bag cone_data;
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 
     //Angle car to be pointing forward at beginning of race
     auto car = track->getCar();
-    // car->setPosition({{23.6, 29.6}, 0});
+    car->setPosition({{-0.057, 0.298}, -0.145});
     // LEFT
     track->addCone(-0.14, 3.51, BoundPos::left);
     track->addCone(2.21, 3.74, BoundPos::left);
@@ -215,15 +215,7 @@ int main(int argc, char *argv[])
         //Process track section
         if (!track->trackIsComplete()) track->processNextSection();
         //MPCC
-        auto car = track->getCar();
-        auto control = mpcc->solve(*car, *track);
-        //Update car outputs
-        car->updateCar(control, time_step);
-        #ifdef VISUALISE
-        visualisation->showCar(car->getPosition());
-        visualisation->showCarDirection(car->getPosition());
-        #endif
-        
+        mpcc->solve();        
 
         //Check metadata (laps done, goal achievement, etc.)
         //Update visualisation
@@ -236,7 +228,7 @@ int main(int argc, char *argv[])
         #endif
 
         #ifdef DEBUG_SLOW
-            usleep(500000);
+            usleep(100000);
             std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
         #endif
 

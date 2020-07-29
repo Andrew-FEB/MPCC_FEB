@@ -110,10 +110,10 @@ def generate_racing_track(num_steps):
     xr, yr = interpolate.splev(np.linspace(0, 1, num_steps), tckr)
 
     # plot the track
-    fig, ax = plt.subplots(1, 1)
-    ax.plot(xi, yi, 'or')
-    ax.plot(xl, yl, 'ob')
-    ax.plot(xr, yr, 'oy')
-    plt.show()
+    # fig, ax = plt.subplots(1, 1)
+    # ax.plot(xi, yi, 'or')
+    # ax.plot(xl, yl, 'ob')
+    # ax.plot(xr, yr, 'oy')
+    # plt.show()
 
     return [xi, yi, xl, yl, xr, yr]

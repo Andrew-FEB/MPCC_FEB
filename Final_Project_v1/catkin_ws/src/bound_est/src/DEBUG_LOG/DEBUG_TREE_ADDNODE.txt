@@ -1,4 +1,4 @@
-Log message for Tree addNode() log data at Tue Jul 28 22:15:18 2020
+Log message for Tree addNode() log data at Wed Jul 29 12:51:54 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -9,17 +9,17 @@ Node placed in head position
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(1.445), y(-0.895)
+Node position x(1.4165), y(-0.746)
 Node parent should have position x(2.55), y(0.975)
-And distance to end of section = 12.2233
+And distance to end of section = 12.1284
 Attempting to find parent...
 Parent found with position x(2.55), y(0.975)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(1.105), y(1.87)
+Node position x(1.0765), y(2.019)
 Node parent should have position x(2.55), y(0.975)
-And distance to end of section = 10.53
+And distance to end of section = 10.4601
 Attempting to find parent...
 Parent found with position x(2.55), y(0.975)
 Node addition operation complete
@@ -34,49 +34,49 @@ Node addition operation complete
 --------
 Trying to add node:
 Node position x(2.55), y(0.975)
-Node parent should have position x(1.445), y(-0.895)
+Node parent should have position x(1.4165), y(-0.746)
 And distance to end of section = 10.0881
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(1.105), y(1.87)
-Node parent should have position x(1.445), y(-0.895)
-And distance to end of section = 10.53
+Node position x(1.0765), y(2.019)
+Node parent should have position x(1.4165), y(-0.746)
+And distance to end of section = 10.4601
 Attempting to find parent...
-Parent found with position x(1.445), y(-0.895)
+Parent found with position x(1.4165), y(-0.746)
 Parent's own parent has position x(2.55), y(0.975)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-0.005), y(-1.45)
-Node parent should have position x(1.445), y(-0.895)
-And distance to end of section = 13.6034
+Node position x(-0.0335), y(-1.301)
+Node parent should have position x(1.4165), y(-0.746)
+And distance to end of section = 13.5152
 Attempting to find parent...
-Parent found with position x(1.445), y(-0.895)
+Parent found with position x(1.4165), y(-0.746)
 Parent's own parent has position x(2.55), y(0.975)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-0.07), y(1.755)
-Node parent should have position x(1.105), y(1.87)
-And distance to end of section = 11.5376
+Node position x(-0.0985), y(1.904)
+Node parent should have position x(1.0765), y(2.019)
+And distance to end of section = 11.4752
 Attempting to find parent...
-Parent found with position x(1.105), y(1.87)
+Parent found with position x(1.0765), y(2.019)
 Parent's own parent has position x(2.55), y(0.975)
 Node addition operation complete
 --------
 Trying to add node:
 Node position x(2.55), y(0.975)
-Node parent should have position x(1.105), y(1.87)
+Node parent should have position x(1.0765), y(2.019)
 And distance to end of section = 10.0881
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(1.445), y(-0.895)
-Node parent should have position x(1.105), y(1.87)
-And distance to end of section = 12.2233
+Node position x(1.4165), y(-0.746)
+Node parent should have position x(1.0765), y(2.019)
+And distance to end of section = 12.1284
 Attempting to find parent...
-Parent found with position x(1.105), y(1.87)
+Parent found with position x(1.0765), y(2.019)
 Parent's own parent has position x(2.55), y(0.975)
 Node addition operation complete
 --------
@@ -96,84 +96,84 @@ Parent's own parent has position x(2.55), y(0.975)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-0.07), y(1.755)
-Node parent should have position x(1.105), y(1.87)
-And distance to end of section = 11.5376
+Node position x(-0.0985), y(1.904)
+Node parent should have position x(1.0765), y(2.019)
+And distance to end of section = 11.4752
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
 Node position x(2.55), y(0.975)
-Node parent should have position x(1.105), y(1.87)
+Node parent should have position x(1.0765), y(2.019)
 And distance to end of section = 10.0881
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(1.445), y(-0.895)
-Node parent should have position x(1.105), y(1.87)
-And distance to end of section = 12.2233
+Node position x(1.4165), y(-0.746)
+Node parent should have position x(1.0765), y(2.019)
+And distance to end of section = 12.1284
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(1.445), y(-0.895)
-Node parent should have position x(-0.005), y(-1.45)
-And distance to end of section = 12.2233
+Node position x(1.4165), y(-0.746)
+Node parent should have position x(-0.0335), y(-1.301)
+And distance to end of section = 12.1284
 Attempting to find parent...
-Parent found with position x(-0.005), y(-1.45)
-Parent's own parent has position x(1.445), y(-0.895)
+Parent found with position x(-0.0335), y(-1.301)
+Parent's own parent has position x(1.4165), y(-0.746)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-1.41), y(-0.925)
-Node parent should have position x(-0.005), y(-1.45)
-And distance to end of section = 14.2529
+Node position x(-1.4385), y(-0.776)
+Node parent should have position x(-0.0335), y(-1.301)
+And distance to end of section = 14.177
 Attempting to find parent...
-Parent found with position x(-0.005), y(-1.45)
-Parent's own parent has position x(1.445), y(-0.895)
+Parent found with position x(-0.0335), y(-1.301)
+Parent's own parent has position x(1.4165), y(-0.746)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(1.105), y(1.87)
-Node parent should have position x(-0.07), y(1.755)
-And distance to end of section = 10.53
+Node position x(1.0765), y(2.019)
+Node parent should have position x(-0.0985), y(1.904)
+And distance to end of section = 10.4601
 Attempting to find parent...
-Parent found with position x(-0.07), y(1.755)
-Parent's own parent has position x(1.105), y(1.87)
+Parent found with position x(-0.0985), y(1.904)
+Parent's own parent has position x(1.0765), y(2.019)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-2.695), y(0.51)
-Node parent should have position x(-0.07), y(1.755)
-And distance to end of section = 14.4071
+Node position x(-2.7235), y(0.659)
+Node parent should have position x(-0.0985), y(1.904)
+And distance to end of section = 14.3495
 Attempting to find parent...
-Parent found with position x(-0.07), y(1.755)
-Parent's own parent has position x(1.105), y(1.87)
+Parent found with position x(-0.0985), y(1.904)
+Parent's own parent has position x(1.0765), y(2.019)
 Node addition operation complete
 --------
 Trying to add node:
 Node position x(-2.765), y(2.265)
-Node parent should have position x(-0.07), y(1.755)
+Node parent should have position x(-0.0985), y(1.904)
 And distance to end of section = 13.5824
 Attempting to find parent...
-Parent found with position x(-0.07), y(1.755)
-Parent's own parent has position x(1.105), y(1.87)
+Parent found with position x(-0.0985), y(1.904)
+Parent's own parent has position x(1.0765), y(2.019)
 Node addition operation complete
 --------
 Trying to add node:
 Node position x(2.55), y(0.975)
-Node parent should have position x(1.445), y(-0.895)
+Node parent should have position x(1.4165), y(-0.746)
 And distance to end of section = 10.0881
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(1.105), y(1.87)
-Node parent should have position x(1.445), y(-0.895)
-And distance to end of section = 10.53
+Node position x(1.0765), y(2.019)
+Node parent should have position x(1.4165), y(-0.746)
+And distance to end of section = 10.4601
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-0.005), y(-1.45)
-Node parent should have position x(1.445), y(-0.895)
-And distance to end of section = 13.6034
+Node position x(-0.0335), y(-1.301)
+Node parent should have position x(1.4165), y(-0.746)
+And distance to end of section = 13.5152
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
@@ -196,74 +196,74 @@ Node addition operation complete
 --------
 Trying to add node:
 Node position x(2.55), y(0.975)
-Node parent should have position x(1.445), y(-0.895)
+Node parent should have position x(1.4165), y(-0.746)
 And distance to end of section = 10.0881
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(1.105), y(1.87)
-Node parent should have position x(1.445), y(-0.895)
-And distance to end of section = 10.53
+Node position x(1.0765), y(2.019)
+Node parent should have position x(1.4165), y(-0.746)
+And distance to end of section = 10.4601
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-0.005), y(-1.45)
-Node parent should have position x(1.445), y(-0.895)
-And distance to end of section = 13.6034
+Node position x(-0.0335), y(-1.301)
+Node parent should have position x(1.4165), y(-0.746)
+And distance to end of section = 13.5152
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-0.005), y(-1.45)
-Node parent should have position x(-1.41), y(-0.925)
-And distance to end of section = 13.6034
+Node position x(-0.0335), y(-1.301)
+Node parent should have position x(-1.4385), y(-0.776)
+And distance to end of section = 13.5152
 Attempting to find parent...
-Parent found with position x(-1.41), y(-0.925)
-Parent's own parent has position x(-0.005), y(-1.45)
+Parent found with position x(-1.4385), y(-0.776)
+Parent's own parent has position x(-0.0335), y(-1.301)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-2.695), y(0.51)
-Node parent should have position x(-1.41), y(-0.925)
-And distance to end of section = 14.4071
+Node position x(-2.7235), y(0.659)
+Node parent should have position x(-1.4385), y(-0.776)
+And distance to end of section = 14.3495
 Attempting to find parent...
-Parent found with position x(-1.41), y(-0.925)
-Parent's own parent has position x(-0.005), y(-1.45)
+Parent found with position x(-1.4385), y(-0.776)
+Parent's own parent has position x(-0.0335), y(-1.301)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-0.07), y(1.755)
-Node parent should have position x(1.105), y(1.87)
-And distance to end of section = 11.5376
+Node position x(-0.0985), y(1.904)
+Node parent should have position x(1.0765), y(2.019)
+And distance to end of section = 11.4752
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
 Node position x(2.55), y(0.975)
-Node parent should have position x(1.105), y(1.87)
+Node parent should have position x(1.0765), y(2.019)
 And distance to end of section = 10.0881
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(1.445), y(-0.895)
-Node parent should have position x(1.105), y(1.87)
-And distance to end of section = 12.2233
+Node position x(1.4165), y(-0.746)
+Node parent should have position x(1.0765), y(2.019)
+And distance to end of section = 12.1284
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
 Node position x(-2.765), y(2.265)
-Node parent should have position x(-2.695), y(0.51)
+Node parent should have position x(-2.7235), y(0.659)
 And distance to end of section = 13.5824
 Attempting to find parent...
-Parent found with position x(-2.695), y(0.51)
-Parent's own parent has position x(-0.07), y(1.755)
+Parent found with position x(-2.7235), y(0.659)
+Parent's own parent has position x(-0.0985), y(1.904)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-1.41), y(-0.925)
-Node parent should have position x(-2.695), y(0.51)
-And distance to end of section = 14.2529
+Node position x(-1.4385), y(-0.776)
+Node parent should have position x(-2.7235), y(0.659)
+And distance to end of section = 14.177
 Attempting to find parent...
-Parent found with position x(-2.695), y(0.51)
-Parent's own parent has position x(-0.07), y(1.755)
+Parent found with position x(-2.7235), y(0.659)
+Parent's own parent has position x(-0.0985), y(1.904)
 Node addition operation complete
 --------
 Trying to add node:
@@ -272,16 +272,16 @@ Node parent should have position x(-2.765), y(2.265)
 And distance to end of section = 14.1809
 Attempting to find parent...
 Parent found with position x(-2.765), y(2.265)
-Parent's own parent has position x(-0.07), y(1.755)
+Parent's own parent has position x(-0.0985), y(1.904)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(-2.695), y(0.51)
+Node position x(-2.7235), y(0.659)
 Node parent should have position x(-2.765), y(2.265)
-And distance to end of section = 14.4071
+And distance to end of section = 14.3495
 Attempting to find parent...
 Parent found with position x(-2.765), y(2.265)
-Parent's own parent has position x(-0.07), y(1.755)
+Parent's own parent has position x(-0.0985), y(1.904)
 Node addition operation complete
 --------
 Trying to add node:
@@ -315,27 +315,27 @@ Parent's own parent has position x(5.335), y(2.85)
 Node addition operation complete
 --------
 Trying to add node:
-Node position x(1.445), y(-0.895)
-Node parent should have position x(-0.005), y(-1.45)
-And distance to end of section = 12.2233
+Node position x(1.4165), y(-0.746)
+Node parent should have position x(-0.0335), y(-1.301)
+And distance to end of section = 12.1284
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-1.41), y(-0.925)
-Node parent should have position x(-0.005), y(-1.45)
-And distance to end of section = 14.2529
+Node position x(-1.4385), y(-0.776)
+Node parent should have position x(-0.0335), y(-1.301)
+And distance to end of section = 14.177
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
 Node position x(-2.765), y(2.265)
-Node parent should have position x(-2.695), y(0.51)
+Node parent should have position x(-2.7235), y(0.659)
 And distance to end of section = 13.5824
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-1.41), y(-0.925)
-Node parent should have position x(-2.695), y(0.51)
-And distance to end of section = 14.2529
+Node position x(-1.4385), y(-0.776)
+Node parent should have position x(-2.7235), y(0.659)
+And distance to end of section = 14.177
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
@@ -345,21 +345,21 @@ And distance to end of section = 14.1809
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-2.695), y(0.51)
+Node position x(-2.7235), y(0.659)
 Node parent should have position x(-2.765), y(2.265)
-And distance to end of section = 14.4071
+And distance to end of section = 14.3495
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-0.005), y(-1.45)
-Node parent should have position x(-1.41), y(-0.925)
-And distance to end of section = 13.6034
+Node position x(-0.0335), y(-1.301)
+Node parent should have position x(-1.4385), y(-0.776)
+And distance to end of section = 13.5152
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-2.695), y(0.51)
-Node parent should have position x(-1.41), y(-0.925)
-And distance to end of section = 14.4071
+Node position x(-2.7235), y(0.659)
+Node parent should have position x(-1.4385), y(-0.776)
+And distance to end of section = 14.3495
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
@@ -382,14 +382,14 @@ Node addition operation complete
 --------
 Trying to add node:
 Node position x(-2.765), y(2.265)
-Node parent should have position x(-2.695), y(0.51)
+Node parent should have position x(-2.7235), y(0.659)
 And distance to end of section = 13.5824
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-1.41), y(-0.925)
-Node parent should have position x(-2.695), y(0.51)
-And distance to end of section = 14.2529
+Node position x(-1.4385), y(-0.776)
+Node parent should have position x(-2.7235), y(0.659)
+And distance to end of section = 14.177
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
@@ -429,9 +429,9 @@ And distance to end of section = 14.1809
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
-Node position x(-2.695), y(0.51)
+Node position x(-2.7235), y(0.659)
 Node parent should have position x(-2.765), y(2.265)
-And distance to end of section = 14.4071
+And distance to end of section = 14.3495
 Node was already found in tree. Point skipped
 --------
 Trying to add node:
@@ -636,103 +636,6 @@ Trying to add node:
 Node position x(-5.89), y(11.07)
 Node parent should have position x(-6.43), y(10.16)
 And distance to end of section = 15.4447
-Node was already found in tree. Point skipped
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Tree addNode() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-Trying to add node:
-Node position x(14.615), y(6.7)
-Node parent should have position x(-1.79769e+308), y(-1.79769e+308)
-And distance to end of section = 3.12156
-Node placed in head position
-Node addition operation complete
---------
-Trying to add node:
-Node position x(16.07), y(7.02)
-Node parent should have position x(14.615), y(6.7)
-And distance to end of section = 3.41217
-Attempting to find parent...
-Parent found with position x(14.615), y(6.7)
-Node addition operation complete
---------
-Trying to add node:
-Node position x(12.9025), y(4.7225)
-Node parent should have position x(14.615), y(6.7)
-And distance to end of section = 5.17629
-Attempting to find parent...
-Parent found with position x(14.615), y(6.7)
-Node addition operation complete
---------
-Trying to add node:
-Node position x(11.3975), y(7.4225)
-Node parent should have position x(14.615), y(6.7)
-And distance to end of section = 3.54211
-Attempting to find parent...
-Parent found with position x(14.615), y(6.7)
-Node addition operation complete
---------
-Trying to add node:
-Node position x(14.615), y(6.7)
-Node parent should have position x(16.07), y(7.02)
-And distance to end of section = 3.12156
-Node was already found in tree. Point skipped
---------
-Trying to add node:
-Node position x(11.3975), y(7.4225)
-Node parent should have position x(12.9025), y(4.7225)
-And distance to end of section = 3.54211
-Attempting to find parent...
-Parent found with position x(12.9025), y(4.7225)
-Parent's own parent has position x(14.615), y(6.7)
-Node addition operation complete
---------
-Trying to add node:
-Node position x(14.615), y(6.7)
-Node parent should have position x(12.9025), y(4.7225)
-And distance to end of section = 3.12156
-Node was already found in tree. Point skipped
---------
-Trying to add node:
-Node position x(12.9025), y(4.7225)
-Node parent should have position x(11.3975), y(7.4225)
-And distance to end of section = 5.17629
-Attempting to find parent...
-Parent found with position x(11.3975), y(7.4225)
-Parent's own parent has position x(14.615), y(6.7)
-Node addition operation complete
---------
-Trying to add node:
-Node position x(14.615), y(6.7)
-Node parent should have position x(11.3975), y(7.4225)
-And distance to end of section = 3.12156
-Node was already found in tree. Point skipped
---------
-Trying to add node:
-Node position x(12.9025), y(4.7225)
-Node parent should have position x(11.3975), y(7.4225)
-And distance to end of section = 5.17629
-Node was already found in tree. Point skipped
---------
-Trying to add node:
-Node position x(14.615), y(6.7)
-Node parent should have position x(11.3975), y(7.4225)
-And distance to end of section = 3.12156
-Node was already found in tree. Point skipped
---------
-Trying to add node:
-Node position x(11.3975), y(7.4225)
-Node parent should have position x(12.9025), y(4.7225)
-And distance to end of section = 3.54211
-Node was already found in tree. Point skipped
---------
-Trying to add node:
-Node position x(14.615), y(6.7)
-Node parent should have position x(12.9025), y(4.7225)
-And distance to end of section = 3.12156
 Node was already found in tree. Point skipped
 --------
 ///////////////////////////////////

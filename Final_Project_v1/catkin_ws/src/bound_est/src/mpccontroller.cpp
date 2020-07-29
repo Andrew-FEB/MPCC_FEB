@@ -7,20 +7,21 @@
 
 #include "mpccontroller.h"
 
-MPCController::MPCController() {}
-MPCController::MPCController(std::shared_ptr<Visualisation> vis) : visualisation(vis) {}
-MPCController::MPCController(int ph, double dt) : prediction_horizon(ph), time_step(dt) {}
-MPCController::MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis) : prediction_horizon(ph), time_step(dt), visualisation(vis) {}
+MPCController::MPCController(std::shared_ptr<Visualisation> vis, Track & t) : visualisation(vis), track(t) {}
+MPCController::MPCController(int ph, double dt, Track & t) : prediction_horizon(ph), time_step(dt), track(t) {}
+MPCController::MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis, Track & t) :
+        prediction_horizon(ph), time_step(dt), visualisation(vis), track(t) {}
 
-ControlInputs MPCController::solve(const Car &current, Track &t)
+void MPCController::solve()
 {
     ControlInputs ci;
-    auto pos = current.getPosition();
-    auto vel = current.getVelocity();
+    auto car = track.getCar();
+    auto pos = car->getPosition();
+    auto vel = car->getVelocity();
 
     // Obtain reference and track constraints
-    auto dist = calculateDistance(vel);
-    auto params = t.getReferencePath(0.175, prediction_horizon);  // dist > 0 ? dist : 
+    auto dist = vel.vx * time_step + 0.05;
+    auto params = track.getReferencePath(dist, prediction_horizon);
 
     // TODO Check if params has the correct length
     
@@ -140,13 +141,18 @@ ControlInputs MPCController::solve(const Car &current, Track &t)
     #endif
 
     #ifdef VISUALISE
-        showPredictedPath(current, u);
+        showPredictedPath(*car, u);
     #endif
 
     /* free memory */
     mpcc_optimizer_free(cache);
 
-    return ci;
+    /* Update car state */
+    car->updateCar(ci, time_step);
+    #ifdef VISUALISE
+        visualisation->showCar(car->getPosition());
+        visualisation->showCarDirection(car->getPosition());
+    #endif
 }
 
 void MPCController::showPredictedPath(const Car & car, double * inputs) const
@@ -166,10 +172,4 @@ void MPCController::showPredictedPath(const Car & car, double * inputs) const
 
     visualisation->showNodeParentLinks(path);
 
-}
-
-double MPCController::calculateDistance(Vel &velocity) const
-{
-    auto vel = velocity.vx;
-    return prediction_horizon * time_step * vel;
 }

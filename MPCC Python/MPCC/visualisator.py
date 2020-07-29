@@ -211,7 +211,7 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
         txt.set_text("Iteration: " + str(i) + "\nExit status: " + exit_status_seq[i])
         plt.draw()
         plt.pause(1e-17)
-        time.sleep(0.01)
+        time.sleep(0.001)
 
     plt.show()
 

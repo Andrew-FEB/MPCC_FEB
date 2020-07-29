@@ -1,21 +1,21 @@
-Log message for findTrianglesAroundPoint() log data at Tue Jul 28 22:15:18 2020
+Log message for findTrianglesAroundPoint() log data at Wed Jul 29 12:51:54 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
 Value derived from car position: 1
 Origin point x(-6.43), y(10.16)
 Triangle list size = 30
-Checking triangle with points a(2.21,3.74), b(0,0), c(-0.14,3.51)
-Checking triangle with points a(2.21,3.74), b(2.89,-1.79), c(0,0)
+Checking triangle with points a(2.21,3.74), b(-0.057,0.298), c(-0.14,3.51)
+Checking triangle with points a(2.21,3.74), b(2.89,-1.79), c(-0.057,0.298)
 Checking triangle with points a(-5.39,1.02), b(-2.22,5.18), c(-0.14,3.51)
 Checking triangle with points a(-0.14,3.51), b(-2.22,5.18), c(2.21,3.74)
-Checking triangle with points a(2.89,-1.79), b(-0.01,-2.9), c(0,0)
-Checking triangle with points a(0,0), b(-5.39,1.02), c(-0.14,3.51)
-Checking triangle with points a(2.21,3.74), b(5.91,0.43), c(2.89,-1.79)
 Checking triangle with points a(-2.22,5.18), b(4.76,5.27), c(2.21,3.74)
-Checking triangle with points a(2.21,3.74), b(4.76,5.27), c(5.91,0.43)
-Checking triangle with points a(-0.01,-2.9), b(-2.82,-1.85), c(0,0)
-Checking triangle with points a(-2.82,-1.85), b(-5.39,1.02), c(0,0)
+Checking triangle with points a(2.21,3.74), b(5.91,0.43), c(2.89,-1.79)
+Checking triangle with points a(4.76,5.27), b(5.91,0.43), c(2.21,3.74)
+Checking triangle with points a(2.89,-1.79), b(-0.01,-2.9), c(-0.057,0.298)
+Checking triangle with points a(-0.057,0.298), b(-5.39,1.02), c(-0.14,3.51)
+Checking triangle with points a(-0.01,-2.9), b(-2.82,-1.85), c(-0.057,0.298)
+Checking triangle with points a(-2.82,-1.85), b(-5.39,1.02), c(-0.057,0.298)
 Checking triangle with points a(-7.46,5.03), b(-3.66,7.98), c(-2.22,5.18)
 Checking triangle with points a(-2.22,5.18), b(2.61,13.45), c(4.76,5.27)
 Checking triangle with points a(4.76,5.27), b(9.13,2.35), c(5.91,0.43)
@@ -37,127 +37,6 @@ Checking triangle with points a(-2.95,12.63), b(-0.57,13.34), c(-4.03,10.81)
 Checking triangle with points a(-0.57,13.34), b(2.61,13.45), c(-3.66,7.98)
 Checking triangle with points a(-7.46,5.03), b(-8.83,9.51), c(-3.66,7.98)
 Checking triangle with points a(2.61,13.45), b(6.09,13.52), c(7.44,7.15)
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for findTrianglesAroundPoint() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Value derived from car position: 0
-Origin point x(9.685), y(5.445)
-Triangle list size = 5
-Checking triangle with points a(13.11,9.4), b(16.02,10.04), c(16.12,4)
---------
-Checking triangle with points a(16.12,4), b(9.685,5.445), c(13.11,9.4)
---------
-Triangle found on points and added to list
-Checking triangle with points a(13.11,9.4), b(11.98,15.54), c(16.02,10.04)
---------
-Checking triangle with points a(9.36,14.06), b(11.98,15.54), c(13.11,9.4)
---------
-Checking triangle with points a(9.685,5.445), b(9.36,14.06), c(13.11,9.4)
---------
-Triangle found on points and added to list
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for findTrianglesAroundPoint() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Value derived from car position: 1
-Origin point x(14.615), y(6.7)
-Triangle list size = 5
-Checking triangle with points a(13.11,9.4), b(16.02,10.04), c(16.12,4)
-Triangle found on vertices and added to list
-Checking triangle with points a(16.12,4), b(9.685,5.445), c(13.11,9.4)
-Triangle found on vertices and added to list
-Checking triangle with points a(13.11,9.4), b(11.98,15.54), c(16.02,10.04)
-Checking triangle with points a(9.36,14.06), b(11.98,15.54), c(13.11,9.4)
-Checking triangle with points a(9.685,5.445), b(9.36,14.06), c(13.11,9.4)
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for findTrianglesAroundPoint() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Value derived from car position: 1
-Origin point x(16.07), y(7.02)
-Triangle list size = 5
-Checking triangle with points a(13.11,9.4), b(16.02,10.04), c(16.12,4)
-Triangle found on vertices and added to list
-Checking triangle with points a(16.12,4), b(9.685,5.445), c(13.11,9.4)
-Checking triangle with points a(13.11,9.4), b(11.98,15.54), c(16.02,10.04)
-Checking triangle with points a(9.36,14.06), b(11.98,15.54), c(13.11,9.4)
-Checking triangle with points a(9.685,5.445), b(9.36,14.06), c(13.11,9.4)
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for findTrianglesAroundPoint() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Value derived from car position: 1
-Origin point x(12.9025), y(4.7225)
-Triangle list size = 5
-Checking triangle with points a(13.11,9.4), b(16.02,10.04), c(16.12,4)
-Checking triangle with points a(16.12,4), b(9.685,5.445), c(13.11,9.4)
-Triangle found on vertices and added to list
-Checking triangle with points a(13.11,9.4), b(11.98,15.54), c(16.02,10.04)
-Checking triangle with points a(9.36,14.06), b(11.98,15.54), c(13.11,9.4)
-Checking triangle with points a(9.685,5.445), b(9.36,14.06), c(13.11,9.4)
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for findTrianglesAroundPoint() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Value derived from car position: 1
-Origin point x(11.3975), y(7.4225)
-Triangle list size = 5
-Checking triangle with points a(13.11,9.4), b(16.02,10.04), c(16.12,4)
-Checking triangle with points a(16.12,4), b(9.685,5.445), c(13.11,9.4)
-Triangle found on vertices and added to list
-Checking triangle with points a(13.11,9.4), b(11.98,15.54), c(16.02,10.04)
-Checking triangle with points a(9.36,14.06), b(11.98,15.54), c(13.11,9.4)
-Checking triangle with points a(9.685,5.445), b(9.36,14.06), c(13.11,9.4)
-Triangle found on vertices and added to list
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for findTrianglesAroundPoint() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Value derived from car position: 1
-Origin point x(11.3975), y(7.4225)
-Triangle list size = 5
-Checking triangle with points a(13.11,9.4), b(16.02,10.04), c(16.12,4)
-Checking triangle with points a(16.12,4), b(9.685,5.445), c(13.11,9.4)
-Triangle found on vertices and added to list
-Checking triangle with points a(13.11,9.4), b(11.98,15.54), c(16.02,10.04)
-Checking triangle with points a(9.36,14.06), b(11.98,15.54), c(13.11,9.4)
-Checking triangle with points a(9.685,5.445), b(9.36,14.06), c(13.11,9.4)
-Triangle found on vertices and added to list
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for findTrianglesAroundPoint() log data at Tue Jul 28 22:16:11 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Value derived from car position: 1
-Origin point x(12.9025), y(4.7225)
-Triangle list size = 5
-Checking triangle with points a(13.11,9.4), b(16.02,10.04), c(16.12,4)
-Checking triangle with points a(16.12,4), b(9.685,5.445), c(13.11,9.4)
-Triangle found on vertices and added to list
-Checking triangle with points a(13.11,9.4), b(11.98,15.54), c(16.02,10.04)
-Checking triangle with points a(9.36,14.06), b(11.98,15.54), c(13.11,9.4)
-Checking triangle with points a(9.685,5.445), b(9.36,14.06), c(13.11,9.4)
 ///////////////////////////////////
 ///////////////////////////////////
 

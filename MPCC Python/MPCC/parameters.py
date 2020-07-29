@@ -43,8 +43,8 @@ omega_max = 70
 omega_min = -omega_max
 # Control limits
 # Acceleration
-a_max = 1
-a_min = -a_max
+a_max = 2
+a_min = -0.1
 # Steering angle
 delta_max = 0.506  # 0.506 rad =  29 degrees
 delta_min = -delta_max
@@ -62,6 +62,6 @@ Ts = 0.05  # Sampling time (length of one time step in seconds)
 
 # Weights in cost function
 track_error_weight = 1
-velocity_weight = 1
+velocity_weight = 2
 in_weight = [1e-4, 1e-4]  # acceleration, steering angle
 in_change_weight = [0.01, 0.001]  # change of acceleration, change of steering angle

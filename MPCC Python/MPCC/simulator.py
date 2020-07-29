@@ -47,7 +47,7 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
     # each time step being param.Ts seconds long
     # i_nearest is the index of the nearest point on the reference line
     i_nearest = get_nearest_point((state_0.x, state_0.y), track_x, track_y, int(len(track_x) * 0.1), 0)
-    ref_list, ref_indexes, end_reached = get_reference_list(track_x, track_y, i_nearest)
+    ref_list, ref_indexes, end_reached = get_reference_list(track_x, track_y, i_nearest, state.v)
     ref_seq = [ref_list]
 
     cost_seq = [0]
@@ -72,7 +72,7 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
     # Run simulation
     for k in range(simulation_steps):
         solver_status = mng.call(np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right,
-                                                         track_width],
+                                                         2*track_width],
                                                  np.reshape(ref_list, 2 * param.N))), control_inputs)
 
         try:
@@ -87,10 +87,10 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
             first_control_input = Control(control_inputs[0], control_inputs[1])
             state_next = cg.kinematic_model_rk(state, first_control_input, False)
             i_nearest = get_nearest_point(state_next[0:2], track_x, track_y, int(len(track_x) * 0.1), 0)
-            ref_list, ref_indexes, end_of_track_reached = get_reference_list(track_x, track_y, i_nearest)
+            ref_list, ref_indexes, end_of_track_reached = get_reference_list(track_x, track_y, i_nearest, state.v)
 
             # TODO - enable this for non-circular tracks
-            if end_of_track_reached: break
+            # if end_of_track_reached: break
 
             # Update all variables needed for the next iteration and save values in the sequences to be plotted
             intercepts, slopes, track_width, i_left, i_right = get_boundaries(left_y, left_x, right_y, right_x,
@@ -169,17 +169,17 @@ def get_boundaries(left_y, left_x, right_y, right_x, indexes, ref_list):
 # after timestep 2, it will be that point + Ts * (current velocity (+ some acceleration) ), where "some
 # acceleration" could be either the maximum acceleration or 0. You can quite efficiently compute such a sequence
 # of points using the cumsum function in numpy.
-def get_reference_list(track_x, track_y, i_nearest):
+def get_reference_list(track_x, track_y, i_nearest, current_velocity):
     x = [track_x[i_nearest]]
     y = [track_y[i_nearest]]
-    dist = param.Ts * param.v_x_max
+    dist = param.Ts * current_velocity  # param.v_x_max  #
     j = i_nearest
     dist_prev = dist
     indexes = [j]
     end_reached = False
 
     for i in range(0, param.N):
-        d = dist_prev  # + param.a_max * param.Ts ** 2
+        d = dist_prev  + param.a_max * param.Ts ** 2
         dist_prev = d
         x_temp = x[len(x) - 1]
         y_temp = y[len(y) - 1]

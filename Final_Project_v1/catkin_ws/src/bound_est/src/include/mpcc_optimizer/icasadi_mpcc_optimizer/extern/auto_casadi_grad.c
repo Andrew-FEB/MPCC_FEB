@@ -10,7 +10,7 @@ extern "C" {
   #define _CASADI_NAMESPACE_CONCAT(NS, ID) NS ## ID
   #define CASADI_PREFIX(ID) CASADI_NAMESPACE_CONCAT(CODEGEN_PREFIX, ID)
 #else
-  #define CASADI_PREFIX(ID) grad_phi_mdRcyVHJDGdBpWIWRhdV_ ## ID
+  #define CASADI_PREFIX(ID) grad_phi_RFePYnxkyRwyAbKgShXj_ ## ID
 #endif
 
 #include <math.h>
@@ -94,7 +94,7 @@ static const casadi_int casadi_s0[84] = {80, 1, 0, 80, 0, 1, 2, 3, 4, 5, 6, 7, 8
 static const casadi_int casadi_s1[125] = {121, 1, 0, 121, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120};
 static const casadi_int casadi_s2[93] = {89, 1, 0, 89, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88};
 
-/* grad_phi_mdRcyVHJDGdBpWIWRhdV:(i0[80],i1[121],i2[89])->(o0[80]) */
+/* grad_phi_RFePYnxkyRwyAbKgShXj:(i0[80],i1[121],i2[89])->(o0[80]) */
 static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem) {
   casadi_int i;
   casadi_real *rr, *ss;
@@ -14733,8 +14733,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   for (rr=w3+0, ss=(&w2519); rr!=w3+1; rr+=1) *rr += *ss++;
   /* #6870: (@3[3] += @2516) */
   for (rr=w3+3, ss=(&w2516); rr!=w3+4; rr+=1) *rr += *ss++;
-  /* #6871: @2516 = -1 */
-  w2516 = -1.;
+  /* #6871: @2516 = -2 */
+  w2516 = -2.;
   /* #6872: (@3[3] += @2516) */
   for (rr=w3+3, ss=(&w2516); rr!=w3+4; rr+=1) *rr += *ss++;
   /* #6873: @2516 = @2054[1] */
@@ -15177,8 +15177,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w2137 += w2144;
   /* #7086: (@2054[3] += @2137) */
   for (rr=w2054+3, ss=(&w2137); rr!=w2054+4; rr+=1) *rr += *ss++;
-  /* #7087: @2137 = -1 */
-  w2137 = -1.;
+  /* #7087: @2137 = -2 */
+  w2137 = -2.;
   /* #7088: (@2054[3] += @2137) */
   for (rr=w2054+3, ss=(&w2137); rr!=w2054+4; rr+=1) *rr += *ss++;
   /* #7089: @2137 = @1998[1] */
@@ -15621,8 +15621,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w2081 += w2088;
   /* #7302: (@1998[3] += @2081) */
   for (rr=w1998+3, ss=(&w2081); rr!=w1998+4; rr+=1) *rr += *ss++;
-  /* #7303: @2081 = -1 */
-  w2081 = -1.;
+  /* #7303: @2081 = -2 */
+  w2081 = -2.;
   /* #7304: (@1998[3] += @2081) */
   for (rr=w1998+3, ss=(&w2081); rr!=w1998+4; rr+=1) *rr += *ss++;
   /* #7305: @2081 = @1942[1] */
@@ -16065,8 +16065,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w2025 += w2032;
   /* #7518: (@1942[3] += @2025) */
   for (rr=w1942+3, ss=(&w2025); rr!=w1942+4; rr+=1) *rr += *ss++;
-  /* #7519: @2025 = -1 */
-  w2025 = -1.;
+  /* #7519: @2025 = -2 */
+  w2025 = -2.;
   /* #7520: (@1942[3] += @2025) */
   for (rr=w1942+3, ss=(&w2025); rr!=w1942+4; rr+=1) *rr += *ss++;
   /* #7521: @2025 = @1886[1] */
@@ -16509,8 +16509,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1969 += w1976;
   /* #7734: (@1886[3] += @1969) */
   for (rr=w1886+3, ss=(&w1969); rr!=w1886+4; rr+=1) *rr += *ss++;
-  /* #7735: @1969 = -1 */
-  w1969 = -1.;
+  /* #7735: @1969 = -2 */
+  w1969 = -2.;
   /* #7736: (@1886[3] += @1969) */
   for (rr=w1886+3, ss=(&w1969); rr!=w1886+4; rr+=1) *rr += *ss++;
   /* #7737: @1969 = @1830[1] */
@@ -16953,8 +16953,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1913 += w1920;
   /* #7950: (@1830[3] += @1913) */
   for (rr=w1830+3, ss=(&w1913); rr!=w1830+4; rr+=1) *rr += *ss++;
-  /* #7951: @1913 = -1 */
-  w1913 = -1.;
+  /* #7951: @1913 = -2 */
+  w1913 = -2.;
   /* #7952: (@1830[3] += @1913) */
   for (rr=w1830+3, ss=(&w1913); rr!=w1830+4; rr+=1) *rr += *ss++;
   /* #7953: @1913 = @1774[1] */
@@ -17397,8 +17397,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1857 += w1864;
   /* #8166: (@1774[3] += @1857) */
   for (rr=w1774+3, ss=(&w1857); rr!=w1774+4; rr+=1) *rr += *ss++;
-  /* #8167: @1857 = -1 */
-  w1857 = -1.;
+  /* #8167: @1857 = -2 */
+  w1857 = -2.;
   /* #8168: (@1774[3] += @1857) */
   for (rr=w1774+3, ss=(&w1857); rr!=w1774+4; rr+=1) *rr += *ss++;
   /* #8169: @1857 = @1718[1] */
@@ -17841,8 +17841,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1801 += w1808;
   /* #8382: (@1718[3] += @1801) */
   for (rr=w1718+3, ss=(&w1801); rr!=w1718+4; rr+=1) *rr += *ss++;
-  /* #8383: @1801 = -1 */
-  w1801 = -1.;
+  /* #8383: @1801 = -2 */
+  w1801 = -2.;
   /* #8384: (@1718[3] += @1801) */
   for (rr=w1718+3, ss=(&w1801); rr!=w1718+4; rr+=1) *rr += *ss++;
   /* #8385: @1801 = @1662[1] */
@@ -18285,8 +18285,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1745 += w1752;
   /* #8598: (@1662[3] += @1745) */
   for (rr=w1662+3, ss=(&w1745); rr!=w1662+4; rr+=1) *rr += *ss++;
-  /* #8599: @1745 = -1 */
-  w1745 = -1.;
+  /* #8599: @1745 = -2 */
+  w1745 = -2.;
   /* #8600: (@1662[3] += @1745) */
   for (rr=w1662+3, ss=(&w1745); rr!=w1662+4; rr+=1) *rr += *ss++;
   /* #8601: @1745 = @1606[1] */
@@ -18729,8 +18729,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1689 += w1696;
   /* #8814: (@1606[3] += @1689) */
   for (rr=w1606+3, ss=(&w1689); rr!=w1606+4; rr+=1) *rr += *ss++;
-  /* #8815: @1689 = -1 */
-  w1689 = -1.;
+  /* #8815: @1689 = -2 */
+  w1689 = -2.;
   /* #8816: (@1606[3] += @1689) */
   for (rr=w1606+3, ss=(&w1689); rr!=w1606+4; rr+=1) *rr += *ss++;
   /* #8817: @1689 = @1550[1] */
@@ -19169,8 +19169,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1633 += w1640;
   /* #9028: (@1550[3] += @1633) */
   for (rr=w1550+3, ss=(&w1633); rr!=w1550+4; rr+=1) *rr += *ss++;
-  /* #9029: @1633 = -1 */
-  w1633 = -1.;
+  /* #9029: @1633 = -2 */
+  w1633 = -2.;
   /* #9030: (@1550[3] += @1633) */
   for (rr=w1550+3, ss=(&w1633); rr!=w1550+4; rr+=1) *rr += *ss++;
   /* #9031: @1633 = @1494[1] */
@@ -19609,8 +19609,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1577 += w1584;
   /* #9242: (@1494[3] += @1577) */
   for (rr=w1494+3, ss=(&w1577); rr!=w1494+4; rr+=1) *rr += *ss++;
-  /* #9243: @1577 = -1 */
-  w1577 = -1.;
+  /* #9243: @1577 = -2 */
+  w1577 = -2.;
   /* #9244: (@1494[3] += @1577) */
   for (rr=w1494+3, ss=(&w1577); rr!=w1494+4; rr+=1) *rr += *ss++;
   /* #9245: @1577 = @1438[1] */
@@ -20049,8 +20049,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1521 += w1528;
   /* #9456: (@1438[3] += @1521) */
   for (rr=w1438+3, ss=(&w1521); rr!=w1438+4; rr+=1) *rr += *ss++;
-  /* #9457: @1521 = -1 */
-  w1521 = -1.;
+  /* #9457: @1521 = -2 */
+  w1521 = -2.;
   /* #9458: (@1438[3] += @1521) */
   for (rr=w1438+3, ss=(&w1521); rr!=w1438+4; rr+=1) *rr += *ss++;
   /* #9459: @1521 = @1382[1] */
@@ -20489,8 +20489,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1465 += w1472;
   /* #9670: (@1382[3] += @1465) */
   for (rr=w1382+3, ss=(&w1465); rr!=w1382+4; rr+=1) *rr += *ss++;
-  /* #9671: @1465 = -1 */
-  w1465 = -1.;
+  /* #9671: @1465 = -2 */
+  w1465 = -2.;
   /* #9672: (@1382[3] += @1465) */
   for (rr=w1382+3, ss=(&w1465); rr!=w1382+4; rr+=1) *rr += *ss++;
   /* #9673: @1465 = @1326[1] */
@@ -20929,8 +20929,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1409 += w1416;
   /* #9884: (@1326[3] += @1409) */
   for (rr=w1326+3, ss=(&w1409); rr!=w1326+4; rr+=1) *rr += *ss++;
-  /* #9885: @1409 = -1 */
-  w1409 = -1.;
+  /* #9885: @1409 = -2 */
+  w1409 = -2.;
   /* #9886: (@1326[3] += @1409) */
   for (rr=w1326+3, ss=(&w1409); rr!=w1326+4; rr+=1) *rr += *ss++;
   /* #9887: @1409 = @1270[1] */
@@ -21369,8 +21369,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1353 += w1360;
   /* #10098: (@1270[3] += @1353) */
   for (rr=w1270+3, ss=(&w1353); rr!=w1270+4; rr+=1) *rr += *ss++;
-  /* #10099: @1353 = -1 */
-  w1353 = -1.;
+  /* #10099: @1353 = -2 */
+  w1353 = -2.;
   /* #10100: (@1270[3] += @1353) */
   for (rr=w1270+3, ss=(&w1353); rr!=w1270+4; rr+=1) *rr += *ss++;
   /* #10101: @1353 = @1214[1] */
@@ -21809,8 +21809,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1297 += w1304;
   /* #10312: (@1214[3] += @1297) */
   for (rr=w1214+3, ss=(&w1297); rr!=w1214+4; rr+=1) *rr += *ss++;
-  /* #10313: @1297 = -1 */
-  w1297 = -1.;
+  /* #10313: @1297 = -2 */
+  w1297 = -2.;
   /* #10314: (@1214[3] += @1297) */
   for (rr=w1214+3, ss=(&w1297); rr!=w1214+4; rr+=1) *rr += *ss++;
   /* #10315: @1297 = @1158[1] */
@@ -22249,8 +22249,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1241 += w1248;
   /* #10526: (@1158[3] += @1241) */
   for (rr=w1158+3, ss=(&w1241); rr!=w1158+4; rr+=1) *rr += *ss++;
-  /* #10527: @1241 = -1 */
-  w1241 = -1.;
+  /* #10527: @1241 = -2 */
+  w1241 = -2.;
   /* #10528: (@1158[3] += @1241) */
   for (rr=w1158+3, ss=(&w1241); rr!=w1158+4; rr+=1) *rr += *ss++;
   /* #10529: @1241 = @1102[1] */
@@ -22689,8 +22689,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1185 += w1192;
   /* #10740: (@1102[3] += @1185) */
   for (rr=w1102+3, ss=(&w1185); rr!=w1102+4; rr+=1) *rr += *ss++;
-  /* #10741: @1185 = -1 */
-  w1185 = -1.;
+  /* #10741: @1185 = -2 */
+  w1185 = -2.;
   /* #10742: (@1102[3] += @1185) */
   for (rr=w1102+3, ss=(&w1185); rr!=w1102+4; rr+=1) *rr += *ss++;
   /* #10743: @1185 = @1046[1] */
@@ -23129,8 +23129,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1129 += w1136;
   /* #10954: (@1046[3] += @1129) */
   for (rr=w1046+3, ss=(&w1129); rr!=w1046+4; rr+=1) *rr += *ss++;
-  /* #10955: @1129 = -1 */
-  w1129 = -1.;
+  /* #10955: @1129 = -2 */
+  w1129 = -2.;
   /* #10956: (@1046[3] += @1129) */
   for (rr=w1046+3, ss=(&w1129); rr!=w1046+4; rr+=1) *rr += *ss++;
   /* #10957: @1129 = @990[1] */
@@ -23569,8 +23569,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1073 += w1080;
   /* #11168: (@990[3] += @1073) */
   for (rr=w990+3, ss=(&w1073); rr!=w990+4; rr+=1) *rr += *ss++;
-  /* #11169: @1073 = -1 */
-  w1073 = -1.;
+  /* #11169: @1073 = -2 */
+  w1073 = -2.;
   /* #11170: (@990[3] += @1073) */
   for (rr=w990+3, ss=(&w1073); rr!=w990+4; rr+=1) *rr += *ss++;
   /* #11171: @1073 = @934[1] */
@@ -24009,8 +24009,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w1017 += w1024;
   /* #11382: (@934[3] += @1017) */
   for (rr=w934+3, ss=(&w1017); rr!=w934+4; rr+=1) *rr += *ss++;
-  /* #11383: @1017 = -1 */
-  w1017 = -1.;
+  /* #11383: @1017 = -2 */
+  w1017 = -2.;
   /* #11384: (@934[3] += @1017) */
   for (rr=w934+3, ss=(&w1017); rr!=w934+4; rr+=1) *rr += *ss++;
   /* #11385: @1017 = @878[1] */
@@ -24449,8 +24449,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w961 += w968;
   /* #11596: (@878[3] += @961) */
   for (rr=w878+3, ss=(&w961); rr!=w878+4; rr+=1) *rr += *ss++;
-  /* #11597: @961 = -1 */
-  w961 = -1.;
+  /* #11597: @961 = -2 */
+  w961 = -2.;
   /* #11598: (@878[3] += @961) */
   for (rr=w878+3, ss=(&w961); rr!=w878+4; rr+=1) *rr += *ss++;
   /* #11599: @961 = @822[1] */
@@ -24889,8 +24889,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w905 += w912;
   /* #11810: (@822[3] += @905) */
   for (rr=w822+3, ss=(&w905); rr!=w822+4; rr+=1) *rr += *ss++;
-  /* #11811: @905 = -1 */
-  w905 = -1.;
+  /* #11811: @905 = -2 */
+  w905 = -2.;
   /* #11812: (@822[3] += @905) */
   for (rr=w822+3, ss=(&w905); rr!=w822+4; rr+=1) *rr += *ss++;
   /* #11813: @905 = @766[1] */
@@ -25329,8 +25329,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w849 += w856;
   /* #12024: (@766[3] += @849) */
   for (rr=w766+3, ss=(&w849); rr!=w766+4; rr+=1) *rr += *ss++;
-  /* #12025: @849 = -1 */
-  w849 = -1.;
+  /* #12025: @849 = -2 */
+  w849 = -2.;
   /* #12026: (@766[3] += @849) */
   for (rr=w766+3, ss=(&w849); rr!=w766+4; rr+=1) *rr += *ss++;
   /* #12027: @849 = @710[1] */
@@ -25769,8 +25769,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w793 += w800;
   /* #12238: (@710[3] += @793) */
   for (rr=w710+3, ss=(&w793); rr!=w710+4; rr+=1) *rr += *ss++;
-  /* #12239: @793 = -1 */
-  w793 = -1.;
+  /* #12239: @793 = -2 */
+  w793 = -2.;
   /* #12240: (@710[3] += @793) */
   for (rr=w710+3, ss=(&w793); rr!=w710+4; rr+=1) *rr += *ss++;
   /* #12241: @793 = @654[1] */
@@ -26209,8 +26209,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w737 += w744;
   /* #12452: (@654[3] += @737) */
   for (rr=w654+3, ss=(&w737); rr!=w654+4; rr+=1) *rr += *ss++;
-  /* #12453: @737 = -1 */
-  w737 = -1.;
+  /* #12453: @737 = -2 */
+  w737 = -2.;
   /* #12454: (@654[3] += @737) */
   for (rr=w654+3, ss=(&w737); rr!=w654+4; rr+=1) *rr += *ss++;
   /* #12455: @737 = @598[1] */
@@ -26649,8 +26649,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w681 += w688;
   /* #12666: (@598[3] += @681) */
   for (rr=w598+3, ss=(&w681); rr!=w598+4; rr+=1) *rr += *ss++;
-  /* #12667: @681 = -1 */
-  w681 = -1.;
+  /* #12667: @681 = -2 */
+  w681 = -2.;
   /* #12668: (@598[3] += @681) */
   for (rr=w598+3, ss=(&w681); rr!=w598+4; rr+=1) *rr += *ss++;
   /* #12669: @681 = @542[1] */
@@ -27089,8 +27089,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w625 += w632;
   /* #12880: (@542[3] += @625) */
   for (rr=w542+3, ss=(&w625); rr!=w542+4; rr+=1) *rr += *ss++;
-  /* #12881: @625 = -1 */
-  w625 = -1.;
+  /* #12881: @625 = -2 */
+  w625 = -2.;
   /* #12882: (@542[3] += @625) */
   for (rr=w542+3, ss=(&w625); rr!=w542+4; rr+=1) *rr += *ss++;
   /* #12883: @625 = @486[1] */
@@ -27529,8 +27529,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w569 += w576;
   /* #13094: (@486[3] += @569) */
   for (rr=w486+3, ss=(&w569); rr!=w486+4; rr+=1) *rr += *ss++;
-  /* #13095: @569 = -1 */
-  w569 = -1.;
+  /* #13095: @569 = -2 */
+  w569 = -2.;
   /* #13096: (@486[3] += @569) */
   for (rr=w486+3, ss=(&w569); rr!=w486+4; rr+=1) *rr += *ss++;
   /* #13097: @569 = @430[1] */
@@ -27969,8 +27969,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w513 += w520;
   /* #13308: (@430[3] += @513) */
   for (rr=w430+3, ss=(&w513); rr!=w430+4; rr+=1) *rr += *ss++;
-  /* #13309: @513 = -1 */
-  w513 = -1.;
+  /* #13309: @513 = -2 */
+  w513 = -2.;
   /* #13310: (@430[3] += @513) */
   for (rr=w430+3, ss=(&w513); rr!=w430+4; rr+=1) *rr += *ss++;
   /* #13311: @513 = @374[1] */
@@ -28409,8 +28409,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w457 += w464;
   /* #13522: (@374[3] += @457) */
   for (rr=w374+3, ss=(&w457); rr!=w374+4; rr+=1) *rr += *ss++;
-  /* #13523: @457 = -1 */
-  w457 = -1.;
+  /* #13523: @457 = -2 */
+  w457 = -2.;
   /* #13524: (@374[3] += @457) */
   for (rr=w374+3, ss=(&w457); rr!=w374+4; rr+=1) *rr += *ss++;
   /* #13525: @457 = @318[1] */
@@ -28849,8 +28849,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w401 += w408;
   /* #13736: (@318[3] += @401) */
   for (rr=w318+3, ss=(&w401); rr!=w318+4; rr+=1) *rr += *ss++;
-  /* #13737: @401 = -1 */
-  w401 = -1.;
+  /* #13737: @401 = -2 */
+  w401 = -2.;
   /* #13738: (@318[3] += @401) */
   for (rr=w318+3, ss=(&w401); rr!=w318+4; rr+=1) *rr += *ss++;
   /* #13739: @401 = @262[1] */
@@ -29289,8 +29289,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w345 += w352;
   /* #13950: (@262[3] += @345) */
   for (rr=w262+3, ss=(&w345); rr!=w262+4; rr+=1) *rr += *ss++;
-  /* #13951: @345 = -1 */
-  w345 = -1.;
+  /* #13951: @345 = -2 */
+  w345 = -2.;
   /* #13952: (@262[3] += @345) */
   for (rr=w262+3, ss=(&w345); rr!=w262+4; rr+=1) *rr += *ss++;
   /* #13953: @345 = @206[1] */
@@ -29729,8 +29729,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w289 += w296;
   /* #14164: (@206[3] += @289) */
   for (rr=w206+3, ss=(&w289); rr!=w206+4; rr+=1) *rr += *ss++;
-  /* #14165: @289 = -1 */
-  w289 = -1.;
+  /* #14165: @289 = -2 */
+  w289 = -2.;
   /* #14166: (@206[3] += @289) */
   for (rr=w206+3, ss=(&w289); rr!=w206+4; rr+=1) *rr += *ss++;
   /* #14167: @289 = @150[1] */
@@ -30169,8 +30169,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w233 += w240;
   /* #14378: (@150[3] += @233) */
   for (rr=w150+3, ss=(&w233); rr!=w150+4; rr+=1) *rr += *ss++;
-  /* #14379: @233 = -1 */
-  w233 = -1.;
+  /* #14379: @233 = -2 */
+  w233 = -2.;
   /* #14380: (@150[3] += @233) */
   for (rr=w150+3, ss=(&w233); rr!=w150+4; rr+=1) *rr += *ss++;
   /* #14381: @233 = @39[1] */
@@ -30609,8 +30609,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w177 += w184;
   /* #14592: (@39[3] += @177) */
   for (rr=w39+3, ss=(&w177); rr!=w39+4; rr+=1) *rr += *ss++;
-  /* #14593: @177 = -1 */
-  w177 = -1.;
+  /* #14593: @177 = -2 */
+  w177 = -2.;
   /* #14594: (@39[3] += @177) */
   for (rr=w39+3, ss=(&w177); rr!=w39+4; rr+=1) *rr += *ss++;
   /* #14595: @177 = @24[1] */
@@ -31049,8 +31049,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w121 += w128;
   /* #14806: (@24[3] += @121) */
   for (rr=w24+3, ss=(&w121); rr!=w24+4; rr+=1) *rr += *ss++;
-  /* #14807: @121 = -1 */
-  w121 = -1.;
+  /* #14807: @121 = -2 */
+  w121 = -2.;
   /* #14808: (@24[3] += @121) */
   for (rr=w24+3, ss=(&w121); rr!=w24+4; rr+=1) *rr += *ss++;
   /* #14809: @121 = @23[1] */
@@ -31489,8 +31489,8 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   w66 += w73;
   /* #15020: (@23[3] += @66) */
   for (rr=w23+3, ss=(&w66); rr!=w23+4; rr+=1) *rr += *ss++;
-  /* #15021: @66 = -1 */
-  w66 = -1.;
+  /* #15021: @66 = -2 */
+  w66 = -2.;
   /* #15022: (@23[3] += @66) */
   for (rr=w23+3, ss=(&w66); rr!=w23+4; rr+=1) *rr += *ss++;
   /* #15023: @66 = @6[1] */
@@ -31858,45 +31858,45 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   return 0;
 }
 
-CASADI_SYMBOL_EXPORT int grad_phi_mdRcyVHJDGdBpWIWRhdV(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem){
+CASADI_SYMBOL_EXPORT int grad_phi_RFePYnxkyRwyAbKgShXj(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem){
   return casadi_f0(arg, res, iw, w, mem);
 }
 
-CASADI_SYMBOL_EXPORT int grad_phi_mdRcyVHJDGdBpWIWRhdV_alloc_mem(void) {
+CASADI_SYMBOL_EXPORT int grad_phi_RFePYnxkyRwyAbKgShXj_alloc_mem(void) {
   return 0;
 }
 
-CASADI_SYMBOL_EXPORT int grad_phi_mdRcyVHJDGdBpWIWRhdV_init_mem(int mem) {
+CASADI_SYMBOL_EXPORT int grad_phi_RFePYnxkyRwyAbKgShXj_init_mem(int mem) {
   return 0;
 }
 
-CASADI_SYMBOL_EXPORT void grad_phi_mdRcyVHJDGdBpWIWRhdV_free_mem(int mem) {
+CASADI_SYMBOL_EXPORT void grad_phi_RFePYnxkyRwyAbKgShXj_free_mem(int mem) {
 }
 
-CASADI_SYMBOL_EXPORT int grad_phi_mdRcyVHJDGdBpWIWRhdV_checkout(void) {
+CASADI_SYMBOL_EXPORT int grad_phi_RFePYnxkyRwyAbKgShXj_checkout(void) {
   return 0;
 }
 
-CASADI_SYMBOL_EXPORT void grad_phi_mdRcyVHJDGdBpWIWRhdV_release(int mem) {
+CASADI_SYMBOL_EXPORT void grad_phi_RFePYnxkyRwyAbKgShXj_release(int mem) {
 }
 
-CASADI_SYMBOL_EXPORT void grad_phi_mdRcyVHJDGdBpWIWRhdV_incref(void) {
+CASADI_SYMBOL_EXPORT void grad_phi_RFePYnxkyRwyAbKgShXj_incref(void) {
 }
 
-CASADI_SYMBOL_EXPORT void grad_phi_mdRcyVHJDGdBpWIWRhdV_decref(void) {
+CASADI_SYMBOL_EXPORT void grad_phi_RFePYnxkyRwyAbKgShXj_decref(void) {
 }
 
-CASADI_SYMBOL_EXPORT casadi_int grad_phi_mdRcyVHJDGdBpWIWRhdV_n_in(void) { return 3;}
+CASADI_SYMBOL_EXPORT casadi_int grad_phi_RFePYnxkyRwyAbKgShXj_n_in(void) { return 3;}
 
-CASADI_SYMBOL_EXPORT casadi_int grad_phi_mdRcyVHJDGdBpWIWRhdV_n_out(void) { return 1;}
+CASADI_SYMBOL_EXPORT casadi_int grad_phi_RFePYnxkyRwyAbKgShXj_n_out(void) { return 1;}
 
-CASADI_SYMBOL_EXPORT casadi_real grad_phi_mdRcyVHJDGdBpWIWRhdV_default_in(casadi_int i){
+CASADI_SYMBOL_EXPORT casadi_real grad_phi_RFePYnxkyRwyAbKgShXj_default_in(casadi_int i){
   switch (i) {
     default: return 0;
   }
 }
 
-CASADI_SYMBOL_EXPORT const char* grad_phi_mdRcyVHJDGdBpWIWRhdV_name_in(casadi_int i){
+CASADI_SYMBOL_EXPORT const char* grad_phi_RFePYnxkyRwyAbKgShXj_name_in(casadi_int i){
   switch (i) {
     case 0: return "i0";
     case 1: return "i1";
@@ -31905,14 +31905,14 @@ CASADI_SYMBOL_EXPORT const char* grad_phi_mdRcyVHJDGdBpWIWRhdV_name_in(casadi_in
   }
 }
 
-CASADI_SYMBOL_EXPORT const char* grad_phi_mdRcyVHJDGdBpWIWRhdV_name_out(casadi_int i){
+CASADI_SYMBOL_EXPORT const char* grad_phi_RFePYnxkyRwyAbKgShXj_name_out(casadi_int i){
   switch (i) {
     case 0: return "o0";
     default: return 0;
   }
 }
 
-CASADI_SYMBOL_EXPORT const casadi_int* grad_phi_mdRcyVHJDGdBpWIWRhdV_sparsity_in(casadi_int i) {
+CASADI_SYMBOL_EXPORT const casadi_int* grad_phi_RFePYnxkyRwyAbKgShXj_sparsity_in(casadi_int i) {
   switch (i) {
     case 0: return casadi_s0;
     case 1: return casadi_s1;
@@ -31921,14 +31921,14 @@ CASADI_SYMBOL_EXPORT const casadi_int* grad_phi_mdRcyVHJDGdBpWIWRhdV_sparsity_in
   }
 }
 
-CASADI_SYMBOL_EXPORT const casadi_int* grad_phi_mdRcyVHJDGdBpWIWRhdV_sparsity_out(casadi_int i) {
+CASADI_SYMBOL_EXPORT const casadi_int* grad_phi_RFePYnxkyRwyAbKgShXj_sparsity_out(casadi_int i) {
   switch (i) {
     case 0: return casadi_s0;
     default: return 0;
   }
 }
 
-CASADI_SYMBOL_EXPORT int grad_phi_mdRcyVHJDGdBpWIWRhdV_work(casadi_int *sz_arg, casadi_int* sz_res, casadi_int *sz_iw, casadi_int *sz_w) {
+CASADI_SYMBOL_EXPORT int grad_phi_RFePYnxkyRwyAbKgShXj_work(casadi_int *sz_arg, casadi_int* sz_res, casadi_int *sz_iw, casadi_int *sz_w) {
   if (sz_arg) *sz_arg = 123;
   if (sz_res) *sz_res = 121;
   if (sz_iw) *sz_iw = 0;
