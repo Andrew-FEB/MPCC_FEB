@@ -455,9 +455,9 @@ void Visualisation::showNodeParentLinks(const std::vector<std::pair<Coord, Coord
 		arrow.scale.y = 0.2;	//head diameter
 		arrow.scale.z = 0.2;	//head length
 	
-		arrow.color.r = 0.0f;
-		arrow.color.g = 0.5f;
-		arrow.color.b = 1.0f;
+		arrow.color.r = 1.0f;
+		arrow.color.g = 0.0f;
+		arrow.color.b = 0.0f;
 		arrow.color.a = 0.7;
 
 		arrow.lifetime = ros::Duration(ROS_DURATION_TIME);

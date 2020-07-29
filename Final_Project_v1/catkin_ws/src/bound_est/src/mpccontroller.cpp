@@ -12,7 +12,7 @@ MPCController::MPCController(std::shared_ptr<Visualisation> vis) : visualisation
 MPCController::MPCController(int ph, double dt) : prediction_horizon(ph), time_step(dt) {}
 MPCController::MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis) : prediction_horizon(ph), time_step(dt), visualisation(vis) {}
 
-ControlInputs MPCController::solve(const Car &current, Track &t) const
+ControlInputs MPCController::solve(const Car &current, Track &t)
 {
     ControlInputs ci;
     auto pos = current.getPosition();
@@ -20,32 +20,41 @@ ControlInputs MPCController::solve(const Car &current, Track &t) const
 
     // Obtain reference and track constraints
     auto dist = calculateDistance(vel);
-    auto ref = t.getReferencePath(dist > 0 ? dist : 0.3, prediction_horizon);
+    auto params = t.getReferencePath(0.175, prediction_horizon);  // dist > 0 ? dist : 
 
-    // TODO Check if ref has the correct length
+    // TODO Check if params has the correct length
     
     /* parameters */
     // Current state (=4) + Boundaries (Prediction Horizon * (Slopes(=2) + Intercepts(=2) + Width(=1))
     // + Reference Line (Prediction Horizon * Reference Point(=2))
     double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {pos.p.x, pos.p.y, vel.omega, vel.vx};
     // Arrange the reference path into the parameters array such that it fits the solver requirements
+    auto param = params[int(prediction_horizon/2)];
+    p[4] = param.left_boundary.phi; // left slope
+    p[5] = param.right_boundary.phi; // right slope
+    p[6] = param.left_boundary.p.y - param.left_boundary.phi * param.left_boundary.p.x; // left intercept
+    p[7] = param.right_boundary.p.y - param.right_boundary.phi * param.right_boundary.p.x; // right intercept
+    p[8] = sqrt(distBetweenPoints(param.left_boundary.p, param.right_boundary.p)); // track width
     int i = 0;
-    for (MPC_targets t : ref) { // ref is prediction_horizon long
-        p[4+i] = t.left_boundary.phi; // left slopes
-        p[4+i+1] = t.right_boundary.phi; // right slopes
-        p[4+2*prediction_horizon+i] = t.left_boundary.p.y - t.left_boundary.phi * t.left_boundary.p.x; // left intercepts
-        p[4+2*prediction_horizon+i+1] = t.right_boundary.p.y - t.right_boundary.phi * t.right_boundary.p.x; // right intercepts
-        p[4+4*prediction_horizon+i/2] = sqrt(distBetweenPoints(t.left_boundary.p, t.right_boundary.p)); // track widths
-        p[4+5*prediction_horizon+i] = t.reference_point.x; // reference coordinates x
-        p[4+5*prediction_horizon+i+1] = t.reference_point.y; // reference coordinates y
+    for (MPC_targets param : params) { // params is prediction_horizon long
+        // p[4+i] = param.left_boundary.phi; // left slopes
+        // p[4+i+1] = param.right_boundary.phi; // right slopes
+        // p[4+2*prediction_horizon+i] = param.left_boundary.p.y - param.left_boundary.phi * param.left_boundary.p.x; // left intercepts
+        // p[4+2*prediction_horizon+i+1] = param.right_boundary.p.y - param.right_boundary.phi * param.right_boundary.p.x; // right intercepts
+        // p[4+4*prediction_horizon+i/2] = sqrt(distBetweenPoints(param.left_boundary.p, param.right_boundary.p)); // track widths
+        p[9+i] = param.reference_point.x; // reference coordinates x
+        p[9+i+1] = param.reference_point.y; // reference coordinates y
         i += 2;
     }
 
     /* initial guess */
     double u[MPCC_OPTIMIZER_NUM_DECISION_VARIABLES] = {0};
+    for(int i = 0; i < MPCC_OPTIMIZER_NUM_DECISION_VARIABLES; i++) {
+        u[i] = initial_guess[i];
+    }
 
     /* initial penalty */
-    double initPenalty = 10.0;
+    double initPenalty = 1.0;
 
     /* initial lagrange mult. */
     double y[MPCC_OPTIMIZER_N1] = {0.0};
@@ -58,9 +67,9 @@ ControlInputs MPCController::solve(const Car &current, Track &t) const
         {
             if (i == 0) log->write(ss << "------------- Current state -------------");
             else if (i == 4) log->write(ss << "------------- Slopes -------------");
-            else if (i == 4+2*prediction_horizon) log->write(ss << "------------- Intercepts -------------");
-            else if (i == 4+4*prediction_horizon) log->write(ss << "------------- Track widths -------------");
-            else if (i == 4+5*prediction_horizon) log->write(ss << "------------- Reference points -------------");
+            else if (i == 6) log->write(ss << "------------- Intercepts -------------");
+            else if (i == 8) log->write(ss << "------------- Track width -------------");
+            else if (i == 9) log->write(ss << "------------- Reference points -------------");
             log->write(ss << "p[" << i << "] = " << p[i]);
         }
     #endif
@@ -87,6 +96,11 @@ ControlInputs MPCController::solve(const Car &current, Track &t) const
                 log->write(ss << "Control Inputs (D, delta) = (" << ci.D << ", " << ci.delta << ")");
             #endif
             break;
+    }
+
+    // Save control inputs to be used as the initial guess at the next iteration
+    for(int i = 0; i < MPCC_OPTIMIZER_NUM_DECISION_VARIABLES; i++) {
+        initial_guess[i] = u[i];
     }
 
     #ifdef DEBUG

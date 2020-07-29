@@ -28,7 +28,7 @@ public:
     MPCController(std::shared_ptr<Visualisation> vis);
     MPCController(int ph, double dt);
     MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis);
-    ControlInputs solve(const Car & current, Track & t) const;
+    ControlInputs solve(const Car & current, Track & t);
     
 private:
     double calculateDistance(Vel & velocity) const;
@@ -37,6 +37,7 @@ private:
 private:
     int prediction_horizon = 40; // in time steps
     double time_step = 0.05; // in [s]
+    double initial_guess[MPCC_OPTIMIZER_NUM_DECISION_VARIABLES] = {0};
     std::shared_ptr<Visualisation> visualisation = nullptr;
     
 };

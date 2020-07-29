@@ -173,17 +173,17 @@ def generate_code(lang):
     cost = 0
     u_prev = [0, 0]
     x_est = param_seq[0:p.nx]  # x0
-    slope_up = param_seq[p.nx]
-    slope_low = param_seq[p.nx+1]
-    intercept_up = param_seq[p.nx+2]
-    intercept_low = param_seq[p.nx+3]
+    slope_left = param_seq[p.nx]
+    slope_right = param_seq[p.nx+1]
+    intercept_left = param_seq[p.nx+2]
+    intercept_right = param_seq[p.nx+3]
     track_width = param_seq[p.nx+4]
     ref_list = param_seq[p.nx+5:param_seq.shape[0]]
 
     F1 = []
     track_weight = p.track_error_weight
     for t in range(0, p.nu * p.N, p.nu):
-        u = [u_seq[t], u_seq[t + 1]]
+        u = u_seq[t:t + 2]
         # Update cost
         cost += cost_function(x_est, ref_list[t:t + 2], u, u_prev, track_weight)
         u_prev = u
@@ -194,9 +194,9 @@ def generate_code(lang):
         # Update state estimate
         x_est = kinematic_model_rk(x_est, u, True)
         # Boundary Constraint
-        d_up = cs.fabs(slope_up * x_est[0] - x_est[1] + intercept_up) / (cs.sqrt(slope_up ** 2 + 1))
-        d_low = cs.fabs(slope_low * x_est[0] - x_est[1] + intercept_low) / (cs.sqrt(slope_low ** 2 + 1))
-        F1 = cs.vertcat(F1, x_est[3], d_up - track_width*1.5, d_low - track_width*1.5)
+        d_up = cs.fabs(slope_left * x_est[0] - x_est[1] + intercept_left) / (cs.sqrt(slope_left ** 2 + 1))
+        d_low = cs.fabs(slope_right * x_est[0] - x_est[1] + intercept_right) / (cs.sqrt(slope_right ** 2 + 1))
+        F1 = cs.vertcat(F1, x_est[3], d_up - track_width, d_low - track_width)
 
     # Constraints
     # -------------------------------------
@@ -214,11 +214,14 @@ def generate_code(lang):
             .with_build_directory("mpcc_c_build_kin") \
             .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
             .with_open_version('0.7.0-alpha.1') \
+            .with_rebuild(True) \
             .with_build_c_bindings()
     elif lang == 'p':
         build_config = og.config.BuildConfiguration() \
             .with_build_directory("mpcc_python_build_kin") \
+            .with_build_mode(og.config.BuildConfiguration.DEBUG_MODE) \
             .with_open_version('0.7.0-alpha.1') \
+            .with_rebuild(True) \
             .with_tcp_interface_config()
     else:
         sys.exit("Invalid value for parameter lang - this can only be 'p' (=python) or 'c' (=C)")
@@ -229,6 +232,8 @@ def generate_code(lang):
     solver_config = og.config.SolverConfiguration() \
         .with_initial_tolerance(0.01) \
         .with_tolerance(0.01) \
+        .with_penalty_weight_update_factor(8.0) \
+        .with_initial_penalty(20.0) \
         .with_max_outer_iterations(100) \
         .with_max_duration_micros(100000)  # 0.05s = 50000us
 
