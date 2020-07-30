@@ -200,6 +200,7 @@ def generate_code(lang):
 
     # Constraints
     # -------------------------------------
+    # C = og.constraints.Rectangle([p.v_x_min] * p.N, [p.v_x_max] * p.N)
     C = og.constraints.Rectangle([p.v_x_min, -np.inf, -np.inf] * p.N, [p.v_x_max, 0, 0] * p.N)
     U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
 
@@ -234,7 +235,6 @@ def generate_code(lang):
         .with_tolerance(0.01) \
         .with_penalty_weight_update_factor(8.0) \
         .with_initial_penalty(20.0) \
-        .with_max_outer_iterations(100) \
         .with_max_duration_micros(100000)  # 0.05s = 50000us
 
     builder = og.builder.OpEnOptimizerBuilder(problem,

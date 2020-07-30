@@ -67,10 +67,10 @@ def generate_racing_track(num_steps):
     # y = np.array([0, 1, 5, 10, 7, 1, 9, 11, 8, 4, 0, -3, -9, -5, 0, 13, 27, 19, 29, 22, 29, 22, 17, 15, 8])
     # xl = np.array([0, 4, 8, 12, 17, 20, 25, 29, 30, 32, 37, 40, 43, 45, 47, 54, 46, 35, 31, 25, 20, 15, 10, 0, -4])
     # xr = np.array([0, 4, 8, 12, 17, 20, 25, 29, 30, 32, 37, 40, 43, 45, 47, 58, 46, 35, 31, 25, 20, 15, 10, 0, -8])
-    x  = np.array([0, 8, 17, 25, 30, 37, 43, 47, 50, 46, 31, 20, 10, -6])
-    y  = np.array([0, 5,  7,  9,  8,  0, -5,  0, 10, 27, 29, 29, 17, 15])
-    xl = np.array([0, 8, 17, 25, 30, 37, 43, 47, 48, 46, 31, 20, 10, -4])
-    xr = np.array([0, 8, 17, 25, 30, 37, 43, 47, 52, 46, 31, 20, 10, -8])
+    x  = np.array([0, 8, 17, 25, 30, 37, 41, 47, 50, 46, 31, 20, 10, -6])
+    y  = np.array([0, 5,  7,  9,  8,  0, -4,  0, 10, 27, 29, 29, 17, 15])
+    xl = np.array([0, 8, 17, 25, 30, 37, 41, 46, 47.5, 45, 31, 20, 10, -4.5])
+    xr = np.array([0, 8, 17, 25, 30, 37, 41, 48, 52, 47, 31, 20, 10, -7.5])
     # x = np.array([1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 25, 27, 29, 31, 33, 35, 37, 39])
     # y = np.array([0, 0, 0, 0, 0,  0,  0,  0,  0,  0, 10, 10, 10, 10, 10, 10, 10, 10])
     # xl = x
@@ -84,11 +84,11 @@ def generate_racing_track(num_steps):
         if x[i] >= x_max:
             swp = True
         if swp:
-            yl.append(y[i] - param.track_width) # / 2)
-            yr.append(y[i] + param.track_width) # / 2)
+            yl.append(y[i] - param.track_width)
+            yr.append(y[i] + param.track_width)
         else:
-            yl.append(y[i] + param.track_width) # / 2)
-            yr.append(y[i] - param.track_width) # / 2)
+            yl.append(y[i] + param.track_width)
+            yr.append(y[i] - param.track_width)
 
     # append the starting x,y coordinates
     x = np.r_[x, x[0]]
@@ -100,9 +100,9 @@ def generate_racing_track(num_steps):
 
     # fit splines to x=f(u) and y=g(u), treating both as periodic. also note that s=0
     # is needed in order to force the spline fit to pass through all the input points.
-    tck, u = interpolate.splprep([x, y], s=3, per=True)
-    tckl, u = interpolate.splprep([xl, yl], s=3, per=True)
-    tckr, u = interpolate.splprep([xr, yr], s=3, per=True)
+    tck, u = interpolate.splprep([x, y], s=0, per=True)
+    tckl, u = interpolate.splprep([xl, yl], s=0, per=True)
+    tckr, u = interpolate.splprep([xr, yr], s=0, per=True)
 
     # evaluate the spline fits for 1000 evenly spaced distance values
     xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)

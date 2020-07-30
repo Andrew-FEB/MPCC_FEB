@@ -157,7 +157,8 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
     ref_x = [x for x, *_ in ref_seq[0]]
     ref_y = [y for x, y in ref_seq[0]]
     slopes = [s for s, *_ in bound_seq]
-    intercepts = [i for s, i in bound_seq]
+    intercepts = [i for s, i, *_ in bound_seq]
+    track_widths = [tw for s, i, tw in bound_seq]
 
     plt.show()
     ax = plt.gca()
@@ -208,10 +209,11 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
         ref_line.set_xdata([x for x, *_ in ref_seq[i]])
         ref_line.set_ydata([y for x, y in ref_seq[i]])
 
-        txt.set_text("Iteration: " + str(i) + "\nExit status: " + exit_status_seq[i])
+        txt.set_text("Iteration: " + str(i) + "\nExit status: " + exit_status_seq[i]
+                     + "\nTrack width: " + str(track_widths[i]))
         plt.draw()
         plt.pause(1e-17)
-        time.sleep(0.001)
+        time.sleep(0.01)
 
     plt.show()
 

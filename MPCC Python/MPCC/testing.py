@@ -9,11 +9,11 @@ import codegenerator as cg
 # Created: 24/02/2020
 
 track_points = 10000
-sim_steps = 500
+sim_steps = 1000
 
 print("Generating code")
 start_time = time.time()
-# cg.generate_code('p')
+cg.generate_code('c')
 print('Code generated in ' + str(time.time() - start_time) + ' s')
 
 # print("Running simulation")

@@ -20,7 +20,7 @@ void MPCController::solve()
     auto vel = car->getVelocity();
 
     // Obtain reference and track constraints
-    auto dist = vel.vx * time_step + 0.05;
+    auto dist = 3.5 * time_step;
     auto params = track.getReferencePath(dist, prediction_horizon);
     if (params.size()<=0)
     {

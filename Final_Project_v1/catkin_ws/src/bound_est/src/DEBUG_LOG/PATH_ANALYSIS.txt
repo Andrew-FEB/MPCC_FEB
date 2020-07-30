@@ -1,4 +1,4 @@
-Log message for Path Analysis log data at Thu Jul 30 13:32:42 2020
+Log message for Path Analysis log data at Thu Jul 30 16:24:39 2020
 -----------------------------------
 -----------------------------------
 Beginning analysis of following list of paths:
@@ -289,6 +289,185 @@ Path 12 has score 44.0978
 Path 13 has score 364.59
 Best index selected to be 11 which equates to path 12. Returning analysis to track.
 --------
+///////////////////////////////////
+///////////////////////////////////
+
+-----------------------------
+-----------------------------------
+Log message for Path Analysis log data at Thu Jul 30 16:24:52 2020
+-----------------------------------
+-----------------------------------
+///////////////////////////////////
+///////////////////////////////////
+
+Beginning analysis of following list of paths:
+Point 1 at x(25.57) y(8.96)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(26.915) y(8.905)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(26.915) y(8.905)
+Point 3 at x(28.185) y(8.435)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(26.915) y(8.905)
+Point 3 at x(28.185) y(8.435)
+Point 4 at x(29.74) y(8.04)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(26.915) y(8.905)
+Point 3 at x(28.185) y(8.435)
+Point 4 at x(29.74) y(8.04)
+Point 5 at x(28.185) y(8.435)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(26.915) y(8.905)
+Point 3 at x(28.185) y(8.435)
+Point 4 at x(26.915) y(8.905)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(24.5) y(7.2425)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(24.5) y(7.2425)
+Point 3 at x(23.57) y(10.2825)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(23.57) y(10.2825)
+
+--------
+Point 1 at x(25.57) y(8.96)
+Point 2 at x(23.57) y(10.2825)
+Point 3 at x(24.5) y(7.2425)
+
+--------
+Scores gathered as follows:
+--------
+For path 1
+Nearest classified cone contacts = 1.77494e-30
+Nearest unclassified cone contacts = 0
+Distance to end goal = 1823.53
+Classified cones on each side = 20
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 0
+Check for repeat nodes = 0
+Total calculated score: 1.77494e-30 + 0 + 1823.53 + 20 + 0 + 0 + 0 = 1843.53
+--------
+For path 2
+Nearest classified cone contacts = 2.46519e-30
+Nearest unclassified cone contacts = 0.0136723
+Distance to end goal = 872.885
+Classified cones on each side = 20
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 0.865689
+Check for repeat nodes = 0
+Total calculated score: 2.46519e-30 + 0.0136723 + 872.885 + 20 + 0 + 0.865689 + 0 = 893.764
+--------
+For path 3
+Nearest classified cone contacts = 1.7092e-30
+Nearest unclassified cone contacts = 0.00917626
+Distance to end goal = 257.405
+Classified cones on each side = 13.3333
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 2.369
+Check for repeat nodes = 0
+Total calculated score: 1.7092e-30 + 0.00917626 + 257.405 + 13.3333 + 0 + 2.369 + 0 = 273.117
+--------
+For path 4
+Nearest classified cone contacts = 1.3312e-30
+Nearest unclassified cone contacts = 0.010153
+Distance to end goal = 0
+Classified cones on each side = 15
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 4.55883
+Check for repeat nodes = 0
+Total calculated score: 1.3312e-30 + 0.010153 + 0 + 15 + 0 + 4.55883 + 0 = 19.569
+--------
+For path 5
+Nearest classified cone contacts = 1.10441e-30
+Nearest unclassified cone contacts = 0.010739
+Distance to end goal = 257.405
+Classified cones on each side = 12
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 3.64706
+Check for repeat nodes = 100
+Total calculated score: 1.10441e-30 + 0.010739 + 257.405 + 12 + 0 + 3.64706 + 100 = 373.063
+--------
+For path 6
+Nearest classified cone contacts = 2.07076e-30
+Nearest unclassified cone contacts = 0.00692826
+Distance to end goal = 872.885
+Classified cones on each side = 15
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 1.77675
+Check for repeat nodes = 100
+Total calculated score: 2.07076e-30 + 0.00692826 + 872.885 + 15 + 0 + 1.77675 + 100 = 989.669
+--------
+For path 7
+Nearest classified cone contacts = 2.78917
+Nearest unclassified cone contacts = 0.305265
+Distance to end goal = 2809.36
+Classified cones on each side = 20
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 0
+Check for repeat nodes = 0
+Total calculated score: 2.78917 + 0.305265 + 2809.36 + 20 + 0 + 0 + 0 = 2832.46
+--------
+For path 8
+Nearest classified cone contacts = 5.34049
+Nearest unclassified cone contacts = 0.250178
+Distance to end goal = 4309.77
+Classified cones on each side = 20
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 0
+Check for repeat nodes = 0
+Total calculated score: 5.34049 + 0.250178 + 4309.77 + 20 + 0 + 0 + 0 = 4335.36
+--------
+For path 9
+Nearest classified cone contacts = 5.22157
+Nearest unclassified cone contacts = 0.66763
+Distance to end goal = 4309.77
+Classified cones on each side = 20
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 0
+Check for repeat nodes = 0
+Total calculated score: 5.22157 + 0.66763 + 4309.77 + 20 + 0 + 0 + 0 = 4335.66
+--------
+For path 10
+Nearest classified cone contacts = 5.34049
+Nearest unclassified cone contacts = 0.491754
+Distance to end goal = 2809.36
+Classified cones on each side = 20
+Unclassified cones on each side = 0
+Advancing to end goal throughout path = 0.533024
+Check for repeat nodes = 0
+Total calculated score: 5.34049 + 0.491754 + 2809.36 + 20 + 0 + 0.533024 + 0 = 2835.73
+--------
+List of scores:
+Path 1 has score 1843.53
+Path 2 has score 893.764
+Path 3 has score 273.117
+Path 4 has score 19.569
+Path 5 has score 373.063
+Path 6 has score 989.669
+Path 7 has score 2832.46
+Path 8 has score 4335.36
+Path 9 has score 4335.66
+Path 10 has score 2835.73
+Best index selected to be 3 which equates to path 4. Returning analysis to track.
+--------
+Log message for Path Analysis log data at Thu Jul 30 16:25:01 2020
+-----------------------------------
+-----------------------------------
 ///////////////////////////////////
 ///////////////////////////////////
 

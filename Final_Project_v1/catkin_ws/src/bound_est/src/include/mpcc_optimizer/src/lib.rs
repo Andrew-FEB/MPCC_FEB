@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-07-29 12:46:44.669753
+// Generated at: 2020-07-30 16:20:58.590152
 //
 
 use icasadi_mpcc_optimizer;
@@ -31,7 +31,7 @@ const LBFGS_MEMORY: usize = 10;
 const MAX_INNER_ITERATIONS: usize = 500;
 
 /// Maximum number of outer iterations
-const MAX_OUTER_ITERATIONS: usize = 100;
+const MAX_OUTER_ITERATIONS: usize = 10;
 
 /// Maximum execution duration in microseconds
 const MAX_DURATION_MICROS: u64 = 100000;
