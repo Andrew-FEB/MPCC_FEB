@@ -869,7 +869,7 @@ void Visualisation::showCarVision(const CircleSection &circle_sec, const std::ve
 	marker.pose.position.y = circle_sec.origin.y + (circle_sec.radius*sin(circle_sec.start_angle));
 	marker.id = id++;
 	car_vision_markers.markers.push_back(marker);
-	
+/* 	
 	for (auto &cone : cones)
 	{
 		marker.type = visualization_msgs::Marker::SPHERE;
@@ -881,6 +881,6 @@ void Visualisation::showCarVision(const CircleSection &circle_sec, const std::ve
 		marker.pose.position.z = 3.0;
 		marker.id = id++;
 		car_vision_markers.markers.push_back(marker);
-	}
+	} */
 	car_vision_pub.publish(car_vision_markers);
 }

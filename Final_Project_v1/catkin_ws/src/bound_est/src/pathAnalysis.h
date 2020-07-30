@@ -37,7 +37,7 @@ class PathAnalysis
     public: 
         PathAnalysis(std::shared_ptr<Visualisation> visualisation_cont, const Car *car);
         ~PathAnalysis() = default;
-        const std::vector<Coord> &findBestPath(const std::vector<std::vector<Coord>> &paths, const Coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones);
+        std::vector<Coord> findBestPath(const std::vector<std::vector<Coord>> &paths, const Coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones);
 
     private: 
         double findPathCost(const std::vector<Coord> &path, const Coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones);

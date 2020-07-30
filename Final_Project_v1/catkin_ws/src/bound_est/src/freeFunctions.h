@@ -95,19 +95,6 @@ inline CircleSection formCircleSection(const Coord &origin, const double &direct
 inline bool checkIfPointInCircleSection(const CircleSection &circle_section, const Coord &point)
 {
     double polar_angle = atan2(point.y-circle_section.origin.y, point.x-circle_section.origin.x);
-    double polar_radius = sqrt((pow((point.x), 2) + pow((point.y),2)));
-     //TEST
-    std::cerr<<"=================================="<<std::endl;
-    std::cerr<<"Circle section:"<<std::endl;
-    std::cerr<<"Origin of x = "<<circle_section.origin.x<<" and y = "<<circle_section.origin.y<<std::endl;
-    std::cerr<<"Start angle = "<<circle_section.start_angle<<std::endl;
-    std::cerr<<"End angle = "<<circle_section.end_angle<<std::endl;
-    std::cerr<<"Radius = "<<circle_section.radius<<std::endl<<std::endl;
-    std::cerr<<"Point details:"<<std::endl;
-    std::cerr<<"Polar angle = "<<polar_angle<<std::endl;
-    std::cerr<<"Polar radius = "<<polar_radius<<std::endl<<std::endl;
-    std::cerr<<"Tests: "<<(polar_angle>=circle_section.start_angle)<<" "<<(polar_angle<=circle_section.end_angle)<<" "<<(polar_radius<=circle_section.radius)<<std::endl;
-    std::cerr<<"=================================="<<std::endl;
-    //ETEST 
+    double polar_radius = distBetweenPoints(circle_section.origin, point);
     return (polar_angle>=circle_section.start_angle && polar_angle<=circle_section.end_angle && polar_radius<=circle_section.radius);
 }

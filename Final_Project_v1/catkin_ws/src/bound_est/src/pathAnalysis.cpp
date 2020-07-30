@@ -12,7 +12,7 @@ PathAnalysis::PathAnalysis(std::shared_ptr<Visualisation> visualisation_cont, co
 	#endif
 }
 
-const std::vector<Coord> &PathAnalysis::findBestPath(const std::vector<std::vector<Coord>> &paths, const Coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
+std::vector<Coord> PathAnalysis::findBestPath(const std::vector<std::vector<Coord>> &paths, const Coord &end_goal, const std::vector<std::unique_ptr<Cone>> &cone_list, const std::vector<const Cone *> &left_cones, const std::vector<const Cone *> &right_cones)
 {
     #ifdef DEBUG
     path_log = std::make_unique<BoundaryLogger>("PATH_ANALYSIS", "Path Analysis", reset_logs);
