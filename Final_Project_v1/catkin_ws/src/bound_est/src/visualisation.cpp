@@ -50,7 +50,7 @@ void Visualisation::refreshRosOutput()
 		if (boundary_point_pub.getNumSubscribers()>=1) boundary_point_pub.publish(boundary_point_markers);
 		if (reference_to_boundary_pub.getNumSubscribers()>=1) reference_to_boundary_pub.publish(reference_to_boundary_markers);
 		if (car_boundary_pub.getNumSubscribers()>=1) car_boundary_pub.publish(car_boundary_markers);
-		
+		if (car_vision_pub.getNumSubscribers()>=1) car_vision_pub.publish(car_vision_markers);
 	}
 	else
 	{
@@ -750,7 +750,6 @@ void Visualisation::showReferencePath(const std::vector<MPC_targets> &reference_
 
 void Visualisation::showCarBoundaryPoints(const std::vector<Coord> &car_edges, const int &furthest_point_index, const bool &inside_track)
 {
-
 	if (car_boundary_pub.getNumSubscribers()<1)
 	{
 		std::cerr<<"Waiting for subscription - car boundaries."<<std::endl;
@@ -817,4 +816,71 @@ void Visualisation::plotMPCCTime(const float &mpcc_time) {
 	std_msgs::Float64 mpcc_time_msg;
 	mpcc_time_msg.data = mpcc_time;
 	mpcc_time_pub.publish(mpcc_time_msg);
+}
+
+void Visualisation::showCarVision(const CircleSection &circle_sec, const std::vector<Cone *> &cones)
+{
+	if (car_vision_pub.getNumSubscribers()<1)
+	{
+		std::cerr<<"Waiting for subscription - car vision markers."<<std::endl;
+		car_vision_pub = n->advertise<visualization_msgs::MarkerArray>("car_vision", TIME_OUT_VAL);
+		waitForSubscribe(car_vision_pub);
+	}
+	if (!car_vision_markers.markers.empty()) car_vision_markers.markers.clear();
+
+	visualization_msgs::Marker marker;
+	marker.header.frame_id = "/tf_bound";
+	marker.header.stamp = ros::Time();
+	marker.ns = "car_vision";
+	marker.type = visualization_msgs::Marker::CYLINDER;
+	marker.action = visualization_msgs::Marker::ADD;
+	marker.pose.position.z = 0.0;
+	marker.pose.orientation.z = 0.0;
+	marker.pose.orientation.w = 2.0;
+	marker.scale.x = 0.3;
+	marker.scale.y = 0.3;
+	marker.scale.z = 3.0;
+	marker.color.r = 1.0f;
+	marker.color.g = 1.0f;
+	marker.color.b = 1.0f;
+	marker.color.a = 1.0;
+	int id{0};
+	marker.pose.position.x = circle_sec.origin.x;
+	marker.pose.position.y = circle_sec.origin.y;
+	marker.id = id++;
+	car_vision_markers.markers.push_back(marker);
+	for (double i = 0.1; i<=0.9; i=i+0.1)
+	{
+		marker.pose.position.x = circle_sec.origin.x + (circle_sec.radius*i*cos(circle_sec.end_angle));
+		marker.pose.position.y = circle_sec.origin.y + (circle_sec.radius*i*sin(circle_sec.end_angle));
+		marker.id = id++;
+		car_vision_markers.markers.push_back(marker);
+		marker.pose.position.x = circle_sec.origin.x + (circle_sec.radius*i*cos(circle_sec.start_angle));
+		marker.pose.position.y = circle_sec.origin.y + (circle_sec.radius*i*sin(circle_sec.start_angle));
+		marker.id = id++;	
+		car_vision_markers.markers.push_back(marker);
+	}
+	car_vision_markers.markers.push_back(marker);
+	marker.pose.position.x = circle_sec.origin.x + (circle_sec.radius*cos(circle_sec.end_angle));
+	marker.pose.position.y = circle_sec.origin.y + (circle_sec.radius*sin(circle_sec.end_angle));
+	marker.id = id++;
+	car_vision_markers.markers.push_back(marker);
+	marker.pose.position.x = circle_sec.origin.x + (circle_sec.radius*cos(circle_sec.start_angle));
+	marker.pose.position.y = circle_sec.origin.y + (circle_sec.radius*sin(circle_sec.start_angle));
+	marker.id = id++;
+	car_vision_markers.markers.push_back(marker);
+	
+	for (auto &cone : cones)
+	{
+		marker.type = visualization_msgs::Marker::SPHERE;
+		marker.scale.x = 0.3;
+		marker.scale.y = 0.3;
+		marker.scale.z = 3.0;
+		marker.pose.position.x = cone->getX();
+		marker.pose.position.y = cone->getY();
+		marker.pose.position.z = 3.0;
+		marker.id = id++;
+		car_vision_markers.markers.push_back(marker);
+	}
+	car_vision_pub.publish(car_vision_markers);
 }

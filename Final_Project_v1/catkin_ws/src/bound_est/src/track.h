@@ -20,11 +20,12 @@
 #include "freeFunctions.h"
 
 double constexpr REPEATED_CONE_RADIUS = 0.5;
-double constexpr MIN_CONE_FRAME_RANGE = 0.0;
-double constexpr MAX_CONE_FRAME_RANGE = 15;
+double constexpr MAX_VISION_CONE_FRAME_RANGE = 25;
+double constexpr CONE_VISION_ARC = 0.15;    //Value from 0 to 1 describing how much of circle around current direction can be seen
 double constexpr TRACK_COMPLETE_CHECK_RADIUS = 7.5;
 int constexpr NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS = 5;
 int constexpr NUM_CENTRELINE_COORDS_BEFORE_CHECK_TRACK_COMPLETE = 10;
+int constexpr MIN_FRAMED_CONES_TO_PROCESS = 4;
 
 class Track
 {

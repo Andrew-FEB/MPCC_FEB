@@ -37,6 +37,7 @@ public:
 	void showCarBoundaryPoints(const std::vector<Coord> &car_edges, const int &furthest_point_index, const bool &outside_track);
 	void plotSolveTime(const float &solve_time);
 	void plotMPCCTime(const float &mpcc_time);
+	void showCarVision(const CircleSection &circle_sec, const std::vector<Cone *> &cones);
 
 private:
 	void waitForSubscribe(const ros::Publisher &pub);
@@ -62,6 +63,8 @@ private:
 	ros::Publisher car_boundary_pub;
 	ros::Publisher solve_time_pub;
 	ros::Publisher mpcc_time_pub;
+	ros::Publisher car_vision_pub;
+
 
 	visualization_msgs::MarkerArray node_mid_markers;
 	visualization_msgs::MarkerArray node_mid_parent_markers;
@@ -81,4 +84,5 @@ private:
 	visualization_msgs::MarkerArray boundary_point_markers;
 	visualization_msgs::Marker reference_to_boundary_markers;
 	visualization_msgs::MarkerArray car_boundary_markers;
+	visualization_msgs::MarkerArray car_vision_markers;
 };

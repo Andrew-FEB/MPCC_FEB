@@ -86,10 +86,12 @@ void Track::processNextSection()
 {
     if (new_cones.size()<=0) return;
     //Begin finding cones within valid ranges to find reference path
+    #ifdef VISUALISE
+	    visualisation->showNewCones(new_cones);
+    #endif
     extractNewConesInRange(new_cones, cones_within_range, car);
     if (cones_within_range.size()<=4) return;
     #ifdef VISUALISE
-	    visualisation->showNewCones(new_cones);
         visualisation->showFramedCones(cones_within_range);
     #endif
 
@@ -596,16 +598,26 @@ std::pair<std::vector<Coord>, double> Track::interpolateCentreCoordsDiscrete(con
 
 void Track::extractNewConesInRange (std::vector<std::unique_ptr<Cone>> &cones_to_extract, std::vector<std::unique_ptr<Cone>> &extracted_cones, const std::unique_ptr<Car> &car)
 {
-    auto car_pos = car->getPosition().p;
+    auto car_pos = car->getPosition();
     std::vector<std::unique_ptr<Cone>> in_range;
-
-    auto result = std::partition(cones_to_extract.begin(), cones_to_extract.end(), [&car_pos](const std::unique_ptr<Cone> &cone)
+    auto circle_sec = formCircleSection(car_pos.p, car_pos.phi, MAX_VISION_CONE_FRAME_RANGE, CONE_VISION_ARC);
+    auto result = std::partition(cones_to_extract.begin(), cones_to_extract.end(), [&circle_sec](const std::unique_ptr<Cone> &cone)
     {
-        auto distance = distBetweenPoints(cone->getCoordinates(), car_pos);
-        return (distance>MIN_CONE_FRAME_RANGE && distance<MAX_CONE_FRAME_RANGE);
+        return checkIfPointInCircleSection(circle_sec, cone->getCoordinates());
     });
-
-    if (result!=cones_to_extract.end())
+    #ifdef VISUALISE
+    std::vector<Cone *> cone_p;
+    for (std::vector<std::unique_ptr<Cone>>::iterator it = cones_to_extract.begin(); it!=result; it++)
+    {
+        cone_p.push_back(it->get());
+    }
+    visualisation->showCarVision(circle_sec, cone_p);
+    #endif
+    //TEST
+    std::cerr<<"Number of cones all together = "<<cones_to_extract.size()<<std::endl;
+    std::cerr<<"Number of framed cones = "<<std::distance(cones_to_extract.begin(), result)<<std::endl;
+    //ETEST
+    if (result!=cones_to_extract.end() && std::distance(cones_to_extract.begin(), result)>MIN_FRAMED_CONES_TO_PROCESS)
     {
         std::move(cones_to_extract.begin(), result, std::back_inserter(extracted_cones));
         cones_to_extract.erase(cones_to_extract.begin(), result);
@@ -663,7 +675,7 @@ bool Track::carIsInsideTrack()
     visualisation->showCarBoundaryPoints(car_edges, furthest_point_index, inside_boundaries);
     return inside_boundaries;
     #else
-    return withinCircleOfRadius(furthest_point, closest_point, radius);
+    return withinCircleOfRadius(car_edges[furthest_point_index], closest_point, radius);
     #endif
 }
 

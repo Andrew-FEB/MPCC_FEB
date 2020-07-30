@@ -80,3 +80,34 @@ inline Coord rotateToAngle(const Coord &point, const Pos &original_pos)
 {
     return {(point.x*cos(original_pos.phi)-point.y*sin(original_pos.phi)+original_pos.p.x), (point.x*sin(original_pos.phi)+point.y*cos(original_pos.phi)+original_pos.p.y)};
 }
+
+inline CircleSection formCircleSection(const Coord &origin, const double &direction, const double &radius, const double &percentage)
+{
+    CircleSection sec;
+    sec.origin = origin;
+    double arc_change = M_PI*percentage; //Not 2*M_PI as we want half the angle to either side
+    sec.start_angle = direction-arc_change;
+    sec.end_angle = direction+arc_change;
+    sec.radius = radius;
+    return sec;
+}
+
+inline bool checkIfPointInCircleSection(const CircleSection &circle_section, const Coord &point)
+{
+    double polar_angle = atan2(point.y-circle_section.origin.y, point.x-circle_section.origin.x);
+    double polar_radius = sqrt((pow((point.x), 2) + pow((point.y),2)));
+     //TEST
+    std::cerr<<"=================================="<<std::endl;
+    std::cerr<<"Circle section:"<<std::endl;
+    std::cerr<<"Origin of x = "<<circle_section.origin.x<<" and y = "<<circle_section.origin.y<<std::endl;
+    std::cerr<<"Start angle = "<<circle_section.start_angle<<std::endl;
+    std::cerr<<"End angle = "<<circle_section.end_angle<<std::endl;
+    std::cerr<<"Radius = "<<circle_section.radius<<std::endl<<std::endl;
+    std::cerr<<"Point details:"<<std::endl;
+    std::cerr<<"Polar angle = "<<polar_angle<<std::endl;
+    std::cerr<<"Polar radius = "<<polar_radius<<std::endl<<std::endl;
+    std::cerr<<"Tests: "<<(polar_angle>=circle_section.start_angle)<<" "<<(polar_angle<=circle_section.end_angle)<<" "<<(polar_radius<=circle_section.radius)<<std::endl;
+    std::cerr<<"=================================="<<std::endl;
+    //ETEST 
+    return (polar_angle>=circle_section.start_angle && polar_angle<=circle_section.end_angle && polar_radius<=circle_section.radius);
+}

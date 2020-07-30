@@ -27,7 +27,7 @@ constexpr long ROS_REFRESH_TIME_MS = 1000;
 //Configure globals
 #ifdef DEBUG
     bool reset_logs = true;
-    constexpr int DEBUG_LOOPS_TO_COMPLETE = 200;
+    constexpr int DEBUG_LOOPS_TO_COMPLETE = 180;
 #endif
 
 constexpr double time_step = 0.05;
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 
     //Angle car to be pointing forward at beginning of race
     auto car = track->getCar();
-    car->setPosition({{-0.057, 0.298}, -0.145});
+    car->setPosition({{-0.057, 0.298}, 0.5});
     // LEFT
     track->addCone(-0.14, 3.51, BoundPos::left);
     track->addCone(2.21, 3.74, BoundPos::left);
@@ -216,7 +216,6 @@ int main(int argc, char *argv[])
         if (!track->trackIsComplete()) track->processNextSection();
         //MPCC
         mpcc->solve();        
-
         //Check metadata (laps done, goal achievement, etc.)
         //Update visualisation
         #ifdef VISUALISE    
@@ -226,7 +225,6 @@ int main(int argc, char *argv[])
                     ros_refresh_timer = std::chrono::high_resolution_clock::now();
             }
         #endif
-
         #ifdef DEBUG_SLOW
             usleep(100000);
             std::cout<<"Loops completed: "<<++loops_completed<<std::endl;

@@ -193,4 +193,12 @@ struct MPC_targets
 	Pos right_boundary;
 };
 
+struct CircleSection
+{
+	Coord origin;
+	double radius;
+	double start_angle;
+	double end_angle;
+};
+
 

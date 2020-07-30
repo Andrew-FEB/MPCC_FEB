@@ -22,7 +22,11 @@ void MPCController::solve()
     // Obtain reference and track constraints
     auto dist = vel.vx * time_step + 0.05;
     auto params = track.getReferencePath(dist, prediction_horizon);
-
+    if (params.size()<=0)
+    {
+        std::cerr<<"Empty params list in MPCController::solve()"<<std::endl;
+        return;
+    }
     // TODO Check if params has the correct length
     
     /* parameters */
