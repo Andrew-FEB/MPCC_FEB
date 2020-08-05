@@ -1,6 +1,7 @@
 import time
 
 import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
 import numpy as np
 
 import codegenerator as cg
@@ -59,18 +60,18 @@ def plot_simulation(simulation_steps, input_seq, state_seq, ref_seq):
     plt.show()
 
 
-def plot_track(track_x, track_y, upper, lower, ref_seq, state_seq):
-    ref_x = [x for x, *_ in ref_seq]
-    ref_y = [y for x, y, *_ in ref_seq]
+def plot_track(track_x, track_y, left_x, left_y, right_x, right_y, state_seq):
     state_x = [x for x, *_ in state_seq]
     state_y = [y for x, y, *_ in state_seq]
     fig, ax = plt.subplots(1, 1)
+
     ax.plot(track_x, track_y, '.y', label="Complete track")
-    ax.plot(track_x, upper, '--g', label="Boundaries")
-    ax.plot(track_x, lower, '--g')
+    ax.plot(left_x, left_y, '--g', label="Boundaries")
+    ax.plot(right_x, right_y, '--g')
     ax.plot(state_x, state_y, 'or', label="Achieved track")
-    ax.plot(ref_x, ref_y, 'xb', label="Reference track")
+
     plt.grid()
+    plt.axis('equal')
     plt.ylabel('Y position')
     plt.xlabel('X position')
     plt.title('Track')
@@ -104,7 +105,7 @@ def plot_nearest(track_x, track_y, nearest_seq, state_seq):
     fig, ax = plt.subplots(1, 1)
     ax.plot(track_x, track_y, '.y', label="Complete track")
 
-    for i in range(0, len(state_x)):
+    for i in range(len(state_x)):
         ax.plot([nearest_x[i], state_x[i]], [nearest_y[i], state_y[i]], '-k')
 
     ax.plot(state_x, state_y, 'or', label="Achieved track")
@@ -158,7 +159,7 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
     ref_y = [y for x, y in ref_seq[0]]
     slopes = [s for s, *_ in bound_seq]
     intercepts = [i for s, i, *_ in bound_seq]
-    track_widths = [tw for s, i, tw in bound_seq]
+    track_widths = [tw for s, i, tw, *_ in bound_seq]
 
     plt.show()
     ax = plt.gca()
@@ -170,12 +171,13 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
     bound_left, = ax.plot(ref_x, [slopes[0].left * x + intercepts[0].left for x in ref_x], 'm--')
     bound_right, = ax.plot(ref_x, [slopes[0].right * x + intercepts[0].right for x in ref_x], 'm--')
     bound_left.set_label("Boundaries for PH")
-    predicted_line, = ax.plot(track_x[0], track_y[0], '.b', label="Predicted track")
     ref_line, = ax.plot(ref_x, ref_y, '.c', label="Reference line for PH")
+    predicted_line, = ax.plot(track_x[0], track_y[0], '.b', label="Predicted track")
 
     txt = plt.text(0, 0, '', color="black", fontsize=18)
 
     plt.grid()
+    plt.axis('equal')
     plt.ylabel('Y position')
     plt.xlabel('X position')
     plt.title('Track')
@@ -210,24 +212,36 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
         ref_line.set_ydata([y for x, y in ref_seq[i]])
 
         txt.set_text("Iteration: " + str(i) + "\nExit status: " + exit_status_seq[i]
-                     + "\nTrack width: " + str(track_widths[i]))
+                     + "\nTrack width: " + str(round(track_widths[i], 3)))
         plt.draw()
         plt.pause(1e-17)
-        time.sleep(0.01)
+        time.sleep(0.000001)
 
     plt.show()
 
 
-def plot_solve_time(solve_time_seq):
+def plot_solve_time(solve_time_seq, exit_status_seq):
     t = np.arange(0, param.Ts * len(solve_time_seq), param.Ts)
+
+    ess = []
+    tess = []
+    empty = True
+    for i in range(len(exit_status_seq)):
+        if exit_status_seq[i].startswith("NotConverged"):
+            ess.append(solve_time_seq[i])
+            tess.append(t[i])
+            if empty: empty = False
+
     avg = np.mean(solve_time_seq)
+    std = np.std(solve_time_seq)
 
     plt.plot(t[0:len(solve_time_seq)], solve_time_seq)
-    plt.plot(t[0:len(solve_time_seq)], [avg] * len(solve_time_seq), label='Average solve time')
+    plt.plot(t[0:len(solve_time_seq)], [avg] * len(solve_time_seq))
+    if not empty: plt.plot(tess, ess, '.r', markersize=10)
+    plt.text(0, 0, "Avg = " + str(avg) + ", Std = " + str(std))
 
     plt.grid()
     plt.ylabel('Solve time')
     plt.xlabel('Time step')
     plt.title('Solve time at each iteration')
-    plt.legend(loc='best', borderaxespad=0.)
     plt.show()

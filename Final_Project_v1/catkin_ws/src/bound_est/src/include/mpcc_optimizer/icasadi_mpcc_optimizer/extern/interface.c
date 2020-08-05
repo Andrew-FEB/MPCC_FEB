@@ -19,10 +19,10 @@
  * + Problem
  *   + vars: 80
  *   + parameters: 89
- *   + n1: 120
+ *   + n1: 80
  *   + n2: 0
  *
- * Generated at: 2020-07-30 16:20:58.527385
+ * Generated at: 2020-08-05 21:39:41.332288
  *
  */
 #include <stdlib.h>
@@ -35,13 +35,13 @@
 #define NP_MPCC_OPTIMIZER 89
 
 /* Dimension of F1 (number of ALM constraints) */
-#define N1_MPCC_OPTIMIZER 120
+#define N1_MPCC_OPTIMIZER 80
 
 /* Dimension of F2 (number of PM constraints) */
 #define N2_MPCC_OPTIMIZER 0
 
 /* Dimension of xi = (c, y) */
-#define NXI_MPCC_OPTIMIZER 121
+#define NXI_MPCC_OPTIMIZER 81
 
 #ifndef casadi_real
 #define casadi_real double
@@ -57,7 +57,7 @@
 /*
  * CasADi interface for the cost function
  */
-extern int phi_BavACdRKiLMSQiLNlkjw(
+extern int phi_PnYldUgZSrGoxdbpBXVO(
     const casadi_real** arg, 
     casadi_real** res, 
     casadi_int* iw, 
@@ -67,7 +67,7 @@ extern int phi_BavACdRKiLMSQiLNlkjw(
 /*
  * CasADi interface for the gradient of the cost
  */
-extern int grad_phi_BavACdRKiLMSQiLNlkjw(
+extern int grad_phi_PnYldUgZSrGoxdbpBXVO(
     const casadi_real** arg, 
     casadi_real** res, 
     casadi_int* iw, 
@@ -77,7 +77,7 @@ extern int grad_phi_BavACdRKiLMSQiLNlkjw(
 /*
  * CasADi interface for the gradient of mapping F1
  */
-extern int mapping_f1_BavACdRKiLMSQiLNlkjw(
+extern int mapping_f1_PnYldUgZSrGoxdbpBXVO(
     const casadi_real** arg, 
     casadi_real** res, 
     casadi_int* iw, 
@@ -87,7 +87,7 @@ extern int mapping_f1_BavACdRKiLMSQiLNlkjw(
 /*
  * CasADi interface for the gradient of mapping F2
  */
-extern int mapping_f2_BavACdRKiLMSQiLNlkjw(
+extern int mapping_f2_PnYldUgZSrGoxdbpBXVO(
     const casadi_real** arg, 
     casadi_real** res, 
     casadi_int* iw, 
@@ -231,7 +231,7 @@ int cost_function_mpcc_optimizer(const casadi_real** arg, casadi_real** res) {
     copy_args_into_uxip_space(arg);
 
     result_space_cost[0] = res[0];
-    return phi_BavACdRKiLMSQiLNlkjw(
+    return phi_PnYldUgZSrGoxdbpBXVO(
         args__,
         result_space_cost,
         allocated_i_workspace_cost,
@@ -249,7 +249,7 @@ int grad_cost_function_mpcc_optimizer(const casadi_real** arg, casadi_real** res
               uxip_space + NU_MPCC_OPTIMIZER + NXI_MPCC_OPTIMIZER};  /* :p   */
     copy_args_into_uxip_space(arg);
     result_space_grad[0] = res[0];
-    return grad_phi_BavACdRKiLMSQiLNlkjw(
+    return grad_phi_PnYldUgZSrGoxdbpBXVO(
         args__,
         result_space_grad,
         allocated_i_workspace_grad,
@@ -273,10 +273,10 @@ int mapping_f1_function_mpcc_optimizer(const casadi_real** arg, casadi_real** re
      */
     result_space_f1[0] = res[0];
     /*
-     * Call auto-generated function mapping_f1_BavACdRKiLMSQiLNlkjw
+     * Call auto-generated function mapping_f1_PnYldUgZSrGoxdbpBXVO
      * Implemented in: icasadi/extern/auto_casadi_mapping_f1.c
      */
-    return mapping_f1_BavACdRKiLMSQiLNlkjw(
+    return mapping_f1_PnYldUgZSrGoxdbpBXVO(
         args__,
         result_space_f1,
         allocated_i_workspace_f1,
@@ -300,10 +300,10 @@ int mapping_f2_function_mpcc_optimizer(const casadi_real** arg, casadi_real** re
      */
     result_space_f2[0] = res[0];
     /*
-     * Call auto-generated function mapping_f2_BavACdRKiLMSQiLNlkjw
+     * Call auto-generated function mapping_f2_PnYldUgZSrGoxdbpBXVO
      * Implemented in: icasadi/extern/auto_casadi_mapping_f2.c
      */
-    return mapping_f2_BavACdRKiLMSQiLNlkjw(
+    return mapping_f2_PnYldUgZSrGoxdbpBXVO(
         args__,
         result_space_f2,
         allocated_i_workspace_f2,

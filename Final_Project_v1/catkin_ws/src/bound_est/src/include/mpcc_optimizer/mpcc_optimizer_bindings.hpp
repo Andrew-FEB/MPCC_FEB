@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <new>
 
-static const uintptr_t MPCC_OPTIMIZER_N1 = 120;
+static const uintptr_t MPCC_OPTIMIZER_N1 = 80;
 
 static const uintptr_t MPCC_OPTIMIZER_N2 = 0;
 

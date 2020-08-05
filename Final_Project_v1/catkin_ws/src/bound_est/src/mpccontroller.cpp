@@ -20,14 +20,13 @@ void MPCController::solve()
     auto vel = car->getVelocity();
 
     // Obtain reference and track constraints
-    auto dist = 3.5 * time_step;
+    auto dist = 4 * time_step;
     auto params = track.getReferencePath(dist, prediction_horizon);
     if (params.size()<=0)
     {
         std::cerr<<"Empty params list in MPCController::solve()"<<std::endl;
         return;
     }
-    // TODO Check if params has the correct length
     
     /* parameters */
     // Current state (=4) + Boundaries (Prediction Horizon * (Slopes(=2) + Intercepts(=2) + Width(=1))

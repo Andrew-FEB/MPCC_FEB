@@ -148,9 +148,6 @@ def cost_function(state, ref, control, control_prev, track_weight):
     # Tracking Error = distance from reference point
     cf += track_weight * cs.sqrt((x - x_ref) ** 2 + (y - y_ref) ** 2)
 
-    # Velocity
-    cf -= p.velocity_weight * v
-
     # Input Weights
     cf += p.in_weight[0] * control[0] ** 2
     cf += p.in_weight[1] * control[1] ** 2
@@ -170,8 +167,6 @@ def generate_code(lang):
     # + Prediction horizon * Reference point(=2)
     param_seq = cs.MX.sym("param", p.nx + 5 + p.N * 2)
 
-    cost = 0
-    u_prev = [0, 0]
     x_est = param_seq[0:p.nx]  # x0
     slope_left = param_seq[p.nx]
     slope_right = param_seq[p.nx+1]
@@ -181,6 +176,8 @@ def generate_code(lang):
     ref_list = param_seq[p.nx+5:param_seq.shape[0]]
 
     F1 = []
+    cost = 0
+    u_prev = [0, 0]
     track_weight = p.track_error_weight
     for t in range(0, p.nu * p.N, p.nu):
         u = u_seq[t:t + 2]
@@ -194,14 +191,20 @@ def generate_code(lang):
         # Update state estimate
         x_est = kinematic_model_rk(x_est, u, True)
         # Boundary Constraint
-        d_up = cs.fabs(slope_left * x_est[0] - x_est[1] + intercept_left) / (cs.sqrt(slope_left ** 2 + 1))
-        d_low = cs.fabs(slope_right * x_est[0] - x_est[1] + intercept_right) / (cs.sqrt(slope_right ** 2 + 1))
-        F1 = cs.vertcat(F1, x_est[3], d_up - track_width, d_low - track_width)
+        # d_up = cs.fabs(slope_left * x_est[0] - x_est[1] + intercept_left) / (cs.sqrt(slope_left ** 2 + 1))
+        # d_low = cs.fabs(slope_right * x_est[0] - x_est[1] + intercept_right) / (cs.sqrt(slope_right ** 2 + 1))
+        # F1 = cs.vertcat(F1, x_est[3], d_up - track_width, d_low - track_width)
+        # Source: https://math.stackexchange.com/questions/779598/quickly-find-if-point-lies-between-2-non-intersecting-segments
+        # if ((a * x1 + b - y1) * (c * x1 + d - y1) < 0) -> point lies in between
+        x = x_est[0]
+        y = x_est[1]
+        is_between = (slope_left * x + intercept_left - y) * (slope_right * x + intercept_right - y)
+        F1 = cs.vertcat(F1, x_est[3], is_between)
 
     # Constraints
     # -------------------------------------
-    # C = og.constraints.Rectangle([p.v_x_min] * p.N, [p.v_x_max] * p.N)
-    C = og.constraints.Rectangle([p.v_x_min, -np.inf, -np.inf] * p.N, [p.v_x_max, 0, 0] * p.N)
+    # C = og.constraints.Rectangle([p.v_x_min, -np.inf, -np.inf] * p.N, [p.v_x_max, 0, 0] * p.N)
+    C = og.constraints.Rectangle([p.v_x_min, -np.inf] * p.N, [p.v_x_max, 0] * p.N)
     U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
 
     # Code Generation
@@ -220,7 +223,7 @@ def generate_code(lang):
     elif lang == 'p':
         build_config = og.config.BuildConfiguration() \
             .with_build_directory("mpcc_python_build_kin") \
-            .with_build_mode(og.config.BuildConfiguration.DEBUG_MODE) \
+            .with_build_mode(og.config.BuildConfiguration.RELEASE_MODE) \
             .with_open_version('0.7.0-alpha.1') \
             .with_rebuild(True) \
             .with_tcp_interface_config()
@@ -233,8 +236,10 @@ def generate_code(lang):
     solver_config = og.config.SolverConfiguration() \
         .with_initial_tolerance(0.01) \
         .with_tolerance(0.01) \
-        .with_penalty_weight_update_factor(8.0) \
-        .with_initial_penalty(20.0) \
+        .with_delta_tolerance(0.01)  \
+        .with_initial_penalty(15) \
+        .with_penalty_weight_update_factor(4) \
+        .with_max_outer_iterations(100) \
         .with_max_duration_micros(100000)  # 0.05s = 50000us
 
     builder = og.builder.OpEnOptimizerBuilder(problem,

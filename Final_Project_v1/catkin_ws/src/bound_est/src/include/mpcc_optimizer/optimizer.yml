@@ -1,26 +1,9 @@
 _comment: auto-generated file; do not modify
-build:
-  build_dir: mpcc_c_build_kin
-  build_mode: release
-  cost_function_name: phi_BavACdRKiLMSQiLNlkjw
-  grad_function_name: grad_phi_BavACdRKiLMSQiLNlkjw
-  id: BavACdRKiLMSQiLNlkjw
-  mapping_f1: mapping_f1_BavACdRKiLMSQiLNlkjw
-  mapping_f2: mapping_f2_BavACdRKiLMSQiLNlkjw
-  open_version: 0.7.0-alpha.1
-  opengen_version: 0.6.0a1
-  target_system: null
-meta:
-  authors: Darina Abaffyova
-  licence: MIT
-  optimizer_name: mpcc_optimizer
-  version: 0.0.0
-solver:
-  constraints_tolerance: 0.0001
-  lbfgs_memory: 10
-  max_duration_micros: 100000
-  max_inner_iterations: 500
-  max_outer_iterations: 10
-  penalty_weight_update_factor: 8.0
-  tolerance: 0.01
+build: {build_dir: mpcc_c_build_kin, build_mode: release, cost_function_name: phi_PnYldUgZSrGoxdbpBXVO,
+  grad_function_name: grad_phi_PnYldUgZSrGoxdbpBXVO, id: PnYldUgZSrGoxdbpBXVO, mapping_f1: mapping_f1_PnYldUgZSrGoxdbpBXVO,
+  mapping_f2: mapping_f2_PnYldUgZSrGoxdbpBXVO, open_version: 0.7.0-alpha.1, target_system: null}
+meta: {authors: Darina Abaffyova, licence: MIT, optimizer_name: mpcc_optimizer, version: 0.0.0}
+solver: {constraints_tolerance: 0.01, lbfgs_memory: 10, max_duration_micros: 100000,
+  max_inner_iterations: 500, max_outer_iterations: 100, penalty_weight_update_factor: 4.0,
+  tolerance: 0.01}
 tcp: null

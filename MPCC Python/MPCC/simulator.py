@@ -23,7 +23,7 @@ Slope = namedtuple('slope', 'left right')
 def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_steps):
     # Set all values needed for simulation
     # TODO - organize these!!!
-    i_start = 2000
+    i_start = 0
     # State is a tuple which contains the four state-defining parameters
     x = track_x[i_start]
     y = track_y[i_start]
@@ -64,6 +64,9 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
     control_inputs = [0] * param.N * param.nu  # warm_start(state, ref_state, [slope, x_nearest, y_nearest])
     control_inputs_seq = []
 
+    not_conv_time = 0
+    not_conv_iter = 0
+
     # Create a TCP connection manager
     mng = og.tcp.OptimizerTcpManager("mpcc_python_build_kin/mpcc_optimizer")
     # Start the TCP server
@@ -71,10 +74,13 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
 
     # Run simulation
     for k in range(simulation_steps):
-        solver_status = mng.call(np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right,
-                                                         2*track_width],
-                                                 np.reshape(ref_list, 2 * param.N))), control_inputs)
-
+        solver_status = mng.call(
+            np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right,
+                                    track_width],
+                            np.reshape(ref_list, 2 * param.N))), control_inputs)
+        print("Parameters: " + str(
+            np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right,
+                                    track_width]))))
         try:
             print('Loop [' + str(k) + ']: ' + str(solver_status['solve_time_ms']) + ' ms. Exit status: '
                   + solver_status['exit_status'] + '. Outer iterations: ' + str(solver_status['num_outer_iterations'])
@@ -82,6 +88,11 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
                   + '. Penalty: ' + str(solver_status['penalty'])
                   + '. Nearest index = ' + str(i_nearest)
                   + '. Track width = ' + str(track_width))
+
+            if solver_status['exit_status'] == 'NotConvergedOutOfTime':
+                not_conv_time += 1
+            elif solver_status['exit_status'] == 'NotConvergedIterations':
+                not_conv_iter += 1
 
             control_inputs = solver_status['solution']
             first_control_input = Control(control_inputs[0], control_inputs[1])
@@ -123,7 +134,32 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
             break
 
     mng.kill()
-    return state_seq, ref_seq, bound_seq, cost_seq, solve_time_seq, exit_status_seq, first_control_seq,\
+
+    print("------------- SIMULATION SUMMARY -------------")
+    track_widths = [tw for s, i, tw in bound_seq]
+    print("[Min, Max, Avg] track width = [" + str(min(track_widths)) + ", " + str(max(track_widths)) + ", "
+          + str(np.mean(track_widths)) + "]")
+    slopes = [s.left for s, *_ in bound_seq]
+    print("[Min, Max, Avg] slope left = [" + str(min(slopes)) + ", " + str(max(slopes)) + ", "
+          + str(np.mean(slopes)) + "]")
+    slopes_right = [s.right for s, *_ in bound_seq]
+    print("[Min, Max, Avg] slope right = [" + str(min(slopes_right)) + ", " + str(max(slopes_right)) + ", "
+          + str(np.mean(slopes_right)) + "]")
+    print("NotConvergedOutOfTime: " + str(not_conv_time)
+          + " times\nNotConvergedIterations: " + str(not_conv_iter) + " times")
+    # Calculate the travelled distance
+    x_prev = state_seq[0].x
+    y_prev = state_seq[0].y
+    dist_travelled = 0
+    for i in range(len(state_seq)):
+        xt = state_seq[i].x
+        yt = state_seq[i].y
+        dist_travelled += round(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2), 3)
+        x_prev = xt
+        y_prev = yt
+    print("Complete travelled distance: " + str(dist_travelled))
+
+    return state_seq, ref_seq, bound_seq, cost_seq, solve_time_seq, exit_status_seq, first_control_seq, \
            control_inputs_seq, len(state_seq)
 
 
@@ -179,7 +215,7 @@ def get_reference_list(track_x, track_y, i_nearest):
     end_reached = False
 
     for i in range(0, param.N):
-        d = dist_prev + 0.5 * param.a_max * param.Ts ** 2
+        d = dist_prev + param.a_max * param.Ts ** 2
         dist_prev = d
         x_temp = x[len(x) - 1]
         y_temp = y[len(y) - 1]
