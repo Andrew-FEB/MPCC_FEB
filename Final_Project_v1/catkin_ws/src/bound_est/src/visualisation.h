@@ -12,7 +12,7 @@
 #include "cone.h"
 #include "definitions.h"
 
-constexpr int ROS_DURATION_TIME {3};
+constexpr int ROS_DURATION_TIME {0};
 
 class Visualisation
 {
@@ -37,7 +37,9 @@ public:
 	void showCarBoundaryPoints(const std::vector<Coord> &car_edges, const int &furthest_point_index, const bool &outside_track);
 	void plotSolveTime(const float &solve_time);
 	void plotMPCCTime(const float &mpcc_time);
-	void showCarVision(const CircleSection &circle_sec, const std::vector<Cone *> &cones);
+	void showCarVision(const CircleSection &circle_sec);
+	void showTrackFrame(const Rect &track_frame);
+	void showBoundaryCircle(const double &radius, const Coord &origin, const Coord &cone, const Coord &closest_point);
 
 private:
 	void waitForSubscribe(const ros::Publisher &pub);
@@ -64,6 +66,8 @@ private:
 	ros::Publisher solve_time_pub;
 	ros::Publisher mpcc_time_pub;
 	ros::Publisher car_vision_pub;
+	ros::Publisher track_frame_pub;
+	ros::Publisher boundary_circle_pub;
 
 
 	visualization_msgs::MarkerArray node_mid_markers;
@@ -85,4 +89,6 @@ private:
 	visualization_msgs::Marker reference_to_boundary_markers;
 	visualization_msgs::MarkerArray car_boundary_markers;
 	visualization_msgs::MarkerArray car_vision_markers;
-};
+	visualization_msgs::MarkerArray track_frame_markers;
+	visualization_msgs::MarkerArray boundary_circle_markers;
+};	

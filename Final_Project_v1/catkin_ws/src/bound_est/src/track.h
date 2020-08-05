@@ -20,12 +20,14 @@
 #include "freeFunctions.h"
 
 double constexpr REPEATED_CONE_RADIUS = 0.5;
-double constexpr MAX_VISION_CONE_FRAME_RANGE = 25;
-double constexpr CONE_VISION_ARC = 0.15;    //Value from 0 to 1 describing how much of circle around current direction can be seen
+double constexpr MAX_VISION_CONE_FRAME_RANGE = 30;
+double constexpr CONE_VISION_ARC = 0.25;    //Value from 0 to 1 describing how much of circle around current direction can be seen
 double constexpr TRACK_COMPLETE_CHECK_RADIUS = 7.5;
 int constexpr NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS = 5;
 int constexpr NUM_CENTRELINE_COORDS_BEFORE_CHECK_TRACK_COMPLETE = 10;
 int constexpr MIN_FRAMED_CONES_TO_PROCESS = 4;
+double constexpr TRACK_FRAME_LENGTH = 20;
+double constexpr TRACK_FRAME_WIDTH_DIV_2 = 7.0;
 
 class Track
 {
@@ -51,7 +53,8 @@ public:
 private:
     std::pair<ConeError, Cone *> checkConePos(const Coord &point);
     std::pair<std::vector<const Cone *>, std::vector<const Cone *>> seperateConeList(std::vector<std::unique_ptr<Cone>> &coneList);    //0 = left, 1 = right
-    void extractNewConesInRange (std::vector<std::unique_ptr<Cone>> &cones_to_extract, std::vector<std::unique_ptr<Cone>> &extracted_cones, const std::unique_ptr<Car> &car);
+    std::vector<std::unique_ptr<Cone>> extractConesInFrame();
+    void rebalanceCones(std::vector<std::unique_ptr<Cone>> &framed_cones, std::vector<const Cone *> &boundary_cones, const unsigned long &number_to_remove);
     std::pair<std::vector<Coord>, double> interpolateCentreCoordsDiscrete(const int &original_index, const Coord &start_point, const int &number_of_points, const double &distance);
     std::vector<Pos> findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cone_list, const std::vector<Coord> &coord_list);
     Coord getClosestPointOnLine (const Coord &a, const Coord &b, const Coord &p);
@@ -60,10 +63,10 @@ private:
     int findClosestCentreCoordIndex(const Coord &point);
     std::pair<Coord, int> getClosestPointOnCentreLine(const Coord &point);
     bool checkIfTrackComplete(const Coord &last_centre_point);
-    inline std::vector<Coord> projectCarPoints(const Pos &pos, const double &width, const double &length);
+    inline std::vector<Coord> projectCarPoints(const Pos &pos);
+    inline Rect projectTrackFramePoints(const Pos &pos, const double &width_div_2, const double &length);
 
     //Cone lists
-    std::vector<std::unique_ptr<Cone>> cones_within_range;
     std::vector<std::unique_ptr<Cone>> new_cones;
     std::vector<std::unique_ptr<Cone>> processed_cone_list;
     std::vector<const Cone*> processed_cone_list_left;

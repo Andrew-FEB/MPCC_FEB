@@ -51,6 +51,8 @@ void Visualisation::refreshRosOutput()
 		if (reference_to_boundary_pub.getNumSubscribers()>=1) reference_to_boundary_pub.publish(reference_to_boundary_markers);
 		if (car_boundary_pub.getNumSubscribers()>=1) car_boundary_pub.publish(car_boundary_markers);
 		if (car_vision_pub.getNumSubscribers()>=1) car_vision_pub.publish(car_vision_markers);
+		if (track_frame_pub.getNumSubscribers()>=1) track_frame_pub.publish(track_frame_markers);
+		if (boundary_circle_pub.getNumSubscribers()>=1) boundary_circle_pub.publish(boundary_circle_markers);
 	}
 	else
 	{
@@ -129,7 +131,7 @@ void Visualisation::showNewCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		new_cone_markers.markers[i].header.stamp = ros::Time();
 		new_cone_markers.markers[i].ns = "new_cones";
 		new_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		new_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		new_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		new_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		new_cone_markers.markers[i].pose.position.z = 0.0;
 		new_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -170,7 +172,7 @@ void Visualisation::showFramedCones(const std::vector<std::unique_ptr<Cone>> &co
 		framed_cone_markers.markers[i].header.stamp = ros::Time();
 		framed_cone_markers.markers[i].ns = "new_cones";
 		framed_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		framed_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		framed_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		framed_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		framed_cone_markers.markers[i].pose.position.z = 0.0;
 		framed_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -211,7 +213,7 @@ void Visualisation::showOldCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		old_cone_markers.markers[i].header.stamp = ros::Time();
 		old_cone_markers.markers[i].ns = "old_cones";
 		old_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		old_cone_markers.markers[i].mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		old_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		old_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		old_cone_markers.markers[i].pose.position.z = 0.0;
 		old_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -244,7 +246,7 @@ void Visualisation::showCar(const Pos &pos)
 	car_marker.header.stamp = ros::Time();
 	car_marker.ns = "car_image";
 	car_marker.type = visualization_msgs::Marker::MESH_RESOURCE;
-	car_marker.mesh_resource = "file:///home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
+	car_marker.mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
 	car_marker.action = visualization_msgs::Marker::ADD;
 	car_marker.pose.position.z = 0.0;
 	car_marker.pose.orientation.z = tf::createQuaternionMsgFromYaw(pos.phi).z;
@@ -818,7 +820,7 @@ void Visualisation::plotMPCCTime(const float &mpcc_time) {
 	mpcc_time_pub.publish(mpcc_time_msg);
 }
 
-void Visualisation::showCarVision(const CircleSection &circle_sec, const std::vector<Cone *> &cones)
+void Visualisation::showCarVision(const CircleSection &circle_sec)
 {
 	if (car_vision_pub.getNumSubscribers()<1)
 	{
@@ -869,18 +871,92 @@ void Visualisation::showCarVision(const CircleSection &circle_sec, const std::ve
 	marker.pose.position.y = circle_sec.origin.y + (circle_sec.radius*sin(circle_sec.start_angle));
 	marker.id = id++;
 	car_vision_markers.markers.push_back(marker);
-/* 	
-	for (auto &cone : cones)
-	{
-		marker.type = visualization_msgs::Marker::SPHERE;
+	car_vision_pub.publish(car_vision_markers);
+}
+
+void Visualisation::showTrackFrame(const Rect &track_frame)
+{
+	if (track_frame_pub.getNumSubscribers()<1)
+		{
+			std::cerr<<"Waiting for subscription - track_frame markers."<<std::endl;
+			track_frame_pub = n->advertise<visualization_msgs::MarkerArray>("track_frame", TIME_OUT_VAL);
+			waitForSubscribe(track_frame_pub);
+		}
+		if (!track_frame_markers.markers.empty()) track_frame_markers.markers.clear();
+
+		visualization_msgs::Marker marker;
+		marker.header.frame_id = "/tf_bound";
+		marker.header.stamp = ros::Time();
+		marker.ns = "track_frame";
+		marker.type = visualization_msgs::Marker::CYLINDER;
+		marker.action = visualization_msgs::Marker::ADD;
+		marker.pose.position.z = 0.0;
+		marker.pose.orientation.z = 0.0;
+		marker.pose.orientation.w = 2.0;
 		marker.scale.x = 0.3;
 		marker.scale.y = 0.3;
 		marker.scale.z = 3.0;
-		marker.pose.position.x = cone->getX();
-		marker.pose.position.y = cone->getY();
-		marker.pose.position.z = 3.0;
-		marker.id = id++;
-		car_vision_markers.markers.push_back(marker);
-	} */
-	car_vision_pub.publish(car_vision_markers);
+		marker.color.r = 1.0f;
+		marker.color.g = 1.0f;
+		marker.color.b = 1.0f;
+		marker.color.a = 1.0;
+		for (int i = 0; i<track_frame.points.size(); i++)
+		{
+			marker.pose.position.x = track_frame.points[i].x;
+			marker.pose.position.y = track_frame.points[i].y;
+			marker.id = i;
+			track_frame_markers.markers.push_back(marker);
+		}
+		track_frame_pub.publish(track_frame_markers);
+}
+
+void Visualisation::showBoundaryCircle(const double &radius, const Coord &origin, const Coord &cone, const Coord &closest_point)
+{
+	if (boundary_circle_pub.getNumSubscribers()<1)
+	{
+		std::cerr<<"Waiting for subscription - boundary circle."<<std::endl;
+		boundary_circle_pub = n->advertise<visualization_msgs::MarkerArray>("boundary_circle", TIME_OUT_VAL);
+		waitForSubscribe(boundary_circle_pub);
+	}
+	if (!boundary_circle_markers.markers.empty()) boundary_circle_markers.markers.clear();
+	visualization_msgs::Marker marker;
+	marker.header.frame_id = "/tf_bound";
+	marker.header.stamp = ros::Time();
+	marker.ns = "boundary_circle";
+	marker.type = visualization_msgs::Marker::CYLINDER;
+	marker.action = visualization_msgs::Marker::ADD;
+	//Circle
+	marker.pose.position.z = 0.0;
+	marker.pose.orientation.z = 1.0;
+	marker.pose.orientation.w = 1.0;
+	marker.pose.orientation.y = 0.0;
+	marker.pose.orientation.x = 0.0;
+	auto rad_squared = pow(radius,2);
+	marker.scale.x = rad_squared;
+	marker.scale.y = rad_squared;
+	marker.scale.z = 0.01;
+	marker.color.r = 0.0f;
+	marker.color.g = 1.0f;
+	marker.color.b = 0.0f;
+	marker.color.a = 0.5;
+	marker.lifetime = ros::Duration(ROS_DURATION_TIME);
+	marker.pose.position.x = origin.x;
+	marker.pose.position.y = origin.y;
+	marker.id = 0;	
+	boundary_circle_markers.markers.push_back(marker);
+	//Closest cone
+	marker.scale.x = 0.4;
+	marker.scale.y = 0.4;
+	marker.scale.z = 2.0;
+	marker.pose.position.x = cone.x;
+	marker.pose.position.y = cone.y;
+	marker.id = 1;	
+	boundary_circle_markers.markers.push_back(marker);
+	//Closest point
+	marker.pose.position.x = closest_point.x;
+	marker.pose.position.y = closest_point.y;
+	marker.id = 2;	
+	boundary_circle_markers.markers.push_back(marker);
+
+	boundary_circle_pub.publish(boundary_circle_markers);
 }

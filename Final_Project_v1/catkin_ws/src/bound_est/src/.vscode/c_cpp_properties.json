@@ -7,9 +7,9 @@
             },
             "includePath": [
                 "/opt/ros/melodic/include/**",
-                "/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/**",
+                "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/**",
                 "/usr/include/**",
-		        "/home/dada/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/**"
+		        "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer/**"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",

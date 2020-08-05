@@ -4,6 +4,6 @@ cd ./catkin_ws
 source ./devel/setup.bash
 catkin_make
 sleep 1
-rosrun bound_est Bound_Est
+rosrun bound_est Bound_Est ccw
 
 

@@ -89,15 +89,26 @@ void Track::processNextSection()
     #ifdef VISUALISE
 	    visualisation->showNewCones(new_cones);
     #endif
-    extractNewConesInRange(new_cones, cones_within_range, car);
-    if (cones_within_range.size()<=4) return;
+    auto framed_cones = extractConesInFrame();
+    if (framed_cones.size()<=4) return;
     #ifdef VISUALISE
-        visualisation->showFramedCones(cones_within_range);
+        visualisation->showFramedCones(framed_cones);
     #endif
-
     //Seperate cones into left and right
-    auto seperated_cones = seperateConeList(cones_within_range);
-    if (seperated_cones.first.size()<=0 || seperated_cones.second.size()<=0) return;
+    auto seperated_cones = seperateConeList(framed_cones);
+    if (seperated_cones.first.size()<=2 || seperated_cones.second.size()<=2)
+    {
+        std::cerr<<"Failed seperated cones check"<<std::endl;
+        std::move(framed_cones.begin(), framed_cones.end(), std::back_inserter(new_cones));
+        return;
+    }
+    auto result = (seperated_cones.first.size()>seperated_cones.second.size()) ? seperated_cones.first.size()-seperated_cones.second.size() : seperated_cones.second.size()-seperated_cones.first.size();
+    if (result>1)   //Unbalanced frame - rebalance
+    {
+        auto larger_vec = (seperated_cones.first.size()>seperated_cones.second.size()) ? seperated_cones.first: seperated_cones.second;
+        rebalanceCones(framed_cones, larger_vec, result);
+    }
+
     #ifdef VISUALISE
     visualisation->showLeftCones(seperated_cones.first);
     visualisation->showRightCones(seperated_cones.second);
@@ -121,26 +132,52 @@ void Track::processNextSection()
 	Coord section_end = findEndGoal(entry_point, seperated_cones);
 
     //Get paths traversing framed track region
-    auto paths = triangulate->getTraversingPaths(cones_within_range, entry_point, section_end, seperated_cones, starting_from_car);
+    auto paths = triangulate->getTraversingPaths(framed_cones, entry_point, section_end, seperated_cones, starting_from_car);
     #ifdef VISUALISE
         //visualisation->showViablePaths(paths);
     #endif
 
     //Add new coordinates into final result
-    auto best_path = path_analysis->findBestPath(paths, section_end, cones_within_range, seperated_cones.first, seperated_cones.second);
+    auto best_path = path_analysis->findBestPath(paths, section_end, framed_cones, seperated_cones.first, seperated_cones.second);
     if (!best_path.empty()) std::move(best_path.begin(), best_path.end(), std::back_inserter(centre_coords));
 
     //Move new cones into processed cones
-    std::move(cones_within_range.begin(), cones_within_range.end(), std::back_inserter(processed_cone_list)); 
+    std::move(framed_cones.begin(), framed_cones.end(), std::back_inserter(processed_cone_list)); 
     //Move seperated classified cones into processed cones 
     std::move(seperated_cones.first.begin(), seperated_cones.first.end(), std::back_inserter(processed_cone_list_left));
     std::move(seperated_cones.second.begin(), seperated_cones.second.end(), std::back_inserter(processed_cone_list_right));
     #ifdef VISUALISE
 	    visualisation->showOldCones(processed_cone_list);
         visualisation->showCentreCoords(centre_coords);
-    #endif
-    cones_within_range.clear(); 
+    #endif 
     if (centre_coords.size()>NUM_CENTRELINE_COORDS_BEFORE_CHECK_TRACK_COMPLETE) track_complete = checkIfTrackComplete(centre_coords.back());
+}
+   
+void Track::rebalanceCones(std::vector<std::unique_ptr<Cone>> &framed_cones, std::vector<const Cone *> &boundary_cones, const unsigned long &number_to_remove)
+{
+    int number_removed = 0;
+    auto car_pos = car->getPosition().p;
+    while (number_removed<=number_to_remove)
+    {  
+        auto furthest_cone = findFurthestConeFromPointWithIndex(car_pos, boundary_cones);
+        for (int i = 0; i<framed_cones.size(); i++)
+        {
+
+            if ((*framed_cones[i])==furthest_cone.first)
+            {
+                if ((i+1)<framed_cones.size())
+                {
+                    std::rotate(framed_cones.begin()+i, framed_cones.begin()+i+1, framed_cones.end());
+                }
+                boundary_cones[furthest_cone.second] = std::move(boundary_cones.back());
+                boundary_cones.pop_back();
+                number_removed++;
+                break;
+            }
+        }
+    }
+    std::move(framed_cones.end()-number_to_remove, framed_cones.end(), std::back_inserter(new_cones));
+    framed_cones.erase(framed_cones.end()-number_to_remove, framed_cones.end());
 }
 
 std::vector<const Cone*> Track::getConeList()
@@ -596,32 +633,37 @@ std::pair<std::vector<Coord>, double> Track::interpolateCentreCoordsDiscrete(con
     return std::make_pair(output_vec, temp_distance);
 }
 
-void Track::extractNewConesInRange (std::vector<std::unique_ptr<Cone>> &cones_to_extract, std::vector<std::unique_ptr<Cone>> &extracted_cones, const std::unique_ptr<Car> &car)
+std::vector<std::unique_ptr<Cone>> Track::extractConesInFrame()
 {
     auto car_pos = car->getPosition();
-    std::vector<std::unique_ptr<Cone>> in_range;
-    auto circle_sec = formCircleSection(car_pos.p, car_pos.phi, MAX_VISION_CONE_FRAME_RANGE, CONE_VISION_ARC);
-    auto result = std::partition(cones_to_extract.begin(), cones_to_extract.end(), [&circle_sec](const std::unique_ptr<Cone> &cone)
+    std::vector<std::unique_ptr<Cone>> framed_cones;
+    CircleSection circle_sec;
+    Rect frame;
+    if (centre_coords.empty())
     {
-        return checkIfPointInCircleSection(circle_sec, cone->getCoordinates());
+        circle_sec = formCircleSection(car_pos.p, car_pos.phi, MAX_VISION_CONE_FRAME_RANGE, CONE_VISION_ARC);
+        frame = projectTrackFramePoints(car->getPosition(), TRACK_FRAME_WIDTH_DIV_2, TRACK_FRAME_LENGTH);
+    }
+    else
+    {
+        double direction = atan2(centre_coords.back().y-car_pos.p.y, centre_coords.back().x-car_pos.p.y);
+        circle_sec = formCircleSection(car_pos.p, direction, MAX_VISION_CONE_FRAME_RANGE, CONE_VISION_ARC);
+        frame = frame = projectTrackFramePoints({car->getPosition().p, direction}, TRACK_FRAME_WIDTH_DIV_2, TRACK_FRAME_LENGTH);
+    }
+    auto result = std::partition(new_cones.begin(), new_cones.end(), [&circle_sec, &frame](const std::unique_ptr<Cone> &cone)
+    {
+        return (checkIfPointInCircleSection(circle_sec, cone->getCoordinates()) && frame.containsPoint(cone->getCoordinates()));
     });
     #ifdef VISUALISE
-    std::vector<Cone *> cone_p;
-    for (std::vector<std::unique_ptr<Cone>>::iterator it = cones_to_extract.begin(); it!=result; it++)
-    {
-        cone_p.push_back(it->get());
-    }
-    visualisation->showCarVision(circle_sec, cone_p);
+    visualisation->showCarVision(circle_sec);
+    visualisation->showTrackFrame(frame);
     #endif
-    //TEST
-    std::cerr<<"Number of cones all together = "<<cones_to_extract.size()<<std::endl;
-    std::cerr<<"Number of framed cones = "<<std::distance(cones_to_extract.begin(), result)<<std::endl;
-    //ETEST
-    if (result!=cones_to_extract.end() && std::distance(cones_to_extract.begin(), result)>MIN_FRAMED_CONES_TO_PROCESS)
+    if (result!=new_cones.end() && std::distance(new_cones.begin(), result)>MIN_FRAMED_CONES_TO_PROCESS)
     {
-        std::move(cones_to_extract.begin(), result, std::back_inserter(extracted_cones));
-        cones_to_extract.erase(cones_to_extract.begin(), result);
+        std::move(new_cones.begin(), result, std::back_inserter(framed_cones));
+        new_cones.erase(new_cones.begin(), result);
     }
+    return framed_cones;
 }
 
 bool Track::trackIsComplete()
@@ -654,9 +696,8 @@ bool Track::carIsInsideTrack()
     if (centre_coords.size() <=0 ) return true;
     auto car_pos = car->getPosition();
     auto closest_point = getClosestPointOnCentreLine(car_pos.p).first;
-    auto radius = findClosestConeToPoint(car_pos.p, processed_cone_list).second;
-
-    auto car_edges = projectCarPoints(car_pos, CarParams.width_div_2, CarParams.length_div_2);
+    auto closest_cone = findClosestConeToPoint(closest_point, processed_cone_list);
+    auto car_edges = projectCarPoints(car_pos);
     int furthest_point_index{0};
     double furthest_dist{distBetweenPoints(car_edges[0], closest_point)};
     for (int i = 1; i<car_edges.size(); i++)
@@ -668,14 +709,14 @@ bool Track::carIsInsideTrack()
             furthest_dist = dist;
         }
     }
-
     #ifdef VISUALISE
+    //visualisation->showBoundaryCircle(closest_cone.second, closest_point, closest_cone.first->getCoordinates(), closest_point);
     std::vector<Coord> non_crit_rect_points;
-    auto inside_boundaries = withinCircleOfRadius(car_edges[furthest_point_index], closest_point, radius);
+    auto inside_boundaries = withinCircleOfRadius(car_edges[furthest_point_index], closest_point, closest_cone.second);
     visualisation->showCarBoundaryPoints(car_edges, furthest_point_index, inside_boundaries);
     return inside_boundaries;
     #else
-    return withinCircleOfRadius(car_edges[furthest_point_index], closest_point, radius);
+    return withinCircleOfRadius(car_edges[furthest_point_index], closest_point, closest_cone.second);
     #endif
 }
 
@@ -719,12 +760,40 @@ bool Track::checkIfTrackComplete(const Coord &last_centre_point)
     return false;
 }
 
-inline std::vector<Coord> Track::projectCarPoints(const Pos &pos, const double &width, const double &length)
+inline std::vector<Coord> Track::projectCarPoints(const Pos &pos)
 {
     std::vector<Coord> output;  
     output.push_back(rotateToAngle({CarParams.length_div_2, CarParams.width_div_2}, pos));
     output.push_back(rotateToAngle({CarParams.length_div_2, -CarParams.width_div_2}, pos));
     output.push_back(rotateToAngle({-CarParams.length_div_2, -CarParams.width_div_2}, pos));
     output.push_back(rotateToAngle({-CarParams.length_div_2, CarParams.width_div_2}, pos));
+    return output;
+}
+
+inline Rect Track::projectTrackFramePoints(const Pos &pos, const double &width_div_2, const double &length)
+{ 
+    Rect output;  
+    if (clockwise_track)
+    {
+        output.points[1] = (rotateToAngle({length, width_div_2*3}, pos));
+        output.points[2] = (rotateToAngle({0, width_div_2*3}, pos));
+    }
+    else
+    {      
+        output.points[1] = (rotateToAngle({length, width_div_2}, pos));
+        output.points[2] = (rotateToAngle({0, width_div_2}, pos));
+    }
+    
+    if (counter_clockwise_track)
+    {
+        output.points[0] = (rotateToAngle({length, -width_div_2*3}, pos));
+        output.points[3] = (rotateToAngle({0, -width_div_2*3}, pos));
+    }
+    else
+    {
+        output.points[0] = (rotateToAngle({length, -width_div_2}, pos));
+        output.points[3] = (rotateToAngle({0, -width_div_2}, pos));
+    }
+
     return output;
 }

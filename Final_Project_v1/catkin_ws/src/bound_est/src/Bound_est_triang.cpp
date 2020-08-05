@@ -15,6 +15,7 @@
 #ifndef DEBUG
     #undef DDEBUG_LOOPS
     #undef DDEBUG_SLOW
+    #undef DDEBUG_SLOWAFTERLOOPS
     #undef VISUALISE
     #undef VISUALISE_RQT
 #endif
@@ -25,9 +26,11 @@
 constexpr long ROS_REFRESH_TIME_MS = 1000;
 
 //Configure globals
+bool counter_clockwise_track = false;
+bool clockwise_track = false;
 #ifdef DEBUG
     bool reset_logs = true;
-    constexpr int DEBUG_LOOPS_TO_COMPLETE = 180;
+    constexpr int DEBUG_LOOPS_TO_COMPLETE = 60;
 #endif
 
 constexpr double time_step = 0.05;
@@ -40,6 +43,21 @@ constexpr int pred_horizon = 40;
 
 int main(int argc, char *argv[])
 {
+    //Check track orientation input argument
+    if (argc>=1)
+    {
+        if (std::string(argv[1])=="cw")
+        {
+            std::cout<<"Clockwise track declared in compiler statement. Adjusting track framing."<<std::endl;
+            clockwise_track = true;
+        } 
+        else if (std::string(argv[1])=="ccw") 
+        {
+            std::cout<<"Counter clockwise track declared in compiler statement. Adjusting track framing."<<std::endl;
+            counter_clockwise_track = true;
+        }
+    }
+
     //Configure ros
     ros::init(argc, argv, "boundary_est");
 
@@ -57,7 +75,7 @@ int main(int argc, char *argv[])
 
     // //Configure ros messages
     // rosbag::Bag cone_data;
-    // cone_data.open("/home/dada/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
+    // cone_data.open("/home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
     // rosbag::View view(cone_data);
     // std::vector<std::string> topics;
     // //topics.push_back(std::string("carpos")); //Testing topic, remove in final
@@ -78,115 +96,194 @@ int main(int argc, char *argv[])
 
     //Angle car to be pointing forward at beginning of race
     auto car = track->getCar();
-    car->setPosition({{-0.057, 0.298}, 0.5});
-    // LEFT
-    track->addCone(-0.14, 3.51, BoundPos::left);
-    track->addCone(2.21, 3.74, BoundPos::left);
-    track->addCone(4.76, 5.27, BoundPos::left);
-    track->addCone(7.44, 7.15, BoundPos::left);
-    track->addCone(10.24, 8.54, BoundPos::left);
-    track->addCone(13.11, 9.40, BoundPos::left);
-    track->addCone(16.02, 10.04, BoundPos::left);
-    track->addCone(18.94, 10.76, BoundPos::left);
-    track->addCone(21.83, 11.50, BoundPos::left);
-    track->addCone(24.64, 12.00, BoundPos::left);
-    track->addCone(27.33, 11.89, BoundPos::left);
-    track->addCone(29.87, 10.95, BoundPos::left);
-    track->addCone(32.22, 9.03, BoundPos::left);
-    track->addCone(34.42, 6.49, BoundPos::left);
-    track->addCone(36.50, 3.75, BoundPos::left);
-    track->addCone(38.48, 1.26, BoundPos::left);
-    track->addCone(40.42, -0.53, BoundPos::left);
-    track->addCone(42.34, -1.18, BoundPos::left);
-    track->addCone(44.26, -0.35, BoundPos::left);
-    track->addCone(46.07, 1.71, BoundPos::left);
-    track->addCone(47.54, 4.49, BoundPos::left);
-    track->addCone(48.62, 7.66, BoundPos::left);
-    track->addCone(49.26, 11.03, BoundPos::left);
-    track->addCone(49.45, 14.43, BoundPos::left);
-    track->addCone(49.15, 17.67, BoundPos::left);
-    track->addCone(48.35, 20.56, BoundPos::left);
-    track->addCone(47.01, 22.92, BoundPos::left);
-    track->addCone(45.12, 24.57, BoundPos::left);
-    track->addCone(42.70, 25.50, BoundPos::left);
-    track->addCone(39.87, 25.91, BoundPos::left);
-    track->addCone(36.76, 26.02, BoundPos::left);
-    track->addCone(33.49, 26.04, BoundPos::left);
-    track->addCone(30.17, 26.19, BoundPos::left);
-    track->addCone(26.94, 26.51, BoundPos::left);
-    track->addCone(23.93, 26.66, BoundPos::left);
-    track->addCone(21.26, 26.29, BoundPos::left);
-    track->addCone(19.07, 25.05, BoundPos::left);
-    track->addCone(17.30, 22.95, BoundPos::left);
-    track->addCone(15.70, 20.39, BoundPos::left);
-    track->addCone(14.00, 17.78, BoundPos::left);
-    track->addCone(11.98, 15.54, BoundPos::left);
-    track->addCone(9.36, 14.06, BoundPos::left);
-    track->addCone(6.09, 13.52, BoundPos::left);
-    track->addCone(2.61, 13.45, BoundPos::left);
-    track->addCone(-0.57, 13.34, BoundPos::left);
-    track->addCone(-2.95, 12.63, BoundPos::left);
-    track->addCone(-4.03, 10.81, BoundPos::left);
-    track->addCone(-3.66, 7.98, BoundPos::left);
-    track->addCone(-2.22, 5.18, BoundPos::left);
-    track->addCone(-0.14, 3.51, BoundPos::left);
-
-    // RIGHT
-    track->addCone(-0.01, -2.90, BoundPos::right);
-    track->addCone(2.89, -1.79, BoundPos::right);
-    track->addCone(5.91, 0.43, BoundPos::right);
-    track->addCone(9.13, 2.35, BoundPos::right);
-    track->addCone(12.57, 3.37, BoundPos::right);
-    track->addCone(16.12, 4.00, BoundPos::right);
-    track->addCone(19.69, 4.81, BoundPos::right);
-    track->addCone(23.17, 5.63, BoundPos::right);
-    track->addCone(26.50, 5.92, BoundPos::right);
-    track->addCone(29.61, 5.13, BoundPos::right);
-    track->addCone(32.44, 2.94, BoundPos::right);
-    track->addCone(35.04, -0.13, BoundPos::right);
-    track->addCone(37.48, -3.33, BoundPos::right);
-    track->addCone(39.85, -5.90, BoundPos::right);
-    track->addCone(42.21, -7.09, BoundPos::right);
-    track->addCone(44.61, -6.30, BoundPos::right);
-    track->addCone(46.88, -3.96, BoundPos::right);
-    track->addCone(48.81, -0.88, BoundPos::right);
-    track->addCone(50.32, 2.67, BoundPos::right);
-    track->addCone(51.40, 6.54, BoundPos::right);
-    track->addCone(52.03, 10.58, BoundPos::right);
-    track->addCone(52.19, 14.63, BoundPos::right);
-    track->addCone(51.87, 18.55, BoundPos::right);
-    track->addCone(51.04, 22.18, BoundPos::right);
-    track->addCone(49.69, 25.39, BoundPos::right);
-    track->addCone(47.80, 28.01, BoundPos::right);
-    track->addCone(45.35, 29.90, BoundPos::right);
-    track->addCone(42.36, 31.03, BoundPos::right);
-    track->addCone(38.94, 31.62, BoundPos::right);
-    track->addCone(35.23, 31.93, BoundPos::right);
-    track->addCone(31.34, 32.23, BoundPos::right);
-    track->addCone(27.41, 32.65, BoundPos::right);
-    track->addCone(23.71, 32.81, BoundPos::right);
-    track->addCone(20.49, 32.11, BoundPos::right);
-    track->addCone(17.96, 30.10, BoundPos::right);
-    track->addCone(15.91, 27.13, BoundPos::right);
-    track->addCone(13.93, 23.92, BoundPos::right);
-    track->addCone(11.61, 21.16, BoundPos::right);
-    track->addCone(8.55, 19.54, BoundPos::right);
-    track->addCone(4.76, 19.15, BoundPos::right);
-    track->addCone(0.68, 19.37, BoundPos::right);
-    track->addCone(-3.21, 19.55, BoundPos::right);
-    track->addCone(-6.43, 19.03, BoundPos::right);
-    track->addCone(-8.52, 17.16, BoundPos::right);
-    track->addCone(-9.25, 13.78, BoundPos::right);
-    track->addCone(-8.83, 9.51, BoundPos::right);
-    track->addCone(-7.46, 5.03, BoundPos::right);
-    track->addCone(-5.39, 1.02, BoundPos::right);
-    track->addCone(-2.82, -1.85, BoundPos::right);
-    track->addCone(-0.01, -2.90, BoundPos::right);
+    car->setPosition({{0, 15}, -0.98});
+    //LEFT
+    track->addCone(1.5, 19.5, BoundPos::left);
+    track->addCone(3.56, 16.65, BoundPos::left);
+    track->addCone(5.32, 13.22, BoundPos::left);
+    track->addCone(6.84, 9.45, BoundPos::left);
+    track->addCone(8.18, 5.6, BoundPos::left);
+    track->addCone(9.41, 1.91, BoundPos::left);
+    track->addCone(10.58, -1.36, BoundPos::left);
+    track->addCone(11.77, -3.96, BoundPos::left);
+    track->addCone(13.02, -5.65, BoundPos::left);
+    track->addCone(14.4, -6.17, BoundPos::left);
+    track->addCone(15.97, -5.31, BoundPos::left);
+    track->addCone(17.74, -3.22, BoundPos::left);
+    track->addCone(19.68, -0.38, BoundPos::left);
+    track->addCone(21.76, 2.74, BoundPos::left);
+    track->addCone(23.96, 5.66, BoundPos::left);
+    track->addCone(26.23, 7.91, BoundPos::left);
+    track->addCone(28.56, 9.01, BoundPos::left);
+    track->addCone(30.91, 8.64, BoundPos::left);
+    track->addCone(33.24, 7.03, BoundPos::left);
+    track->addCone(35.49, 4.56, BoundPos::left);
+    track->addCone(37.63, 1.59, BoundPos::left);
+    track->addCone(39.59, -1.51, BoundPos::left);
+    track->addCone(41.34, -4.38, BoundPos::left);
+    track->addCone(42.92, -6.98, BoundPos::left);
+    track->addCone(44.45, -9.55, BoundPos::left);
+    track->addCone(46.07, -12.31, BoundPos::left);
+    track->addCone(48.01, -14.67, BoundPos::left);
+    track->addCone(50.53, -15.67, BoundPos::left);
+    track->addCone(53.52, -15.31, BoundPos::left);
+    track->addCone(56.71, -14.08, BoundPos::left);
+    track->addCone(59.82, -12.42, BoundPos::left);
+    track->addCone(62.62, -10.74, BoundPos::left);
+    track->addCone(65.07, -8.96, BoundPos::left);
+    track->addCone(67.23, -6.89, BoundPos::left);
+    track->addCone(69.1, -4.37, BoundPos::left);
+    track->addCone(70.31, -1.49, BoundPos::left);
+    track->addCone(70.34, 1.53, BoundPos::left);
+    track->addCone(69.15, 4.43, BoundPos::left);
+    track->addCone(67.15, 6.9, BoundPos::left);
+    track->addCone(64.73, 8.85, BoundPos::left);
+    track->addCone(62.19, 10.59, BoundPos::left);
+    track->addCone(59.85, 12.48, BoundPos::left);
+    track->addCone(57.94, 14.82, BoundPos::left);
+    track->addCone(56.46, 17.73, BoundPos::left);
+    track->addCone(55.34, 21.12, BoundPos::left);
+    track->addCone(54.45, 24.73, BoundPos::left);
+    track->addCone(53.63, 28.27, BoundPos::left);
+    track->addCone(52.75, 31.46, BoundPos::left);
+    track->addCone(51.66, 34.02, BoundPos::left);
+    track->addCone(50.22, 35.66, BoundPos::left);
+    track->addCone(48.3, 36.12, BoundPos::left);
+    track->addCone(45.9, 35.44, BoundPos::left);
+    track->addCone(43.15, 33.93, BoundPos::left);
+    track->addCone(40.15, 31.87, BoundPos::left);
+    track->addCone(37.04, 29.57, BoundPos::left);
+    track->addCone(33.93, 27.33, BoundPos::left);
+    track->addCone(30.94, 25.45, BoundPos::left);
+    track->addCone(28.2, 24.22, BoundPos::left);
+    track->addCone(25.82, 23.94, BoundPos::left);
+    track->addCone(23.89, 24.86, BoundPos::left);
+    track->addCone(22.36, 26.86, BoundPos::left);
+    track->addCone(21.08, 29.68, BoundPos::left);
+    track->addCone(19.93, 33.05, BoundPos::left);
+    track->addCone(18.77, 36.72, BoundPos::left);
+    track->addCone(17.47, 40.42, BoundPos::left);
+    track->addCone(15.97, 43.97, BoundPos::left);
+    track->addCone(14.25, 47.22, BoundPos::left);
+    track->addCone(12.33, 50.06, BoundPos::left);
+    track->addCone(10.22, 52.37, BoundPos::left);
+    track->addCone(7.92, 54.03, BoundPos::left);
+    track->addCone(5.44, 54.92, BoundPos::left);
+    track->addCone(2.8, 54.92, BoundPos::left);
+    track->addCone(0.01, 54.1, BoundPos::left);
+    track->addCone(-2.83, 52.7, BoundPos::left);
+    track->addCone(-5.66, 51.0, BoundPos::left);
+    track->addCone(-8.41, 49.25, BoundPos::left);
+    track->addCone(-11.01, 47.54, BoundPos::left);
+    track->addCone(-13.4, 45.68, BoundPos::left);
+    track->addCone(-15.52, 43.45, BoundPos::left);
+    track->addCone(-17.21, 40.75, BoundPos::left);
+    track->addCone(-17.99, 37.79, BoundPos::left);
+    track->addCone(-17.46, 34.83, BoundPos::left);
+    track->addCone(-15.9, 32.06, BoundPos::left);
+    track->addCone(-13.83, 29.66, BoundPos::left);
+    track->addCone(-11.48, 27.65, BoundPos::left);
+    track->addCone(-8.92, 25.97, BoundPos::left);
+    track->addCone(-6.23, 24.54, BoundPos::left);
+    track->addCone(-3.51, 23.19, BoundPos::left);
+    track->addCone(-0.89, 21.61, BoundPos::left);
+    track->addCone(1.5, 19.5, BoundPos::left);
+    //RIGHT
+    track->addCone(-1.5, 10.5, BoundPos::right);
+    track->addCone(0.86, 6.84, BoundPos::right);
+    track->addCone(3.01, 2.67, BoundPos::right);
+    track->addCone(4.98, -1.71, BoundPos::right);
+    track->addCone(6.84, -5.96, BoundPos::right);
+    track->addCone(8.63, -9.77, BoundPos::right);
+    track->addCone(10.39, -12.81, BoundPos::right);
+    track->addCone(12.19, -14.77, BoundPos::right);
+    track->addCone(14.07, -15.32, BoundPos::right);
+    track->addCone(16.08, -14.17, BoundPos::right);
+    track->addCone(18.24, -11.53, BoundPos::right);
+    track->addCone(20.54, -8.09, BoundPos::right);
+    track->addCone(22.98, -4.56, BoundPos::right);
+    track->addCone(25.54, -1.64, BoundPos::right);
+    track->addCone(28.22, -0.06, BoundPos::right);
+    track->addCone(31.0, -0.36, BoundPos::right);
+    track->addCone(33.78, -2.29, BoundPos::right);
+    track->addCone(36.42, -5.32, BoundPos::right);
+    track->addCone(38.8, -8.93, BoundPos::right);
+    track->addCone(40.8, -12.59, BoundPos::right);
+    track->addCone(42.48, -15.91, BoundPos::right);
+    track->addCone(44.37, -18.79, BoundPos::right);
+    track->addCone(47.01, -21.2, BoundPos::right);
+    track->addCone(50.33, -22.92, BoundPos::right);
+    track->addCone(53.9, -23.7, BoundPos::right);
+    track->addCone(57.36, -23.3, BoundPos::right);
+    track->addCone(60.61, -21.89, BoundPos::right);
+    track->addCone(63.7, -19.83, BoundPos::right);
+    track->addCone(66.67, -17.47, BoundPos::right);
+    track->addCone(69.57, -15.13, BoundPos::right);
+    track->addCone(72.35, -12.83, BoundPos::right);
+    track->addCone(74.89, -10.37, BoundPos::right);
+    track->addCone(77.07, -7.52, BoundPos::right);
+    track->addCone(78.7, -4.23, BoundPos::right);
+    track->addCone(79.47, -0.7, BoundPos::right);
+    track->addCone(79.14, 2.86, BoundPos::right);
+    track->addCone(77.81, 6.26, BoundPos::right);
+    track->addCone(75.78, 9.31, BoundPos::right);
+    track->addCone(73.3, 11.94, BoundPos::right);
+    track->addCone(70.58, 14.29, BoundPos::right);
+    track->addCone(67.81, 16.53, BoundPos::right);
+    track->addCone(65.17, 18.85, BoundPos::right);
+    track->addCone(62.74, 21.42, BoundPos::right);
+    track->addCone(60.61, 24.43, BoundPos::right);
+    track->addCone(58.81, 28.02, BoundPos::right);
+    track->addCone(57.29, 32.04, BoundPos::right);
+    track->addCone(55.87, 36.09, BoundPos::right);
+    track->addCone(54.41, 39.79, BoundPos::right);
+    track->addCone(52.73, 42.76, BoundPos::right);
+    track->addCone(50.69, 44.61, BoundPos::right);
+    track->addCone(48.13, 44.99, BoundPos::right);
+    track->addCone(45.07, 43.92, BoundPos::right);
+    track->addCone(41.65, 41.87, BoundPos::right);
+    track->addCone(38.07, 39.29, BoundPos::right);
+    track->addCone(34.48, 36.65, BoundPos::right);
+    track->addCone(31.07, 34.41, BoundPos::right);
+    track->addCone(28.0, 33.05, BoundPos::right);
+    track->addCone(25.45, 33.02, BoundPos::right);
+    track->addCone(23.51, 34.62, BoundPos::right);
+    track->addCone(21.99, 37.52, BoundPos::right);
+    track->addCone(20.62, 41.26, BoundPos::right);
+    track->addCone(19.15, 45.35, BoundPos::right);
+    track->addCone(17.31, 49.33, BoundPos::right);
+    track->addCone(14.98, 52.87, BoundPos::right);
+    track->addCone(12.25, 55.89, BoundPos::right);
+    track->addCone(9.2, 58.31, BoundPos::right);
+    track->addCone(5.93, 60.08, BoundPos::right);
+    track->addCone(2.54, 61.11, BoundPos::right);
+    track->addCone(-0.88, 61.35, BoundPos::right);
+    track->addCone(-4.22, 60.73, BoundPos::right);
+    track->addCone(-7.47, 59.36, BoundPos::right);
+    track->addCone(-10.61, 57.47, BoundPos::right);
+    track->addCone(-13.65, 55.29, BoundPos::right);
+    track->addCone(-16.6, 53.05, BoundPos::right);
+    track->addCone(-19.42, 50.78, BoundPos::right);
+    track->addCone(-21.99, 48.33, BoundPos::right);
+    track->addCone(-24.23, 45.52, BoundPos::right);
+    track->addCone(-25.98, 42.28, BoundPos::right);
+    track->addCone(-26.92, 38.79, BoundPos::right);
+    track->addCone(-26.76, 35.25, BoundPos::right);
+    track->addCone(-25.57, 31.82, BoundPos::right);
+    track->addCone(-23.66, 28.66, BoundPos::right);
+    track->addCone(-21.31, 25.86, BoundPos::right);
+    track->addCone(-18.66, 23.41, BoundPos::right);
+    track->addCone(-15.81, 21.28, BoundPos::right);
+    track->addCone(-12.84, 19.41, BoundPos::right);
+    track->addCone(-9.86, 17.63, BoundPos::right);
+    track->addCone(-6.93, 15.71, BoundPos::right);
+    track->addCone(-4.11, 13.41, BoundPos::right);
+    track->addCone(-1.5, 10.5, BoundPos::right);
 
     std::cout << "Entering loop" << std::endl;
     auto ros_refresh_timer = std::chrono::high_resolution_clock::now();
 
-#if defined(DEBUG_LOOPS) || defined(DEBUG_SLOW)
+#if defined(DEBUG_LOOPS) || defined(DEBUG_SLOW) ||defined(DEBUG_SLOWAFTERLOOPS)
         int loops_completed = 0;
     #endif
 
@@ -212,11 +309,15 @@ int main(int argc, char *argv[])
         *ros::Subscriber cone_sub = cone_reader.subscribe("/map", 1000, chatterCallback);
         *ros::spinOnce();
         */
-        //Process track section
-        if (!track->trackIsComplete()) track->processNextSection();
-        //MPCC
-        mpcc->solve();        
+       if (continue_driving)
+       {
+            //Process track section
+            if (!track->trackIsComplete()) track->processNextSection();
+            //MPCC
+            mpcc->solve();        
         //Check metadata (laps done, goal achievement, etc.)
+       }
+
         //Update visualisation
         #ifdef VISUALISE    
             if ((std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now()-ros_refresh_timer)).count() > ROS_REFRESH_TIME_MS)
@@ -230,12 +331,21 @@ int main(int argc, char *argv[])
             std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
         #endif
 
+        #ifdef DEBUG_SLOWAFTERLOOPS
+            std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
+            if (loops_completed>=DEBUG_LOOPS_TO_COMPLETE)
+            {
+                usleep(100000);
+            }
+        #endif
+
         #ifdef DEBUG_LOOPS
         if (++loops_completed>=DEBUG_LOOPS_TO_COMPLETE) 
         {
             std::cout<<"Completed request number of loops"<<std::endl;
             break;
         }
+        std::cout<<"Loops completed: "<<loops_completed<<std::endl;
         #endif
         #ifdef DEBUG
             reset_logs = false;

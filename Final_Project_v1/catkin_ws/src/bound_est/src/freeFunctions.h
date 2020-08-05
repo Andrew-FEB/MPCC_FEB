@@ -65,6 +65,23 @@ inline std::pair<const Cone *, double> findFurthestConeFromPoint (const Coord &p
     return output;
 }
 
+inline std::pair<const Cone *, int> findFurthestConeFromPointWithIndex (const Coord &point, const std::vector<const Cone *> &cones)
+{
+	std::pair<const Cone *, int> output = std::make_pair(nullptr, -1);
+    double furthest_dist = std::numeric_limits<double>::min();
+    for (int i = 0; i<cones.size(); i++)
+    {
+        auto dist = distBetweenPoints(point, cones[i]->getCoordinates());
+        if (dist>furthest_dist)
+        {
+            furthest_dist = dist;
+            output.first = cones[i];
+            output.second = i;
+        }
+    }
+    return output;
+}
+
 inline Coord findMidpoint(const Coord &a, const Coord &b)
 {
 	Coord output{ (a.x + b.x) / 2, (a.y + b.y) / 2 };
@@ -73,7 +90,7 @@ inline Coord findMidpoint(const Coord &a, const Coord &b)
 
 inline bool withinCircleOfRadius(const Coord &point_to_check, const Coord &circle_origin, const double &radius)
 {
-    return ((pow( (point_to_check.x-circle_origin.x) , 2) + pow( (point_to_check.y-circle_origin.y) , 2)) <= radius);
+    return ((pow( (point_to_check.x-circle_origin.x) , 2) + pow( (point_to_check.y-circle_origin.y) , 2)) <= pow(radius,2));
 }
 
 inline Coord rotateToAngle(const Coord &point, const Pos &original_pos)

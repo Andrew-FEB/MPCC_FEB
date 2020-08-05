@@ -28,9 +28,16 @@ public:
     
     void setY(double value);
 
+    void setCoordinates(const Coord &coord);
+
 	void setPos(const BoundPos& pos);
 
     const double &getConeRadius();
+
+    bool operator==(const Cone *a) const
+	{
+		return (coordinates.x==a->getX() && coordinates.y == a->getY());
+	}
    
 
 private:

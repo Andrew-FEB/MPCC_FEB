@@ -97,20 +97,22 @@ struct Rect
 {
 	std::array<Coord, 4> points;
 
-	inline double dotProductThreePoints(Coord origin, Coord b, Coord c)
+	inline double dot(Coord a, Coord b)
 	{
-		Coord vec_1 = {b.x-origin.x, b.y-origin.y};
-		Coord vec_2 = {c.x-origin.x, c.y-origin.y};
-		return (vec_1.x*vec_2.x+vec_1.y*vec_2.y);
+		return (a.x*b.x+a.y*b.y);
 	}
 
 	inline bool containsPoint(const Coord &p)
 	{
-		auto dot_ab_ap = dotProductThreePoints(points[0], points[1], p);
-		auto dot_ab_ab = dotProductThreePoints(points[0], points[1], points[1]);
-		auto dot_bc_bp = dotProductThreePoints(points[1], points[2], p);
-		auto dot_bc_bc = dotProductThreePoints(points[1], points[2], points[2]);
-		return (0<=dot_ab_ap && dot_ab_ap<=dot_ab_ab && 0<=dot_bc_bp && dot_bc_bp<=dot_bc_bc);
+		Coord AB = {points[0].x-points[1].x, points[0].y-points[1].y}; 
+		Coord AP = {points[0].x-p.x, points[0].y-p.y}; 
+		Coord BC = {points[1].x-points[2].x, points[1].y-points[2].y}; 
+		Coord BP = {points[1].x-p.x, points[1].y-p.y}; 
+		auto dotABAP = dot(AB, AP);
+		auto dotABAB = dot(AB, AB);
+		auto dotBCBP = dot(BC, BP);
+		auto dotBCBC = dot(BC, BC);
+		return (0<=dotABAP && dotABAP<=dotABAB && 0<=dotBCBP && dotBCBP<=dotBCBC);
 	}
 };
 

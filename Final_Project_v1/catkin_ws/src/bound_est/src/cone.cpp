@@ -32,6 +32,12 @@ void Cone::setY(double value)
     coordinates.y = value;
 }
 
+void Cone::setCoordinates(const Coord &coord)
+{
+    coordinates = coord;
+}
+
+
 void Cone::setPos(const BoundPos& newPos)
 {
 	pos = newPos;
