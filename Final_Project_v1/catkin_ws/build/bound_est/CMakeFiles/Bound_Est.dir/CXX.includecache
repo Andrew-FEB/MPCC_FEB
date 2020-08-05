@@ -27,6 +27,8 @@ visualisation.h
 /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/visualisation.h
 mpccontroller.h
 /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/mpccontroller.h
+boundaryLogger.h
+/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundaryLogger.h
 
 /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/boundGlobals.h
 

@@ -98,7 +98,9 @@ void Track::processNextSection()
     auto seperated_cones = seperateConeList(framed_cones);
     if (seperated_cones.first.size()<=2 || seperated_cones.second.size()<=2)
     {
+        #ifdef DEBUG
         std::cerr<<"Failed seperated cones check"<<std::endl;
+        #endif
         std::move(framed_cones.begin(), framed_cones.end(), std::back_inserter(new_cones));
         return;
     }
@@ -618,8 +620,8 @@ std::pair<std::vector<Coord>, double> Track::interpolateCentreCoordsDiscrete(con
             {
                 #ifdef DEBUG
                 log->write(ss<<"Error. Overrun available distance", true);
-                #endif
                 std::cerr<<"Error. Overrun available distance"<<std::endl;
+                #endif
                 return std::make_pair(output_vec, std::numeric_limits<double>::min());
             }
             #ifdef DEBUG

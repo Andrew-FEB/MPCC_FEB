@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef DEBUG
+#if defined(DEBUG) || defined(TIME_LOG)
 extern bool reset_logs;
 #endif
 

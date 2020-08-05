@@ -11,6 +11,7 @@
 #include "car.h"
 #include "visualisation.h"
 #include "mpccontroller.h"
+#include "boundaryLogger.h"
 
 #ifndef DEBUG
     #undef DDEBUG_LOOPS
@@ -23,12 +24,10 @@
     #undef VISUALISE_RQT
 #endif
 
-constexpr long ROS_REFRESH_TIME_MS = 1000;
-
 //Configure globals
 bool counter_clockwise_track = false;
 bool clockwise_track = false;
-#ifdef DEBUG
+#if defined(DEBUG) || defined(TIME_LOG)
     bool reset_logs = true;
     constexpr int DEBUG_LOOPS_TO_COMPLETE = 60;
 #endif
@@ -66,6 +65,20 @@ int main(int argc, char *argv[])
         auto visualisation = std::make_shared<Visualisation>();
     #else
         auto visualisation = nullptr;
+    #endif
+
+    //Configure time logs
+    #ifdef TIME_LOG
+    std::unique_ptr<BoundaryLogger> time_log = std::make_unique<BoundaryLogger>("TIME_LOG", "Timing logs", reset_logs);
+    std::stringstream ss;
+    time_log->write(ss<<"Logged in microseconds");
+    time_log->write(ss<<"Loop  Boundary_check  Track_process   MPCC    Total");
+    bool keep_printing_time{true};
+    constexpr int NUM_TIMING_LOOPS = 5000;
+    auto function_start = std::chrono::high_resolution_clock::now();
+    int64_t section_process_time;
+    int64_t mpcc_time;
+    int64_t car_check_time;
     #endif
 
     //Setup essential configuration variables
@@ -281,9 +294,8 @@ int main(int argc, char *argv[])
     track->addCone(-1.5, 10.5, BoundPos::right);
 
     std::cout << "Entering loop" << std::endl;
-    auto ros_refresh_timer = std::chrono::high_resolution_clock::now();
 
-#if defined(DEBUG_LOOPS) || defined(DEBUG_SLOW) ||defined(DEBUG_SLOWAFTERLOOPS)
+    #if defined(DEBUG_LOOPS) || defined(DEBUG_SLOW) ||defined(DEBUG_SLOWAFTERLOOPS) ||defined(TIME_LOG)
         int loops_completed = 0;
     #endif
 
@@ -291,16 +303,21 @@ int main(int argc, char *argv[])
     //Enter refresh loop
     while (1)
     {
-        #ifdef VISUALISE_RQT
+        #if defined(VISUALISE_RQT) || defined(TIME_LOG)
             // Recording starting time
-            auto start = clock();
+            auto start = std::chrono::high_resolution_clock::now();
         #endif
-        //TEST
-        //ETEST
+
         //MAIN LOOP
         //Collect IMU data
         //Check critical conditions 
+        #ifdef TIME_LOG
+            if (keep_printing_time) function_start = std::chrono::high_resolution_clock::now();
+        #endif
         continue_driving = track->carIsInsideTrack();
+        #ifdef TIME_LOG
+            if (keep_printing_time) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+        #endif
         //Update track - read-in data if available
         //BAG READ IN BLOCKING CALL
         /*
@@ -309,30 +326,38 @@ int main(int argc, char *argv[])
         *ros::Subscriber cone_sub = cone_reader.subscribe("/map", 1000, chatterCallback);
         *ros::spinOnce();
         */
+       #ifdef TIME_LOG
+        #endif
        if (continue_driving)
        {
+            #ifdef TIME_LOG
+                if (keep_printing_time) function_start = std::chrono::high_resolution_clock::now();
+            #endif
             //Process track section
             if (!track->trackIsComplete()) track->processNextSection();
+            #ifdef TIME_LOG
+                if (keep_printing_time) section_process_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+            #endif
+            #ifdef TIME_LOG
+                if (keep_printing_time) function_start = std::chrono::high_resolution_clock::now();
+            #endif
             //MPCC
-            mpcc->solve();        
+            mpcc->solve();  
+            #ifdef TIME_LOG
+                if (keep_printing_time) mpcc_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+            #endif      
         //Check metadata (laps done, goal achievement, etc.)
        }
-
-        //Update visualisation
-        #ifdef VISUALISE    
-            if ((std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now()-ros_refresh_timer)).count() > ROS_REFRESH_TIME_MS)
-            {
-                    visualisation->refreshRosOutput();
-                    ros_refresh_timer = std::chrono::high_resolution_clock::now();
-            }
+        #if defined(DEBUG_LOOPS) || defined(DEBUG_SLOW) ||defined(DEBUG_SLOWAFTERLOOPS) ||defined(TIME_LOG)
+            loops_completed++;
         #endif
         #ifdef DEBUG_SLOW
             usleep(50000);
-            std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
+            std::cout<<"Loops completed: "<<loops_completed<<std::endl;
         #endif
 
         #ifdef DEBUG_SLOWAFTERLOOPS
-            std::cout<<"Loops completed: "<<++loops_completed<<std::endl;
+            std::cout<<"Loops completed: "<<loops_completed<<std::endl;
             if (loops_completed>=DEBUG_LOOPS_TO_COMPLETE)
             {
                 usleep(100000);
@@ -340,7 +365,7 @@ int main(int argc, char *argv[])
         #endif
 
         #ifdef DEBUG_LOOPS
-        if (++loops_completed>=DEBUG_LOOPS_TO_COMPLETE) 
+        if (loops_completed>=DEBUG_LOOPS_TO_COMPLETE) 
         {
             std::cout<<"Completed request number of loops"<<std::endl;
             break;
@@ -353,10 +378,20 @@ int main(int argc, char *argv[])
 
         #ifdef VISUALISE_RQT
             //Recording finish time
-            auto finish = clock();
-            auto solve_time = (((float)(finish-start))/CLOCKS_PER_SEC) * 1000; // in ms
+            auto solve_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now()-start).count(); // in ms
             visualisation->plotSolveTime(solve_time);
         #endif
+        #ifdef TIME_LOG
+            if (keep_printing_time) 
+            {
+                auto total_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-start).count();
+                time_log->write(ss<<loops_completed<<"           "<<car_check_time<<"            "<<section_process_time<<"        "<<mpcc_time<<"     "<<total_time);
+            }
+            if (loops_completed>=5000)
+            {
+                keep_printing_time = false;
+            }
+        #endif      
     }
    
  } 
