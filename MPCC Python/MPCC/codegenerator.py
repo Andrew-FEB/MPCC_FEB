@@ -163,23 +163,22 @@ def cost_function(state, ref, control, control_prev, track_weight):
 # -------------------------------------
 def generate_code(lang):
     u_seq = cs.MX.sym("u", p.nu * p.N)  # Sequence of all inputs
-    # Initial state(=4) + slopes(=2) + intercepts(=2) + track width(=1)
-    # + Prediction horizon * Reference point(=2)
-    param_seq = cs.MX.sym("param", p.nx + 5 + p.N * 2)
+    # Initial state(=4) + slopes(=2) + intercepts(=2) + Prediction horizon * Reference point(=2)
+    param_seq = cs.MX.sym("param", p.nx + 4 + p.N * 2)
 
     x_est = param_seq[0:p.nx]  # x0
     slope_left = param_seq[p.nx]
     slope_right = param_seq[p.nx+1]
     intercept_left = param_seq[p.nx+2]
     intercept_right = param_seq[p.nx+3]
-    track_width = param_seq[p.nx+4]
-    ref_list = param_seq[p.nx+5:param_seq.shape[0]]
+    ref_list = param_seq[p.nx+4:param_seq.shape[0]]
 
     F1 = []
     cost = 0
     u_prev = [0, 0]
     track_weight = p.track_error_weight
-    for t in range(0, p.nu * p.N, p.nu):
+    ph = p.N
+    for t in range(0, p.nu * ph, p.nu):
         u = u_seq[t:t + 2]
         # Update cost
         cost += cost_function(x_est, ref_list[t:t + 2], u, u_prev, track_weight)
@@ -204,8 +203,8 @@ def generate_code(lang):
     # Constraints
     # -------------------------------------
     # C = og.constraints.Rectangle([p.v_x_min, -np.inf, -np.inf] * p.N, [p.v_x_max, 0, 0] * p.N)
-    C = og.constraints.Rectangle([p.v_x_min, -np.inf] * p.N, [p.v_x_max, 0] * p.N)
-    U = og.constraints.Rectangle([p.a_min, p.delta_min] * p.N, [p.a_max, p.delta_max] * p.N)
+    C = og.constraints.Rectangle([p.v_x_min, -np.inf] * ph, [p.v_x_max, 0] * ph)
+    U = og.constraints.Rectangle([p.a_min, p.delta_min] * ph, [p.a_max, p.delta_max] * ph)
 
     # Code Generation
     # -------------------------------------

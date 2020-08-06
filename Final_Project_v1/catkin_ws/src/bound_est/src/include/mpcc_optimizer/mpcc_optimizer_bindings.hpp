@@ -9,13 +9,13 @@
 #include <cstdlib>
 #include <new>
 
-static const uintptr_t MPCC_OPTIMIZER_N1 = 80;
+static const uintptr_t MPCC_OPTIMIZER_N1 = 60;
 
 static const uintptr_t MPCC_OPTIMIZER_N2 = 0;
 
-static const uintptr_t MPCC_OPTIMIZER_NUM_DECISION_VARIABLES = 80;
+static const uintptr_t MPCC_OPTIMIZER_NUM_DECISION_VARIABLES = 60;
 
-static const uintptr_t MPCC_OPTIMIZER_NUM_PARAMETERS = 89;
+static const uintptr_t MPCC_OPTIMIZER_NUM_PARAMETERS = 68;
 
 /// mpcc_optimizer version of ExitStatus
 /// Structure: `mpcc_optimizerExitStatus`
