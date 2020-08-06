@@ -27,32 +27,27 @@ void MPCController::solve()
     auto vel = car->getVelocity();
 
     // Obtain reference and track constraints
-    auto params = track.getReferencePath(distances);
-    if (params.size()<=0) {
-        std::cerr<<"Empty params list in MPCController::solve()"<<std::endl;
-        return;
-    }
+    auto param = track.getReferencePath(distances);
     
     /* parameters */
     // Current state (=4) + Boundaries (Prediction Horizon * (Slopes(=2) + Intercepts(=2) + Width(=1))
     // + Reference Line (Prediction Horizon * Reference Point(=2))
     double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {pos.p.x, pos.p.y, pos.phi, vel.vx};
     // Arrange the reference path into the parameters array such that it fits the solver requirements
-    auto param = params[int(prediction_horizon/2)];
     p[4] = param.left_boundary.phi; // left slope
     p[5] = param.right_boundary.phi; // right slope
     p[6] = param.left_boundary.p.y - param.left_boundary.phi * param.left_boundary.p.x; // left intercept
     p[7] = param.right_boundary.p.y - param.right_boundary.phi * param.right_boundary.p.x; // right intercept
     p[8] = sqrt(distBetweenPoints(param.left_boundary.p, param.right_boundary.p)); // track width
     int i = 0;
-    for (MPC_targets param : params) { // params is prediction_horizon long
+    for (auto &point : param.reference_points) { // params is prediction_horizon long
         // p[4+i] = param.left_boundary.phi; // left slopes
         // p[4+i+1] = param.right_boundary.phi; // right slopes
         // p[4+2*prediction_horizon+i] = param.left_boundary.p.y - param.left_boundary.phi * param.left_boundary.p.x; // left intercepts
         // p[4+2*prediction_horizon+i+1] = param.right_boundary.p.y - param.right_boundary.phi * param.right_boundary.p.x; // right intercepts
         // p[4+4*prediction_horizon+i/2] = sqrt(distBetweenPoints(param.left_boundary.p, param.right_boundary.p)); // track widths
-        p[9+i] = param.reference_point.x; // reference coordinates x
-        p[9+i+1] = param.reference_point.y; // reference coordinates y
+        p[9+i] = point.x; // reference coordinates x
+        p[9+i+1] = point.y; // reference coordinates y
         i += 2;
     }
 

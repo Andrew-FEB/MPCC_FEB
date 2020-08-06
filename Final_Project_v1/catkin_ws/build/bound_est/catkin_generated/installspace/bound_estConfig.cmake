@@ -67,14 +67,14 @@ set(bound_est_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(bound_est_SOURCE_PREFIX /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est)
-  set(bound_est_DEVEL_PREFIX /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/devel)
+  set(bound_est_SOURCE_PREFIX /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est)
+  set(bound_est_DEVEL_PREFIX /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel)
   set(bound_est_INSTALL_PREFIX "")
   set(bound_est_PREFIX ${bound_est_DEVEL_PREFIX})
 else()
   set(bound_est_SOURCE_PREFIX "")
   set(bound_est_DEVEL_PREFIX "")
-  set(bound_est_INSTALL_PREFIX /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/install)
+  set(bound_est_INSTALL_PREFIX /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/install)
   set(bound_est_PREFIX ${bound_est_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/install/lib;/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/install/lib;/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -33,7 +33,7 @@ public:
 	void showViablePaths(const std::vector<std::vector<Coord>> &paths, bool refresh = false);
 	void showLeftCones(const std::vector <const Cone *> &coneList);
 	void showRightCones(const std::vector <const Cone *> &coneList);
-	void showReferencePath(const std::vector<MPC_targets> &reference_path);
+	void showReferencePath(const MPC_targets &reference_path);
 	void showCarBoundaryPoints(const std::vector<Coord> &car_edges, const int &furthest_point_index, const bool &outside_track);
 	void plotSolveTime(const float &solve_time);
 	void plotMPCCTime(const float &mpcc_time);

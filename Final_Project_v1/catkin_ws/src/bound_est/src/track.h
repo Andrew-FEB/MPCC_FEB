@@ -21,14 +21,14 @@
 #include "freeFunctions.h"
 
 double constexpr REPEATED_CONE_RADIUS = 0.5;
-double constexpr MAX_VISION_CONE_FRAME_RANGE = 30;
-double constexpr CONE_VISION_ARC = 0.25;    //Value from 0 to 1 describing how much of circle around current direction can be seen
+double constexpr MAX_VISION_CONE_FRAME_RANGE = 25;
+double constexpr CONE_VISION_ARC = 0.2;    //Value from 0 to 1 describing how much of circle around current direction can be seen
 double constexpr TRACK_COMPLETE_CHECK_RADIUS = 7.5;
 int constexpr NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS = 5;
 int constexpr NUM_CENTRELINE_COORDS_BEFORE_CHECK_TRACK_COMPLETE = 10;
 int constexpr MIN_FRAMED_CONES_TO_PROCESS = 4;
-double constexpr TRACK_FRAME_LENGTH = 30;
-double constexpr TRACK_FRAME_WIDTH_DIV_2 = 12.0;
+double constexpr TRACK_FRAME_LENGTH = 25;
+double constexpr TRACK_FRAME_WIDTH_DIV_2 = 7.0;
 
 class Track
 {
@@ -40,7 +40,7 @@ public:
     std::vector<const Cone *> getNewCones();
     Car *getCar();
     friend std::ostream& operator<<(std::ostream& os, Track &track);
-    std::vector<MPC_targets> getReferencePath(const std::vector<double> &distances);
+    MPC_targets getReferencePath(const std::vector<double> &distances);
     bool trackIsComplete();
     void processNextSection();
     bool carIsInsideTrack();
@@ -57,7 +57,7 @@ private:
     std::vector<std::unique_ptr<Cone>> extractConesInFrame();
     void rebalanceCones(std::vector<std::unique_ptr<Cone>> &framed_cones, std::vector<const Cone *> &boundary_cones, const unsigned long &number_to_remove);
     std::vector<Coord> interpolateCentreCoordsDiscrete(const int &original_index, const Coord &start_point, const std::vector<double> &distances);
-    std::vector<Pos> findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cone_list, const std::vector<Coord> &coord_list);
+    Pos findBoundaryPointAndSlope(const std::vector<const Cone *> &cones, const Coord &coord);
     Coord getClosestPointOnLine (const Coord &a, const Coord &b, const Coord &p);
     Coord findEndGoal(const Coord &last_point, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists);
     bool pointIsInsideTrack(const Coord &point);

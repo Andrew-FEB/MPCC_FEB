@@ -87,7 +87,7 @@ void Track::processNextSection()
     if (new_cones.size()<=0) return;
     //Begin finding cones within valid ranges to find reference path
     #ifdef VISUALISE
-	    visualisation->showNewCones(new_cones);
+	    //visualisation->showNewCones(new_cones);
     #endif
     auto framed_cones = extractConesInFrame();
     if (framed_cones.size()<=4) return;
@@ -322,7 +322,7 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
 }
 
 
-std::vector<MPC_targets> Track::getReferencePath(const std::vector<double> &distances)
+MPC_targets Track::getReferencePath(const std::vector<double> &distances)
 {  
     #ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("GET_REFERENCE_PATH", "getReferencePath()", reset_logs);
@@ -395,37 +395,19 @@ std::vector<MPC_targets> Track::getReferencePath(const std::vector<double> &dist
     log->write(ss<<"Next, getting Boundary points and slopes");
     #endif
     //Get boundary positions and slopes
-    auto left_boundary_positions = findBoundaryPointsAndSlopes(processed_cone_list_left, centre_points);
-    auto right_boundary_positions = findBoundaryPointsAndSlopes(processed_cone_list_right, centre_points);
-
-    #ifdef DEBUG
-    log->write(ss<<"Boundary path coordinates calculated with left boundary list size of "<<left_boundary_positions.size()<<" and right boundary list size of "<<right_boundary_positions.size());
-    for (int i = 0; i<left_boundary_positions.size(); i++)
-    {
-        ss<<"Left position "<<i+1<<" with coordinate x("<<left_boundary_positions[i].p.x<<"), y("<<left_boundary_positions[i].p.y<<") and angle of "<<left_boundary_positions[i].phi<<std::endl;
-        ss<<"Right position "<<i+1<<" with coordinate x("<<right_boundary_positions[i].p.x<<"), y("<<right_boundary_positions[i].p.y<<") and angle of "<<right_boundary_positions[i].phi<<std::endl;
-        ss<<"Distance between these points is "<<distBetweenPoints(left_boundary_positions[i].p, right_boundary_positions[i].p)<<std::endl<<std::endl;
-    }
-    log->write(ss, true);
-    log->write(ss, true);
-    #endif
+    int boundary_index = centre_points.size()/2;
+    auto left_boundary_position = findBoundaryPointAndSlope(processed_cone_list_left, centre_points[boundary_index]);
+    auto right_boundary_position = findBoundaryPointAndSlope(processed_cone_list_right, centre_points[boundary_index]);
 
     //Setup necessary structs and variables with scope above loop.
     MPC_targets output_struct;
-    std::vector<MPC_targets> output_vec;
-
-    for (int i = 0; i<distances.size(); i++)
-    {
-        output_struct.reference_point = centre_points[i];
-        output_struct.left_boundary = left_boundary_positions[i];
-        output_struct.right_boundary = right_boundary_positions[i];
-        output_vec.push_back(output_struct);
-    }
+    std::move(centre_points.begin(), centre_points.end(), std::back_inserter(output_struct.reference_points));
+    output_struct.left_boundary = left_boundary_position;
+    output_struct.right_boundary = right_boundary_position;
     #ifdef VISUALISE
-	    visualisation->showReferencePath(output_vec);
+	    visualisation->showReferencePath(output_struct);
     #endif
-
-    return output_vec;
+    return output_struct;
 }
 
 Coord Track::getClosestPointOnLine (const Coord &a, const Coord &b, const Coord &p)
@@ -438,76 +420,64 @@ Coord Track::getClosestPointOnLine (const Coord &a, const Coord &b, const Coord 
     return {a.x+a_to_b.x*normalized_dist, a.y+a_to_b.y*normalized_dist};
 }
 
-std::vector<Pos> Track::findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cones, const std::vector<Coord> &coord_list)
+Pos Track::findBoundaryPointAndSlope(const std::vector<const Cone *> &cones, const Coord &coord)
 {
     #ifdef DEBUG
     std::stringstream ss;
     #endif
     std::vector<Pos> output_vec;
     Pos pos;
-    int closest_index;
     int second_closest_index;
-    double closest_dist{};
-    double second_closest_dist{};
-
     #ifdef DEBUG
-    int debug_index{0};
-    boundaries_log->write(ss<<"Entering loops to find nearest cones for each reference point");
+    boundaries_log->write(ss<<"Finding boundary points for coordinate with position x("<<coord.x<<"), y("<<coord.y<<")");
     #endif
-    for (auto &coord : coord_list)
+    int closest_index{0};
+    double closest_dist{distBetweenPoints(cones[closest_index]->getCoordinates(), coord)};
+    #ifdef DEBUG
+    boundaries_log->write(ss<<"Starting closest distance of "<<closest_dist<<" at "<<closest_index);
+    #endif
+    for (int i = 1; i<cones.size(); i++)
     {
+        auto distance = distBetweenPoints(cones[i]->getCoordinates(), coord);
         #ifdef DEBUG
-        boundaries_log->write(ss<<"Finding boundary points for coordinate "<<++debug_index<<" with position x("<<coord.x<<"), y("<<coord.y<<")");
+        boundaries_log->write(ss<<"Next cone with position x("<<cones[i]->getCoordinates().x<<"), y("<<cones[i]->getCoordinates().y<<") has distance of "<<distance);
         #endif
-        int closest_index{0};
-        double closest_dist{distBetweenPoints(cones[closest_index]->getCoordinates(), coord)};
-        #ifdef DEBUG
-        boundaries_log->write(ss<<"Starting closest distance of "<<closest_dist<<" at "<<closest_index);
-        #endif
-        for (int i = 1; i<cones.size(); i++)
+        if (distance<closest_dist)
         {
-            auto distance = distBetweenPoints(cones[i]->getCoordinates(), coord);
+            closest_index = i;
+            closest_dist = distance;
             #ifdef DEBUG
-            boundaries_log->write(ss<<"Next cone with position x("<<cones[i]->getCoordinates().x<<"), y("<<cones[i]->getCoordinates().y<<") has distance of "<<distance);
+            boundaries_log->write(ss<<"This is better than previous closest distance, so new closest distance "<<closest_dist<<" at index "<<i);
             #endif
-            if (distance<closest_dist)
-            {
-                closest_index = i;
-                closest_dist = distance;
-                #ifdef DEBUG
-                boundaries_log->write(ss<<"This is better than previous closest distance, so new closest distance "<<closest_dist<<" at index "<<i);
-                #endif
-            }
         }
-        #ifdef DEBUG
-        boundaries_log->write(ss<<"Loop ended", true);
-        #endif
-        auto cone_1_coords = cones[closest_index]->getCoordinates();
-        
-        double distance_previous = std::numeric_limits<double>::max();
-        double distance_next = std::numeric_limits<double>::max();
-        if ((closest_index-1)>=0)
-        {
-            distance_previous = distBetweenPoints(coord, cones[closest_index-1]->getCoordinates());
-        }
-        if ((closest_index+1)<cones.size())
-        {
-            distance_next = distBetweenPoints(coord, cones[closest_index+1]->getCoordinates());
-        }
-        auto cone_2_coords = (distance_previous<distance_next) ? cones[closest_index-1]->getCoordinates() : cones[closest_index+1]->getCoordinates();
-        #ifdef DEBUG
-        boundaries_log->write(ss<<"Final cone coordinates for cone 1 are x("<<cone_1_coords.x<<"), y("<<cone_1_coords.y<<") and cone 2 are x("<<cone_2_coords.x<<"), y("<<cone_2_coords.y<<")");
-        #endif
-
-        pos.p = getClosestPointOnLine(cone_1_coords, cone_2_coords, coord);
-        double slope = (cone_2_coords.y-cone_1_coords.y)/(cone_2_coords.x-cone_1_coords.x);
-        #ifdef DEBUG
-        boundaries_log->write(ss<<"Closest point on line between line between cones and position x("<<coord.x<<"), y("<<coord.y<<") calculated to be x("<<pos.p.x<<"), y("<<pos.p.y<<") and slope calculated to be "<<slope ,true);
-        #endif
-        pos.phi = slope;
-        output_vec.push_back(pos);
     }
-    return output_vec;
+    #ifdef DEBUG
+    boundaries_log->write(ss<<"Loop ended", true);
+    #endif
+    auto cone_1_coords = cones[closest_index]->getCoordinates();
+    
+    double distance_previous = std::numeric_limits<double>::max();
+    double distance_next = std::numeric_limits<double>::max();
+    if ((closest_index-1)>=0)
+    {
+        distance_previous = distBetweenPoints(coord, cones[closest_index-1]->getCoordinates());
+    }
+    if ((closest_index+1)<cones.size())
+    {
+        distance_next = distBetweenPoints(coord, cones[closest_index+1]->getCoordinates());
+    }
+    auto cone_2_coords = (distance_previous<distance_next) ? cones[closest_index-1]->getCoordinates() : cones[closest_index+1]->getCoordinates();
+    #ifdef DEBUG
+    boundaries_log->write(ss<<"Final cone coordinates for cone 1 are x("<<cone_1_coords.x<<"), y("<<cone_1_coords.y<<") and cone 2 are x("<<cone_2_coords.x<<"), y("<<cone_2_coords.y<<")");
+    #endif
+
+    pos.p = getClosestPointOnLine(cone_1_coords, cone_2_coords, coord);
+    double slope = (cone_2_coords.y-cone_1_coords.y)/(cone_2_coords.x-cone_1_coords.x);
+    #ifdef DEBUG
+    boundaries_log->write(ss<<"Closest point on line between line between cones and position x("<<coord.x<<"), y("<<coord.y<<") calculated to be x("<<pos.p.x<<"), y("<<pos.p.y<<") and slope calculated to be "<<slope ,true);
+    #endif
+    pos.phi = slope;  
+    return pos;
 }
 
 std::vector<Coord> Track::interpolateCentreCoordsDiscrete(const int &original_index, const Coord &start_point, const std::vector<double> &distances)
@@ -640,7 +610,7 @@ std::vector<std::unique_ptr<Cone>> Track::extractConesInFrame()
 {
     auto car_pos = car->getPosition();
     std::vector<std::unique_ptr<Cone>> framed_cones;
-    CircleSection circle_sec;
+    /*CircleSection circle_sec;
     Rect frame;
     if (centre_coords.empty())
     {
@@ -666,7 +636,9 @@ std::vector<std::unique_ptr<Cone>> Track::extractConesInFrame()
     {
         std::move(new_cones.begin(), result, std::back_inserter(framed_cones));
         new_cones.erase(new_cones.begin(), result);
-    }
+    }*/
+    std::move(new_cones.begin(), new_cones.end(), std::back_inserter(framed_cones));
+    new_cones.erase(new_cones.begin(), new_cones.end());
     return framed_cones;
 }
 

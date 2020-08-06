@@ -1,219 +1,4 @@
-Log message for Classification log data at Thu Aug  6 10:51:54 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 23
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 0, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 2, Right list size: 2
---------
-Printout of list states
-Left list size: 3, Right list size: 2
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-Printout of list states
-Left list size: 5, Right list size: 2
---------
-Printout of list states
-Left list size: 6, Right list size: 2
---------
-Printout of list states
-Left list size: 7, Right list size: 2
---------
-Printout of list states
-Left list size: 8, Right list size: 2
---------
-Printout of list states
-Left list size: 9, Right list size: 2
---------
-Printout of list states
-Left list size: 10, Right list size: 2
---------
-Printout of list states
-Left list size: 11, Right list size: 2
---------
-Printout of list states
-Left list size: 12, Right list size: 2
---------
-Printout of list states
-Left list size: 13, Right list size: 2
---------
-Printout of list states
-Left list size: 14, Right list size: 2
---------
-Printout of list states
-Left list size: 14, Right list size: 3
---------
-Printout of list states
-Left list size: 14, Right list size: 4
---------
-Printout of list states
-Left list size: 14, Right list size: 5
---------
-Printout of list states
-Left list size: 14, Right list size: 6
---------
-Printout of list states
-Left list size: 14, Right list size: 7
---------
-Printout of list states
-Left list size: 14, Right list size: 8
---------
-Printout of list states
-Left list size: 14, Right list size: 9
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:08 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:08 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 0, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 2, Right list size: 2
---------
-Printout of list states
-Left list size: 3, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:09 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:09 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 0, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 2, Right list size: 2
---------
-Printout of list states
-Left list size: 3, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:09 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:09 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 0, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 2, Right list size: 2
---------
-Printout of list states
-Left list size: 3, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:09 2020
+Log message for Classification log data at Thu Aug  6 15:49:56 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -222,13 +7,13 @@ Printout of list states
 Left list size: 1, Right list size: 0
 --------
 Printout of list states
-Left list size: 2, Right list size: 0
+Left list size: 1, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 0
+Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
@@ -239,506 +24,7 @@ Left list size: 3, Right list size: 3
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:17 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 0, Right list size: 2
---------
-Printout of list states
-Left list size: 0, Right list size: 3
---------
-Printout of list states
-Left list size: 0, Right list size: 4
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:17 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:17 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 0, Right list size: 2
---------
-Printout of list states
-Left list size: 0, Right list size: 3
---------
-Printout of list states
-Left list size: 0, Right list size: 4
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:17 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:18 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 0, Right list size: 2
---------
-Printout of list states
-Left list size: 0, Right list size: 3
---------
-Printout of list states
-Left list size: 0, Right list size: 4
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:18 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:18 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:18 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:18 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:18 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:18 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:19 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:19 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:19 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:19 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:19 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:19 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 7
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 2
---------
-Printout of list states
-Left list size: 1, Right list size: 3
---------
-Printout of list states
-Left list size: 1, Right list size: 4
---------
-Printout of list states
-Left list size: 2, Right list size: 4
---------
-Printout of list states
-Left list size: 3, Right list size: 4
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:23 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:23 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:23 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:24 2020
+Log message for Classification log data at Thu Aug  6 15:50:00 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -753,44 +39,18 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:24 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:24 2020
+Log message for Classification log data at Thu Aug  6 15:50:00 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -805,44 +65,18 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:24 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:24 2020
+Log message for Classification log data at Thu Aug  6 15:50:00 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -857,44 +91,18 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:25 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:25 2020
+Log message for Classification log data at Thu Aug  6 15:50:00 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -909,44 +117,18 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:25 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:25 2020
+Log message for Classification log data at Thu Aug  6 15:50:00 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -961,44 +143,18 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:25 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:25 2020
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -1013,44 +169,18 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:26 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:26 2020
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -1065,44 +195,18 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:26 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:26 2020
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
@@ -1117,24 +221,24 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 1
+Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:26 2020
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 6
 --------
 Printout of list states
-Left list size: 0, Right list size: 1
+Left list size: 1, Right list size: 0
 --------
 Printout of list states
 Left list size: 1, Right list size: 1
@@ -1143,18 +247,483 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
 Left list size: 3, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 3, Right list size: 3
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:27 2020
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:01 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:02 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:03 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:03 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 2
+--------
+Printout of list states
+Left list size: 3, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:11 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 5
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 2, Right list size: 3
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:11 2020
+-----------------------------------
+-----------------------------------
+Cone list size to be sorted = 6
+--------
+Printout of list states
+Left list size: 1, Right list size: 0
+--------
+Printout of list states
+Left list size: 1, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 1
+--------
+Printout of list states
+Left list size: 2, Right list size: 2
+--------
+Printout of list states
+Left list size: 2, Right list size: 3
+--------
+Printout of list states
+Left list size: 2, Right list size: 4
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Classification log data at Thu Aug  6 15:50:11 2020
 -----------------------------------
 -----------------------------------
 Cone list size to be sorted = 7
@@ -1169,24 +738,24 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 1
+Left list size: 2, Right list size: 3
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 2, Right list size: 4
 --------
 Printout of list states
-Left list size: 5, Right list size: 2
+Left list size: 2, Right list size: 5
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Classification log data at Thu Aug  6 10:52:27 2020
+Log message for Classification log data at Thu Aug  6 15:50:11 2020
 -----------------------------------
 -----------------------------------
-Cone list size to be sorted = 7
+Cone list size to be sorted = 9
 --------
 Printout of list states
 Left list size: 1, Right list size: 0
@@ -1198,718 +767,22 @@ Printout of list states
 Left list size: 2, Right list size: 1
 --------
 Printout of list states
-Left list size: 3, Right list size: 1
+Left list size: 2, Right list size: 2
 --------
 Printout of list states
-Left list size: 4, Right list size: 1
+Left list size: 2, Right list size: 3
 --------
 Printout of list states
-Left list size: 4, Right list size: 2
+Left list size: 2, Right list size: 4
 --------
 Printout of list states
-Left list size: 5, Right list size: 2
+Left list size: 2, Right list size: 5
 --------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:27 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 7
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-Printout of list states
-Left list size: 5, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:27 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 7
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-Printout of list states
-Left list size: 5, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:27 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 7
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-Printout of list states
-Left list size: 5, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:27 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 7
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-Printout of list states
-Left list size: 5, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:28 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 7
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-Printout of list states
-Left list size: 5, Right list size: 2
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:28 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 8
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 2
---------
-Printout of list states
-Left list size: 5, Right list size: 2
---------
-Printout of list states
-Left list size: 5, Right list size: 3
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:31 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:31 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:32 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:32 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:32 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:32 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:32 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 5
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:32 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:32 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:32 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:33 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:33 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:33 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:33 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:33 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:33 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:33 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:34 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:34 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 0
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:34 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 0, Right list size: 1
---------
-Printout of list states
-Left list size: 1, Right list size: 1
---------
-Printout of list states
-Left list size: 2, Right list size: 1
---------
-Printout of list states
-Left list size: 3, Right list size: 1
---------
-Printout of list states
-Left list size: 4, Right list size: 1
---------
-Printout of list states
-Left list size: 5, Right list size: 1
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Classification log data at Thu Aug  6 10:52:34 2020
------------------------------------
------------------------------------
-Cone list size to be sorted = 6
---------
-Printout of list states
-Left list size: 1, Right list size: 0
---------
-Printout of list states
-Left list size: 2, Right list size: 0
---------
-Printout of list states
-Left list size: 3, Right list size: 0
---------
-Printout of list states
-Left list size: 4, Right list size: 0
---------
 Printout of list states
-Left list size: 5, Right list size: 0
+Left list size: 3, Right list size: 5
 --------
 Printout of list states
-Left list size: 5, Right list size: 1
+Left list size: 3, Right list size: 6
 --------
 ///////////////////////////////////
 ///////////////////////////////////

@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <stdint.h>
 #include <cmath>
+#include <vector>
 
 //Cone classifier
 enum class BoundPos
@@ -190,7 +191,7 @@ constexpr struct CarParams {
 
 struct MPC_targets
 {
-	Coord reference_point;
+	std::vector<Coord> reference_points;
 	Pos left_boundary;
 	Pos right_boundary;
 };
