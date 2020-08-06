@@ -223,15 +223,15 @@
 			[
 				{
 					"backtrace" : 25,
-					"path" : "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/devel/include"
+					"path" : "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/devel/include"
 				},
 				{
 					"backtrace" : 26,
-					"path" : "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/include/Bound_Est"
+					"path" : "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/include/Bound_Est"
 				},
 				{
 					"backtrace" : 26,
-					"path" : "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/include"
+					"path" : "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/include"
 				},
 				{
 					"backtrace" : 26,
@@ -243,7 +243,7 @@
 				},
 				{
 					"backtrace" : 26,
-					"path" : "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer"
+					"path" : "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/include/mpcc_optimizer"
 				}
 			],
 			"language" : "CXX",
