@@ -4,14 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/usr/src/googletest/googletest/src/gtest-all.cc" "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+  "/usr/src/googletest/googletest/src/gtest-all.cc" "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "GTEST_CREATE_SHARED_LIBRARY=1"
-  "gtest_EXPORTS"
   )
 
 # The include file search paths:

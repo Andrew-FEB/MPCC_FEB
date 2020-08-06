@@ -1,4 +1,4 @@
-Log message for Path Exploration log data at Thu Aug  6 17:31:19 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:44 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -160,7 +160,7 @@ Point 2 at x(4.99) y(8.375)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:22 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -304,7 +304,7 @@ Point 4 at x(9.23) y(-1.82)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:23 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -545,7 +545,7 @@ Point 2 at x(14.8) y(-10.14)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:23 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -945,7 +945,7 @@ Point 3 at x(17.465) y(-9.505)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:24 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1302,7 +1302,7 @@ Point 5 at x(25.87) y(2.385)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:25 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1543,7 +1543,7 @@ Point 4 at x(31.2375) y(0.5875)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:25 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1718,7 +1718,7 @@ Point 4 at x(41.37) y(-9.28)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:25 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2025,7 +2025,7 @@ Point 4 at x(48.275) y(-16.765)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 19:31:56 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2415,78 +2415,17 @@ Point 4 at x(55.995) y(-15.74)
 
 --------
 Path 12
-Point 1 at x(49.14) y(-18.19)
-Point 2 at x(51.005) y(-18.345)
-Point 3 at x(52.76) y(-17.865)
-Point 4 at x(51.895) y(-16.44)
-Point 5 at x(52.76) y(-17.865)
-
---------
-Path 13
-Point 1 at x(49.14) y(-18.19)
-Point 2 at x(51.005) y(-18.345)
-Point 3 at x(52.76) y(-17.865)
-Point 4 at x(51.895) y(-16.44)
-Point 5 at x(51.1) y(-15.1)
-
---------
-Path 14
-Point 1 at x(49.14) y(-18.19)
-Point 2 at x(51.005) y(-18.345)
-Point 3 at x(52.76) y(-17.865)
-Point 4 at x(51.895) y(-16.44)
-Point 5 at x(51.1) y(-15.1)
-Point 6 at x(51.895) y(-16.44)
+Point 1 at x(55.235) y(-19.195)
+Point 2 at x(56.89) y(-18.26)
+Point 3 at x(58.47) y(-17.07)
+Point 4 at x(55.995) y(-15.74)
+Point 5 at x(58.47) y(-17.07)
 
 --------
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:26 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Section start point x(0), y(0)
-Section end point x(61.605), y(-15.455)
-Triangle list size = 7
-Number of midpoints in section = 12
-Given as follows:
-Centre point 0 = X pos 51.295, Y pos -15.39
-Centre point 1 = X pos 52.895, Y pos -15.02
-Centre point 2 = X pos 49.9, Y pos -15.12
-Centre point 3 = X pos 51.295, Y pos -15.39
-Centre point 4 = X pos 58.49, Y pos -17.89
-Centre point 5 = X pos 56.89, Y pos -18.26
-Centre point 6 = X pos 55.495, Y pos -17.99
-Centre point 7 = X pos 60.07, Y pos -16.7
-Centre point 8 = X pos 58.49, Y pos -17.89
-Centre point 9 = X pos 61.605, Y pos -15.455
-Centre point 10 = X pos 60.07, Y pos -16.7
-Centre point 11 = X pos 60.07, Y pos -16.7
-
-Distance to goal over full section: 63.514
---------
-Entering tree exploration loop
---------
-Loop number: 1
-Search origin point x(0), y(0)
-Size of local triangles: 0
-Size of vector of all triangle mids: 0
-Entering loop through vector of possible mids
---------
-Requesting next point to explore...
-Tree formation complete. Tree as follows: 
-Node 1 with position: x(0) y(0), a checked status of 1 and a parent with pos at: Parent is nullptr!
-Child 1 is a nullptr
-Child 2 is a nullptr
-Child 3 is a nullptr
-Child 4 is a nullptr
-
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Path Exploration log data at Thu Aug  6 17:31:27 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2724,7 +2663,7 @@ Point 2 at x(62.2575) y(-15.855)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:27 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3028,7 +2967,7 @@ Point 4 at x(73.38) y(-5.205)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:28 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3355,7 +3294,7 @@ Point 3 at x(76.5425) y(-0.39)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:28 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3749,7 +3688,7 @@ Point 3 at x(72.8775) y(9.215)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:29 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4076,7 +4015,7 @@ Point 3 at x(65.03) y(16.5475)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:30 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4369,7 +4308,7 @@ Point 4 at x(59.375) y(25.835)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:30 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4668,7 +4607,7 @@ Point 4 at x(54.65) y(37.545)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:31 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5068,7 +5007,7 @@ Point 3 at x(46.1025) y(41.14)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:32 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5462,7 +5401,7 @@ Point 3 at x(38.185) y(36.0875)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:32 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5769,7 +5708,7 @@ Point 4 at x(29.14) y(31.615)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:33 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5942,7 +5881,7 @@ Point 2 at x(22.6425) y(37.9725)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:34 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6220,7 +6159,7 @@ Point 6 at x(11.17) y(46.935)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:34 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6547,7 +6486,7 @@ Point 3 at x(5.86) y(50.6175)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:35 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6693,7 +6632,7 @@ Point 4 at x(-5.585) y(43.1)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:35 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6997,7 +6936,7 @@ Point 4 at x(-12.925) y(35.85)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:36 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7324,7 +7263,7 @@ Point 3 at x(-16.3625) y(30.905)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Path Exploration log data at Thu Aug  6 17:31:37 2020
+Log message for Path Exploration log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7620,70 +7559,6 @@ Point 3 at x(-13.2625) y(21.1975)
 Point 4 at x(-9.7925) y(23.2075)
 
 --------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Path Exploration log data at Thu Aug  6 17:32:03 2020
------------------------------------
------------------------------------
-At time of entering function key variables were:
-Section start point x(1.79772e-38), y(2.724e+68)
-Section end point x(7.46044e-153), y(5.09099e+276)
-Triangle list size = 10
-Number of midpoints in section = 19
-Given as follows:
-Centre point 0 = X pos -1.515, Y pos 7.3025
-Centre point 1 = X pos -1.515, Y pos 2.724e+68
-Centre point 2 = X pos -1.515, Y pos 4.44743e+252
-Centre point 3 = X pos -1.515, Y pos 2.724e+68
-Centre point 4 = X pos 1.79772e-38, Y pos 4.44743e+252
-Centre point 5 = X pos 7.46044e-153, Y pos 5.09099e+276
-Centre point 6 = X pos -1.515, Y pos 4.44743e+252
-Centre point 7 = X pos 7.46044e-153, Y pos 5.09099e+276
-Centre point 8 = X pos 1.79772e-38, Y pos 4.44743e+252
-Centre point 9 = X pos 1.9733e+180, Y pos 5.09099e+276
-Centre point 10 = X pos 1.9733e+180, Y pos 3.05625e+228
-Centre point 11 = X pos 3.30432e+265, Y pos 3.05625e+228
-Centre point 12 = X pos 1.9733e+180, Y pos 3.05625e+228
-Centre point 13 = X pos 3.30432e+265, Y pos 4.64899e+199
-Centre point 14 = X pos 1.79772e-38, Y pos 2.95175e-96
-Centre point 15 = X pos 2.17019e+270, Y pos 4.64899e+199
-Centre point 16 = X pos 2.17015e+270, Y pos 5.1014e-114
-Centre point 17 = X pos 3.30432e+265, Y pos 4.64899e+199
-Centre point 18 = X pos 3.30432e+265, Y pos 4.64899e+199
-
-Distance to goal over full section: inf
---------
-Entering tree exploration loop
---------
-Loop number: 1
-Search origin point x(1.79772e-38), y(2.724e+68)
-Size of local triangles: 2
-Size of vector of all triangle mids: 2
-Entering loop through vector of possible mids
---------
-Mid value 1 x(-1.515) y(2.724e+68)
-Distance to goal from proposed midpoint: inf
-Change in distance to goal if point selected: -nan
-This point rejected and not added to tree
---------
-Mid value 2 x(1.79772e-38) y(4.44743e+252)
-Distance to goal from proposed midpoint: inf
-Change in distance to goal if point selected: -nan
-This point rejected and not added to tree
---------
-Requesting next point to explore...
-Tree formation complete. Tree as follows: 
-Node 1 with position: x(1.79772e-38) y(2.724e+68), a checked status of 1 and a parent with pos at: Parent is nullptr!
-Child 1 is a nullptr
-Child 2 is a nullptr
-Child 3 is a nullptr
-Child 4 is a nullptr
-
-Moving into path development
---------
-Adding paths of length 15:
-Paths collected. List of paths contains: 
 ///////////////////////////////////
 ///////////////////////////////////
 

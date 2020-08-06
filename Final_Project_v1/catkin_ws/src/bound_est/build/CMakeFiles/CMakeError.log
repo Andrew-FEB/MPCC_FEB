@@ -1,10 +1,10 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_0c4a8/fast && /usr/bin/make -f CMakeFiles/cmTC_0c4a8.dir/build.make CMakeFiles/cmTC_0c4a8.dir/build
-make[1]: Entering directory '/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_0c4a8.dir/src.c.o
-/usr/bin/clang-6.0   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_0c4a8.dir/src.c.o   -c /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/src.c
+/usr/bin/clang-6.0   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_0c4a8.dir/src.c.o   -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/src.c
 Linking C executable cmTC_0c4a8
 /opt/cmake-3.17.0-rc1-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c4a8.dir/link.txt --verbose=1
 /usr/bin/clang-6.0  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_0c4a8.dir/src.c.o  -o cmTC_0c4a8 
@@ -17,7 +17,7 @@ src.c:(.text+0x76): undefined reference to `pthread_atfork'
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 CMakeFiles/cmTC_0c4a8.dir/build.make:103: recipe for target 'cmTC_0c4a8' failed
 make[1]: *** [cmTC_0c4a8] Error 1
-make[1]: Leaving directory '/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Makefile:138: recipe for target 'cmTC_0c4a8/fast' failed
 make: *** [cmTC_0c4a8/fast] Error 2
 
@@ -44,10 +44,10 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_1d1ae/fast && /usr/bin/make -f CMakeFiles/cmTC_1d1ae.dir/build.make CMakeFiles/cmTC_1d1ae.dir/build
-make[1]: Entering directory '/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_1d1ae.dir/CheckFunctionExists.c.o
 /usr/bin/clang-6.0   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1d1ae.dir/CheckFunctionExists.c.o   -c /opt/cmake-3.17.0-rc1-Linux-x86_64/share/cmake-3.17/Modules/CheckFunctionExists.c
 Linking C executable cmTC_1d1ae
@@ -57,9 +57,44 @@ Linking C executable cmTC_1d1ae
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 CMakeFiles/cmTC_1d1ae.dir/build.make:103: recipe for target 'cmTC_1d1ae' failed
 make[1]: *** [cmTC_1d1ae] Error 1
-make[1]: Leaving directory '/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
 Makefile:138: recipe for target 'cmTC_1d1ae/fast' failed
 make: *** [cmTC_1d1ae/fast] Error 2
 
 
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b30bb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b30bb.dir/build.make CMakeFiles/cmTC_b30bb.dir/build
+make[1]: Entering directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b30bb.dir/CheckSymbolExists.c.o
+/usr/bin/gcc-9    -o CMakeFiles/cmTC_b30bb.dir/CheckSymbolExists.c.o   -c /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_b30bb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b30bb.dir/link.txt --verbose=1
+/usr/bin/gcc-9      -rdynamic CMakeFiles/cmTC_b30bb.dir/CheckSymbolExists.c.o  -o cmTC_b30bb 
+CMakeFiles/cmTC_b30bb.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b30bb.dir/build.make:97: recipe for target 'cmTC_b30bb' failed
+make[1]: *** [cmTC_b30bb] Error 1
+make[1]: Leaving directory '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b30bb/fast' failed
+make: *** [cmTC_b30bb/fast] Error 2
+
+File /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
 

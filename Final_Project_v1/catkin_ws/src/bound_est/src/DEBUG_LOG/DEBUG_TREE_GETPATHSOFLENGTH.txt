@@ -1,4 +1,4 @@
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:19 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:44 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -90,7 +90,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:22 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -165,7 +165,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:23 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -296,7 +296,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:23 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -517,7 +517,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:24 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -726,7 +726,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 19:31:56 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -855,7 +855,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:25 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -947,7 +947,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 19:31:56 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -1074,22 +1074,7 @@ No node at this children pointer. Ending search at this node
 --------
 Currently pointing at node with position x(49.345), y(-15.58)
 Children used up or at end of tree. Shifting backwards
-Head node detected to have been completed. Tree returning paths collection, containing 7 paths
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:25 2020
------------------------------------
------------------------------------
-Request made for paths of length 15
-Path collection begun...
-Currently pointing at node with position x(42.255), y(-10.755)
-Completed potential path collected of length 1 containing:
-Coordinate 1 with position x(42.255), y(-10.755)
-
-Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 1.91846. Path added to collection
+Moving back up tree to new tree depth of 3
 --------
 Currently pointing at node with position x(50.14), y(-16.92)
 Moving down tree to new tree depth of 4
@@ -1134,7 +1119,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:25 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:47 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -1345,28 +1330,7 @@ Currently pointing at node with position x(56.89), y(-18.26)
 Children used up or at end of tree. Shifting backwards
 Moving back up tree to new tree depth of 1
 --------
-Currently pointing at node with position x(49.14), y(-18.19)
-No node at this children pointer. Ending search at this node
---------
-Currently pointing at node with position x(49.14), y(-18.19)
-Children used up or at end of tree. Shifting backwards
-Head node detected to have been completed. Tree returning paths collection, containing 14 paths
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:26 2020
------------------------------------
------------------------------------
-Request made for paths of length 15
-Path collection begun...
-Currently pointing at node with position x(0), y(0)
-Completed potential path collected of length 1 containing:
-Coordinate 1 with position x(0), y(0)
-
-Checking if path contains end goal...
-Path ignored as invalid. Distance to end goal is 7.96957.
---------
+Currently pointing at node with position x(55.235), y(-19.195)
 No node at this children pointer. Ending search at this node
 --------
 Currently pointing at node with position x(55.235), y(-19.195)
@@ -1376,7 +1340,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:27 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -1507,7 +1471,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:27 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -1576,22 +1540,7 @@ No node at this children pointer. Ending search at this node
 --------
 Currently pointing at node with position x(66.935), y(-9.66)
 Children used up or at end of tree. Shifting backwards
-Head node detected to have been completed. Tree returning paths collection, containing 4 paths
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:28 2020
------------------------------------
------------------------------------
-Request made for paths of length 15
-Path collection begun...
-Currently pointing at node with position x(73.8), y(4.815)
-Completed potential path collected of length 1 containing:
-Coordinate 1 with position x(73.8), y(4.815)
-
-Checking if path contains end goal...
-Path decided to be valid, as distance to end goal is 2.33369. Path added to collection
+Moving back up tree to new tree depth of 3
 --------
 Currently pointing at node with position x(67.98), y(-8.475)
 Moving down tree to new tree depth of 4
@@ -1690,7 +1639,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 19:31:57 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -1874,7 +1823,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:28 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -2099,7 +2048,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:29 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -2283,7 +2232,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:30 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -2451,7 +2400,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:30 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -2619,7 +2568,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:31 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:48 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -2840,7 +2789,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:32 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -3065,7 +3014,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:32 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -3231,7 +3180,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:33 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -3323,7 +3272,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:34 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -3478,7 +3427,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:34 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -3662,7 +3611,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:35 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -3737,7 +3686,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:35 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -3905,7 +3854,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:36 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -4089,7 +4038,7 @@ Head node detected to have been completed. Tree returning paths collection, cont
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:31:37 2020
+Log message for Tree getPathsOfLength() log data at Thu Aug  6 20:33:49 2020
 -----------------------------------
 -----------------------------------
 Request made for paths of length 15
@@ -4253,27 +4202,6 @@ No node at this children pointer. Ending search at this node
 Currently pointing at node with position x(-10.02), y(20.02)
 Children used up or at end of tree. Shifting backwards
 Head node detected to have been completed. Tree returning paths collection, containing 9 paths
---------
-///////////////////////////////////
-///////////////////////////////////
-
-Log message for Tree getPathsOfLength() log data at Thu Aug  6 17:32:03 2020
------------------------------------
------------------------------------
-Request made for paths of length 15
-Path collection begun...
-Currently pointing at node with position x(1.79772e-38), y(2.724e+68)
-Completed potential path collected of length 1 containing:
-Coordinate 1 with position x(1.79772e-38), y(2.724e+68)
-
-Checking if path contains end goal...
-Path ignored as invalid. Distance to end goal is inf.
---------
-No node at this children pointer. Ending search at this node
---------
-Currently pointing at node with position x(1.79772e-38), y(2.724e+68)
-Children used up or at end of tree. Shifting backwards
-Head node detected to have been completed. Tree returning paths collection, containing 0 paths
 --------
 ///////////////////////////////////
 ///////////////////////////////////
