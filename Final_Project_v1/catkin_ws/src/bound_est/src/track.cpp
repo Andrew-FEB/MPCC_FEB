@@ -102,13 +102,20 @@ void Track::processNextSection()
         std::cerr<<"Failed seperated cones check"<<std::endl;
         #endif
         std::move(framed_cones.begin(), framed_cones.end(), std::back_inserter(new_cones));
+        framed_cones.erase(framed_cones.begin(), framed_cones.end());
         return;
     }
     auto result = (seperated_cones.first.size()>seperated_cones.second.size()) ? seperated_cones.first.size()-seperated_cones.second.size() : seperated_cones.second.size()-seperated_cones.first.size();
     if (result>1)   //Unbalanced frame - rebalance
     {
-        auto larger_vec = (seperated_cones.first.size()>seperated_cones.second.size()) ? seperated_cones.first: seperated_cones.second;
-        rebalanceCones(framed_cones, larger_vec, result);
+        if (seperated_cones.first.size()>seperated_cones.second.size())
+        {
+            rebalanceCones(framed_cones, seperated_cones.first, result);
+        }
+        else
+        {
+            rebalanceCones(framed_cones, seperated_cones.second, result);
+        }      
     }
 
     #ifdef VISUALISE
@@ -145,6 +152,7 @@ void Track::processNextSection()
 
     //Move new cones into processed cones
     std::move(framed_cones.begin(), framed_cones.end(), std::back_inserter(processed_cone_list)); 
+    framed_cones.erase(framed_cones.begin(), framed_cones.end());
     //Move seperated classified cones into processed cones 
     std::move(seperated_cones.first.begin(), seperated_cones.first.end(), std::back_inserter(processed_cone_list_left));
     std::move(seperated_cones.second.begin(), seperated_cones.second.end(), std::back_inserter(processed_cone_list_right));
@@ -164,14 +172,13 @@ void Track::rebalanceCones(std::vector<std::unique_ptr<Cone>> &framed_cones, std
         auto furthest_cone = findFurthestConeFromPointWithIndex(car_pos, boundary_cones);
         for (int i = 0; i<framed_cones.size(); i++)
         {
-
             if ((*framed_cones[i])==furthest_cone.first)
             {
                 if ((i+1)<framed_cones.size())
                 {
                     std::rotate(framed_cones.begin()+i, framed_cones.begin()+i+1, framed_cones.end());
                 }
-                boundary_cones[furthest_cone.second] = std::move(boundary_cones.back());
+                boundary_cones[furthest_cone.second] = boundary_cones.back();
                 boundary_cones.pop_back();
                 number_removed++;
                 break;
@@ -349,7 +356,7 @@ MPC_targets Track::getReferencePath(const std::vector<double> &distances)
         #ifdef DEBUG
         log->write(ss<<"Inappropriate input parameters, given empty vector or vector containing negative distances. Returning from function", true);
         #endif
-        return {};
+        return MPC_targets{};
     }    
     #ifdef DEBUG
     log->write(ss<<"At entering function, important variables were...");
@@ -379,6 +386,11 @@ MPC_targets Track::getReferencePath(const std::vector<double> &distances)
     log->write(ss<<"Next, getting centre coordinates");
     #endif
     //Get centre coords
+    if (nearest_centre.second == (centre_coords.size()-1))
+    {
+        std::cerr<<"Error, request for reference path no more centre-line path available. Returning empty path";
+        return MPC_targets{};
+    }
     auto centre_points = interpolateCentreCoordsDiscrete(nearest_centre.second, nearest_centre.first, distances); 
 
     #ifdef DEBUG

@@ -1,0 +1,743 @@
+==16910== Memcheck, a memory error detector
+==16910== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==16910== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==16910== Command: /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est ccw
+==16910== 
+ADD CONE
+ x = 1.5 and y = 18
+ADD CONE
+ x = -1.5 and y = 9
+ADD CONE
+ x = 4.24 and y = 17.44
+ADD CONE
+ x = 1.19 and y = 5.63
+ADD CONE
+ x = 6.41 and y = 15.24
+ADD CONE
+ x = 3.57 and y = 1.51
+seperate cone list
+Cone has x 1.5 and y 18
+Cone has x -1.5 and y 9
+Cone has x 4.24 and y 17.44
+Cone has x 1.19 and y 5.63
+Cone has x 6.41 and y 15.24
+Cone has x 3.57 and y 1.51
+LEFT
+Cone 0 has x = 1.5 and y = 18
+Cone 1 has x = 4.24 and y = 17.44
+Cone 2 has x = 6.41 and y = 15.24
+RIGHT
+Cone 0 has x = -1.5 and y = 9
+Cone 1 has x = 1.19 and y = 5.63
+Cone 2 has x = 3.57 and y = 1.51
+ADD CONE
+ x = 8.15 and y = 11.88
+ADD CONE
+ x = 5.73 and y = -2.92
+ADD CONE
+ x = 9.55 and y = 7.84
+ADD CONE
+ x = 7.73 and y = -7.24
+ADD CONE
+ x = 10.73 and y = 3.6
+ADD CONE
+ x = 9.64 and y = -11.01
+seperate cone list
+Cone has x 8.15 and y 11.88
+Cone has x 5.73 and y -2.92
+Cone has x 9.55 and y 7.84
+Cone has x 7.73 and y -7.24
+Cone has x 10.73 and y 3.6
+Cone has x 9.64 and y -11.01
+LEFT
+Cone 0 has x = 8.15 and y = 11.88
+Cone 1 has x = 9.55 and y = 7.84
+Cone 2 has x = 10.73 and y = 3.6
+RIGHT
+Cone 0 has x = 5.73 and y = -2.92
+Cone 1 has x = 7.73 and y = -7.24
+Cone 2 has x = 9.64 and y = -11.01
+ADD CONE
+ x = 11.8 and y = -0.38
+ADD CONE
+ x = 11.53 and y = -13.79
+ADD CONE
+ x = 12.88 and y = -3.6
+ADD CONE
+ x = 13.46 and y = -15.16
+ADD CONE
+ x = 14.08 and y = -5.59
+ADD CONE
+ x = 15.52 and y = -14.69
+seperate cone list
+Cone has x 11.8 and y -0.38
+Cone has x 11.53 and y -13.79
+Cone has x 12.88 and y -3.6
+Cone has x 13.46 and y -15.16
+Cone has x 14.08 and y -5.59
+Cone has x 15.52 and y -14.69
+LEFT
+Cone 0 has x = 11.8 and y = -0.38
+Cone 1 has x = 12.88 and y = -3.6
+Cone 2 has x = 14.08 and y = -5.59
+RIGHT
+Cone 0 has x = 11.53 and y = -13.79
+Cone 1 has x = 13.46 and y = -15.16
+Cone 2 has x = 15.52 and y = -14.69
+ADD CONE
+ x = 15.5 and y = -5.88
+ADD CONE
+ x = 17.74 and y = -12.34
+ADD CONE
+ x = 17.21 and y = -4.41
+ADD CONE
+ x = 20.13 and y = -8.87
+ADD CONE
+ x = 19.16 and y = -1.72
+ADD CONE
+ x = 22.66 and y = -5.1
+seperate cone list
+Cone has x 15.5 and y -5.88
+Cone has x 17.74 and y -12.34
+Cone has x 17.21 and y -4.41
+Cone has x 20.13 and y -8.87
+Cone has x 19.16 and y -1.72
+Cone has x 22.66 and y -5.1
+LEFT
+Cone 0 has x = 15.5 and y = -5.88
+Cone 1 has x = 17.21 and y = -4.41
+Cone 2 has x = 19.16 and y = -1.72
+RIGHT
+Cone 0 has x = 17.74 and y = -12.34
+Cone 1 has x = 20.13 and y = -8.87
+Cone 2 has x = 22.66 and y = -5.1
+ADD CONE
+ x = 21.31 and y = 1.57
+ADD CONE
+ x = 25.33 and y = -1.9
+ADD CONE
+ x = 23.6 and y = 4.86
+ADD CONE
+ x = 28.14 and y = -0.09
+ADD CONE
+ x = 26 and y = 7.54
+ADD CONE
+ x = 31.05 and y = -0.35
+seperate cone list
+Cone has x 21.31 and y 1.57
+Cone has x 25.33 and y -1.9
+Cone has x 23.6 and y 4.86
+Cone has x 28.14 and y -0.09
+Cone has x 26 and y 7.54
+Cone has x 31.05 and y -0.35
+LEFT
+Cone 0 has x = 21.31 and y = 1.57
+Cone 1 has x = 23.6 and y = 4.86
+Cone 2 has x = 26 and y = 7.54
+RIGHT
+Cone 0 has x = 25.33 and y = -1.9
+Cone 1 has x = 28.14 and y = -0.09
+Cone 2 has x = 31.05 and y = -0.35
+ADD CONE
+ x = 28.45 and y = 8.99
+ADD CONE
+ x = 33.95 and y = -2.42
+ADD CONE
+ x = 30.9 and y = 8.77
+ADD CONE
+ x = 36.7 and y = -5.68
+ADD CONE
+ x = 33.32 and y = 7.14
+ADD CONE
+ x = 39.15 and y = -9.51
+seperate cone list
+Cone has x 28.45 and y 8.99
+Cone has x 33.95 and y -2.42
+Cone has x 30.9 and y 8.77
+Cone has x 36.7 and y -5.68
+Cone has x 33.32 and y 7.14
+Cone has x 39.15 and y -9.51
+LEFT
+Cone 0 has x = 28.45 and y = 8.99
+Cone 1 has x = 30.9 and y = 8.77
+Cone 2 has x = 33.32 and y = 7.14
+RIGHT
+Cone 0 has x = 33.95 and y = -2.42
+Cone 1 has x = 36.7 and y = -5.68
+Cone 2 has x = 39.15 and y = -9.51
+ADD CONE
+ x = 35.64 and y = 4.53
+ADD CONE
+ x = 41.16 and y = -13.31
+ADD CONE
+ x = 37.83 and y = 1.37
+ADD CONE
+ x = 42.91 and y = -16.68
+ADD CONE
+ x = 39.83 and y = -1.88
+ADD CONE
+ x = 45.07 and y = -19.57
+seperate cone list
+Cone has x 35.64 and y 4.53
+Cone has x 41.16 and y -13.31
+Cone has x 37.83 and y 1.37
+Cone has x 42.91 and y -16.68
+Cone has x 39.83 and y -1.88
+Cone has x 45.07 and y -19.57
+LEFT
+Cone 0 has x = 35.64 and y = 4.53
+Cone 1 has x = 37.83 and y = 1.37
+Cone 2 has x = 39.83 and y = -1.88
+RIGHT
+Cone 0 has x = 41.16 and y = -13.31
+Cone 1 has x = 42.91 and y = -16.68
+Cone 2 has x = 45.07 and y = -19.57
+ADD CONE
+ x = 41.6 and y = -4.83
+ADD CONE
+ x = 48.11 and y = -21.89
+ADD CONE
+ x = 43.22 and y = -7.49
+ADD CONE
+ x = 51.74 and y = -23.36
+ADD CONE
+ x = 44.81 and y = -10.17
+ADD CONE
+ x = 55.47 and y = -23.67
+seperate cone list
+Cone has x 41.6 and y -4.83
+Cone has x 48.11 and y -21.89
+Cone has x 43.22 and y -7.49
+Cone has x 51.74 and y -23.36
+Cone has x 44.81 and y -10.17
+Cone has x 55.47 and y -23.67
+LEFT
+Cone 0 has x = 41.6 and y = -4.83
+Cone 1 has x = 43.22 and y = -7.49
+Cone 2 has x = 44.81 and y = -10.17
+RIGHT
+Cone 0 has x = 48.11 and y = -21.89
+Cone 1 has x = 51.74 and y = -23.36
+Cone 2 has x = 55.47 and y = -23.67
+ADD CONE
+ x = 46.54 and y = -13.02
+ADD CONE
+ x = 58.98 and y = -22.71
+ADD CONE
+ x = 48.7 and y = -15.14
+ADD CONE
+ x = 62.29 and y = -20.84
+ADD CONE
+ x = 51.49 and y = -15.68
+ADD CONE
+ x = 65.45 and y = -18.46
+seperate cone list
+Cone has x 46.54 and y -13.02
+Cone has x 58.98 and y -22.71
+Cone has x 48.7 and y -15.14
+Cone has x 62.29 and y -20.84
+Cone has x 51.49 and y -15.68
+Cone has x 65.45 and y -18.46
+LEFT
+Cone 0 has x = 46.54 and y = -13.02
+Cone 1 has x = 48.7 and y = -15.14
+Cone 2 has x = 51.49 and y = -15.68
+RIGHT
+Cone 0 has x = 58.98 and y = -22.71
+Cone 1 has x = 62.29 and y = -20.84
+Cone 2 has x = 65.45 and y = -18.46
+ADD CONE
+ x = 54.69 and y = -14.94
+ADD CONE
+ x = 68.52 and y = -15.97
+ADD CONE
+ x = 57.99 and y = -13.43
+ADD CONE
+ x = 71.49 and y = -13.57
+ADD CONE
+ x = 61.09 and y = -11.68
+ADD CONE
+ x = 74.23 and y = -11.06
+seperate cone list
+Cone has x 54.69 and y -14.94
+Cone has x 68.52 and y -15.97
+Cone has x 57.99 and y -13.43
+Cone has x 71.49 and y -13.57
+Cone has x 61.09 and y -11.68
+Cone has x 74.23 and y -11.06
+LEFT
+Cone 0 has x = 54.69 and y = -14.94
+Cone 1 has x = 57.99 and y = -13.43
+Cone 2 has x = 61.09 and y = -11.68
+RIGHT
+Cone 0 has x = 68.52 and y = -15.97
+Cone 1 has x = 71.49 and y = -13.57
+Cone 2 has x = 74.23 and y = -11.06
+ADD CONE
+ x = 63.82 and y = -9.91
+ADD CONE
+ x = 76.62 and y = -8.19
+ADD CONE
+ x = 66.21 and y = -7.95
+ADD CONE
+ x = 78.46 and y = -4.83
+ADD CONE
+ x = 68.3 and y = -5.58
+ADD CONE
+ x = 79.43 and y = -1.16
+seperate cone list
+Cone has x 63.82 and y -9.91
+Cone has x 76.62 and y -8.19
+Cone has x 66.21 and y -7.95
+Cone has x 78.46 and y -4.83
+Cone has x 68.3 and y -5.58
+Cone has x 79.43 and y -1.16
+LEFT
+Cone 0 has x = 63.82 and y = -9.91
+Cone 1 has x = 66.21 and y = -7.95
+Cone 2 has x = 68.3 and y = -5.58
+RIGHT
+Cone 0 has x = 76.62 and y = -8.19
+Cone 1 has x = 78.46 and y = -4.83
+Cone 2 has x = 79.43 and y = -1.16
+ADD CONE
+ x = 69.91 and y = -2.73
+ADD CONE
+ x = 79.22 and y = 2.59
+ADD CONE
+ x = 70.5 and y = 0.37
+ADD CONE
+ x = 77.89 and y = 6.17
+ADD CONE
+ x = 69.71 and y = 3.46
+ADD CONE
+ x = 75.72 and y = 9.34
+seperate cone list
+Cone has x 69.91 and y -2.73
+Cone has x 79.22 and y 2.59
+Cone has x 70.5 and y 0.37
+Cone has x 77.89 and y 6.17
+Cone has x 69.71 and y 3.46
+Cone has x 75.72 and y 9.34
+LEFT
+Cone 0 has x = 69.91 and y = -2.73
+Cone 1 has x = 70.5 and y = 0.37
+Cone 2 has x = 69.71 and y = 3.46
+RIGHT
+Cone 0 has x = 79.22 and y = 2.59
+Cone 1 has x = 77.89 and y = 6.17
+Cone 2 has x = 75.72 and y = 9.34
+ADD CONE
+ x = 67.85 and y = 6.18
+ADD CONE
+ x = 73.04 and y = 12.03
+ADD CONE
+ x = 65.34 and y = 8.3
+ADD CONE
+ x = 70.15 and y = 14.47
+ADD CONE
+ x = 62.65 and y = 10.1
+ADD CONE
+ x = 67.41 and y = 16.91
+seperate cone list
+Cone has x 67.85 and y 6.18
+Cone has x 73.04 and y 12.03
+Cone has x 65.34 and y 8.3
+Cone has x 70.15 and y 14.47
+Cone has x 62.65 and y 10.1
+Cone has x 67.41 and y 16.91
+LEFT
+Cone 0 has x = 67.85 and y = 6.18
+Cone 1 has x = 65.34 and y = 8.3
+Cone 2 has x = 62.65 and y = 10.1
+RIGHT
+Cone 0 has x = 73.04 and y = 12.03
+Cone 1 has x = 70.15 and y = 14.47
+Cone 2 has x = 67.41 and y = 16.91
+ADD CONE
+ x = 60.29 and y = 12.04
+ADD CONE
+ x = 65.03 and y = 19.59
+ADD CONE
+ x = 58.63 and y = 14.5
+ADD CONE
+ x = 62.97 and y = 22.6
+ADD CONE
+ x = 57.53 and y = 17.53
+ADD CONE
+ x = 61.13 and y = 26.01
+seperate cone list
+Cone has x 60.29 and y 12.04
+Cone has x 65.03 and y 19.59
+Cone has x 58.63 and y 14.5
+Cone has x 62.97 and y 22.6
+Cone has x 57.53 and y 17.53
+Cone has x 61.13 and y 26.01
+LEFT
+Cone 0 has x = 60.29 and y = 12.04
+Cone 1 has x = 58.63 and y = 14.5
+Cone 2 has x = 57.53 and y = 17.53
+RIGHT
+Cone 0 has x = 65.03 and y = 19.59
+Cone 1 has x = 62.97 and y = 22.6
+Cone 2 has x = 61.13 and y = 26.01
+ADD CONE
+ x = 56.62 and y = 21.01
+ADD CONE
+ x = 59.42 and y = 29.9
+ADD CONE
+ x = 55.69 and y = 24.77
+ADD CONE
+ x = 57.73 and y = 34.13
+ADD CONE
+ x = 54.64 and y = 28.46
+ADD CONE
+ x = 55.96 and y = 38.24
+seperate cone list
+Cone has x 56.62 and y 21.01
+Cone has x 59.42 and y 29.9
+Cone has x 55.69 and y 24.77
+Cone has x 57.73 and y 34.13
+Cone has x 54.64 and y 28.46
+Cone has x 55.96 and y 38.24
+LEFT
+Cone 0 has x = 56.62 and y = 21.01
+Cone 1 has x = 55.69 and y = 24.77
+Cone 2 has x = 54.64 and y = 28.46
+RIGHT
+Cone 0 has x = 59.42 and y = 29.9
+Cone 1 has x = 57.73 and y = 34.13
+Cone 2 has x = 55.96 and y = 38.24
+ADD CONE
+ x = 53.4 and y = 31.75
+ADD CONE
+ x = 54 and y = 41.74
+ADD CONE
+ x = 51.91 and y = 34.31
+ADD CONE
+ x = 51.75 and y = 44.16
+ADD CONE
+ x = 50.09 and y = 35.81
+ADD CONE
+ x = 49.1 and y = 45.01
+seperate cone list
+Cone has x 53.4 and y 31.75
+Cone has x 54 and y 41.74
+Cone has x 51.91 and y 34.31
+Cone has x 51.75 and y 44.16
+Cone has x 50.09 and y 35.81
+Cone has x 49.1 and y 45.01
+LEFT
+Cone 0 has x = 53.4 and y = 31.75
+Cone 1 has x = 51.91 and y = 34.31
+Cone 2 has x = 50.09 and y = 35.81
+RIGHT
+Cone 0 has x = 54 and y = 41.74
+Cone 1 has x = 51.75 and y = 44.16
+Cone 2 has x = 49.1 and y = 45.01
+ADD CONE
+ x = 47.88 and y = 35.96
+ADD CONE
+ x = 46.01 and y = 44.07
+ADD CONE
+ x = 45.32 and y = 34.88
+ADD CONE
+ x = 42.61 and y = 41.87
+ADD CONE
+ x = 42.52 and y = 32.96
+ADD CONE
+ x = 39.08 and y = 39.03
+seperate cone list
+Cone has x 47.88 and y 35.96
+Cone has x 46.01 and y 44.07
+Cone has x 45.32 and y 34.88
+Cone has x 42.61 and y 41.87
+Cone has x 42.52 and y 32.96
+Cone has x 39.08 and y 39.03
+LEFT
+Cone 0 has x = 47.88 and y = 35.96
+Cone 1 has x = 45.32 and y = 34.88
+Cone 2 has x = 42.52 and y = 32.96
+RIGHT
+Cone 0 has x = 46.01 and y = 44.07
+Cone 1 has x = 42.61 and y = 41.87
+Cone 2 has x = 39.08 and y = 39.03
+ADD CONE
+ x = 39.56 and y = 30.58
+ADD CONE
+ x = 35.57 and y = 36.18
+ADD CONE
+ x = 36.56 and y = 28.11
+ADD CONE
+ x = 32.25 and y = 33.95
+ADD CONE
+ x = 33.61 and y = 25.94
+ADD CONE
+ x = 29.29 and y = 32.96
+seperate cone list
+Cone has x 39.56 and y 30.58
+Cone has x 35.57 and y 36.18
+Cone has x 36.56 and y 28.11
+Cone has x 32.25 and y 33.95
+Cone has x 33.61 and y 25.94
+Cone has x 29.29 and y 32.96
+LEFT
+Cone 0 has x = 39.56 and y = 30.58
+Cone 1 has x = 36.56 and y = 28.11
+Cone 2 has x = 33.61 and y = 25.94
+RIGHT
+Cone 0 has x = 35.57 and y = 36.18
+Cone 1 has x = 32.25 and y = 33.95
+Cone 2 has x = 29.29 and y = 32.96
+ADD CONE
+ x = 30.81 and y = 24.45
+ADD CONE
+ x = 26.83 and y = 33.78
+ADD CONE
+ x = 28.26 and y = 24.01
+ADD CONE
+ x = 24.77 and y = 36.23
+ADD CONE
+ x = 26.03 and y = 24.87
+ADD CONE
+ x = 22.86 and y = 39.72
+seperate cone list
+Cone has x 30.81 and y 24.45
+Cone has x 26.83 and y 33.78
+Cone has x 28.26 and y 24.01
+Cone has x 24.77 and y 36.23
+Cone has x 26.03 and y 24.87
+Cone has x 22.86 and y 39.72
+LEFT
+Cone 0 has x = 30.81 and y = 24.45
+Cone 1 has x = 28.26 and y = 24.01
+Cone 2 has x = 26.03 and y = 24.87
+RIGHT
+Cone 0 has x = 26.83 and y = 33.78
+Cone 1 has x = 24.77 and y = 36.23
+Cone 2 has x = 22.86 and y = 39.72
+ADD CONE
+ x = 24.06 and y = 26.82
+ADD CONE
+ x = 20.84 and y = 43.65
+ADD CONE
+ x = 22.29 and y = 29.61
+ADD CONE
+ x = 18.47 and y = 47.41
+ADD CONE
+ x = 20.64 and y = 32.95
+ADD CONE
+ x = 15.54 and y = 50.44
+seperate cone list
+Cone has x 24.06 and y 26.82
+Cone has x 20.84 and y 43.65
+Cone has x 22.29 and y 29.61
+Cone has x 18.47 and y 47.41
+Cone has x 20.64 and y 32.95
+Cone has x 15.54 and y 50.44
+LEFT
+Cone 0 has x = 24.06 and y = 26.82
+Cone 1 has x = 22.29 and y = 29.61
+Cone 2 has x = 20.64 and y = 32.95
+RIGHT
+Cone 0 has x = 20.84 and y = 43.65
+Cone 1 has x = 18.47 and y = 47.41
+Cone 2 has x = 15.54 and y = 50.44
+ADD CONE
+ x = 19.05 and y = 36.57
+ADD CONE
+ x = 12.15 and y = 52.53
+ADD CONE
+ x = 17.46 and y = 40.21
+ADD CONE
+ x = 8.52 and y = 53.63
+ADD CONE
+ x = 15.76 and y = 43.53
+ADD CONE
+ x = 4.88 and y = 53.66
+seperate cone list
+Cone has x 19.05 and y 36.57
+Cone has x 12.15 and y 52.53
+Cone has x 17.46 and y 40.21
+Cone has x 8.52 and y 53.63
+Cone has x 15.76 and y 43.53
+Cone has x 4.88 and y 53.66
+LEFT
+Cone 0 has x = 19.05 and y = 36.57
+Cone 1 has x = 17.46 and y = 40.21
+Cone 2 has x = 15.76 and y = 43.53
+RIGHT
+Cone 0 has x = 12.15 and y = 52.53
+Cone 1 has x = 8.52 and y = 53.63
+Cone 2 has x = 4.88 and y = 53.66
+ADD CONE
+ x = 13.85 and y = 46.11
+ADD CONE
+ x = 1.4 and y = 52.64
+ADD CONE
+ x = 11.62 and y = 47.51
+ADD CONE
+ x = -1.93 and y = 50.85
+ADD CONE
+ x = 8.99 and y = 47.46
+ADD CONE
+ x = -5.14 and y = 48.6
+seperate cone list
+Cone has x 13.85 and y 46.11
+Cone has x 1.4 and y 52.64
+Cone has x 11.62 and y 47.51
+Cone has x -1.93 and y 50.85
+Cone has x 8.99 and y 47.46
+Cone has x -5.14 and y 48.6
+LEFT
+Cone 0 has x = 13.85 and y = 46.11
+Cone 1 has x = 11.62 and y = 47.51
+Cone 2 has x = 8.99 and y = 47.46
+RIGHT
+Cone 0 has x = 1.4 and y = 52.64
+Cone 1 has x = -1.93 and y = 50.85
+Cone 2 has x = -5.14 and y = 48.6
+ADD CONE
+ x = 6.07 and y = 46.26
+ADD CONE
+ x = -8.24 and y = 46.21
+ADD CONE
+ x = 3.04 and y = 44.4
+ADD CONE
+ x = -11.23 and y = 43.84
+ADD CONE
+ x = 0.06 and y = 42.36
+ADD CONE
+ x = -13.99 and y = 41.33
+seperate cone list
+Cone has x 6.07 and y 46.26
+Cone has x -8.24 and y 46.21
+Cone has x 3.04 and y 44.4
+Cone has x -11.23 and y 43.84
+Cone has x 0.06 and y 42.36
+Cone has x -13.99 and y 41.33
+LEFT
+Cone 0 has x = 6.07 and y = 46.26
+Cone 1 has x = 3.04 and y = 44.4
+Cone 2 has x = 0.06 and y = 42.36
+RIGHT
+Cone 0 has x = -8.24 and y = 46.21
+Cone 1 has x = -11.23 and y = 43.84
+Cone 2 has x = -13.99 and y = 41.33
+ADD CONE
+ x = -2.72 and y = 40.53
+ADD CONE
+ x = -16.41 and y = 38.48
+ADD CONE
+ x = -5.26 and y = 38.71
+ADD CONE
+ x = -18.33 and y = 35.14
+ADD CONE
+ x = -7.52 and y = 36.56
+ADD CONE
+ x = -19.39 and y = 31.5
+seperate cone list
+Cone has x -2.72 and y 40.53
+Cone has x -16.41 and y 38.48
+Cone has x -5.26 and y 38.71
+Cone has x -18.33 and y 35.14
+Cone has x -7.52 and y 36.56
+Cone has x -19.39 and y 31.5
+LEFT
+Cone 0 has x = -2.72 and y = 40.53
+Cone 1 has x = -5.26 and y = 38.71
+Cone 2 has x = -7.52 and y = 36.56
+RIGHT
+Cone 0 has x = -16.41 and y = 38.48
+Cone 1 has x = -18.33 and y = 35.14
+Cone 2 has x = -19.39 and y = 31.5
+ADD CONE
+ x = -9.41 and y = 33.85
+ADD CONE
+ x = -19.27 and y = 27.78
+ADD CONE
+ x = -10.45 and y = 30.82
+ADD CONE
+ x = -18 and y = 24.2
+ADD CONE
+ x = -10.1 and y = 27.86
+ADD CONE
+ x = -15.97 and y = 20.91
+seperate cone list
+Cone has x -9.41 and y 33.85
+Cone has x -19.27 and y 27.78
+Cone has x -10.45 and y 30.82
+Cone has x -18 and y 24.2
+Cone has x -10.1 and y 27.86
+Cone has x -15.97 and y 20.91
+LEFT
+Cone 0 has x = -9.41 and y = 33.85
+Cone 1 has x = -10.45 and y = 30.82
+Cone 2 has x = -10.1 and y = 27.86
+RIGHT
+Cone 0 has x = -19.27 and y = 27.78
+Cone 1 has x = -18 and y = 24.2
+Cone 2 has x = -15.97 and y = 20.91
+ADD CONE
+ x = -8.59 and y = 24.98
+ADD CONE
+ x = -13.49 and y = 18.01
+ADD CONE
+ x = -6.55 and y = 22.03
+ADD CONE
+ x = -10.67 and y = 15.49
+ADD CONE
+ x = -4.23 and y = 19.37
+ADD CONE
+ x = -7.64 and y = 13.34
+seperate cone list
+Cone has x -8.59 and y 24.98
+Cone has x -13.49 and y 18.01
+Cone has x -6.55 and y 22.03
+Cone has x -10.67 and y 15.49
+Cone has x -4.23 and y 19.37
+Cone has x -7.64 and y 13.34
+LEFT
+Cone 0 has x = -8.59 and y = 24.98
+Cone 1 has x = -6.55 and y = 22.03
+Cone 2 has x = -4.23 and y = 19.37
+RIGHT
+Cone 0 has x = -13.49 and y = 18.01
+Cone 1 has x = -10.67 and y = 15.49
+Cone 2 has x = -7.64 and y = 13.34
+ADD CONE
+ x = -1.56 and y = 17.82
+ADD CONE
+ x = -4.5 and y = 11.39
+ADD CONE
+ x = 1.5 and y = 18
+ADD CONE
+ x = -1.5 and y = 9
+Error, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty pathError, request for reference path no more centre-line path available. Returning empty path==16910== 
+==16910== Process terminating with default action of signal 2 (SIGINT)
+==16910==    at 0x4C366F8: memmove (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16910==    by 0x2A4E37: grad_phi_YJughRbFejFrBdIivUmE_f0.isra.2 (in /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est)
+==16910==    by 0x26345A: grad_cost_function_mpcc_optimizer (in /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est)
+==16910==    by 0x262970: icasadi_mpcc_optimizer::grad (in /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est)
+==16910==    by 0x2720E1: <optimization_engine::core::panoc::panoc_engine::PANOCEngine<GradientType,ConstraintType,CostType> as optimization_engine::core::AlgorithmEngine>::step (in /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est)
+==16910==    by 0x261AAB: <optimization_engine::core::panoc::panoc_optimizer::PANOCOptimizer<GradientType,ConstraintType,CostType> as optimization_engine::core::Optimizer>::solve (in /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est)
+==16910==    by 0x2608B4: optimization_engine::alm::alm_optimizer::AlmOptimizer<MappingAlm,MappingPm,ParametricGradientType,ParametricCostType,ConstraintsType,AlmSetC,LagrangeSetY>::solve (in /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est)
+==16910==    by 0x1E7199: mpcc_optimizer::solve (in /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est)
+==16910==    by 0x1E6655: mpcc_optimizer_solve (in /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib/bound_est/Bound_Est)
+==16910==    by 0x1E4F57: MPCController::solve() (mpccontroller.cpp:85)
+==16910==    by 0x1A3CC4: main (Bound_est_triang.cpp:321)
+==16910== 
+==16910== HEAP SUMMARY:
+==16910==     in use at exit: 85,685 bytes in 543 blocks
+==16910==   total heap usage: 308,119 allocs, 307,576 frees, 156,009,509 bytes allocated
+==16910== 
+==16910== LEAK SUMMARY:
+==16910==    definitely lost: 0 bytes in 0 blocks
+==16910==    indirectly lost: 0 bytes in 0 blocks
+==16910==      possibly lost: 0 bytes in 0 blocks
+==16910==    still reachable: 85,685 bytes in 543 blocks
+==16910==         suppressed: 0 bytes in 0 blocks
+==16910== Rerun with --leak-check=full to see details of leaked memory
+==16910== 
+==16910== For counts of detected and suppressed errors, rerun with: -v
+==16910== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -299,13 +299,16 @@ int main(int argc, char *argv[])
             if (keep_printing_time) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
         #endif
         //Update track - read-in data if available
-        for (int i = 0; i<3; i++)
+        int batch_size {3};
+        for (int i = 0; i<batch_size; i++)
         {
-            left_coords_index++,
-            right_coords_index++;
+            if (left_coords_index>=left_coords.size() || right_coords_index>=left_coords.size()) break;
             track->addCone(left_coords[left_coords_index].x, left_coords[left_coords_index].y , BoundPos::left);
             track->addCone(right_coords[right_coords_index].x, right_coords[right_coords_index].y , BoundPos::right);
+            left_coords_index++,
+            right_coords_index++;
         }
+        
         //BAG READ IN BLOCKING CALL
         /*
         *ros::NodeHandle cone_reader;
