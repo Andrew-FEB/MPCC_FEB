@@ -35,7 +35,7 @@ file2write = open(fn, 'a')
 for i in range(len(state_seq)):
     file2write.write(str(state_seq[i].x) + ", " + str(state_seq[i].y) + "\n")
 file2write.close()
-#TIMES
+# TIMES
 fn = 'times_N' + str(param.N) + '.txt'
 open(fn, 'w').close()
 file2write = open(fn, 'a')

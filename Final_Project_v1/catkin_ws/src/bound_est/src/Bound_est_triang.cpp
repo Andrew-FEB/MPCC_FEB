@@ -33,7 +33,7 @@ bool clockwise_track = false;
 #endif
 
 constexpr double time_step = 0.05;
-constexpr int pred_horizon = 40;
+constexpr int pred_horizon = 30;
 
 // void chatterCallback(const bound_est::ConeMap &m)
 // {
