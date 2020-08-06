@@ -29,7 +29,7 @@ bool counter_clockwise_track = false;
 bool clockwise_track = false;
 #if defined(DEBUG) || defined(TIME_LOG)
     bool reset_logs = true;
-    constexpr int DEBUG_LOOPS_TO_COMPLETE = 60;
+    constexpr int DEBUG_LOOPS_TO_COMPLETE = 350;
 #endif
 
 constexpr double time_step = 0.05;
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 
     // //Configure ros messages
     // rosbag::Bag cone_data;
-    // cone_data.open("/home/senne/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
+    // cone_data.open("/home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
     // rosbag::View view(cone_data);
     // std::vector<std::string> topics;
     // //topics.push_back(std::string("carpos")); //Testing topic, remove in final

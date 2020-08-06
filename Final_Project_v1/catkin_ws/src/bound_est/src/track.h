@@ -8,6 +8,7 @@
 #include <cmath>
 #include <math.h>
 #include <limits>
+#include <numeric>
 
 #include "cone.h"
 #include "car.h"
@@ -26,8 +27,8 @@ double constexpr TRACK_COMPLETE_CHECK_RADIUS = 7.5;
 int constexpr NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS = 5;
 int constexpr NUM_CENTRELINE_COORDS_BEFORE_CHECK_TRACK_COMPLETE = 10;
 int constexpr MIN_FRAMED_CONES_TO_PROCESS = 4;
-double constexpr TRACK_FRAME_LENGTH = 20;
-double constexpr TRACK_FRAME_WIDTH_DIV_2 = 7.0;
+double constexpr TRACK_FRAME_LENGTH = 30;
+double constexpr TRACK_FRAME_WIDTH_DIV_2 = 12.0;
 
 class Track
 {
@@ -39,7 +40,7 @@ public:
     std::vector<const Cone *> getNewCones();
     Car *getCar();
     friend std::ostream& operator<<(std::ostream& os, Track &track);
-    std::vector<MPC_targets> getReferencePath(const double &dist_between_points, const int &number_of_points);
+    std::vector<MPC_targets> getReferencePath(const std::vector<double> &distances);
     bool trackIsComplete();
     void processNextSection();
     bool carIsInsideTrack();
@@ -55,7 +56,7 @@ private:
     std::pair<std::vector<const Cone *>, std::vector<const Cone *>> seperateConeList(std::vector<std::unique_ptr<Cone>> &coneList);    //0 = left, 1 = right
     std::vector<std::unique_ptr<Cone>> extractConesInFrame();
     void rebalanceCones(std::vector<std::unique_ptr<Cone>> &framed_cones, std::vector<const Cone *> &boundary_cones, const unsigned long &number_to_remove);
-    std::pair<std::vector<Coord>, double> interpolateCentreCoordsDiscrete(const int &original_index, const Coord &start_point, const int &number_of_points, const double &distance);
+    std::vector<Coord> interpolateCentreCoordsDiscrete(const int &original_index, const Coord &start_point, const std::vector<double> &distances);
     std::vector<Pos> findBoundaryPointsAndSlopes(const std::vector<const Cone *> &cone_list, const std::vector<Coord> &coord_list);
     Coord getClosestPointOnLine (const Coord &a, const Coord &b, const Coord &p);
     Coord findEndGoal(const Coord &last_point, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists);

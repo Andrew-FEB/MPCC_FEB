@@ -1,14 +1,35 @@
-Log message for findFirstMidpoint() log data at Wed Aug  5 21:54:04 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 04:23:48 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
 Comparison  point x(-0.0927), y(13.0348)
-Vector of triangles of size 1 contains:
+Vector of triangles of size 2 contains:
 Triangle 1 with points A (x=-0.04, y=8.78, pos=right) B (x=-0.0927, y=13.0348, pos=undefined) and C (x=4.45, y=11.51, pos=left)
+Triangle 2 with points A (x=-0.0927, y=13.0348, pos=left) B (x=27.95, y=8.78, pos=left) and C (x=4.45, y=11.51, pos=left)
 
 Point identified as being point B on triangle 1
 Points A and C identified as not being on boundary, so this position selected
 Returned coordinate has coordinates x(2.205), y(10.145)
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findFirstMidpoint() log data at Thu Aug  6 04:23:58 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(19.915), y(-4.86)
+Vector of triangles of size 5 contains:
+Triangle 1 with points A (x=19.915, y=-4.86, pos=left) B (x=15.19, y=-5.87, pos=left) and C (x=16.98, y=-4.28, pos=left)
+Triangle 2 with points A (x=19.915, y=-4.86, pos=left) B (x=18.39, y=-11.58, pos=right) and C (x=15.19, y=-5.87, pos=left)
+Triangle 3 with points A (x=16.98, y=-4.28, pos=left) B (x=21.03, y=1.46, pos=left) and C (x=19.915, y=-4.86, pos=undefined)
+Triangle 4 with points A (x=21.03, y=1.46, pos=left) B (x=26.27, y=-1.52, pos=right) and C (x=19.915, y=-4.86, pos=undefined)
+Triangle 5 with points A (x=19.915, y=-4.86, pos=left) B (x=26.27, y=-1.52, pos=right) and C (x=18.39, y=-11.58, pos=right)
+
+Point identified as being point A on triangle 1
+Point identified as being point A on triangle 2
+Points B and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(16.79), y(-8.725)
 --------
 ///////////////////////////////////
 ///////////////////////////////////

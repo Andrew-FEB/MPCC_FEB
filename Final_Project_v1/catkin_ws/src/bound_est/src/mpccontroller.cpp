@@ -21,7 +21,10 @@ void MPCController::solve()
 
     // Obtain reference and track constraints
     auto dist = 4 * time_step;
-    auto params = track.getReferencePath(dist, prediction_horizon);
+    //TEST - DADA DELETE THIS
+    std::vector<double> distances(40, 0.15);
+    //ETEST
+    auto params = track.getReferencePath(distances);
     if (params.size()<=0)
     {
         std::cerr<<"Empty params list in MPCController::solve()"<<std::endl;
