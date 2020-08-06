@@ -1,4 +1,4 @@
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:52 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:19 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -17,7 +17,7 @@ Returned coordinate has coordinates x(3.8), y(10.435)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:55 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:22 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -35,7 +35,7 @@ Returned coordinate has coordinates x(8.23), y(0.34)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:55 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:23 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -54,7 +54,7 @@ Returned coordinate has coordinates x(12.805), y(-9.69)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:56 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:23 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -70,7 +70,7 @@ Returned coordinate has coordinates x(17.815), y(-7.375)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:56 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:24 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -87,7 +87,7 @@ Returned coordinate has coordinates x(23.32), y(-0.165)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:56 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:25 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -106,7 +106,7 @@ Returned coordinate has coordinates x(33.635), y(2.36)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:56 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:25 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -125,7 +125,7 @@ Returned coordinate has coordinates x(40.495), y(-7.595)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:56 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:25 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -144,7 +144,7 @@ Returned coordinate has coordinates x(46.46), y(-16.03)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:56 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:26 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -163,7 +163,7 @@ Returned coordinate has coordinates x(55.235), y(-19.195)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:56 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:27 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -179,7 +179,7 @@ Returned coordinate has coordinates x(63.255), y(-14.7)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:56 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:27 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -198,7 +198,7 @@ Returned coordinate has coordinates x(72.46), y(-6.885)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:57 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:28 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -214,7 +214,7 @@ Returned coordinate has coordinates x(74.86), y(1.48)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:57 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:28 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -229,7 +229,7 @@ Returned coordinate has coordinates x(70.445), y(9.105)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:57 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:29 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -245,7 +245,7 @@ Returned coordinate has coordinates x(61.83), y(17.045)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:57 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:30 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -261,7 +261,7 @@ Returned coordinate has coordinates x(57.555), y(27.335)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:57 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:30 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -277,7 +277,7 @@ Returned coordinate has coordinates x(52.955), y(38.025)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:57 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:31 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -293,7 +293,7 @@ Returned coordinate has coordinates x(45.245), y(38.915)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:57 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:32 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -308,7 +308,7 @@ Returned coordinate has coordinates x(37.565), y(33.38)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:57 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:32 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -328,7 +328,7 @@ Returned coordinate has coordinates x(26.43), y(29.325)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:58 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:33 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -346,7 +346,7 @@ Returned coordinate has coordinates x(20.74), y(38.3)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:58 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:34 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -365,7 +365,7 @@ Returned coordinate has coordinates x(13.955), y(48.03)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:58 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:34 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -382,7 +382,7 @@ Returned coordinate has coordinates x(5.195), y(50.05)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:58 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:35 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -400,7 +400,7 @@ Returned coordinate has coordinates x(-4.09), y(44.285)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:58 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:35 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -419,7 +419,7 @@ Returned coordinate has coordinates x(-11.965), y(37.52)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:58 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:36 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -435,7 +435,7 @@ Returned coordinate has coordinates x(-14.86), y(29.3)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findFirstMidpoint() log data at Thu Aug  6 19:31:58 2020
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:31:37 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -448,6 +448,25 @@ Point identified as being point A on triangle 1
 Point identified as being point B on triangle 2
 Points A and C identified as not being on boundary, so this position selected
 Returned coordinate has coordinates x(-10.02), y(20.02)
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findFirstMidpoint() log data at Thu Aug  6 17:32:03 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Comparison  point x(-3.03), y(14.605)
+Vector of triangles of size 4 contains:
+Triangle 1 with points A (x=0, y=0, pos=left) B (x=-3.03, y=14.605, pos=undefined) and C (x=3.59543e-38, y=5.9035e-96, pos=left)
+Triangle 2 with points A (x=-3.03, y=14.605, pos=left) B (x=1.33857e-152, y=5.448e+68, pos=right) and C (x=3.59543e-38, y=5.9035e-96, pos=left)
+Triangle 3 with points A (x=-3.03, y=14.605, pos=left) B (x=9.40191e-154, y=8.89487e+252, pos=right) and C (x=1.33857e-152, y=5.448e+68, pos=right)
+Triangle 4 with points A (x=-3.03, y=14.605, pos=left) B (x=1.39807e-152, y=1.0182e+277, pos=left) and C (x=9.40191e-154, y=8.89487e+252, pos=right)
+
+Point identified as being point B on triangle 1
+Point identified as being point A on triangle 2
+Points B and C identified as not being on boundary, so this position selected
+Returned coordinate has coordinates x(1.79772e-38), y(2.724e+68)
 --------
 ///////////////////////////////////
 ///////////////////////////////////

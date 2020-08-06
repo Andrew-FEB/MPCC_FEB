@@ -4,6 +4,6 @@ cd ./catkin_ws
 source ./devel/setup.bash
 catkin_make -DCMAKE_BUILD_TYPE=Debug
 sleep 1
-rosrun --prefix 'valgrind' bound_est Bound_Est ccw 2> temp_valgrind.txt
+rosrun --prefix 'valgrind --leak-check=full --track-origins=yes -v' bound_est Bound_Est ccw 2> temp_valgrind.txt
 
 

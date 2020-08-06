@@ -75,8 +75,7 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
     # Run simulation
     for k in range(simulation_steps):
         solver_status = mng.call(
-            np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right,
-                                    track_width],
+            np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right],
                             np.reshape(ref_list, 2 * param.N))), control_inputs)
         print("Parameters: " + str(
             np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right,

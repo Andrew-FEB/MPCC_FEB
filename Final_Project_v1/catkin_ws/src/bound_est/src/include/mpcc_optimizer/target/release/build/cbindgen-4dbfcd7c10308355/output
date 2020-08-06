@@ -1,1 +1,1 @@
-cargo:rerun-if-changed=/home/dm501/.cargo/registry/src/github.com-1ecc6299db9ec823/cbindgen-0.8.7/tests/rust
+cargo:rerun-if-changed=/home/senne/.cargo/registry/src/github.com-1ecc6299db9ec823/cbindgen-0.8.7/tests/rust

@@ -245,3 +245,40 @@ def plot_solve_time(solve_time_seq, exit_status_seq):
     plt.xlabel('Time step')
     plt.title('Solve time at each iteration')
     plt.show()
+
+
+def plot_tracks_from_files(track_x, track_y, left_x, left_y, right_x, right_y):
+    N45 = open('N45.txt', 'r')
+    lines = N45.readlines()
+    N45.close()
+    x_n45 = [float(l.split()[0].replace(',', '')) for l in lines]
+    y_n45 = [float(l.split()[1].replace(',', '')) for l in lines]
+
+    N40 = open('N40.txt', 'r')
+    lines = N40.readlines()
+    N40.close()
+    x_n40 = [float(l.split()[0].replace(',', '')) for l in lines]
+    y_n40 = [float(l.split()[1].replace(',', '')) for l in lines]
+
+    N30 = open('N30.txt', 'r')
+    lines = N30.readlines()
+    N30.close()
+    x_n30 = [float(l.split()[0].replace(',', '')) for l in lines]
+    y_n30 = [float(l.split()[1].replace(',', '')) for l in lines]
+
+    fig, ax = plt.subplots(1, 1)
+
+    ax.plot(track_x, track_y, '.y', label="Complete track", markersize=1)
+    ax.plot(left_x, left_y, '--g', label="Complete boundaries", linewidth=1)
+    ax.plot(right_x, right_y, '--g', linewidth=1)
+    ax.plot(x_n45, y_n45, '-r', label="N45", markersize=2)
+    ax.plot(x_n40, y_n40, '-b', label="N40", markersize=2)
+    ax.plot(x_n30, y_n30, '-k', label="N30", markersize=2)
+
+    plt.axis('equal')
+    plt.grid()
+    plt.ylabel('Y position')
+    plt.xlabel('X position')
+    plt.title('Track')
+    plt.legend(loc='best', borderaxespad=0.)
+    plt.show()

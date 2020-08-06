@@ -1,4 +1,4 @@
-Log message for Path Analysis log data at Thu Aug  6 19:31:53 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:20 2020
 -----------------------------------
 -----------------------------------
 Beginning analysis of following list of paths:
@@ -157,7 +157,7 @@ Path 3 has score 31.2438
 Path 4 has score 576.014
 Best index selected to be 2 which equates to path 3. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:55 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:23 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -272,16 +272,21 @@ Check for repeat nodes = 0
 Total calculated score: 1.57772e-30 + 0.0489664 + 0 + 20 + 0 + 2.09126 + 0 = 22.1402
 --------
 List of scores:
-Path 1 has score 438.253
-Path 2 has score 1768.43
-Path 3 has score 3772.58
-Path 4 has score 5333.93
-Path 5 has score 3890.99
-Path 6 has score 1890.05
-Path 7 has score 22.1402
-Best index selected to be 6 which equates to path 7. Returning analysis to track.
+Path 1 has score 281.272
+Path 2 has score 118.306
+Path 3 has score 424.61
+Path 4 has score 219.066
+Path 5 has score 960.033
+Path 6 has score 525.587
+Path 7 has score 1859.28
+Path 8 has score 2301.8
+Path 9 has score 3544.37
+Path 10 has score 2408.9
+Path 11 has score 1967.93
+Path 12 has score 138.914
+Best index selected to be 1 which equates to path 2. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:56 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:23 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -485,7 +490,7 @@ Path 11 has score 5448.11
 Path 12 has score 4918.73
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:56 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:24 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -666,20 +671,23 @@ Check for repeat nodes = 100
 Total calculated score: 0.0415127 + 0.0926098 + 851.312 + 8 + 0 + 4.92078 + 100 = 964.367
 --------
 List of scores:
-Path 1 has score 4122.96
-Path 2 has score 6840.26
-Path 3 has score 3665.13
-Path 4 has score 6949.54
-Path 5 has score 2107.56
-Path 6 has score 862.204
-Path 7 has score 2208.89
-Path 8 has score 229.69
-Path 9 has score 16.5551
-Path 10 has score 330.538
-Path 11 has score 964.367
-Best index selected to be 8 which equates to path 9. Returning analysis to track.
+Path 1 has score 2921.89
+Path 2 has score 1735.93
+Path 3 has score 994.919
+Path 4 has score 336.016
+Path 5 has score 1098.78
+Path 6 has score 23.8081
+Path 7 has score 440.736
+Path 8 has score 1841.55
+Path 9 has score 4171.59
+Path 10 has score 2785.56
+Path 11 has score 4288.4
+Path 12 has score 6097.85
+Path 13 has score 6092.81
+Path 14 has score 4176.35
+Best index selected to be 5 which equates to path 6. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:56 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:25 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -792,16 +800,16 @@ Check for repeat nodes = 100
 Total calculated score: 26.8476 + 6.2651 + 2811.68 + 20 + 0 + 1.34671 + 100 = 2966.14
 --------
 List of scores:
-Path 1 has score 1952.7
-Path 2 has score 545.577
-Path 3 has score 43.8867
-Path 4 has score 657.563
-Path 5 has score 2835.94
-Path 6 has score 948.176
-Path 7 has score 2966.14
-Best index selected to be 2 which equates to path 3. Returning analysis to track.
+Path 1 has score 309.263
+Path 2 has score 220.842
+Path 3 has score 1055.3
+Path 4 has score 334.649
+Path 5 has score 567.928
+Path 6 has score 806.343
+Path 7 has score 696.674
+Best index selected to be 1 which equates to path 2. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:56 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:25 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -890,7 +898,7 @@ Path 4 has score 1505.05
 Path 5 has score 551.227
 Best index selected to be 0 which equates to path 1. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:56 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:26 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -1241,21 +1249,29 @@ Check for repeat nodes = 100
 Total calculated score: 3.34671 + 0.34727 + 789.452 + 16 + 0 + 2.69834 + 100 = 911.845
 --------
 List of scores:
-Path 1 has score 1251.46
-Path 2 has score 1866.49
-Path 3 has score 2757.1
-Path 4 has score 2778.29
-Path 5 has score 4417.49
-Path 6 has score 2906.99
-Path 7 has score 1915.19
-Path 8 has score 726.11
-Path 9 has score 804.519
-Path 10 has score 831.842
-Path 11 has score 22.0392
-Path 12 has score 911.845
-Best index selected to be 10 which equates to path 11. Returning analysis to track.
+Path 1 has score 1358.97
+Path 2 has score 1868.27
+Path 3 has score 3351.26
+Path 4 has score 3375.82
+Path 5 has score 5155.98
+Path 6 has score 3505.9
+Path 7 has score 1924.68
+Path 8 has score 1076.02
+Path 9 has score 1063.34
+Path 10 has score 1177.3
+Path 11 has score 266.491
+Path 12 has score 1164.24
+Path 13 has score 27.2804
+Path 14 has score 369.183
+Best index selected to be 12 which equates to path 13. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:56 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:26 2020
+-----------------------------------
+-----------------------------------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Path Analysis log data at Thu Aug  6 17:31:27 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -1379,7 +1395,7 @@ Path 6 has score 469.586
 Path 7 has score 4953.72
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:56 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:27 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -1536,7 +1552,7 @@ Path 8 has score 25.4462
 Path 9 has score 484.491
 Best index selected to be 7 which equates to path 8. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:57 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:28 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -1707,7 +1723,7 @@ Path 9 has score 6307.14
 Path 10 has score 6109.43
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:57 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:28 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -1915,7 +1931,7 @@ Path 11 has score 7993.32
 Path 12 has score 8027.77
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:57 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:29 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -2086,7 +2102,7 @@ Path 9 has score 6687.46
 Path 10 has score 6006.72
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:57 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:30 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -2227,7 +2243,7 @@ Path 7 has score 7328.37
 Path 8 has score 7435.27
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:57 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:30 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -2384,7 +2400,7 @@ Path 8 has score 5972.48
 Path 9 has score 3509.68
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:57 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:31 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -2588,7 +2604,7 @@ Path 11 has score 6799.65
 Path 12 has score 5481.02
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:57 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:32 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -2796,7 +2812,7 @@ Path 11 has score 9107.7
 Path 12 has score 8960.64
 Best index selected to be 5 which equates to path 6. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:57 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:33 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -2951,7 +2967,7 @@ Path 8 has score 4512.52
 Path 9 has score 2384.13
 Best index selected to be 2 which equates to path 3. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:58 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:33 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -3040,7 +3056,7 @@ Path 4 has score 382.67
 Path 5 has score 871.364
 Best index selected to be 0 which equates to path 1. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:58 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:34 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -3186,7 +3202,7 @@ Path 7 has score 1510.51
 Path 8 has score 478.702
 Best index selected to be 2 which equates to path 3. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:58 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:34 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -3345,19 +3361,16 @@ Check for repeat nodes = 0
 Total calculated score: 24.6181 + 8.86611 + 1290.89 + 13.3333 + 0 + 1.02036 + 0 = 1338.73
 --------
 List of scores:
-Path 1 has score 796.862
-Path 2 has score 403.881
-Path 3 has score 652.699
-Path 4 has score 510.592
-Path 5 has score 20.6408
-Path 6 has score 757.764
-Path 7 has score 1301.01
-Path 8 has score 2896.44
-Path 9 has score 2907.97
-Path 10 has score 1338.73
-Best index selected to be 4 which equates to path 5. Returning analysis to track.
+Path 1 has score 301.743
+Path 2 has score 193.924
+Path 3 has score 825.484
+Path 4 has score 301.336
+Path 5 has score 1201.9
+Path 6 has score 2787.19
+Path 7 has score 1326.71
+Best index selected to be 1 which equates to path 2. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:58 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:35 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -3387,51 +3400,51 @@ Scores gathered as follows:
 For path 1
 Nearest classified cone contacts = 1.26218e-29
 Nearest unclassified cone contacts = 0
-Distance to end goal = 1421.92
-Classified cones on each side = 20
+Distance to end goal = 1389.05
+Classified cones on each side = 0
 Unclassified cones on each side = 0
 Advancing to end goal throughout path = 0
 Check for repeat nodes = 0
-Total calculated score: 1.26218e-29 + 0 + 1421.92 + 20 + 0 + 0 + 0 = 1441.92
+Total calculated score: 7.88861e-31 + 0 + 1389.05 + 0 + 0 + 0 + 0 = 1389.05
 --------
 For path 2
-Nearest classified cone contacts = 1.28665
-Nearest unclassified cone contacts = 0.117894
-Distance to end goal = 347.943
-Classified cones on each side = 20
+Nearest classified cone contacts = 1.21445
+Nearest unclassified cone contacts = 0.112737
+Distance to end goal = 349.473
+Classified cones on each side = 10
 Unclassified cones on each side = 0
 Advancing to end goal throughout path = 1.8155
 Check for repeat nodes = 0
-Total calculated score: 1.28665 + 0.117894 + 347.943 + 20 + 0 + 1.8155 + 0 = 371.163
+Total calculated score: 1.21445 + 0.112737 + 349.473 + 10 + 0 + 1.7253 + 0 = 362.525
 --------
 For path 3
 Nearest classified cone contacts = 2.93519
 Nearest unclassified cone contacts = 0.148594
 Distance to end goal = 0
-Classified cones on each side = 20
+Classified cones on each side = 13.3333
 Unclassified cones on each side = 0
 Advancing to end goal throughout path = 4.73974
 Check for repeat nodes = 0
-Total calculated score: 2.93519 + 0.148594 + 0 + 20 + 0 + 4.73974 + 0 = 27.8235
+Total calculated score: 2.53873 + 0.177119 + 0 + 13.3333 + 0 + 4.63017 + 0 = 20.6794
 --------
 For path 4
-Nearest classified cone contacts = 2.84472
-Nearest unclassified cone contacts = 0.163945
-Distance to end goal = 347.943
-Classified cones on each side = 20
+Nearest classified cone contacts = 2.51127
+Nearest unclassified cone contacts = 0.20931
+Distance to end goal = 349.473
+Classified cones on each side = 15
 Unclassified cones on each side = 0
 Advancing to end goal throughout path = 3.55481
 Check for repeat nodes = 100
-Total calculated score: 2.84472 + 0.163945 + 347.943 + 20 + 0 + 3.55481 + 100 = 474.506
+Total calculated score: 2.51127 + 0.20931 + 349.473 + 15 + 0 + 3.47263 + 100 = 470.666
 --------
 List of scores:
-Path 1 has score 1441.92
-Path 2 has score 371.163
-Path 3 has score 27.8235
-Path 4 has score 474.506
+Path 1 has score 1389.05
+Path 2 has score 362.525
+Path 3 has score 20.6794
+Path 4 has score 470.666
 Best index selected to be 2 which equates to path 3. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:58 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:36 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -3588,7 +3601,7 @@ Path 8 has score 26.0404
 Path 9 has score 484.255
 Best index selected to be 7 which equates to path 8. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:58 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:36 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -3759,7 +3772,7 @@ Path 9 has score 6625.3
 Path 10 has score 5396.78
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
-Log message for Path Analysis log data at Thu Aug  6 19:31:58 2020
+Log message for Path Analysis log data at Thu Aug  6 17:31:37 2020
 -----------------------------------
 -----------------------------------
 ///////////////////////////////////
@@ -3916,3 +3929,9 @@ Path 8 has score 7744.37
 Path 9 has score 6316.3
 Best index selected to be 4 which equates to path 5. Returning analysis to track.
 --------
+Log message for Path Analysis log data at Thu Aug  6 17:32:03 2020
+-----------------------------------
+-----------------------------------
+///////////////////////////////////
+///////////////////////////////////
+
