@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-08-05 22:17:13.264076
+// Generated at: 2020-08-06 09:08:51.473096
 //
 
 use icasadi_mpcc_optimizer;

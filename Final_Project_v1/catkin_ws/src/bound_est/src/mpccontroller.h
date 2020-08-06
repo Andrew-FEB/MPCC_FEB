@@ -1,12 +1,12 @@
 /* 
- * File:   Simulator.h
+ * File:   MPCController.h
  * Author: Darina Abaffyova
  *
  * Created on April 6, 2020, 12:58 PM
  */
 
-#ifndef SIMULATOR_H
-#define SIMULATOR_H
+#ifndef MPCCONTROLLER_H
+#define MPCCONTROLLER_H
 
 #include <vector>
 #include <tuple>
@@ -24,8 +24,6 @@
 
 class MPCController {
 public:
-    MPCController(std::shared_ptr<Visualisation> vis, Track & t);
-    MPCController(int ph, double dt, Track & t);
     MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis, Track & t);
     void solve();
     
@@ -38,7 +36,7 @@ private:
     double initial_guess[MPCC_OPTIMIZER_NUM_DECISION_VARIABLES] = {0};
     std::shared_ptr<Visualisation> visualisation = nullptr;
     Track & track;
-    
+    std::vector<double> distances;
 };
 
-#endif /* SIMULATOR_H */
+#endif /* MPCCONTROLLER_H */

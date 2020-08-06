@@ -11,7 +11,7 @@
 //! This file is part of OptimizationEngine
 //! (see https://alphaville.github.io/optimization-engine/)
 //!
-//! Generated at: 2020-08-05 21:39:40.897464
+//! Generated at: 2020-08-06 10:41:09.195796
 //!
 
 // #![no_std]

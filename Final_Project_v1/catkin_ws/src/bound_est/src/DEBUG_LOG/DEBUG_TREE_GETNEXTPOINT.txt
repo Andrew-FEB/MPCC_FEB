@@ -1,4 +1,4 @@
-Log message for Tree getNextUnexploredPoint() log data at Thu Aug  6 04:23:48 2020
+Log message for Tree getNextUnexploredPoint() log data at Thu Aug  6 10:51:58 2020
 -----------------------------------
 -----------------------------------
 Next Unexplored point requested
@@ -842,7 +842,7 @@ No valid points found and nullptr returned
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree getNextUnexploredPoint() log data at Thu Aug  6 04:23:58 2020
+Log message for Tree getNextUnexploredPoint() log data at Thu Aug  6 10:52:09 2020
 -----------------------------------
 -----------------------------------
 Next Unexplored point requested
@@ -866,6 +866,249 @@ Tree at this point has size: 3
 Node with position: 16.79, -8.725, a checked status of 1 and a parent with pos at: Parent is nullptr!
 Node with position: 19.1525, -8.22, a checked status of 1 and a parent with pos at: 16.79, -8.725
 Node with position: 14.59, -10.425, a checked status of 1 and a parent with pos at: 16.79, -8.725
+
+No valid points found and nullptr returned
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Tree getNextUnexploredPoint() log data at Thu Aug  6 10:52:19 2020
+-----------------------------------
+-----------------------------------
+Next Unexplored point requested
+Tree at this point has size: 2
+Node with position: 26.135, 2.22, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 30.925, 3.735, a checked status of 0 and a parent with pos at: 26.135, 2.22
+
+Next point selected to be checked has position x(30.925), y(3.735)
+--------
+Next Unexplored point requested
+Tree at this point has size: 3
+Node with position: 26.135, 2.22, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 26.135, 2.22
+Node with position: 32.11, 2.585, a checked status of 0 and a parent with pos at: 30.925, 3.735
+
+Next point selected to be checked has position x(32.11), y(2.585)
+--------
+Next Unexplored point requested
+Tree at this point has size: 5
+Node with position: 26.135, 2.22, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 26.135, 2.22
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 30.925, 3.735
+Node with position: 33.48, 2.25, a checked status of 0 and a parent with pos at: 32.11, 2.585
+Node with position: 30.925, 3.735, a checked status of 0 and a parent with pos at: 32.11, 2.585
+
+Next point selected to be checked has position x(33.48), y(2.25)
+--------
+Next Unexplored point requested
+Tree at this point has size: 7
+Node with position: 26.135, 2.22, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 26.135, 2.22
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 30.925, 3.735
+Node with position: 33.48, 2.25, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 30.925, 3.735, a checked status of 0 and a parent with pos at: 32.11, 2.585
+Node with position: 32.11, 2.585, a checked status of 0 and a parent with pos at: 33.48, 2.25
+Node with position: 34.81, 1.11, a checked status of 0 and a parent with pos at: 33.48, 2.25
+
+Next point selected to be checked has position x(30.925), y(3.735)
+--------
+Next Unexplored point requested
+Tree at this point has size: 7
+Node with position: 26.135, 2.22, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 26.135, 2.22
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 30.925, 3.735
+Node with position: 33.48, 2.25, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 32.11, 2.585, a checked status of 0 and a parent with pos at: 33.48, 2.25
+Node with position: 34.81, 1.11, a checked status of 0 and a parent with pos at: 33.48, 2.25
+
+Next point selected to be checked has position x(32.11), y(2.585)
+--------
+Next Unexplored point requested
+Tree at this point has size: 7
+Node with position: 26.135, 2.22, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 26.135, 2.22
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 30.925, 3.735
+Node with position: 33.48, 2.25, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 33.48, 2.25
+Node with position: 34.81, 1.11, a checked status of 0 and a parent with pos at: 33.48, 2.25
+
+Next point selected to be checked has position x(34.81), y(1.11)
+--------
+Next Unexplored point requested
+Tree at this point has size: 8
+Node with position: 26.135, 2.22, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 26.135, 2.22
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 30.925, 3.735
+Node with position: 33.48, 2.25, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 33.48, 2.25
+Node with position: 34.81, 1.11, a checked status of 1 and a parent with pos at: 33.48, 2.25
+Node with position: 33.48, 2.25, a checked status of 0 and a parent with pos at: 34.81, 1.11
+
+Next point selected to be checked has position x(33.48), y(2.25)
+--------
+Next Unexplored point requested
+Tree at this point has size: 8
+Node with position: 26.135, 2.22, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 26.135, 2.22
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 30.925, 3.735
+Node with position: 33.48, 2.25, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 30.925, 3.735, a checked status of 1 and a parent with pos at: 32.11, 2.585
+Node with position: 32.11, 2.585, a checked status of 1 and a parent with pos at: 33.48, 2.25
+Node with position: 34.81, 1.11, a checked status of 1 and a parent with pos at: 33.48, 2.25
+Node with position: 33.48, 2.25, a checked status of 1 and a parent with pos at: 34.81, 1.11
+
+No valid points found and nullptr returned
+--------
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for Tree getNextUnexploredPoint() log data at Thu Aug  6 10:52:28 2020
+-----------------------------------
+-----------------------------------
+Next Unexplored point requested
+Tree at this point has size: 3
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 0 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 0 and a parent with pos at: 39.12, -5.36
+
+Next point selected to be checked has position x(35.895), y(-2.68)
+--------
+Next Unexplored point requested
+Tree at this point has size: 4
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 0 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 0 and a parent with pos at: 35.895, -2.68
+
+Next point selected to be checked has position x(40.325), y(-7.315)
+--------
+Next Unexplored point requested
+Tree at this point has size: 5
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 0 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 0 and a parent with pos at: 40.325, -7.315
+
+Next point selected to be checked has position x(31.27), y(0.365)
+--------
+Next Unexplored point requested
+Tree at this point has size: 7
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 0 and a parent with pos at: 40.325, -7.315
+Node with position: 32.475, -1.59, a checked status of 0 and a parent with pos at: 31.27, 0.365
+Node with position: 35.895, -2.68, a checked status of 0 and a parent with pos at: 31.27, 0.365
+
+Next point selected to be checked has position x(41.44), y(-9.275)
+--------
+Next Unexplored point requested
+Tree at this point has size: 8
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 1 and a parent with pos at: 40.325, -7.315
+Node with position: 32.475, -1.59, a checked status of 0 and a parent with pos at: 31.27, 0.365
+Node with position: 35.895, -2.68, a checked status of 0 and a parent with pos at: 31.27, 0.365
+Node with position: 40.325, -7.315, a checked status of 0 and a parent with pos at: 41.44, -9.275
+
+Next point selected to be checked has position x(32.475), y(-1.59)
+--------
+Next Unexplored point requested
+Tree at this point has size: 10
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 1 and a parent with pos at: 40.325, -7.315
+Node with position: 32.475, -1.59, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 35.895, -2.68, a checked status of 0 and a parent with pos at: 31.27, 0.365
+Node with position: 40.325, -7.315, a checked status of 0 and a parent with pos at: 41.44, -9.275
+Node with position: 31.27, 0.365, a checked status of 0 and a parent with pos at: 32.475, -1.59
+Node with position: 33.59, -3.55, a checked status of 0 and a parent with pos at: 32.475, -1.59
+
+Next point selected to be checked has position x(35.895), y(-2.68)
+--------
+Next Unexplored point requested
+Tree at this point has size: 10
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 1 and a parent with pos at: 40.325, -7.315
+Node with position: 32.475, -1.59, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 40.325, -7.315, a checked status of 0 and a parent with pos at: 41.44, -9.275
+Node with position: 31.27, 0.365, a checked status of 0 and a parent with pos at: 32.475, -1.59
+Node with position: 33.59, -3.55, a checked status of 0 and a parent with pos at: 32.475, -1.59
+
+Next point selected to be checked has position x(40.325), y(-7.315)
+--------
+Next Unexplored point requested
+Tree at this point has size: 10
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 1 and a parent with pos at: 40.325, -7.315
+Node with position: 32.475, -1.59, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 41.44, -9.275
+Node with position: 31.27, 0.365, a checked status of 0 and a parent with pos at: 32.475, -1.59
+Node with position: 33.59, -3.55, a checked status of 0 and a parent with pos at: 32.475, -1.59
+
+Next point selected to be checked has position x(31.27), y(0.365)
+--------
+Next Unexplored point requested
+Tree at this point has size: 10
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 1 and a parent with pos at: 40.325, -7.315
+Node with position: 32.475, -1.59, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 41.44, -9.275
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 32.475, -1.59
+Node with position: 33.59, -3.55, a checked status of 0 and a parent with pos at: 32.475, -1.59
+
+Next point selected to be checked has position x(33.59), y(-3.55)
+--------
+Next Unexplored point requested
+Tree at this point has size: 11
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 1 and a parent with pos at: 40.325, -7.315
+Node with position: 32.475, -1.59, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 41.44, -9.275
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 32.475, -1.59
+Node with position: 33.59, -3.55, a checked status of 1 and a parent with pos at: 32.475, -1.59
+Node with position: 32.475, -1.59, a checked status of 0 and a parent with pos at: 33.59, -3.55
+
+Next point selected to be checked has position x(32.475), y(-1.59)
+--------
+Next Unexplored point requested
+Tree at this point has size: 11
+Node with position: 39.12, -5.36, a checked status of 1 and a parent with pos at: Parent is nullptr!
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 39.12, -5.36
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 35.895, -2.68
+Node with position: 41.44, -9.275, a checked status of 1 and a parent with pos at: 40.325, -7.315
+Node with position: 32.475, -1.59, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 35.895, -2.68, a checked status of 1 and a parent with pos at: 31.27, 0.365
+Node with position: 40.325, -7.315, a checked status of 1 and a parent with pos at: 41.44, -9.275
+Node with position: 31.27, 0.365, a checked status of 1 and a parent with pos at: 32.475, -1.59
+Node with position: 33.59, -3.55, a checked status of 1 and a parent with pos at: 32.475, -1.59
+Node with position: 32.475, -1.59, a checked status of 1 and a parent with pos at: 33.59, -3.55
 
 No valid points found and nullptr returned
 --------

@@ -7,10 +7,17 @@
 
 #include "mpccontroller.h"
 
-MPCController::MPCController(std::shared_ptr<Visualisation> vis, Track & t) : visualisation(vis), track(t) {}
-MPCController::MPCController(int ph, double dt, Track & t) : prediction_horizon(ph), time_step(dt), track(t) {}
 MPCController::MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis, Track & t) :
-        prediction_horizon(ph), time_step(dt), visualisation(vis), track(t) {}
+        prediction_horizon(ph), time_step(dt), visualisation(vis), track(t) {
+            // Populate the vector of distances
+            std::vector<double> dists(prediction_horizon);
+            auto d = time_step * 3.5;  // 3.5 = max velocity
+            for (int i = 0; i < prediction_horizon; i++) {
+                dists[i] = d + pow(time_step, 2) * 2;  // 2 = max acceleration
+                d = dists[i];
+            }
+            distances = dists;
+        }
 
 void MPCController::solve()
 {
@@ -20,13 +27,8 @@ void MPCController::solve()
     auto vel = car->getVelocity();
 
     // Obtain reference and track constraints
-    auto dist = 4 * time_step;
-    //TEST - DADA DELETE THIS
-    std::vector<double> distances(40, 0.15);
-    //ETEST
     auto params = track.getReferencePath(distances);
-    if (params.size()<=0)
-    {
+    if (params.size()<=0) {
         std::cerr<<"Empty params list in MPCController::solve()"<<std::endl;
         return;
     }
@@ -34,7 +36,7 @@ void MPCController::solve()
     /* parameters */
     // Current state (=4) + Boundaries (Prediction Horizon * (Slopes(=2) + Intercepts(=2) + Width(=1))
     // + Reference Line (Prediction Horizon * Reference Point(=2))
-    double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {pos.p.x, pos.p.y, vel.omega, vel.vx};
+    double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {pos.p.x, pos.p.y, pos.phi, vel.vx};
     // Arrange the reference path into the parameters array such that it fits the solver requirements
     auto param = params[int(prediction_horizon/2)];
     p[4] = param.left_boundary.phi; // left slope
@@ -61,7 +63,7 @@ void MPCController::solve()
     }
 
     /* initial penalty */
-    double initPenalty = 1.0;
+    double init_penalty = 15.0;
 
     /* initial lagrange mult. */
     double y[MPCC_OPTIMIZER_N1] = {0.0};
@@ -85,7 +87,7 @@ void MPCController::solve()
     mpcc_optimizerCache *cache = mpcc_optimizer_new();
 
     /* solve */
-    mpcc_optimizerSolverStatus status = mpcc_optimizer_solve(cache, u, p, y, &initPenalty);
+    mpcc_optimizerSolverStatus status = mpcc_optimizer_solve(cache, u, p, y, &init_penalty);
 
     // Deal with failed solution
     switch (status.exit_status)

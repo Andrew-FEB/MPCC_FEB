@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 
     // //Configure ros messages
     // rosbag::Bag cone_data;
-    // cone_data.open("/home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
+    // cone_data.open("/home/senne/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
     // rosbag::View view(cone_data);
     // std::vector<std::string> topics;
     // //topics.push_back(std::string("carpos")); //Testing topic, remove in final
@@ -333,7 +333,7 @@ int main(int argc, char *argv[])
             loops_completed++;
         #endif
         #ifdef DEBUG_SLOW
-            usleep(50000);
+            usleep(100000);
             std::cout<<"Loops completed: "<<loops_completed<<std::endl;
         #endif
 

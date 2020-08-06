@@ -103,10 +103,10 @@ def generate_racing_track(num_steps):
     # y = np.array([10, -7, -3,  2,  5,  0, -9, 10, 14, 27, 19, 29, 18])
     # xl = np.array([1.5, 10, 19, 27, 32, 40, 46, 58, 48, 33, 17, 11, -1])
     # xr = np.array([-1.5, 10, 19, 27, 32, 38, 44, 62, 48, 33, 17, 13, -7])
-    x = np.array([0,   10, 19, 27,  30,  34.37, 42.59, 48.03, 50, 48.03, 42.59, 39, 33, 17, 12,  5.63, -2.59,  -8.03, -10,  -8.03,  -2.59])
+    x = np.array([0,   10, 19, 27,  30,  34.37, 42.59, 48.03, 50, 48.03, 42.59, 39, 33, 19, 12,  5.63, -2.59,  -8.03, -10,  -8.03,  -2.59])
     y = np.array([9,  -7,  3, -5, -10, -13.75, -9.63, -4.95,  0,  4.95,  9.63, 16, 27, 19, 29, 33.75, 29.63,  24.95,  20,  15.05,  10.37])
-    xl = np.array([0,  10, 19, 27,  30,  32.31, 40.04, 45.15, 47, 45.15, 40.04, 38, 33, 17, 12,  7.69, -0.04,  -5.15,  -7,  -5.15,  -0.04])
-    xr = np.array([0, 10, 19, 27,  30,  36.44, 45.15, 50.91, 53, 50.91, 45.15, 40, 33, 17, 12,  3.56, -5.15, -10.91, -13, -10.91,  -5.15])
+    xl = np.array([0,  10, 19, 27,  30,  32.31, 40.04, 45.15, 47, 45.15, 40.04, 38, 33, 19, 12,  7.69, -0.04,  -5.15,  -7,  -5.15,  -0.04])
+    xr = np.array([0, 10, 19, 27,  30,  36.44, 45.15, 50.91, 53, 50.91, 45.15, 40, 33, 19, 12,  3.56, -5.15, -10.91, -13, -10.91,  -5.15])
     # x = np.array([1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 25, 27, 29, 31, 33, 35, 37, 39])
     # y = np.array([0, 0, 0, 0, 0,  0,  0,  0,  0,  0, 10, 10, 10, 10, 10, 10, 10, 10])
     # xl = x
@@ -191,14 +191,14 @@ def generate_racing_track(num_steps):
     #     y_prev = yt
 
     # plot the track
-    # fig, ax = plt.subplots(1, 1)
-    # ax.plot(xi, yi, '-r', markersize=1, label="Reference line")
-    # ax.plot(x, y, 'xr', markersize=15)
-    # ax.plot(xl, yl, '.b', markersize=1, label="Track boundaries")
-    # ax.plot(xr, yr, '.y', markersize=1)
-    # plt.grid()
-    # plt.legend()
-    # plt.show()
+    fig, ax = plt.subplots(1, 1)
+    ax.plot(xi, yi, '-r', markersize=1, label="Reference line")
+    ax.plot(x, y, 'xr', markersize=15)
+    ax.plot(xl, yl, '.b', markersize=1, label="Track boundaries")
+    ax.plot(xr, yr, '.y', markersize=1)
+    plt.grid()
+    plt.legend()
+    plt.show()
 
     # Print to be used in C++ with BE
     # print("//LEFT")
