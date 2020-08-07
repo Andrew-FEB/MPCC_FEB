@@ -215,7 +215,7 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
                      + "\nTrack width: " + str(round(track_widths[i], 3)))
         plt.draw()
         plt.pause(1e-17)
-        time.sleep(0.000001)
+        time.sleep(1e-7)
 
     plt.show()
 
@@ -248,37 +248,130 @@ def plot_solve_time(solve_time_seq, exit_status_seq):
 
 
 def plot_tracks_from_files(track_x, track_y, left_x, left_y, right_x, right_y):
-    N45 = open('N45.txt', 'r')
-    lines = N45.readlines()
-    N45.close()
-    x_n45 = [float(l.split()[0].replace(',', '')) for l in lines]
-    y_n45 = [float(l.split()[1].replace(',', '')) for l in lines]
-
-    N40 = open('N40.txt', 'r')
+    N40 = open('N40tew0.05.txt', 'r')
     lines = N40.readlines()
     N40.close()
     x_n40 = [float(l.split()[0].replace(',', '')) for l in lines]
     y_n40 = [float(l.split()[1].replace(',', '')) for l in lines]
 
-    N30 = open('N30.txt', 'r')
+    N30 = open('N30tew0.05.txt', 'r')
     lines = N30.readlines()
     N30.close()
     x_n30 = [float(l.split()[0].replace(',', '')) for l in lines]
     y_n30 = [float(l.split()[1].replace(',', '')) for l in lines]
+
+    N20 = open('N20tew0.05.txt', 'r')
+    lines = N20.readlines()
+    N20.close()
+    x_n20 = [float(l.split()[0].replace(',', '')) for l in lines]
+    y_n20 = [float(l.split()[1].replace(',', '')) for l in lines]
 
     fig, ax = plt.subplots(1, 1)
 
     ax.plot(track_x, track_y, '.y', label="Complete track", markersize=1)
     ax.plot(left_x, left_y, '--g', label="Complete boundaries", linewidth=1)
     ax.plot(right_x, right_y, '--g', linewidth=1)
-    ax.plot(x_n45, y_n45, '-r', label="N45", markersize=2)
-    ax.plot(x_n40, y_n40, '-b', label="N40", markersize=2)
-    ax.plot(x_n30, y_n30, '-k', label="N30", markersize=2)
+    ax.plot(x_n40, y_n40, label="N = 40", markersize=2)
+    ax.plot(x_n30, y_n30, label="N = 30", markersize=2)
+    ax.plot(x_n20, y_n20, label="N = 20", markersize=2)
+
+    # tew01 = open('N35tew0.1.txt', 'r')
+    # lines = tew01.readlines()
+    # tew01.close()
+    # x_tew01 = [float(l.split()[0].replace(',', '')) for l in lines]
+    # y_tew01 = [float(l.split()[1].replace(',', '')) for l in lines]
+    #
+    # tew05 = open('N35tew0.5.txt', 'r')
+    # lines = tew05.readlines()
+    # tew05.close()
+    # x_tew05 = [float(l.split()[0].replace(',', '')) for l in lines]
+    # y_tew05 = [float(l.split()[1].replace(',', '')) for l in lines]
+    #
+    # tew1 = open('N35tew1.txt', 'r')
+    # lines = tew1.readlines()
+    # tew1.close()
+    # x_tew1 = [float(l.split()[0].replace(',', '')) for l in lines]
+    # y_tew1 = [float(l.split()[1].replace(',', '')) for l in lines]
+    #
+    # fig, ax = plt.subplots(1, 1)
+    #
+    # ax.plot(track_x, track_y, '.y', markersize=1)
+    # ax.plot(left_x, left_y, '--g', linewidth=1)
+    # ax.plot(right_x, right_y, '--g', linewidth=1)
+    # ax.plot(x_tew05, y_tew01, label="w1 = 0.1", markersize=2)
+    # ax.plot(x_tew05, y_tew05, label="w1 = 0.5", markersize=2)
+    # ax.plot(x_tew1, y_tew1, label="w1 = 1", markersize=2)
 
     plt.axis('equal')
     plt.grid()
     plt.ylabel('Y position')
     plt.xlabel('X position')
     plt.title('Track')
+    plt.legend(loc='best', borderaxespad=0.)
+    plt.show()
+
+
+def plot_times_from_files():
+    N40 = open('times_N40tew0.05.txt', 'r')
+    lines = N40.readlines()
+    N40.close()
+    n40 = [float(l) for l in lines]
+    avg_n40 = np.mean(n40)
+    std_n40 = np.std(n40)
+
+    N30 = open('times_N30tew0.05.txt', 'r')
+    lines = N30.readlines()
+    N30.close()
+    n30 = [float(l) for l in lines]
+    avg_n30 = np.mean(n30)
+    std_n30 = np.std(n30)
+
+    N20 = open('times_N20tew0.05.txt', 'r')
+    lines = N20.readlines()
+    N20.close()
+    n20 = [float(l) for l in lines]
+    avg_n20 = np.mean(n20)
+    std_n20 = np.std(n20)
+
+    p = plt.plot(n40, label="N = 40")
+    plt.plot([avg_n40] * len(n40), color=p[0].get_color())
+
+    p = plt.plot(n30, label="N = 30")
+    plt.plot([avg_n30] * len(n30), color=p[0].get_color())
+
+    p = plt.plot(n20, label="N = 20")
+    plt.plot([avg_n20] * len(n20), color=p[0].get_color())
+
+    plt.text(0, 50, "N = 40: Avg = " + str(round(avg_n40, 3)) + ", Std = " + str(round(std_n40, 3))
+             + "\nN = 30: Avg = " + str(round(avg_n30, 3)) + ", Std = " + str(round(std_n30, 3))
+             + "\nN = 20: Avg = " + str(round(avg_n20, 3)) + ", Std = " + str(round(std_n20, 3)))
+
+    # tew05 = open('times_N35tew0.5.txt', 'r')
+    # lines = tew05.readlines()
+    # tew05.close()
+    # tew05 = [float(l) for l in lines]
+    # avg_tew05 = np.mean(tew05)
+    # std_tew05 = np.std(tew05)
+    #
+    # tew1 = open('times_N35tew1.txt', 'r')
+    # lines = tew1.readlines()
+    # tew1.close()
+    # tew1 = [float(l) for l in lines]
+    # avg_tew1 = np.mean(tew1)
+    # std_tew1 = np.std(tew1)
+    #
+    # p = plt.plot(tew05, label="w1 = 0.5")
+    # plt.plot([avg_tew05] * len(tew05), color=p[0].get_color())
+    #
+    # p = plt.plot(tew1, label="w1 = 1")
+    # plt.plot([avg_tew1] * len(tew1), color=p[0].get_color())
+    #
+    # plt.text(0, 50, "w1 = 0.5: Avg = " + str(round(avg_tew05, 3)) + ", Std = " + str(round(std_tew05, 3))
+    #          + "\nw1 = 1: Avg = " + str(round(avg_tew1, 3)) + ", Std = " + str(round(std_tew1, 3)))
+
+    plt.grid()
+    plt.ylabel('Solve time')
+    plt.xlabel('Time step index')
+    plt.title('Solve time at each iteration')
     plt.legend(loc='best', borderaxespad=0.)
     plt.show()

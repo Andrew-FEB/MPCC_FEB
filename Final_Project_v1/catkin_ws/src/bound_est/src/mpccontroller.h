@@ -24,14 +24,14 @@
 
 class MPCController {
 public:
-    MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis, Track & t);
+    MPCController(std::shared_ptr<Visualisation> vis, Track & t);
     void solve();
     
 private:
-    void showPredictedPath(const Car & car, double * inputs) const;
+    void showPredictedPath(const Car & car, double * inputs, bool converged) const;
     
 private:
-    int prediction_horizon = 40; // in time steps
+    int prediction_horizon = MPCC_OPTIMIZER_NUM_DECISION_VARIABLES/2; // in time steps
     double time_step = 0.05; // in [s]
     double initial_guess[MPCC_OPTIMIZER_NUM_DECISION_VARIABLES] = {0};
     std::shared_ptr<Visualisation> visualisation = nullptr;

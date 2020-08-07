@@ -67,8 +67,8 @@ set(bound_est_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(bound_est_SOURCE_PREFIX /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est)
-  set(bound_est_DEVEL_PREFIX /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/devel)
+  set(bound_est_SOURCE_PREFIX /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est)
+  set(bound_est_DEVEL_PREFIX /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/devel)
   set(bound_est_INSTALL_PREFIX "")
   set(bound_est_PREFIX ${bound_est_DEVEL_PREFIX})
 else()

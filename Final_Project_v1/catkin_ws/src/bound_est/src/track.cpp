@@ -345,7 +345,7 @@ MPC_targets Track::getReferencePath(const std::vector<double> &distances)
         return {};
     }
 
-    //Santisise inputs
+    //Sanitise inputs
     auto negative_check = std::find_if(distances.begin(), distances.end(), [](const double &distance)
     {
         return (distance<=0);

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "gtest/googlemock/gtest/libgtest_main.so"
+			"path" : "gtest/googlemock/gtest/libgtest.so"
 		}
 	],
 	"backtrace" : 3,
@@ -33,7 +33,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 91,
+				"line" : 90,
 				"parent" : 0
 			},
 			{
@@ -61,25 +61,31 @@
 				"parent" : 2
 			},
 			{
-				"command" : 4,
-				"file" : 1,
-				"line" : 92,
-				"parent" : 0
-			},
-			{
 				"file" : 2
 			},
 			{
 				"command" : 5,
 				"file" : 2,
 				"line" : 193,
-				"parent" : 7
+				"parent" : 6
 			},
 			{
 				"command" : 5,
 				"file" : 2,
 				"line" : 194,
-				"parent" : 7
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 198,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 199,
+				"parent" : 6
 			},
 			{
 				"command" : 6,
@@ -107,32 +113,40 @@
 					"fragment" : "  -DGTEST_HAS_PTHREAD=1  "
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 7,
 					"fragment" : "-std=c++14"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 8,
 					"fragment" : "-DDEBUG"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-DDEBUG_SLOW"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : "-DVISUALISE"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 10,
+					"backtrace" : 11,
 					"define" : "GTEST_CREATE_SHARED_LIBRARY=1"
 				},
 				{
-					"define" : "gtest_main_EXPORTS"
+					"define" : "gtest_EXPORTS"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 11,
+					"backtrace" : 12,
 					"path" : "/usr/src/googletest/googletest/include"
 				},
 				{
-					"backtrace" : 11,
+					"backtrace" : 12,
 					"path" : "/usr/src/googletest/googletest"
 				}
 			],
@@ -143,14 +157,7 @@
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 6,
-			"id" : "gtest::@91549fa14b017862b6ac"
-		}
-	],
-	"id" : "gtest_main::@91549fa14b017862b6ac",
+	"id" : "gtest::@91549fa14b017862b6ac",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -161,21 +168,11 @@
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "-L/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/src",
+				"fragment" : "-L/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/src",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/src:/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 5,
-				"fragment" : "-lpthread",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 6,
-				"fragment" : "libgtest.so",
+				"fragment" : "-Wl,-rpath,/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/src",
 				"role" : "libraries"
 			},
 			{
@@ -186,8 +183,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "gtest_main",
-	"nameOnDisk" : "libgtest_main.so",
+	"name" : "gtest",
+	"nameOnDisk" : "libgtest.so",
 	"paths" : 
 	{
 		"build" : "gtest/googlemock/gtest",
@@ -208,7 +205,7 @@
 		{
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
-			"path" : "/usr/src/googletest/googletest/src/gtest_main.cc",
+			"path" : "/usr/src/googletest/googletest/src/gtest-all.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

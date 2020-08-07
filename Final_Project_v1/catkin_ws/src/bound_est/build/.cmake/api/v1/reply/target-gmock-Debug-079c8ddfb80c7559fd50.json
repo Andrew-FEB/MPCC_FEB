@@ -69,6 +69,18 @@
 				"parent" : 5
 			},
 			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 198,
+				"parent" : 5
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 199,
+				"parent" : 5
+			},
+			{
 				"command" : 5,
 				"file" : 0,
 				"line" : 154,
@@ -100,12 +112,20 @@
 				{
 					"backtrace" : 7,
 					"fragment" : "-DDEBUG"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "-DDEBUG_SLOW"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-DVISUALISE"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 8,
+					"backtrace" : 10,
 					"define" : "GTEST_CREATE_SHARED_LIBRARY=1"
 				},
 				{
@@ -115,19 +135,19 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 9,
+					"backtrace" : 11,
 					"path" : "/usr/src/googletest/googlemock/include"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 11,
 					"path" : "/usr/src/googletest/googlemock"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 11,
 					"path" : "/usr/src/googletest/googletest/include"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 11,
 					"path" : "/usr/src/googletest/googletest"
 				}
 			],

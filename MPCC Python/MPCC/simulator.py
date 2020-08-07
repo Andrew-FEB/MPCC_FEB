@@ -47,6 +47,7 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
     # each time step being param.Ts seconds long
     # i_nearest is the index of the nearest point on the reference line
     i_nearest = get_nearest_point((state_0.x, state_0.y), track_x, track_y, int(len(track_x) * 0.1), 0)
+    i_nearest_prev = i_nearest
     ref_list, ref_indexes, end_reached = get_reference_list(track_x, track_y, i_nearest)
     ref_seq = [ref_list]
 
@@ -100,7 +101,11 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
             ref_list, ref_indexes, end_of_track_reached = get_reference_list(track_x, track_y, i_nearest)
 
             # TODO - enable this for non-circular tracks
-            # if end_of_track_reached: break
+            # if end_of_track_reached and k > 5: break
+            if i_nearest_prev > i_nearest and k > 5:
+                warn("END OF TRACK REACHED!")
+                break
+            i_nearest_prev = i_nearest
 
             # Update all variables needed for the next iteration and save values in the sequences to be plotted
             intercepts, slopes, track_width, i_left, i_right = get_boundaries(left_y, left_x, right_y, right_x,
@@ -227,18 +232,10 @@ def get_reference_list(track_x, track_y, i_nearest):
             y_temp = y_next
             if j >= len(track_x) - 3:
                 j = 0
-                end_reached = True
-                # break
         if i >= 1:
             x = np.concatenate([x, [x_temp]])
             y = np.concatenate([y, [y_temp]])
             indexes = np.concatenate([indexes, [j]])
-        if j >= len(track_x) - 3:
-            j = 0
-            end_reached = True
-            # break
-
-    if end_reached: warn("END OF TRACK REACHED!")
 
     return list(zip(x, y)), indexes, end_reached
 

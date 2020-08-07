@@ -7,8 +7,7 @@
 
 #include "mpccontroller.h"
 
-MPCController::MPCController(int ph, double dt, std::shared_ptr<Visualisation> vis, Track & t) :
-        prediction_horizon(ph), time_step(dt), visualisation(vis), track(t) {
+MPCController::MPCController(std::shared_ptr<Visualisation> vis, Track & t) : visualisation(vis), track(t) {
             // Populate the vector of distances
             std::vector<double> dists(prediction_horizon);
             auto d = time_step * 3.5;  // 3.5 = max velocity
@@ -136,7 +135,7 @@ void MPCController::solve()
     #endif
 
     #ifdef VISUALISE
-        showPredictedPath(*car, u);
+        showPredictedPath(*car, u, status.exit_status == mpcc_optimizerExitStatus::mpcc_optimizerConverged);
     #endif
 
     /* free memory */
@@ -150,7 +149,7 @@ void MPCController::solve()
     #endif
 }
 
-void MPCController::showPredictedPath(const Car & car, double * inputs) const
+void MPCController::showPredictedPath(const Car & car, double * inputs, bool converged) const
 {
     Car c(car.getPosition(), car.getVelocity());
     std::vector<std::pair<Coord, Coord>> path;
@@ -165,6 +164,11 @@ void MPCController::showPredictedPath(const Car & car, double * inputs) const
         prev = c.getPosition().p;
     }
 
-    visualisation->showNodeParentLinks(path);
+    std::vector<float> colour(3); //[r, g, b]
+    if (converged)
+        colour = {0, 1, 0};
+    else
+        colour = {1, 0, 0};
+    visualisation->showNodeParentLinks(path, colour);
 
 }

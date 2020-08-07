@@ -29,7 +29,7 @@ public:
 	void showEndPoint(const Coord &endPoint);
 	void showCentreCoords(const std::vector<Coord> &centreCoords);
 	void showNodeMids(const std::vector<Coord> &midPoints);	
-	void showNodeParentLinks(const std::vector<std::pair<Coord, Coord>> &connections);
+	void showNodeParentLinks(const std::vector<std::pair<Coord, Coord>> &connections, std::vector<float> colour);
 	void showViablePaths(const std::vector<std::vector<Coord>> &paths, bool refresh = false);
 	void showLeftCones(const std::vector <const Cone *> &coneList);
 	void showRightCones(const std::vector <const Cone *> &coneList);

@@ -55,12 +55,12 @@ track_width = 3
 
 # Optimizer parameters
 # -------------------------------------
-N = 30  # Prediction Horizon (in time steps)
+N = 40  # Prediction Horizon (in time steps)
 nu = 2  # Number of Decision Variables (input)
 nx = 4  # Number of Parameters (state)
 Ts = 0.05  # Sampling time (length of one time step in seconds)
 
 # Weights in cost function
-track_error_weight = 1
+track_error_weight = 0.05
 in_weight = [1e-4, 1e-4]  # acceleration, steering angle
 in_change_weight = [0.01, 0.001]  # change of acceleration, change of steering angle

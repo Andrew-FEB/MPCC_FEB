@@ -140,7 +140,7 @@ void Tree::visualiseTree()
         }
     }
 	visualisation->showNodeMids(nodeCoords);
-    visualisation->showNodeParentLinks(nodeParentLinks);
+    visualisation->showNodeParentLinks(nodeParentLinks, {1, 0, 0});
 #else
     return;
 #endif
