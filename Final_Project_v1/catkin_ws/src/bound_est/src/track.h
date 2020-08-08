@@ -24,6 +24,9 @@ double constexpr REPEATED_CONE_RADIUS = 0.5;
 double constexpr MAX_VISION_CONE_FRAME_RANGE = 25;
 double constexpr CONE_VISION_ARC = 0.2;    //Value from 0 to 1 describing how much of circle around current direction can be seen
 double constexpr TRACK_COMPLETE_CHECK_RADIUS = 7.5;
+double constexpr MAX_TRACK_WIDTH = 3.0;
+double constexpr OUTLINE_COORD_TOLERANCE = 1.0;
+double constexpr DISTANCE_FROM_START_BEFORE_CHECK_FOR_NEXT_LAP = 10.0;
 int constexpr NUM_POINTS_TO_CHECK_FOR_OUT_OF_BOUNDS = 5;
 int constexpr NUM_CENTRELINE_COORDS_BEFORE_CHECK_TRACK_COMPLETE = 10;
 int constexpr MIN_FRAMED_CONES_TO_PROCESS = 4;
@@ -44,6 +47,8 @@ public:
     bool trackIsComplete();
     void processNextSection();
     bool carIsInsideTrack();
+    int getLapsRaced();
+    void checkForLap();
     enum class ConeError
     {
         valid,
@@ -66,6 +71,7 @@ private:
     bool checkIfTrackComplete(const Coord &last_centre_point);
     inline std::vector<Coord> projectCarPoints(const Pos &pos);
     inline Rect projectTrackFramePoints(const Pos &pos, const double &width_div_2, const double &length);
+    void removeCentreCoordOutliers();
 
     //Cone lists
     std::vector<std::unique_ptr<Cone>> new_cones;
@@ -80,7 +86,13 @@ private:
 
     //Final reference path and condition indicators
     std::vector<Coord> centre_coords;
+    int centre_coords_checked{0};
+    
+    //Racing metadata
     bool track_complete{false};
+    int num_laps_raced{0};
+    bool inside_start_zone{true};
+    bool check_for_next_lap{false};
 
     #ifdef VISUALISE
     std::shared_ptr<Visualisation> visualisation;
@@ -88,7 +100,6 @@ private:
     #ifdef DEBUG
     std::unique_ptr<BoundaryLogger> boundaries_log;
     #endif
-
 
 };
 

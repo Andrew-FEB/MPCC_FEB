@@ -18,7 +18,7 @@ inline void Visualisation::waitForSubscribe(const ros::Publisher &pub)
         return;
       }
       ROS_WARN_ONCE("Please create a subscriber to the marker");
-      usleep(300000);
+      usleep(10000);
     }
 }
 
@@ -108,7 +108,6 @@ void Visualisation::showTriangles(const std::vector<Triang>& triangles)
 		triangle_line_markers.points.push_back(a);
 	}
 	triangle_pub.publish(triangle_line_markers);	
-	std::cerr<<"Visualisation connection completed - triangles."<<std::endl;
 }
 
 void Visualisation::showNewCones(const std::vector<std::unique_ptr<Cone>> &coneList)
@@ -131,7 +130,7 @@ void Visualisation::showNewCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		new_cone_markers.markers[i].header.stamp = ros::Time();
 		new_cone_markers.markers[i].ns = "new_cones";
 		new_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		new_cone_markers.markers[i].mesh_resource = "file:///home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		new_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		new_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		new_cone_markers.markers[i].pose.position.z = 0.0;
 		new_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -149,7 +148,6 @@ void Visualisation::showNewCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		new_cone_markers.markers[i].id = cone->getID();	
 	}
 	new_cone_pub.publish(new_cone_markers);
-	std::cerr<<"Visualisation connection completed - new cones."<<std::endl;
 }
 
 void Visualisation::showFramedCones(const std::vector<std::unique_ptr<Cone>> &coneList)
@@ -172,7 +170,7 @@ void Visualisation::showFramedCones(const std::vector<std::unique_ptr<Cone>> &co
 		framed_cone_markers.markers[i].header.stamp = ros::Time();
 		framed_cone_markers.markers[i].ns = "new_cones";
 		framed_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		framed_cone_markers.markers[i].mesh_resource = "file:///home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		framed_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		framed_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		framed_cone_markers.markers[i].pose.position.z = 0.0;
 		framed_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -190,7 +188,6 @@ void Visualisation::showFramedCones(const std::vector<std::unique_ptr<Cone>> &co
 		framed_cone_markers.markers[i].id = cone->getID();	
 	}
 	framed_cone_pub.publish(framed_cone_markers);
-	std::cerr<<"Visualisation connection completed - framed cones."<<std::endl;
 }
 
 void Visualisation::showOldCones(const std::vector<std::unique_ptr<Cone>> &coneList)
@@ -213,7 +210,7 @@ void Visualisation::showOldCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		old_cone_markers.markers[i].header.stamp = ros::Time();
 		old_cone_markers.markers[i].ns = "old_cones";
 		old_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		old_cone_markers.markers[i].mesh_resource = "file:///home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		old_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		old_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		old_cone_markers.markers[i].pose.position.z = 0.0;
 		old_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -231,7 +228,6 @@ void Visualisation::showOldCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		old_cone_markers.markers[i].id = cone->getID();	
 	}
 	old_cone_pub.publish(old_cone_markers);
-	std::cerr<<"Visualisation connection completed - old cones."<<std::endl;
 }
 
 void Visualisation::showCar(const Pos &pos)
@@ -246,7 +242,7 @@ void Visualisation::showCar(const Pos &pos)
 	car_marker.header.stamp = ros::Time();
 	car_marker.ns = "car_image";
 	car_marker.type = visualization_msgs::Marker::MESH_RESOURCE;
-	car_marker.mesh_resource = "file:///home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
+	car_marker.mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
 	car_marker.action = visualization_msgs::Marker::ADD;
 	car_marker.pose.position.z = 0.0;
 	car_marker.pose.orientation.z = tf::createQuaternionMsgFromYaw(pos.phi).z;
@@ -263,7 +259,6 @@ void Visualisation::showCar(const Pos &pos)
 	car_marker.pose.position.y = pos.p.y;
 	car_marker.id = 0;	
 	car_pub.publish(car_marker);
-	std::cerr<<"Visualisation connection completed - car."<<std::endl;
 }
 
 void Visualisation::showCarDirection(const Pos &pos)
@@ -298,7 +293,6 @@ void Visualisation::showCarDirection(const Pos &pos)
 	car_project_pos.y = sin(pos.phi)*3+pos.p.y;
 	car_direction_marker.points.push_back(car_project_pos);
 	car_direction_pub.publish(car_direction_marker);
-	std::cerr<<"Visualisation connection completed - car direction."<<std::endl;
 }
 
 void Visualisation::showEndPoint(const Coord &endPoint)
@@ -330,7 +324,6 @@ void Visualisation::showEndPoint(const Coord &endPoint)
 	target_marker.pose.position.y = endPoint.y;
 	target_marker.id = 0;	
 	target_pub.publish(target_marker);
-	std::cerr<<"Visualisation connection completed - end point."<<std::endl;
 }
 
 void Visualisation::showCentreCoords(const std::vector<Coord> &centreCoords)
@@ -371,7 +364,6 @@ void Visualisation::showCentreCoords(const std::vector<Coord> &centreCoords)
 		centre_markers.markers[i].id = i;	
 	}
 	centre_coord_pub.publish(centre_markers);
-	std::cerr<<"Visualisation connection completed - centre coords."<<std::endl;
 }
 
 void Visualisation::showNodeMids(const std::vector<Coord> &midPoints)
@@ -387,7 +379,6 @@ void Visualisation::showNodeMids(const std::vector<Coord> &midPoints)
 		node_mid_markers.markers.clear();
 	}
 	node_mid_markers.markers.resize(midPoints.size());
-
 	for (const Coord &point : midPoints)
 	{
 		auto i = &point - &midPoints[0];
@@ -414,7 +405,6 @@ void Visualisation::showNodeMids(const std::vector<Coord> &midPoints)
 		node_mid_markers.markers[i].id = i;	
 	}
 	node_mid_pub.publish(node_mid_markers);
-	std::cerr<<"Visualisation connection completed - node mids."<<std::endl;
 }
 
 void Visualisation::showNodeParentLinks(const std::vector<std::pair<Coord, Coord>> &connections, std::vector<float> colour)
@@ -467,7 +457,6 @@ void Visualisation::showNodeParentLinks(const std::vector<std::pair<Coord, Coord
 		connection++;
 	}
 	node_mid_connections_pub.publish(node_mid_parent_markers);
-	std::cerr<<"Visualisation connection completed - node parent links."<<std::endl;
 }
 
 void Visualisation::showViablePaths(const std::vector<std::vector<Coord>> &paths, bool refresh)
@@ -537,7 +526,6 @@ void Visualisation::showViablePaths(const std::vector<std::vector<Coord>> &paths
 		}
 	}
 	paths_pub.publish(path_markers);
-	std::cerr<<"Visualisation connection completed - paths."<<std::endl;
 }
 
 void Visualisation::showLeftCones(const std::vector <const Cone *> &coneList)
@@ -578,7 +566,6 @@ void Visualisation::showLeftCones(const std::vector <const Cone *> &coneList)
 		i++;
 	}
 	left_cone_pub.publish(left_cone_markers);
-	std::cerr<<"Visualisation connection completed - left cones."<<std::endl;
 }
 
 void Visualisation::showRightCones(const std::vector <const Cone *> & coneList)
@@ -619,14 +606,13 @@ void Visualisation::showRightCones(const std::vector <const Cone *> & coneList)
 		i++;
 	}
 	right_cone_pub.publish(right_cone_markers);
-	std::cerr<<"Visualisation connection completed - right cones."<<std::endl;
 }
 
 void Visualisation::showReferencePath(const MPC_targets &reference_path)
 {	
 	if (reference_point_pub.getNumSubscribers()<1 || boundary_slope_pub.getNumSubscribers()<1 || boundary_point_pub.getNumSubscribers()<1 || reference_to_boundary_pub.getNumSubscribers()<1 )
 	{
-		std::cerr<<"Waiting for subscription - reference path."<<std::endl;
+		//std::cerr<<"Waiting for subscription - reference path."<<std::endl;
 		reference_point_pub = n->advertise<visualization_msgs::MarkerArray>("reference_points", TIME_OUT_VAL);
 		boundary_slope_pub = n->advertise<visualization_msgs::Marker>("boundary_slopes", TIME_OUT_VAL);
 		boundary_point_pub = n->advertise<visualization_msgs::MarkerArray>("boundary_points", TIME_OUT_VAL);
@@ -715,9 +701,6 @@ void Visualisation::showReferencePath(const MPC_targets &reference_path)
 	boundary_point_pub.publish(boundary_point_markers);
 	boundary_slope_pub.publish(boundary_slope_markers);	
 	reference_point_pub.publish(reference_point_markers);
-
-
-	std::cerr<<"Visualisation connection completed - reference path."<<std::endl;
 }
 
 void Visualisation::showCarBoundaryPoints(const std::vector<Coord> &car_edges, const int &furthest_point_index, const bool &inside_track)

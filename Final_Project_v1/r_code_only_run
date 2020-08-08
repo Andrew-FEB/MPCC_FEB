@@ -2,7 +2,7 @@
 
 cd ./catkin_ws
 source ./devel/setup.bash
-catkin_make -DCMAKE_BUILD_TYPE=Release
+catkin_make -DCMAKE_BUILD_TYPE=Release --force-cmake
 sleep 1
 rosrun bound_est Bound_Est ccw
 

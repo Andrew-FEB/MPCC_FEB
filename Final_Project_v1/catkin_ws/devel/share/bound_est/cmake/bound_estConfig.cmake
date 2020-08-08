@@ -67,14 +67,14 @@ set(bound_est_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(bound_est_SOURCE_PREFIX /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est)
-  set(bound_est_DEVEL_PREFIX /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/devel)
+  set(bound_est_SOURCE_PREFIX /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est)
+  set(bound_est_DEVEL_PREFIX /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel)
   set(bound_est_INSTALL_PREFIX "")
   set(bound_est_PREFIX ${bound_est_DEVEL_PREFIX})
 else()
   set(bound_est_SOURCE_PREFIX "")
   set(bound_est_DEVEL_PREFIX "")
-  set(bound_est_INSTALL_PREFIX /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/install)
+  set(bound_est_INSTALL_PREFIX /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/install)
   set(bound_est_PREFIX ${bound_est_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(bound_est_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/devel/include " STREQUAL " ")
+if(NOT "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/include " STREQUAL " ")
   set(bound_est_INCLUDE_DIRS "")
-  set(_include_dirs "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/devel/include")
+  set(_include_dirs "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/devel/include " STREQUAL
         message(FATAL_ERROR "Project 'bound_est' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'bound_est' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'bound_est' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/${idir}'.  ${_report}")
     endif()
     _list_append_unique(bound_est_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib;/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib;/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

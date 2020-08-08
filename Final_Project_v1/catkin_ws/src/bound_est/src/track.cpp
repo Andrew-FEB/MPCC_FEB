@@ -102,7 +102,6 @@ void Track::processNextSection()
         std::cerr<<"Failed seperated cones check"<<std::endl;
         #endif
         std::move(framed_cones.begin(), framed_cones.end(), std::back_inserter(new_cones));
-        framed_cones.erase(framed_cones.begin(), framed_cones.end());
         return;
     }
     auto result = (seperated_cones.first.size()>seperated_cones.second.size()) ? seperated_cones.first.size()-seperated_cones.second.size() : seperated_cones.second.size()-seperated_cones.first.size();
@@ -149,10 +148,13 @@ void Track::processNextSection()
     //Add new coordinates into final result
     auto best_path = path_analysis->findBestPath(paths, section_end, framed_cones, seperated_cones.first, seperated_cones.second);
     if (!best_path.empty()) std::move(best_path.begin(), best_path.end(), std::back_inserter(centre_coords));
-
+    //Outlier centre coords check
+    if (centre_coords.size()>3 && (centre_coords.size()-centre_coords_checked)>2)
+    {
+        removeCentreCoordOutliers();
+    }
     //Move new cones into processed cones
     std::move(framed_cones.begin(), framed_cones.end(), std::back_inserter(processed_cone_list)); 
-    framed_cones.erase(framed_cones.begin(), framed_cones.end());
     //Move seperated classified cones into processed cones 
     std::move(seperated_cones.first.begin(), seperated_cones.first.end(), std::back_inserter(processed_cone_list_left));
     std::move(seperated_cones.second.begin(), seperated_cones.second.end(), std::back_inserter(processed_cone_list_right));
@@ -203,7 +205,26 @@ Coord Track::findEndGoal(const Coord &last_point, const std::pair<std::vector<co
 {
 	auto left_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.first);
 	auto right_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.second);
+    auto closest_to_left_best = findClosestConeToPoint(left_cone_best.first->getCoordinates(), seperated_cone_lists.second);
+    auto closest_to_right_best = findClosestConeToPoint(right_cone_best.first->getCoordinates(), seperated_cone_lists.first);
+
+    if (closest_to_left_best.first!=right_cone_best.first || closest_to_right_best.first!=left_cone_best.first)
+    {
+        if (right_cone_best.second>left_cone_best.second)
+        {
+            left_cone_best.first = closest_to_right_best.first;
+        }
+        else
+        {
+            right_cone_best.first = closest_to_left_best.first;
+        }
+    }
 	auto endPoint = findMidpoint(left_cone_best.first->getCoordinates(), right_cone_best.first->getCoordinates());
+    //TEST
+    std::cout<<"Right cone has x "<<right_cone_best.first->getX()<<" and y "<<right_cone_best.first->getY()<<std::endl;
+    std::cout<<"Left cone has x "<<left_cone_best.first->getX()<<" and y "<<left_cone_best.first->getY()<<std::endl;
+    std::cout<<"Endpoint has x "<<endPoint.x<<" and y "<<endPoint.y<<std::endl;
+    //ETEST
 	return endPoint;
 }
 
@@ -386,7 +407,7 @@ MPC_targets Track::getReferencePath(const std::vector<double> &distances)
     log->write(ss<<"Next, getting centre coordinates");
     #endif
     //Get centre coords
-    if (nearest_centre.second == (centre_coords.size()-1))
+    if (nearest_centre.second == (centre_coords.size()-1) && !track_complete)
     {
         std::cerr<<"Error, request for reference path no more centre-line path available. Returning empty path";
         return MPC_targets{};
@@ -502,30 +523,32 @@ std::vector<Coord> Track::interpolateCentreCoordsDiscrete(const int &original_in
         log->write(ss<<"Requested number of points of "<<distances.size(), true);
     #endif
     //Check available distance versus requested distance
-    double available_dist{0};
-    available_dist+=distBetweenPoints(start_point, centre_coords[original_index+1]);
-    if (centre_coords.size()>=original_index+2)
-    {
-        for (int i = (original_index+2); i<centre_coords.size(); i++)
-        {
-            available_dist+=distBetweenPoints(centre_coords[i-1], centre_coords[i]);
-        }
-    }
-    available_dist -= 0.01; //compensate for double rounding
-    #ifdef DEBUG
-        log->write(ss<<"Actual available distance is "<<available_dist);
-    #endif
     bool resized_distance{false};
     double temp_distance;
-    if (available_dist<std::accumulate(distances.begin(), distances.end(), 0.0))
+    if (!track_complete)
     {
-        resized_distance = true;
-        temp_distance = (available_dist/distances.size())*0.95;
+        double available_dist{0};
+        available_dist+=distBetweenPoints(start_point, centre_coords[original_index+1]);
+        if (centre_coords.size()>=original_index+2)
+        {
+            for (int i = (original_index+2); i<centre_coords.size(); i++)
+            {
+                available_dist+=distBetweenPoints(centre_coords[i-1], centre_coords[i]);
+            }
+        }
+        available_dist -= 0.01; //compensate for double rounding
         #ifdef DEBUG
-        log->write(ss<<"Insufficient distance available so distance between points reduced to "<<temp_distance, true);
+            log->write(ss<<"Actual available distance is "<<available_dist);
         #endif
+        if (available_dist<std::accumulate(distances.begin(), distances.end(), 0.0))
+        {
+            resized_distance = true;
+            temp_distance = (available_dist/distances.size())*0.95;
+            #ifdef DEBUG
+            log->write(ss<<"Insufficient distance available so distance between points reduced to "<<temp_distance, true);
+            #endif
+        }
     }
-
     //Move into developing points
     std::vector<Coord> output_vec;
     int current_index{original_index};
@@ -601,11 +624,18 @@ std::vector<Coord> Track::interpolateCentreCoordsDiscrete(const int &original_in
             }
             if(current_index+1>=centre_coords.size())
             {
-                #ifdef DEBUG
-                log->write(ss<<"Error. Overrun available distance", true);
-                #endif
-                std::cerr<<"Error. Overrun available distance"<<std::endl;
-                return output_vec;
+                if (track_complete)
+                {
+                    current_index = 0;
+                }
+                else
+                {
+                    #ifdef DEBUG
+                    log->write(ss<<"Error. Overrun available distance", true);
+                    #endif
+                    std::cerr<<"Error. Overrun available distance"<<std::endl;
+                    return output_vec;
+                }
             }
             #ifdef DEBUG
             log->write(ss<<"Distance to travel at end of loop is "<<next_distance, true);
@@ -784,4 +814,49 @@ inline Rect Track::projectTrackFramePoints(const Pos &pos, const double &width_d
     }
 
     return output;
+}
+
+void Track::removeCentreCoordOutliers()
+{
+    int i {centre_coords_checked};
+    for (i; i<(centre_coords.size()-1); i++)
+    {
+        auto coord_to_check = centre_coords[i];
+        double direction_prev_check = atan2((centre_coords[i].y-centre_coords[i-1].y), (centre_coords[i].x-centre_coords[i-1].x));
+        double direction_next_check = atan2((centre_coords[i+1].y-centre_coords[i].y), (centre_coords[i+1].x-centre_coords[i].x));
+        double direction_skip_check = atan2((centre_coords[i+1].y-centre_coords[i-1].y), (centre_coords[i+1].x-centre_coords[i-1].x));
+        
+        if (abs(abs(direction_skip_check)-abs(direction_prev_check))>(abs(abs(direction_skip_check)-abs(direction_next_check))+OUTLINE_COORD_TOLERANCE))
+        {
+            centre_coords.erase(centre_coords.begin() + i);
+            i--;
+        }
+        else
+        {
+            centre_coords_checked++;
+        }
+    }
+}
+
+void Track::checkForLap()
+{
+    if (inside_start_zone)
+    {
+        inside_start_zone = withinCircleOfRadius(car->getPosition().p, centre_coords[0], MAX_TRACK_WIDTH);
+        if (!inside_start_zone && check_for_next_lap)
+        {
+            num_laps_raced++;
+            check_for_next_lap = false;
+        } 
+    }
+    else
+    {
+        inside_start_zone = withinCircleOfRadius(car->getPosition().p, centre_coords[0], MAX_TRACK_WIDTH);
+        if (!check_for_next_lap) check_for_next_lap = !(withinCircleOfRadius(car->getPosition().p, centre_coords[0], DISTANCE_FROM_START_BEFORE_CHECK_FOR_NEXT_LAP));
+    }
+}
+
+int Track::getLapsRaced()
+{
+    return num_laps_raced;
 }

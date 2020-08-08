@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/bound_est_generate_messages_lisp"
+  "devel/share/common-lisp/ros/bound_est/msg/Pos.lisp"
   "devel/share/common-lisp/ros/bound_est/msg/ConeMap.lisp"
   "devel/share/common-lisp/ros/bound_est/msg/Conepos.lisp"
-  "devel/share/common-lisp/ros/bound_est/msg/Pos.lisp"
 )
 
 # Per-language clean rules from dependency scanning.
