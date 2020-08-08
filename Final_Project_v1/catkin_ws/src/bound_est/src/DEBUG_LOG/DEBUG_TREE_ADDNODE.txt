@@ -1,4 +1,4 @@
-Log message for Tree addNode() log data at Sat Aug  8 03:26:33 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:23 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -134,7 +134,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:25 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -184,7 +184,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:25 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -282,7 +282,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:25 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -454,7 +454,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:25 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -594,7 +594,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:25 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -723,7 +723,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -785,7 +785,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -899,7 +899,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -1049,7 +1049,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -1173,7 +1173,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -1297,7 +1297,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -1433,7 +1433,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -1595,7 +1595,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -1731,7 +1731,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:35 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:26 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -1850,7 +1850,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -1969,7 +1969,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -2141,7 +2141,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -2303,7 +2303,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -2458,7 +2458,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -2520,7 +2520,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -2634,7 +2634,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -2722,7 +2722,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -2815,7 +2815,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:27 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -2939,7 +2939,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:28 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:
@@ -3075,7 +3075,7 @@ Node was already found in tree. Point skipped
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for Tree addNode() log data at Sat Aug  8 03:26:36 2020
+Log message for Tree addNode() log data at Sat Aug  8 06:18:28 2020
 -----------------------------------
 -----------------------------------
 Trying to add node:

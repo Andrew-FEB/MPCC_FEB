@@ -43,7 +43,7 @@ public:
     std::vector<const Cone *> getNewCones();
     Car *getCar();
     friend std::ostream& operator<<(std::ostream& os, Track &track);
-    MPC_targets getReferencePath(const std::vector<double> &distances);
+    MPC_targets getReferencePath(const std::vector<double> &distances, float boundary_compress);
     bool trackIsComplete();
     void processNextSection();
     bool carIsInsideTrack();
@@ -62,7 +62,7 @@ private:
     std::vector<std::unique_ptr<Cone>> extractConesInFrame();
     void rebalanceCones(std::vector<std::unique_ptr<Cone>> &framed_cones, std::vector<const Cone *> &boundary_cones, const unsigned long &number_to_remove);
     std::vector<Coord> interpolateCentreCoordsDiscrete(const int &original_index, const Coord &start_point, const std::vector<double> &distances);
-    Pos findBoundaryPointAndSlope(const std::vector<const Cone *> &cones, const Coord &coord);
+    Pos findBoundaryPointAndSlope(const std::vector<const Cone *> &cones, const Coord &coord, const float &boundary_compress);
     Coord getClosestPointOnLine (const Coord &a, const Coord &b, const Coord &p);
     Coord findEndGoal(const Coord &last_point, const std::pair<std::vector<const Cone *>, std::vector<const Cone *>> &seperated_cone_lists);
     bool pointIsInsideTrack(const Coord &point);
@@ -87,7 +87,7 @@ private:
     //Final reference path and condition indicators
     std::vector<Coord> centre_coords;
     int centre_coords_checked{0};
-    
+
     //Racing metadata
     bool track_complete{false};
     int num_laps_raced{0};

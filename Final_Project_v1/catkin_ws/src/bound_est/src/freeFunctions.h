@@ -37,26 +37,16 @@ inline std::pair<const Cone *, double> findClosestConeToPoint (const Coord &poin
 
 inline std::pair<const Cone *, double> findFurthestConeFromPoint (const Coord &point, const std::vector<const Cone *> &cones)
 {
-                //TEST
-        std::cout<<"Point has x "<<point.x<<" and y "<<point.y<<std::endl;
-        //ETEST
 	std::pair<const Cone *, double> output = std::make_pair(nullptr, std::numeric_limits<double>::lowest());
     for (auto &cone_p : cones)
     {
         auto dist = distBetweenPoints(point, cone_p->getCoordinates());
-            //TEST
-        std::cout<<"Cone has x "<<cone_p->getX()<<" and y "<<cone_p->getY()<<std::endl;
-        std::cout<<"distance measured is "<<dist<<std::endl;
-        //ETEST
         if (dist>output.second)
         {
             output.second = dist;
             output.first = cone_p;
         }
     }
-                //TEST
-        std::cout<<"Returned cone has x "<<output.first->getX()<<" and y "<<output.first->getY()<<std::endl;
-        //ETEST
     return output;
 }
 
@@ -74,6 +64,7 @@ inline std::pair<const Cone *, double> findFurthestConeFromPoint (const Coord &p
     }
     return output;
 }
+
 
 inline std::pair<const Cone *, int> findFurthestConeFromPointWithIndex (const Coord &point, const std::vector<const Cone *> &cones)
 {

@@ -220,11 +220,6 @@ Coord Track::findEndGoal(const Coord &last_point, const std::pair<std::vector<co
         }
     }
 	auto endPoint = findMidpoint(left_cone_best.first->getCoordinates(), right_cone_best.first->getCoordinates());
-    //TEST
-    std::cout<<"Right cone has x "<<right_cone_best.first->getX()<<" and y "<<right_cone_best.first->getY()<<std::endl;
-    std::cout<<"Left cone has x "<<left_cone_best.first->getX()<<" and y "<<left_cone_best.first->getY()<<std::endl;
-    std::cout<<"Endpoint has x "<<endPoint.x<<" and y "<<endPoint.y<<std::endl;
-    //ETEST
 	return endPoint;
 }
 
@@ -350,7 +345,7 @@ std::pair<std::vector<const Cone *>, std::vector<const Cone *>> Track::seperateC
 }
 
 
-MPC_targets Track::getReferencePath(const std::vector<double> &distances)
+MPC_targets Track::getReferencePath(const std::vector<double> &distances, float boundary_compress)
 {  
     #ifdef DEBUG
     std::unique_ptr<BoundaryLogger> log = std::make_unique<BoundaryLogger>("GET_REFERENCE_PATH", "getReferencePath()", reset_logs);
@@ -379,6 +374,11 @@ MPC_targets Track::getReferencePath(const std::vector<double> &distances)
         #endif
         return MPC_targets{};
     }    
+    if (boundary_compress<=0.0 || boundary_compress>1.0)
+    {
+        std::cerr<<"Invalid boundary compression requested. Reverting to no compression"<<std::endl;
+        boundary_compress = 1.0;
+    }
     #ifdef DEBUG
     log->write(ss<<"At entering function, important variables were...");
     log->write(ss<<"Requested number of points of "<<distances.size(), true);
@@ -429,8 +429,8 @@ MPC_targets Track::getReferencePath(const std::vector<double> &distances)
     #endif
     //Get boundary positions and slopes
     int boundary_index = centre_points.size()/2;
-    auto left_boundary_position = findBoundaryPointAndSlope(processed_cone_list_left, centre_points[boundary_index]);
-    auto right_boundary_position = findBoundaryPointAndSlope(processed_cone_list_right, centre_points[boundary_index]);
+    auto left_boundary_position = findBoundaryPointAndSlope(processed_cone_list_left, centre_points[boundary_index], boundary_compress);
+    auto right_boundary_position = findBoundaryPointAndSlope(processed_cone_list_right, centre_points[boundary_index], boundary_compress);
 
     //Setup necessary structs and variables with scope above loop.
     MPC_targets output_struct;
@@ -453,7 +453,7 @@ Coord Track::getClosestPointOnLine (const Coord &a, const Coord &b, const Coord 
     return {a.x+a_to_b.x*normalized_dist, a.y+a_to_b.y*normalized_dist};
 }
 
-Pos Track::findBoundaryPointAndSlope(const std::vector<const Cone *> &cones, const Coord &coord)
+Pos Track::findBoundaryPointAndSlope(const std::vector<const Cone *> &cones, const Coord &coord, const float &boundary_compress)
 {
     #ifdef DEBUG
     std::stringstream ss;
@@ -505,6 +505,12 @@ Pos Track::findBoundaryPointAndSlope(const std::vector<const Cone *> &cones, con
     #endif
 
     pos.p = getClosestPointOnLine(cone_1_coords, cone_2_coords, coord);
+    if (boundary_compress<1.0)
+    {
+
+        auto dist = distBetweenPoints(pos.p, coord);
+        pos.p = {(coord.x-pos.p.x)*(1-boundary_compress)+pos.p.x, ((coord.y-pos.p.y)*(1-boundary_compress)+pos.p.y)};
+    }
     double slope = (cone_2_coords.y-cone_1_coords.y)/(cone_2_coords.x-cone_1_coords.x);
     #ifdef DEBUG
     boundaries_log->write(ss<<"Closest point on line between line between cones and position x("<<coord.x<<"), y("<<coord.y<<") calculated to be x("<<pos.p.x<<"), y("<<pos.p.y<<") and slope calculated to be "<<slope ,true);
@@ -728,7 +734,7 @@ bool Track::carIsInsideTrack()
         }
     }
     #ifdef VISUALISE
-    //visualisation->showBoundaryCircle(closest_cone.second, closest_point, closest_cone.first->getCoordinates(), closest_point);
+    visualisation->showBoundaryCircle(closest_cone.second, closest_point, closest_cone.first->getCoordinates(), closest_point);
     std::vector<Coord> non_crit_rect_points;
     auto inside_boundaries = withinCircleOfRadius(car_edges[furthest_point_index], closest_point, closest_cone.second);
     visualisation->showCarBoundaryPoints(car_edges, furthest_point_index, inside_boundaries);

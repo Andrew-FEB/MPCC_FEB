@@ -29,7 +29,7 @@ bool counter_clockwise_track = false;
 bool clockwise_track = false;
 #if defined(DEBUG) || defined(TIME_LOG)
     bool reset_logs = true;
-    constexpr int DEBUG_LOOPS_TO_COMPLETE = 40;
+    constexpr int DEBUG_LOOPS_TO_COMPLETE = 5;
 #endif
 
 // void chatterCallback(const bound_est::ConeMap &m)
@@ -299,7 +299,11 @@ int main(int argc, char *argv[])
         #ifdef TIME_LOG
             if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
         #endif
-        continue_driving = track->carIsInsideTrack();
+        //continue_driving = track->carIsInsideTrack();
+        //TEST
+        continue_driving = true;
+        //ETEST
+
         #ifdef TIME_LOG
             if (track->getLapsRaced()<1) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
         #endif
@@ -321,17 +325,6 @@ int main(int argc, char *argv[])
         *ros::Subscriber cone_sub = cone_reader.subscribe("/map", 1000, chatterCallback);
         *ros::spinOnce();
         */
-       //TEST
-       /*
-        if (!track->trackIsComplete())
-        { 
-            track->processNextSection();
-        }
-        
-        mpcc->solve();  
-        track->checkForLap();
-        */
-        //ETEST
        
        if (continue_driving)
        {
@@ -365,7 +358,7 @@ int main(int argc, char *argv[])
             loops_completed++;
         #endif
         #ifdef DEBUG_SLOW
-            usleep(2000000);
+            usleep(100000);
             std::cout<<"Loops completed: "<<loops_completed<<std::endl;
         #endif
 
@@ -373,7 +366,7 @@ int main(int argc, char *argv[])
             std::cout<<"Loops completed: "<<loops_completed<<std::endl;
             if (loops_completed>=DEBUG_LOOPS_TO_COMPLETE)
             {
-                usleep(50000000);
+                usleep(5000000);
             }
         #endif
 
