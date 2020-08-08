@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
     #endif
     // //Configure ros messages
     // rosbag::Bag cone_data;
-    // cone_data.open("/home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
+    // cone_data.open("/home/senne/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
     // rosbag::View view(cone_data);
     // std::vector<std::string> topics;
     // //topics.push_back(std::string("carpos")); //Testing topic, remove in final
@@ -114,169 +114,155 @@ int main(int argc, char *argv[])
     //Angle car to be pointing forward at beginning of race
     auto car = track->getCar();
     car->setPosition({{-3.88, 14.05}, -0.9427});
-    std::vector<Coord> left_coords{{1.5, 18.0},
-{4.24, 17.44},
-{6.41, 15.24},
-{8.15, 11.88},
-{9.55, 7.84},
-{10.73, 3.6},
-{11.8, -0.38},
-{12.88, -3.6},
-{14.08, -5.59},
-{15.5, -5.88},
-{17.21, -4.41},
-{19.16, -1.72},
-{21.31, 1.57},
-{23.6, 4.86},
-{26.0, 7.54},
-{28.45, 8.99},
-{30.9, 8.77},
-{33.32, 7.14},
-{35.64, 4.53},
-{37.83, 1.37},
-{39.83, -1.88},
-{41.6, -4.83},
-{43.22, -7.49},
-{44.81, -10.17},
-{46.54, -13.02},
-{48.7, -15.14},
-{51.49, -15.68},
-{54.69, -14.94},
-{57.99, -13.43},
-{61.09, -11.68},
-{63.82, -9.91},
-{66.21, -7.95},
-{68.3, -5.58},
-{69.91, -2.73},
-{70.5, 0.37},
-{69.71, 3.46},
-{67.85, 6.18},
-{65.34, 8.3},
-{62.65, 10.1},
-{60.29, 12.04},
-{58.63, 14.5},
-{57.53, 17.53},
-{56.62, 21.01},
-{55.69, 24.77},
-{54.64, 28.46},
-{53.4, 31.75},
-{51.91, 34.31},
-{50.09, 35.81},
-{47.88, 35.96},
-{45.32, 34.88},
-{42.52, 32.96},
-{39.56, 30.58},
-{36.56, 28.11},
-{33.61, 25.94},
-{30.81, 24.45},
-{28.26, 24.01},
-{26.03, 24.87},
-{24.06, 26.82},
-{22.29, 29.61},
-{20.64, 32.95},
-{19.05, 36.57},
-{17.46, 40.21},
-{15.76, 43.53},
-{13.85, 46.11},
-{11.62, 47.51},
-{8.99, 47.46},
-{6.07, 46.26},
-{3.04, 44.4},
-{0.06, 42.36},
-{-2.72, 40.53},
-{-5.26, 38.71},
-{-7.52, 36.56},
-{-9.41, 33.85},
-{-10.45, 30.82},
-{-10.1, 27.86},
-{-8.59, 24.98},
-{-6.55, 22.03},
-{-4.23, 19.37},
-{-1.56, 17.82},
-{1.5, 18.0}};
+    std::vector<Coord> left_coords{{-0.06, 16.22},
+{2.07, 13.15},
+{3.82, 9.46},
+{5.33, 5.6},
+{6.74, 2.0},
+{8.19, -0.91},
+{9.82, -2.68},
+{11.78, -2.88},
+{14.14, -1.48},
+{16.85, 0.79},
+{19.83, 3.11},
+{23.03, 4.67},
+{26.34, 4.93},
+{29.65, 4.13},
+{32.8, 2.6},
+{35.65, 0.66},
+{38.15, -1.49},
+{40.38, -3.86},
+{42.39, -6.46},
+{44.26, -9.28},
+{46.08, -12.3},
+{48.16, -14.79},
+{50.91, -15.67},
+{54.19, -15.09},
+{57.64, -13.6},
+{60.9, -11.79},
+{63.76, -9.96},
+{66.25, -7.92},
+{68.4, -5.43},
+{70.02, -2.44},
+{70.47, 0.79},
+{69.45, 3.97},
+{67.34, 6.69},
+{64.64, 8.78},
+{61.89, 10.65},
+{59.65, 12.8},
+{58.18, 15.56},
+{57.15, 18.92},
+{56.16, 22.8},
+{55.08, 26.84},
+{53.84, 30.61},
+{52.41, 33.67},
+{50.73, 35.58},
+{48.75, 35.92},
+{46.48, 34.64},
+{43.97, 32.29},
+{41.3, 29.44},
+{38.54, 26.67},
+{35.75, 24.58},
+{33.02, 23.7},
+{30.36, 24.18},
+{27.79, 25.79},
+{25.31, 28.25},
+{22.92, 31.33},
+{20.63, 34.76},
+{18.43, 38.3},
+{16.32, 41.66},
+{14.16, 44.39},
+{11.78, 45.97},
+{9.02, 45.98},
+{5.99, 44.74},
+{2.85, 42.79},
+{-0.22, 40.67},
+{-3.09, 38.76},
+{-5.69, 36.83},
+{-7.97, 34.52},
+{-9.77, 31.64},
+{-10.5, 28.41},
+{-9.75, 25.16},
+{-7.86, 22.33},
+{-5.36, 20.23},
+{-2.63, 18.41},
+{-0.06, 16.22}};
 
     int left_coords_index{0};
     int right_coords_index{0};
-    std::vector<Coord> right_coords{{-1.5, 9.0},
-{1.19, 5.63},
-{3.57, 1.51},
-{5.73, -2.92},
-{7.73, -7.24},
-{9.64, -11.01},
-{11.53, -13.79},
-{13.46, -15.16},
-{15.52, -14.69},
-{17.74, -12.34},
-{20.13, -8.87},
-{22.66, -5.1},
-{25.33, -1.9},
-{28.14, -0.09},
-{31.05, -0.35},
-{33.95, -2.42},
-{36.7, -5.68},
-{39.15, -9.51},
-{41.16, -13.31},
-{42.91, -16.68},
-{45.07, -19.57},
-{48.11, -21.89},
-{51.74, -23.36},
-{55.47, -23.67},
-{58.98, -22.71},
-{62.29, -20.84},
-{65.45, -18.46},
-{68.52, -15.97},
-{71.49, -13.57},
-{74.23, -11.06},
-{76.62, -8.19},
-{78.46, -4.83},
-{79.43, -1.16},
-{79.22, 2.59},
-{77.89, 6.17},
-{75.72, 9.34},
-{73.04, 12.03},
-{70.15, 14.47},
-{67.41, 16.91},
-{65.03, 19.59},
-{62.97, 22.6},
-{61.13, 26.01},
-{59.42, 29.9},
-{57.73, 34.13},
-{55.96, 38.24},
-{54.0, 41.74},
-{51.75, 44.16},
-{49.1, 45.01},
-{46.01, 44.07},
-{42.61, 41.87},
-{39.08, 39.03},
-{35.57, 36.18},
-{32.25, 33.95},
-{29.29, 32.96},
-{26.83, 33.78},
-{24.77, 36.23},
-{22.86, 39.72},
-{20.84, 43.65},
-{18.47, 47.41},
-{15.54, 50.44},
-{12.15, 52.53},
-{8.52, 53.63},
-{4.88, 53.66},
-{1.4, 52.64},
-{-1.93, 50.85},
-{-5.14, 48.6},
-{-8.24, 46.21},
-{-11.23, 43.84},
-{-13.99, 41.33},
-{-16.41, 38.48},
-{-18.33, 35.14},
-{-19.39, 31.5},
-{-19.27, 27.78},
-{-18.0, 24.2},
-{-15.97, 20.91},
-{-13.49, 18.01},
-{-10.67, 15.49},
-{-7.64, 13.34},
-{-4.5, 11.39},
-{-1.5, 9.0}};
+    std::vector<Coord> right_coords{{-7.73, 11.9},
+{-4.96, 8.24},
+{-2.44, 4.01},
+{-0.07, -0.41},
+{2.22, -4.63},
+{4.5, -8.26},
+{6.85, -10.89},
+{9.35, -12.16},
+{12.06, -11.66},
+{15.06, -9.53},
+{18.36, -6.82},
+{22.01, -4.68},
+{25.98, -4.06},
+{29.99, -4.92},
+{33.66, -6.88},
+{36.68, -9.53},
+{39.18, -12.56},
+{41.55, -15.71},
+{44.16, -18.71},
+{47.36, -21.3},
+{51.04, -23.1},
+{54.86, -23.71},
+{58.54, -22.88},
+{62.04, -20.98},
+{65.41, -18.47},
+{68.67, -15.85},
+{71.79, -13.32},
+{74.64, -10.64},
+{77.06, -7.53},
+{78.81, -3.89},
+{79.5, 0.03},
+{78.84, 3.94},
+{77.06, 7.58},
+{74.48, 10.68},
+{71.5, 13.35},
+{68.51, 15.88},
+{65.86, 18.56},
+{63.61, 21.57},
+{61.62, 25.04},
+{59.75, 29.09},
+{57.89, 33.66},
+{55.95, 38.17},
+{53.87, 41.98},
+{51.57, 44.44},
+{48.97, 44.9},
+{46.06, 43.17},
+{42.93, 40.11},
+{39.71, 36.71},
+{36.53, 33.96},
+{33.49, 32.87},
+{30.64, 33.82},
+{27.87, 36.3},
+{25.08, 39.73},
+{22.16, 43.52},
+{19.0, 47.08},
+{15.5, 49.85},
+{11.74, 51.62},
+{7.89, 52.34},
+{4.1, 51.97},
+{0.48, 50.62},
+{-2.99, 48.58},
+{-6.33, 46.17},
+{-9.57, 43.69},
+{-12.62, 41.15},
+{-15.36, 38.34},
+{-17.63, 35.05},
+{-19.13, 31.32},
+{-19.45, 27.35},
+{-18.43, 23.45},
+{-16.4, 20.0},
+{-13.73, 17.24},
+{-10.73, 14.75},
+{-7.73, 11.9}};
 
     std::cout << "Entering loop" << std::endl;
 
@@ -297,7 +283,7 @@ int main(int argc, char *argv[])
         //Collect IMU data
         //Check critical conditions 
         #ifdef TIME_LOG
-            if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
+            if (track->getLapsRaced()<2) function_start = std::chrono::high_resolution_clock::now();
         #endif
         //continue_driving = track->carIsInsideTrack();
         //TEST
@@ -305,7 +291,7 @@ int main(int argc, char *argv[])
         //ETEST
 
         #ifdef TIME_LOG
-            if (track->getLapsRaced()<1) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+            if (track->getLapsRaced()<2) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
         #endif
         //Update track - read-in data if available
         int batch_size {3};
@@ -329,20 +315,20 @@ int main(int argc, char *argv[])
        if (continue_driving)
        {
             #ifdef TIME_LOG
-                if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
+                if (track->getLapsRaced()<2) function_start = std::chrono::high_resolution_clock::now();
             #endif
             //Process track section
             if (!track->trackIsComplete()) track->processNextSection();
             #ifdef TIME_LOG
-                if (track->getLapsRaced()<1) section_process_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+                if (track->getLapsRaced()<2) section_process_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
             #endif
             #ifdef TIME_LOG
-                if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
+                if (track->getLapsRaced()<2) function_start = std::chrono::high_resolution_clock::now();
             #endif
             //MPCC
             mpcc->solve();  
             #ifdef TIME_LOG
-                if (track->getLapsRaced()<1) mpcc_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+                if (track->getLapsRaced()<2) mpcc_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
             #endif      
             //Check metadata (laps done, goal achievement, etc.)
             track->checkForLap();
@@ -358,7 +344,7 @@ int main(int argc, char *argv[])
             loops_completed++;
         #endif
         #ifdef DEBUG_SLOW
-            usleep(100000);
+            usleep(30000);
             std::cout<<"Loops completed: "<<loops_completed<<std::endl;
         #endif
 
@@ -388,10 +374,12 @@ int main(int argc, char *argv[])
             visualisation->plotSolveTime(solve_time);
         #endif
         #ifdef TIME_LOG
-            if (track->getLapsRaced()<1) 
+            if (track->getLapsRaced()<2) 
             {
                 auto total_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-start).count();
                 time_log->write(ss<<loops_completed<<"           "<<car_check_time<<"            "<<section_process_time<<"        "<<mpcc_time<<"     "<<total_time);
+            } else {
+                std::cout<<"Lap finished."<<std::endl; break;
             }
         #endif      
     }

@@ -185,8 +185,8 @@ def generate_code(lang):
         u_prev = u
         # The weight increases in each iteration, as the last reference point
         # is more important to reach than the first one
-        if t >= 2*p.N*3/4:
-            track_weight = p.track_error_weight * (1 + 2 * t / p.N)
+        if t >= 2*p.N*2/3:
+            track_weight = p.track_error_weight * (1 + 4 * t / p.N)
         # Update state estimate
         x_est = kinematic_model_rk(x_est, u, True)
         # Boundary Constraint

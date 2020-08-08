@@ -27,7 +27,7 @@ void MPCController::solve()
     
     /* parameters */
     // Obtain reference and track constraints
-    auto ref = track.getReferencePath(distances);
+    auto ref = track.getReferencePath(distances, 0.85);
     // Current state (=4) + Boundaries (Prediction Horizon * (Slopes(=2) + Intercepts(=2) + Width(=1))
     // + Reference Line (Prediction Horizon * Reference Point(=2))
     double p[MPCC_OPTIMIZER_NUM_PARAMETERS] = {pos.p.x, pos.p.y, pos.phi, vel.vx};

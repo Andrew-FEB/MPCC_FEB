@@ -78,19 +78,7 @@
 			{
 				"command" : 5,
 				"file" : 2,
-				"line" : 194,
-				"parent" : 7
-			},
-			{
-				"command" : 5,
-				"file" : 2,
-				"line" : 198,
-				"parent" : 7
-			},
-			{
-				"command" : 5,
-				"file" : 2,
-				"line" : 199,
+				"line" : 196,
 				"parent" : 7
 			},
 			{
@@ -124,21 +112,13 @@
 				},
 				{
 					"backtrace" : 9,
-					"fragment" : "-DDEBUG"
-				},
-				{
-					"backtrace" : 10,
-					"fragment" : "-DDEBUG_SLOW"
-				},
-				{
-					"backtrace" : 11,
-					"fragment" : "-DVISUALISE"
+					"fragment" : "-DTIME_LOG"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 12,
+					"backtrace" : 10,
 					"define" : "GTEST_CREATE_SHARED_LIBRARY=1"
 				},
 				{
@@ -148,11 +128,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 13,
+					"backtrace" : 11,
 					"path" : "/usr/src/googletest/googletest/include"
 				},
 				{
-					"backtrace" : 13,
+					"backtrace" : 11,
 					"path" : "/usr/src/googletest/googletest"
 				}
 			],
@@ -181,11 +161,11 @@
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "-L/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/src",
+				"fragment" : "-L/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/src",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/src:/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest",
+				"fragment" : "-Wl,-rpath,/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/src:/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest",
 				"role" : "libraries"
 			},
 			{

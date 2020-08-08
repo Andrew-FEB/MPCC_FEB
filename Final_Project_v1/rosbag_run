@@ -6,6 +6,6 @@ source ./devel/setup.bash
 catkin_make
 sleep 1
 rosrun bound_est Bound_Est
-rosbag play /home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag
+rosbag play /home/senne/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag
 
 

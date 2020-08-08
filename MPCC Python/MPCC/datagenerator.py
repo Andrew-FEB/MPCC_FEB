@@ -94,11 +94,11 @@ def generate_circular_track(num_steps):
 
 
 def generate_racing_track(num_steps):
-    # num_steps = 80
-    x = np.array([-2.59, 7, 15, 23, 30, 34.37, 42.59, 48.03, 50, 48.03, 42.59, 39, 33, 23, 12, 5.63, -2.59, -8.03, -10, -8.03])
+    # num_steps = 73
+    x = np.array([-2.59, 7.5, 15, 23, 30, 34.37, 42.59, 48.03, 50, 48.03, 42.59, 39, 33, 23, 12, 5.63, -2.59, -8.03, -10, -8.03])
     y = np.array([9.37, -5, 0, -2, -10, -13.75, -9.63, -4.95, 0, 4.95, 9.63, 16, 27, 19, 29, 32.75, 28.63, 23.95, 19, 14.05])
-    xl = np.array([-0.04, 7, 15, 23, 30, 32.31, 40.04, 45.15, 47, 45.15, 40.04, 38, 33, 23, 12, 7.69, -0.04, -5.15, -7, -5.15])
-    xr = np.array([-5.15, 7, 15, 23, 30, 36.44, 45.15, 50.91, 53, 50.91, 45.15, 40, 33, 23, 12, 3.56, -5.15, -10.91, -13, -10.91])
+    xl = np.array([-0.04, 7.5, 15, 23, 30, 32.31, 40.04, 45.15, 47, 45.15, 40.04, 38, 33, 23, 12, 7.69, -0.04, -5.15, -7, -5.15])
+    xr = np.array([-5.15, 7.5, 15, 23, 30, 36.44, 45.15, 50.91, 53, 50.91, 45.15, 40, 33, 23, 12, 3.56, -5.15, -10.91, -13, -10.91])
 
     x_max = np.max(x)
     swp = False
@@ -160,24 +160,33 @@ def generate_racing_track(num_steps):
 
     # x_prev = xl[0]
     # y_prev = yl[0]
-    # for xt, yt in zip(xl, yl):
-    #     print("Distance between LEFT cones = " + str(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2)))
+    # dist = [0]*len(xl)
+    # i = 0
+    # for xt, yt in zip(xl[1:len(xl)], yl[1:len(yl)]):
+    #     dist[i] = np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2)
     #     x_prev = xt
     #     y_prev = yt
+    #     i += 1
+    # print("Min dist = " + str(np.min(dist[0:len(dist)-1])))
+    # print("Max dist = " + str(np.max(dist[0:len(dist)-1])))
     #
     # x_prev = xr[0]
     # y_prev = yr[0]
-    # for xt, yt in zip(xr, yr):
-    #     print("Distance between RIGHT cones = " + str(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2)))
+    # i = 0
+    # for xt, yt in zip(xr[1:len(xr)], yr[1:len(yr)]):
+    #     dist[i] = np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2)
     #     x_prev = xt
     #     y_prev = yt
+    #     i += 1
+    # print("Min dist = " + str(np.min(dist[0:len(dist)-1])))
+    # print("Max dist = " + str(np.max(dist[0:len(dist)-1])))
 
     # plot the track
     # fig, ax = plt.subplots(1, 1)
     # ax.plot(xi, yi, '-r', markersize=2)
     # ax.plot(x, y, 'xr', markersize=15)
-    # ax.plot(xl, yl, '.b', markersize=2)
-    # ax.plot(xr, yr, '.b', markersize=2)
+    # ax.plot(xl, yl, '.b')  #, markersize=2)
+    # ax.plot(xr, yr, '.y')  #, markersize=2)
     # plt.grid()
     # plt.axis('equal')
     # plt.xlabel("X position")

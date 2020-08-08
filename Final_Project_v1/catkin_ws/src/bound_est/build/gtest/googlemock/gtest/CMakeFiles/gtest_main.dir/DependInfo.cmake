@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/usr/src/googletest/googletest/src/gtest_main.cc" "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+  "/usr/src/googletest/googletest/src/gtest_main.cc" "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "GTEST_CREATE_SHARED_LIBRARY=1"
+  "gtest_main_EXPORTS"
   )
 
 # The include file search paths:
@@ -21,7 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

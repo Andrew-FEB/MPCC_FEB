@@ -248,130 +248,113 @@ def plot_solve_time(solve_time_seq, exit_status_seq):
 
 
 def plot_tracks_from_files(track_x, track_y, left_x, left_y, right_x, right_y):
-    N40 = open('N40tew0.05.txt', 'r')
-    lines = N40.readlines()
-    N40.close()
-    x_n40 = [float(l.split()[0].replace(',', '')) for l in lines]
-    y_n40 = [float(l.split()[1].replace(',', '')) for l in lines]
+    track1 = open('N40tew0.05.txt', 'r')
+    lines = track1.readlines()
+    track1.close()
+    x1 = [float(l.split()[0].replace(',', '')) for l in lines]
+    y1 = [float(l.split()[1].replace(',', '')) for l in lines]
 
-    N30 = open('N30tew0.05.txt', 'r')
-    lines = N30.readlines()
-    N30.close()
-    x_n30 = [float(l.split()[0].replace(',', '')) for l in lines]
-    y_n30 = [float(l.split()[1].replace(',', '')) for l in lines]
+    x_prev = x1[0]
+    y_prev = y1[0]
+    dist = 0
+    for xt, yt in zip(x1, y1):
+        dist += round(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2), 3)
+        x_prev = xt
+        y_prev = yt
+    print("Driven length twe 0.05: " + str(dist))
 
-    N20 = open('N20tew0.05.txt', 'r')
-    lines = N20.readlines()
-    N20.close()
-    x_n20 = [float(l.split()[0].replace(',', '')) for l in lines]
-    y_n20 = [float(l.split()[1].replace(',', '')) for l in lines]
+    track2 = open('N40tew0.1.txt', 'r')
+    lines = track2.readlines()
+    track2.close()
+    x2 = [float(l.split()[0].replace(',', '')) for l in lines]
+    y2 = [float(l.split()[1].replace(',', '')) for l in lines]
+
+    x_prev = x2[0]
+    y_prev = y2[0]
+    dist = 0
+    for xt, yt in zip(x2, y2):
+        dist += round(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2), 3)
+        x_prev = xt
+        y_prev = yt
+    print("Driven length twe 0.1: " + str(dist))
+
+    track3 = open('N40tew0.5.txt', 'r')
+    lines = track3.readlines()
+    track3.close()
+    x3 = [float(l.split()[0].replace(',', '')) for l in lines]
+    y3 = [float(l.split()[1].replace(',', '')) for l in lines]
+
+    x_prev = x3[0]
+    y_prev = y3[0]
+    dist = 0
+    for xt, yt in zip(x3, y3):
+        dist += round(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2), 3)
+        x_prev = xt
+        y_prev = yt
+    print("Driven length twe 0.5: " + str(dist))
 
     fig, ax = plt.subplots(1, 1)
 
-    ax.plot(track_x, track_y, '.y', label="Complete track", markersize=1)
-    ax.plot(left_x, left_y, '--g', label="Complete boundaries", linewidth=1)
-    ax.plot(right_x, right_y, '--g', linewidth=1)
-    ax.plot(x_n40, y_n40, label="N = 40", markersize=2)
-    ax.plot(x_n30, y_n30, label="N = 30", markersize=2)
-    ax.plot(x_n20, y_n20, label="N = 20", markersize=2)
-
-    # tew01 = open('N35tew0.1.txt', 'r')
-    # lines = tew01.readlines()
-    # tew01.close()
-    # x_tew01 = [float(l.split()[0].replace(',', '')) for l in lines]
-    # y_tew01 = [float(l.split()[1].replace(',', '')) for l in lines]
-    #
-    # tew05 = open('N35tew0.5.txt', 'r')
-    # lines = tew05.readlines()
-    # tew05.close()
-    # x_tew05 = [float(l.split()[0].replace(',', '')) for l in lines]
-    # y_tew05 = [float(l.split()[1].replace(',', '')) for l in lines]
-    #
-    # tew1 = open('N35tew1.txt', 'r')
-    # lines = tew1.readlines()
-    # tew1.close()
-    # x_tew1 = [float(l.split()[0].replace(',', '')) for l in lines]
-    # y_tew1 = [float(l.split()[1].replace(',', '')) for l in lines]
-    #
-    # fig, ax = plt.subplots(1, 1)
-    #
-    # ax.plot(track_x, track_y, '.y', markersize=1)
-    # ax.plot(left_x, left_y, '--g', linewidth=1)
-    # ax.plot(right_x, right_y, '--g', linewidth=1)
-    # ax.plot(x_tew05, y_tew01, label="w1 = 0.1", markersize=2)
-    # ax.plot(x_tew05, y_tew05, label="w1 = 0.5", markersize=2)
-    # ax.plot(x_tew1, y_tew1, label="w1 = 1", markersize=2)
+    ax.plot(track_x, track_y, '--y', label="Centre line", markersize=1)
+    ax.plot(left_x, left_y, '--k', linewidth=0.5)
+    ax.plot(right_x, right_y, '--k', linewidth=0.5)
+    ax.plot(x1, y1, label="w1 = 0.05", markersize=3)
+    ax.plot(x2, y2, label="w1 = 0.1", markersize=3)
+    ax.plot(x3, y3, label="w1 = 0.5", markersize=3)
 
     plt.axis('equal')
     plt.grid()
     plt.ylabel('Y position')
     plt.xlabel('X position')
-    plt.title('Track')
+    # plt.ylim((20, 50))
+    # plt.xlim((20, 60))
+    # plt.title('Track')
     plt.legend(loc='best', borderaxespad=0.)
     plt.show()
 
 
 def plot_times_from_files():
-    N40 = open('times_N40tew0.05.txt', 'r')
-    lines = N40.readlines()
-    N40.close()
-    n40 = [float(l) for l in lines]
-    avg_n40 = np.mean(n40)
-    std_n40 = np.std(n40)
+    times = open('times_N40tew0.5.txt', 'r')
+    lines = times.readlines()
+    times.close()
+    t = [float(l) for l in lines]
 
-    N30 = open('times_N30tew0.05.txt', 'r')
-    lines = N30.readlines()
-    N30.close()
-    n30 = [float(l) for l in lines]
-    avg_n30 = np.mean(n30)
-    std_n30 = np.std(n30)
+    fig, ax = plt.subplots(1, 1)
+    ax.hist(t, bins=30, edgecolor='black')
+    ax.axvline(x=25, color='r', linestyle='dashed', linewidth=2)
+    plt.text(20.5, 200, "Ts = 25ms", color="r")
 
-    N20 = open('times_N20tew0.05.txt', 'r')
-    lines = N20.readlines()
-    N20.close()
-    n20 = [float(l) for l in lines]
-    avg_n20 = np.mean(n20)
-    std_n20 = np.std(n20)
+    print("Values above 25ms = " + str((sum(t > 25 for t in t) / len(t)) * 100) + "%"
+          + "\nMax = " + str(np.max(t)))
 
-    p = plt.plot(n40, label="N = 40")
-    plt.plot([avg_n40] * len(n40), color=p[0].get_color())
+    plt.xlabel('Solve time [ms]')
+    plt.title("N = 40, w1 = 0.5")
+    plt.show()
 
-    p = plt.plot(n30, label="N = 30")
-    plt.plot([avg_n30] * len(n30), color=p[0].get_color())
 
-    p = plt.plot(n20, label="N = 20")
-    plt.plot([avg_n20] * len(n20), color=p[0].get_color())
+def plot_bempcc_times():
+    # from os import path
+    # basepath = path.dirname(__file__)
+    # filepath = path.abspath(
+    #     path.join(basepath, "..", "..", "Final_Project_v1/catkin_ws/src/bound_est/src/DEBUG_LOG/TIME_LOG.txt"))
+    # time_log = open(filepath, "r")
+    time_log = open("TIME_LOG.txt", "r")
+    lines = time_log.readlines()
+    lines = lines[5:len(lines)-3]
+    time_log.close()
 
-    plt.text(0, 50, "N = 40: Avg = " + str(round(avg_n40, 3)) + ", Std = " + str(round(std_n40, 3))
-             + "\nN = 30: Avg = " + str(round(avg_n30, 3)) + ", Std = " + str(round(std_n30, 3))
-             + "\nN = 20: Avg = " + str(round(avg_n20, 3)) + ", Std = " + str(round(std_n20, 3)))
+    bound_check = [float(l.split()[1]) for l in lines]
+    track_process = [float(l.split()[2]) for l in lines]
+    mpcc = [float(l.split()[3])/1000 for l in lines]
+    total = [float(l.split()[4])/1000 for l in lines]
 
-    # tew05 = open('times_N35tew0.5.txt', 'r')
-    # lines = tew05.readlines()
-    # tew05.close()
-    # tew05 = [float(l) for l in lines]
-    # avg_tew05 = np.mean(tew05)
-    # std_tew05 = np.std(tew05)
-    #
-    # tew1 = open('times_N35tew1.txt', 'r')
-    # lines = tew1.readlines()
-    # tew1.close()
-    # tew1 = [float(l) for l in lines]
-    # avg_tew1 = np.mean(tew1)
-    # std_tew1 = np.std(tew1)
-    #
-    # p = plt.plot(tew05, label="w1 = 0.5")
-    # plt.plot([avg_tew05] * len(tew05), color=p[0].get_color())
-    #
-    # p = plt.plot(tew1, label="w1 = 1")
-    # plt.plot([avg_tew1] * len(tew1), color=p[0].get_color())
-    #
-    # plt.text(0, 50, "w1 = 0.5: Avg = " + str(round(avg_tew05, 3)) + ", Std = " + str(round(std_tew05, 3))
-    #          + "\nw1 = 1: Avg = " + str(round(avg_tew1, 3)) + ", Std = " + str(round(std_tew1, 3)))
+    fig, ax = plt.subplots(1, 1)
+    ax.hist(total, bins=50, edgecolor='black')
+    ax.axvline(x=25, color='r', linestyle='dashed', linewidth=2)
+    plt.text(21, 200, "Ts = 25ms", color="r")
 
-    plt.grid()
-    plt.ylabel('Solve time')
-    plt.xlabel('Time step index')
-    plt.title('Solve time at each iteration')
-    plt.legend(loc='best', borderaxespad=0.)
+    print("Values above 25ms = " + str((sum(t > 25 for t in total) / len(total)) * 100) + "%"
+          + "\nMax = " + str(np.max(total)))
+
+    plt.xlabel('Processing time [ms]')
     plt.show()
