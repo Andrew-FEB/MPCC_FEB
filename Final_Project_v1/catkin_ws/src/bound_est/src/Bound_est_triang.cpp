@@ -283,7 +283,7 @@ int main(int argc, char *argv[])
         //Collect IMU data
         //Check critical conditions 
         #ifdef TIME_LOG
-            if (track->getLapsRaced()<2) function_start = std::chrono::high_resolution_clock::now();
+            if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
         #endif
         //continue_driving = track->carIsInsideTrack();
         //TEST
@@ -291,7 +291,7 @@ int main(int argc, char *argv[])
         //ETEST
 
         #ifdef TIME_LOG
-            if (track->getLapsRaced()<2) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+            if (track->getLapsRaced()<1) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
         #endif
         //Update track - read-in data if available
         int batch_size {3};
@@ -315,20 +315,20 @@ int main(int argc, char *argv[])
        if (continue_driving)
        {
             #ifdef TIME_LOG
-                if (track->getLapsRaced()<2) function_start = std::chrono::high_resolution_clock::now();
+                if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
             #endif
             //Process track section
             if (!track->trackIsComplete()) track->processNextSection();
             #ifdef TIME_LOG
-                if (track->getLapsRaced()<2) section_process_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+                if (track->getLapsRaced()<1) section_process_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
             #endif
             #ifdef TIME_LOG
-                if (track->getLapsRaced()<2) function_start = std::chrono::high_resolution_clock::now();
+                if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
             #endif
             //MPCC
             mpcc->solve();  
             #ifdef TIME_LOG
-                if (track->getLapsRaced()<2) mpcc_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
+                if (track->getLapsRaced()<1) mpcc_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
             #endif      
             //Check metadata (laps done, goal achievement, etc.)
             track->checkForLap();
@@ -374,7 +374,7 @@ int main(int argc, char *argv[])
             visualisation->plotSolveTime(solve_time);
         #endif
         #ifdef TIME_LOG
-            if (track->getLapsRaced()<2) 
+            if (track->getLapsRaced()<1) 
             {
                 auto total_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-start).count();
                 time_log->write(ss<<loops_completed<<"           "<<car_check_time<<"            "<<section_process_time<<"        "<<mpcc_time<<"     "<<total_time);
