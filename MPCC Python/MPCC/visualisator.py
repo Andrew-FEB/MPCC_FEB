@@ -221,34 +221,45 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
 
 
 def plot_solve_time(solve_time_seq, exit_status_seq):
-    t = np.arange(0, param.Ts * len(solve_time_seq), param.Ts)
+    # t = np.arange(0, param.Ts * len(solve_time_seq), param.Ts)
+    #
+    # ess = []
+    # tess = []
+    # empty = True
+    # for i in range(len(exit_status_seq)):
+    #     if exit_status_seq[i].startswith("NotConverged"):
+    #         ess.append(solve_time_seq[i])
+    #         tess.append(t[i])
+    #         if empty: empty = False
+    #
+    # avg = np.mean(solve_time_seq)
+    # std = np.std(solve_time_seq)
+    #
+    # plt.plot(t[0:len(solve_time_seq)], solve_time_seq)
+    # plt.plot(t[0:len(solve_time_seq)], [avg] * len(solve_time_seq))
+    # if not empty: plt.plot(tess, ess, '.r', markersize=10)
+    # plt.text(0, 0, "Avg = " + str(avg) + ", Std = " + str(std))
+    #
+    # plt.grid()
+    # plt.ylabel('Solve time')
+    # plt.xlabel('Time step')
+    # plt.title('Solve time at each iteration')
+    # plt.show()
+    fig, ax = plt.subplots(1, 1)
+    ax.hist(solve_time_seq, bins=30, edgecolor='black')
+    ax.axvline(x=25, color='r', linestyle='dashed', linewidth=2)
+    plt.text(20.5, 200, "Ts = 25ms", color="r")
 
-    ess = []
-    tess = []
-    empty = True
-    for i in range(len(exit_status_seq)):
-        if exit_status_seq[i].startswith("NotConverged"):
-            ess.append(solve_time_seq[i])
-            tess.append(t[i])
-            if empty: empty = False
+    print("Values above 25ms = " + str((sum(t > 25 for t in solve_time_seq) / len(solve_time_seq)) * 100) + "%"
+          + "\nMax = " + str(np.max(solve_time_seq)))
 
-    avg = np.mean(solve_time_seq)
-    std = np.std(solve_time_seq)
-
-    plt.plot(t[0:len(solve_time_seq)], solve_time_seq)
-    plt.plot(t[0:len(solve_time_seq)], [avg] * len(solve_time_seq))
-    if not empty: plt.plot(tess, ess, '.r', markersize=10)
-    plt.text(0, 0, "Avg = " + str(avg) + ", Std = " + str(std))
-
-    plt.grid()
-    plt.ylabel('Solve time')
-    plt.xlabel('Time step')
-    plt.title('Solve time at each iteration')
+    plt.xlabel('Solve time [ms]')
+    plt.title("N = 40, w1 = 0.5")
     plt.show()
 
 
 def plot_tracks_from_files(track_x, track_y, left_x, left_y, right_x, right_y):
-    track1 = open('N40tew0.05.txt', 'r')
+    track1 = open('N20tew0.1.txt', 'r')
     lines = track1.readlines()
     track1.close()
     x1 = [float(l.split()[0].replace(',', '')) for l in lines]
@@ -261,9 +272,9 @@ def plot_tracks_from_files(track_x, track_y, left_x, left_y, right_x, right_y):
         dist += round(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2), 3)
         x_prev = xt
         y_prev = yt
-    print("Driven length twe 0.05: " + str(dist))
+    print("Driven length N = 20: " + str(dist))
 
-    track2 = open('N40tew0.1.txt', 'r')
+    track2 = open('N30tew0.1.txt', 'r')
     lines = track2.readlines()
     track2.close()
     x2 = [float(l.split()[0].replace(',', '')) for l in lines]
@@ -276,9 +287,9 @@ def plot_tracks_from_files(track_x, track_y, left_x, left_y, right_x, right_y):
         dist += round(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2), 3)
         x_prev = xt
         y_prev = yt
-    print("Driven length twe 0.1: " + str(dist))
+    print("Driven length N = 30: " + str(dist))
 
-    track3 = open('N40tew0.5.txt', 'r')
+    track3 = open('N40tew0.1.txt', 'r')
     lines = track3.readlines()
     track3.close()
     x3 = [float(l.split()[0].replace(',', '')) for l in lines]
@@ -291,44 +302,44 @@ def plot_tracks_from_files(track_x, track_y, left_x, left_y, right_x, right_y):
         dist += round(np.sqrt((xt - x_prev) ** 2 + (yt - y_prev) ** 2), 3)
         x_prev = xt
         y_prev = yt
-    print("Driven length twe 0.5: " + str(dist))
+    print("Driven length N = 40: " + str(dist))
 
     fig, ax = plt.subplots(1, 1)
 
     ax.plot(track_x, track_y, '--y', label="Centre line", markersize=1)
     ax.plot(left_x, left_y, '--k', linewidth=0.5)
     ax.plot(right_x, right_y, '--k', linewidth=0.5)
-    ax.plot(x1, y1, label="w1 = 0.05", markersize=3)
-    ax.plot(x2, y2, label="w1 = 0.1", markersize=3)
-    ax.plot(x3, y3, label="w1 = 0.5", markersize=3)
+    ax.plot(x1, y1, label="N = 20", markersize=3)
+    ax.plot(x2, y2, label="N = 30", markersize=3)
+    ax.plot(x3, y3, label="N = 40", markersize=3)
 
     plt.axis('equal')
     plt.grid()
     plt.ylabel('Y position')
     plt.xlabel('X position')
-    # plt.ylim((20, 50))
-    # plt.xlim((20, 60))
+    plt.ylim((20, 50))
+    plt.xlim((20, 60))
     # plt.title('Track')
     plt.legend(loc='best', borderaxespad=0.)
     plt.show()
 
 
 def plot_times_from_files():
-    times = open('times_N40tew0.5.txt', 'r')
+    times = open('times_N40tew0.2.txt', 'r')
     lines = times.readlines()
     times.close()
     t = [float(l) for l in lines]
 
     fig, ax = plt.subplots(1, 1)
     ax.hist(t, bins=30, edgecolor='black')
-    ax.axvline(x=25, color='r', linestyle='dashed', linewidth=2)
-    plt.text(20.5, 200, "Ts = 25ms", color="r")
+    # ax.axvline(x=25, color='r', linestyle='dashed', linewidth=2)
+    # plt.text(20.5, 200, "Ts = 25ms", color="r")
 
     print("Values above 25ms = " + str((sum(t > 25 for t in t) / len(t)) * 100) + "%"
           + "\nMax = " + str(np.max(t)))
 
     plt.xlabel('Solve time [ms]')
-    plt.title("N = 40, w1 = 0.5")
+    plt.title("N = 40, w1 = 0.2")
     plt.show()
 
 
@@ -340,21 +351,21 @@ def plot_bempcc_times():
     # time_log = open(filepath, "r")
     time_log = open("TIME_LOG.txt", "r")
     lines = time_log.readlines()
-    lines = lines[5:len(lines)-3]
+    lines = lines[5:len(lines) - 3]
     time_log.close()
 
     bound_check = [float(l.split()[1]) for l in lines]
     track_process = [float(l.split()[2]) for l in lines]
-    mpcc = [float(l.split()[3])/1000 for l in lines]
-    total = [float(l.split()[4])/1000 for l in lines]
+    mpcc = [float(l.split()[3]) / 1000 for l in lines]
+    total = [float(l.split()[4]) / 1000 for l in lines]
 
     fig, ax = plt.subplots(1, 1)
     ax.hist(total, bins=50, edgecolor='black')
     ax.axvline(x=25, color='r', linestyle='dashed', linewidth=2)
-    plt.text(21, 200, "Ts = 25ms", color="r")
+    plt.text(25.5, 200, "Ts = 25ms", color="r")
 
-    print("Values above 25ms = " + str((sum(t > 25 for t in total) / len(total)) * 100) + "%"
-          + "\nMax = " + str(np.max(total)))
+    print("Values under 25ms = " + str((sum(t < 25 for t in total) / len(total)) * 100) + "%"
+          + "\nMax = " + str(np.max(total)) + "\nMin = " + str(np.min(total)))
 
     plt.xlabel('Processing time [ms]')
     plt.show()

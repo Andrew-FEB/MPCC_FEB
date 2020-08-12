@@ -12,7 +12,7 @@
 #include "freeFunctions.h"
 
 constexpr double BEST_FIRST_TOLERANCE {3};
-constexpr int MAX_PATH_LENGTH{15};
+constexpr int MAX_PATH_LENGTH{30};
 
 class Triangulation
 {

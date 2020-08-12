@@ -289,8 +289,8 @@ void Visualisation::showCarDirection(const Pos &pos)
 	car_pos.x = pos.p.x;
 	car_pos.y = pos.p.y;
 	car_direction_marker.points.push_back(car_pos);
-	car_project_pos.x = cos(pos.phi)*3+pos.p.x;
-	car_project_pos.y = sin(pos.phi)*3+pos.p.y;
+	car_project_pos.x = cos(pos.phi)+pos.p.x;
+	car_project_pos.y = sin(pos.phi)+pos.p.y;
 	car_direction_marker.points.push_back(car_project_pos);
 	car_direction_pub.publish(car_direction_marker);
 }
@@ -351,12 +351,12 @@ void Visualisation::showCentreCoords(const std::vector<Coord> &centreCoords)
 		centre_markers.markers[i].pose.position.z = 0.0;
 		centre_markers.markers[i].pose.orientation.z = 0.0;
 		centre_markers.markers[i].pose.orientation.w = 1.0;
-		centre_markers.markers[i].scale.x = 0.1;
-		centre_markers.markers[i].scale.y = 0.1;
+		centre_markers.markers[i].scale.x = 0.3;
+		centre_markers.markers[i].scale.y = 0.3;
 		centre_markers.markers[i].scale.z = 1.0;
-		centre_markers.markers[i].color.r = 1.0f;
-		centre_markers.markers[i].color.g = 1.0f;
-		centre_markers.markers[i].color.b = 0.0f;
+		centre_markers.markers[i].color.r = 0.75f;
+		centre_markers.markers[i].color.g = 0.1f;
+		centre_markers.markers[i].color.b = 0.02f;
 		centre_markers.markers[i].color.a = 1.0;
 		centre_markers.markers[i].lifetime = ros::Duration(ROS_DURATION_TIME);
 		centre_markers.markers[i].pose.position.x = point.x;

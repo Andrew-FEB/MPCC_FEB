@@ -2,7 +2,7 @@
 // Auto-generated file by OptimizationEngine
 // See https://alphaville.github.io/optimization-engine/
 //
-// Generated at: 2020-08-08 20:39:11.800269
+// Generated at: 2020-08-12 21:25:57.875665
 //
 
 use icasadi_mpcc_optimizer;
@@ -33,7 +33,7 @@ const MAX_INNER_ITERATIONS: usize = 500;
 const MAX_OUTER_ITERATIONS: usize = 10;
 
 /// Maximum execution duration in microseconds
-const MAX_DURATION_MICROS: u64 = 50000;
+const MAX_DURATION_MICROS: u64 = 100000;
 
 /// Penalty update factor
 const PENALTY_UPDATE_FACTOR: f64 = 4.0;

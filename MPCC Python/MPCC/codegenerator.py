@@ -132,7 +132,6 @@ def cost_function(state, ref, control, control_prev, track_weight):
 
     x = state[0]
     y = state[1]
-    v = state[3]
     x_ref = ref[0]
     y_ref = ref[1]
     # slope = tan[0]
@@ -238,7 +237,7 @@ def generate_code(lang):
         .with_delta_tolerance(0.01)  \
         .with_initial_penalty(15) \
         .with_penalty_weight_update_factor(4) \
-        .with_max_duration_micros(50000)  # 0.05s = 50000us
+        .with_max_duration_micros(100000)  # 0.05s = 50000us
 
     builder = og.builder.OpEnOptimizerBuilder(problem,
                                               metadata=meta,

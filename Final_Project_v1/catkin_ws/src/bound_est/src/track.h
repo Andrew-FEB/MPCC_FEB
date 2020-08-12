@@ -23,7 +23,7 @@
 double constexpr REPEATED_CONE_RADIUS = 0.5;
 double constexpr MAX_VISION_CONE_FRAME_RANGE = 25;
 double constexpr CONE_VISION_ARC = 0.2;    //Value from 0 to 1 describing how much of circle around current direction can be seen
-double constexpr TRACK_COMPLETE_CHECK_RADIUS = 7.5;
+double constexpr TRACK_COMPLETE_CHECK_RADIUS = 12.5;
 double constexpr MAX_TRACK_WIDTH = 3.0;
 double constexpr OUTLINE_COORD_TOLERANCE = 1.0;
 double constexpr DISTANCE_FROM_START_BEFORE_CHECK_FOR_NEXT_LAP = 10.0;

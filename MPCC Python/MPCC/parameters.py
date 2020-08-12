@@ -61,6 +61,6 @@ nx = 4  # Number of Parameters (state)
 Ts = 0.05  # Sampling time (length of one time step in seconds)
 
 # Weights in cost function
-track_error_weight = 0.05
+track_error_weight = 0.1
 in_weight = [1e-4, 1e-4]  # acceleration, steering angle
-in_change_weight = [0.01, 0.001]  # change of acceleration, change of steering angle
+in_change_weight = [0.01, 0.1]  # change of acceleration, change of steering angle

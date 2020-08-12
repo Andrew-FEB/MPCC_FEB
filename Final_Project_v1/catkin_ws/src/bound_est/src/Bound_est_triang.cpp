@@ -294,7 +294,7 @@ int main(int argc, char *argv[])
             if (track->getLapsRaced()<1) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
         #endif
         //Update track - read-in data if available
-        int batch_size {3};
+        int batch_size {15};
         for (int i = 0; i<batch_size; i++)
         {
             if (left_coords_index>=left_coords.size() || right_coords_index>=left_coords.size()) break;
@@ -344,7 +344,7 @@ int main(int argc, char *argv[])
             loops_completed++;
         #endif
         #ifdef DEBUG_SLOW
-            usleep(30000);
+            usleep(25000);
             std::cout<<"Loops completed: "<<loops_completed<<std::endl;
         #endif
 
