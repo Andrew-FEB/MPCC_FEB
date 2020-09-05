@@ -37,8 +37,6 @@ void Track::addCone(const double &x, const double &y, const BoundPos &pos)
         case ConeError::valid:
             new_cones.push_back(std::make_unique<Cone>(x, y, pos));
             break;
-        case ConeError::outlier:
-            break;
     }
 }
 
@@ -82,12 +80,15 @@ std::pair<Track::ConeError, Cone *> Track::checkConePos(const Coord &point)
     return std::make_pair(ConeError::valid, nullptr);
 }
 
-void Track::processNextSection()
+void Track::processNextSection(int path_length_limit)
 {
-    if (new_cones.size()<=0) return;
+    if (new_cones.size()<=0)
+    {
+        return;
+    }
     //Begin finding cones within valid ranges to find reference path
     #ifdef VISUALISE
-	    //visualisation->showNewCones(new_cones);
+	    visualisation->showNewCones(new_cones);
     #endif
     auto framed_cones = extractConesInFrame();
     if (framed_cones.size()<=4) return;
@@ -124,23 +125,20 @@ void Track::processNextSection()
 
     //Find entry point into next track section
     Coord entry_point;
-    bool starting_from_car;
     if (centre_coords.size()<1)
     {
         entry_point = car->getPosition().p;
-        starting_from_car = true;
     }
     else
     {
         entry_point = centre_coords.back();
-        starting_from_car = false;
     }
 
     //Find end point goal of section
 	Coord section_end = findEndGoal(entry_point, seperated_cones);
 
     //Get paths traversing framed track region
-    auto paths = triangulate->getTraversingPaths(framed_cones, entry_point, section_end, seperated_cones, starting_from_car);
+    auto paths = triangulate->getTraversingPaths(framed_cones, seperated_cones, entry_point, section_end, path_length_limit);
     #ifdef VISUALISE
         //visualisation->showViablePaths(paths);
     #endif
@@ -207,6 +205,7 @@ Coord Track::findEndGoal(const Coord &last_point, const std::pair<std::vector<co
 	auto right_cone_best = findFurthestConeFromPoint(last_point, seperated_cone_lists.second);
     auto closest_to_left_best = findClosestConeToPoint(left_cone_best.first->getCoordinates(), seperated_cone_lists.second);
     auto closest_to_right_best = findClosestConeToPoint(right_cone_best.first->getCoordinates(), seperated_cone_lists.first);
+
 
     if (closest_to_left_best.first!=right_cone_best.first || closest_to_right_best.first!=left_cone_best.first)
     {
@@ -699,17 +698,18 @@ std::pair<Coord, int> Track::getClosestPointOnCentreLine(const Coord &point)
 {
     Coord final_point_to_check;
     auto nearest_coord_index = findClosestCentreCoordIndex(point);
+    int second_coord_index;
     if (centre_coords.size()>1)
     {
-        int second_closest_index;
-        int index_1 =  ((nearest_coord_index-1)>=0) ?  (nearest_coord_index-1) : (centre_coords.size()-1);
-        int index_2 =  ((nearest_coord_index+1)<centre_coords.size()) ? (nearest_coord_index+1) : 9;
-        if (index_1 == index_2) second_closest_index = index_1;
+        if (track_complete)
+        {
+            second_coord_index = (centre_coords.size()>nearest_coord_index+1) ? nearest_coord_index+1 : 0;
+        }
         else
         {
-            second_closest_index = (distBetweenPoints(point, centre_coords[index_1])<=distBetweenPoints(point, centre_coords[index_2])) ? index_1 : index_2;
+            second_coord_index = (centre_coords.size()>nearest_coord_index+1) ? nearest_coord_index+1 : nearest_coord_index-1;
         }
-        final_point_to_check = getClosestPointOnLine(centre_coords[nearest_coord_index], centre_coords[second_closest_index], point);
+        final_point_to_check = getClosestPointOnLine(centre_coords[nearest_coord_index], centre_coords[second_coord_index], point);
     }
     else final_point_to_check = centre_coords[nearest_coord_index];
     return std::make_pair(final_point_to_check, nearest_coord_index);
@@ -779,6 +779,9 @@ bool Track::checkIfTrackComplete(const Coord &last_centre_point)
             Coord projected_point = {last_centre_point.x + div_dist*cos(direction), last_centre_point.y + div_dist*sin(direction)}; 
             if (!pointIsInsideTrack(projected_point)) return false;
         }
+        #ifdef VISUALISE
+	        visualisation->clearMapping();
+        #endif
         return true;
     }
     return false;
@@ -846,9 +849,10 @@ void Track::removeCentreCoordOutliers()
 
 void Track::checkForLap()
 {
+    if (centre_coords.size()<=0) return;
     if (inside_start_zone)
     {
-        inside_start_zone = withinCircleOfRadius(car->getPosition().p, centre_coords[0], MAX_TRACK_WIDTH);
+        inside_start_zone = withinCircleOfRadius(car->getPosition().p, centre_coords[0], CHECK_LAP_RADIUS);
         if (!inside_start_zone && check_for_next_lap)
         {
             num_laps_raced++;
@@ -857,7 +861,7 @@ void Track::checkForLap()
     }
     else
     {
-        inside_start_zone = withinCircleOfRadius(car->getPosition().p, centre_coords[0], MAX_TRACK_WIDTH);
+        inside_start_zone = withinCircleOfRadius(car->getPosition().p, centre_coords[0], CHECK_LAP_RADIUS);
         if (!check_for_next_lap) check_for_next_lap = !(withinCircleOfRadius(car->getPosition().p, centre_coords[0], DISTANCE_FROM_START_BEFORE_CHECK_FOR_NEXT_LAP));
     }
 }

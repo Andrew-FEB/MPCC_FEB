@@ -24,8 +24,8 @@
 
 class MPCController {
 public:
-    MPCController(std::shared_ptr<Visualisation> vis, Track & t);
-    void solve();
+    MPCController(std::shared_ptr<Visualisation> vis, Track & t, bool simulating = false);
+    ControlInputs solve();
     
 private:
     void showPredictedPath(const Car & car, double * inputs, bool converged) const;
@@ -37,6 +37,7 @@ private:
     std::shared_ptr<Visualisation> visualisation = nullptr;
     Track & track;
     std::vector<double> distances;
+    bool simulating;
 };
 
 #endif /* MPCCONTROLLER_H */

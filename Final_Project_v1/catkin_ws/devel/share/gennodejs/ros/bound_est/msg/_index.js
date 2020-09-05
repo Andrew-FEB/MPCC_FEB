@@ -1,12 +1,12 @@
 
 "use strict";
 
-let Pos = require('./Pos.js');
-let ConeMap = require('./ConeMap.js');
 let Conepos = require('./Conepos.js');
+let ConeMap = require('./ConeMap.js');
+let Pos = require('./Pos.js');
 
 module.exports = {
-  Pos: Pos,
-  ConeMap: ConeMap,
   Conepos: Conepos,
+  ConeMap: ConeMap,
+  Pos: Pos,
 };

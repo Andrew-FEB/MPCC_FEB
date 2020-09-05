@@ -5,7 +5,9 @@
 #include <cmath>
 #include <vector>
 
-//Cone classifier
+/**
+ * Indicates what type of cone
+ */
 enum class BoundPos
 {
     undefined,
@@ -15,7 +17,9 @@ enum class BoundPos
 	offramp
 };
 
-//Translate BoundPos enum to string
+/**
+ * Translate BoundPos enum to string for prints
+ */
 const static std::unordered_map<BoundPos, std::string> BoundStrTranslate
 {
     {BoundPos::undefined, "undefined"},
@@ -25,7 +29,9 @@ const static std::unordered_map<BoundPos, std::string> BoundStrTranslate
 	{BoundPos::offramp, "Offramp"}	//small orange
 };
 
-//Convenience struct for Coordinates
+/**
+ * Holds location data for convenience
+ */
 struct Coord
 {
 	double x;
@@ -37,7 +43,9 @@ struct Coord
 	}
 };
 
-//triangle struct for Triangulation
+/**
+ * Holds location and position data for triangulation (primarily used in triangulation.cpp)
+ */
 struct Triang
 {
 	Coord a;
@@ -47,14 +55,20 @@ struct Triang
 	Coord c;
 	BoundPos cPos{BoundPos::undefined};
 
-	inline bool touches(const Coord &p) const
+	/**
+	 * returns true if one of triangle points equal to argument
+	 */
+	inline bool touches(const Coord &p) const	
 	{
 		return ((a.x == p.x && a.y == p.y) 
 		|| (b.x == p.x && b.y == p.y) 
 		|| (c.x == p.x && c.y == p.y));
 	}
-	
-	inline bool onVertices(const Coord &p) const
+
+	/**
+	 * returns true if point is a midpoint of one of the triangle's line sections 
+	 */
+	inline bool onVertices(const Coord &p) const	
 	{
 		return (pointsAreEqual(p, {(a.x + b.x) / 2, (a.y + b.y) / 2}) 
 		||(pointsAreEqual(p, { (b.x + c.x) / 2, (b.y + c.y) / 2 })) 
@@ -63,25 +77,23 @@ struct Triang
 
 	inline bool pointsAreEqual(const Coord &a, const Coord &b) const
 	{
-		return (a.x == b.x && a.y == b.y);
+		return a==b;
 	}
 
-	inline bool lineOnBoundary(const BoundPos &a, const BoundPos &b) const
+	/**
+	 * returns true if both points are on same track boundary
+	 */
+	inline bool lineOnBoundary(const BoundPos &a, const BoundPos &b) const	
 	{
 		return (a==b);
 	}
-
-	inline Coord findMidpoint(const Coord &a, const Coord &b)
-{
-	Coord output{ (a.x + b.x) / 2, (a.y + b.y) / 2 };
-	return output;
-}
-
+	/**
+	 * return true if both coordinates on same boundary
+	 */
 	inline bool pointsOnBoundary(const Coord &x, const Coord &y) const
 	{
 		const BoundPos *first;
 		const BoundPos *second;
-		//Cleaner method??
 		if (pointsAreEqual(x, a)) first = &aPos;
 		else if (pointsAreEqual(x, b)) first = &bPos;
 		else first = &cPos;
@@ -97,12 +109,17 @@ struct Triang
 struct Rect
 {
 	std::array<Coord, 4> points;
-
-	inline double dot(Coord a, Coord b)
+	/**
+	 * returns dot product of two vectors
+	 */
+	inline double dot(Coord a, Coord b)	
 	{
 		return (a.x*b.x+a.y*b.y);
 	}
 
+	/**
+	 * returns true if coord inside rectangle
+	 */
 	inline bool containsPoint(const Coord &p)
 	{
 		Coord AB = {points[0].x-points[1].x, points[0].y-points[1].y}; 
@@ -118,41 +135,40 @@ struct Rect
 };
 
 /**
+ * Contains variables for circle section
+ */
+struct CircleSection
+{
+	Coord origin;
+	double radius;
+	double start_angle;
+	double end_angle;
+};
+
+/**
  * Structs regarding MPCC
  */
-typedef struct TireForces {
+struct TireForces {
     double Ffy;
     double Frx;
     double Fry;
-} TireForces;
+};
 
-typedef struct TrackContraints {
-    double centreSlope;
-	double centreX;
-	double centreY;
-    double upSlope;
-	double upX;
-	double upY;
-    double lowSlope;
-	double lowX;
-	double lowY;
-} TrackContraints;
-
-typedef struct ControlInputs {
+struct ControlInputs {
 	double D; // throttle [-1, 1]
 	double delta; // steering angle [-0.506, 0.506]
-} ControlInputs;
+};
 
-typedef struct Vel {
+struct Vel {
 	double vx;
 	double vy;
 	double omega;
-} Vel;
+};
 
-typedef struct Pos {
-	Coord p;
-	double phi;
-} Pos;
+struct Pos {
+	Coord p;	//X-Y position
+	double phi;	//direction
+};
 
 constexpr struct CarParams {
 	// Vehicle parameters TODO - get real values for all these
@@ -189,19 +205,14 @@ constexpr struct CarParams {
 	double p_ellipse = 0.95;
 } CarParams;
 
+//Contains reference path for MPCC calculation
 struct MPC_targets
 {
 	std::vector<Coord> reference_points;
-	Pos left_boundary;
-	Pos right_boundary;
+	Pos left_boundary;	//p = position of boundary. phi = slope at boundary
+	Pos right_boundary;	//p = position of boundary. phi = slope at boundary
 };
 
-struct CircleSection
-{
-	Coord origin;
-	double radius;
-	double start_angle;
-	double end_angle;
-};
+
 
 

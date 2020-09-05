@@ -1,4 +1,4 @@
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:18 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:38 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -60,7 +60,7 @@ Checking triangle with points a(29.99,-4.92), b(33.66,-6.88), c(18.36,-6.82)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -158,7 +158,7 @@ Triangle found on points and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -213,7 +213,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -268,7 +268,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -322,7 +322,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -377,7 +377,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -432,7 +432,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -487,7 +487,61 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Value derived from car position: 1
+Origin point x(34.44), y(-0.74)
+Triangle list size = 43
+Checking triangle with points a(57.64,-13.6), b(60.9,-11.79), c(65.41,-18.47)
+Checking triangle with points a(65.41,-18.47), b(62.04,-20.98), c(57.64,-13.6)
+Checking triangle with points a(66.25,-7.92), b(70.02,-2.44), c(68.4,-5.43)
+Checking triangle with points a(60.9,-11.79), b(63.76,-9.96), c(65.41,-18.47)
+Checking triangle with points a(62.04,-20.98), b(58.54,-22.88), c(57.64,-13.6)
+Checking triangle with points a(58.54,-22.88), b(54.19,-15.09), c(57.64,-13.6)
+Checking triangle with points a(57.64,-13.6), b(44.26,-9.28), c(60.9,-11.79)
+Checking triangle with points a(63.76,-9.96), b(68.67,-15.85), c(65.41,-18.47)
+Checking triangle with points a(58.54,-22.88), b(54.86,-23.71), c(54.19,-15.09)
+Checking triangle with points a(63.76,-9.96), b(66.25,-7.92), c(68.67,-15.85)
+Checking triangle with points a(66.25,-7.92), b(42.39,-6.46), c(70.02,-2.44)
+Checking triangle with points a(51.04,-23.1), b(50.91,-15.67), c(54.19,-15.09)
+Checking triangle with points a(54.19,-15.09), b(46.08,-12.3), c(57.64,-13.6)
+Checking triangle with points a(66.25,-7.92), b(71.79,-13.32), c(68.67,-15.85)
+Checking triangle with points a(54.86,-23.71), b(51.04,-23.1), c(54.19,-15.09)
+Checking triangle with points a(42.39,-6.46), b(63.76,-9.96), c(60.9,-11.79)
+Checking triangle with points a(66.25,-7.92), b(68.4,-5.43), c(71.79,-13.32)
+Checking triangle with points a(47.36,-21.3), b(48.16,-14.79), c(50.91,-15.67)
+Checking triangle with points a(50.91,-15.67), b(46.08,-12.3), c(54.19,-15.09)
+Checking triangle with points a(68.4,-5.43), b(74.64,-10.64), c(71.79,-13.32)
+Checking triangle with points a(51.04,-23.1), b(47.36,-21.3), c(50.91,-15.67)
+Checking triangle with points a(41.55,-15.71), b(46.08,-12.3), c(48.16,-14.79)
+Checking triangle with points a(48.16,-14.79), b(46.08,-12.3), c(50.91,-15.67)
+Checking triangle with points a(42.39,-6.46), b(66.25,-7.92), c(63.76,-9.96)
+Checking triangle with points a(68.4,-5.43), b(77.06,-7.53), c(74.64,-10.64)
+Checking triangle with points a(47.36,-21.3), b(44.16,-18.71), c(48.16,-14.79)
+Checking triangle with points a(70.02,-2.44), b(77.06,-7.53), c(68.4,-5.43)
+Checking triangle with points a(39.18,-12.56), b(44.26,-9.28), c(46.08,-12.3)
+Checking triangle with points a(46.08,-12.3), b(44.26,-9.28), c(57.64,-13.6)
+Checking triangle with points a(44.16,-18.71), b(41.55,-15.71), c(48.16,-14.79)
+Checking triangle with points a(39.18,-12.56), b(42.39,-6.46), c(44.26,-9.28)
+Checking triangle with points a(44.26,-9.28), b(42.39,-6.46), c(60.9,-11.79)
+Checking triangle with points a(70.02,-2.44), b(78.81,-3.89), c(77.06,-7.53)
+Checking triangle with points a(41.55,-15.71), b(39.18,-12.56), c(46.08,-12.3)
+Checking triangle with points a(36.68,-9.53), b(40.38,-3.86), c(42.39,-6.46)
+Checking triangle with points a(42.39,-6.46), b(40.38,-3.86), c(70.02,-2.44)
+Checking triangle with points a(41.55,-15.71), b(36.68,-9.53), c(39.18,-12.56)
+Checking triangle with points a(39.18,-12.56), b(36.68,-9.53), c(42.39,-6.46)
+Checking triangle with points a(36.68,-9.53), b(38.15,-1.49), c(40.38,-3.86)
+Checking triangle with points a(40.38,-3.86), b(38.15,-1.49), c(70.02,-2.44)
+Checking triangle with points a(33.23,-2.14), b(35.65,0.66), c(38.15,-1.49)
+Triangle found on vertices and added to list
+Checking triangle with points a(38.15,-1.49), b(35.65,0.66), c(70.02,-2.44)
+Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -541,7 +595,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -596,7 +650,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -651,7 +705,62 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Value derived from car position: 1
+Origin point x(35.69), y(-1.815)
+Triangle list size = 43
+Checking triangle with points a(57.64,-13.6), b(60.9,-11.79), c(65.41,-18.47)
+Checking triangle with points a(65.41,-18.47), b(62.04,-20.98), c(57.64,-13.6)
+Checking triangle with points a(66.25,-7.92), b(70.02,-2.44), c(68.4,-5.43)
+Checking triangle with points a(60.9,-11.79), b(63.76,-9.96), c(65.41,-18.47)
+Checking triangle with points a(62.04,-20.98), b(58.54,-22.88), c(57.64,-13.6)
+Checking triangle with points a(58.54,-22.88), b(54.19,-15.09), c(57.64,-13.6)
+Checking triangle with points a(57.64,-13.6), b(44.26,-9.28), c(60.9,-11.79)
+Checking triangle with points a(63.76,-9.96), b(68.67,-15.85), c(65.41,-18.47)
+Checking triangle with points a(58.54,-22.88), b(54.86,-23.71), c(54.19,-15.09)
+Checking triangle with points a(63.76,-9.96), b(66.25,-7.92), c(68.67,-15.85)
+Checking triangle with points a(66.25,-7.92), b(42.39,-6.46), c(70.02,-2.44)
+Checking triangle with points a(51.04,-23.1), b(50.91,-15.67), c(54.19,-15.09)
+Checking triangle with points a(54.19,-15.09), b(46.08,-12.3), c(57.64,-13.6)
+Checking triangle with points a(66.25,-7.92), b(71.79,-13.32), c(68.67,-15.85)
+Checking triangle with points a(54.86,-23.71), b(51.04,-23.1), c(54.19,-15.09)
+Checking triangle with points a(42.39,-6.46), b(63.76,-9.96), c(60.9,-11.79)
+Checking triangle with points a(66.25,-7.92), b(68.4,-5.43), c(71.79,-13.32)
+Checking triangle with points a(47.36,-21.3), b(48.16,-14.79), c(50.91,-15.67)
+Checking triangle with points a(50.91,-15.67), b(46.08,-12.3), c(54.19,-15.09)
+Checking triangle with points a(68.4,-5.43), b(74.64,-10.64), c(71.79,-13.32)
+Checking triangle with points a(51.04,-23.1), b(47.36,-21.3), c(50.91,-15.67)
+Checking triangle with points a(41.55,-15.71), b(46.08,-12.3), c(48.16,-14.79)
+Checking triangle with points a(48.16,-14.79), b(46.08,-12.3), c(50.91,-15.67)
+Checking triangle with points a(42.39,-6.46), b(66.25,-7.92), c(63.76,-9.96)
+Checking triangle with points a(68.4,-5.43), b(77.06,-7.53), c(74.64,-10.64)
+Checking triangle with points a(47.36,-21.3), b(44.16,-18.71), c(48.16,-14.79)
+Checking triangle with points a(70.02,-2.44), b(77.06,-7.53), c(68.4,-5.43)
+Checking triangle with points a(39.18,-12.56), b(44.26,-9.28), c(46.08,-12.3)
+Checking triangle with points a(46.08,-12.3), b(44.26,-9.28), c(57.64,-13.6)
+Checking triangle with points a(44.16,-18.71), b(41.55,-15.71), c(48.16,-14.79)
+Checking triangle with points a(39.18,-12.56), b(42.39,-6.46), c(44.26,-9.28)
+Checking triangle with points a(44.26,-9.28), b(42.39,-6.46), c(60.9,-11.79)
+Checking triangle with points a(70.02,-2.44), b(78.81,-3.89), c(77.06,-7.53)
+Checking triangle with points a(41.55,-15.71), b(39.18,-12.56), c(46.08,-12.3)
+Checking triangle with points a(36.68,-9.53), b(40.38,-3.86), c(42.39,-6.46)
+Checking triangle with points a(42.39,-6.46), b(40.38,-3.86), c(70.02,-2.44)
+Checking triangle with points a(41.55,-15.71), b(36.68,-9.53), c(39.18,-12.56)
+Checking triangle with points a(39.18,-12.56), b(36.68,-9.53), c(42.39,-6.46)
+Checking triangle with points a(36.68,-9.53), b(38.15,-1.49), c(40.38,-3.86)
+Checking triangle with points a(40.38,-3.86), b(38.15,-1.49), c(70.02,-2.44)
+Checking triangle with points a(33.23,-2.14), b(35.65,0.66), c(38.15,-1.49)
+Triangle found on vertices and added to list
+Checking triangle with points a(38.15,-1.49), b(35.65,0.66), c(70.02,-2.44)
+Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
+Triangle found on vertices and added to list
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -706,7 +815,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -761,7 +870,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -816,7 +925,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -871,7 +980,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -926,7 +1035,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -981,7 +1090,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1036,7 +1145,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1091,7 +1200,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1146,7 +1255,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1201,7 +1310,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1256,7 +1365,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1311,7 +1420,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1366,7 +1475,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1421,7 +1530,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1476,7 +1585,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1531,7 +1640,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1586,7 +1695,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1641,7 +1750,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1696,7 +1805,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1751,7 +1860,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1806,7 +1915,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1861,7 +1970,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1916,7 +2025,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -1971,7 +2080,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2026,7 +2135,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2081,7 +2190,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2136,7 +2245,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2191,7 +2300,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2246,7 +2355,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2301,7 +2410,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2356,7 +2465,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2411,7 +2520,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2466,7 +2575,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2521,7 +2630,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2576,7 +2685,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2631,7 +2740,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2686,7 +2795,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2741,7 +2850,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2796,7 +2905,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2851,7 +2960,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2906,7 +3015,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -2961,7 +3070,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3016,7 +3125,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3071,7 +3180,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3126,7 +3235,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3181,7 +3290,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3236,7 +3345,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3290,7 +3399,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3345,7 +3454,7 @@ Checking triangle with points a(36.68,-9.53), b(33.23,-2.14), c(38.15,-1.49)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3457,7 +3566,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3519,7 +3628,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3581,7 +3690,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3643,7 +3752,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3704,7 +3813,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3766,7 +3875,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3827,7 +3936,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3888,7 +3997,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -3950,7 +4059,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4012,7 +4121,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4074,7 +4183,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4136,7 +4245,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4198,7 +4307,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4260,7 +4369,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4322,7 +4431,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4384,7 +4493,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4446,7 +4555,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4508,7 +4617,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4570,7 +4679,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4632,7 +4741,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4694,7 +4803,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4756,7 +4865,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4818,7 +4927,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4880,7 +4989,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -4942,7 +5051,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5004,7 +5113,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5066,7 +5175,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5128,7 +5237,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5190,7 +5299,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5252,7 +5361,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5314,7 +5423,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5376,7 +5485,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5438,7 +5547,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5500,7 +5609,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5562,7 +5671,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5624,7 +5733,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5686,7 +5795,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5748,7 +5857,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5810,7 +5919,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5872,7 +5981,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5934,7 +6043,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -5996,7 +6105,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6058,7 +6167,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6120,7 +6229,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6182,7 +6291,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6244,7 +6353,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6306,7 +6415,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6368,7 +6477,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6430,7 +6539,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6492,7 +6601,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6554,7 +6663,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6616,7 +6725,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6678,7 +6787,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6740,7 +6849,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6802,7 +6911,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6864,7 +6973,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6926,7 +7035,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -6988,7 +7097,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7050,7 +7159,7 @@ Checking triangle with points a(46.48,34.64), b(48.97,44.9), c(48.75,35.92)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7111,7 +7220,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7173,7 +7282,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7279,7 +7388,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7338,7 +7447,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7397,7 +7506,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7456,7 +7565,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7514,7 +7623,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7573,7 +7682,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7631,7 +7740,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7689,7 +7798,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7748,7 +7857,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7807,7 +7916,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7866,7 +7975,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7925,7 +8034,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -7984,7 +8093,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8043,7 +8152,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8102,7 +8211,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8161,7 +8270,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8220,7 +8329,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8279,7 +8388,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8338,7 +8447,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8397,7 +8506,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8456,7 +8565,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8515,7 +8624,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8574,7 +8683,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8633,7 +8742,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8692,7 +8801,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8751,7 +8860,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8810,7 +8919,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8869,7 +8978,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8928,7 +9037,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -8987,7 +9096,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9046,7 +9155,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9105,7 +9214,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9164,7 +9273,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9223,7 +9332,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9282,7 +9391,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9341,7 +9450,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9400,7 +9509,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9459,7 +9568,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9518,7 +9627,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9577,7 +9686,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9636,7 +9745,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9695,7 +9804,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9754,7 +9863,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9813,7 +9922,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9872,7 +9981,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9931,7 +10040,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -9990,7 +10099,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10049,7 +10158,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10108,7 +10217,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10167,7 +10276,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10226,7 +10335,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10285,7 +10394,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10344,7 +10453,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10403,7 +10512,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10462,7 +10571,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10521,7 +10630,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10580,7 +10689,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10639,7 +10748,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10698,7 +10807,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10757,7 +10866,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10816,7 +10925,7 @@ Checking triangle with points a(27.79,25.79), b(0.48,50.62), c(25.31,28.25)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10894,7 +11003,7 @@ Triangle found on points and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10939,7 +11048,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -10984,7 +11093,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11028,7 +11137,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11073,7 +11182,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11118,7 +11227,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11163,7 +11272,51 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Value derived from car position: 1
+Origin point x(5.37), y(46.52)
+Triangle list size = 33
+Checking triangle with points a(-9.77,31.64), b(-10.5,28.41), c(-19.13,31.32)
+Checking triangle with points a(-19.13,31.32), b(-17.63,35.05), c(-9.77,31.64)
+Checking triangle with points a(-10.5,28.41), b(-19.45,27.35), c(-19.13,31.32)
+Checking triangle with points a(-9.77,31.64), b(-9.75,25.16), c(-10.5,28.41)
+Checking triangle with points a(-15.36,38.34), b(-7.97,34.52), c(-9.77,31.64)
+Checking triangle with points a(-17.63,35.05), b(-15.36,38.34), c(-9.77,31.64)
+Checking triangle with points a(-7.86,22.33), b(-9.75,25.16), c(-9.77,31.64)
+Checking triangle with points a(-10.5,28.41), b(-18.43,23.45), c(-19.45,27.35)
+Checking triangle with points a(-9.75,25.16), b(-18.43,23.45), c(-10.5,28.41)
+Checking triangle with points a(-15.36,38.34), b(-12.62,41.15), c(-7.97,34.52)
+Checking triangle with points a(-12.62,41.15), b(-5.69,36.83), c(-7.97,34.52)
+Checking triangle with points a(-7.97,34.52), b(-7.86,22.33), c(-9.77,31.64)
+Checking triangle with points a(-5.36,20.23), b(-7.86,22.33), c(-7.97,34.52)
+Checking triangle with points a(-9.75,25.16), b(-16.4,20), c(-18.43,23.45)
+Checking triangle with points a(-7.86,22.33), b(-16.4,20), c(-9.75,25.16)
+Checking triangle with points a(-12.62,41.15), b(-9.57,43.69), c(-5.69,36.83)
+Checking triangle with points a(-9.57,43.69), b(-3.09,38.76), c(-5.69,36.83)
+Checking triangle with points a(-5.69,36.83), b(-5.36,20.23), c(-7.97,34.52)
+Checking triangle with points a(-7.86,22.33), b(-13.73,17.24), c(-16.4,20)
+Checking triangle with points a(-2.63,18.41), b(-5.36,20.23), c(-5.69,36.83)
+Checking triangle with points a(-7.86,22.33), b(-10.73,14.75), c(-13.73,17.24)
+Checking triangle with points a(-5.36,20.23), b(-10.73,14.75), c(-7.86,22.33)
+Checking triangle with points a(-6.33,46.17), b(-0.22,40.67), c(-3.09,38.76)
+Checking triangle with points a(-3.09,38.76), b(-2.63,18.41), c(-5.69,36.83)
+Checking triangle with points a(-9.57,43.69), b(-6.33,46.17), c(-3.09,38.76)
+Checking triangle with points a(-0.22,40.67), b(-2.63,18.41), c(-3.09,38.76)
+Checking triangle with points a(-5.36,20.23), b(-2.63,18.41), c(-10.73,14.75)
+Checking triangle with points a(-2.99,48.58), b(2.85,42.79), c(-0.22,40.67)
+Checking triangle with points a(-0.22,40.67), b(2.85,42.79), c(-2.63,18.41)
+Checking triangle with points a(-6.33,46.17), b(-2.99,48.58), c(-0.22,40.67)
+Checking triangle with points a(4.75,48.3), b(5.99,44.74), c(2.85,42.79)
+Triangle found on vertices and added to list
+Checking triangle with points a(2.85,42.79), b(5.99,44.74), c(-2.63,18.41)
+Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11207,7 +11360,7 @@ Triangle found on vertices and added to list
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11252,7 +11405,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11297,7 +11450,52 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
+-----------------------------------
+-----------------------------------
+At time of entering function key variables were:
+Value derived from car position: 1
+Origin point x(3.8), y(45.545)
+Triangle list size = 33
+Checking triangle with points a(-9.77,31.64), b(-10.5,28.41), c(-19.13,31.32)
+Checking triangle with points a(-19.13,31.32), b(-17.63,35.05), c(-9.77,31.64)
+Checking triangle with points a(-10.5,28.41), b(-19.45,27.35), c(-19.13,31.32)
+Checking triangle with points a(-9.77,31.64), b(-9.75,25.16), c(-10.5,28.41)
+Checking triangle with points a(-15.36,38.34), b(-7.97,34.52), c(-9.77,31.64)
+Checking triangle with points a(-17.63,35.05), b(-15.36,38.34), c(-9.77,31.64)
+Checking triangle with points a(-7.86,22.33), b(-9.75,25.16), c(-9.77,31.64)
+Checking triangle with points a(-10.5,28.41), b(-18.43,23.45), c(-19.45,27.35)
+Checking triangle with points a(-9.75,25.16), b(-18.43,23.45), c(-10.5,28.41)
+Checking triangle with points a(-15.36,38.34), b(-12.62,41.15), c(-7.97,34.52)
+Checking triangle with points a(-12.62,41.15), b(-5.69,36.83), c(-7.97,34.52)
+Checking triangle with points a(-7.97,34.52), b(-7.86,22.33), c(-9.77,31.64)
+Checking triangle with points a(-5.36,20.23), b(-7.86,22.33), c(-7.97,34.52)
+Checking triangle with points a(-9.75,25.16), b(-16.4,20), c(-18.43,23.45)
+Checking triangle with points a(-7.86,22.33), b(-16.4,20), c(-9.75,25.16)
+Checking triangle with points a(-12.62,41.15), b(-9.57,43.69), c(-5.69,36.83)
+Checking triangle with points a(-9.57,43.69), b(-3.09,38.76), c(-5.69,36.83)
+Checking triangle with points a(-5.69,36.83), b(-5.36,20.23), c(-7.97,34.52)
+Checking triangle with points a(-7.86,22.33), b(-13.73,17.24), c(-16.4,20)
+Checking triangle with points a(-2.63,18.41), b(-5.36,20.23), c(-5.69,36.83)
+Checking triangle with points a(-7.86,22.33), b(-10.73,14.75), c(-13.73,17.24)
+Checking triangle with points a(-5.36,20.23), b(-10.73,14.75), c(-7.86,22.33)
+Checking triangle with points a(-6.33,46.17), b(-0.22,40.67), c(-3.09,38.76)
+Checking triangle with points a(-3.09,38.76), b(-2.63,18.41), c(-5.69,36.83)
+Checking triangle with points a(-9.57,43.69), b(-6.33,46.17), c(-3.09,38.76)
+Checking triangle with points a(-0.22,40.67), b(-2.63,18.41), c(-3.09,38.76)
+Checking triangle with points a(-5.36,20.23), b(-2.63,18.41), c(-10.73,14.75)
+Checking triangle with points a(-2.99,48.58), b(2.85,42.79), c(-0.22,40.67)
+Checking triangle with points a(-0.22,40.67), b(2.85,42.79), c(-2.63,18.41)
+Checking triangle with points a(-6.33,46.17), b(-2.99,48.58), c(-0.22,40.67)
+Checking triangle with points a(4.75,48.3), b(5.99,44.74), c(2.85,42.79)
+Triangle found on vertices and added to list
+Checking triangle with points a(2.85,42.79), b(5.99,44.74), c(-2.63,18.41)
+Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
+Triangle found on vertices and added to list
+///////////////////////////////////
+///////////////////////////////////
+
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11342,7 +11540,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11387,7 +11585,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11432,7 +11630,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11477,7 +11675,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11522,7 +11720,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11567,7 +11765,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11612,7 +11810,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11657,7 +11855,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11702,7 +11900,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11747,7 +11945,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11792,7 +11990,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11837,7 +12035,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11882,7 +12080,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11927,7 +12125,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -11972,7 +12170,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12017,7 +12215,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12062,7 +12260,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12107,7 +12305,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12152,7 +12350,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12197,7 +12395,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12242,7 +12440,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12287,7 +12485,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12332,7 +12530,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12377,7 +12575,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12422,7 +12620,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12467,7 +12665,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12512,7 +12710,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12557,7 +12755,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12602,7 +12800,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12647,7 +12845,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12692,7 +12890,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12737,7 +12935,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12782,7 +12980,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12827,7 +13025,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12872,7 +13070,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:
@@ -12916,7 +13114,7 @@ Checking triangle with points a(-2.99,48.58), b(4.75,48.3), c(2.85,42.79)
 ///////////////////////////////////
 ///////////////////////////////////
 
-Log message for findTrianglesAroundPoint() log data at Mon Aug 10 22:15:20 2020
+Log message for findTrianglesAroundPoint() log data at Sat Sep  5 17:21:41 2020
 -----------------------------------
 -----------------------------------
 At time of entering function key variables were:

@@ -29,7 +29,7 @@ public:
 	void showEndPoint(const Coord &endPoint);
 	void showCentreCoords(const std::vector<Coord> &centreCoords);
 	void showNodeMids(const std::vector<Coord> &midPoints);	
-	void showNodeParentLinks(const std::vector<std::pair<Coord, Coord>> &connections, std::vector<float> colour);
+	void showPredictedPath(const std::vector<std::pair<Coord, Coord>> &connections, std::vector<float> colour);
 	void showViablePaths(const std::vector<std::vector<Coord>> &paths, bool refresh = false);
 	void showLeftCones(const std::vector <const Cone *> &coneList);
 	void showRightCones(const std::vector <const Cone *> &coneList);
@@ -40,6 +40,7 @@ public:
 	void showCarVision(const CircleSection &circle_sec);
 	void showTrackFrame(const Rect &track_frame);
 	void showBoundaryCircle(const double &radius, const Coord &origin, const Coord &cone, const Coord &closest_point);
+	void clearMapping();
 
 private:
 	void waitForSubscribe(const ros::Publisher &pub);
@@ -54,7 +55,7 @@ private:
 	ros::Publisher target_pub;
 	ros::Publisher centre_coord_pub;
 	ros::Publisher node_mid_pub;
-	ros::Publisher node_mid_connections_pub;
+	ros::Publisher predicted_path_pub;
 	ros::Publisher paths_pub;
 	ros::Publisher left_cone_pub;
 	ros::Publisher right_cone_pub;
@@ -71,7 +72,7 @@ private:
 
 
 	visualization_msgs::MarkerArray node_mid_markers;
-	visualization_msgs::MarkerArray node_mid_parent_markers;
+	visualization_msgs::MarkerArray predicted_path_markers;
 	visualization_msgs::MarkerArray path_markers;
 	visualization_msgs::MarkerArray centre_markers;
 	visualization_msgs::Marker target_marker;

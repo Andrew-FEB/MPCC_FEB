@@ -1,7 +1,7 @@
 #include "cone.h"
 
 static int ID_VAL = 0;
-static constexpr double radius = 0.5;
+static constexpr double radius = 0.3;
 
 Cone::Cone(const double &newX, const double &newY, const BoundPos &newPos): coordinates({newX,newY}), pos(newPos), id(ID_VAL++)
 {

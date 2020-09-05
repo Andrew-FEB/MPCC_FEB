@@ -8,7 +8,6 @@ Car::Car(const Pos & newPos, const Vel & newVel, std::shared_ptr<Visualisation> 
 /**
  *  Bicycle Models
  */
-
 Car Car::kinematicModel(const ControlInputs & control) const
 {
     // State parameters

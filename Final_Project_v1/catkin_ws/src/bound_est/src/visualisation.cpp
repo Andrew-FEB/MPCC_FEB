@@ -41,7 +41,7 @@ void Visualisation::refreshRosOutput()
 		if (target_pub.getNumSubscribers()>=1) target_pub.publish(target_marker);
 		if (centre_coord_pub.getNumSubscribers()>=1) centre_coord_pub.publish(centre_markers);
 		if (node_mid_pub.getNumSubscribers()>=1) node_mid_pub.publish(node_mid_markers);
-		if (node_mid_connections_pub.getNumSubscribers()>=1) node_mid_connections_pub.publish(node_mid_parent_markers);
+		if (predicted_path_pub.getNumSubscribers()>=1) predicted_path_pub.publish(predicted_path_markers);
 		if (paths_pub.getNumSubscribers()>=1) paths_pub.publish(path_markers);
 		if (right_cone_pub.getNumSubscribers()>=1) right_cone_pub.publish(right_cone_markers);
 		if (left_cone_pub.getNumSubscribers()>=1) left_cone_pub.publish(left_cone_markers);
@@ -130,7 +130,7 @@ void Visualisation::showNewCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		new_cone_markers.markers[i].header.stamp = ros::Time();
 		new_cone_markers.markers[i].ns = "new_cones";
 		new_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		new_cone_markers.markers[i].mesh_resource = "file:///home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		new_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		new_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		new_cone_markers.markers[i].pose.position.z = 0.0;
 		new_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -170,7 +170,7 @@ void Visualisation::showFramedCones(const std::vector<std::unique_ptr<Cone>> &co
 		framed_cone_markers.markers[i].header.stamp = ros::Time();
 		framed_cone_markers.markers[i].ns = "new_cones";
 		framed_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		framed_cone_markers.markers[i].mesh_resource = "file:///home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		framed_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		framed_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		framed_cone_markers.markers[i].pose.position.z = 0.0;
 		framed_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -210,7 +210,7 @@ void Visualisation::showOldCones(const std::vector<std::unique_ptr<Cone>> &coneL
 		old_cone_markers.markers[i].header.stamp = ros::Time();
 		old_cone_markers.markers[i].ns = "old_cones";
 		old_cone_markers.markers[i].type = visualization_msgs::Marker::MESH_RESOURCE;
-		old_cone_markers.markers[i].mesh_resource = "file:///home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
+		old_cone_markers.markers[i].mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/cone.dae";
 		old_cone_markers.markers[i].action = visualization_msgs::Marker::ADD;
 		old_cone_markers.markers[i].pose.position.z = 0.0;
 		old_cone_markers.markers[i].pose.orientation.z = 0.0;
@@ -242,7 +242,7 @@ void Visualisation::showCar(const Pos &pos)
 	car_marker.header.stamp = ros::Time();
 	car_marker.ns = "car_image";
 	car_marker.type = visualization_msgs::Marker::MESH_RESOURCE;
-	car_marker.mesh_resource = "file:///home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
+	car_marker.mesh_resource = "file:///home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/resources/meshes/eclipse.stl";
 	car_marker.action = visualization_msgs::Marker::ADD;
 	car_marker.pose.position.z = 0.0;
 	car_marker.pose.orientation.z = tf::createQuaternionMsgFromYaw(pos.phi).z;
@@ -351,8 +351,8 @@ void Visualisation::showCentreCoords(const std::vector<Coord> &centreCoords)
 		centre_markers.markers[i].pose.position.z = 0.0;
 		centre_markers.markers[i].pose.orientation.z = 0.0;
 		centre_markers.markers[i].pose.orientation.w = 1.0;
-		centre_markers.markers[i].scale.x = 0.3;
-		centre_markers.markers[i].scale.y = 0.3;
+		centre_markers.markers[i].scale.x = 0.2;
+		centre_markers.markers[i].scale.y = 0.2;
 		centre_markers.markers[i].scale.z = 1.0;
 		centre_markers.markers[i].color.r = 0.75f;
 		centre_markers.markers[i].color.g = 0.1f;
@@ -407,18 +407,18 @@ void Visualisation::showNodeMids(const std::vector<Coord> &midPoints)
 	node_mid_pub.publish(node_mid_markers);
 }
 
-void Visualisation::showNodeParentLinks(const std::vector<std::pair<Coord, Coord>> &connections, std::vector<float> colour)
+void Visualisation::showPredictedPath(const std::vector<std::pair<Coord, Coord>> &connections, std::vector<float> colour)
 {
 
-	if (node_mid_connections_pub.getNumSubscribers()<1)
+	if (predicted_path_pub.getNumSubscribers()<1)
 	{
-		std::cerr<<"Waiting for subscription - node parent links."<<std::endl;
-		node_mid_connections_pub = n->advertise<visualization_msgs::MarkerArray>("nodeParent_lines", TIME_OUT_VAL);
-		waitForSubscribe(node_mid_connections_pub);
+		std::cerr<<"Waiting for subscription - predicted path markers."<<std::endl;
+		predicted_path_pub = n->advertise<visualization_msgs::MarkerArray>("predicted_path", TIME_OUT_VAL);
+		waitForSubscribe(predicted_path_pub);
 	}
-	if (!node_mid_parent_markers.markers.empty())
+	if (!predicted_path_markers.markers.empty())
 	{
-		node_mid_parent_markers.markers.clear();
+		predicted_path_markers.markers.clear();
 	}
 	auto connection = connections.begin();
 	int index = 0;
@@ -453,10 +453,10 @@ void Visualisation::showNodeParentLinks(const std::vector<std::pair<Coord, Coord
 		arrow.color.a = 0.7;
 
 		arrow.lifetime = ros::Duration(ROS_DURATION_TIME);
-		node_mid_parent_markers.markers.push_back(arrow);
+		predicted_path_markers.markers.push_back(arrow);
 		connection++;
 	}
-	node_mid_connections_pub.publish(node_mid_parent_markers);
+	predicted_path_pub.publish(predicted_path_markers);
 }
 
 void Visualisation::showViablePaths(const std::vector<std::vector<Coord>> &paths, bool refresh)
@@ -883,10 +883,9 @@ void Visualisation::showBoundaryCircle(const double &radius, const Coord &origin
 	marker.pose.orientation.z = 1.0;
 	marker.pose.orientation.w = 1.0;
 	marker.pose.orientation.y = 0.0;
-	marker.pose.orientation.x = 0.0;
-	auto rad_squared = pow(radius,2);
-	marker.scale.x = rad_squared;
-	marker.scale.y = rad_squared;
+	marker.pose.orientation.x = 0.0;;
+	marker.scale.x = radius*2;
+	marker.scale.y = radius*2;;
 	marker.scale.z = 0.01;
 	marker.color.r = 0.0f;
 	marker.color.g = 1.0f;
@@ -910,6 +909,13 @@ void Visualisation::showBoundaryCircle(const double &radius, const Coord &origin
 	marker.pose.position.y = closest_point.y;
 	marker.id = 2;	
 	boundary_circle_markers.markers.push_back(marker);
-
 	boundary_circle_pub.publish(boundary_circle_markers);
+}
+
+void Visualisation::clearMapping()
+{
+	triangle_line_markers.points.clear();
+	node_mid_markers.markers.clear();
+	node_mid_pub.publish(node_mid_markers);
+	triangle_pub.publish(triangle_line_markers);
 }

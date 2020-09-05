@@ -1,0 +1,23 @@
+!!code_only_run:
+
+Runs only MPCC and Boundary Estimation code sections.
+
+If visualisation pre-processor statement active, code will hang as no rosviz process available to receive visualisation messages
+
+!!rosviz_start:
+
+Runs MPCC and Boundary Estimation code sections AND rosviz visualisation code
+
+Significant performance hit, so only use if visualisation desired.
+
+rqt_start:
+
+TO_DO
+
+!!"r_" prefix:
+Compiles MPCC and Boundary Estimation code sections in release mode rather than default
+
+!!"v_" prefix:
+Compiles MPCC and Boundary Estimation code sections in debug mode rather than default and runs via Valgrind
+
+

@@ -29,7 +29,7 @@ bool counter_clockwise_track = false;
 bool clockwise_track = false;
 #if defined(DEBUG) || defined(TIME_LOG)
     bool reset_logs = true;
-    constexpr int DEBUG_LOOPS_TO_COMPLETE = 5;
+    constexpr int DEBUG_LOOPS_TO_COMPLETE = 873;
 #endif
 
 // void chatterCallback(const bound_est::ConeMap &m)
@@ -59,6 +59,7 @@ int main(int argc, char *argv[])
     #ifdef DEBUG
     std::cerr<<"ROS CONFIGURED"<<std::endl;
     #endif
+
     //Configure visualisation
     #ifdef VISUALISE
         auto visualisation = std::make_shared<Visualisation>();
@@ -68,6 +69,7 @@ int main(int argc, char *argv[])
     #ifdef DEBUG
     std::cerr<<"VISUALISATION CONFIGURED"<<std::endl;
     #endif
+
     //Configure time logs
     #ifdef TIME_LOG
     std::unique_ptr<BoundaryLogger> time_log = std::make_unique<BoundaryLogger>("TIME_LOG", "Timing logs", reset_logs);
@@ -80,19 +82,25 @@ int main(int argc, char *argv[])
     int64_t car_check_time;
     #endif
 
+    //Configure variables
+    #if defined(DEBUG_LOOPS) || defined(DEBUG_SLOW) ||defined(DEBUG_SLOWAFTERLOOPS) ||defined(TIME_LOG)
+        int loops_completed = 0;
+    #endif
+    bool continue_driving{false};
+
     //Setup essential configuration variables
     //Configure track
     std::unique_ptr<Track> track = std::make_unique<Track>(visualisation);
     #ifdef DEBUG
     std::cerr<<"TRACK CONFIGURED"<<std::endl;
     #endif
-    std::unique_ptr<MPCController> mpcc = std::make_unique<MPCController>(visualisation, *track);
+    std::unique_ptr<MPCController> mpcc = std::make_unique<MPCController>(visualisation, *track, true);
     #ifdef DEBUG
     std::cerr<<"MPCC CONFIGURED"<<std::endl;
     #endif
     // //Configure ros messages
     // rosbag::Bag cone_data;
-    // cone_data.open("/home/senne/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
+    // cone_data.open("/home/dm501/catkin_ws/src/bound_est/src/resources/cone_files/KartingGenk.bag");
     // rosbag::View view(cone_data);
     // std::vector<std::string> topics;
     // //topics.push_back(std::string("carpos")); //Testing topic, remove in final
@@ -264,13 +272,10 @@ int main(int argc, char *argv[])
 {-10.73, 14.75},
 {-7.73, 11.9}};
 
+    #ifdef DEBUG
     std::cout << "Entering loop" << std::endl;
-
-    #if defined(DEBUG_LOOPS) || defined(DEBUG_SLOW) ||defined(DEBUG_SLOWAFTERLOOPS) ||defined(TIME_LOG)
-        int loops_completed = 0;
     #endif
 
-    bool continue_driving{false};
     //Enter refresh loop
     while (1)
     {
@@ -280,15 +285,12 @@ int main(int argc, char *argv[])
         #endif
 
         //MAIN LOOP
-        //Collect IMU data
+        //Collect IMU data - TODO!!
         //Check critical conditions 
         #ifdef TIME_LOG
             if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
         #endif
-        //continue_driving = track->carIsInsideTrack();
-        //TEST
-        continue_driving = true;
-        //ETEST
+        continue_driving = track->carIsInsideTrack();
 
         #ifdef TIME_LOG
             if (track->getLapsRaced()<1) car_check_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
@@ -314,6 +316,8 @@ int main(int argc, char *argv[])
        
        if (continue_driving)
        {
+            //Check metadata (laps done, goal achievement, etc.)
+            track->checkForLap();
             #ifdef TIME_LOG
                 if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
             #endif
@@ -321,22 +325,19 @@ int main(int argc, char *argv[])
             if (!track->trackIsComplete()) track->processNextSection();
             #ifdef TIME_LOG
                 if (track->getLapsRaced()<1) section_process_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
-            #endif
-            #ifdef TIME_LOG
                 if (track->getLapsRaced()<1) function_start = std::chrono::high_resolution_clock::now();
             #endif
-            //MPCC
-            mpcc->solve();  
+            //NEXT MPCC solve
+            auto control_inputs = mpcc->solve();  
             #ifdef TIME_LOG
                 if (track->getLapsRaced()<1) mpcc_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now()-function_start).count();
             #endif      
-            //Check metadata (laps done, goal achievement, etc.)
-            track->checkForLap();
+            //Output control_inputs to car - TODO!!
        }
        else
        {
            std::cerr<<"OUTSIDE OF TRACK BOUNDARIES"<<std::endl;
-           //Trigger responses to outside of track state
+           //Trigger responses to outside of track emergency state - TODO!!
            //break;
        }
        
@@ -344,7 +345,7 @@ int main(int argc, char *argv[])
             loops_completed++;
         #endif
         #ifdef DEBUG_SLOW
-            usleep(25000);
+            usleep(500000);
             std::cout<<"Loops completed: "<<loops_completed<<std::endl;
         #endif
 
@@ -352,7 +353,7 @@ int main(int argc, char *argv[])
             std::cout<<"Loops completed: "<<loops_completed<<std::endl;
             if (loops_completed>=DEBUG_LOOPS_TO_COMPLETE)
             {
-                usleep(5000000);
+                usleep(1000000);
             }
         #endif
 

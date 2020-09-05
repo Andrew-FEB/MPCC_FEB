@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/build"
+export PWD='/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/build'

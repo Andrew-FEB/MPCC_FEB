@@ -81,18 +81,18 @@ double PathAnalysis::findPathCost(const std::vector<Coord> &path, const Coord &e
     auto e = checkForRepeatNodes(path);
 
     #ifdef DEBUG
-    double output = (a1 + a2 + b + c1 + c2 + d + e);
-    path_log->write(ss<<"Nearest classified cone contacts = "<<a1);
-    path_log->write(ss<<"Nearest unclassified cone contacts = "<<a2);
-    path_log->write(ss<<"Distance to end goal = "<<b);
-    path_log->write(ss<<"Classified cones on each side = "<<c1);
-    path_log->write(ss<<"Unclassified cones on each side = "<<c2);
-    path_log->write(ss<<"Advancing to end goal throughout path = "<<d);
+    double output = (CLASS_NEAREST_CONE_COEFF*a1 + UNCLASS_NEAREST_CONE_COEFF*a2 + DISTANCE_END_COEFF*b + CLASS_CONES_EACH_SIDE_COEFF*c1 + UNCLASS_CONES_EACH_SIDE_COEFF*c2 + ADVANCING_COEFF*d + e);
+    path_log->write(ss<<"Nearest classified cone contacts = "<<CLASS_NEAREST_CONE_COEFF*a1);
+    path_log->write(ss<<"Nearest unclassified cone contacts = "<<UNCLASS_NEAREST_CONE_COEFF*a2);
+    path_log->write(ss<<"Distance to end goal = "<<DISTANCE_END_COEFF*b);
+    path_log->write(ss<<"Classified cones on each side = "<<CLASS_CONES_EACH_SIDE_COEFF*c1);
+    path_log->write(ss<<"Unclassified cones on each side = "<<UNCLASS_CONES_EACH_SIDE_COEFF*c2);
+    path_log->write(ss<<"Advancing to end goal throughout path = "<<ADVANCING_COEFF*d);
     path_log->write(ss<<"Check for repeat nodes = "<<e);
-    path_log->write(ss<<"Total calculated score: "<<a1<<" + "<<a2<<" + "<<b<<" + "<<c1<<" + "<<c2<<" + "<<d<<" + "<<e<<" = "<<output, true);
+    path_log->write(ss<<"Total calculated score: "<<CLASS_NEAREST_CONE_COEFF*a1<<" + "<<UNCLASS_NEAREST_CONE_COEFF*a2<<" + "<<DISTANCE_END_COEFF*b<<" + "<<CLASS_CONES_EACH_SIDE_COEFF*c1<<" + "<<UNCLASS_CONES_EACH_SIDE_COEFF*c2<<" + "<<ADVANCING_COEFF*d<<" + "<<e<<" = "<<output, true);
     return output;
     #else
-    return (a1+a2+b+c1+c2+d+e);
+    return (CLASS_NEAREST_CONE_COEFF*a1+UNCLASS_NEAREST_CONE_COEFF*a2+DISTANCE_END_COEFF*b+CLASS_CONES_EACH_SIDE_COEFF*c1+UNCLASS_CONES_EACH_SIDE_COEFF*c2+ADVANCING_COEFF*d+e);
     #endif
 
 }

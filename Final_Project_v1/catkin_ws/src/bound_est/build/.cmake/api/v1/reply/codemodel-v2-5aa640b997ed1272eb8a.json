@@ -886,8 +886,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build",
-		"source" : "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est"
+		"build" : "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/build",
+		"source" : "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est"
 	},
 	"version" : 
 	{

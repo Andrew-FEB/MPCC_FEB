@@ -7,7 +7,7 @@
 
 #include "mpccontroller.h"
 
-MPCController::MPCController(std::shared_ptr<Visualisation> vis, Track & t) : visualisation(vis), track(t) {
+MPCController::MPCController(std::shared_ptr<Visualisation> vis, Track & t, bool simulating) : visualisation(vis), track(t), simulating(simulating) {
             // Populate the vector of distances
             std::vector<double> dists(prediction_horizon);
             auto d = time_step * 3.5;  // 3.5 = max velocity
@@ -18,12 +18,16 @@ MPCController::MPCController(std::shared_ptr<Visualisation> vis, Track & t) : vi
             distances = dists;
         }
 
-void MPCController::solve()
+ControlInputs MPCController::solve()
 {
     ControlInputs ci;
     auto car = track.getCar();
     auto pos = car->getPosition();
     auto vel = car->getVelocity();
+    #ifdef VISUALISE
+        visualisation->showCar(car->getPosition());
+        visualisation->showCarDirection(car->getPosition());
+    #endif
     
     /* parameters */
     // Obtain reference and track constraints
@@ -141,12 +145,10 @@ void MPCController::solve()
     /* free memory */
     mpcc_optimizer_free(cache);
 
-    /* Update car state */
-    car->updateCar(ci, time_step);
-    #ifdef VISUALISE
-        visualisation->showCar(car->getPosition());
-        visualisation->showCarDirection(car->getPosition());
-    #endif
+    /* Update car state if not running on car itself*/
+    if (simulating) car->updateCar(ci, time_step);
+
+    return ci;
 }
 
 void MPCController::showPredictedPath(const Car & car, double * inputs, bool converged) const
@@ -169,6 +171,5 @@ void MPCController::showPredictedPath(const Car & car, double * inputs, bool con
         colour = {0, 1, 0};
     else
         colour = {1, 0, 0};
-    visualisation->showNodeParentLinks(path, colour);
-
+    visualisation->showPredictedPath(path, colour);
 }

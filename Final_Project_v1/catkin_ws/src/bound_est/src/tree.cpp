@@ -140,7 +140,6 @@ void Tree::visualiseTree()
         }
     }
 	visualisation->showNodeMids(nodeCoords);
-    visualisation->showNodeParentLinks(nodeParentLinks, {1, 0, 0});
 #else
     return;
 #endif
@@ -170,7 +169,7 @@ bool Tree::nodeAlreadyExists(const Coord &point, const Coord &parent)
     return (node!=storageList.end());
 }
 
-std::vector<std::vector<Coord>> Tree::getPathsOfLength(int length, const Coord &section_end)
+std::vector<std::vector<Coord>> Tree::getPathsOfLength(int length)
 {
 
     #ifdef DEBUG
@@ -213,30 +212,15 @@ std::vector<std::vector<Coord>> Tree::getPathsOfLength(int length, const Coord &
         {
             path.push_back(node_p->pos);
             #ifdef DEBUG
-            log_get_paths->write(ss<<"Completed potential path collected of length "<<path.size()<<" containing:");
+            log_get_paths->write(ss<<"Path collected of length "<<path.size()<<" containing:");
             int debug_coord_count{0};
             for (auto point : path)
             {
                 ss<<"Coordinate "<<++debug_coord_count<<" with position x("<<point.x<<"), y("<<point.y<<")"<<std::endl;
             }
             log_get_paths->write(ss);
-            log_get_paths->write(ss<<"Checking if path contains end goal...");
             #endif
-            if (viablePathToEnd(path, section_end))
-            {
-                paths.push_back(path);
-                #ifdef DEBUG
-                log_get_paths->write(ss<<"Path decided to be valid, as distance to end goal is "
-                                        <<sqrt(distBetweenPoints(path.back(), section_end))<<". Path added to collection", true);
-                #endif
-            }
-            #ifdef DEBUG
-            else
-            {
-                log_get_paths->write(ss<<"Path ignored as invalid. Distance to end goal is "
-                                        <<sqrt(distBetweenPoints(path.back(), section_end))<<".", true);
-            }
-            #endif
+            paths.push_back(path);
         }
         node_p->pathsDerived++;
         
@@ -286,11 +270,6 @@ std::vector<std::vector<Coord>> Tree::getPathsOfLength(int length, const Coord &
     return paths;
 }
 
-static inline bool intIsOdd(int x)
-{
-    return (x%2);   //Compiler should adjust to simple &1 operation, but be compilable on more systems
-}
-
 const std::vector<tNode> &Tree::getStorageList() const
 {
     return storageList;
@@ -299,11 +278,6 @@ const std::vector<tNode> &Tree::getStorageList() const
 const int &Tree::getTreeSize() const
 {
     return treeSize;
-}
-
-bool Tree::viablePathToEnd(const std::vector<Coord> &path, const Coord &section_end)
-{
-    return (distBetweenPoints(path.back(), section_end)<MAX_DIST_TO_END_GOAL);
 }
 
 std::ostream& operator<<(std::ostream& os, std::vector<tNode> &storageList)

@@ -1,6 +1,6 @@
 #include "boundaryLogger.h"
 
-const std::string BoundaryLogger::debug_file_loc = "/home/senne/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/DEBUG_LOG";
+const std::string BoundaryLogger::debug_file_loc = "/home/dm501/MPCC_FEB/Final_Project_v1/catkin_ws/src/bound_est/src/DEBUG_LOG";
 
 BoundaryLogger::BoundaryLogger(std::string file_name, std::string log_type, bool reset_log)
 {

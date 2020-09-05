@@ -15,24 +15,18 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Cone &cone);
 
     const double &getX() const;
-    
     const double &getY() const;
-
     const Coord &getCoordinates() const;
+    void setX(double value);
+    void setY(double value);
+    void setCoordinates(const Coord &coord);
 
     const int& getID() const;
 
-    const BoundPos &getPos();
-    
-    void setX(double value);
-    
-    void setY(double value);
+    const BoundPos &getPos();   //Indicates track boundary position (options defined in enum Boundpos in definitions.h)
+    void setPos(const BoundPos& pos);
 
-    void setCoordinates(const Coord &coord);
-
-	void setPos(const BoundPos& pos);
-
-    const double &getConeRadius();
+    const double &getConeRadius();  //Not currently used. In case cone size becomes relevant for avoiding collisions and they can no longer be treated as point masses
 
     bool operator==(const Cone *a) const
 	{
