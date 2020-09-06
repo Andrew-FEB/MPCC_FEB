@@ -1,0 +1,77 @@
+TARGET = Some("x86_64-unknown-linux-gnu")
+OPT_LEVEL = Some("3")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some("false")
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+running: "cc" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wall" "-Wpedantic" "-Wno-long-long" "-Wno-unused-parameter" "-o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/auto_casadi_cost.o" "-c" "extern/auto_casadi_cost.c"
+exit code: 0
+running: "cc" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wall" "-Wpedantic" "-Wno-long-long" "-Wno-unused-parameter" "-o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/auto_casadi_grad.o" "-c" "extern/auto_casadi_grad.c"
+exit code: 0
+running: "cc" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wall" "-Wpedantic" "-Wno-long-long" "-Wno-unused-parameter" "-o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/auto_casadi_mapping_f2.o" "-c" "extern/auto_casadi_mapping_f2.c"
+exit code: 0
+running: "cc" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wall" "-Wpedantic" "-Wno-long-long" "-Wno-unused-parameter" "-o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/auto_casadi_mapping_f1.o" "-c" "extern/auto_casadi_mapping_f1.c"
+exit code: 0
+running: "cc" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wall" "-Wpedantic" "-Wno-long-long" "-Wno-unused-parameter" "-o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/interface.o" "-c" "extern/interface.c"
+exit code: 0
+AR_x86_64-unknown-linux-gnu = None
+AR_x86_64_unknown_linux_gnu = None
+HOST_AR = None
+AR = None
+running: "ar" "crs" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/libicasadi.a" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/auto_casadi_cost.o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/auto_casadi_grad.o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/auto_casadi_mapping_f2.o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/auto_casadi_mapping_f1.o" "/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out/extern/interface.o"
+exit code: 0
+cargo:rustc-link-lib=static=icasadi
+cargo:rustc-link-search=native=/home/dada/MPCC_FEB/MPCC Python/MPCC/mpcc_python_build_kin/mpcc_optimizer/target/release/build/icasadi_mpcc_optimizer-4059fdadf2340406/out
+cargo:rerun-if-changed=extern/auto_casadi_cost.c
+cargo:rerun-if-changed=extern/auto_casadi_grad.c
+cargo:rerun-if-changed=extern/auto_casadi_mapping_f2.c
+cargo:rerun-if-changed=extern/auto_casadi_mapping_f1.c
+cargo:rerun-if-changed=extern/interface.c

@@ -22,7 +22,6 @@ Slope = namedtuple('slope', 'left right')
 
 def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_steps):
     # Set all values needed for simulation
-    # TODO - organize these!!!
     i_start = 0
     # State is a tuple which contains the four state-defining parameters
     x = track_x[i_start]
@@ -32,38 +31,34 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
     v = 0
     psi = np.arctan2(y_next - y, x_next - x)
     state_0 = KinematicState(x, y, psi, v)
-
-    # At the end of the simulation, state sequence will contain
-    # all the states that the vehicle went through during the simulation
-    state_seq = [state_0]
-    # Input sequence will contain all the inputs calculated during the simulation, also as tuples
-    first_control_seq = [(np.nan, np.nan)]
     state = state_0
 
-    # Here the first reference point is calculated:
+    # Here the reference list is calculated:
     # ---------------------------------------------
-    # dist_ahead is the distance that the vehicle will travel if it keeps
-    # the same (tangential) velocity for the next param.N time steps, with
-    # each time step being param.Ts seconds long
     # i_nearest is the index of the nearest point on the reference line
     i_nearest = get_nearest_point((state_0.x, state_0.y), track_x, track_y, int(len(track_x) * 0.1), 0)
     i_nearest_prev = i_nearest
     ref_list, ref_indexes, end_reached = get_reference_list(track_x, track_y, i_nearest)
-    ref_seq = [ref_list]
+    intercepts, slopes, track_width, i_left, i_right = get_boundaries(left_y, left_x, right_y, right_x, ref_indexes,
+                                                                      ref_list)
+    # On the first iteration, 0s are used as the initial guess, afterwards the previous output is used
+    control_inputs = [0] * param.N * param.nu
 
+    # At the end of the simulation, a number of sequences is outputted and used for plotting
+    # state_seq will contain all the states that the vehicle went through during the simulation
+    state_seq = [state_0]
+    # control_inputs_seq will contain all the lists of control inputs outputted by the solver
+    control_inputs_seq = []
+    # first_control_seq will contain all the inputs given to the car during the simulation as tuples
+    first_control_seq = [(np.nan, np.nan)]
+    # ref_seq will contain all lists of references used
+    ref_seq = [ref_list]
+    # bound_seq will contain all the boundaries given to the solver
+    bound_seq = [(slopes, intercepts, track_width)]
+    # cost_seq, solve_time_seq and exit_status_seq will contain some solver metadata
     cost_seq = [0]
     solve_time_seq = [0]
     exit_status_seq = ['']
-
-    # The nearest sequence will contain tuples (x, y) of the positions
-    # on the reference line which correspond to the nearest point found
-    # for each state in the state sequence
-    intercepts, slopes, track_width, i_left, i_right = get_boundaries(left_y, left_x, right_y, right_x, ref_indexes,
-                                                                      ref_list)
-    bound_seq = [(slopes, intercepts, track_width)]
-
-    control_inputs = [0] * param.N * param.nu  # warm_start(state, ref_state, [slope, x_nearest, y_nearest])
-    control_inputs_seq = []
 
     not_conv_time = 0
     not_conv_iter = 0
@@ -75,9 +70,8 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
 
     # Run simulation
     for k in range(simulation_steps):
-        solver_status = mng.call(
-            np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right],
-                            np.reshape(ref_list, 2 * param.N))), control_inputs)
+        solver_status = mng.call(np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right],
+                                                 np.reshape(ref_list, 2 * param.N))), control_inputs)
         print("Parameters: " + str(
             np.concatenate((state, [slopes.left, slopes.right, intercepts.left, intercepts.right,
                                     track_width]))))
@@ -88,19 +82,24 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
                   + '. Penalty: ' + str(solver_status['penalty'])
                   + '. Nearest index = ' + str(i_nearest)
                   + '. Track width = ' + str(track_width))
-
+            # Count the not converged ones
             if solver_status['exit_status'] == 'NotConvergedOutOfTime':
                 not_conv_time += 1
             elif solver_status['exit_status'] == 'NotConvergedIterations':
                 not_conv_iter += 1
 
+            # Get the solution
             control_inputs = solver_status['solution']
+            # Only the first controls will be given to the car
             first_control_input = Control(control_inputs[0], control_inputs[1])
+            # Update the state
             state_next = cg.kinematic_model_rk(state, first_control_input, False)
             i_nearest = get_nearest_point(state_next[0:2], track_x, track_y, int(len(track_x) * 0.1), 0)
             ref_list, ref_indexes, end_of_track_reached = get_reference_list(track_x, track_y, i_nearest)
+            intercepts, slopes, track_width, i_left, i_right = get_boundaries(left_y, left_x, right_y, right_x,
+                                                                              ref_indexes, ref_list)
 
-            # TODO - enable this for non-circular tracks
+            # Enable this for non-circular tracks
             # if end_of_track_reached and k > 5: break
             if i_nearest_prev > i_nearest and k > 5:
                 warn("END OF TRACK REACHED!")
@@ -108,10 +107,7 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
             i_nearest_prev = i_nearest
 
             # Update all variables needed for the next iteration and save values in the sequences to be plotted
-            intercepts, slopes, track_width, i_left, i_right = get_boundaries(left_y, left_x, right_y, right_x,
-                                                                              ref_indexes, ref_list)
-
-            # Noise added to the state parameters
+            # Introduce noise to the state parameters
             # state = KinematicState(state_next[0] + random.uniform(-0.05, 0.05),  # x
             #                        state_next[1] + random.uniform(-0.05, 0.05),  # y
             #                        state_next[2] + random.uniform(-0.001, 0.001),  # psi
@@ -151,6 +147,7 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
           + str(np.mean(slopes_right)) + "]")
     print("NotConvergedOutOfTime: " + str(not_conv_time)
           + " times\nNotConvergedIterations: " + str(not_conv_iter) + " times")
+
     # Calculate the travelled distance
     x_prev = state_seq[0].x
     y_prev = state_seq[0].y
@@ -168,12 +165,7 @@ def simulate(track_x, track_y, left_x, left_y, right_x, right_y, simulation_step
 
 
 def get_boundaries(left_y, left_x, right_y, right_x, indexes, ref_list):
-    # A set of slopes and intercepts will be needed that will span the whole prediction horizon
-    # intercepts = []
-    # slopes = []
-    # track_width = []
-
-    # for i in range(len(ref_list)):
+    # Take the boundary tangents at i = N/2
     i = int(param.N / 2)
     i_left = get_nearest_point(ref_list[i], left_x, left_y, int(len(right_x) * 0.1), indexes[i])
     if i_left > len(left_x) - 2: i_left = len(left_x) - 2
@@ -207,8 +199,7 @@ def get_boundaries(left_y, left_x, right_y, right_x, indexes, ref_list):
 # the maximum velocity or the current velocity). So starting from the current position, the reference position
 # for timestep 1 will be the closest point on the path to the current position + Ts * current velocity,
 # after timestep 2, it will be that point + Ts * (current velocity (+ some acceleration) ), where "some
-# acceleration" could be either the maximum acceleration or 0. You can quite efficiently compute such a sequence
-# of points using the cumsum function in numpy.
+# acceleration" could be either the maximum acceleration or 0. Here, the maximum is used.
 def get_reference_list(track_x, track_y, i_nearest):
     x = [track_x[i_nearest]]
     y = [track_y[i_nearest]]
@@ -240,30 +231,9 @@ def get_reference_list(track_x, track_y, i_nearest):
     return list(zip(x, y)), indexes, end_reached
 
 
-def warm_start(state, state_ref, bound):
-    # Create a TCP connection manager
-    mng = og.tcp.OptimizerTcpManager("mpcc_python_build_2/mpcc_optimizer")
-    # Start the TCP server
-    mng.start()
-
-    s = [state[0], state[1], state[5], state[3]]
-    sr = [state_ref[0], state_ref[1], state_ref[5], state_ref[3]]
-
-    resp = mng.call(np.concatenate((s, sr, bound)))
-
-    print('Warm start: ' + str(resp['solve_time_ms']) + ' ms. Exit status: '
-          + resp['exit_status'] + '. Outer iterations: ' + str(resp['num_outer_iterations'])
-          + '. Inner iterations: ' + str(resp['num_inner_iterations'])
-          + '. Penalty: ' + str(resp['penalty']))
-
-    mng.kill()
-
-    return resp['solution']
-
-
+# Inspired here: https://github.com/alexliniger/MPCC/blob/master/Matlab/findTheta.m
+# Find the index of the point on the centreline which is the closest to the current position
 def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest):
-    # Inspired here: https://github.com/alexliniger/MPCC/blob/master/Matlab/findTheta.m
-    # Find the index of the point on the centreline which is the closest to the current position
     track_width = param.track_width / 2
 
     # Investigate at search region
@@ -282,12 +252,12 @@ def get_nearest_point(current_pos, track_x, track_y, search_region, prev_closest
             smallest_dist_i = ii
 
     # Search through the whole track if the distance is too long
-    # if smallest_dist > track_width:
-    for i in range(len(track_x)):
-        dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
-        if dist < smallest_dist:
-            smallest_dist = dist
-            smallest_dist_i = i
+    if smallest_dist > track_width:
+        for i in range(len(track_x)):
+            dist = np.sqrt((current_pos[0] - track_x[i]) ** 2 + (current_pos[1] - track_y[i]) ** 2)
+            if dist < smallest_dist:
+                smallest_dist = dist
+                smallest_dist_i = i
 
     if smallest_dist > track_width:
         warn("OUT OF TRACK BOUNDARIES!")

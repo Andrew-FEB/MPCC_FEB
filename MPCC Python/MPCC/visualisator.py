@@ -168,13 +168,13 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
     achieved_line, = ax.plot(state_x[0], state_y[0], 'or', label="Achieved track")
     ax.plot(left_x, left_y, '--g', label="Complete boundaries", linewidth=1)
     ax.plot(right_x, right_y, '--g', linewidth=1)
-    bound_left, = ax.plot(ref_x, [slopes[0].left * x + intercepts[0].left for x in ref_x], 'm--')
-    bound_right, = ax.plot(ref_x, [slopes[0].right * x + intercepts[0].right for x in ref_x], 'm--')
+    bound_left, = ax.plot(ref_x, [slopes[0].left * x + intercepts[0].left for x in ref_x], 'm--', linewidth=2)
+    bound_right, = ax.plot(ref_x, [slopes[0].right * x + intercepts[0].right for x in ref_x], 'm--', linewidth=2)
     bound_left.set_label("Boundaries for PH")
     ref_line, = ax.plot(ref_x, ref_y, '.c', label="Reference line for PH")
     predicted_line, = ax.plot(track_x[0], track_y[0], '.b', label="Predicted track")
 
-    txt = plt.text(0, 0, '', color="black", fontsize=18)
+    txt = plt.text(-20, -20, '', color="black", fontsize=18)
 
     plt.grid()
     plt.axis('equal')
@@ -211,8 +211,8 @@ def plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, 
         ref_line.set_xdata([x for x, *_ in ref_seq[i]])
         ref_line.set_ydata([y for x, y in ref_seq[i]])
 
-        txt.set_text("Iteration: " + str(i) + "\nExit status: " + exit_status_seq[i]
-                     + "\nTrack width: " + str(round(track_widths[i], 3)))
+        txt.set_text("Iteration: " + str(i) + "\nExit status: " + exit_status_seq[i])
+                     # + "\nTrack width: " + str(round(track_widths[i], 3)))
         plt.draw()
         plt.pause(1e-17)
         time.sleep(1e-7)
@@ -254,7 +254,7 @@ def plot_solve_time(solve_time_seq, exit_status_seq):
           + "\nMax = " + str(np.max(solve_time_seq)))
 
     plt.xlabel('Solve time [ms]')
-    plt.title("N = 40, w1 = 0.5")
+    plt.title("N = 40, w1 = 0.1")
     plt.show()
 
 

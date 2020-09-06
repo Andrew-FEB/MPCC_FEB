@@ -24,8 +24,8 @@ state_seq, ref_seq, bound_seq, cost_seq, solve_time_seq, exit_status_seq, first_
 
 vis.plot_solve_time(solve_time_seq, exit_status_seq)
 vis.plot_track(track_x, track_y, left_x, left_y, right_x, right_y, state_seq)
-vis.plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, ref_seq, bound_seq, cost_seq,
-                 control_seq, exit_status_seq)
+# vis.plot_dynamic(track_x, track_y, left_x, left_y, right_x, right_y, state_seq, ref_seq, bound_seq, cost_seq,
+#                  control_seq, exit_status_seq)
 
 # Save in a file
 # TRACK

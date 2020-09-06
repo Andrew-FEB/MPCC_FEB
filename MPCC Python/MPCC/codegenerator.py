@@ -40,7 +40,7 @@ def dynamic_model(state, control, forces, calc_casadi):
         return x_next, y_next, phi_next, v_x_next, v_y_next, omega_next
 
 
-# Runge-Kutta 4th order method
+# Runge-Kutta 4th order method on the dynamic model
 def dynamic_model_rk(state, control, calc_casadi):
     forces = pacejka_tire_forces(state, control)
     dt = p.Ts
@@ -106,7 +106,7 @@ def kinematic_model(state, control, calc_casadi):
         return x_next, y_next, psi_next, v_next
 
 
-# Runge-Kutta 4th order method
+# Runge-Kutta 4th order method on the kinematic model
 def kinematic_model_rk(state, control, calc_casadi):
     dt = p.Ts
     if calc_casadi:
@@ -189,9 +189,6 @@ def generate_code(lang):
         # Update state estimate
         x_est = kinematic_model_rk(x_est, u, True)
         # Boundary Constraint
-        # d_up = cs.fabs(slope_left * x_est[0] - x_est[1] + intercept_left) / (cs.sqrt(slope_left ** 2 + 1))
-        # d_low = cs.fabs(slope_right * x_est[0] - x_est[1] + intercept_right) / (cs.sqrt(slope_right ** 2 + 1))
-        # F1 = cs.vertcat(F1, x_est[3], d_up - track_width, d_low - track_width)
         # Source: https://math.stackexchange.com/questions/779598/quickly-find-if-point-lies-between-2-non-intersecting-segments
         # if ((a * x1 + b - y1) * (c * x1 + d - y1) < 0) -> point lies in between
         x = x_est[0]
@@ -201,7 +198,6 @@ def generate_code(lang):
 
     # Constraints
     # -------------------------------------
-    # C = og.constraints.Rectangle([p.v_x_min, -np.inf, -np.inf] * p.N, [p.v_x_max, 0, 0] * p.N)
     C = og.constraints.Rectangle([p.v_x_min, -np.inf] * ph, [p.v_x_max, 0] * ph)
     U = og.constraints.Rectangle([p.a_min, p.delta_min] * ph, [p.a_max, p.delta_max] * ph)
 

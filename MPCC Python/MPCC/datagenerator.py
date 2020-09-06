@@ -12,7 +12,7 @@ def generate_linear_track(num_steps):
     len_x = 70
     len_y = 100
     x = np.arange(0, len_x, len_x / num_steps)
-    y = np.arange(0, len_y, len_y / num_steps)  # [0] * len(x)
+    y = np.arange(0, len_y, len_y / num_steps)
 
     left = np.arange(param.track_width, param.track_width + len_y, len_y / num_steps)
     right = np.arange(-param.track_width, -param.track_width + len_y, len_y / num_steps)
@@ -26,21 +26,6 @@ def generate_linear_track(num_steps):
 
     return [x, y, x, left, x, right]
 
-    # y = np.arange(0, 40, 40 / num_steps)
-    # x = [0] * len(y)
-    #
-    # left = [-param.track_width/2] * len(x)
-    # right = [param.track_width/2] * len(x)
-
-    # plot the result
-    # fig, ax = plt.subplots(1, 1)
-    # ax.plot(x, y, 'or')
-    # ax.plot(left, y, '--g')
-    # ax.plot(right, y, '--g')
-    # plt.show()
-
-    # return [x, y, left, y, right, y]
-
 
 def generate_circular_track(num_steps):
     radius_x = 50
@@ -52,6 +37,7 @@ def generate_circular_track(num_steps):
     left_y = np.array([0, -radius_y + width, 0, radius_y - width])
     right_x = np.array([-radius_x - width, 0, radius_x + width, 0])
     right_y = np.array([0, -radius_y - width, 0, radius_y + width])
+    # Move by centre to point (plus, plus)
     # plus = 30
     # x = [x + plus for x in x]
     # left_x = [xl + plus for xl in left_x]
@@ -74,13 +60,10 @@ def generate_circular_track(num_steps):
     tckl, u = interpolate.splprep([left_x, left_y], s=0, per=True)
     tckr, u = interpolate.splprep([right_x, right_y], s=0, per=True)
 
-    # evaluate the spline fits for 1000 evenly spaced distance values
+    # evaluate the spline fits for num_steps evenly spaced distance values
     xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
     xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
     xr, yr = interpolate.splev(np.linspace(0, 1, num_steps), tckr)
-
-    # for xt, yt in zip(xr, yr):
-    #     print("(x,y) = (" + str(round(xt,2)) + ", " + str(round(yt,2)) + ")")
 
     # plot the result
     # fig, ax = plt.subplots(1, 1)
@@ -94,7 +77,6 @@ def generate_circular_track(num_steps):
 
 
 def generate_racing_track(num_steps):
-    # num_steps = 73
     x = np.array([-2.59, 7.5, 15, 23, 30, 34.37, 42.59, 48.03, 50, 48.03, 42.59, 39, 33, 23, 12, 5.63, -2.59, -8.03, -10, -8.03])
     y = np.array([9.37, -5, 0, -2, -10, -13.75, -9.63, -4.95, 0, 4.95, 9.63, 16, 27, 19, 29, 32.75, 28.63, 23.95, 19, 14.05])
     xl = np.array([-0.04, 7.5, 15, 23, 30, 32.31, 40.04, 45.15, 47, 45.15, 40.04, 38, 33, 23, 12, 7.69, -0.04, -5.15, -7, -5.15])
@@ -143,7 +125,7 @@ def generate_racing_track(num_steps):
     tckl, u = interpolate.splprep([xl, yl], s=0, per=True)
     tckr, u = interpolate.splprep([xr, yr], s=0, per=True)
 
-    # evaluate the spline fits for 1000 evenly spaced distance values
+    # evaluate the spline fits for num_steps evenly spaced distance values
     xi, yi = interpolate.splev(np.linspace(0, 1, num_steps), tck)
     xl, yl = interpolate.splev(np.linspace(0, 1, num_steps), tckl)
     xr, yr = interpolate.splev(np.linspace(0, 1, num_steps), tckr)
@@ -158,6 +140,7 @@ def generate_racing_track(num_steps):
         y_prev = yt
     print("Length of the track is: " + str(dist))
 
+    # Find distances between boundary points
     # x_prev = xl[0]
     # y_prev = yl[0]
     # dist = [0]*len(xl)
@@ -193,7 +176,7 @@ def generate_racing_track(num_steps):
     # plt.ylabel("Y position")
     # plt.show()
 
-    # Print to be used in C++ with BE
+    # Print to be used in C++ with Boundary Estimation
     # print("//LEFT")
     # for xlt, ylt in zip(xl, yl):
     #     # print("track->addCone(" + str(round(xlt,2)) + ", " + str(round(ylt,2)) + ", BoundPos::left);")

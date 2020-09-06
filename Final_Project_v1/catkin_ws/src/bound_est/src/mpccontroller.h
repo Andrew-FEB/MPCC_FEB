@@ -25,9 +25,19 @@
 class MPCController {
 public:
     MPCController(std::shared_ptr<Visualisation> vis, Track & t, bool simulating = false);
+    /**
+     * Using the generated bindings, the generated solver is called, with the necessary
+     * parameters (current position of the car, reference, boundaries) and the calculated
+     * controls are ouputted. If  the bool simulating is set to true, also the simulated
+     * car is updated appropriately.
+     */
     ControlInputs solve();
     
 private:
+    /**
+     * The predicted path is calculated from the sequence of control inputs calculated
+     * in the solve function, from which this function is called.
+     */
     void showPredictedPath(const Car & car, double * inputs, bool converged) const;
     
 private:
